@@ -1,54 +1,7 @@
-<!-- DOCUMENT IS XHTML 1.0 STRICT -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    <meta name="author" content="David Winterbottom (David -DOT- Winterbottom -AT- gmail -DOT- com)" />
-    <meta name="description" content="Adjust gamma so monitor doesn't mess up your body's clock - xrandr | sed -n 's/ connected.*//p' | xargs -n1 -tri xrandr --output {} --brightness 0.7 --gamma 2:3:4 - [UPDATE: Now works for multiple connected outputs]
 
-I woke up around midnight with an urge to do some late night hacking, but I didn't want a bright monitor screwing up my body's circadian rhythm. I've heard that at night blue (short wavelength) lights are particularly bad for your diurnal clock.  That may be a bunch of hooey, but it is true that redder (longer wavelength) colors are easier on my eyes at night.
-
-This command makes the screen dimmer and adjusts the gamma curves to improve contrast, particularly darkening blues and greens (R&amp;#611;=2, G&amp;#611;=3, B&amp;#611;=4).  To reset your screen to normal, you can run this command:
-
-$ xrandr | sed -n 's/ connected.*//p' | xargs -n1 -tri xrandr --output {} --brightness 1 --gamma 1:1:1
-
-or, more briefly,
-
-$ xgamma -g 1
-
-Note: The sed part is fragile and wrong.  I'm doing it this way because of a misfeature in xrandr(1), which requires an output be specified but has no programmatic way of querying available outputs.  Someone needs to patch up xrandr to be shell script friendly or at least add virtual outputs named \&quot;PRIMARY\&quot; and \&quot;ALL\&quot;.
-.
-Todo: Screen should dim (gradually) at sunset and brighten at sunrise. I think this could be done with a self-resubmitting at job, but I'm running into the commandlinefu 127 character limit just getting the sunrise time:
-
-$ wget http://aa.usno.navy.mil/cgi-bin/aa_pap.pl --post-data=$(date \&quot;+xxy=%Y&amp;xxm=%m&amp;xxd=%d\&quot;)\&quot;&amp;st=WA&amp;place=Seattle\&quot; -q -O- | sed -rn 's/\W*Sunrise\W*(.*)/\1/p'
-
-I hope some clever hacker comes up with a command line interface to Google's \&quot;OneBox\&quot;, since the correct time shows up as the first hit when googling for \&quot;sunrise:cityname\&quot;.
-.
-[Thank you to @flatcap for the sed improvement, which is much better than the head|tail|cut silliness I had before.  And thank you to @braunmagrin for pointing out that the \&quot;connected\&quot; output may not be on the second line.]" />
-    <meta name="keywords" content="Adjust gamma so monitor doesn't mess up your body's clock, xrandr, gamma, brightness, midnight hacking, circadian rhythm, biorhythm hooey, eye-strain, sunrise, xgamma" />
-    <meta name="verify-v1" content="hEPILeJT+vssH+kKHD8JrK8sqHYIg4GWIVV8P1I8gsY=" />
-
-    <script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
-<link rel="stylesheet" href="/css/browser_reset.css?2012-03-04-09-53" type="text/css" />
-    <link rel="stylesheet" href="/css/styles.css?2012-03-04-09-53" type="text/css" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" type="text/css" >
-
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-
-    <link rel="search" type="application/opensearchdescription+xml" title="commandlinefu.com search plugin" href="/mozilla_search_plugin.xml" />
-
-
-    <title>Adjust gamma so monitor doesn't mess up your body's clock | commandlinefu.com</title>
-
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js?load=effects,controls"></script>
-    <script type="text/javascript" src="/js/site-behaviour.js?2012-03-04-09-53"></script>
-    <script type="text/javascript" src="/js/Growler.js?2012-03-04-09-53"></script>
-    <script type="text/javascript" src="/js/prettify/prettify.js?2012-03-04-09-53"></script>
-
-    <link rel="stylesheet" href="/js/prettify/prettify.css?2012-03-04-09-53" type="text/css" />
-
-</head>
 
 <body>
     <div id="wrapper">
@@ -85,17 +38,8 @@ I hope some clever hacker comes up with a command line interface to Google's \&q
 </div>
 
 
-<script type="text/javascript"><!--
-google_ad_client = "pub-9184917282379429";
-/* 300x250, created 08/07/09 */
-google_ad_slot = "6300777981";
-google_ad_width = 300;
-google_ad_height = 250;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+
+
 
 <div class="box-copy">
     <a class="visibility-toggle" id="box-copy-loop">Hide</a>
@@ -3889,7 +3833,7 @@ S-video disconnected (normal left inverted right x axis y axis)
 </div>
 
 <h3>Alternatives</h3>
-<p  style="margin-bottom:10px">There is 1 alternative - vote for the best!</p>
+<p  style="margin-bottom:10px"></p>
 <div class="terminal-display" >
     <div class="window-bar">
         <a class="terminal-button terminal-button-close" ></a>
@@ -4012,11 +3956,7 @@ S-video disconnected (normal left inverted right x axis y axis)
     <div class="affiliate">
         <a href="http://podcast.ubuntu-uk.org/"><img src="/images/uupc_banner.png" title="The Ubuntu UK Podcast"></img></a>
     </div>
-    <!--
-    <div style="clear:both">
-        <p><a href="">Get your podcasts listed here...</a></p>
-    </div>
-     -->
+
 </div>
         </div>
 
@@ -4027,22 +3967,10 @@ S-video disconnected (normal left inverted right x axis y axis)
         </div>
     </div>
 
-    <script type="text/javascript">
-    if (location.host == "www.commandlinefu.com") {
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    }
-    </script>
 
-    <script type="text/javascript">
-    if (location.host == "www.commandlinefu.com") {
-        var pageTracker = _gat._getTracker("UA-3494213-6");
-        pageTracker._initData();
-        pageTracker._trackPageview();
 
-            }
-    </script>
 
-    <script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-5.newrelic.com","cf136d8e04","1677136","YlcAYREAXBBQBhAIC1sdI1YXCF0NHiYLDAlUXAZGTBdbBkY=",0,211,new Date().getTime(),"","","","",""]);</script>
+
+
 </body>
 </html>

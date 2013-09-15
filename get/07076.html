@@ -1,46 +1,7 @@
-<!-- DOCUMENT IS XHTML 1.0 STRICT -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    <meta name="author" content="David Winterbottom (David -DOT- Winterbottom -AT- gmail -DOT- com)" />
-    <meta name="description" content="Display environment vars only, using set - alias sete='set|sed -n \&quot;/^`declare -F|sed -n \&quot;s/^declare -f \(.*\)/\1 ()/p;q\&quot;`/q;p\&quot;' - Normally the bash builtin command 'set' displays all vars and functions.  This just shows the vars.  Useful if you want to see different output then env or declare or export.
 
-Alias 'sete' shows sets variables
-$ alias sete='set|sed -n \&quot;/^`declare -F|sed -n \&quot;s/^declare -f \(.*\)/\1 ()/p;q\&quot;`/q;p\&quot;'
-
-Alias setf shows the functions.
-$ alias setf='set|sed -n \&quot;/^`declare -F|sed -n \&quot;s/^declare -f \(.*\)/\1 ()/p;q\&quot;`/,\$p\&quot;'
-
-Also see: http://www.commandlinefu.com/commands/view/6899/print-all-environment-variables-including-hidden-ones
-
-At the very least, some cool sed commands!
-
-From my .bash_profile http://www.askapache.com/linux-unix/bash_profile-functions-advanced-shell.html" />
-    <meta name="keywords" content="Display environment vars only, using set, bash, sed, alias, export, askapache, declare, set, command, env, environment, printenv" />
-    <meta name="verify-v1" content="hEPILeJT+vssH+kKHD8JrK8sqHYIg4GWIVV8P1I8gsY=" />
-
-    <script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
-<link rel="stylesheet" href="/css/browser_reset.css?2012-03-04-09-53" type="text/css" />
-    <link rel="stylesheet" href="/css/styles.css?2012-03-04-09-53" type="text/css" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" type="text/css" >
-
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-
-    <link rel="search" type="application/opensearchdescription+xml" title="commandlinefu.com search plugin" href="/mozilla_search_plugin.xml" />
-
-
-    <title>Display environment vars only, using set | commandlinefu.com</title>
-
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js?load=effects,controls"></script>
-    <script type="text/javascript" src="/js/site-behaviour.js?2012-03-04-09-53"></script>
-    <script type="text/javascript" src="/js/Growler.js?2012-03-04-09-53"></script>
-    <script type="text/javascript" src="/js/prettify/prettify.js?2012-03-04-09-53"></script>
-
-    <link rel="stylesheet" href="/js/prettify/prettify.css?2012-03-04-09-53" type="text/css" />
-
-</head>
 
 <body>
     <div id="wrapper">
@@ -77,17 +38,8 @@ From my .bash_profile http://www.askapache.com/linux-unix/bash_profile-functions
 </div>
 
 
-<script type="text/javascript"><!--
-google_ad_client = "pub-9184917282379429";
-/* 300x250, created 08/07/09 */
-google_ad_slot = "6300777981";
-google_ad_width = 300;
-google_ad_height = 250;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+
+
 
 <div class="box-copy">
     <a class="visibility-toggle" id="box-copy-loop">Hide</a>
@@ -3867,7 +3819,7 @@ GROUPS=()
 </div>
 
 <h3>Alternatives</h3>
-<p  style="margin-bottom:10px">There is 1 alternative - vote for the best!</p>
+<p  style="margin-bottom:10px"></p>
 <div class="terminal-display" >
     <div class="window-bar">
         <a class="terminal-button terminal-button-close" ></a>
@@ -3940,11 +3892,7 @@ GROUPS=()
     <div class="affiliate">
         <a href="http://podcast.ubuntu-uk.org/"><img src="/images/uupc_banner.png" title="The Ubuntu UK Podcast"></img></a>
     </div>
-    <!--
-    <div style="clear:both">
-        <p><a href="">Get your podcasts listed here...</a></p>
-    </div>
-     -->
+
 </div>
         </div>
 
@@ -3955,22 +3903,10 @@ GROUPS=()
         </div>
     </div>
 
-    <script type="text/javascript">
-    if (location.host == "www.commandlinefu.com") {
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    }
-    </script>
 
-    <script type="text/javascript">
-    if (location.host == "www.commandlinefu.com") {
-        var pageTracker = _gat._getTracker("UA-3494213-6");
-        pageTracker._initData();
-        pageTracker._trackPageview();
 
-            }
-    </script>
 
-    <script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-5.newrelic.com","cf136d8e04","1677136","YlcAYREAXBBQBhAIC1sdI1YXCF0NHiYLDAlUXAZGTBdbBkY=",0,225,new Date().getTime(),"","","","",""]);</script>
+
+
 </body>
 </html>

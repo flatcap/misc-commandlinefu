@@ -1,64 +1,7 @@
-<!-- DOCUMENT IS XHTML 1.0 STRICT -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    <meta name="author" content="David Winterbottom (David -DOT- Winterbottom -AT- gmail -DOT- com)" />
-    <meta name="description" content="Advanced LS Output using Find for Formatted/Sortable File Stat info - find $PWD -maxdepth 1 -printf '%.5m %10M %#9u:%-9g %#5U:%-5G  [%AD | %TD | %CD]  [%Y] %p\n' - I love this function because it tells me everything I want to know about files, more than stat, more than ls.  It's very useful and infinitely expandable.
 
-$ find $PWD -maxdepth 1 -printf '%.5m %10M %#9u:%-9g %#5U:%-5G  [%AD | %TD | %CD]  [%Y] %p\n' | sort -rgbS 50%
- 00761 drwxrw---x  askapache:askapache    777:666    [06/10/10 | 06/10/10 | 06/10/10]  [d] /web/cg/tmp
-
-The key is:
-# -printf '%.5m %10M %#9u:%-9g %#5U:%-5G  [%AD | %TD | %CD]  [%Y] %p\n'
-which believe it or not took me hundreds of tweaking before I was happy with the output.
-
-You can easily use this within a function to do whatever you want.. This simple function works recursively if you call it with -r as an argument, and sorts by file permissions.
-$ lsl(){ O=\&quot;-maxdepth 1\&quot;;sed -n '/-r/!Q1'&lt;&lt;&lt;$@ &amp;&amp;O=;find $PWD $O -printf '%.5m %10M %#9u:%-9g %#5U:%-5G  [%AD | %TD | %CD]  [%Y] %p\n'|sort -rgbS 50%; }
-
-
-Personally I'm using this function because:
-$ lll () { local a KS=\&quot;1 -r -g\&quot;; sed -n '/-sort=/!Q1' &lt;&lt;&lt; $@ &amp;&amp; KS=`sed 's/.*-sort=\(.*\)/\1/g'&lt;&lt;&lt;$@`;
-$ find $PWD -maxdepth 1 -printf '%.5m %10M %#9u:%-9g %#5U:%-5G  [%AD | %TD | %CD]  [%Y] %p\n'|sort -k$KS -bS 50%; }
-
-# i can sort by user
-$ lll -sort=3
-
-# or sort by group reversed
-$ lll -sort=4 -r
-
-# and sort by modification time
-$ lll -sort=6
-
-If anyone wants to help me make this function handle multiple dirs/files like ls, go for it and I would appreciate it.. Something very minimal would be awesome.. maybe like:
-$ for a; do lll $a; done
-
-
-Note this uses the latest version of GNU find built from source, easy to build from gnu ftp tarball.  Taken from my http://www.askapache.com/linux-unix/bash_profile-functions-advanced-shell.html" />
-    <meta name="keywords" content="Advanced LS Output using Find for Formatted/Sortable File Stat info, bash, sort, find, ls, column, sorting, permissions, function, GNU/Linux, pwd, stat, askapache, sh, printf, GNU find" />
-    <meta name="verify-v1" content="hEPILeJT+vssH+kKHD8JrK8sqHYIg4GWIVV8P1I8gsY=" />
-
-    <script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
-<link rel="stylesheet" href="/css/browser_reset.css?2012-03-04-09-53" type="text/css" />
-    <link rel="stylesheet" href="/css/styles.css?2012-03-04-09-53" type="text/css" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" type="text/css" >
-
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-
-    <link rel="search" type="application/opensearchdescription+xml" title="commandlinefu.com search plugin" href="/mozilla_search_plugin.xml" />
-
-
-    <title>Advanced LS Output using Find for Formatted/Sortable File Stat info | commandlinefu.com</title>
-
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js?load=effects,controls"></script>
-    <script type="text/javascript" src="/js/site-behaviour.js?2012-03-04-09-53"></script>
-    <script type="text/javascript" src="/js/Growler.js?2012-03-04-09-53"></script>
-    <script type="text/javascript" src="/js/prettify/prettify.js?2012-03-04-09-53"></script>
-
-    <link rel="stylesheet" href="/js/prettify/prettify.css?2012-03-04-09-53" type="text/css" />
-
-</head>
 
 <body>
     <div id="wrapper">
@@ -95,17 +38,8 @@ Note this uses the latest version of GNU find built from source, easy to build f
 </div>
 
 
-<script type="text/javascript"><!--
-google_ad_client = "pub-9184917282379429";
-/* 300x250, created 08/07/09 */
-google_ad_slot = "6300777981";
-google_ad_width = 300;
-google_ad_height = 250;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+
+
 
 <div class="box-copy">
     <a class="visibility-toggle" id="box-copy-loop">Hide</a>
@@ -3887,7 +3821,7 @@ $ find $PWD -maxdepth 1 -printf '%.5m %10M %#9u:%-9g %#5U:%-5G  [%AD | %TD | %CD
 </div>
 
 <h3>Alternatives</h3>
-<p  style="margin-bottom:10px">There is 1 alternative - vote for the best!</p>
+<p  style="margin-bottom:10px"></p>
 <div class="terminal-display" >
     <div class="window-bar">
         <a class="terminal-button terminal-button-close" ></a>
@@ -3949,11 +3883,7 @@ $ find $PWD -maxdepth 1 -printf '%.5m %10M %#9u:%-9g %#5U:%-5G  [%AD | %TD | %CD
     <div class="affiliate">
         <a href="http://podcast.ubuntu-uk.org/"><img src="/images/uupc_banner.png" title="The Ubuntu UK Podcast"></img></a>
     </div>
-    <!--
-    <div style="clear:both">
-        <p><a href="">Get your podcasts listed here...</a></p>
-    </div>
-     -->
+
 </div>
         </div>
 
@@ -3964,22 +3894,10 @@ $ find $PWD -maxdepth 1 -printf '%.5m %10M %#9u:%-9g %#5U:%-5G  [%AD | %TD | %CD
         </div>
     </div>
 
-    <script type="text/javascript">
-    if (location.host == "www.commandlinefu.com") {
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    }
-    </script>
 
-    <script type="text/javascript">
-    if (location.host == "www.commandlinefu.com") {
-        var pageTracker = _gat._getTracker("UA-3494213-6");
-        pageTracker._initData();
-        pageTracker._trackPageview();
 
-            }
-    </script>
 
-    <script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-5.newrelic.com","cf136d8e04","1677136","YlcAYREAXBBQBhAIC1sdI1YXCF0NHiYLDAlUXAZGTBdbBkY=",0,218,new Date().getTime(),"","","","",""]);</script>
+
+
 </body>
 </html>

@@ -1,49 +1,7 @@
-<!-- DOCUMENT IS XHTML 1.0 STRICT -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    <meta name="author" content="David Winterbottom (David -DOT- Winterbottom -AT- gmail -DOT- com)" />
-    <meta name="description" content="Alias TAIL for automatic smart output - alias tail='tail -n $((${LINES:-`tput lines 2&gt;/dev/null||echo -n 80`} - 7))' - Run the alias command, then issue
-$ps aux | tail
-and resize your terminal window (putty/console/hyperterm/xterm/etc) then issue the same command and you'll understand.
 
-$ ${LINES:-`tput lines 2&gt;/dev/null||echo -n 12`}
-Insructs the shell that if LINES is not set or null to use the output from `tput lines` ( ncurses based terminal access ) to get the number of lines in your terminal.  But furthermore, in case that doesn't work either, it will default to using the default of 80.
-
-The default for TAIL is to output the last 10 lines, this alias changes the default to output the last x lines instead, where x is the number of lines currently displayed on your terminal - 7.  The -7 is there so that the top line displayed is the command you ran that used TAIL, ie the prompt.
-
-Depending on whether your PS1 and/or PROMPT_COMMAND output more than 1 line (mine is 3) you will want to increase from -2.  So with my prompt being the following, I need -7, or - 5 if I only want to display the commandline at the top. ( http://www.askapache.com/linux/bash-power-prompt.html )
-&lt;pre&gt;
- 275MB/748MB
-[7995:7993 - 0:186] 06:26:49 Thu Apr 08 [askapache@n1-backbone5:/dev/pts/0 +1] ~
-$
-&lt;/pre&gt;
-In most shells the LINES variable is created automatically at login and updated when the terminal is resized (28 linux, 23/20 others for SIGWINCH) to contain the number of vertical lines that can fit in your terminal window.  Because the alias doesn't hard-code the current LINES but relys on the $LINES variable, this is a dynamic alias that will always work on a tty device." />
-    <meta name="keywords" content="Alias TAIL for automatic smart output, bash, tail, echo, alias, HEAD, tput, askapache, variable" />
-    <meta name="verify-v1" content="hEPILeJT+vssH+kKHD8JrK8sqHYIg4GWIVV8P1I8gsY=" />
-
-    <script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
-<link rel="stylesheet" href="/css/browser_reset.css?2012-03-04-09-53" type="text/css" />
-    <link rel="stylesheet" href="/css/styles.css?2012-03-04-09-53" type="text/css" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" type="text/css" >
-
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-
-    <link rel="search" type="application/opensearchdescription+xml" title="commandlinefu.com search plugin" href="/mozilla_search_plugin.xml" />
-
-
-    <title>Alias TAIL for automatic smart output | commandlinefu.com</title>
-
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js?load=effects,controls"></script>
-    <script type="text/javascript" src="/js/site-behaviour.js?2012-03-04-09-53"></script>
-    <script type="text/javascript" src="/js/Growler.js?2012-03-04-09-53"></script>
-    <script type="text/javascript" src="/js/prettify/prettify.js?2012-03-04-09-53"></script>
-
-    <link rel="stylesheet" href="/js/prettify/prettify.css?2012-03-04-09-53" type="text/css" />
-
-</head>
 
 <body>
     <div id="wrapper">
@@ -80,17 +38,8 @@ In most shells the LINES variable is created automatically at login and updated 
 </div>
 
 
-<script type="text/javascript"><!--
-google_ad_client = "pub-9184917282379429";
-/* 300x250, created 08/07/09 */
-google_ad_slot = "6300777981";
-google_ad_width = 300;
-google_ad_height = 250;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+
+
 
 <div class="box-copy">
     <a class="visibility-toggle" id="box-copy-loop">Hide</a>
@@ -3878,7 +3827,7 @@ lsof    17475 askapache    4r   DIR   0,96     0 1078132745 /proc/17475/fd
 </div>
 
 <h3>Alternatives</h3>
-<p  style="margin-bottom:10px">There are 4 alternatives - vote for the best!</p>
+<p  style="margin-bottom:10px"></p>
 <div class="terminal-display" >
     <div class="window-bar">
         <a class="terminal-button terminal-button-close" ></a>
@@ -3985,11 +3934,7 @@ lsof    17475 askapache    4r   DIR   0,96     0 1078132745 /proc/17475/fd
     <div class="affiliate">
         <a href="http://podcast.ubuntu-uk.org/"><img src="/images/uupc_banner.png" title="The Ubuntu UK Podcast"></img></a>
     </div>
-    <!--
-    <div style="clear:both">
-        <p><a href="">Get your podcasts listed here...</a></p>
-    </div>
-     -->
+
 </div>
         </div>
 
@@ -4000,22 +3945,10 @@ lsof    17475 askapache    4r   DIR   0,96     0 1078132745 /proc/17475/fd
         </div>
     </div>
 
-    <script type="text/javascript">
-    if (location.host == "www.commandlinefu.com") {
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    }
-    </script>
 
-    <script type="text/javascript">
-    if (location.host == "www.commandlinefu.com") {
-        var pageTracker = _gat._getTracker("UA-3494213-6");
-        pageTracker._initData();
-        pageTracker._trackPageview();
 
-            }
-    </script>
 
-    <script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-5.newrelic.com","cf136d8e04","1677136","YlcAYREAXBBQBhAIC1sdI1YXCF0NHiYLDAlUXAZGTBdbBkY=",0,216,new Date().getTime(),"","","","",""]);</script>
+
+
 </body>
 </html>
