@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        unixmonkey3280
+      </div>
+      <div class='summary'>
+        Get the time and date of the last server reboot
+      </div>
+      <div class='command'>
+        date -d "$(uptime | awk '{gsub(/,/,"",$3);gsub(/:/," hours ",$3); print "- " $3 " minutes"}')"
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        madd
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9525/get-the-time-and-date-of-the-last-server-reboot" title="Find out what others think of this command">Get the time and date of the last server reboot</a>
+      </div>
+      <div class='command'>
+        last reboot
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        madd
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9526/get-the-time-and-date-of-the-last-server-reboot" title="Find out what others think of this command">Get the time and date of the last server reboot</a>
+      </div>
+      <div class='command'>
+        last reboot
+      </div>
+      <div class='sample'>
+        <pre>
+reboot   system boot  2.6.40.4-5.fc15. Fri Sep 30 10:40 - 09:41 (19+23:00)
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          - shorter
+        </p>
+        <p>
+          - more readable
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          You can also find the time in the output of:
+        </p><code>last reboot | head -1</code>
+        <p>
+          and the less portable (Linux only):
+        </p><code>date -d "$(awk '{print $1 " seconds ago"}' /proc/uptime)"</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        _john
+      </div>
+      <div class='text'>
+        <p>
+          I would prefer the "last" command too. Does anyone know if the "last" command proposed by flatcap is not portable?
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Habitual
+      </div>
+      <div class='text'>
+        <p>
+          +1 for flatcap's tip.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

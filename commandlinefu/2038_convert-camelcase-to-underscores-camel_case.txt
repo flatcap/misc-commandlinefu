@@ -1,0 +1,102 @@
+Convert camelCase to underscores (camel_case)
+
+Terminal - Convert camelCase to underscores (camel_case)
+sed -r 's/([a-z]+)([A-Z][a-z]+)/\1_\l\2/g' file.txt
+
+ $ cat file.txt
+ camelCase
+ $ sed -r 's/([a-z]+)([A-Z][a-z]+)/\1_\l\2/g' file.txt
+ camel_case
+
+User: atoponce
+Convert camelCase to underscores (camel_case)
+
+Useful for switching over someone else's coding style who uses camelCase
+notation to your style using all lowercase with underscores.
+
+
+A great one. Thanks.
+
+You missed the underscore though, this should be:
+
+sed -r 's/([a-z]+)([A-Z][a-z]+)/\1_\l\2/g' file.txt
+
+Comment by AmirWatad 76 weeks ago
+
+Fixed. I had it in the sample output, but must have missed it in the
+command itself. Thanks.
+
+Comment by atoponce 76 weeks ago
+
+Good job
+
+Comment by kaedenn 76 weeks ago
+
+Where's the reverse? :-)
+
+Comment by furicle 76 weeks ago
+
+btw, it's good for names like camelCase, but not for camelCaseLong
+
+:)
+
+Comment by AmirWatad 76 weeks ago
+
+I think this is a little more robust:
+
+It converts CamelCaseWord or camelCaseWord to camel_case_word (the last
+pipe is needed to handle the CamelCaseWord case)
+
+sed 's/\([A-Z]\)/_\l\1/g' file.txt | sed 's/^_\([a-z]\)/\1/g'
+
+Comment by AmirWatad 76 weeks ago
+
+and this is the reverse:
+
+camel_case_word to camelCaseWord:
+
+sed 's/_\([a-z]\)/\u\1/g' file.txt
+
+camel_case_word to CamelCaseWord
+
+sed 's/_\([a-z]\)/\u\1/g' file.txt | sed 's/^\([a-z]\)/\u\1/g'
+
+Comment by AmirWatad 76 weeks ago
+
+LC_COLLATE=C
+
+LC_CTYPE=C
+
+export LC_CTYPE LC_COLLATE
+
+The exports above fix a problem where [a-z] is case-insensitive
+
+Here's an explanation from the sed man page (Gnu Sed 4)
+
+[a-z] is case insensitive
+
+You are encountering problems with locales. POSIX mandates that [a-z] uses
+the current locale's collation order - in C parlance, that means using
+strcoll(3) instead of strcmp(3). Some locales have a case-insensitive
+collation order, others don't.
+
+Another problem is that [a-z] tries to use collation symbols. This only
+happens if you are on the GNU system, using GNU libc's regular expression
+matcher instead of compiling the one supplied with GNU sed. In a Danish
+locale, for example, the regular expression ^[a-z]$ matches the string
+`aa', because this is a single collating symbol that comes after `a' and
+before `b'; `ll' behaves similarly in Spanish locales, or `ij' in Dutch
+locales.
+
+To work around these problems, which may cause bugs in shell scripts, set
+the LC_COLLATE and LC_CTYPE environment variables to `C'.
+
+Here's an example of a line that was having problems due to the
+case-insensitive problem. Exporting LC_COLLATE and LC_CTYPES fixed the
+problem. It has to be done each time you log in though. I'm hesitant to
+put this export into my .profile, as I'm not sure what it will do to the
+rest of the system programs.
+
+sed -r 's/([a-z]+)([A-Z][a-z]+)/\1_\l\2/g' invalid_name2.txt
+Comment by Christian_Long 15 weeks and 6 days ago
+

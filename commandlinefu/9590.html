@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        b_t
+      </div>
+      <div class='summary'>
+        Verify/edit bash history command before executing it
+      </div>
+      <div class='command'>
+        shopt -s histverify
+      </div>
+      <div class='sample'>
+        <pre>
+$ date
+Thu Oct 27 11:25:51 EST 2011
+$ !!                          #COMMAND EXECUTED INSTANTLY
+date                                
+Thu Oct 27 11:25:54 EST 2011
+
+$ shopt -s histverify 
+$ date
+Thu Oct 27 11:26:05 EST 2011
+$ !!
+$ date   #COMMAND WAITING TO BE VERIFIED/EDITED. PRESS ENTER WHEN DONE.
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Bash history commands are those that begin with the character !
+        </p>
+        <p>
+          (eg. the most popular 'sudo !!' Explained here =&gt; <a href="http://www.commandlinefu.com/commands/view/13%29." rel="nofollow">http://www.commandlinefu.com/commands/view/13).</a>
+        </p>
+        <p>
+          By default bash immediately executes the history command.
+        </p>
+        <p>
+          Setting this shell option will make bash first allow you to verify/edit an
+        </p>
+        <p>
+          history command before executing it.
+        </p>
+        <p>
+          To set this option permanently, put this command in ~/.profile or ~/.bashrc file.
+        </p>
+        <p>
+          To unset this option issue following command.
+        </p><code>shopt -u histverify</code>
+      </div>
+    </div>
+  </body>
+</html>

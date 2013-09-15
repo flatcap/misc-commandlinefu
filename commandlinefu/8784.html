@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        godzillante
+      </div>
+      <div class='summary'>
+        read squid logs with human-readable timestamp
+      </div>
+      <div class='command'>
+        tail -f /var/log/squid/access.log | perl -p -e 's/^([0-9]*)/"[".localtime($1)."]"/e'
+      </div>
+      <div class='sample'>
+        <pre>
+before:
+1310045550.240 0 10.10.10.27 TCP_HIT/200 1344 GET http://somedomain.com/ (...)
+after:
+[Thu Jul  7 15:32:30 2011].240 0 10.10.10.27 TCP_HIT/200 1344 GET http://somedomain.com (...)
+</pre>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        longdrink
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8846/read-squid-logs-with-human-readable-timestamp" title="Find out what others think of this command">read squid logs with human-readable timestamp</a>
+      </div>
+      <div class='command'>
+        tail -f /var/log/squid/access.loc | ccze -CA
+      </div>
+      <div class='desc'>
+        <p>
+          The same with colors
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          That looks quite clever.
+        </p>
+        <p>
+          What would be useful, though, is an example.
+        </p>
+        <p>
+          What does the log look like before and after.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        godzillante
+      </div>
+      <div class='text'>
+        <p>
+          example added :-)
+        </p>
+        <p>
+          thanks for your comment!
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        0disse0
+      </div>
+      <div class='text'>
+        <p>
+          +1
+        </p>
+        <p>
+          it seems to me a very good command, and then give you a positive point
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

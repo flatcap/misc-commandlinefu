@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        tiagofischer
+      </div>
+      <div class='summary'>
+        Number of open connections per ip.
+      </div>
+      <div class='command'>
+        netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n
+      </div>
+      <div class='sample'>
+        <pre>
+20 81.49.60.x
+21 116.212.111.x
+26 65.184.224.x
+31 189.61.36.x
+84 89.180.3.x
+212 127.0.0.1
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Here is a command line to run on your server if you think your server is under attack. It prints our a list of open connections to your server and sorts them by amount.
+        </p>
+        <p>
+          BSD Version:
+        </p><code>netstat -na |awk '{print $5}' |cut -d "." -f1,2,3,4 |sort |uniq -c |sort -nr</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        gthb
+      </div>
+      <div class='text'>
+        <p>
+          Header lines from netstat are mixed in. tail -n +3 fixes that:
+        </p><code>netstat -ntu | tail -n +3 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Ovidiu
+      </div>
+      <div class='text'>
+        <p>
+          can you output the connected port too?
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+Who invoked me? / Get parent command
+
+Terminal - Who invoked me? / Get parent command
+ps -o comm= -p $(ps -o ppid= -p $$)
+
+User: olorin
+Who invoked me? / Get parent command
+
+Get the name of the parent command. This might be helpful, if you need to
+react on that information. E. g. a script called directly via ssh has got
+sshd as parent, manually invoked the parent process will probably be bash
+
+in linux
+
+cat /proc/$$/cmdline
+
+works as well.
+
+Comment by bwoodacre 62 weeks and 2 days ago
+

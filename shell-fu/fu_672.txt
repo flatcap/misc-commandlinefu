@@ -1,0 +1,21 @@
+Tip #672 / Concatenate pairs of lines 
+
+The following command will concatenate pairs of lines from a file, with a
+comma separating each line.
+
+awk 'ORS=NR%2?",":"\n"' FILE
+
+For example, if FILE is of the form
+A
+B
+C
+D
+the command would print
+A,B
+C,D
+
+This works by changing ORS (Output Record Seperator) using a ternary
+construct ( expr ? iftrue : iffalse ).
+NR in awk is the current line number; % is the modulo operator, and 2 is
+the argument to it. Thus, if the current line number is modulo 2, the ORS
+is ",", and if the line number is not modulo 2, ORS is "\n".

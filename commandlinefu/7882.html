@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        glaudiston
+      </div>
+      <div class='summary'>
+        Center text in console with simple pipe like
+      </div>
+      <div class='command'>
+        center(){ l="$(cat -)"; s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})/2));echo "$(while ((--j&gt;0)); do printf " ";done;)$l";done;}; ls --color=none / | center
+      </div>
+      <div class='sample'>
+        <pre>
+center(){ l="$(cat -)"; s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})/2));echo "$(while ((--j&gt;0)); do printf " ";done;)$l";done;};
+
+$ls --color=none / | center
+
+            bin
+            boot
+            dbg
+        dead.letter
+            dev
+            etc
+            home
+            lib
+           lib64
+         logton.log
+         lost+found
+           media
+            mnt
+           my.cnf
+            opt
+            proc
+            root
+            sbin
+session_mm_apache2handler0.sem
+            srv
+            svn
+      svn-commit.tmp~
+            sys
+            tmp
+            usr
+            var
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Center the output text in max line length of buffered output pipe;
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          Very nice... but how about this:
+        </p><code>center(){ C=$(tput cols);IFS="";while read L; do S=$((($C-${#L})/2+${#L}));printf "%${S}s\n" $L;done }</code>
+        <p>
+          Building on the work of glaudiston and eightmillion, of course :-)
+        </p>
+        <p>
+          PS Pascal's Triangle looks fantastic!
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        glaudiston
+      </div>
+      <div class='text'>
+        <code>tput cols</code>
+        <p>
+          Return the console width... I did not knew yet... very nice.
+        </p>
+        <p>
+          tnx
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

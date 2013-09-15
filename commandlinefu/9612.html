@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        fukr
+      </div>
+      <div class='summary'>
+        Convert HH:MM:SS into seconds
+      </div>
+      <div class='command'>
+        echo 00:29:36 | awk -F: '{print ($1*3600)+($2*60)+$3}'
+      </div>
+      <div class='desc'>
+        <p>
+          I'm guessing there's an even easier way.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        linuts
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9613/convert-hhmmss-into-seconds" title="Find out what others think of this command">Convert HH:MM:SS into seconds</a>
+      </div>
+      <div class='command'>
+        TZ=GMT date -d "1970/01/01 00:29:36" +%s
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        frans
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9617/convert-hhmmss-into-seconds" title="Find out what others think of this command">Convert HH:MM:SS into seconds</a>
+      </div>
+      <div class='command'>
+        date -ud "1970/01/01 00:29:36" +%s
+      </div>
+      <div class='desc'>
+        <p>
+          uses the -u switch for UTC
+        </p>
+        <p>
+          Another way could be
+        </p><code>echo $(($(date -ud "00:29:36" +%s)%86400))</code>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        unixmonkey3280
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9611/convert-hhmmss-into-seconds" title="Find out what others think of this command">Convert HH:MM:SS into seconds</a>
+      </div>
+      <div class='command'>
+        echo 00:29:36 | nawk -F: '{seconds=($1*60)*60; seconds=seconds+($2*60); seconds=seconds+$3; print seconds}'
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        fukr
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9614/convert-hhmmss-into-seconds" title="Find out what others think of this command">Convert HH:MM:SS into seconds</a>
+      </div>
+      <div class='command'>
+        date -d "1970/01/01 00:29:36 GMT" +%s
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Mozai
+      </div>
+      <div class='text'>
+        <p>
+          There are ways that people might call "easier" for them, but this method is the most simple and has the least dependencies.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        zlemini
+      </div>
+      <div class='text'>
+        <p>
+          Nice and portable thanks, it makes a useful function:
+        </p><code>sec () { echo $1 | awk -F: '{print ($1*3600)+($2*60)+$3}'; }</code> <code>sec 00:29:36</code>
+      </div>
+    </div>
+  </body>
+</html>

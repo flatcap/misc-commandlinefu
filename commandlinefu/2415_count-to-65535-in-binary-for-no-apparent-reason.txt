@@ -1,0 +1,19 @@
+Count to 65535 in binary (for no apparent reason)
+
+Terminal - Count to 65535 in binary (for no apparent reason)
+a=`printf "%*s" 16`;b=${a//?/{0..1\}}; echo `eval "echo $b"`
+
+User: rhythmx
+Count to 65535 in binary (for no apparent reason)
+
+Yes, it's useless.
+
+But it can be done more simply, look:
+
+(echo obase=2; seq 65536) | bc
+
+In fact, by changing the "obase=n" you can have any number base output you
+like.
+
+Comment by flatcap 69 weeks and 4 days ago
+

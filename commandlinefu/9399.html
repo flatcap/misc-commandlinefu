@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        netizen
+      </div>
+      <div class='summary'>
+        Suppress output of loud commands you don't want to hear from
+      </div>
+      <div class='command'>
+        quietly() { "$@" |&amp;:; }
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        wipu
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9398/suppress-output-of-loud-commands-you-dont-want-to-hear-from" title="Find out what others think of this command">Suppress output of loud commands you don't want to hear from</a>
+      </div>
+      <div class='command'>
+        quietly() { "$@" &gt; /dev/null 2&gt;&amp;1; }
+      </div>
+      <div class='sample'>
+        <pre>
+quietly "/path that may contain spaces/command" "arg 1" "arg 2"
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          This works even if there are spaces in any word in the command line.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        GinoMan2440
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9390/suppress-output-of-loud-commands-you-dont-want-to-hear-from" title="Find out what others think of this command">Suppress output of loud commands you don't want to hear from</a>
+      </div>
+      <div class='command'>
+        function quietly () { $* 2&gt; /dev/null &gt; /dev/null; };
+      </div>
+      <div class='sample'>
+        <pre>
+hostname User$ quietly wget www.website.com/
+hostname User$ _
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Suppresses all output to /dev/null. This could be expanded to check for a -l command line option to log the stderr to a file maybe -l file or -l to log to default quietly.log. I'm finding that I use it more often than one would think.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        ioggstream
+      </div>
+      <div class='text'>
+        <p>
+          Please, |&amp;: is EVIL. It causes a broken pipe, closing abruplty your program. It's not an alternative for &gt;&amp; /dev/null
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+exit if another instance is running
+
+Terminal - exit if another instance is running
+pidof -x -o $$ ${0##*/} && exit
+
+User: frans
+exit if another instance is running
+
+
+
+if [ `fuser $0|wc -w` -gt "1" ];then exit; fi
+
+User: yooreck
+exit if another instance is running
+
+runs only one instance.
+
+
+For a strong implementation of a real lock, see there :
+http://bash-hackers.org/wiki/doku.php?id=howto:mutex
+
+Comment by sputnick 46 weeks and 5 days ago
+
+I'm voting this one up, cause it's slick, not because it's a good idea. I
+learned long ago that the "one in a million" chance of a race condition
+being triggered (two processes checking pidof at the same time and not
+seeing each other) is actually a sure bet when you're on a machine that
+performs millions of ops per seconds.
+
+Comment by hackerb9 46 weeks and 4 days ago
+

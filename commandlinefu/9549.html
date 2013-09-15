@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        anhpht
+      </div>
+      <div class='summary'>
+        Run a command when a file is changed
+      </div>
+      <div class='command'>
+        while inotifywait -e modify /tmp/myfile; do firefox; done
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        putnamhill
+      </div>
+      <div class='text'>
+        <p>
+          If you don't have inotifywait, here's a bash version:
+        </p>
+        <p>
+          <a href="http://www.commandlinefu.com/commands/view/6876/run-a-command-whenever-a-file-is-touched" rel="nofollow">http://www.commandlinefu.com/commands/view/6876/run-a-command-whenever-a-file-is-touched</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        taliver
+      </div>
+      <div class='summary'>
+        Display the output of a command from the first line until the first instance of a regular expression.
+      </div>
+      <div class='command'>
+        command | sed '/regex/q'
+      </div>
+      <div class='desc'>
+        <p>
+          Slightly simpler version of previous sed command that does the same thing. In this case, the output will stop at the command, and the entire command will be terminated as well, instead of proceeding through the whole file.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        putnamhill
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/4406/display-the-output-of-a-command-from-the-first-line-until-the-first-instance-of-a-regular-expression." title="Find out what others think of this command">Display the output of a command from the first line until the first instance of a regular expression.</a>
+      </div>
+      <div class='command'>
+        command | sed -n '1,/regex/p'
+      </div>
+      <div class='desc'>
+        <p>
+          If BREs can be used, this sed version will also get the job done.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        SuperFly
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/4405/display-the-output-of-a-command-from-the-first-line-until-the-first-instance-of-a-regular-expression." title="Find out what others think of this command">Display the output of a command from the first line until the first instance of a regular expression.</a>
+      </div>
+      <div class='command'>
+        &lt;your command here&gt; | perl -n -e 'print "$_" if 1 ... /<span>&lt;regex&gt;</span>/;'
+      </div>
+      <div class='desc'>
+        <p>
+          This command line will display the output of , from the first line of output, until the first time it sees a pattern matching .
+        </p>
+        <p>
+          You could specify the regex pattern /^$/ to look for the first blank line,
+        </p>
+        <p>
+          or /^foobar/ to look for the first line that starts with the word foobar.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        intuited
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/4407/display-the-output-of-a-command-from-the-first-line-until-the-first-instance-of-a-regular-expression." title="Find out what others think of this command">Display the output of a command from the first line until the first instance of a regular expression.</a>
+      </div>
+      <div class='command'>
+        <span>&lt;command&gt;</span> | perl -pe '/&lt;regex/ &amp;&amp; exit;'
+      </div>
+      <div class='desc'>
+        <p>
+          Doesn't display the matching line. If you want that behaviour, you need to add "print &amp;&amp; " before the 'exit'.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

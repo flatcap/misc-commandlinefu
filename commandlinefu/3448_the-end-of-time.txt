@@ -1,0 +1,24 @@
+The end of time
+
+Terminal - The end of time
+date -ud @$[2**31-1]
+
+ Tue Jan 19 03:14:07 UTC 2038
+
+User: Escher
+The end of time
+
+The end of unix time and the 32bit era will be Tue Jan 19 03:14:07 UTC
+
+.
+
+date -ud @$[2**31]
+
+date: invalid date `@2147483648'
+
+.
+
+In 64bit you have much longer, at least to:
+
+date -ud @$[2**55] Sun Jun 13 06:26:08 UTC 1141709097
+

@@ -1,0 +1,14 @@
+Tip #483 / /dev/vcs and /dev/tty 
+
+Have you ever wanted to check the content of the first virtual console
+without switching to it with "Ctrl+Alt+F1"? Or the second console of a
+remote server? Or would you like to send something to the user working at
+the third virtual console (not via wall command)?
+
+The GNU/Linux kernel provides two character devices for such tasks:
+* /dev/ttyX - represents X. virtual console
+* /dev/vcsX - represents X. virtual console text contents
+So, to answer the questions use these commands:
+1. cat /dev/vcs1
+2. ssh root@server 'cat /dev/vcs2'
+3. echo "something" > /dev/tty3

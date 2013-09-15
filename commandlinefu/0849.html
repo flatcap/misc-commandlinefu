@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        SiegeX
+      </div>
+      <div class='summary'>
+        Use tee + process substitution to split STDOUT to multiple commands
+      </div>
+      <div class='command'>
+        some_command | tee &gt;(command1) &gt;(command2) &gt;(command3) ... | command4
+      </div>
+      <div class='sample'>
+        <pre>
+$ echo foo | tee &gt;(cat) &gt;(cat) &gt;(cat) | cat
+foo
+foo
+foo
+foo
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Using process substitution, we can 'trick' tee into sending a command's STDOUT to an arbitrary number of commands. The last command (command4) in this example will get its input from the pipe.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        CodSpirit
+      </div>
+      <div class='text'>
+        <p>
+          Thanks for this one.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        rbossy
+      </div>
+      <div class='text'>
+        <p>
+          Yet another confirmation that tee is awesome. This one in my favourites.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        afinzel
+      </div>
+      <div class='summary'>
+        Copy a file structure without files
+      </div>
+      <div class='command'>
+        find * -type d -exec mkdir /where/you/wantem/\{\} \;
+      </div>
+      <div class='desc'>
+        <p>
+          Taken from: <a href="http://www.webmasterworld.com/forum40/1310.htm" rel="nofollow">http://www.webmasterworld.com/forum40/1310.htm</a>
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        wwest4
+      </div>
+      <div class='text'>
+        <p>
+          i used to use something like this until i needed to preserve ownership &amp; permissions... enter cpio pass-copy mode:
+        </p>
+        <p>
+          find * -type d | cpio -pd /where/you/wantem
+        </p>
+        <p>
+          ...better &amp; faster than find -exec
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

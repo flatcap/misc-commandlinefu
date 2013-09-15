@@ -1,0 +1,67 @@
+recursive search and replace old with new string, inside files
+
+Terminal - recursive search and replace old with new string, inside files
+find . -type f -exec sed -i s/oldstring/newstring/g {} +
+
+User: SlimG
+recursive search and replace old with new string, inside files
+
+This command find all files in the current dir and subdirs, and replace
+all occurances of "oldstring" in every file with "newstring".
+
+
+
+$ grep -rl oldstring . |xargs sed -i -e 's/oldstring/newstring/'
+
+User: netfortius
+recursive search and replace old with new string, inside files
+
+recursively traverse the directory structure from . down, look for string
+"oldstring" in all files, and replace it with "newstring", wherever found
+
+also:
+
+grep -rl oldstring . |xargs perl -pi~ -e 's/oldstring/newstring'
+grep -rl oldstring . | parallel sed -i -e 's/oldstring/newstring/'
+
+User: unixmonkey8046
+recursive search and replace old with new string, inside files
+
+xargs deals badly with special characters (such as space, ' and "). To see
+the problem try this:
+
+touch important_file
+
+touch 'not important_file'
+
+ls not* | xargs rm
+
+Parallel https://savannah.nongnu.org/projects/parallel/ does not have this
+problem.
+
+
+Using sed you can use the 'g' option in case there is more than one
+occurance of the "oldstring" in the matching sentence.
+
+Also find has the '+' sign to behave like using xargs.
+
+find . -type f -exec sed -i "s/oldstring/newstring/g" {} +;
+Comment by JesusSuperstar 44 weeks ago
+
+Without the "/g" sed will replace the first occurrence of oldstring in
+each line, not the first in each file.
+
+Comment by johnraff 44 weeks ago
+
+Thanks for the tip, using + is much faster, guess it's because + doesn't
+start sed more than once, I've changed the command accordingly.
+
+Using "g" with sed is already explained in the comment of the command
+
+Comment by SlimG 44 weeks ago
+
+Thanks for the knowlege johnraff, didn't see your comment before I posted,
+changed the command and description accordingly.
+
+Comment by SlimG 44 weeks ago
+

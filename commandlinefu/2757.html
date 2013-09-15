@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        knassery
+      </div>
+      <div class='summary'>
+        Show me a histogram of the busiest minutes in a log file:
+      </div>
+      <div class='command'>
+        cat /var/log/secure.log | awk '{print substr($0,0,12)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}'
+      </div>
+      <div class='sample'>
+        <pre>
+-macbook:~ root# cat /var/log/secure.log | awk '{print substr($0,0,12)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}' | head
+
+   9 Jul 21 20:21 *********
+   9 Jul 20 19:46 *********
+   9 Jul 20 14:46 *********
+   7 Jul 23 16:55 *******
+   6 Jul 22 21:01 ******
+   6 Jul 20 21:05 ******
+   5 Jul 22 21:02 *****
+   4 Jul 20 21:25 ****
+   4 Jul 20 21:12 ****
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Busiest seconds:
+        </p><code>cat /var/log/secure.log | awk '{print substr($0,0,15)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}'</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        zlemini
+      </div>
+      <div class='text'>
+        <p>
+          Nicely done!! I would remove cat to make it a little more efficient:
+        </p><code>awk '{print substr($0,0,15)}' /var/log/secure.log | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}'</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        ger
+      </div>
+      <div class='text'>
+        <p>
+          I would replace the first awk with:
+        </p><code>cut -c1-12</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        mccalni
+      </div>
+      <div class='text'>
+        <p>
+          Love it. Thanks. To check my log4j files for the current hour I tweaked to:
+        </p><code>grep "^$(date '+%Y-%m-%d %H')" /blah/blah/logs/someLog4j.log | awk '{print substr($0,0,17)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}';echo</code>
+      </div>
+    </div>
+  </body>
+</html>

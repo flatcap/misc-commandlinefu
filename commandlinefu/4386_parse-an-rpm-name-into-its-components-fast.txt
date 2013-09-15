@@ -1,0 +1,20 @@
+Parse an RPM name into its components - fast
+
+Terminal - Parse an RPM name into its components - fast
+parse_rpm() {
+RPM=$1;B=${RPM##*/};B=${B%.rpm};A=${B##*.};B=${B%.*};R=${B##*-};B=${B%-*};V=${B##*-};B=${B%-*};N=$B;echo
+"$N $V $R $A"; }
+
+User: bhepple
+Parse an RPM name into its components - fast
+
+parse_rpm xorg-x11-fonts-ISO8859-1-75dpi-7.1-2.1.el5.noarch.rpm
+
+xorg-x11-fonts-ISO8859-1-75dpi 7.1 2.1.el5 noarch
+
+It's a little tricky because RPM names can contain '-' and the name,
+version and release number can contain '.' This is one or two orders of
+magnitude faster than using rpm itself:
+
+rpm -qp --queryformat '%{N} %{V} %{R} %{ARCH}\n' $RPM
+

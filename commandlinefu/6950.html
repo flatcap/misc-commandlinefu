@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        EBAH
+      </div>
+      <div class='summary'>
+        Multi line grep using sed and specifying open/close tags
+      </div>
+      <div class='command'>
+        cat file.txt | sed -e /&lt;opening tag&gt;/d -e /&lt;closing tag&gt;/G | sed -e '/./{H;$!d;}' -e 'x;/&lt;string to search&gt;/!d;'
+      </div>
+      <div class='sample'>
+        <pre>
+The command:
+cat file.txt | sed -e /^$/d -e /++-/G | sed -e '/./{H;$!d;}' -e 'x;/Lorem/!d;'
+
+Will print the message:
+
+^$
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit.
+++-
+
+But not:
+
+^$
+Vestibulum fermentum molestie nunc a interdum.
+++-
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Working with log files that contains variable length messages wrapped between open and close tags it may be useful to filter the messages upon a keyword.
+        </p>
+        <p>
+          This works fine with GNU sed version 4.2 or higher, so pay attention to some unix distros (solaris, hp-ux, etc.).
+        </p>
+        <p>
+          Linux should be ok.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        DaveQB
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/6976/multi-line-grep-using-sed-and-specifying-openclose-tags" title="Find out what others think of this command">Multi line grep using sed and specifying open/close tags</a>
+      </div>
+      <div class='command'>
+        sed '/'"&lt;opening tag&gt;"'/,/'"&lt;closing tag&gt;"'/{/'"&lt;closing tag&gt;"'/d;p};d' "<span>&lt;file&gt;</span>"
+      </div>
+      <div class='sample'>
+        <pre>
+daveqb@localhost /tmp $
+cat test
+one two three
+four
+five
+six
+seven
+
+daveqb@localhost /tmp $
+sed '/'"four"'/,/'"six"'/{/'"six"'/d;p};d' "test"
+four
+five
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          This line does not include your closing tag in the output.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

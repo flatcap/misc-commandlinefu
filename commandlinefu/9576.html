@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        vando
+      </div>
+      <div class='summary'>
+        geoip information
+      </div>
+      <div class='command'>
+        geoip() { wget -qO - http://freegeoip.net/xml/$1 | sed '3,12!d;s/&lt;//g;s/&gt;/: /g;s/\/.*//g' ; }
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        vando
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7797/geoip-information" title="Find out what others think of this command">geoip information</a>
+      </div>
+      <div class='command'>
+        geoip() { lynx -dump "http://www.geoiptool.com/en/?IP=$1" | sed -n '/Host Name/,/Postal code/p' ; }
+      </div>
+      <div class='sample'>
+        <pre>
+user@foo $&gt; geoip 208.67.222.222
+      Host Name: resolver1.opendns.com
+     IP Address: 208.67.222.222
+        Country: [14]United States united states
+   Country code: US (USA)
+         Region: [15]California
+           City: San Francisco
+    Postal code: 94105
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Shows you the geolocation of an IP address.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

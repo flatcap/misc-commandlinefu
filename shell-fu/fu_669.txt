@@ -1,0 +1,10 @@
+Tip #669 / Copy MySQL tables between hosts 
+
+The following command will allow you to copy a table from the MySQL
+database on a remote host, to a different MySQL database on your local
+host.
+
+mysqldump -h [remote IP] -u[user] -p[pass] from_db from_table | mysql -u[user] -p[pass] target_db
+
+The first username and password are for the remote database and the last
+ones are for your local database.

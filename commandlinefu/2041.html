@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        cammarin
+      </div>
+      <div class='summary'>
+        Send pop-up notifications on Gnome
+      </div>
+      <div class='command'>
+        notify-send ["<span>&lt;title&gt;</span>"] "<span>&lt;body&gt;</span>"
+      </div>
+      <div class='desc'>
+        <p>
+          The title is optional.
+        </p>
+        <p>
+          Options:
+        </p>
+        <p>
+          -t: expire time in milliseconds.
+        </p>
+        <p>
+          -u: urgency (low, normal, critical).
+        </p>
+        <p>
+          -i: icon path.
+        </p>
+        <p>
+          On Debian-based systems you may need to install the 'libnotify-bin' package.
+        </p>
+        <p>
+          Useful to advise when a wget download or a simulation ends. Example:
+        </p><code>wget URL ; notify-send "Done"</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        ubersoldat
+      </div>
+      <div class='text'>
+        <p>
+          Cool, but a more portable way of doing this is using the not so desktop dependent xmessage which I think is even more powerful. This will show you the gpl license
+        </p><code>xmessage -file gpl.txt</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        alperyilmaz
+      </div>
+      <div class='text'>
+        <p>
+          gmessage is an xmessage clone based on GTK+
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        unixmonkey3402
+      </div>
+      <div class='text'>
+        <p>
+          notify-send is quite good. I was ignorant of its existance, I've been using something similar written by Miguel Icaza. It's slightly better but you have to compile it from source.
+        </p>
+        <p>
+          <a href="http://tirania.org/blog/archive/2004/Mar-11.html" rel="nofollow">http://tirania.org/blog/archive/2004/Mar-11.html</a>
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        jsiei97
+      </div>
+      <div class='text'>
+        <p>
+          notify-send "Fortune" "`fortune`"
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        dennisw
+      </div>
+      <div class='text'>
+        <code>wget URL &amp;&amp; notify-send "Done" || notify-send "Failed"</code>
+      </div>
+    </div>
+  </body>
+</html>

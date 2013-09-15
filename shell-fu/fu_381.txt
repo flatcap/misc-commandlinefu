@@ -1,0 +1,19 @@
+Tip #381 / SSH tab completion 
+
+tab completion is something we use all day long. put this into your
+.bash_profile. You can use tabs to auto complete the hostname for ssh
+calls.
+
+complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
+
+#1 Mike
+Quite nice indeed. This did show the powers of bash's completion abilities
+very nicely. Very good tip
+#2 Jeremy Cantrell
+The latest version of openssh will not allow you to read hostnames from
+the known_hosts file.
+#3 Kris Marsh
+New OpenSSH versions hash known hosts by default yes (to stop worm from
+parsing the known_host file and harvesting hostnames).
+
+To disable this, modify /etc/ssh/ssh_config, and set:

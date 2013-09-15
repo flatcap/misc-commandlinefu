@@ -1,0 +1,57 @@
+Delete the previous entry in your history
+
+Terminal - Delete the previous entry in your history
+alias histdel='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
+
+ $ ssh root@www1.example.co m
+ ssh: Could not resolve hostname www1.example.co: nodename nor servname provided, or not known
+ $ hackm3!
+
+ # (Oh crap. I just typed the password on the commandline)
+ $ history |tail
+ ...
+504  ssh root@www1.example.co m
+505  hackm3!
+
+ # Now it's clear.
+ $ histdel; histdel
+503  ssh root@www1.example.co m
+504  history |tail
+
+User: StefanLasiewski
+Delete the previous entry in your history
+
+I rarely need this, but I have a hard time remembering the command when I
+need it.
+
+Admit it. This has happened to you. Yes this is bad, and you better clean
+up now.
+
+Borrowed from
+http://thoughtsbyclayg.blogspot.com/2008/02/how-to-delete-last-command-from-bash.html
+
+
+Very interesting. There is a way to simplify it, though.
+
+First alter the alias to only delete one entry:
+
+alias histdel='history -d $((HISTCMD-1))'
+
+Now the clever bit. Add 'histdel' the the list of commands that are
+ignored by the history:
+
+export HISTIGNORE=$HISTIGNORE:hd
+
+This means histdel doesn't need to delete itself from the history and you
+can still run it as many times as you like.
+
+Note: I also have aliases to show my history, which don't add to the
+history.
+
+Comment by flatcap 14 weeks and 5 days ago
+
+@flatcap: Very good. I think I like yours better. You should post that as
+an alternative.
+
+Comment by StefanLasiewski 14 weeks and 5 days ago
+

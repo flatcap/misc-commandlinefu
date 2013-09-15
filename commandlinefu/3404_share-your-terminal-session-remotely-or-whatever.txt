@@ -1,0 +1,33 @@
+Share your terminal session (remotely or whatever)
+
+Terminal - Share your terminal session (remotely or whatever)
+screen -x
+
+User: flart
+Share your terminal session (remotely or whatever)
+
+Force the user you want to watch doing things into doing his things in a
+screen session. Then simply attach yourself to that session with the
+command shown above.
+
+Works only if you are on the same machine, of course
+
+That only connects to existing screen processes in the current session.
+Not remotely, you need telnet or ssh access to the user account for that,
+
+Comment by Escher 57 weeks ago
+
+i DID write that into the description, which mystically got lost during
+posting the command.
+
+Added it again
+
+Comment by flart 57 weeks ago
+
+things needed for this to work: (1) they tell me the screen binary must be
+setuid, (2) multiuser mode must be enabled via the -x option or 'multiuser
+on' command inside screen, and (3) users must be added via 'acladd
+username' command. At least that does it on debian/ubuntu systems.
+
+Comment by bwoodacre 57 weeks ago
+

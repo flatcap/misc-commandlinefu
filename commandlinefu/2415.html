@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        rhythmx
+      </div>
+      <div class='summary'>
+        Count to 65535 in binary (for no apparent reason)
+      </div>
+      <div class='command'>
+        a=`printf "%*s" 16`;b=${a//?/{0..1\}}; echo `eval "echo $b"`
+      </div>
+      <div class='desc'>
+        <p>
+          Yes, it's useless.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          But it can be done more simply, look:
+        </p><code>(echo obase=2; seq 65536) | bc</code>
+        <p>
+          In fact, by changing the "obase=n" you can have any number base output you like.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

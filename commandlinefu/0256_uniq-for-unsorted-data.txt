@@ -1,0 +1,72 @@
+uniq for unsorted data
+
+Terminal - uniq for unsorted data
+awk '!_[$0]++{print}'
+
+User: dz
+uniq for unsorted data
+
+Maybe I'm missing something, but:
+
+a - I can't see how this works
+
+b - it doesn't seem to work
+
+...Create 3 line file test.txt:
+
+'$ cat test.txt:
+
+
+
+
+'$ awk '!_[$0]++{print}' test.txt
+
+
+
+
+Am I being thick?
+
+Comment by g__j 87 weeks and 5 days ago
+
+How about:
+
+sort -u
+Comment by systemj 87 weeks and 5 days ago
+
+g__j: it does 'uniq' but without requiring (or doing) sorting;
+
+cat >test
+
+
+
+
+
+
+awk '!_[$0]++{print}' < test
+
+
+
+
+You can actually shorten it to:
+
+awk '!_[$0]++'
+Comment by porges 87 weeks and 5 days ago
+
+>>How about:
+
+>>sort -u
+
+I think this has several advantages:
+
+* No need for the overhead of a sort
+
+* Can be embedded in an awk conditional statement. for example:
+
+printf "a\nb\na\nc\na\nc\n" | awk '{if(!_[$0]++){print}}'
+
+* Can be inverted. To show only values that have been seen before. For
+example:
+
+printf "a\nb\na\nc\na\nc\n" | awk '{if(_[$0]++){print}}'
+Comment by unixmonkey3280 72 weeks and 1 day ago
+

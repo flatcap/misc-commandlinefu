@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        TetsuyO
+      </div>
+      <div class='summary'>
+        Update all GPG keys in your keyring
+      </div>
+      <div class='command'>
+        gpg --keyserver pgp.mit.edu --recv-keys `gpg --list-key | grep ^pub | awk '{print $2}' | sed 's,^.*/,,g'`
+      </div>
+      <div class='sample'>
+        <pre>
+gpg: requesting key AAAAAAAA from hkp server pgp.mit.edu
+gpg: requesting key BBBBBBBB from hkp server pgp.mit.edu
+gpg: requesting key CCCCCCCC from hkp server pgp.mit.edu
+gpg: key AAAAAAAA: "John John &lt;john@john.com&gt;" not changed
+gpg: key BBBBBBBB: "Jack Jack &lt;jack@jack.com&gt;" 2 new signatures
+gpg: key CCCCCCCC: "Robert Robert &lt;robert@robert.com&gt;" not changed
+...
+gpg: Total number processed: 3
+gpg:              unchanged: 2
+gpg:         new signatures: 2
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          This oneliner will update all the GPG keys that you have in your keyring.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        unixmonkey22522
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8621/update-all-gpg-keys-in-your-keyring" title="Find out what others think of this command">Update all GPG keys in your keyring</a>
+      </div>
+      <div class='command'>
+        gpg --refresh-keys
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          You can reduce the grep, awk, sed to just sed:
+        </p><code>gpg --list-keys | sed -n '/^pub/{s!.*/\(.\{8\}\).*!\1!;p}'</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        eroux
+      </div>
+      <div class='text'>
+        <p>
+          You could... But I'm more of an AWK man:
+        </p><code>gpg --keyserver pgp.mit.edu --recv-keys `gpg --list-key | awk '/^pub/ { sub( /^.*\//, "" ); print $1 }'`</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        crimer
+      </div>
+      <div class='text'>
+        <p>
+          I think is easier to use the whole power of GnuPG:
+        </p><code>gpg --keyserver pgp.mit.edu --refresh-keys</code>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+Use the arguments used in the last command
+
+Terminal - Use the arguments used in the last command
+mkdir !*
+
+ ~$ cd Desktop/Notes
+ Error: No such file or directory.
+ ~$ mkdir -v !*
+ mkdir: The directory ?Desktop/Notes? has been created.
+ ~$ !-2
+
+User: funyotros
+Use the arguments used in the last command
+
+Very basic, but who knows..
+
+mkdir !$ should work too, only uses 'the last' argument.
+
+!-2 executes cd Desktop/Notes again.
+
+More tips in 'man history'
+
+

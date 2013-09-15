@@ -1,0 +1,6 @@
+Tip #501 / Check a bash script without executing 
+
+bash -n scriptname.sh
+
+This validates syntax but won't check if your bash script tries to execute
+a command that isn't in your path, like ech hello instead of echo hello.

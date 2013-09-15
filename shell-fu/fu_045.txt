@@ -1,0 +1,21 @@
+Tip #45 / multiple command output into a single program:
+
+diff -u <(ls -c1 dir_1) <(ls -c1 dir_2)
+
+Will show you a diff of files in the root of dir_1 and dir_2
+#1 CMG
+Thanks, this was very useful. I've been looking for a way of taking stdin
+for generating diffs (e.g. copying & pasting from different sources) in
+vimdiff (though this should be applicable elsewhere too). I found putting
+a dummy command (i.e. one with no output) in the parenthesis to be the
+best solution...
+
+$ vimdiff <(echo) <(cat /dev/null)
+
+Proceed to paste whatever you want to compare into the two panes..
+#2 George Avasar
+in ls -c1, what is the purpose of the one "1"?
+If you want it ordered by ctime, why not just -c?
+#3 deby
+"diff -rq dir_1  dir_2"  does prety the same to compare directories and
+files, and if it's just dates of files, try whith

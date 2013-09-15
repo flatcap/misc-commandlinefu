@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        eightmillion
+      </div>
+      <div class='summary'>
+        Find all the links to a file
+      </div>
+      <div class='command'>
+        find -L / -samefile /path/to/file -exec ls -ld {} +
+      </div>
+      <div class='desc'>
+        <p>
+          This command finds and prints all the symbolic and hard links to a file. Note that the file argument itself be a link and it will find the original file as well.
+        </p>
+        <p>
+          You can also do this with the inode number for a file or directory by first using stat or ls or some other tool to get the number like so:
+        </p><code>stat -Lc %i file</code>
+        <p>
+          or
+        </p><code>ls -Hid file</code>
+        <p>
+          And then using:
+        </p><code>find -L / -inum INODE_NUMBER -exec ls -ld {} +</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='text'>
+        <p>
+          'find' has a -ls option, which will print the results in 'ls -dils'
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        eightmillion
+      </div>
+      <div class='text'>
+        <p>
+          I'm aware of that. I'm using -exec here because ls shows where symlinks point. -ls doesn't.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Mozai
+      </div>
+      <div class='text'>
+        <p>
+          I didn't know about "-exec _command_ {} +" instead of "-exec _command_ {} \;" Good to know.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        alperyilmaz
+      </div>
+      <div class='summary'>
+        exclude a column with cut
+      </div>
+      <div class='command'>
+        cut -f5 --complement
+      </div>
+      <div class='desc'>
+        <p>
+          Show all columns except 5th. This might help you save some typing if you are trying to exclude some columns from the output.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        zlemini
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/6872/exclude-a-column-with-awk" title="Find out what others think of this command">exclude a column with awk</a>
+      </div>
+      <div class='command'>
+        awk '{ $5=""; print }' file
+      </div>
+      <div class='desc'>
+        <p>
+          Here's an awk alternative, for those lacking the version of cut with the --complement argument.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        hoberion
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/3582/print-all-except-first-collumn" title="Find out what others think of this command">print all except first collumn</a>
+      </div>
+      <div class='command'>
+        awk '{$1=""; print}'
+      </div>
+    </div>
+  </body>
+</html>

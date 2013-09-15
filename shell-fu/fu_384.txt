@@ -1,0 +1,21 @@
+Tip #384 / BBC Weather 
+
+Go to [http://www.bbc.co.uk/cgi-perl/weather/search/new_search.pl] and
+search for your location. Copy the link to the 3 day forecast feed, for
+example [http://feeds.bbc.co.uk/weather/feeds/rss/5day/world/0105.xml].
+Then just put that link into the following command to get a quick command
+line weather forecast.
+
+wget -q -O - http://feeds.bbc.co.uk/weather/.../XXXXX.xml | grep title | sed -e "s/
+<[^>]*>//g" -e "s/°//g" | egrep "^[A-Z]"
+Example:
+$ wget -q -O - http://feeds.bbc.co.uk/weather/feeds/rss/5day/world/0105.xml | grep title | sed -e "s/
+<[^>]*>//g" -e "s/°//g" | egrep "^[A-Z]"
+BBC - Weather Centre - Forecast for San Francisco, United States of America
+Tuesday: sunny, Max Temp: 22C (72F), Min Temp: 13C (55F)
+Wednesday: sunny, Max Temp: 22C (72F), Min Temp: 15C (59F)
+Thursday: sunny, Max Temp: 25C (77F), Min Temp: 14C (57F)
+
+#1 Gene
+Just a note: where it shows the degree sign in this command string I used
+the Unicode character:  &#xB0

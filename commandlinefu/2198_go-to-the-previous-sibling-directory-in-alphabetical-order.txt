@@ -1,0 +1,16 @@
+Go to the previous sibling directory in alphabetical order
+
+Terminal - Go to the previous sibling directory in alphabetical order
+cd ../"$(ls -F ..|grep '/'|grep -B1 `basename $PWD`|head -n 1)"
+
+User: gwiener
+Go to the previous sibling directory in alphabetical order
+
+Based on linkinpark342 suggestion.
+
+Sometimes you have to browse your way through a lot of sub-directories.
+This command cd to the previous sub-directory in alphabetical order. For
+example, if you have the directories "lectures/01-intro",
+"lectures/02-basic", "lectures/03-advanced" and so on, and your PWD is
+"02-basic", it jumps to "01-intro".
+

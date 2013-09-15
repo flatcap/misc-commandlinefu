@@ -1,0 +1,14 @@
+va - alias for editing aliases
+
+alias va='vi ~/.aliases; source ~/.aliases && echo "aliases sourced"'
+
+When setting up a new aliases file, or having creating a new file.. About
+every time after editing an aliases file, I source it. This alias makes
+editing alias a bit easier and they are useful right away. Note if the
+source failed, it will not echo "aliases sourced".
+
+Sub in vi for your favorite editor, or alter for ksh, sh, etc.
+
+What others think
+
+Something similar to vipw or visudo, I suppose?

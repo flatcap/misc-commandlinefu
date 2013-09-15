@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        bhepple
+      </div>
+      <div class='summary'>
+        silent/shh - shorthand to make commands really quiet
+      </div>
+      <div class='command'>
+        silent(){ $@ &gt; /dev/null 2&gt;&amp;1; }; alias shh=silent
+      </div>
+      <div class='desc'>
+        <p>
+          Sometimes I just want to run a command quietly but all that keyboard shifting makes my fingers hurt. This little function does the job eg.:
+        </p><code>if shh type less; then PAGER=less; fi</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          Nice idea, but why bother with the alias? Why not just call the function "ssh"?
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        bhepple
+      </div>
+      <div class='text'>
+        <p>
+          For clarity? 'silent' is a bit more explicit than 'shh'.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        mobilediesel
+      </div>
+      <div class='text'>
+        <p>
+          Being dyslexic, it took a few minutes to figure out that you weren't doing something odd with ssh!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

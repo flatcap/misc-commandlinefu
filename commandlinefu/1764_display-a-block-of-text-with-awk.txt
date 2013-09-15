@@ -1,0 +1,90 @@
+Display a block of text with AWK
+
+Terminal - Display a block of text with AWK
+awk '/start_pattern/,/stop_pattern/' file.txt
+
+User: atoponce
+Display a block of text with AWK
+
+I find this terribly useful for grepping through a file, looking for just
+a block of text. There's "grep -A # pattern file.txt" to see a specific
+number of lines following your pattern, but what if you want to see the
+whole block? Say, the output of "dmidecode" (as root):
+
+dmidecode | awk '/Battery/,/^$/'
+
+Will show me everything following the battery block up to the next block
+of text. Again, I find this extremely useful when I want to see whole
+blocks of text based on a pattern, and I don't care to see the rest of the
+data in output. This could be used against the '/etc/securetty/user' file
+on Unix to find the block of a specific user. It could be used against
+VirtualHosts or Directories on Apache to find specific definitions. The
+scenarios go on for any text formatted in a block fashion. Very handy.
+
+
+
+sed -n /start_pattern/,/stop_pattern/p file.txt
+
+User: pipping
+Display a block of text with AWK
+vim -e -s -c 'g/start_pattern/+1,/stop_pattern/-1 p' -cq file.txt
+
+ $cat file.txt
+ begin
+ here too
+ start_pattern
+ pipo
+ et
+ molo
+ font
+ du
+ ski
+ stop_pattern
+ plus
+ more
+ here
+
+ $vim -e -s -c 'g/start_pattern/+1,/stop_pattern/-1 p' -cq file.txt
+ pipo
+ et
+ molo
+ font
+ du
+ ski
+
+User: syladmin
+Display a block of text with vim with offset, like with AWK
+
+By using vim, you can also filter content on stdout, using vim's extra
+power, like search pattern offset!
+
+No more awk of course, sorry.
+
+details :
+
+-e ex mode
+
+-s silent
+
+-c 'ex command' : global + start and end pattern + offset print (p)
+
+-cq : quit
+
+
+Very nice.
+
+dmidecode | awk '/Core/,/^$/'
+Comment by Williebee 80 weeks and 4 days ago
+
+Awesome! Awk is such a powerful tool and I always wish I knew it better.
+
+Comment by philiph 80 weeks and 3 days ago
+
+Thanks a lot
+
+Comment by megerdin 80 weeks and 3 days ago
+
+Nice! I like using this for xml files.
+
+Comment by tajohnson 74 weeks and 5 days ago
+

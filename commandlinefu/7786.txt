@@ -1,0 +1,7 @@
+create shortcut keys in bash
+
+bind -x '"\C-p"':pwd
+
+What others think
+
+Very Neat. Control + p executes pwd

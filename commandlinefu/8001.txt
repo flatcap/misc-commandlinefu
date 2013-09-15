@@ -1,0 +1,44 @@
+cd to (or operate on) a file across parallel directories
+
+cd ${PWD/a/b}
+
+[root@centos manifests]# pwd
+/etc/puppet/modules/nfs/manifests
+[root@centos manifests]# cd ${PWD/nfs/packages}
+[root@centos manifests]# pwd
+/etc/puppet/modules/packages/manifests
+
+.. or operate on a file in parallel directory
+[root@centos manifests]# vi ${PWD/packages/nfs}/init.pp
+[root@centos manifests]# cp -a ${PWD/packages/nfs}/init.pp .
+
+This is useful for quickly jumping around branches in a file system, or
+operating on a parellel file.
+
+This is tested in bash. cd to (substitute in PWD, a for b) where PWD is
+the bash environmental variable for the "working directory"
+
+What others think
+
+Thanks for posting this command. I'm sorry, but I can't understand what it
+does. Could you share some use cases?
+
+I updated the comment for this.
+
+in bash - PWD is the working directory.
+
+To test -
+
+mkdir -p /tmp/a/b/cow/d
+
+mkdir -p /tmp/a/b/fish/d
+
+cd /tmp/a/b/cow/d; pwd
+
+where are you?
+
+cd ${PWD/cow/fish}; pwd
+
+where are you now?
+
+Thanks! I didn't know about the ${PWD/cow/fish} substitution.

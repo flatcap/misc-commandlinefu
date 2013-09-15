@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        oernii2
+      </div>
+      <div class='summary'>
+        Print full LVM LV paths (for copy&amp;paste)
+      </div>
+      <div class='command'>
+        lvs | awk '{printf("/dev/%- 40s %-7s %10s %20s %6s %5s %5s %5s %5s\n", $2 "/" $1, $3, $4, $5, $6, $7, $8, $9, $10)}'
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        f4m8
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9857/print-full-lvm-lv-paths-for-copypaste" title="Find out what others think of this command">Print full LVM LV paths (for copy&amp;paste)</a>
+      </div>
+      <div class='command'>
+        vgdisplay -v 2&gt;/dev/null | grep "^ LV Name" | while read A B LVDEV; do echo $LVDEV; done
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          If you just after the lvm paths, there's a simpler way:
+        </p><code>lvs -o lv_path --noheadings</code>
+        <p>
+          You can reproduce the output of your command with the following:
+        </p><code>lvs -o lv_path,lv_attr,lv_size,origin,snap_percent,move_pv,mirror_log,copy_percent,convert_lv</code>
+        <p>
+          The lvm tools are very versatile. You can select which fields are displayed (with --fields or -o), and sort (with --sort or -O).
+        </p>
+        <p>
+          See the man pages for lvs, pvs and vgs for a list of all the output fields.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        f4m8
+      </div>
+      <div class='text'>
+        <p>
+          @flatcap: My debian squeeze "lvs" hasn't the lv_path option available.
+        </p>
+        <p>
+          debian package lvm2 version 2.02.66-5
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          @f4m8: Ah, shame. Fedora 16 is using lvm 2.02.86(2) (2011-07-08).
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

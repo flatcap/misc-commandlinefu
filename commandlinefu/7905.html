@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        olorin
+      </div>
+      <div class='summary'>
+        Console clock -- within screen
+      </div>
+      <div class='command'>
+        echo 'hardstatus alwayslastline " %d-%m-%y %c:%s | %w"' &gt;&gt; $HOME/.screenrc; screen
+      </div>
+      <div class='desc'>
+        <p>
+          Configures screen to always display the clock in the last line (has to be configured only once).
+        </p>
+        <p>
+          After that you not only have got the possibility to detach sessions and run them in background, but also have got a nice clock permanently on your screen.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        sraeder
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7868/console-clock" title="Find out what others think of this command">Console clock</a>
+      </div>
+      <div class='command'>
+        yes "echo -ne '\r'\`date\`;sleep 1" | sh
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        DaveQB
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7898/console-clock" title="Find out what others think of this command">Console clock</a>
+      </div>
+      <div class='command'>
+        watch -n1 'date "+%T"'
+      </div>
+      <div class='sample'>
+        <pre>
+Every 1.0s: date "+%T"                                                                                                                                                                    
+
+11:33:02
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          A console clock with the current time.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        lkjoel
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7900/console-clock-revised" title="Find out what others think of this command">Console clock -- Revised</a>
+      </div>
+      <div class='command'>
+        yes 'clear;printf "\n\n\n\n\t\t\t`date`\n";sleep 1' | sh
+      </div>
+      <div class='desc'>
+        <p>
+          This command will automatically clear the old clock time, and show the new clock time.
+        </p>
+        <p>
+          It will also slightly format it.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        oracular
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7901/console-clock" title="Find out what others think of this command">Console clock</a>
+      </div>
+      <div class='command'>
+        watch -t -n1 'date "+%r %F %A"'
+      </div>
+      <div class='sample'>
+        <pre>
+08:03:57 PM 2011-02-15 Tuesday
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Shows a simple clock in the console
+        </p>
+        <p>
+          -t param removes the watch header
+        </p>
+        <p>
+          Ctrl-c to exit
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        nkoehring
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7897/console-clock" title="Find out what others think of this command">Console clock</a>
+      </div>
+      <div class='command'>
+        while sleep 1; do echo -n "\r`date`"; done
+      </div>
+      <div class='desc'>
+        <p>
+          Does the same but without a pipe and a new shell.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

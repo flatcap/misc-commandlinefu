@@ -1,0 +1,7 @@
+Remove new lines
+
+xargs < [inputfile]
+
+[root@server ~]#  xargs < removehtml.txt
+xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
+<span>In order to configure an WIndows 2008 R2 Server you will need to make a number of changes to the registry. This tutorial will show you both the settings for configuring the NTP Server in addition to the settings for the clients. <h4 class=ecxMsoNormal><span><strong>

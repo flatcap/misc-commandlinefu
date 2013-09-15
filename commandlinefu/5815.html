@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        AskApache
+      </div>
+      <div class='summary'>
+        Advanced LS Output using Find for Formatted/Sortable File Stat info
+      </div>
+      <div class='command'>
+        find $PWD -maxdepth 1 -printf '%.5m %10M %#9u:%-9g %#5U:%-5G [%AD | %TD | %CD] [%Y] %p\n'
+      </div>
+      <div class='sample'>
+        <pre>
+$ find $PWD -maxdepth 1 -printf '%.5m %10M %#9u:%-9g %#5U:%-5G  [%AD | %TD | %CD]  [%Y] %p\n' | sort -rgbS 50%
+00761 drwxrw---x  askapache:askapache    777:666    [06/10/10 | 06/10/10 | 06/10/10]  [d] /web/cg/tmp
+00755 drwxr-xr-x  askapache:askapache    777:666    [02/10/10 | 05/21/10 | 05/25/10]  [d] /web/cg/java
+00701 drwx-----x  askapache:askapache    777:666    [06/10/10 | 06/10/10 | 06/10/10]  [d] /web/cg/askapache-m
+00644 -rw-r--r--  askapache:askapache    777:666    [02/10/10 | 01/12/10 | 06/01/10]  [f] /web/cg/.htaccess
+
+
+$ find $PWD -maxdepth 1 -printf '%.5m %10M %#9u:%-9g %#5U:%-5G  [%AD | %TD | %CD]  [%Y] %p\n'
+00644 -rw-r--r--  askapache:askapache    777:666    [03/22/10 | 03/22/10 | 05/25/10]  [f] /h/wireshark/cmdarg_err.h
+00755 drwxr-xr-x  askapache:askapache    777:666    [03/22/10 | 03/22/10 | 05/25/10]  [d] /h/wireshark/codecs
+00644 -rw-r--r--  askapache:askapache    777:666    [03/22/10 | 03/22/10 | 05/25/10]  [f] /h/wireshark/color.h
+00644 -rw-r--r--  askapache:askapache    777:666    [03/22/10 | 03/22/10 | 05/25/10]  [f] /h/wireshark/colorfilters
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          I love this function because it tells me everything I want to know about files, more than stat, more than ls. It's very useful and infinitely expandable.
+        </p><code>find $PWD -maxdepth 1 -printf '%.5m %10M %#9u:%-9g %#5U:%-5G [%AD | %TD | %CD] [%Y] %p\n' | sort -rgbS 50%</code>
+        <p>
+          00761 drwxrw---x askapache:askapache 777:666 [06/10/10 | 06/10/10 | 06/10/10] [d] /web/cg/tmp
+        </p>
+        <p>
+          The key is:
+        </p>
+        <p>
+          # -printf '%.5m %10M %#9u:%-9g %#5U:%-5G [%AD | %TD | %CD] [%Y] %p\n'
+        </p>
+        <p>
+          which believe it or not took me hundreds of tweaking before I was happy with the output.
+        </p>
+        <p>
+          You can easily use this within a function to do whatever you want.. This simple function works recursively if you call it with -r as an argument, and sorts by file permissions.
+        </p><code>lsl(){ O="-maxdepth 1";sed -n '/-r/!Q1'&lt;&lt;&lt;$@ &amp;&amp;O=;find $PWD $O -printf '%.5m %10M %#9u:%-9g %#5U:%-5G [%AD | %TD | %CD] [%Y] %p\n'|sort -rgbS 50%; }</code>
+        <p>
+          Personally I'm using this function because:
+        </p><code>lll () { local a KS="1 -r -g"; sed -n '/-sort=/!Q1' &lt;&lt;&lt; $@ &amp;&amp; KS=`sed 's/.*-sort=\(.*\)/\1/g'&lt;&lt;&lt;$@`;</code> <code>find $PWD -maxdepth 1 -printf '%.5m %10M %#9u:%-9g %#5U:%-5G [%AD | %TD | %CD] [%Y] %p\n'|sort -k$KS -bS 50%; }</code>
+        <p>
+          # i can sort by user
+        </p><code>lll -sort=3</code>
+        <p>
+          # or sort by group reversed
+        </p><code>lll -sort=4 -r</code>
+        <p>
+          # and sort by modification time
+        </p><code>lll -sort=6</code>
+        <p>
+          If anyone wants to help me make this function handle multiple dirs/files like ls, go for it and I would appreciate it.. Something very minimal would be awesome.. maybe like:
+        </p><code>for a; do lll $a; done</code>
+        <p>
+          Note this uses the latest version of GNU find built from source, easy to build from gnu ftp tarball. Taken from my <a href="http://www.askapache.com/linux-unix/bash_profile-functions-advanced-shell.html" rel="nofollow">http://www.askapache.com/linux-unix/bash_profile-functions-advanced-shell.html</a>
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        oernii2
+      </div>
+      <div class='text'>
+        <p>
+          Thx, this looks fantastic.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        AskApache
+      </div>
+      <div class='text'>
+        <p>
+          Yeah I love it.. Here's the main function I use instead of ls, which I save as /usr/local/bin/ll or ~/bin/ll
+        </p><code>#!/bin/sh -r</code> <code>_W=$((${COLUMNS:-80} - 20 ));[[ $# -eq 0 ]] &amp;&amp; command ls -vlaph -w $_W --color=always||for a;do command ls -vlaph -w $_W --color=always "$a";done; exit $?</code>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+Awk one-liner that sorts a css file by selector
+
+Terminal - Awk one-liner that sorts a css file by selector
+awk '/.*{$/{s[$1]=z[$1]=j+0}{l[j++]=$0}END{asorti(s);for(v in
+s){while(l[z[s[v]]]!~/}$/)print l[z[s[v]]++];print"}"ORS}}'
+
+User: pkrumins
+Awk one-liner that sorts a css file by selector
+
+Can you give some examples? It just seems to mangle any CSS I give it.
+
+Comment by flatcap 42 weeks and 1 day ago
+
+input:
+
+h1 {
+
+}
+
+zomg {
+
+color: green;
+
+margin: 1px;
+
+}
+
+body {
+
+color: red;
+
+font-family: Arial;
+
+}
+
+output:
+
+body {
+
+color: red;
+
+font-family: Arial;
+
+}
+
+h1 {
+
+}
+
+zomg {
+
+color: green;
+
+margin: 1px;
+
+}
+
+Comment by pkrumins 42 weeks ago
+

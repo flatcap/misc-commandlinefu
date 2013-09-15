@@ -1,0 +1,101 @@
+Easy and fast access to often executed commands that are very long and complex.
+
+Terminal - Easy and fast access to often executed commands that are very
+long and complex.
+some_very_long_and_complex_command # label
+
+User: Jamol
+Easy and fast access to often executed commands that are very long and
+complex.
+
+When using reverse-i-search you have to type some part of the command that
+you want to retrieve. However, if the command is very complex it might be
+difficult to recall the parts that will uniquely identify this command.
+Using the above trick it's possible to label your commands and access them
+easily by pressing ^R and typing the label (should be short and
+descriptive).
+
+UPDATE:
+
+One might suggest using aliases. But in that case it would be difficult to
+change some parts of the command (such as options, file/directory names,
+etc).
+
+I think it might be usefull but i don't understand it. Can you give a more
+specific example?
+
+Comment by loetje 57 weeks and 1 day ago
+
+The part after the '#' isn't executed since it's a comment for bash, while
+that part can be used when searching through the command string.
+
+Comment by jcollado 57 weeks and 1 day ago
+
+coool idea!
+
+Comment by sklm 57 weeks and 1 day ago
+
+simple tagging in bash history, cool!
+
+Comment by alperyilmaz 57 weeks ago
+
+Very creative!! Will use this all the time well done!! :)
+
+Comment by tommed 57 weeks ago
+
+You could also make a function to do this, and save it in either your
+~/.profile file or in another file sourced from that file. The second
+option is nice because you can create a set of libraries with functions
+for particular purposes, and rather than loading them all with .profile,
+include them on demand with eg
+
+source "~/bin/database-functions.bash"
+
+This helps to keep your shell environment lean, because otherwise you
+might end up including a ton of code that you almost never use.
+
+Another option is to make each function a shell script in its own file and
+save them in ~/bin. You can add that directory to your $PATH variable,
+again in ~/.profile, with
+
+echo 'PATH="${PATH}:$HOME/bin"' >>~/.profile
+
+Once this is done and you've logged in again, scripts in your ~/bin
+directory that have been made executable with
+
+chmod u+x ~/bin/"$script_name"
+
+will be available to be used like other system commands.
+
+This would let you use parameters in the same way as a shell script.
+
+Comment by intuited 56 weeks and 3 days ago
+
+great!
+
+Comment by ioggstream 56 weeks and 3 days ago
+
+@intuited
+
+>You could also make a function to do this, and save it in
+
+>either your ~/.profile file
+
+Did you read the UPDATE part in the description? That also applies to what
+you have suggested.
+
+You might only do this when you need that functionality in your programs.
+Do you use the "gmail unread mails" commands here on
+www.commandlinefu.com? Why bother create functions/libraries? Just add
+"#gmail" at the end and you're done.
+
+>because otherwise you might end up including a ton of
+
+>code that you almost never use.
+
+That won't happen, simply because by default the number of commands in
+history is limited. So if you do not (re)use some commands they will be
+"pushed back" by new entered commands and eventually disappear.
+
+Comment by Jamol 56 weeks and 2 days ago
+

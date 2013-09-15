@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        wwest4
+      </div>
+      <div class='summary'>
+        escape any command aliases
+      </div>
+      <div class='command'>
+        \[command]
+      </div>
+      <div class='desc'>
+        <p>
+          e.g. if rm is aliased for 'rm -i', you can escape the alias by prepending a backslash:
+        </p>
+        <p>
+          rm [file] # WILL prompt for confirmation per the alias
+        </p>
+        <p>
+          \rm [file] # will NOT prompt for confirmation per the default behavior of the command
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        mkc
+      </div>
+      <div class='text'>
+        <p>
+          This is particularly useful for 'rm', which many distributions insist on aliasing to 'rm -i' (ignoring the bad habits that this inculcates).
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

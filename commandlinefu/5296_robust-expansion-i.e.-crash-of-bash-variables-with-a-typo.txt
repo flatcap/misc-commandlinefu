@@ -1,0 +1,36 @@
+Robust expansion (i.e. crash) of bash variables with a typo
+
+Terminal - Robust expansion (i.e. crash) of bash variables with a typo
+set -eu
+
+ $ cat safe-cacheclean.sh
+ #!/bin/bash
+
+ set -eu
+ CACHEDIR=mycache
+ # a dangerous-looking typo, is /bin going to disappear:
+ rm -rf "$CACHEDI/bin"
+
+ $ ./safe-cacheclean.sh
+ ./safe-cacheclean.sh: line 7: CACHEDI: unbound variable
+
+User: wipu
+Robust expansion (i.e. crash) of bash variables with a typo
+
+By default bash expands an unbound variable to an empty string. This can
+be dangerous, if a critical variable name (a path prefix for example) has
+a typo. The -u option causes bash to treat this as an error, and the -e
+option causes it to exit in case of an error. These two together will make
+your scripts a lot safer against typos.
+
+The default behaviour can be explicitly requested using the ${NAME:-}
+syntax.
+
+A (less explicit) variation: #!/bin/bash -eu
+
+
+The -e and -u options are POSIX standard, so they should work with any
+/bin/sh, not just bash.
+
+Comment by inof 26 weeks and 6 days ago
+

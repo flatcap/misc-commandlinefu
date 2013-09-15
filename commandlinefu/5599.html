@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        voyeg3r
+      </div>
+      <div class='summary'>
+        ping MAC ADDRESS
+      </div>
+      <div class='command'>
+        ping -c 2 `arp-scan 10.1.1.0/24 | awk '/00:1b:11:dc:a9:65/ {print $1}'`
+      </div>
+      <div class='sample'>
+        <pre>
+ping -c 2 `arp-scan 10.1.1.0/24 | awk '/00:1b:11:dc:a9:65/ {print $1}'`
+PING 10.1.1.1 (10.1.1.1) 56(84) bytes of data.
+64 bytes from 10.1.1.1: icmp_seq=1 ttl=64 time=0.911 ms
+64 bytes from 10.1.1.1: icmp_seq=2 ttl=64 time=0.827 ms
+
+--- 10.1.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 0.827/0.869/0.911/0.042 ms
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          # first install arp-scan if not have it
+        </p>
+        <p>
+          arp-scan 10.1.1.0/24 .... show ip+mac in localnet
+        </p>
+        <p>
+          awk '/00:1b:11:dc:a9:65/ {print $1}' .... get ip associated with MAC
+        </p>
+        <p>
+          ` backtick make do command substitution passing ip to command ping
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

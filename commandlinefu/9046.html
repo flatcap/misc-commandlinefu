@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        evandrix
+      </div>
+      <div class='summary'>
+        Grep Recursively Through Single File Extension
+      </div>
+      <div class='command'>
+        grep --include=*.py -lir "delete" .
+      </div>
+      <div class='sample'>
+        <pre>
+./attachment.py
+./tests/functional/testcases.py
+./tests/functional/better_twill.py
+./ticket/report.py
+./ticket/api.py
+./ticket/model.py
+./ticket/roadmap.py
+./ticket/admin.py
+./ticket/default_workflow.py
+./ticket/web_ui.py
+./wiki/api.py
+./wiki/model.py
+./wiki/interwiki.py
+./wiki/admin.py
+./wiki/web_ui.py
+./config.py
+./mimeview/patch.py
+./perm.py
+./versioncontrol/web_ui/log.py
+./versioncontrol/web_ui/changeset.py
+./versioncontrol/svn_fs.py
+./versioncontrol/api.py
+./versioncontrol/svn_prop.py
+./versioncontrol/cache.py
+./versioncontrol/diff.py
+./upgrades/db13.py
+./upgrades/db12.py
+./upgrades/db11.py
+./upgrades/db9.py
+./upgrades/db20.py
+./upgrades/db23.py
+./util/__init__.py
+./cache.py
+./web/session.py
+./web/auth.py
+./test.py
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Trac 0.12.2-stable
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Mozai
+      </div>
+      <div class='text'>
+        <p>
+          the -i isn't necessary -- that's for case-insensitive string matching, has nothing to do with recursion nor filenames.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

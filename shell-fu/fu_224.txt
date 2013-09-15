@@ -1,0 +1,14 @@
+Tip #224 / Add header/footer to command output 
+
+If you want to surround the output of a command by a header or a footer
+try the following:
+
+$ command | cat headerFile - footerFile
+
+For example
+
+$ ls *txt | cat header - footer
+Here is a list of files:
+1.txt
+2.txt
+End of file list

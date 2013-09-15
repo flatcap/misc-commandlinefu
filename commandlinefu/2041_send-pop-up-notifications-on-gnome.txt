@@ -1,0 +1,50 @@
+Send pop-up notifications on Gnome
+
+Terminal - Send pop-up notifications on Gnome
+notify-send ["<title>"] "<body>"
+
+User: cammarin
+Send pop-up notifications on Gnome
+
+The title is optional.
+
+Options:
+
+-t: expire time in milliseconds.
+
+-u: urgency (low, normal, critical).
+
+-i: icon path.
+
+On Debian-based systems you may need to install the 'libnotify-bin'
+package.
+
+Useful to advise when a wget download or a simulation ends. Example:
+
+wget URL ; notify-send "Done"
+
+Cool, but a more portable way of doing this is using the not so desktop
+dependent xmessage which I think is even more powerful. This will show you
+the gpl license
+
+xmessage -file gpl.txt
+Comment by ubersoldat 76 weeks ago
+
+gmessage is an xmessage clone based on GTK+
+
+Comment by alperyilmaz 75 weeks and 6 days ago
+
+notify-send is quite good. I was ignorant of its existance, I've been
+using something similar written by Miguel Icaza. It's slightly better but
+you have to compile it from source.
+
+http://tirania.org/blog/archive/2004/Mar-11.html
+
+Comment by unixmonkey3402 75 weeks and 6 days ago
+
+notify-send "Fortune" "`fortune`"
+
+Comment by jsiei97 57 weeks and 5 days ago
+wget URL && notify-send "Done" || notify-send "Failed"
+Comment by dennisw 57 weeks and 5 days ago
+

@@ -1,0 +1,50 @@
+Tip #542 / Implementing join in bash 
+
+Implementing "join" in bash (python's join, php's implode, etc.).
+
+NOTE: the $ means "type what follows at your terminal prompt" (some people
+thinks that the $ is part of the command).
+
+$ list_join() {
+local OLDIFS=$IFS
+IFS=${1:?"Missing separator"}; shift
+echo "$*"
+IFS=$OLDIFS
+}
+$ list_join : one two three
+one:two:three
+
+it only works for single characters, so this won't work as expected:
+
+$ list_join ', ' one two three
+one,two,three
+
+:P
+
+also notice that you need to pass the list expanded (hence the name
+"list_join") so if you have an array you do:
+
+$ myarray=(one two three)
+$ list_join : "${myarray[@]}"
+one:two:three
+
+this function is pretty handy to use with fgrep (grep -f); fgrep is faster
+than grep because it does not use regular expressions so unless you
+actually need a regexp it's best to use that instead of normal grep, fgrep
+also accepts several words to search at once and works like an OR
+operation (if you chain several greps you get an AND operation) the only
+problem is that fgrep expects you to separate the words by newlines -quite
+ugly- so you can use the function like this:
+
+$ fgrep "$(list_join $'\n' samus root)" /etc/group
+root::0:root
+bin::1:root,bin,daemon
+daemon::2:root,bin,daemon
+sys::3:root,bin
+adm::4:root,daemon
+disk::6:root
+wheel::10:root,samus
+log::19:root
+audio::92:samus
+optical::93:hal,samus
+storage:x:95:hal,samus

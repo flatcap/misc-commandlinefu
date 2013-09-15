@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        sharfah
+      </div>
+      <div class='summary'>
+        Diff XML files
+      </div>
+      <div class='command'>
+        diffxml() { diff -wb &lt;(xmllint --format "$1") &lt;(xmllint --format "$2"); }
+      </div>
+      <div class='desc'>
+        <p>
+          Diffs two xml files by formatting them first using xmllint and then invoking diff.
+        </p>
+        <p>
+          Usage: diffxml XMLFile1 XMLFile2
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        zlemini
+      </div>
+      <div class='text'>
+        <p>
+          This is useful, cheers.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

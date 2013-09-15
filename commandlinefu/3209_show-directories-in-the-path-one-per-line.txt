@@ -1,0 +1,111 @@
+Show directories in the PATH, one per line
+
+Terminal - Show directories in the PATH, one per line
+echo "${PATH//:/$'\n'}"
+
+ /usr/bin
+ /bin
+ /usr/sbin
+ /sbin
+ /usr/local/bin
+
+User: camspiers
+Show directories in the PATH, one per line
+
+Shorter version.
+
+
+
+
+echo $PATH | tr \: \\n
+
+ /usr/lib/qt-3.3/bin
+ /usr/kerberos/bin
+ /usr/lib/ccache
+ /usr/local/bin
+ /usr/bin
+ /bin
+ /usr/local/sbin
+ /usr/sbin
+ .... (and so on)
+
+User: crk
+Show directories in the PATH, one per line
+
+This version uses Pipes, but is easier for the common user to grasp...
+instead of using sed or some other more complicated method, it uses the tr
+command
+
+( IFS=:; for p in $PATH; do echo $p; done )
+
+ /bin
+ /usr/X11R6/bin
+ /usr/sbin
+ /sbin
+ /usr/bin
+ .
+
+User: haivu
+Show directories in the PATH, one per line
+
+The output of "echo $PATH" is hard to read, this is much easier. The
+parentheses ensure that the change to the input field separator (IFS) only
+happens the the sub shell and not affecting the current shell.
+
+echo src::${PATH} | awk
+'BEGIN{pwd=ENVIRON["PWD"];RS=":";FS="\n"}!$1{$1=pwd}$1!~/^\//{$1=pwd"/"$1}{print
+$1}'
+
+ /tmp/src
+ /tmp
+ /usr/java/jdk1.6.0_11/bin
+ /home/arcege/local/bin
+ /home/arcege/bin
+ /usr/local/sbin
+ /usr/local/bin
+ /usr/sbin
+ /usr/bin
+ /sbin
+ /bin
+ /usr/games
+ /opt/real/RealPlayer
+ /tmp/.
+ /usr/java/apache-ant-1.7.0/bin
+
+User: arcege
+Show directories in the PATH, one per line
+
+Removes trailing newline; colon becomes record separator and newline
+becomes field separator, only the first field is ever printed. Replaces
+empty entries with $PWD. Also prepend relative directories (like ".") with
+the current directory ($PWD). Can change PWD with env(1) to get tricky in
+(non-Bourne) scripts.
+
+print -l $path
+
+User: Mikachu
+Show directories in the PATH, one per line
+
+This doesn't work in bash, but in zsh you can typeset -T to bind a scalar
+variable to an array. $PATH and $path behave this way by default.
+
+
+Shouldn't it be?: echo "${PATH//:/$'\n'}"
+
+Comment by plasticdoc 58 weeks and 6 days ago
+
+Yes, it's like plasticdoc said, if not they will be displayed in one line,
+space separated.
+
+Comment by inkel 58 weeks and 6 days ago
+echo -e "${PATH//:/\n}"
+
+Ya plasticdoc is correct. Using that builtin version is by far the best.
+
+Comment by AskApache 55 weeks and 4 days ago
+
+display only existing+exec with only builtins:
+http://www.commandlinefu.com/commands/view/3535/show-only-existing-executable-dirs-in-path-using-only-builtin-bash-commands
+
+Comment by AskApache 55 weeks and 4 days ago
+

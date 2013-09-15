@@ -1,0 +1,39 @@
+Tip #553 / Remove duplicate files 
+
+The script below will find duplicate files (files with the same md5sum) in
+a specified directory and output a new shell script containing
+commented-out rm statements for deleting them. You can then edit this
+output to decide which to keep.
+
+OUTF=rem-duplicates.sh;
+echo "#! /bin/sh" > $OUTF;
+find "$@" -type f -print0 |
+xargs -0 -n1 md5sum |
+sort --key=1,32 | uniq -w 32 -d --all-repeated=separate |
+sed -r 's/^[0-9a-f]*( )*//;s/([^a-zA-Z0-9./_-])/\\\1/g;s/(.+)/#rm \1/' >> $OUTF;
+chmod a+x $OUTF; ls -l $OUTF
+
+#1 Foo Bar
+While this is useful, it's better to have a dedicated tool for these sort
+of things -- I like fdupes.
+#2 siddharth
+Wow !
+It works Great ...
+#3 g8o
+I made something very similar (.bashrc):
+
+finddoubles()
+{
+   if [ -z "$1" ]
+   then
+       dir="."
+   else
+       dir="$1"
+   fi    
+
+   # FIXME: maybe the first MiB would be enough (gains performance)
+   find "$dir" -type f -size +100k -exec md5sum {} \; |sort|uniq
+--all-repeated=separate --check-chars=32 |awk '
+   BEGIN {count=1;}
+   {if ($1 == ""){count+=1;print $1;}else {$1=""; print count,$0;}}'
+}

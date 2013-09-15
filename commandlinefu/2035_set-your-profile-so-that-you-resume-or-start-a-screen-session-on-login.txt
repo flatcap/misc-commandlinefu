@@ -1,0 +1,17 @@
+Set your profile so that you resume or start a screen session on login
+
+Terminal - Set your profile so that you resume or start a screen session
+on login
+echo "screen -DR" >> ~/.bash_profile
+
+User: sud0er
+Set your profile so that you resume or start a screen session on login
+
+From screen's manpage: "Attach here and now. In detail this means: If a
+session is running, then reattach. If necessary detach and logout remotely
+first. If it was not running create it and notify the user. This is the
+author's favorite."
+
+Toss this in your ~/.bash_profile so that you never have that "oh crap"
+moment where you wanted to run something in screen and didn't.
+

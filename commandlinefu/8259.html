@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        bbelt16ag
+      </div>
+      <div class='summary'>
+        check the filesystem and use a progress bar
+      </div>
+      <div class='command'>
+        e2fsck -C -v /dev/device
+      </div>
+      <div class='desc'>
+        <p>
+          if you happen to start with out the -C switch then you a killall -USR1 e2fsck
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        netizen
+      </div>
+      <div class='text'>
+        <p>
+          Invalid non-numeric argument to -C ("-v")
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        bbelt16ag
+      </div>
+      <div class='text'>
+        <p>
+          e2fsck -f -C 0 /dev/mapper/THRACE--SHARES-movies
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        bbelt16ag
+      </div>
+      <div class='text'>
+        <p>
+          yeah i just figured that out it depends on the version
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

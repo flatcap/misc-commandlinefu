@@ -1,0 +1,40 @@
+resolving basic authentication problem(401) with wget
+
+wget --auth-no-challenge --server-response -O- $url 2>&1 | grep "Cookie" |
+sed "s/^ Set-//g" > cookie.txt; wget --auth-no-challenge --server-response
+--http-user="user" --http-password="pw" --header="$(cat cookie.txt)" -O-
+$url
+
+--2010-12-01 09:18:49--  http://your.url/
+Connecting to ...:80... connected.
+HTTP request sent, awaiting response...
+HTTP/1.1 200 OK
+...
+Content-Type: text/html
+Length: 1715 (1.7K) [text/html]
+Saving to: `STDOUT'
+...
+<HTML>
+...
+
+I have a server with a php requiring basic authentication, like this:
+
+header('WWW-Authenticate: Basic realm="do auth"');
+
+header('HTTP/1.0 401 Unauthorized');
+
+...?>
+
+And the basic authentication in wget do not worked:
+
+wget --auth-no-challenge --http-user="username" --http-password="password"
+-O- "http://url" wget --keep-session-cookies --save-cookies=cookies.txt
+--load-cookies=cokies.txt --http-user="username"
+--http-password="password" -O- "http://url"
+
+I always received the 401 Authorization failed.
+
+The saved cookie is always empty.
+
+With my way, I received the header from the server and save the cookie,
+then resend the session cookie with authentication data

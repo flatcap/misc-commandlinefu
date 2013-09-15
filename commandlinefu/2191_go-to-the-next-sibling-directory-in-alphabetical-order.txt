@@ -1,0 +1,70 @@
+Go to the next sibling directory in alphabetical order
+
+Terminal - Go to the next sibling directory in alphabetical order
+for d in `find .. -mindepth 1 -maxdepth 1 -type d | sort`; do if [[
+`basename $d` > `basename $PWD` ]]; then cd $d; break; fi; done
+
+User: gwiener
+Go to the next sibling directory in alphabetical order
+
+Sometimes you have to browse your way through a lot of sub-directories.
+This command cd to the next sub-directory in alphabetical order. For
+example, if you have the directories "lectures/01-intro",
+"lectures/02-basic", "lectures/03-advanced" and so on, and your PWD is
+"02-basic", it jumps to "03-advanced".
+
+Wow.
+
+Comment by flatcap 73 weeks and 3 days ago
+
+This isn't working for me. Can anyone tell me why? I'm using bash on both
+CygWin and Ubuntu. It doesn't work in either place.
+
+Comment by xizdaqrian 73 weeks and 3 days ago
+
+Okay, got it now. The done is missing from the end of the command
+sequence. "...fi; done" should be on the end.
+
+Comment by xizdaqrian 73 weeks and 3 days ago
+
+about half the characters:
+
+cd ../"$(ls -AF ..|grep '/'|grep -A1 `basename $PWD`|tail -n 1)"
+
+my ls(1) at least says its already sorted alphabetically if no flags are
+given and since files can't have '/' in their names...
+
+Comment by linkinpark342 73 weeks and 3 days ago
+
+ls -v or sort -v would be appropriated here.
+
+Comment by log0 73 weeks and 3 days ago
+
+xizdaqrian - Thanks, I added the "done".
+
+linkinpark342 - I like your solution! Do you mind if I'll post updated
+commands later? It should work for "prev" as well.
+
+Comment by gwiener 73 weeks and 3 days ago
+
+gwiener, go for it. previous directory would just change the -A1 to -B1
+and the tail to head.
+
+cd ../"$(ls -AF ..|grep '/'|grep -B1 `basename $PWD`|head -n 1)"
+Comment by linkinpark342 73 weeks and 3 days ago
+
+If you don't add -v to ls (or sort) you will have the following probleme.
+file100.tex will be listed before file30.tex.
+
+http://www.gnu.org/software/coreutils/manual/html_node/More-details-about-version-sort.html
+
+Comment by log0 73 weeks and 2 days ago
+
+Hi guys, I propose this one :
+
+cd $(printf '%s\n' ../*/ | awk '/'"${PWD##*/}"'/{getline;print;}')
+
+;)
+
+Comment by sputnick 71 weeks and 5 days ago
+

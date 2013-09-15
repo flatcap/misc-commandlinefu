@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        sammcj
+      </div>
+      <div class='summary'>
+        Find out which process uses an old lib and needs a restart after a system update
+      </div>
+      <div class='command'>
+        sudo lsof | grep 'DEL.*lib' | cut -f 1 -d ' ' | sort -u
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        unixmonkey22216
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8579/find-out-which-process-uses-an-old-lib-and-needs-a-restart-after-a-system-update" title="Find out what others think of this command">Find out which process uses an old lib and needs a restart after a system update</a>
+      </div>
+      <div class='command'>
+        lsof | grep 'DEL.*lib' | sort -k1,1 -u
+      </div>
+      <div class='desc'>
+        <p>
+          Shows the full output of lsof.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        leenucks
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8558/show-the-processes-that-use-old-libs-and-need-a-restart" title="Find out what others think of this command">Show the processes that use old libs and need a restart</a>
+      </div>
+      <div class='command'>
+        lsof | grep 'DEL.*lib' | cut -f 1 -d ' ' | sort -u
+      </div>
+      <div class='sample'>
+        <pre>
+# lsof | grep 'DEL.*lib' | cut -f 1 -d ' ' | sort -u
+crond
+mpd
+nginx
+parcellite
+X
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Useful after a complete system update (without a new kernel) when you want to know, which processes need to be restarted
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+See all the commits for which searchstring appear in the git diff
+
+Terminal - See all the commits for which searchstring appear in the git
+diff
+git log -p -z | perl -ln0e 'print if /[+-].*searchedstring/'
+
+User: takeshin
+See all the commits for which searchstring appear in the git diff
+

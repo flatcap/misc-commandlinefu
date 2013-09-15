@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        unixmonkey21861
+      </div>
+      <div class='summary'>
+        pick up 3 lines start at every 5th line of file.txt
+      </div>
+      <div class='command'>
+        sed -n '1~5{N;N;p}' file.txt
+      </div>
+      <div class='sample'>
+        <pre>
+sed '4~5,+1d' file.txt
+1
+2
+3
+6
+7
+8
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          sed '4~5,+1d' file.txt
+        </p>
+        <p>
+          1
+        </p>
+        <p>
+          2
+        </p>
+        <p>
+          3
+        </p>
+        <p>
+          6
+        </p>
+        <p>
+          7
+        </p>
+        <p>
+          8
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+Create key/value pairs in bash
+
+$ hash="foo:bar"; key=${hash%:*}; value=${hash#*:}; echo "Key: $key Value:
+$value"
+
+Key: foo Value: bar
+
+This is a quick and dirty way of creating key/value pairs in bash. Not as
+flexible as an associative array, but often powerful enough to be useful.
+For example, if I want to rename sets of files in a way that I can't do
+with wildcards, I'll create something like 'rename-me.txt'
+
+filename_with_no_pattern:aa.txt\n AnotherPieceOfText:ab.txt\n
+/deeply/nested/file/with/no/pattern.txt:ac.txt\n
+
+Then I'll traverse rename-me.txt with a read loop
+
+cat rename-me.txt | while read line; do old=${line%:*}; new=${line#*:}; mv
+$old $new; done

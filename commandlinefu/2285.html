@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        mohan43u
+      </div>
+      <div class='summary'>
+        urldecoding
+      </div>
+      <div class='command'>
+        sed -e's/%\([0-9A-F][0-9A-F]\)/\\\\\x\1/g' | xargs echo -e
+      </div>
+      <div class='desc'>
+        <code>echo "http%3A%2F%2Fwww.google.com" | sed -e's/%\([0-9A-F][0-9A-F]\)/\\\\\x\1/g' | xargs echo -e</code>
+        <p>
+          <a href="http://www.google.com" rel="nofollow">http://www.google.com</a>
+        </p>
+        <p>
+          Works under bash on linux. just alter the '-e' option to its corresponding equivalence in your system to execute escape characters correctly.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        infinull
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/4151/urldecoding" title="Find out what others think of this command">urldecoding</a>
+      </div>
+      <div class='command'>
+        printf $(echo -n $1 | sed 's/\\/\\\\/g;s/\(%\)\([0-9a-fA-F][0-9a-fA-F]\)/\\x\2/g')
+      </div>
+      <div class='sample'>
+        <pre>
+Hello%20World
+gives
+Hello World
+
+\unescaped!
+gives
+\unescaped!
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          My version uses printf and command substitution ($()) instead of echo -e and xargs, this is a few less chars, but not real substantive difference.
+        </p>
+        <p>
+          Also supports lowercase hex letters and a backslash (\) will make it through unescaped
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        putnamhill
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/4157/urldecoding" title="Find out what others think of this command">urldecoding</a>
+      </div>
+      <div class='command'>
+        perl -pe 's/%([0-9a-f]{2})/sprintf("%s", pack("H2",$1))/eig'
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        pawelb1973
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8472/urldecoding" title="Find out what others think of this command">urldecoding</a>
+      </div>
+      <div class='command'>
+        ls * | while read fin;do fout=$(echo -n $fin | sed -e's/%\([0-9A-F][0-9A-F]\)/\\\\\x\1/g' | xargs echo -e);if [ "$fout" != "$fin" ];then echo "mv '$fin' '$fout'";fi;done | bash -x
+      </div>
+      <div class='desc'>
+        <p>
+          urldecode files in current directrory
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        talkiwalki
+      </div>
+      <div class='text'>
+        <p>
+          hello,i wonder how to do it backwards?
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        talkiwalki
+      </div>
+      <div class='text'>
+        <p>
+          using perl, to encode/decode ::
+        </p><code>echo "$1" | perl -MURI::Escape -lne 'print uri_escape($_)'</code> <code>echo "$1" | perl -MURI::Escape -lne 'print uri_unescape($_)'</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        mohan43u
+      </div>
+      <div class='text'>
+        <p>
+          Well I actually wrote a script for encoding, as a part, dicoding is one functionality of that script, Its looks easy to decode with one command line, thats why I posted in commandlinefu. If you want the entire script, Here is the link, <a href="http://mohan43u.wordpress.com/2009/05/25/shell-script-for-url-encoding-url-decoding/" rel="nofollow">http://mohan43u.wordpress.com/2009/05/25/shell-script-for-url-encoding-url-decoding/</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

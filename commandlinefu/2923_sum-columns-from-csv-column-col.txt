@@ -1,0 +1,22 @@
+Sum columns from CSV column $COL
+
+Terminal - Sum columns from CSV column $COL
+perl -ne 'split /,/ ; $a+= $_[3]; END {print $a."\n";}' -f ./file.csv
+
+User: ioggstream
+Sum columns from CSV column $COL
+
+
+
+awk -F ',' '{ x = x + $4 } END { print x }' test.csv
+
+User: coffeeaddict_nl
+Sum columns from CSV column $COL
+perl -F',' -ane '$a += $F[3]; END { print $a }' test.csv
+
+User: coffeeaddict_nl
+Sum columns from CSV column $COL
+
+More of the same but with more elaborate perl-fu :-)
+
+

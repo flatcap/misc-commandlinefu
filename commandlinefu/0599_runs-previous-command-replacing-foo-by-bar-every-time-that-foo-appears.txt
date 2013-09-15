@@ -1,0 +1,54 @@
+Runs previous command replacing foo by bar every time that foo appears
+
+Terminal - Runs previous command replacing foo by bar every time that foo
+appears
+!!:gs/foo/bar
+
+User: Tronks
+Runs previous command replacing foo by bar every time that foo appears
+
+Very useful for rerunning a long command changing some arguments globally.
+
+As opposed to ^foo^bar, which only replaces the first occurrence of foo,
+this one changes every occurrence.
+
+This is also very useful for debian aptitude commands:
+
+aptitude search bzr sudo !!:s/search/install
+
+If you do a sudo ^search^install it won't work.
+
+Comment by joem86 84 weeks and 6 days ago
+
+how can we make this print instead of running it? I tried !!:pgs/foo/bar
+and didn't work ;)
+
+Comment by alperyilmaz 80 weeks and 6 days ago
+
+@alperyilmaz Close! You're just missing another colon:
+
+!!:p:gs/foo/bar
+
+Modifiers ('gs' and 'p' here) are colon-separated. It seems as though
+there should be a colon between the 'g' and 's' too, but we leave it out
+because the 'g' only works in conjunction with 's'. If you used it on its
+own it would have no effect.
+
+http://www.gnu.org/software/bash/manual/html_node/Modifiers.html
+
+Comment by fletch 80 weeks and 3 days ago
+
+@fletch: thanks, this will save me some typing..
+
+Comment by alperyilmaz 80 weeks and 1 day ago
+
+why not just
+
+^foo^bar
+Comment by linuxswords 63 weeks and 4 days ago
+
+what about iterative operations where you replace foo with foo1, then foo1
+with foo2, etc ?
+
+Comment by vRobM 7 weeks and 4 days ago
+

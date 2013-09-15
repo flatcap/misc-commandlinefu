@@ -1,0 +1,4 @@
+SED - Substitute string in next line
+
+sed -i.backup '/patter/{n;s/foo/bar/g}' file
+

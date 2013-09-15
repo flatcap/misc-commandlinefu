@@ -1,0 +1,68 @@
+Efficiently extract lines between markers
+
+Terminal - Efficiently extract lines between markers
+sed -n '/START/,${/STOP/q;p}'
+
+ Match near start of file
+ --
+ $ time (sed -n '/,166499.248,/,/!./{/166499/d;/RTKCOMMAND/q;/#BESTPOS/p}' ../UUT1.ASC > temp_time_file)
+
+ real    0m0.093s
+ user    0m0.030s
+ sys     0m0.030s
+
+ $  time (sed -n '/,166499.248,/,/#RTKCOMMAND/{/#BESTPOS/p}' ../UUT1.ASC > temp_time_file)
+
+ real    0m2.015s
+ user    0m0.484s
+ sys     0m0.061s
+
+ $ time (grep -A 2500 -m 1 ",166499.248," ../UUT1.ASC | grep -A 2500 -m  1 '\#RTKCOMMAND' | grep '\#BESTPOS' > temp_time_file)
+
+ real    0m0.171s
+ user    0m0.122s
+ sys     0m0.060s
+ --
+
+ Match near end of file
+ --
+ $ time (sed -n '/,230399.072,/,/#RTKCOMMAND/{/#BESTPOS/p}' ../UUT1.ASC > temp_time_file)
+
+ real    0m2.000s
+ user    0m0.390s
+ sys     0m0.046s
+
+ $ time (sed -n '/,230399.072,/,/!./{/,230399.072,/d;/RTKCOMMAND/q;/#BESTPOS/p}' ../UUT1.ASC > temp_time_file)
+
+ real    0m2.015s
+ user    0m0.468s
+ sys     0m0.076s
+
+ $ time (grep -A 2500 -m 1 ",230399.072," ../UUT1.ASC | grep -A 2500 -m  1 '\#RTKCOMMAND' | grep '\#BESTPOS' > temp_time_file)
+
+ real    0m1.703s
+ user    0m0.137s
+ sys     0m0.076s
+ --
+
+User: mungewell
+Efficiently extract lines between markers
+
+GNU Sed can 'address' between two regex, but it continues parsing through
+to the end of the file. This slight alteration causes it to terminate
+reading the input file once the STOP match is made.
+
+In my example I have included an extra '/START/d' as my 'start' marker
+line contains the 'stop' string (I'm extracting data between 'resets' and
+using the time stamp as the 'start').
+
+My previous coding using grep is slightly faster near the end of the file,
+but overall (extracting all the reset cycles in turn) the new SED method
+is quicker and a lot neater.
+
+
+if you want the line with the STOP marker output as well you can use
+
+sed -n '/START/,/!./{p;/STOP/q}'
+Comment by mungewell 68 weeks and 5 days ago
+

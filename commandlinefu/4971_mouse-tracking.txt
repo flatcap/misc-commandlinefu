@@ -1,0 +1,17 @@
+Mouse Tracking
+
+Terminal - Mouse Tracking
+while true; do xdotool getmouselocation | sed 's/x:\(.*\) y:\(.*\)
+screen:.*/\1, \2/' >> ./mouse-tracking; sleep 10; done
+
+User: matthewbauer
+Mouse Tracking
+
+Will track your mouse and save it to a file.
+
+You can use gnuplot to graph it:
+
+gnuplot -persist <(echo "unset key;unset border;unset yzeroaxis;unset
+xtics;unset ytics;unset ztics;plot './mouse-tracking' with points lt 1 pt
+6 ps variable")
+

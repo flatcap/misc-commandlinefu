@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        matthewdavis
+      </div>
+      <div class='summary'>
+        Find files that were modified by a given command
+      </div>
+      <div class='command'>
+        touch /tmp/file ; $EXECUTECOMMAND ; find /path -newer /tmp/file
+      </div>
+      <div class='sample'>
+        <pre>
+[root@localhost ~]# touch /tmp/service
+[root@localhost ~]# service cups restart
+Stopping cups:                                             [  OK  ]
+Starting cups:                                             [  OK  ]
+[root@localhost ~]# find /var -newer /tmp/service
+/var/cache/cups/job.cache
+/var/lock/subsys
+/var/lock/subsys/cups
+/var/log/audit/audit.log
+/var/run
+/var/run/cupsd.pid
+/var/run/cups
+/var/run/cups/cups.sock
+/var/run/cups/certs
+/var/run/cups/certs/0
+[root@localhost ~]#
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          This has helped me numerous times trying to find either log files or tmp files that get created after execution of a command. And really eye opening as to how active a given process really is. Play around with -anewer, -cnewer &amp; -newerXY
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        eitland
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/3272/find-files-that-were-modified-by-a-given-command" title="Find out what others think of this command">Find files that were modified by a given command</a>
+      </div>
+      <div class='command'>
+        strace &lt;name of the program&gt;
+      </div>
+      <div class='desc'>
+        <p>
+          Traces the system calls of a program. See <a href="http://linuxhelp.blogspot.com/2006/05/strace-very-powerful-troubleshooting.html" rel="nofollow">http://linuxhelp.blogspot.com/2006/05/strace-very-powerful-troubleshooting.html</a> for more information.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        bwoodacre
+      </div>
+      <div class='text'>
+        <p>
+          Great command!
+        </p>
+        <p>
+          Another way could also use strace. strace records all system calls made, and you can even attach it to running processes:
+        </p><code>strace -o straceoutput.txt $COMMAND</code>
+        <p>
+          also use -p $PID to attach to an already-running program. Also, use ltrace to trace library calls.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        zlemini
+      </div>
+      <div class='text'>
+        <p>
+          Prefer to use lsof -p, see command:
+        </p>
+        <p>
+          diff
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        zlemini
+      </div>
+      <div class='text'>
+        <code>diff &lt;(lsof -p 1234) &lt;(sleep 10; lsof -p 1234)</code>
+      </div>
+    </div>
+  </body>
+</html>

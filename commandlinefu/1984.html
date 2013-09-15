@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        unixmonkey3402
+      </div>
+      <div class='summary'>
+        Given process ID print its environment variables
+      </div>
+      <div class='command'>
+        sed 's/\o0/\n/g' /proc/INSERT_PID_HERE/environ
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        axii
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9278/given-process-id-print-its-environment-variables" title="Find out what others think of this command">Given process ID print its environment variables</a>
+      </div>
+      <div class='command'>
+        cat /proc/PID/environ | tr '\0' '\n'
+      </div>
+      <div class='desc'>
+        <p>
+          Same as previous but without fugly sed =x
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        axii
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9280/given-process-id-print-its-environment-variables" title="Find out what others think of this command">Given process ID print its environment variables</a>
+      </div>
+      <div class='command'>
+        ps ewwo command PID | tr ' ' '\n' | grep \=
+      </div>
+      <div class='desc'>
+        <p>
+          Same as previous but compatible with BSD/IPSO
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

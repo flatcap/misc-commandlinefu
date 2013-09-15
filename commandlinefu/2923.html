@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        ioggstream
+      </div>
+      <div class='summary'>
+        Sum columns from CSV column $COL
+      </div>
+      <div class='command'>
+        perl -ne 'split /,/ ; $a+= $_[3]; END {print $a."\n";}' -f ./file.csv
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        coffeeaddict_nl
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/2967/sum-columns-from-csv-column-col" title="Find out what others think of this command">Sum columns from CSV column $COL</a>
+      </div>
+      <div class='command'>
+        awk -F ',' '{ x = x + $4 } END { print x }' test.csv
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        coffeeaddict_nl
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/2973/sum-columns-from-csv-column-col" title="Find out what others think of this command">Sum columns from CSV column $COL</a>
+      </div>
+      <div class='command'>
+        perl -F',' -ane '$a += $F[3]; END { print $a }' test.csv
+      </div>
+      <div class='desc'>
+        <p>
+          More of the same but with more elaborate perl-fu :-)
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

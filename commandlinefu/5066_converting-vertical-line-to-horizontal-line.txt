@@ -1,0 +1,13 @@
+converting vertical line to horizontal line
+
+Terminal - converting vertical line to horizontal line
+tr '\n' '\t' < inputfile
+
+User: eastwind
+converting vertical line to horizontal line
+
+this will convert the entire file (no matter how many lines it contains)
+into a single line...
+
+Comment by stevev 29 weeks and 4 days ago
+

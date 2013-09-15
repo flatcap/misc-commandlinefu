@@ -1,0 +1,77 @@
+Remove all but one specific file
+
+rm -f !(survivior.txt)
+
+Alternatives
+
+There are 8 alternatives - vote for the best!
+
+Terminal - Alternatives
+rm !(*.foo|*.bar|*.baz)
+
+Example: rm !(*.tex|*.pdf) deletes all except the tex and pdf files.
+
+Deletes all files in a folder that are NOT *.foo, *.bar or *.baz files.
+Edit the pattern inside the brackets as you like.
+
+find . ! -name <FILENAME> -delete
+
+it will remove everything except the file names matching you can use also
+use wildcards
+
+( shopt -s extglob; rm !(<PATTERN>) )
+
+Remove everything except that file with shell tricks inside a subshell to
+avoid changes in the environment.
+
+help shopt
+rm !(file_to_keep_undeleted)
+
+Go to tmp :
+
+cd /tmp; mkdir retmp; cd retmp
+
+Create 10 files :
+
+for i in {1..10}; do touch test$i; done
+
+Remove all files except test10 :
+
+rm !(test10)
+
+ls | egrep -v "[REGULAR EXPRESSION]" | xargs rm -v
+
+This is a slight variation of an existing submission, but uses regular
+expression to look for files instead. This makes it vastly more versatile,
+and one can easily verify the files to be kept by running ls | egrep
+"[REGULAR EXPRESSION]"
+
+What others think
+
+Thx! Usual I done it with
+
+find . ! -name ...
+
+Nice tip.
+
+Humph? It does not work in Z-Shell neither in BASH. Am I doing something
+wrong?
+
+Got it working in BASH. It's all about 'extglob' option???set it:
+
+shopt -s extglob
+
+and command would work.
+
+Still looking for solution for ZSH.
+
+For zsh rm -f ^survivior.txt will do but it requires extended_glob
+
+Thanks, RanyAlbeg. That really works!
+
+You welcome ;)
+
+I never feel comfortable specifying the file I want to keep in an rm
+command.
+
+Use backups a few times and then you'll get used to it.

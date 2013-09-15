@@ -1,0 +1,55 @@
+List open files that have no links to them on the filesystem
+
+Terminal - List open files that have no links to them on the filesystem
+lsof +L1
+
+ COMMAND     PID   USER   FD   TYPE DEVICE    SIZE NLINK   NODE NAME
+ a-proc    23521   root    3u   REG    8,1 5595979     0 353398 /some/logfile (deleted)
+
+User: dopeman
+List open files that have no links to them on the filesystem
+
+I have come across a situation in the past where someone has unlinked a
+file by running an 'rm' command against it while it was still being
+written to by a running process.
+
+The problem manifested itself when a 'df' command showed a filesystem at
+100%, but this did not match the total value of a 'du -sk *'.
+
+When this happens, the process continues to write to the file but you can
+no longer see the file on the filesystem. Stopping and starting the
+process will, more often than not, get rid of the unlinked file, however
+this is not always possible on a live server.
+
+When you are in this situation you can use the 'lsof' command above to get
+the PID of the process that owns the file (in the sample output this is
+23521).
+
+Run the following command to see a sym-link to the file (marked as
+deleted):
+
+cd /proc/23521/fd && ls -l
+
+Truncate the sym-link to regain your disk space:
+
+> /proc/23521/fd/3
+
+I should point out that this is pretty brutal and *could* potentially
+destabilise your system depending on what process the file belongs to that
+you are truncating.
+
+
+I normally use "lsof | grep deleted" for this then restart the process
+with the file open to resolve these types of issues.
+
+Files with a link count less than 1 can also mean someone is trying to
+hide something...
+
+Comment by zlemini 13 weeks ago
+
+You can restrict the output to a certain file system, e.g. /var, like
+this:
+
+lsof +aL1 /var
+Comment by inof 12 weeks and 6 days ago
+

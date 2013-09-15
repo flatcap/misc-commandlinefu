@@ -1,0 +1,19 @@
+Find files in multiple TAR files
+
+find . -type f -name "*.tar" -printf [%f]\\n -exec tar -tf {} \; | grep
+-iE "[\[]|<filename>"
+
+[andrew.taylor@localhost ~]$ find . -type f -name "*.tar" -printf [%f]\\n -exec tar -tf {} \; | grep -iE "[\[]|configuration"
+[tar2.tar]
+Platform_Configuration_Guide.pdf
+Product_Management_Configuration_Guide.pdf
+[tar1.tar]
+WMS_Configuration_Guide.pdf
+[tar3.tar]
+Reverse_Logistics_Configuration_Guide.pdf
+
+A quick find command to identify all TAR files in a given path, extract a
+list of files contained within the tar, then search for a given string in
+the filelist. Returns to the user as a list of TAR files found (enclosed
+in []) followed by any matching files that exist in that archive. TAR can
+easily be swapped for JAR if required.

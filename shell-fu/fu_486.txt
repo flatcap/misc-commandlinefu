@@ -1,0 +1,6 @@
+Tip #486 / Convert seconds to Hours, Minutes and Seconds 
+
+echo - | awk -v "S=12345" '{printf "%d:%d:%d",S/(60*60),S%(60*60)/60,S%60}'
+
+#1 maat
+awk '{printf "%d:%d:%d\n",$1/(60*60),$1%(60*60)/60,$1%60}'

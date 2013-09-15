@@ -1,0 +1,53 @@
+Grep by paragraph instead of by line.
+
+Terminal - Grep by paragraph instead of by line.
+grepp() { [ $# -eq 1 ] && perl -00ne "print if /$1/i" || perl -00ne "print
+if /$1/i" < "$2";}
+
+ man perl | grepp Pascal
+     Perl combines (in the author's opinion, anyway) some of the best features of C, sed, awk, and sh, so people familiar with those languages should have little difficulty with it.
+     (Language historians will also note some vestiges of csh, Pascal, and even BASIC-PLUS.)  Expression syntax corresponds closely to C expression syntax.  Unlike most Unix utilities,
+     Perl does not arbitrarily limit the size of your data--if you've got the memory, Perl can slurp in your whole file as a single string.  Recursion is of unlimited depth.  And the
+     tables used by hashes (sometimes called "associative arrays") grow as necessary to prevent degraded performance.  Perl can use sophisticated pattern matching techniques to scan
+     large amounts of data quickly.  Although optimized for scanning text, Perl can also deal with binary data, and can make dbm files look like hashes.  Setuid Perl scripts are safer
+     than C programs through a dataflow tracing mechanism that prevents many stupid security holes.
+
+User: eightmillion
+Grep by paragraph instead of by line.
+
+This is a command that I find myself using all the time. It works like
+regular grep, but returns the paragraph containing the search pattern
+instead of just the line. It operates on files or standard input.
+
+grepp <PATTERN> <FILE>
+
+or
+
+<SOMECOMMAND> | grepp <PATTERN>
+
+Very nice, but can you think of a smart way to highlight the match, too?
+
+Comment by flatcap 39 weeks and 1 day ago
+
+Something like this should operate the similar to "grep --color=auto":
+
+grepp() { [ $# -eq 1 ] && perl -00ne 'if ( /'$1'/i ){my $s = $_;$s =~
+s/'$1'/\033[1;31m$&\033[0m/g; print $s}' || perl -00ne 'if ( /'$1'/i ){my
+$s = $_;$s =~ s/'$1'/\033[1;31m$&\033[0m/g; print $s}' < "$2";}
+
+P.S. @Perl gurus: Suggestions or corrections are very welcome.
+
+Comment by eightmillion 39 weeks and 1 day ago
+
+I just discovered that it fails if there are spaces in the regex. Quoting
+the regex fixes it:
+
+grepp() { [ $# -eq 1 ] && perl -00ne 'if ( /'"$1"'/i ){$s = $_;$s =~
+s/'"$1"'/\033[1;31m$&\033[0m/g; print $s}' || perl -00ne 'if ( /'"$1"'/i
+){$s = $_;$s =~ s/'"$1"'/\033[1;31m$&\033[0m/g; print $s}' < "$2";}
+Comment by eightmillion 39 weeks and 1 day ago
+
+Lovely.
+
+Comment by flatcap 38 weeks and 5 days ago
+

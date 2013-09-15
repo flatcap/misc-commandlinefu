@@ -1,0 +1,62 @@
+run command on a group of nodes in parallel
+
+Terminal - run command on a group of nodes in parallel
+echo -n m{1..5}.cluster.net | xargs -d' ' -n1 -P5 -I{} ssh {} 'uptime'
+
+User: jianingy
+run command on a group of nodes in parallel
+
+
+
+echo "uptime" | pee "ssh host1" "ssh host2" "ssh host3"
+
+User: dooblem
+run command on a group of nodes in parallel
+
+The pee command is in the moreutils package.
+
+echo "uptime" | tee >(ssh host1) >(ssh host2) >(ssh host3)
+
+User: gutoyr
+run command on a group of nodes in parallel
+mussh -h host1 host2 host3 -c uptime
+
+User: george_007
+run command on a group of nodes
+xargs -n1 -P100 -I{} sh -c 'ssh {} uptime >output/{} 2>error/{}' <hostlist
+
+User: dooblem
+run command on a group of nodes in parallel redirecting outputs
+
+Do the same as pssh, just in shell syntax.
+
+Put your hosts in hostlist, one per line.
+
+Command outputs are gathered in output and error directories.
+
+seq 1 5 | parallel ssh {}.cluster.net uptime
+
+User: unixmonkey8046
+run command on a group of nodes in parallel
+
+Parallel is from https://savannah.nongnu.org/projects/parallel/
+
+Other examples would be:
+
+(echo foss.org.my; echo www.debian.org; echo www.freenetproject.org) |
+parallel traceroute
+
+seq -f %04g 0 9999 | parallel -X rm pict{}.jpg
+
+
+pdsh
+
+Comment by wwest4 87 weeks and 2 days ago
+
+It would be more readable using Parallel
+https://savannah.nongnu.org/projects/parallel/
+
+seq 1 5 | parallel ssh {} uptime
+
+Comment by unixmonkey8046 36 weeks and 6 days ago
+

@@ -1,0 +1,27 @@
+Execute most recent command containing search string.
+
+Terminal - Execute most recent command containing search string.
+!?<string>?
+
+ # !?sdb1?
+ cryptsetup luksOpen /dev/sdb1 fs_backup
+ Enter luks passphrase:
+
+ You can add :p at the end to prevent execution and just show you the command.
+ Example:
+ # !?sdb1?:p
+ cryptsetup luksOpen /dev/sdb1 fs_backup
+
+User: din7
+Execute most recent command containing search string.
+
+Execute the most recent command containing search string.
+
+This differs from !string as that only refers to the most recent command
+starting with search string.
+
+
+Only valid for Bash shell
+
+Comment by billbose 48 weeks and 6 days ago
+

@@ -1,0 +1,30 @@
+Notify Gnome user of files modified today
+
+Terminal - Notify Gnome user of files modified today
+OLDIFS=$IFS; IFS=$(echo -en "\n\b"); for f in `find -daystart -mtime 0
+-type f -printf "%f\n"`; do notify-send -t 0 "$f downloaded" ; done;
+IFS=$OLDIFS
+
+ file downloaded
+
+User: spaceyjase
+Notify Gnome user of files modified today
+
+On a Gnome desktop, display a notification that a file modified/created
+today has downloaded. I use this in a script with get_iplayer's -c option
+so I know stuff has finished downloading ;)
+
+The IFS stuff is to handle spaces in the filename. Command has been
+trimmed a bit 'cos I specify a directory arg to 'find'. On Debian-based
+systems you may need to install the 'libnotify-bin' package. Notice
+-daystart is used to tell mtime means 'today' rather than the last 24
+hours.
+
+It ain't perfect but it does the job :P
+
+
+Hmm... ended up with hundreds of individual gnome-notify message boxes, so
+had to exit them all manually. Not quite what I'd hoped.
+
+Comment by OzzyFrank 53 weeks and 4 days ago
+

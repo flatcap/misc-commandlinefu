@@ -1,0 +1,11 @@
+Pipe stdout and stderr, etc., to separate commands
+
+Terminal - Pipe stdout and stderr, etc., to separate commands
+some_command > >(/bin/cmd_for_stdout) 2> >(/bin/cmd_for_stderr)
+
+User: tylerl
+Pipe stdout and stderr, etc., to separate commands
+
+You can use [n]> combined with >(cmd) to attach the various output file
+descriptors to be the input of different commands.
+

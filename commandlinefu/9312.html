@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        ztank1013
+      </div>
+      <div class='summary'>
+        Discovering all open files/dirs underneath a directory
+      </div>
+      <div class='command'>
+        lsof +D <span>&lt;dirname&gt;</span>
+      </div>
+      <div class='desc'>
+        <p>
+          It may be helpful in case you need to umount a directory and some process is preventing you to do so keeping the folder busy. The lsof may process the +D option slowly and may require a significant amount of memory because it will descend the full dir tree. On the other hand it will neither follow symlinks nor other file systems.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

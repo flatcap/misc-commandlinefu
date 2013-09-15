@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        haivu
+      </div>
+      <div class='summary'>
+        Select and Edit a File in the Current Directory
+      </div>
+      <div class='command'>
+        PS3="Enter a number: "; select f in *;do $EDITOR $f; break; done
+      </div>
+      <div class='sample'>
+        <pre>
+$ select f in *;do vim $f; break; done
+1) arguments              5) getopt_homemade.sh    9) remove_from_path.sh
+2) data                   6) getopt_tryout        10) scriptname.sh
+3) for_example            7) getopts_tryout       11) var_substitution.sh
+4) getopt_function.sh     8) parameter_expansion
+#? 4
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          This command displays a simple menu of file names in the current directory. After the user made a choice, the command invokes the default editor to edit that file.
+        </p>
+        <p>
+          * Without the break statement, the select command will loop forever
+        </p>
+        <p>
+          * Setting the PS3 prompt is optional
+        </p>
+        <p>
+          * If the user types an invalid choice (such as the letter q), then the variable $f will become an empty string.
+        </p>
+        <p>
+          * For more information, look up the bash's select command
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        sklm
+      </div>
+      <div class='text'>
+        <p>
+          Interesting. However, need to exclude directories and include hidden files in the listing.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        haivu
+      </div>
+      <div class='text'>
+        <p>
+          If you want to exclude dir and include hidden file, try this:
+        </p><code>PS3="Enter a number: "; select f in $(find . -type f -maxdepth 1);do $EDITOR $f; break; done</code>
+      </div>
+    </div>
+  </body>
+</html>

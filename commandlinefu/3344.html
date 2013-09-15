@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        syladmin
+      </div>
+      <div class='summary'>
+        display an embeded help message from bash script header
+      </div>
+      <div class='command'>
+        [ "$1" == "--help" ] &amp;&amp; { sed -n -e '/^# Usage:/,/^$/ s/^# \?//p' &lt; $0; exit; }
+      </div>
+      <div class='sample'>
+        <pre>
+#!/bin/bash
+#
+# Usage: do someting really funny
+#  --help      This message
+#  --force     force be stronger
+#  --remove    delete whatyou've done, be CAREFULL
+#
+# ex:  myfun  dosomething
+#
+# myfun --force dosomething_REALLY_DO_IT
+#
+
+[ "$1" == "--help" ] &amp;&amp; { sed -n -e '/^# Usage:/,/^$/ s/^# \?//p' &lt; $0; exit; }
+
+echo really funny !
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          With this one liner you can easily output a standard help message using the following convention:
+        </p>
+        <p>
+          Usage: is the start marker
+        </p>
+        <p>
+          Stop at the last #
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        sufoo
+      </div>
+      <div class='text'>
+        <p>
+          Why didn't I think of that? Elegant.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        lbonanomi
+      </div>
+      <div class='text'>
+        <p>
+          This is pickier, but shorter:
+        </p>
+        <p>
+          [ "$1" == "--help" ] &amp;&amp; \
+        </p>
+        <p>
+          awk '/^#: / { print $0 }' $0
+        </p>
+        <p>
+          Start your help message with "#:". Also convenient for embedding other messages in scripts.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+currently mounted filesystems in nice layout
+
+Terminal - currently mounted filesystems in nice layout
+mount | column -t
+
+ /dev/sda1   on  /                         type  ext3        (rw,relatime,errors=remount-ro)
+ tmpfs       on  /lib/init/rw              type  tmpfs       (rw,nosuid,mode=0755)
+ /proc       on  /proc                     type  proc        (rw,noexec,nosuid,nodev)
+ sysfs       on  /sys                      type  sysfs       (rw,noexec,nosuid,nodev)
+ varrun      on  /var/run                  type  tmpfs       (rw,nosuid,mode=0755)
+ varlock     on  /var/lock                 type  tmpfs       (rw,noexec,nosuid,nodev,mode=1777)
+ udev        on  /dev                      type  tmpfs       (rw,mode=0755)
+ tmpfs       on  /dev/shm                  type  tmpfs       (rw,nosuid,nodev)
+ devpts      on  /dev/pts                  type  devpts      (rw,noexec,nosuid,gid=5,mode=620)
+ fusectl     on  /sys/fs/fuse/connections  type  fusectl     (rw)
+ securityfs  on  /sys/kernel/security      type  securityfs  (rw)
+
+User: thechile
+currently mounted filesystems in nice layout
+
+Particularly useful if you're mounting different drives, using the
+following command will allow you to see all the filesystems currently
+mounted on your computer and their respective specs with the added benefit
+of nice formatting.
+
+
+
+
+column -t /proc/mounts
+
+User: unixmonkey5049
+currently mounted filesystems in nice layout
+
+since fuse mounts do not appear in /etc/mtab (fuse can't write there,
+dunno if it would if it could) this is propably a better way.
+
+
+Nice indeed. But some issues when there is whitespaces in mount point.
+
+Comment by CodSpirit 81 weeks and 5 days ago
+
+Ye flipping gods! How did I go twenty years in *nix without finding out
+about column?
+
+Comment by TheMightyBuzzard 81 weeks and 5 days ago
+
+That's what I'm talking about. These sort of commands are what make this
+site shine. Very nice.
+
+Comment by atoponce 81 weeks and 5 days ago
+
+to TheMightyBuzzard : I've found "cd -" and this "columnt -t" today - 18
+years of *nix :-)
+
+Comment by vleolml 74 weeks and 1 day ago
+
+So Coooooooooooooool !!!
+
+Comment by unixmonkey5001 61 weeks and 6 days ago
+

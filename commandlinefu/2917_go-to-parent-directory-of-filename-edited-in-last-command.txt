@@ -1,0 +1,39 @@
+Go to parent directory of filename edited in last command
+
+Terminal - Go to parent directory of filename edited in last command
+cd !$:h
+
+ user@host:/home$ vim /path/to/file.txt
+ user@host:/home$ cd !$:h
+ user@host:/path/to$
+
+User: lingo
+Go to parent directory of filename edited in last command
+
+Uses the last argument of the last executed command, and gets the
+directory name from it.
+
+Use $!:t for the filename alone, without the dirname.
+
+
+
+
+cd `dirname $_`
+
+User: amaymon
+Go to parent directory of filename edited in last command
+
+No idea what I'd use it for offhand but it's short and ugly so what's not
+to love.
+
+Comment by TheMightyBuzzard 61 weeks and 5 days ago
+
+@TheMightyBuzzard I mostly use it to avoid typing a long path twice in
+succession:
+
+cp foo /some/new/long/path/for/foo cd !$:h
+
+(do more stuff to foo)
+
+Comment by fletch 60 weeks and 5 days ago
+

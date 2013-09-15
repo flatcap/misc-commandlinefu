@@ -1,0 +1,11 @@
+Tip #140 / Change extension on a group of files using only bash builtins an 
+
+To change the extension on a group of files using only bash builtins and
+mv:
+
+for i in *.txt; do mv $i ${i%%.txt}.html; done
+
+#1 Samus_
+you forgot the quotes:
+
+ for i in *.txt; do mv "$i" "${i%%.txt}".html; done

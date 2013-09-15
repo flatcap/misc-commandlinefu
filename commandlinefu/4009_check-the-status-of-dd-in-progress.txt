@@ -1,0 +1,58 @@
+check the status of 'dd' in progress
+
+Terminal - check the status of 'dd' in progress
+watch -n 10 killall -USR1 dd
+
+User: Clopnixus
+check the status of 'dd' in progress
+
+
+
+ps auxww |grep " dd " |grep -v grep |awk '{print $2}' |while read pid; do
+kill -USR1 $pid; done
+
+User: nottings
+check the status of 'dd' in progress
+
+Check the status of a 'dd' in progress. useful when creating very large
+dumps and want to see how far along it is. Sending the kill -USR1 forces
+dd to dump it's progress to stdout
+
+while killall -USR1 dd; do sleep 5; done
+
+User: Mikachu
+check the status of 'dd' in progress
+
+Stops when the (last) dd process exits.
+
+killall -INFO dd
+
+ The result of executing "killall -INFO dd" 3 times from a different terminal:
+
+ $> dd if=sample_input_file of=sample_output_file
+ 832320+0 records in
+ 832319+0 records out
+ 426147328 bytes transferred in 21.879276 secs (19477213 bytes/sec)
+ 1048577+0 records in
+ 1048576+0 records out
+ 536870912 bytes transferred in 27.847948 secs (19278652 bytes/sec)
+ 1146881+0 records in
+ 1146880+0 records out
+ 587202560 bytes transferred in 30.464571 secs (19274933 bytes/sec)
+
+User: jearsh
+check the status of 'dd' in progress (OS X)
+
+"killall -USR1 dd" does not work in OS X for me. However, sending INFO
+instead of USR1 works.
+
+dd
+
+ demand draft
+
+User: katysingh007
+check the status of 'dd' in progress
+
+hello
+
+

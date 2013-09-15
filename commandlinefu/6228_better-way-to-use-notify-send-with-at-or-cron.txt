@@ -1,0 +1,44 @@
+Better way to use notify-send with at or cron
+
+Terminal - Better way to use notify-send with at or cron
+DISPLAY=:0.0 XAUTHORITY=~/.Xauthority notify-send test
+
+User: aurium
+Better way to use notify-send with at or cron
+
+we don't need to export variables to set a env to a command, we may do
+this before the command directly
+
+
+
+echo "export DISPLAY=:0; export XAUTHORITY=~/.Xauthority; notify-send
+test" | at now+1minute
+
+User: claudelepoisson
+I finally found out how to use notify-send with at or cron
+
+You can write a script that does this :
+
+remind <minutes> [<message>]
+echo notify-send test | at now+1minute
+
+User: polar
+I finally found out how to use notify-send with at or cron
+
+The simplest way to do it.
+
+Works for me, at least. (Why are the variables being set?)
+
+
+Thanks aurium, I'd also suggest using a ?here string? for even better
+clarity than piping with echo :
+
+at now+1minute <<< "DISPLAY=:0.0 XAUTHORITY=~/.Xauthority notify-send
+test"
+Comment by claudelepoisson 9 weeks and 1 day ago
+
+Also, so you don't miss the reminder you may want to use
+--urgency=critical
+
+Comment by bostonvaulter 7 weeks and 2 days ago
+

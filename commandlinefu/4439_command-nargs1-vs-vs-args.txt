@@ -1,0 +1,18 @@
+command! -nargs=1 Vs vs <args>
+
+Terminal - command! -nargs=1 Vs vs <args>
+Create aliases for common vim minibuffer/cmd typos
+
+ In .vimrc:
+
+ command! W w
+ command! -nargs=1 Vs vs <args>
+ command! -nargs=1 VS vs <args>
+
+User: tmsh
+command! -nargs=1 Vs vs <args>
+
+Because entering ':' requires that you press shift, sometimes common
+command-line / mini-buffer commands will be capitalized by accident.
+
+

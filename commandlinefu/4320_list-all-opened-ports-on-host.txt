@@ -1,0 +1,64 @@
+list all opened ports on host
+
+Terminal - list all opened ports on host
+sudo lsof -P -i -n -sTCP:LISTEN
+
+User: OJM
+list all opened ports on host
+
+
+
+nmap -p 1-65535 --open localhost
+
+User: solarislackware
+list all opened ports on host
+netstat -nptl
+
+User: sputnick
+List all TCP opened ports on localhost in LISTEN mode
+
+Alternative of OJM snippet :
+
+This one show the IP too, where ports bind. It's very important, because
+if there's only 127.0.0.1 instead of 0.0.0.0, connections from internet
+are rejected.
+
+time { i=0; while [ $(( i < 65535 )) -eq 1 ] ; do nc -zw2 localhost
+$((++i)) && echo port $i opened ; done; }
+
+ port 22 opened
+ port 80 opened
+ port 631 opened
+ port 3306 opened
+ port 3690 opened
+ port 6665 opened
+ port 6666 opened
+ port 6667 opened
+ port 6668 opened
+ port 6669 opened
+ port 7048 opened
+ port 8079 opened
+ port 8280 opened
+ port 8885 opened
+ port 8888 opened
+ port 9127 opened
+ port 23791 opened
+ port 23943 opened
+ port 33556 opened
+ port 34482 opened
+ port 39447 opened
+ port 48030 opened
+ port 51687 opened
+
+ real    4m33.201s
+ user    1m16.657s
+ sys     2m42.194s
+
+User: glaudiston
+list all opened ports on host
+
+in loop, until the last port (65535), list all opened ports on host.
+
+in the sample I used localhost, but you can replace with any host to test.
+
+

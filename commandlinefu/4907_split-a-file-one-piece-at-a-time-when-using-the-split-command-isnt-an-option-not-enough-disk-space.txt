@@ -1,0 +1,21 @@
+Split a file one piece at a time, when using the split command isn't an option
+                         (not enough disk space)
+
+Terminal - Split a file one piece at a time, when using the split command
+isn't an option (not enough disk space)
+dd if=inputfile of=split3 bs=16m count=32 skip=64
+
+User: jearsh
+Split a file one piece at a time, when using the split command isn't an
+option (not enough disk space)
+
+bs = buffer size (basically defined the size of a "unit" used by count and
+skip)
+
+count = the number of buffers to copy (16m * 32 = 1/2 gig)
+
+skip = (32 * 2) we are grabbing piece 3...which means 2 have already been
+written so skip (2 * count)
+
+i will edit this later if i can to make this all more understandable
+

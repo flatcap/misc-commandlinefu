@@ -1,0 +1,26 @@
+Get the IP of the host your coming from when logged in remotely
+
+echo ${SSH_CLIENT%% *}
+
+Even faster without the need for cut... :)
+
+Alternatives
+
+There are 2 alternatives - vote for the best!
+
+Terminal - Alternatives
+who -m --ips | perl -ne 'print "$1$2" if /(?:\
+([\d\.]+$)|\((.*?)[\:\)]+)/'
+
+192.168.0.2
+
+I use this to change my prompt to include the hostname when on a remote
+machine.
+
+Don't know any command that can give me the ip directly.
+
+echo $SSH_CLIENT | cut -f 1 -d ' '
+host -i `echo $SSH_CLIENT | cut -f 1 -d \ ` | sed 's/.* domain name
+pointer \(.*\)\./\1/'
+
+to reverse lookup and get the hostname.

@@ -1,0 +1,7 @@
+Tip #401 / Convert nrg to iso 
+
+Simply convert .nrg (Nero format) images to .iso format images with dd:
+Nero writes a 300kb header onto the iso, so dropping the first 300kb
+results in a .iso format image.
+
+dd bs=1k if=NRG_FILE of=ISO_FILE skip=300

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        raphink
+      </div>
+      <div class='summary'>
+        Copy stdin to your X11 buffer
+      </div>
+      <div class='command'>
+        ssh user@host cat /path/to/some/file | xclip
+      </div>
+      <div class='desc'>
+        <p>
+          Have you ever had to scp a file to your work machine in order to copy its contents to a mail? xclip can help you with that. It copies its stdin to the X11 buffer, so all you have to do is middle-click to paste the content of that looong file :)
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        cniggeler
+      </div>
+      <div class='text'>
+        <p>
+          Thanks for this! Does anyone know of a way to paste into the kill buffer instead? Sometimes I am logged into a remote machine and there is no X functionality. (BTW, Mac has pbcopy and Windows has clip.exe for this capability)...
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        cniggeler
+      </div>
+      <div class='text'>
+        <p>
+          Correction: I didn't mean "paste into kill buffer", I meant "copy arbitrary text into the kill buffer for later pasting"
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

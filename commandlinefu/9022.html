@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        euridice
+      </div>
+      <div class='summary'>
+        get cookies from firefox
+      </div>
+      <div class='command'>
+        echo ".mode tabs select host, case when host glob '.*' then 'TRUE' else 'FALSE' end, path, case when isSecure then 'TRUE' else 'FALSE' end, expiry, name, value from moz_cookies;" | sqlite3 ~/.mozilla/firefox/*.default/cookies.sqlite
+      </div>
+      <div class='desc'>
+        <p>
+          useful to use after with the --load-cookies option of wget
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        DNSpyder
+      </div>
+      <div class='text'>
+        <p>
+          Failes if more than one profile folder is present in ~/.mozilla/firefox
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Mozai
+      </div>
+      <div class='text'>
+        <p>
+          It's rare when a single user has more than one webbrowser profile; if that's the case, it's almost trivial to wrap this in
+        </p><code>for COOKIEJAR in ~/.mozilla/firefox/*.default/cookies.sqlite; do .... | sqlite3 "$COOKIEJAR"</code>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+display date of last time a process was started in `date` format
+
+ps -o lstart <pid>
+
+STARTED
+Mon Oct 18 04:02:01 2010
+
+STARTED
+
+Mon Oct 18 04:02:01 2010

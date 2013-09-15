@@ -1,0 +1,18 @@
+xargs for builtin bash commands
+
+Terminal - xargs for builtin bash commands
+xargsb() { while read -r cmd; do ${@//'{}'/$cmd}; done; }
+
+User: BobbyTables
+xargs for builtin bash commands
+
+Similar to xargs -i, but works with builtin bash commands (rather than
+running "bash -c ..." through xargs)
+
+wow. this is great. it took me 20 mins to decipher ${@//'{}'/}
+
+and I've learned a lot about brace expansion that I had forgotten a long
+time about...
+
+Comment by maelcum 2 weeks and 1 day ago
+

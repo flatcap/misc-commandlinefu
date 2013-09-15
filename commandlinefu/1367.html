@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        haivu
+      </div>
+      <div class='summary'>
+        Redefine the cd command's behavior
+      </div>
+      <div class='command'>
+        cd() { builtin cd "${@:-$HOME}" &amp;&amp; ls; }
+      </div>
+      <div class='desc'>
+        <p>
+          Often, the very next command after the cd command is 'ls', so why not combine them?. Tested on a Red Hat derivative and Mac OS X Leopard
+        </p>
+        <p>
+          Update: changed ${1:-$HOME} to "${@:-$HOME}" to accomodate directories with spaces in the names
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        sudopeople
+      </div>
+      <div class='text'>
+        <p>
+          Nice! Works in Ubuntu Gutsy (7.10)
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Blackbit
+      </div>
+      <div class='text'>
+        <p>
+          Nice! Works in SuSE (SLES 10.2)
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        jyoder
+      </div>
+      <div class='text'>
+        <p>
+          Works on Debian 5.0
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        abm2009
+      </div>
+      <div class='text'>
+        <p>
+          works with cygwin and Xpee
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        asmoore82
+      </div>
+      <div class='text'>
+        <p>
+          Nice! Works in Ubuntu Hardy Heron (8.04 LTS)
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        asmoore82
+      </div>
+      <div class='text'>
+        <p>
+          ... and added to my personal ".bashrc" - that's quite an accomplishment
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+Ride another SSH agent
+
+Terminal - Ride another SSH agent
+export SSH_AUTH_SOCK=`find /tmp/ssh* -type s -user [user] -mtime -1 | head
+-1`
+
+ # export SSH_AUTH_SOCK=`find /tmp/ssh* -type s -user joeuser -mtime -1 | head -1`
+ linux:/tmp/ssh-WjKuI4788 # ssh-add -l
+ 2048 00:11:22:33:44:55:66:77:88:99:AA:BB:CC:DD:EE:FF /home/joeuser/.ssh/id_rsa (RSA)
+ # ssh joeuser@remote
+ ...
+ joeuser@remote>
+
+User: wwest4
+Ride another SSH agent
+
+Must be done as root - will cause subsequent ssh connections to use the
+identities available via the [user]'s agent socket.
+
+

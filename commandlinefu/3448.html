@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        Escher
+      </div>
+      <div class='summary'>
+        The end of time
+      </div>
+      <div class='command'>
+        date -ud @$[2**31-1]
+      </div>
+      <div class='sample'>
+        <pre>
+Tue Jan 19 03:14:07 UTC 2038
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          The end of unix time and the 32bit era will be Tue Jan 19 03:14:07 UTC 2038
+        </p>
+        <p>
+          .
+        </p><code>date -ud @$[2**31]</code>
+        <p>
+          date: invalid date `@2147483648'
+        </p>
+        <p>
+          .
+        </p>
+        <p>
+          In 64bit you have much longer, at least to:
+        </p><code>date -ud @$[2**55]</code> <code>Sun Jun 13 06:26:08 UTC 1141709097</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        unixmonkey24656
+      </div>
+      <div class='text'>
+        <p>
+          At -151 without even a single comment? What the fsck? Clearly this shows a flaw in the commandlinefu rating system!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

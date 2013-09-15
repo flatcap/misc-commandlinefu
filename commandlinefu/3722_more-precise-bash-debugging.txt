@@ -1,0 +1,28 @@
+More precise BASH debugging
+
+Terminal - More precise BASH debugging
+env PS4=' ${BASH_SOURCE}:${LINENO}(${FUNCNAME[0]}) ' sh -x /etc/profile
+
+User: oernii2
+More precise BASH debugging
+
+Hot stuff !
+
+Comment by danam 53 weeks ago
+
+I've put it in my profile.
+
+export PS4=' ${BASH_SOURCE}:${LINENO}(${FUNCNAME[0]}) '
+
+Comment by oernii2 52 weeks and 6 days ago
+
+Really nice. You could put this into a function within your profile.
+
+shdebug() {env PS4=' ${BASH_SOURCE}:${LINENO}(${FUNCNAME[0]}) ' sh -x $1;
+}
+
+This would mean you could debug a shell script nice and easy:
+
+shdebug /path/to/myscript.sh
+Comment by jgc 52 weeks and 6 days ago
+

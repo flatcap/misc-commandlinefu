@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        spaceyjase
+      </div>
+      <div class='summary'>
+        Notify Gnome user of files modified today
+      </div>
+      <div class='command'>
+        OLDIFS=$IFS; IFS=$(echo -en "\n\b"); for f in `find -daystart -mtime 0 -type f -printf "%f\n"`; do notify-send -t 0 "$f downloaded" ; done; IFS=$OLDIFS
+      </div>
+      <div class='sample'>
+        <pre>
+file downloaded
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          On a Gnome desktop, display a notification that a file modified/created today has downloaded. I use this in a script with get_iplayer's -c option so I know stuff has finished downloading ;)
+        </p>
+        <p>
+          The IFS stuff is to handle spaces in the filename. Command has been trimmed a bit 'cos I specify a directory arg to 'find'. On Debian-based systems you may need to install the 'libnotify-bin' package. Notice -daystart is used to tell mtime means 'today' rather than the last 24 hours.
+        </p>
+        <p>
+          It ain't perfect but it does the job :P
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        OzzyFrank
+      </div>
+      <div class='text'>
+        <p>
+          Hmm... ended up with hundreds of individual gnome-notify message boxes, so had to exit them all manually. Not quite what I'd hoped.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

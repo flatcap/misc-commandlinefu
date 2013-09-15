@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        alperyilmaz
+      </div>
+      <div class='summary'>
+        sorting file contents into individual files with awk
+      </div>
+      <div class='command'>
+        awk '{print &gt; $3".txt"}' FILENAME
+      </div>
+      <div class='desc'>
+        <p>
+          This command will sort the contents of FILENAME by redirecting the output to individual .txt files in which 3rd column will be used for sorting. If FILENAME contents are as follows:
+        </p>
+        <p>
+          foo foo A foo
+        </p>
+        <p>
+          bar bar B bar
+        </p>
+        <p>
+          lorem ipsum A lorem
+        </p>
+        <p>
+          Then two files called A.txt and B.txt will be created and their contents will be:
+        </p>
+        <p>
+          A.txt
+        </p>
+        <p>
+          foo foo A foo
+        </p>
+        <p>
+          lorem ipsum A lorem
+        </p>
+        <p>
+          and B.txt will be
+        </p>
+        <p>
+          bar bar B bar
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

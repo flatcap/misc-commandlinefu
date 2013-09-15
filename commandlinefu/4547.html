@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        eightmillion
+      </div>
+      <div class='summary'>
+        Grep by paragraph instead of by line.
+      </div>
+      <div class='command'>
+        grepp() { [ $# -eq 1 ] &amp;&amp; perl -00ne "print if /$1/i" || perl -00ne "print if /$1/i" &lt; "$2";}
+      </div>
+      <div class='sample'>
+        <pre>
+man perl | grepp Pascal
+       Perl combines (in the author's opinion, anyway) some of the best features of C, sed, awk, and sh, so people familiar with those languages should have little difficulty with it.
+       (Language historians will also note some vestiges of csh, Pascal, and even BASIC-PLUS.)  Expression syntax corresponds closely to C expression syntax.  Unlike most Unix utilities,
+       Perl does not arbitrarily limit the size of your data--if you've got the memory, Perl can slurp in your whole file as a single string.  Recursion is of unlimited depth.  And the
+       tables used by hashes (sometimes called "associative arrays") grow as necessary to prevent degraded performance.  Perl can use sophisticated pattern matching techniques to scan
+       large amounts of data quickly.  Although optimized for scanning text, Perl can also deal with binary data, and can make dbm files look like hashes.  Setuid Perl scripts are safer
+       than C programs through a dataflow tracing mechanism that prevents many stupid security holes.
+
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          This is a command that I find myself using all the time. It works like regular grep, but returns the paragraph containing the search pattern instead of just the line. It operates on files or standard input.
+        </p><code>grepp &lt;PATTERN&gt; &lt;FILE&gt;</code>
+        <p>
+          or
+        </p><code>&lt;SOMECOMMAND&gt; | grepp &lt;PATTERN&gt;</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          Very nice, but can you think of a smart way to highlight the match, too?
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        eightmillion
+      </div>
+      <div class='text'>
+        <p>
+          Something like this should operate the similar to "grep --color=auto":
+        </p><code>grepp() { [ $# -eq 1 ] &amp;&amp; perl -00ne 'if ( /'$1'/i ){my $s = $_;$s =~ s/'$1'/\033[1;31m$&amp;\033[0m/g; print $s}' || perl -00ne 'if ( /'$1'/i ){my $s = $_;$s =~ s/'$1'/\033[1;31m$&amp;\033[0m/g; print $s}' &lt; "$2";}</code>
+        <p>
+          P.S. @Perl gurus: Suggestions or corrections are very welcome.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        eightmillion
+      </div>
+      <div class='text'>
+        <p>
+          I just discovered that it fails if there are spaces in the regex. Quoting the regex fixes it:
+        </p><code>grepp() { [ $# -eq 1 ] &amp;&amp; perl -00ne 'if ( /'"$1"'/i ){$s = $_;$s =~ s/'"$1"'/\033[1;31m$&amp;\033[0m/g; print $s}' || perl -00ne 'if ( /'"$1"'/i ){$s = $_;$s =~ s/'"$1"'/\033[1;31m$&amp;\033[0m/g; print $s}' &lt; "$2";}</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          Lovely.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

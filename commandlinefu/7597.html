@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        andrewtayloruk
+      </div>
+      <div class='summary'>
+        Find files in multiple TAR files
+      </div>
+      <div class='command'>
+        find . -type f -name "*.tar" -printf [%f]\\n -exec tar -tf {} \; | grep -iE "[\[]|<span>&lt;filename&gt;</span>"
+      </div>
+      <div class='sample'>
+        <pre>
+[andrew.taylor@localhost ~]$ find . -type f -name "*.tar" -printf [%f]\\n -exec tar -tf {} \; | grep -iE "[\[]|configuration"
+[tar2.tar]
+Platform_Configuration_Guide.pdf
+Product_Management_Configuration_Guide.pdf
+[tar1.tar]
+WMS_Configuration_Guide.pdf
+[tar3.tar]
+Reverse_Logistics_Configuration_Guide.pdf
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          A quick find command to identify all TAR files in a given path, extract a list of files contained within the tar, then search for a given string in the filelist. Returns to the user as a list of TAR files found (enclosed in []) followed by any matching files that exist in that archive. TAR can easily be swapped for JAR if required.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

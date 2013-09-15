@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        penpen
+      </div>
+      <div class='summary'>
+        Change to $HOME - zsh, bash4
+      </div>
+      <div class='command'>
+        ~
+      </div>
+      <div class='desc'>
+        <p>
+          To change to $HOME in that manner you need to set a shell option. In zsh it is auto_cd, hence
+        </p><code>setopt -o auto_cd</code>
+        <p>
+          in bash4 it is autocd, hence
+        </p><code>shopt -s autocd</code>
+        <p>
+          What the option does is allow you to cd to a directory by just entering its name. This also works if the directory name is stored in a variable:
+        </p><code>www=/var/www/lighttpd; $www</code>
+        <p>
+          sends you to /var/www/lighttpd.
+        </p>
+        <p>
+          CAUTION: If a command or function name identical to the directory name exists it takes precedence.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          Holy crap. Nice! I've read the bash manual more times that I care to admit, but I'd missed that one. However, I'll still find it easier to type cd than find the fiddly ~ button :-)
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Patola
+      </div>
+      <div class='text'>
+        <p>
+          "$OLDPWD" does the same as "cd -", using that. However, just "-" does not take you back to the previous directory as in "cd -". But it's still very useful.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Bender
+      </div>
+      <div class='text'>
+        <p>
+          just "cd" does the same. takes you home wherever you are.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+Show log message including which files changed for a given commit in git.
+
+Terminal - Show log message including which files changed for a given
+commit in git.
+git --no-pager whatchanged -1 --pretty=medium <commit_hash>
+
+User: kalaxy
+Show log message including which files changed for a given commit in git.
+

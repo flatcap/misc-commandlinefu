@@ -1,0 +1,81 @@
+Go up multiple levels of directories quickly and easily.
+
+Terminal - Go up multiple levels of directories quickly and easily.
+cd() { if [[ "$1" =~ ^\.\.+$ ]];then local a dir;a=${#1};while [ $a -ne 1
+];do dir=${dir}"../";((a--));done;builtin cd $dir;else builtin cd "$@";fi
+;}
+
+User: eightmillion
+Go up multiple levels of directories quickly and easily.
+
+This is a kind of wrapper around the shell builtin cd that allows a person
+to quickly go up several directories.
+
+Instead of typing:
+
+cd ../..
+
+A user can type:
+
+cd ...
+
+Instead of:
+
+cd ../../..
+
+Type:
+
+cd ....
+
+Add another period and it goes up four levels. Adding more periods will
+take you up more levels.
+
+
+
+alias ..="cd .."; alias ...="cd ../.."; alias ....="cd ../../.."
+
+User: Tzunamii
+Go up multiple levels of directories quickly and easily.
+
+Change to your taste. Much quicker than having to add 'cd' every time. Add
+it to your .bashrc or .bash_profile.
+
+alias ..="cd .." ...="cd ../.." ....="cd ../../.."
+
+User: KevinM
+Go up multiple levels of directories quickly and easily.
+
+By using sed, I can reduce your function by 52 characters and extend it to
+any number of dots!
+
+function cd() { if [[ "$1" =~ "^\.\.+$" ]];then builtin cd "$(echo $1 |
+sed -e 's/\.//' -e 's/\./..\//g')";else builtin cd "$@";fi }
+Comment by flatcap 49 weeks and 5 days ago
+
+flatcap, I had in mind something like that although your version doesn't
+seem to work for me on Bash 4.0.33.
+
+I also have some reservations about using external programs for a shell
+builtin, so I came up with this test function that converts dots into the
+requisite number of "../"s.
+
+test() { local a dir;a=${#1};while [ $a -ne 1 ];do
+dir=${dir}"../";((a--));done; echo $dir;}
+
+It would be easy enough to incorporate if I could get that test condition
+to match correctly.
+
+Comment by eightmillion 49 weeks and 5 days ago
+
+I managed to get that test to work. I had to unquote the regular
+expression. Here's the new command that doesn't use any external programs:
+
+cd() { if [[ "$1" =~ ^\.\.+$ ]];then local a dir;a=${#1};while [ $a -ne 1
+];do dir=${dir}"../";((a--));done;builtin cd $dir;else builtin cd "$@";fi
+;}
+Comment by eightmillion 49 weeks and 5 days ago
+
+Nice!
+
+Comment by flatcap 49 weeks and 5 days ago
+

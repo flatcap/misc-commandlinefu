@@ -1,0 +1,18 @@
+Resume a detached screen session, resizing to fit the current terminal
+
+Terminal - Resume a detached screen session, resizing to fit the current
+terminal
+screen -raAd
+
+User: rkulla
+Resume a detached screen session, resizing to fit the current terminal
+
+By default, screen tries to restore its old window sizes when attaching to
+resizable terminals. This command is the command-line equivalent to typing
+^A F to fit an open screen session to the window.
+
+Voted up just for pointing out that ^A F is the fit screen command, which
+drives me nuts trying to find out sometimes.
+
+Comment by Strawp 26 weeks and 1 day ago
+

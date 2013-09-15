@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        putnamhill
+      </div>
+      <div class='summary'>
+        Alternative for basename using grep to extract file name
+      </div>
+      <div class='command'>
+        fileName(){ echo ${1##*/}; }
+      </div>
+      <div class='desc'>
+        <p>
+          Here's a bash version.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        totti
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9066/alternative-for-basename-using-grep-to-extract-file-name" title="Find out what others think of this command">Alternative for basename using grep to extract file name</a>
+      </div>
+      <div class='command'>
+        fileName() { echo "$1" | grep -o "[^/]*$"; }
+      </div>
+      <div class='sample'>
+        <pre>
+$ fileName /path/to/file.ext
+file.ext
+$ 
+</pre>
+      </div>
+      <div class='desc'>
+        <code>fileName /path/to/file.ext</code>
+        <p>
+          quivalent to
+        </p><code>basename /path/to/file.ext</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='text'>
+        <p>
+          Useless function wrapping.
+        </p>
+        <p>
+          Just use "${1##*/}" wherever you need to in your script, you make nothing shorter or faster.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

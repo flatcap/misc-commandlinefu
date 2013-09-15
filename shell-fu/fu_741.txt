@@ -1,0 +1,15 @@
+Tip #741 / Find the longest line in a file 
+
+This is how we can find the length of the longest line in a file.
+
+awk ' { if ( length > L ) { L=length} }END{ print L}' file.txt
+
+Sample output:
+36
+
+We can also print the longest line along with the length:
+
+awk ' { if ( length > L ) { L=length ;s=$0 } }END{ print L,"\""s"\"" }' file.txt
+
+Sample output:
+36 "longest line in the file is this one"

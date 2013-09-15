@@ -1,0 +1,25 @@
+Use tee + process substitution to split STDOUT to multiple commands
+
+Terminal - Use tee + process substitution to split STDOUT to multiple
+commands
+some_command | tee >(command1) >(command2) >(command3) ... | command4
+
+ $ echo foo | tee >(cat) >(cat) >(cat) | cat
+ foo
+
+User: SiegeX
+Use tee + process substitution to split STDOUT to multiple commands
+
+Using process substitution, we can 'trick' tee into sending a command's
+STDOUT to an arbitrary number of commands. The last command (command4) in
+this example will get its input from the pipe.
+
+
+Thanks for this one.
+
+Comment by CodSpirit 82 weeks and 1 day ago
+
+Yet another confirmation that tee is awesome. This one in my favourites.
+
+Comment by rbossy 49 weeks and 6 days ago
+

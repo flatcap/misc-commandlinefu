@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        randy909
+      </div>
+      <div class='summary'>
+        Squish repeated delimiters into one
+      </div>
+      <div class='command'>
+        echo "hello::::there" | tr -s ':'
+      </div>
+      <div class='sample'>
+        <pre>
+hello:there
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          This can be particularly useful used in conjunction with a following cut command like
+        </p><code>echo "hello::::there" | tr -s ':' | cut -d':' -f2</code>
+        <p>
+          which prints 'there'. Much easier that guessing at -f values for cut. I know 'tr -s' is used in lots of commands here already but I just figured out the -s flag and thought it deserved to be highlighted :)
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

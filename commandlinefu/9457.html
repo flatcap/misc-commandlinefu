@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        acirulli
+      </div>
+      <div class='summary'>
+        Print without executing the last command that starts with...
+      </div>
+      <div class='command'>
+        !ssh:p
+      </div>
+      <div class='sample'>
+        <pre>
+ssh root@192.168.71.156 -X
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          It happens that sometime you remember that you used a special command short time before and you want to check the command again.
+        </p>
+        <p>
+          WIth this command you can just put the beginning of a command and then bash will look for you and it will print back safely withou executing
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        never147
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9489/print-without-executing-the-last-command-that-starts-with..." title="Find out what others think of this command">Print without executing the last command that starts with...</a>
+      </div>
+      <div class='command'>
+        ^Rssh
+      </div>
+      <div class='sample'>
+        <pre>
+(reverse-i-search)`ssh': ssh hostname
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Just hold Ctrl-R and start typing a string (e.g. ssh). The shell will search for that string in the command history. Keep pressing Ctrl-R to cycle through all commands matching pattern. This works in other "sub-shells" too, like a python interactive session.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        voyeg3r
+      </div>
+      <div class='text'>
+        <p>
+          Too related with this stuff: Put this in your ~/.inputrc
+        </p>
+        <p>
+          Space: magic-space
+        </p>
+        <p>
+          After that donw need more press to see '!ssh:p' just press space
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        voyeg3r
+      </div>
+      <div class='text'>
+        <p>
+          Forgiveness for the errors in the language, I don't know how fix. But search on the magic space, is really cool
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

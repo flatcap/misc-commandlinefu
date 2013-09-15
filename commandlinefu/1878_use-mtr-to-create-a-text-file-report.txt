@@ -1,0 +1,20 @@
+Use mtr to create a text file report
+
+Terminal - Use mtr to create a text file report
+mtr --report --report-cycles 10 www.google.com > google_net_report.txt
+
+ HOST: localhost                   Loss%   Snt   Last   Avg  Best  Wrst StDev
+1. 192.168.2.1                   0.0%    10    1.0   1.1   1.0   1.2   0.0
+2. 10.239.2.2                    0.0%    10    3.5   6.2   3.5  16.3   3.8
+
+User: CafeNinja
+Use mtr to create a text file report
+
+The report mode of mtr produces a text formated result of the mtr run
+using the number of ping cycles stated by the command. This text file
+could then be attached to an email with ease.
+
+I use this also without the ">" portion when writing email from within
+mutt using VI from the command mode with ":r !mtr --report --report-cycles
+
+

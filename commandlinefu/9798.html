@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        mackaz
+      </div>
+      <div class='summary'>
+        Get full directory path of a script regardless of where it is run from
+      </div>
+      <div class='command'>
+        BASEDIR=$(dirname $(readlink -f $0))
+      </div>
+      <div class='desc'>
+        <p>
+          Also resolves symlinks, showing the full path of the link target
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        bbbco
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9793/get-full-directory-path-of-a-script-regardless-of-where-it-is-run-from" title="Find out what others think of this command">Get full directory path of a script regardless of where it is run from</a>
+      </div>
+      <div class='command'>
+        STARTING_DIR=$(cd $(dirname $0) &amp;&amp; pwd)
+      </div>
+      <div class='sample'>
+        <pre>
+[bbbco@bbbco-dt scripts]$ vi startingdir.sh
+-----------------
+#!/bin/bash
+echo $(cd $(dirname $0) &amp;&amp; pwd)
+
+-----------------
+
+[bbbco@bbbco-dt scripts]$ ./startingdir.sh 
+/home/bbbco/scripts
+[bbbco@bbbco-dt scripts]$ cd ..
+[bbbco@bbbco-dt ~]$ scripts/startingdir.sh 
+/home/bbbco/scripts
+[bbbco@bbbco-dt ~]$ cd Downloads/
+[bbbco@bbbco-dt Downloads]$ /home/bbbco/scripts/startingdir.sh 
+/home/bbbco/scripts
+[bbbco@bbbco-dt Downloads]$ 
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Sometimes you need the full path to your script, regardless of how it was executed (which starting directory) in order to maintain other relative paths in the script.
+        </p>
+        <p>
+          If you attempt to just use something simple like:
+        </p><code>STARTING_DIR="${0%/*}"</code>
+        <p>
+          you will only get the relative path depending on where you first executed the script from.
+        </p>
+        <p>
+          You can get the relative path to the script (from your starting point) by using dirname, but you actually have to change directories and print the working directory to get the absolute full path.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        unixmonkey27999
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9805/get-full-directory-path-of-a-script-regardless-of-where-it-is-run-from" title="Find out what others think of this command">Get full directory path of a script regardless of where it is run from</a>
+      </div>
+      <div class='command'>
+        dirname $(readlink -f ${BASH_SOURCE[0]})
+      </div>
+      <div class='desc'>
+        <p>
+          work for execute file
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

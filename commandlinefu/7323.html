@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        depesz
+      </div>
+      <div class='summary'>
+        Remove duplicate rows of an un-sorted file based on a single column
+      </div>
+      <div class='command'>
+        perl -ane 'print unless $x{$F[0]}++' infile &gt; outfile
+      </div>
+      <div class='desc'>
+        <code>F[0] filters using first word. $F[1] - 2nd, and so on.</code>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        dopeman
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7322/remove-duplicate-rows-of-an-un-sorted-file-based-on-a-single-column" title="Find out what others think of this command">Remove duplicate rows of an un-sorted file based on a single column</a>
+      </div>
+      <div class='command'>
+        awk '{ if ($1 in stored_lines) x=1; else print; stored_lines[$1]=1 }' infile.txt &gt; outfile.txt
+      </div>
+      <div class='desc'>
+        <p>
+          The command (above) will remove any duplicate rows based on the FIRST column of data in an un-sorted file.
+        </p>
+        <p>
+          The '$1' represents a positional parameter. You can change both instances of '$1' in the command to remove duplicates based on a different column, for instance, the third:
+        </p><code>awk '{ if ($3 in stored_lines) x=1; else print; stored_lines[$3]=1 }' infile.txt &gt; outfile.txt</code>
+        <p>
+          Or you can change it to '$0' to base the removal on the whole row:
+        </p><code>awk '{ if ($0 in stored_lines) x=1; else print; stored_lines[$0]=1 }' infile.txt &gt; outfile.txt</code>
+        <p>
+          ** Note: I wouldn't use this on a MASSIVE file, unless you're RAM-rich ;) **
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

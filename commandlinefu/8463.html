@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        michaelmior
+      </div>
+      <div class='summary'>
+        Create a backup copy of a MySQL database on the same host
+      </div>
+      <div class='command'>
+        mysqldump OLD_DB | cat &lt;(echo "CREATE DATABASE NEW_DB; USE NEW_DB;") - | mysql
+      </div>
+      <div class='desc'>
+        <p>
+          This should probably only be used for testing in a dev environment as it's not terribly efficient, but if you're doing something that might trash a DB and you still want the old data available, this works like a charm.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        splante
+      </div>
+      <div class='text'>
+        <p>
+          Seems a little more direct:
+        </p><code>(echo "CREATE DATABASE NEW_DB; USE NEW_DB;";mysqldump OLD_DB;)|mysql</code>
+      </div>
+    </div>
+  </body>
+</html>

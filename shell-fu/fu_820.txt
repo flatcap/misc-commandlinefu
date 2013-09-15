@@ -1,0 +1,16 @@
+Tip #820 / Following a log file 
+
+Here are a couple of ways to follow additions to a log file.
+
+tail -f
+
+This tails the log file and the '-f' tells tail to follow the file, so
+anything new added to the file will also be printed to the screen.
+
+Another option is:
+
+less +F /var/log/messages
+
+The +F option turns on less 'follow mode'. It is similar to tail -f but
+you will have the benefits of less, like scrolling up and down. To stop
+tailing, use Ctrl-C and to resume it, press Shift-F.

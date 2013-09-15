@@ -1,0 +1,12 @@
+View any already in progress copy command in detail
+
+sudo lsof -p1234 | grep -E "(3r|4w).*REG"
+
+If you spot a dubious looking cp command running you can use this command
+to view what is being copied and to where.
+
+1234 is the PID of the cp command being passed to the lsof utility.
+
+3r.*REG will display the file/directory that is being read/copied.
+
+4w.*REG will display the destination it is being written to.

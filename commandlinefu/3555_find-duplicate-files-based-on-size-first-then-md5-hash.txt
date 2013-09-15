@@ -1,0 +1,123 @@
+Find Duplicate Files (based on size first, then MD5 hash)
+
+Terminal - Find Duplicate Files (based on size first, then MD5 hash)
+find -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{}
+-n1 find -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32
+--all-repeated=separate
+
+User: syssyphus
+Find Duplicate Files (based on size first, then MD5 hash)
+
+This dup finder saves time by comparing size first, then md5sum, it
+doesn't delete anything, just lists them.
+
+
+
+find -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate
+-w 33 | cut -c 35-
+
+User: infinull
+Find Duplicate Files (based on MD5 hash)
+
+Calculates md5 sum of files. sort (required for uniq to work). uniq based
+on only the hash. use cut ro remove the hash from the result.
+
+find -type d -name ".svn" -prune -o -not -empty -type f -printf "%s\n" |
+sort -rn | uniq -d | xargs -I{} -n1 find -type d -name ".svn" -prune -o
+-type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32
+--all-repeated=separate
+
+ [...]
+ f2e6bb247f110dcab63b4d38ff7b2dee  ./themes/darkblue_orange/img/b_relations.png
+ f2e6bb247f110dcab63b4d38ff7b2dee  ./themes/original/img/b_relations.png
+
+ f5309bd2a2fc5e512a0cc38ac6f10c09  ./themes/darkblue_orange/img/b_deltbl.png
+ f5309bd2a2fc5e512a0cc38ac6f10c09  ./themes/original/img/b_deltbl.png
+
+ f60bfbb7ce218a55650c1abbbbee06ae  ./themes/darkblue_orange/img/s_lang.png
+ f60bfbb7ce218a55650c1abbbbee06ae  ./themes/original/img/s_lang.png
+
+ f63a5ad833147eeb94adb4496ddbec41  ./themes/darkblue_orange/img/s_theme.png
+ f63a5ad833147eeb94adb4496ddbec41  ./themes/original/img/s_theme.png
+
+ f6ae61146ce3de8fa11b9e84e086bd04  ./themes/darkblue_orange/img/bd_drop.png
+ f6ae61146ce3de8fa11b9e84e086bd04  ./themes/original/img/bd_drop.png
+
+ f95d66c11bfed9198d13a278269c32b2  ./themes/darkblue_orange/img/s_loggoff.png
+ f95d66c11bfed9198d13a278269c32b2  ./themes/original/img/s_loggoff.png
+ [...]
+
+User: 2chg
+Find Duplicate Files, excluding .svn-directories (based on size first,
+then MD5 hash)
+
+Improvement of the command "Find Duplicate Files (based on size first,
+then MD5 hash)" when searching for duplicate files in a directory
+containing a subversion working copy. This way the (multiple dupicates) in
+the meta-information directories are ignored.
+
+Can easily be adopted for other VCS as well. For CVS i.e. change ".svn"
+into ".csv":
+
+find -type d -name ".csv" -prune -o -not -empty -type f -printf "%s\n" |
+sort -rn | uniq -d | xargs -I{} -n1 find -type d -name ".csv" -prune -o
+-type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32
+--all-repeated=separate
+find -not -empty -type f -printf "%s\n" | sort | uniq -d | parallel find
+-type f -size {}c | parallel md5sum | sort | uniq -w32
+--all-repeated=separate
+
+User: unixmonkey8046
+Find Duplicate Files (based on size first, then MD5 hash)
+
+A bit shorter and parallelized. Depending on the speed of your cpu and
+your disk this may run faster.
+
+Parallel is from https://savannah.nongnu.org/projects/parallel/
+
+
+As an alternative, check out http://www.pixelbeat.org/fslint/ in case you
+don't mind using a GUI for this. It gives you the option of hard linking
+the duplicate files and doing other lint-y tasks. Available as package
+'fslint' at least in debian/ubuntu.
+
+Comment by bwoodacre 55 weeks and 2 days ago
+
+Thanks for the FSlint reference. Note fslint uses much the same mechanism
+underneath and has a CLI mode.
+
+http://fslint.googlecode.com/svn/trunk/fslint/findup
+
+Comment by pixelbeat 55 weeks and 2 days ago
+
+awsome, much faster then fdupes.
+
+Comment by dakunesu 55 weeks and 1 day ago
+
+Isn't the -D redundant?
+
+Comment by dennisw 53 weeks and 5 days ago
+
+yes it is... thanks for noticing, I fixed it.
+
+Comment by syssyphus 53 weeks and 5 days ago
+
+How can you mass delete these files once they're found? (I'd like to keep
+one of them)
+
+Comment by matthewbauer 49 weeks and 4 days ago
+
+you might want to look at fdupes or fslint in order to help with
+hardlinking / deleting, etc... my command is really just a quick hack to
+list them.
+
+Comment by syssyphus 49 weeks and 4 days ago
+
+There is also perfect match:
+
+http://pmatch.rubyforge.org/
+
+That's especially if you are commandline fan.
+
+Comment by zabuch 36 weeks and 6 days ago
+

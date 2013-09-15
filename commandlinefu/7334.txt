@@ -1,0 +1,25 @@
+delete multiple files from git index that have already been deleted from disk
+
+git status | grep deleted | awk '{print $3}' | xargs git rm
+
+delete multiple files from git index that have already been deleted from
+disk. this is pretty terrible, I'm looking for a better way.
+
+What others think
+
+I'll just comment it (no alternative version). Your solution is good
+enough.
+
+1. It's one of these 'awk which is basically "cut"' cases.
+
+git status |grep deleted | cut -d" " -f3 | xargs git rm
+
+2. You can combine grep and awk jobs:
+
+git status | awk '/deleted/{print $3}' | xargs git rm
+
+3. An equivalent version without xargs would look like this. (Just in case
+you're interested in commands you're gona to execute: replace 'sh' with
+'less')
+
+git status | awk '/deleted/{print "git rm " $3}' | sh

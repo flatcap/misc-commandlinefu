@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        oernii2
+      </div>
+      <div class='summary'>
+        intercept stdout/stderr of another process
+      </div>
+      <div class='command'>
+        strace -ff -e trace=write -e write=1,2 -p SOME_PID
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        systemj
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/5450/intercept-stdoutstderr-of-another-process" title="Find out what others think of this command">intercept stdout/stderr of another process</a>
+      </div>
+      <div class='command'>
+        strace -ff -e write=1,2 -s 1024 -p PID 2&gt;&amp;1 | grep "^ |" | cut -c11-60 | sed -e 's/ //g' | xxd -r -p
+      </div>
+      <div class='desc'>
+        <p>
+          similar to the previous command, but with more friendly output (tested on linux)
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        glaudiston
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/6743/intercept-stdoutstderr-of-another-process-or-disowned-process" title="Find out what others think of this command">intercept stdout/stderr of another process or disowned process</a>
+      </div>
+      <div class='command'>
+        strace -e write=1,2 -p $PID 2&gt;&amp;1 | sed -un "/^ |/p" | sed -ue "s/^.\{9\}\(.\{50\}\).\+/\1/g" -e 's/ //g' | xxd -r -p
+      </div>
+      <div class='sample'>
+        <pre>
+{ i=0; while sleep 1; do echo -e "writing a long line to stdout 1 [AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA] 2 [BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB] 3 [CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC] \nline2 == var i=$((i++))";done; } &gt; /dev/null &amp; PID=$!
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Useful to recover a output(stdout and stderr) "disown"ed or "nohup"ep process of other instance of ssh.
+        </p>
+        <p>
+          With the others options the stdout / stderr is intercepted, but only the first n chars.
+        </p>
+        <p>
+          This way we can recover ALL text of stdout or stderr
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        slower
+      </div>
+      <div class='text'>
+        <p>
+          Brilliant. Works like a charm on RHEL 4.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

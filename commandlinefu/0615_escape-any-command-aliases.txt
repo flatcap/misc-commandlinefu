@@ -1,0 +1,21 @@
+escape any command aliases
+
+Terminal - escape any command aliases
+\[command]
+
+User: wwest4
+escape any command aliases
+
+e.g. if rm is aliased for 'rm -i', you can escape the alias by prepending
+a backslash:
+
+rm [file] # WILL prompt for confirmation per the alias
+
+\rm [file] # will NOT prompt for confirmation per the default behavior of
+the command
+
+This is particularly useful for 'rm', which many distributions insist on
+aliasing to 'rm -i' (ignoring the bad habits that this inculcates).
+
+Comment by mkc 86 weeks and 6 days ago
+

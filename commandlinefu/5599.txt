@@ -1,0 +1,20 @@
+ping MAC ADDRESS
+
+ping -c 2 `arp-scan 10.1.1.0/24 | awk '/00:1b:11:dc:a9:65/ {print $1}'`
+
+ping -c 2 `arp-scan 10.1.1.0/24 | awk '/00:1b:11:dc:a9:65/ {print $1}'`
+PING 10.1.1.1 (10.1.1.1) 56(84) bytes of data.
+64 bytes from 10.1.1.1: icmp_seq=1 ttl=64 time=0.911 ms
+64 bytes from 10.1.1.1: icmp_seq=2 ttl=64 time=0.827 ms
+
+--- 10.1.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 0.827/0.869/0.911/0.042 ms
+
+# first install arp-scan if not have it
+
+arp-scan 10.1.1.0/24 .... show ip+mac in localnet
+
+awk '/00:1b:11:dc:a9:65/ {print $1}' .... get ip associated with MAC
+
+` backtick make do command substitution passing ip to command ping

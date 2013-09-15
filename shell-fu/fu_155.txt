@@ -1,0 +1,18 @@
+Tip #155 / Truncated $PWD in the command prompt 
+
+The script below will truncate the $PWD to 1/4 of the terminal width and
+put it into the command prompt, all within the same bash process, no forks
+to tr and gawk.
+
+function truncate_pwd
+{
+newPWD="${PWD/#$HOME/~}"
+local pwdmaxlen=$((${COLUMNS:-80}/4))
+if [ ${#newPWD} -gt $pwdmaxlen ]
+then
+newPWD=".+${newPWD: -$pwdmaxlen}"
+fi
+}
+
+PROMPT_COMMAND=truncate_pwd
+PS1="${ttyname}@\h:\${newPWD}\\$ "

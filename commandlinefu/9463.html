@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        hfs
+      </div>
+      <div class='summary'>
+        Echo a command, then execute it
+      </div>
+      <div class='command'>
+        v () { echo "$@"; "$@"; }
+      </div>
+      <div class='sample'>
+        <pre>
+$ v rm -v *~
+rm -v example~
+removed `example~'
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          You can use this in shell scripts to show which commands are actually run. Just prepend every "critical line" with "v&Euml;&frac12;".
+        </p>
+        <p>
+          $TMP=/tmp
+        </p>
+        <p>
+          echo "Let me create a directory for you"
+        </p>
+        <p>
+          v mkdir $TMP/new
+        </p>
+        <p>
+          In scripts this can be more useful than "set -x", because that can be very verbose with variable assignments etc.
+        </p>
+        <p>
+          Another nice use is if you prepend every "critical" command with "v", then you can test your script by commenting out the actual execution.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        hfs
+      </div>
+      <div class='text'>
+        <p>
+          Hey, why all the downvotes? Does anyone care to comment?
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

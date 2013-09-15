@@ -1,0 +1,9 @@
+Tip #207 / Run commands on logout 
+
+If a file named $HOME/.logout (a file named .logout in your home
+directory) exists, and the following trap statement is in your .profile,
+.logout is executed when you logout.
+
+Add this to .profile:
+
+trap "$HOME/.logout" 0

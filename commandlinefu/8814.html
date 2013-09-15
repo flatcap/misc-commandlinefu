@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        unixmonkey21861
+      </div>
+      <div class='summary'>
+        truncate half of `input.txt`
+      </div>
+      <div class='command'>
+        dd of=output.txt if=input.txt ibs=1 skip=$(expr `stat -c%s input.txt` / 2)
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          Examples, man :-)
+        </p>
+        <p>
+          Interesting. So, it skips the first half of the file, leaving you with the end.
+        </p>
+        <p>
+          "Truncate" usually implies the opposite!
+        </p>
+        <p>
+          I can see that being useful for long log files. What do you use it for?
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='text'>
+        <code>head -n $(( $(wc -l $file)/2 )) $file</code> <code>tail -----------------//-------------------</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          @RanyAlbeg: I thought about head/tail myself, but it would be pretty inefficient for very long files.
+        </p>
+        <p>
+          The original, though it will probably split a line, will be very fast.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='text'>
+        <p>
+          Then u can use sed
+        </p><code>read l _ &lt;&lt;&lt; "$(wc -l foo.txt)"; sed -n "1,$((l/2))"p foo.txt</code>
+      </div>
+    </div>
+  </body>
+</html>

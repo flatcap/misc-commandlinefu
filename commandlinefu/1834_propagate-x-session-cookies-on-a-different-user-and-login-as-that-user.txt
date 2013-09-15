@@ -1,0 +1,36 @@
+Propagate X session cookies on a different user and login as that user
+
+Terminal - Propagate X session cookies on a different user and login as
+that user
+read -p 'Username: ' u;sudo -H -u $u xauth add $(xauth list|grep :$(echo
+${DISPLAY: -4:2}));sudo su - $u
+
+ $ id -un
+ olduser
+ $ xauth list
+ localhost/unix:10  MIT-MAGIC-COOKIE-1  fcc8934e033577e212791d9fa9e0aaff
+ localhost/unix:11  MIT-MAGIC-COOKIE-1  3b3c04952077c667430536d2ef621275
+ $ echo $DISPLAY
+ localhost:10.0
+ $ read -p 'Username: ' u;sudo -H -u $u xauth add $(xauth list|grep $(echo ${DISPLAY: -4:2}));sudo su - $u
+ Username: newuser
+ Password:
+ $ id -un
+ newuser
+ $ xauth list
+ localhost/unix:10  MIT-MAGIC-COOKIE-1  fcc8934e033577e212791d9fa9e0aaff
+ $ echo $DISPLAY
+ localhost:10.0
+
+User: vutcovici
+Propagate X session cookies on a different user and login as that user
+
+Reads a username from
+
+
+Please make a simple read comand to understant.
+
+thanks
+
+Comment by xptonix 68 weeks and 3 days ago
+

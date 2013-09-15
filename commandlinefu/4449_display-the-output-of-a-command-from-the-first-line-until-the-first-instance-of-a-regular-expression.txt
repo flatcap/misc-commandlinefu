@@ -1,0 +1,48 @@
+Display the output of a command from the first line until the first instance of
+                          a regular expression.
+
+Terminal - Display the output of a command from the first line until the
+first instance of a regular expression.
+command | sed '/regex/q'
+
+User: taliver
+Display the output of a command from the first line until the first
+instance of a regular expression.
+
+Slightly simpler version of previous sed command that does the same thing.
+In this case, the output will stop at the command, and the entire command
+will be terminated as well, instead of proceeding through the whole file.
+
+
+
+command | sed -n '1,/regex/p'
+
+User: putnamhill
+Display the output of a command from the first line until the first
+instance of a regular expression.
+
+If BREs can be used, this sed version will also get the job done.
+
+<your command here> | perl -n -e 'print "$_" if 1 ... /<regex>/;'
+
+User: SuperFly
+Display the output of a command from the first line until the first
+instance of a regular expression.
+
+This command line will display the output of , from the first line of
+output, until the first time it sees a pattern matching .
+
+You could specify the regex pattern /^$/ to look for the first blank line,
+
+or /^foobar/ to look for the first line that starts with the word foobar.
+
+<command> | perl -pe '/<regex/ && exit;'
+
+User: intuited
+Display the output of a command from the first line until the first
+instance of a regular expression.
+
+Doesn't display the matching line. If you want that behaviour, you need to
+add "print && " before the 'exit'.
+
+

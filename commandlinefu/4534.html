@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        nicoulaj
+      </div>
+      <div class='summary'>
+        Display $PATH with one line per entry
+      </div>
+      <div class='command'>
+        echo -e ${PATH//:/\\n} | less
+      </div>
+      <div class='sample'>
+        <pre>
+/home/nicoulaj/bin
+/usr/local/sbin
+/usr/local/bin
+/usr/sbin
+/usr/bin
+/sbin
+/bin
+/usr/games
+(END) 
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Display the $PATH with one line per entry, in a pager.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        cfajohnson
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/4108/list-all-available-commands-bash-ksh93" title="Find out what others think of this command">List all available commands (bash, ksh93)</a>
+      </div>
+      <div class='command'>
+        printf "%s\n" ${PATH//:/\/* }
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        sdadh01
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/4056/list-all-available-commands" title="Find out what others think of this command">List all available commands</a>
+      </div>
+      <div class='command'>
+        in bash hit "tab" twice and answer y
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        cfajohnson
+      </div>
+      <div class='text'>
+        <code>echo -e ${PATH//:/\\n} | less</code>
+        <p>
+          The -e option is not standard. Use printf:
+        </p>
+        <p>
+          printf "%b\n" ${PATH//:/\\n}
+        </p>
+        <p>
+          OK, the // replacement is not standard, either, but it works on ksh93 where the -e option to echo doesn't.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

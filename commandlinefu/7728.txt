@@ -1,0 +1,36 @@
+A "Web 2.0" domain name generator and look for register availability
+
+for domain in $(pwgen -1A0B 6 10); do echo -ne "$domain.com "; if [ -z
+"$(whois -H $domain.com | grep -o 'No match for')" ]; then echo -ne "Not
+"; fi; echo "Available for register"; done
+
+imeibi.com Available for register
+ohthei.com Available for register
+ganixi.com Available for register
+eicequ.com Available for register
+ahnaeb.com Available for register
+maihai.com Not Available for register
+iuhipa.com Available for register
+oonahg.com Available for register
+eijood.com Available for register
+taxuuc.com Available for register
+
+You would need pwgen installed first, on ubuntu you can get it by apt-get
+
+sudo apt-get install pwgen
+
+What others think
+
+What a fascinating command.
+
+On Fedora, whois (jwhois) doesn't need the -H parameter.
+
+I can tidy it up in a few ways: You don't need the -e option for echo. If
+you grep -q you don't need the subshell to hide the result. As you're only
+doing one thing in the 'if' statement, you can get rid of it. Also I
+shortened the variable name in the loop. Savings: about 25% :-)
+
+for d in $(pwgen -1A0B 6 10); do echo -n "$d.com "; whois -H $d.com | grep
+-q 'No match for' || echo -n "Not "; echo "Available for register"; done
+
+@flatcap True ! thanks for the enhancements :-)

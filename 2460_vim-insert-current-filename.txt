@@ -1,0 +1,28 @@
+vim insert current filename
+
+Terminal - vim insert current filename
+:r! echo %
+
+User: miccaman
+vim insert current filename
+
+insert filename
+
+Normal mode: "%p
+
+Insert mode: %
+
+good point
+
+Comment by linuxrawkstar 68 weeks and 5 days ago
+
+Ctrl-r % built-in :)
+
+to insert last search Ctrl-r /
+
+to insert last cmd Ctrl-r :
+
+to insert reg 'a' Ctrl-r a
+
+Comment by voyeg3r 68 weeks and 5 days ago
+

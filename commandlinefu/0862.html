@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        lhb
+      </div>
+      <div class='summary'>
+        bash shortcut: !$ !^ !* !:3 !:h and !:t
+      </div>
+      <div class='command'>
+        echo foo bar foobar barfoo &amp;&amp; echo !$ !^ !:3 !* &amp;&amp; echo /usr/bin/foobar&amp;&amp; echo !$:h !$:t
+      </div>
+      <div class='desc'>
+        <p>
+          When expanding, bash output the command, so don't be affraid if you type the command.
+        </p>
+        <p>
+          Here is the details:
+        </p>
+        <p>
+          First examples:
+        </p><code>echo foo bar foobar barfoo</code>
+        <p>
+          First argument:
+        </p><code>echo !$</code>
+        <p>
+          echo barfoo
+        </p>
+        <p>
+          barfoo
+        </p>
+        <p>
+          (Note that typing echo foo bar foobar barfoo &amp;&amp; echo !$, bash substitute !$ with $:1)
+        </p>
+        <p>
+          Last argument:
+        </p><code>echo foo bar foobar barfoo &amp;&amp; echo !^</code>
+        <p>
+          echo foo bar foobar barfoo &amp;&amp; echo barfoo
+        </p>
+        <p>
+          foo bar foobar barfoo
+        </p>
+        <p>
+          barfoo
+        </p>
+        <p>
+          All the arguments:
+        </p><code>echo !*</code>
+        <p>
+          echo foo bar foobar barfoo
+        </p>
+        <p>
+          foo bar foobar barfoo
+        </p>
+        <p>
+          The third argument:
+        </p><code>echo foo bar foobar barfoo &amp;&amp; echo !:3</code>
+        <p>
+          echo foo bar foobar barfoo &amp;&amp; echo foobar
+        </p>
+        <p>
+          foo bar foobar barfoo
+        </p>
+        <p>
+          foobar
+        </p>
+        <p>
+          You may want to add {} for large numbers: echo !:{11} for example
+        </p>
+        <p>
+          Now with path:
+        </p><code>echo /usr/bin/foobar</code>
+        <p>
+          /usr/bin/foobar
+        </p>
+        <p>
+          For the head:
+        </p><code>echo !$:h</code>
+        <p>
+          echo /usr/bin
+        </p>
+        <p>
+          /usr/bin
+        </p>
+        <p>
+          And the tail:
+        </p><code>echo !$:t</code>
+        <p>
+          echo foobar
+        </p>
+        <p>
+          foobar
+        </p>
+        <p>
+          You also may want to try !:h and !:t or !!3-4 for the third and the fourth (so !!:* == !!:1-$)
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

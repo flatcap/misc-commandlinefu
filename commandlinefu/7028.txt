@@ -1,0 +1,24 @@
+Convert first letter of string to uppercase
+
+string="${string^}"
+
+string="hello"
+string="${string^}"
+echo $string
+Hello
+
+Let bash do the work by converting the initial of a string to an uppercase
+
+What others think
+
+^^ will do all characters, comma and double-comma will covert to
+lowercase. ~ toggles the first character of each word, ~~ toggles all
+characters. To title case a string:
+
+string='mIXed uP CAse' string=${string,,} string=${string~} echo "$string"
+
+Mixed Up Case
+
+By the way, all of this requires Bash 4.
+
+Hey, neat info dennisw. Thanks.

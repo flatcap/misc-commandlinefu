@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        recursiverse
+      </div>
+      <div class='summary'>
+        Attach screen over ssh
+      </div>
+      <div class='command'>
+        ssh -t remote_host screen -r
+      </div>
+      <div class='desc'>
+        <p>
+          Directly attach a remote screen session (saves a useless parent bash process)
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        olifante
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/1123/how-to-establish-a-remote-gnu-screen-session-that-you-can-re-connect-to" title="Find out what others think of this command">How to establish a remote Gnu screen session that you can re-connect to</a>
+      </div>
+      <div class='command'>
+        ssh -t user@some.domain.com /usr/bin/screen -xRR
+      </div>
+      <div class='desc'>
+        <p>
+          Long before tabbed terminals existed, people have been using Gnu screen to open many shells in a single text terminal. Combined with ssh, it gives you the ability to have many open shells with a single remote connection using the above options. If you detach with "Ctrl-a d" or if the ssh session is accidentally terminated, all processes running in your remote shells remain undisturbed, ready for you to reconnect. Other useful screen commands are "Ctrl-a c" (open new shell) and "Ctrl-a a" (alternate between shells). Read this quick reference for more screen commands: <a href="http://aperiodic.net/screen/quick_reference" rel="nofollow">http://aperiodic.net/screen/quick_reference</a>
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Weboide
+      </div>
+      <div class='text'>
+        <p>
+          Two things, the first, I would suggest -R instead of -r (so that if it cannot find an old session it just creates a new one.
+        </p><code>ssh -t remote_host screen -R</code>
+        <p>
+          And the second thing:
+        </p>
+        <p>
+          Why do we need the -t option?
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        recursiverse
+      </div>
+      <div class='text'>
+        <p>
+          -t forces a terminal to be allocated, otherwise ssh will assume you don't want one since you are only running a command and not opening a shell. Screen needs that terminal or else it won't find anything to attach to and exits.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Weboide
+      </div>
+      <div class='text'>
+        <p>
+          Thank you for this explanation.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Weboide
+      </div>
+      <div class='text'>
+        <p>
+          This can also be used with Byobu this way:
+        </p><code>ssh -t remote_host byobu -R</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Buzzcp
+      </div>
+      <div class='text'>
+        <p>
+          For that matter, use screen -RR if you figure to expect multiple screen sessions.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        starchox
+      </div>
+      <div class='text'>
+        <p>
+          I prefere use RD reattach if possible with detach
+        </p><code>ssh -t remote_host screen -RD</code>
+      </div>
+    </div>
+  </body>
+</html>

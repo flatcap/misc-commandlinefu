@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        CodSpirit
+      </div>
+      <div class='summary'>
+        Remove executable bit from all files in the current directory recursively, excluding other directories
+      </div>
+      <div class='command'>
+        chmod -R -x+X *
+      </div>
+      <div class='desc'>
+        <p>
+          With GNU chmod at least it is that simple.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        drashkeev
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/4008/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories" title="Find out what others think of this command">Remove executable bit from all files in the current directory recursively, excluding other directories</a>
+      </div>
+      <div class='command'>
+        find . ! -type d -exec chmod -x {}\;
+      </div>
+      <div class='desc'>
+        <p>
+          Useful if you have copied files from an OS without a permission structure (for example, DOS) and you need to disable all executable files but want to be able to descend into your directories.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        donnoman
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/6104/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories-firm-permissions" title="Find out what others think of this command">Remove executable bit from all files in the current directory recursively, excluding other directories, firm permissions</a>
+      </div>
+      <div class='command'>
+        chmod -R u=rw-x+X,g=r-x+X,o= .
+      </div>
+      <div class='sample'>
+        <pre>
+-rw-r-----   1 www-data www-data 3353273 Jun 21 17:58 XP_Help_20100621.zip
+drwxr-x---   8 www-data www-data    4096 Jun  3  2009 Widgetized_HomePage
+drwxr-x---  12 www-data www-data    4096 Jan 12  2010 Wizard_Old_Concept
+drwxr-x---   5 www-data www-data    4096 Oct 21  2009 Wizard_New_Concept
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          forces user to rw, group to r, and other to no access.
+        </p>
+        <p>
+          files will not be marked executable.
+        </p>
+        <p>
+          directories will be executable for users and groups only.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        lionping
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/6115/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories-firm-permissions" title="Find out what others think of this command">Remove executable bit from all files in the current directory recursively, excluding other directories, firm permissions</a>
+      </div>
+      <div class='command'>
+        find . -type f -exec chmod 640 {} ';'
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        bandie91
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/6123/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories-firm-permissions" title="Find out what others think of this command">Remove executable bit from all files in the current directory recursively, excluding other directories, firm permissions</a>
+      </div>
+      <div class='command'>
+        find . -type f -exec chmod a-x {} \;
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        alesplin
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/4013/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories" title="Find out what others think of this command">Remove executable bit from all files in the current directory recursively, excluding other directories</a>
+      </div>
+      <div class='command'>
+        find . -type f | while read f; do chmod -x "$f"; done
+      </div>
+      <div class='desc'>
+        <p>
+          I hate -exec with find, and this pattern quickly expands to other tasks.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        rbossy
+      </div>
+      <div class='text'>
+        <p>
+          Not bad. I usually did that with something like what drashkeev proposed but I always found it too long.
+        </p>
+        <p>
+          I never cared to look further the chmod man... Brilliant!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

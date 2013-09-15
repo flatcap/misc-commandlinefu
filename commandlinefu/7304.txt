@@ -1,0 +1,32 @@
+print line and execute it in BASH
+
+echo <command>; !#:0-$
+
+!# is the currennt line so far, by using !#:- you can go from the second
+arg (it's zero indexed) to the last ($)
+
+(did I understand the problem correctly?)
+
+Alternatives
+
+There are 3 alternatives - vote for the best!
+
+Terminal - Alternatives
+bash -x script.sh
+
++ uname -a
+Linux torgerde 2.6.35-22-generic #35-Ubuntu SMP Sat Oct 16 20:45:36 UTC 2010 x86_64 GNU/Linux
++ whoami
+robert
+
+If script.sh contains only these two lines:
+
+$ uname -a
+
+$ whoami
+
+set -x
+<TBD>
+
+Is there a way to print the line BASH is executing without copy+paste the
+line inside an 'echo' command?

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        unefunge
+      </div>
+      <div class='summary'>
+        Find which service was used by which port number
+      </div>
+      <div class='command'>
+        getent services <span>&lt;port_number&gt;</span>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        xutale
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7152/find-which-service-was-used-by-which-port-number" title="Find out what others think of this command">Find which service was used by which port number</a>
+      </div>
+      <div class='command'>
+        cat /etc/services | egrep [[:blank:]]<span>&lt;port_number&gt;</span>/
+      </div>
+      <div class='sample'>
+        <pre>
+xuta@xuta-itim:~$ cat /etc/services  | egrep [[:blank:]]25/
+smtp            25/tcp          mail
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Apply to almost linux distroes.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        unefunge
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7153/find-which-service-was-used-by-which-port-number" title="Find out what others think of this command">Find which service was used by which port number</a>
+      </div>
+      <div class='command'>
+        grep '\&lt;110/' /etc/services; grep '\b110/' /etc/services
+      </div>
+      <div class='sample'>
+        <pre>
+pop3            110/tcp    # Post Office Protocol - Version 3
+pop3            110/udp    # Post Office Protocol - Version 3
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          I used 110 as the port number in examples for clarity.
+        </p>
+        <p>
+          backslash+lessthan or backslash+b marks 'edge of the word'.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

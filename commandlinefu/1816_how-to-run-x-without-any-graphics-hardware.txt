@@ -1,0 +1,18 @@
+How to run X without any graphics hardware
+
+Terminal - How to run X without any graphics hardware
+startx -- `which Xvfb` :1 -screen 0 800x600x24 && DISPLAY=:1 x11vnc
+
+User: Spaz
+How to run X without any graphics hardware
+
+This starts an X server using Xvfb(1) (no graphics hardware required),
+then starts a VNC server on the display. Change :1 if there's a conflict
+with an existing display, and change 800x600x24 to suit your tastes (24 is
+the bit depth, 800x600 is the size). This command obviously requires X be
+installed, and also x11vnc(1); both are available via your favourite
+package manager. You can also use another VNC server of your choosing, as
+long as DISPLAY is set to the display of Xvfb(1). To change your desktop
+environment (the default is twm(1), which is rather fail), you can add it
+to your ~/.xinitrc file (see the startx(1) manpage for details).
+

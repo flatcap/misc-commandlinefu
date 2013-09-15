@@ -1,0 +1,40 @@
+Select and Edit a File in the Current Directory
+
+Terminal - Select and Edit a File in the Current Directory
+PS3="Enter a number: "; select f in *;do $EDITOR $f; break; done
+
+ $ select f in *;do vim $f; break; done
+ 1) arguments              5) getopt_homemade.sh    9) remove_from_path.sh
+ 2) data                   6) getopt_tryout        10) scriptname.sh
+ 3) for_example            7) getopts_tryout       11) var_substitution.sh
+ 4) getopt_function.sh     8) parameter_expansion
+ #? 4
+
+User: haivu
+Select and Edit a File in the Current Directory
+
+This command displays a simple menu of file names in the current
+directory. After the user made a choice, the command invokes the default
+editor to edit that file.
+
+* Without the break statement, the select command will loop forever
+
+* Setting the PS3 prompt is optional
+
+* If the user types an invalid choice (such as the letter q), then the
+variable $f will become an empty string.
+
+* For more information, look up the bash's select command
+
+
+Interesting. However, need to exclude directories and include hidden files
+in the listing.
+
+Comment by sklm 56 weeks and 6 days ago
+
+If you want to exclude dir and include hidden file, try this:
+
+PS3="Enter a number: "; select f in $(find . -type f -maxdepth 1);do
+$EDITOR $f; break; done
+Comment by haivu 56 weeks and 6 days ago
+

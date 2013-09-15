@@ -1,0 +1,18 @@
+Determine MAC address of remote host when you know its IP address
+
+Terminal - Determine MAC address of remote host when you know its IP
+address
+arping 192.168.1.2
+
+ ARPING 192.168.1.2 from 192.168.1.3 eth0
+ Unicast reply from 192.168.1.2 [0B:DE:36:AF:C1:C8]  0.968ms
+
+User: stinkerweed999
+Determine MAC address of remote host when you know its IP address
+
+arping sends ARP requests to a neighboring host. This won't work if there
+is an ARP subnet gateway in the middle. If there is, you'll just get the
+gateway's MAC address not the host's address you are really trying to get
+to.
+
+

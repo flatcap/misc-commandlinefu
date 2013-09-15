@@ -1,0 +1,22 @@
+Tip #546 / Move and follow 
+
+This can be used instead of "mv" to move file(s) and then cd into the
+destination folder.
+
+mvf() {
+if  mv "$@"; then
+shift $(($#-1))
+if [ -d $1 ]; then
+cd ${1}
+else
+cd `dirname ${1}`
+fi
+fi
+}
+
+#1 Erik Nomitch
+This can also be done in zsh with:
+
+mvw()
+{
+   mv "$@" && cd "${@[-1]}";

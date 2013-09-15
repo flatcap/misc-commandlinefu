@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        fukr
+      </div>
+      <div class='summary'>
+        forbid deletion of files for everyone
+      </div>
+      <div class='command'>
+        find . -maxdepth 1 -type f -exec chmod +a "everyone deny delete" {} \;
+      </div>
+      <div class='desc'>
+        <p>
+          Change the ACL so that no one can delete files in the current directory.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        fukr
+      </div>
+      <div class='text'>
+        <p>
+          "no one" does include the user that owns the files, but "doesn't" include root, naturally.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        kaedenn
+      </div>
+      <div class='text'>
+        <p>
+          I love the code in the Linux kernel for permissions checks: if (euid == 0) return TRUE;
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          Which OS and filesystem combination do you have that support ACLs?
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        fukr
+      </div>
+      <div class='text'>
+        <p>
+          Am using OS X.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

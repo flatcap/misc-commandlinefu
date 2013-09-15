@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        Mozai
+      </div>
+      <div class='summary'>
+        List your interfaces and MAC addresses
+      </div>
+      <div class='command'>
+        for f in /sys/class/net/*; do echo -e "$(basename $f)\t$(cat $f/address)"; done
+      </div>
+      <div class='sample'>
+        <pre>
+eth0       00:1d:09:xx:xx:xx
+lo      00:00:00:00:00:00
+wlan0   00:22:fb:xx:xx:xx
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Requires sysfs mounted on /sys - may only be useful for Linux systems.
+        </p>
+        <p>
+          Could also use "printf '%-8s %s\n' $(basename $f) $(cat $f/address)" instead of echo.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        vando
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8125/list-your-macs-address" title="Find out what others think of this command">List your MACs address</a>
+      </div>
+      <div class='command'>
+        lsmac() { ifconfig -a | sed '/eth\|wl/!d;s/ Link.*HWaddr//' ; }
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        barto
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8457/list-your-macs-address" title="Find out what others think of this command">List your MACs address</a>
+      </div>
+      <div class='command'>
+        cat /sys/class/net/eth0/address
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        rubo77
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8366/list-your-macs-address" title="Find out what others think of this command">List your MACs address</a>
+      </div>
+      <div class='command'>
+        ifconfig eth0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        houghi
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8581/list-your-macs-address" title="Find out what others think of this command">List your MACs address</a>
+      </div>
+      <div class='command'>
+        cat /sys/class/net/*/address
+      </div>
+      <div class='sample'>
+        <pre>
+00:23:54:19:c8:bc
+0a:00:27:00:00:00
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          No need for the ls -r and a sort is also not really needed.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        fossilet
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8168/list-your-macs-address" title="Find out what others think of this command">List your MACs address</a>
+      </div>
+      <div class='command'>
+        ip link | awk '/link/ {print $2}'
+      </div>
+      <div class='desc'>
+        <p>
+          The output of ifconfig is localized, using it will fail in non-English environment. "ip" command in iproute2 provides a consistent output and thus is more robust
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

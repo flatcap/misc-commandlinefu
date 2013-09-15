@@ -1,0 +1,20 @@
+First pass dvd rip... The set of commands was too long, so I had to separate
+                              them into two.
+
+Terminal - First pass dvd rip... The set of commands was too long, so I
+had to separate them into two.
+mencoder dvd://<title> -dvd-device <device> -aid 128 -info srcform='ripped
+by mencoder' -oac mp3lame -lameopts abr:br=128 -ovc xvid -xvidencopts
+pass=1:chroma_opt:vhq=4:bvhq=1:quant_type=mpeg -vf pp=de,crop=0:0:0:0,
+-ofps 30000/1001 -o '/dev/null'
+
+User: din7
+First pass dvd rip... The set of commands was too long, so I had to
+separate them into two.
+
+This set of commands will rip a dvd title using a 2 pass mencoder xvid
+encode. It will provide a great quality rip. It will rip as close to 700MB
+as possible. (note the bitrate of -700000)
+
+Enjoy!
+

@@ -1,0 +1,24 @@
+Resize A Mounted EXT3 File System
+
+Terminal - Resize A Mounted EXT3 File System
+v=/dev/vg0/lv0; lvextend -L+200G $v && resize2fs $v
+
+User: wwest4
+Resize A Mounted EXT3 File System
+
+Live extension of an ext3 file system on logical volume $v by 200GB
+without the need to unmount/remount.
+
+Requires that you have 1) a version of resize2fs that contains code merged
+from ext2online, and 2) kernel support for online resizing. (e.g. RHEL 5)
+
+Here's a writeup I did on a more complicated version of this, including
+moving to a RAID 1 array:
+
+http://www.hollenback.net/index.php/RaidLvmMigrate
+
+thanks also for noting you need CentOS 5 to do online resizing. CentOS 4
+doesn't do online ext3 resizing, you have to unmount the filesystem first.
+
+Comment by philiph 84 weeks and 4 days ago
+

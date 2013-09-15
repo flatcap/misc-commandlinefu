@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        all4artz
+      </div>
+      <div class='summary'>
+        Show database sql schema from Remote or Local database
+      </div>
+      <div class='command'>
+        mysqldump -u<span>&lt;dbusername&gt;</span> -p<span>&lt;dbpassword&gt;</span> <span>&lt;databasename&gt;</span> --no-data --tables
+      </div>
+      <div class='sample'>
+        <pre>
+CREATE TABLE `contacts` (
+  `id` int(10) NOT NULL auto_increment,
+  `firstname` text NOT NULL,
+  `lastname` text NOT NULL,
+  `email` text NOT NULL,
+  `address1` text NOT NULL,
+  `address2` text NOT NULL,
+  `city` text NOT NULL,
+  `state` text NOT NULL,
+  `postcode` text NOT NULL,
+  `country` text NOT NULL,
+  `phonenumber` text NOT NULL,
+  PRIMARY KEY  (`id`),
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          After ssh into server, run this command to show all the table structure and schema.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        quintic
+      </div>
+      <div class='summary'>
+        Colour part of your prompt red to indicate an error
+      </div>
+      <div class='command'>
+        export PROMPT_COMMAND='if (($? &gt; 0)); then echo -ne "\033[1;31m"; fi'; export PS1='[\[\]\u\[\033[0m\] \[\033[1;34m\]\w\[\033[0m\]]\$ '
+      </div>
+      <div class='desc'>
+        <p>
+          If the return code from the last command was greater than zero, colour part of your prompt red. The commands give a prompt like this:
+        </p>
+        <p>
+          [user current_directory]$
+        </p>
+        <p>
+          After an error, the "[user" part is automatically coloured red.
+        </p>
+        <p>
+          Tested using bash on xterm and terminal. Place in your .bashrc or .bash_profile.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        bakhru
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8305/colour-part-of-your-prompt-red-to-indicate-an-error" title="Find out what others think of this command">Colour part of your prompt red to indicate an error</a>
+      </div>
+      <div class='command'>
+        export PS1='[\[\e[36;1m\]\u@\[\e[32;1m\]\h \[\e[31;1m\]\w]# \[\e[0m\]'
+      </div>
+    </div>
+  </body>
+</html>

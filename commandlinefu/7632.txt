@@ -1,0 +1,9 @@
+Run local bash script on remote server
+
+ssh -T user@server < script.sh
+
+Run local scripts on remote server. "-T Disable pseudo-tty allocation"
+
+What others think
+
+Excellent.

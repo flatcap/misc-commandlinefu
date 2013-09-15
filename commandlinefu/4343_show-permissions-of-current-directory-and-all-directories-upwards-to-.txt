@@ -1,0 +1,28 @@
+Show permissions of current directory and all directories upwards to /
+
+Terminal - Show permissions of current directory and all directories
+upwards to /
+dir=$(pwd); while [ ! -z "$dir" ]; do ls -ld "$dir"; dir=${dir%/*}; done;
+ls -ld /
+
+ drwxr-xr-x 3 hudson nogroup 4096 2009-12-14 14:48 /var/lib/hudson/jobs/Product/workspace/foo-trunk/projects/Product/build/foo/db
+ drwxr-xr-x 5 hudson nogroup 4096 2009-12-14 14:48 /var/lib/hudson/jobs/Product/workspace/foo-trunk/projects/Product/build/foo
+ drwxr-xr-x 3 hudson nogroup 4096 2009-12-14 14:48 /var/lib/hudson/jobs/Product/workspace/foo-trunk/projects/Product/build
+ drwxr-x--- 8 hudson adm 4096 2009-12-14 15:02 /var/lib/hudson/jobs/Product/workspace/foo-trunk/projects/Product
+ drwxr-x--- 10 hudson adm 4096 2009-12-09 16:43 /var/lib/hudson/jobs/Product/workspace/foo-trunk/projects
+ drwxr-x--- 9 hudson adm 4096 2009-12-09 16:42 /var/lib/hudson/jobs/Product/workspace/foo-trunk
+ drwxr-x--- 3 hudson adm 4096 2009-12-09 16:36 /var/lib/hudson/jobs/Product/workspace
+ drwxr-x--- 4 hudson adm 4096 2009-12-14 14:48 /var/lib/hudson/jobs/Product
+ drwxr-x--- 8 hudson adm 4096 2009-12-09 16:32 /var/lib/hudson/jobs
+ drwxr-x--- 9 hudson adm 4096 2009-12-14 15:02 /var/lib/hudson
+ drwxr-xr-x 35 root root 4096 2009-12-07 14:38 /var/lib
+ drwxr-xr-x 14 root root 4096 2009-11-03 12:11 /var
+ drwxr-xr-x 21 root root 4096 2009-12-10 07:27 /
+
+User: hfs
+Show permissions of current directory and all directories upwards to /
+
+Useful if a different user cannot access some directory and you want to
+know which directory on the way misses the x bit.
+
+

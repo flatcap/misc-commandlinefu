@@ -1,0 +1,161 @@
+Inserts the results of an autocompletion in the command line
+
+Terminal - Inserts the results of an autocompletion in the command line
+ESC *
+
+ $ echo <ESC><*>
+ gives
+ $ echo aaa aab aba abb baa bab bba bbb
+
+ $ echo a<ESC><*>
+ gives
+ $ echo aaa aab aba abb
+ but also :
+
+ $ <ESC><*>
+ gives
+ $ \: \! . .. ... .... \[ \[\[ ]] \{ } 4xml 4xpath 4xslt 4xupdate 822-date 915resolution _a2dismod _a2dissite _a2enmod _a2ensite a2p a2ping aa-audit aa-autodep aa-complain aa-enforce aa-genprof aa-logprof aa-status aa-unconfined accept accessdb aconnect acpi acpi_available acpid acpi_fakekey acpi_listen acroread acyclic
+
+ (I stopped but it's basically the list of all the commands).
+
+User: Josay
+Inserts the results of an autocompletion in the command line
+
+Pressing ESC then * will insert in the command line the results of the
+autocompletion.
+
+It's hard to explain but if you look the sample output or do
+
+echo ESC *
+
+you will understand quickly.
+
+By the way, few reminders about ESC :
+
+- Hold ESC does the same thing as tab tab
+
+- 'ESC .' inserts the last argument of last command (can be done many
+times in order to get the last argument of all previous commands)
+
+
+interesting :)
+
+<ESC> *
+
+returns all the commands in a row.
+
+<ALT><NUM><.>
+
+grabs the 'NUM' argument from the previous command and puts it in the
+current command. 'NUM'=0 is the command
+
+eg.
+
+#ls a b c
+
+--some output--
+
+# #that is equal to 'ls b'
+
+Comment by JesusSuperstar 69 weeks and 2 days ago
+
+formating messed up the example above
+
+eg:
+
+ls a b c
+
+--some output
+
+<ALT><0><.> <ALT><2><.>
+
+# is equal to 'ls b'
+
+you have to holt the 'Alt' key the whole time.
+
+Comment by JesusSuperstar 69 weeks and 2 days ago
+
+Thanks a lot, that's awesome.
+
+Comment by Josay 69 weeks and 2 days ago
+
+I don't see in which case that's interesting. To make a for loop, simply
+remplace the command by "*" :
+
+for i in *; do somethingWith $i; done
+Comment by sputnick 69 weeks and 2 days ago
+
+Sputnick > because it's inserted in your command line, you can
+add/remove/change elements easily.
+
+And pressing 2 keys is faster than remembering the syntax for the for
+loop.
+
+Comment by Josay 69 weeks and 2 days ago
+
+Excellent!! Thanks for this.
+
+Comment by DaveQB 69 weeks and 2 days ago
+
+It also works with wildcard filtering:
+
+echo *.ogg<ESC>* # List *.ogg files echo *w*<ESC>* # List filenames
+containing 'w'
+Comment by sunny256 69 weeks and 2 days ago
+
+Seems to not work on Fedora 8/Bash
+
+Comment by ozymandias 69 weeks and 2 days ago
+
+@ozymandias
+
+What version of bash are you using? Mine is 3.2.39, and it works here.
+
+Comment by sunny256 69 weeks and 2 days ago
+bash --version
+
+GNU bash, version 3.2.33(1)-release (i386-redhat-linux-gnu)
+
+Comment by ozymandias 69 weeks and 1 day ago
+
+Whoa. Nice. Works fine here, on a gentoo machine .. "GNU bash, version
+4.0.17(2)-release (x86_64-pc-linux-gnu)"
+
+Comment by Alanceil 69 weeks and 1 day ago
+
+Not trying to be a hater, but stuff like this is why I use zsh. In zsh
+there is no mystery as to how this works, it just does.
+
+echo *<TAB>
+
+When I'm forced to use bash, I try and make it act like zsh so I can keep
+my sanity*. So far I've failed :)
+
+*says the long time zsh user. But seriously, give it a shot...
+
+Comment by claytron 69 weeks and 1 day ago
+
+Under bash 3.2.39 I can get echo *.c to work but ls -l *.c does not. Am I
+doing something wrong?
+
+Comment by bwoodacre 69 weeks ago
+
+Same version, same problem.
+
+Works :
+
+echo * esc-* any_other_command esc-* echo *.c esc-*
+
+Does not work :
+
+any_other_command *.c esc-*
+
+I just can't understand.
+
+Comment by Josay 68 weeks and 6 days ago
+Alt *
+
+Does the same; I find it easier to type.
+
+Comment by polar 68 weeks and 6 days ago
+

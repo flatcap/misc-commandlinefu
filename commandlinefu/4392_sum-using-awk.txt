@@ -1,0 +1,18 @@
+Sum using awk
+
+Terminal - Sum using awk
+ps -ylC httpd --sort:rss | awk '{ SUM += $8 } END { print SUM/1024 }'
+
+ 190.285
+
+User: nasser
+Sum using awk
+
+This command will show you amount of memory used by apache
+
+
+Not bad, but there's no point in sorting if you're going to sum all the
+values.
+
+Comment by flatcap 42 weeks and 3 days ago
+

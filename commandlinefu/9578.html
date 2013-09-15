@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        zlemini
+      </div>
+      <div class='summary'>
+        Exclude multiple columns using AWK
+      </div>
+      <div class='command'>
+        awk '{$1=$3=""}1' file
+      </div>
+      <div class='desc'>
+        <p>
+          Print all columns except the 1st and 3rd.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        alperyilmaz
+      </div>
+      <div class='text'>
+        <p>
+          "1" at the end is for printing, but what is that mean, in long?
+        </p>
+        <p>
+          How does it correspond to:
+        </p><code>awk '{$1=$3="";print}' file</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        zlemini
+      </div>
+      <div class='text'>
+        <p>
+          Awk views "1" as true and so performs its default action which is to print. Whereas "print" is a defined action.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Oxyaxion
+      </div>
+      <div class='text'>
+        <p>
+          Very usefull little awk-hack for parsing log : )
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

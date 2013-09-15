@@ -1,0 +1,15 @@
+Sort dotted quads
+
+sort -nt . -k 1,1 -k 2,2 -k 3,3 -k 4,4
+
+sort -nt . -k 1,1 -k 2,2 -k 3 -k 4  /tmp/j
+2.159.416.20
+3.4.160.100
+3.40.64.100
+3.59.146.22
+3.159.144.22
+3.195.144.22
+10.159.164.22
+
+Sort a list of IPV4 addresses in numerical order. Great as a filter, or
+within vim using !}

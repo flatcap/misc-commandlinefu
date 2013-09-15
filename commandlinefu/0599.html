@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        Tronks
+      </div>
+      <div class='summary'>
+        Runs previous command replacing foo by bar every time that foo appears
+      </div>
+      <div class='command'>
+        !!:gs/foo/bar
+      </div>
+      <div class='desc'>
+        <p>
+          Very useful for rerunning a long command changing some arguments globally.
+        </p>
+        <p>
+          As opposed to ^foo^bar, which only replaces the first occurrence of foo, this one changes every occurrence.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        joem86
+      </div>
+      <div class='text'>
+        <p>
+          This is also very useful for debian aptitude commands:
+        </p><code>aptitude search bzr</code> <code>sudo !!:s/search/install</code>
+        <p>
+          If you do a sudo ^search^install it won't work.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        alperyilmaz
+      </div>
+      <div class='text'>
+        <p>
+          how can we make this print instead of running it? I tried !!:pgs/foo/bar and didn't work ;)
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        fletch
+      </div>
+      <div class='text'>
+        <p>
+          @alperyilmaz Close! You're just missing another colon:
+        </p><code>!!:p:gs/foo/bar</code>
+        <p>
+          Modifiers ('gs' and 'p' here) are colon-separated. It seems as though there should be a colon between the 'g' and 's' too, but we leave it out because the 'g' only works in conjunction with 's'. If you used it on its own it would have no effect.
+        </p>
+        <p>
+          <a href="http://www.gnu.org/software/bash/manual/html_node/Modifiers.html" rel="nofollow">http://www.gnu.org/software/bash/manual/html_node/Modifiers.html</a>
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        alperyilmaz
+      </div>
+      <div class='text'>
+        <p>
+          @fletch: thanks, this will save me some typing..
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        linuxswords
+      </div>
+      <div class='text'>
+        <p>
+          why not just
+        </p><code>^foo^bar</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        vRobM
+      </div>
+      <div class='text'>
+        <p>
+          what about iterative operations where you replace foo with foo1, then foo1 with foo2, etc ?
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

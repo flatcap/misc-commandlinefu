@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        brubaker
+      </div>
+      <div class='summary'>
+        Unix commandline history substitution like ^foo^bar BUT for multiple replacements
+      </div>
+      <div class='command'>
+        !!:gs/Original/New/
+      </div>
+      <div class='sample'>
+        <pre>
+# groovy extractCalls.groovy 20100407 &amp;&amp; groovy extractInvokes.groovy 20100408 &amp;&amp; groovy extractInvokes.groovy 20100409
+
+# !!:gs/extractInvokes.groovy/extractCallbacks.groovy/
+
+# groovy extractCallbacks.groovy 20100407 &amp;&amp; groovy extractCallbacks.groovy 20100408 &amp;&amp; groovy extractCallbacks.groovy 20100409
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          #1 You invoked a command chain.
+        </p>
+        <p>
+          #2 You globaly replace the scriptnames and execute them direct
+        </p>
+        <p>
+          #3 The new executed command chain
+        </p>
+        <p>
+          [# ^foo^bar] would only replace the firts match [foo] with [bar].
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        linuxrawkstar
+      </div>
+      <div class='text'>
+        <p>
+          weeeeeeee! awesome.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        d34dh0r53
+      </div>
+      <div class='text'>
+        <p>
+          Money!
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        braklet
+      </div>
+      <div class='text'>
+        <p>
+          You can also use command history indexing to get to more than the previous command...
+        </p><code>echo foo foo foo</code>
+        <p>
+          foo foo foo
+        </p><code>ls</code>
+        <p>
+          file1
+        </p><code>!-2:gs/foo/bar/</code>
+        <p>
+          bar bar bar
+        </p>
+        <p>
+          This is an indispensable cheatsheet for bash history manipulation: <a href="http://www.catonmat.net/download/bash-history-cheat-sheet.pdf" rel="nofollow">http://www.catonmat.net/download/bash-history-cheat-sheet.pdf</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

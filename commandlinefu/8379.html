@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        hute37
+      </div>
+      <div class='summary'>
+        Numeric zero padding file rename
+      </div>
+      <div class='command'>
+        ls *.jpg | awk -F'.' '{ printf "%s %04d.%s\n", $0, $1, $2; }' | xargs -n2 mv
+      </div>
+      <div class='sample'>
+        <pre>
+mv 10.jpg 0010.jpg
+mv 11.jpg 0011.jpg
+mv 12.jpg 0012.jpg
+mv 13.jpg 0013.jpg
+mv 14.jpg 0014.jpg
+mv 15.jpg 0015.jpg
+mv 16.jpg 0016.jpg
+mv 17.jpg 0017.jpg
+mv 18.jpg 0018.jpg
+mv 19.jpg 0019.jpg
+mv 1.jpg 0001.jpg
+mv 20.jpg 0020.jpg
+mv 21.jpg 0021.jpg
+mv 22.jpg 0022.jpg
+mv 23.jpg 0023.jpg
+mv 24.jpg 0024.jpg
+mv 25.jpg 0025.jpg
+mv 2.jpg 0002.jpg
+mv 3.jpg 0003.jpg
+mv 4.jpg 0004.jpg
+mv 5.jpg 0005.jpg
+mv 6.jpg 0006.jpg
+mv 7.jpg 0007.jpg
+mv 8.jpg 0008.jpg
+mv 9.jpg 0009.jpg
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          rename file name with fixed length nomeric format pattern
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        eightmillion
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8383/numeric-zero-padding-file-rename" title="Find out what others think of this command">Numeric zero padding file rename</a>
+      </div>
+      <div class='command'>
+        rename 's/\d+/sprintf("%04d",$&amp;)/e' *.jpg
+      </div>
+      <div class='desc'>
+        <p>
+          This uses Perl's rename utility (you may have to call it as prename on your box) and won't choke on spaces or other characters in filenames. It will also zero pad a number even in filenames like "vacation-4.jpg".
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='text'>
+        <p>
+          Using 'ls' output for manipulating your data is WRONG and dangerous.
+        </p>
+        <p>
+          See this
+        </p>
+        <p>
+          <a href="http://mywiki.wooledge.org/ParsingLs" rel="nofollow">http://mywiki.wooledge.org/ParsingLs</a>
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Mozai
+      </div>
+      <div class='text'>
+        <p>
+          using xargs without cleansing the input is also wrong. Look what happens when you try this test data
+        </p><code>cd $(mktemp -d); touch "alpha.jpg" "beta beta.jpg"</code>
+        <p>
+          Run the above command, and you get "mv: no such file 'beta' "
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

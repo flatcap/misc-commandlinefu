@@ -1,0 +1,45 @@
+Show me a histogram of the busiest minutes in a log file:
+
+Terminal - Show me a histogram of the busiest minutes in a log file:
+cat /var/log/secure.log | awk '{print substr($0,0,12)}' | uniq -c | sort
+-nr | awk '{printf("\n%s ",$0) ; for (i = 0; i<$1 ; i++) {printf("*")};}'
+
+ -macbook:~ root# cat /var/log/secure.log | awk '{print substr($0,0,12)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i<$1 ; i++) {printf("*")};}' | head
+
+ 9 Jul 21 20:21 *********
+ 9 Jul 20 19:46 *********
+ 9 Jul 20 14:46 *********
+ 7 Jul 23 16:55 *******
+ 6 Jul 22 21:01 ******
+ 6 Jul 20 21:05 ******
+ 5 Jul 22 21:02 *****
+ 4 Jul 20 21:25 ****
+ 4 Jul 20 21:12 ****
+
+User: knassery
+Show me a histogram of the busiest minutes in a log file:
+
+Busiest seconds:
+
+cat /var/log/secure.log | awk '{print substr($0,0,15)}' | uniq -c | sort
+-nr | awk '{printf("\n%s ",$0) ; for (i = 0; i<$1 ; i++) {printf("*")};}'
+
+Nicely done!! I would remove cat to make it a little more efficient:
+
+awk '{print substr($0,0,15)}' /var/log/secure.log | uniq -c | sort -nr |
+awk '{printf("\n%s ",$0) ; for (i = 0; i<$1 ; i++) {printf("*")};}'
+Comment by zlemini 63 weeks and 3 days ago
+
+I would replace the first awk with:
+
+cut -c1-12
+Comment by ger 62 weeks and 5 days ago
+
+Love it. Thanks. To check my log4j files for the current hour I tweaked
+to:
+
+grep "^$(date '+%Y-%m-%d %H')" /blah/blah/logs/someLog4j.log | awk '{print
+substr($0,0,17)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i
+= 0; i<$1 ; i++) {printf("*")};}';echo
+Comment by mccalni 62 weeks and 5 days ago
+

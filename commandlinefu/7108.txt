@@ -1,0 +1,12 @@
+Undo
+
+[Ctrl+_]
+
+Ctrl+_
+
+Alternatives
+
+Terminal - Alternatives
+[Ctrl+u]
+
+Undo (sh, bash, tcsh)

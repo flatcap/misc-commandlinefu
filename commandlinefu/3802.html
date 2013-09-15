@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        Waldirio
+      </div>
+      <div class='summary'>
+        To print a specific line from a file
+      </div>
+      <div class='command'>
+        sed -n 5p <span>&lt;file&gt;</span>
+      </div>
+      <div class='sample'>
+        <pre>
+jeju:[xxx] &gt; sed -n 5p test
+line 5
+jeju:[xxx] &gt; cat test
+line 1
+line 2
+line 3
+line 4
+line 5
+line 6
+line 7
+line 8
+line 9
+line 10
+jeju:[xxx] &gt;
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          You can get one specific line during any procedure. Very interesting to be used when you know what line you want.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        ergut
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/361/print-all-the-lines-between-10-and-20-of-a-file" title="Find out what others think of this command">Print all the lines between 10 and 20 of a file</a>
+      </div>
+      <div class='command'>
+        sed -n '10,20p' <span>&lt;filename&gt;</span>
+      </div>
+      <div class='desc'>
+        <p>
+          Similarly, if you want to print from 10 to the end of line you can use: sed -n '10,$p' filename
+        </p>
+        <p>
+          This is especially useful if you are dealing with a large file. Sometimes you just want to extract a sample without opening the entire file.
+        </p>
+        <p>
+          Credit goes to wbx &amp; robert at the comments section of <a href="http://www.commandlinefu.com/commands/view/348/get-line1000-from-text.#comment" rel="nofollow">http://www.commandlinefu.com/commands/view/348/get-line1000-from-text.#comment</a>
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        tr00st
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8196/print-all-the-lines-between-10-and-20-of-a-file" title="Find out what others think of this command">Print all the lines between 10 and 20 of a file</a>
+      </div>
+      <div class='command'>
+        sed '10,20!d'
+      </div>
+      <div class='desc'>
+        <p>
+          Subtly different to the -n+p method... and probably wrong in so many ways....... But it's shorter. Just.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        dennisw
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/3853/to-print-a-specific-line-from-a-file" title="Find out what others think of this command">To print a specific line from a file</a>
+      </div>
+      <div class='command'>
+        awk 'FNR==5' <span>&lt;file&gt;</span>
+      </div>
+      <div class='desc'>
+        <p>
+          Just one character longer than the sed version ('FNR==5' versus -n 5p). On my system, without using "exit" or "q", the awk version is over four times faster on a ~900K file using the following timing comparison:
+        </p><code>testfile="testfile"; for cmd in "awk 'FNR==20'" "sed -n '20p'"; do echo; echo $cmd; eval "$cmd $testfile"; for i in {1..3}; do time for j in {1..100}; do eval "$cmd $testfile" &gt;/dev/null; done; done; done</code>
+        <p>
+          Adding "exit" or "q" made the difference between awk and sed negligible and produced a four-fold improvement over the awk timing without the "exit".
+        </p>
+        <p>
+          For long files, an exit can speed things up:
+        </p><code>awk 'FNR==5{print;exit}' &lt;file&gt;</code>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        yooreck
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/3841/to-print-a-specific-line-from-a-file" title="Find out what others think of this command">To print a specific line from a file</a>
+      </div>
+      <div class='command'>
+        awk '{if (NR == 3) print}' <span>&lt;file&gt;</span>
+      </div>
+      <div class='desc'>
+        <p>
+          I don't know if it's better but works fine :)
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        qweqq
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9380/to-print-a-specific-line-from-a-file" title="Find out what others think of this command">To print a specific line from a file</a>
+      </div>
+      <div class='command'>
+        tail -n +<span>&lt;N&gt;</span> <span>&lt;file&gt;</span> | head -n 1
+      </div>
+      <div class='sample'>
+        <pre>
+$ tail -n +5 /var/log/dmesg | head -n 1
+[    0.000000] KERNEL supported cpus:
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Tail is much faster than sed, awk because it doesn't check for regular expressions.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        arcege
+      </div>
+      <div class='text'>
+        <p>
+          It might be better to have
+        </p><code>sed -n '5{p;q}' file</code>
+        <p>
+          so you do not read the rest of a possibly long file.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        rajarshi
+      </div>
+      <div class='text'>
+        <p>
+          I suggest following -
+        </p>
+        <p>
+          awk 'NR == 3'
+        </p>
+        <p>
+          This will also do the same job :-). But its shorter...
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

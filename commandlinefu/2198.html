@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        gwiener
+      </div>
+      <div class='summary'>
+        Go to the previous sibling directory in alphabetical order
+      </div>
+      <div class='command'>
+        cd ../"$(ls -F ..|grep '/'|grep -B1 `basename $PWD`|head -n 1)"
+      </div>
+      <div class='desc'>
+        <p>
+          Based on linkinpark342 suggestion.
+        </p>
+        <p>
+          Sometimes you have to browse your way through a lot of sub-directories. This command cd to the previous sub-directory in alphabetical order. For example, if you have the directories "lectures/01-intro", "lectures/02-basic", "lectures/03-advanced" and so on, and your PWD is "02-basic", it jumps to "01-intro".
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

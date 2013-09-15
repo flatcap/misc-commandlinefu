@@ -1,0 +1,8 @@
+Tip #21 / bash redirection
+
+Place a filename at the beginning of the line to make it easier to edit
+the search at the end of the command.
+
+$ </var/log/messages grep foo
+$ </var/log/messages grep bar
+$ </var/log/messages grep user1

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        flart
+      </div>
+      <div class='summary'>
+        Share your terminal session (remotely or whatever)
+      </div>
+      <div class='command'>
+        screen -x
+      </div>
+      <div class='desc'>
+        <p>
+          Force the user you want to watch doing things into doing his things in a screen session. Then simply attach yourself to that session with the command shown above.
+        </p>
+        <p>
+          Works only if you are on the same machine, of course
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Escher
+      </div>
+      <div class='text'>
+        <p>
+          That only connects to existing screen processes in the current session. Not remotely, you need telnet or ssh access to the user account for that,
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flart
+      </div>
+      <div class='text'>
+        <p>
+          i DID write that into the description, which mystically got lost during posting the command.
+        </p>
+        <p>
+          Added it again
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        bwoodacre
+      </div>
+      <div class='text'>
+        <p>
+          things needed for this to work: (1) they tell me the screen binary must be setuid, (2) multiuser mode must be enabled via the -x option or 'multiuser on' command inside screen, and (3) users must be added via 'acladd username' command. At least that does it on debian/ubuntu systems.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

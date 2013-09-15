@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        fukr
+      </div>
+      <div class='summary'>
+        Copy/move a bunch of files to dot files and back
+      </div>
+      <div class='command'>
+        for f in *.txt; do cp $f .$f; done;
+      </div>
+      <div class='desc'>
+        <p>
+          Or move them to dot files.
+        </p><code>for f in *.txt; do mv $f .$f; done;</code>
+        <p>
+          To reverse the process:
+        </p><code>for f in .*.txt ;do mv $f ${f##.}; done;</code>
+        <p>
+          (or cp)
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        anarcat
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9831/copymove-a-bunch-of-files-to-dot-files-and-back" title="Find out what others think of this command">Copy/move a bunch of files to dot files and back</a>
+      </div>
+      <div class='command'>
+        rename s/^/./ *
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        bugmenot
+      </div>
+      <div class='text'>
+        <code>rename 's/^/\./' *.txt</code>
+        <p>
+          to rename
+        </p><code>rename 's/^\.//' .*.txt</code>
+        <p>
+          to rename back
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        atoponce
+      </div>
+      <div class='text'>
+        <p>
+          Perl is installed on just about every system. If so, @bugmenot has the right command.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        fukr
+      </div>
+      <div class='text'>
+        <p>
+          @atoponce no `rename` command here.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        bahamas10
+      </div>
+      <div class='text'>
+        <p>
+          you should quote $f and .$f, incase the filename have spaces.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

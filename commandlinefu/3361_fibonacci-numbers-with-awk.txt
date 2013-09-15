@@ -1,0 +1,105 @@
+Fibonacci numbers with awk
+
+Terminal - Fibonacci numbers with awk
+awk 'BEGIN {a=1;b=1;for(i=0;i<'${NUM}';i++){print a;c=a+b;a=b;b=c}}'
+
+ 1
+ 2
+ 3
+ 5
+ 8
+ 13
+ 21
+ 34
+ 55
+ 89
+ 144
+ 233
+ 377
+ 610
+ 987
+ 1597
+ 2584
+ 4181
+ 6765
+ 10946
+ 17711
+ 28657
+
+User: arcege
+Fibonacci numbers with awk
+
+Does not require input to function or complete. Number of iterations
+controlled by shell variable $NUM.
+
+
+
+
+seq 50| awk 'BEGIN {a=1; b=1} {print a; c=a+b; a=b; b=c}'
+
+ 1
+ 2
+ 3
+ 5
+ 8
+ 13
+ 21
+ 34
+ 55
+ 89
+ 144
+ 233
+ 377
+ 610
+ 987
+ 1597
+ 2584
+ 4181
+ 6765
+ 10946
+ 17711
+ 28657
+ 46368
+ 75025
+ 121393
+ 196418
+ 317811
+ 514229
+ 832040
+ 1346269
+ 2178309
+ 3524578
+ 5702887
+ 9227465
+ 14930352
+ 24157817
+ 39088169
+ 63245986
+ 102334155
+ 165580141
+ 267914296
+ 433494437
+ 701408733
+ 1134903170
+ 1836311903
+ 2971215073
+ 4807526976
+ 7778742049
+ 12586269025
+
+User: kaan
+Fibonacci numbers with awk
+
+Another combination of seq and awk. Not very efficient, but sufficiently
+quick.
+
+prev=0;next=1;echo $prev;while(true);do echo
+$next;sum=$(($prev+$next));prev=$next;next=$sum;sleep 1;done
+
+User: sharfah
+Fibonacci numbers with sh
+
+The Fibononacci sequence is supposed to start from 0, not 1.
+
+Comment by sharfah 57 weeks and 3 days ago
+

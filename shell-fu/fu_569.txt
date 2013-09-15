@@ -1,0 +1,24 @@
+Tip #569 / Remove or delete columns from a csv file 
+
+cut -d"," -f1,5 file.csv > newfile.csv
+
+Will return only the 1st and 5th columns of a comma-delimited csv file.
+#1 Glen
+Thank you very much for sharing this code with the community.  I learn a
+lot from shell-fu.  But you might want to document that this example will
+only work if your comma-separated values never contain commas.  Fields
+containing commas are quoted:
+
+field_1, "hello, field two", field_3
+
+Also, double-quotes in a CSV file are escaped with... double-quotes:
+
+field_1, "I said, ""hello, field two""", field_3
+
+I don't have a workaround, but documenting the limitation might be enough.
+ Maybe you or someone else will be inspired to provide an improved
+version.
+#2 Pleurastic
+I changed code to
+$ cut -d" " -f18,19 file.csv > newfile.csv
+This saves column 18&19 in a SPACE (" ") delimited file to newfile.

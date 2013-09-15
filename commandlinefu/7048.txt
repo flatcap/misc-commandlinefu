@@ -1,0 +1,33 @@
+Watch and keep history of a command
+
+CMD="who";SEC=1;N=0;OLD="";NEW=""; while `sleep $SEC`; do OLD="$NEW";
+NEW="$(eval $CMD)"; DIFF=`diff <( echo "$OLD" ) <( echo "$NEW" )`; if [ -n
+"$DIFF" ]; then date; echo "Diff #$N (${SEC}s): $CMD"; echo "$DIFF"; fi;
+N=$[$N+1]; done | tee /tmp/keepr
+
+Mon Dec 25 14:15:30 EST 2099
+Diff #0 (1s): who
+1c1
+<
+---
+> [me]     pts/1        2099-12-25 09:50 ([i.forget])
+Mon Dec 25 14:15:32 EST 2099
+Diff #4 (1s): who
+1a2
+> [notme]  pts/2        2099-12-25 14:15 ([i.forget])
+Mon Dec 25 14:20:37 EST 2099
+Diff #11 (1s): who
+1a2
+< [notme]  pts/2        2099-12-25 14:15 ([i.forget])
+
+Watch any command (pipes ok, quotes be careful) and keep history in a
+file. Good for watching and recording any kind of status or error
+condition, file creations, etc. The choice of "who" as CMD was just to
+show an obvious usage.
+
+Uses plenty of shell tricks that can be disassembled for simpler stuff.
+It's deliberately not perfect, but it is generic, and can be customized
+for your own uses. Had to shorten a little to meet 255 chars.
+
+Better than "watch" how? It keeps a date log of what is going on, and
+tee'd output is plain-text.

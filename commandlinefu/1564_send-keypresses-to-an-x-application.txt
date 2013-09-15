@@ -1,0 +1,39 @@
+Send keypresses to an X application
+
+Terminal - Send keypresses to an X application
+xvkbd -xsendevent -text "Hello world"
+
+User: Alanceil
+Send keypresses to an X application
+
+This is a (last resort) way to automate applications that provide no other
+ways for automation, it would send 'Hello world' to the currently active
+window. See the manpage (and the -text and -window entries) for how to
+send special characters and target specific windows.
+
+An example:
+
+Using xwininfo, I get the id of my XPlanet background window:
+
+alanceil@kvirasim:19:51:0:~> xwininfo
+
+xwininfo: Please select the window about which you
+
+would like information by clicking the
+
+mouse in that window.
+
+xwininfo: Window id: 0x3600001 "Xplanet 1.2.0"
+
+Absolute upper-left X: 0
+
+(..etc..)
+
+Now I use xvkbd to tell it to close itself:
+
+xvkbd -xsendevent -window 0x3600001 -text "Q"
+
+Obviously, the best way is to put these commands in a shellscript - just
+make sure to include a short sleep (sleep .1 should suffice) after each
+xvkbd call, or some programs will become confused.
+

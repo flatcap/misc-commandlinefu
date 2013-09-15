@@ -1,0 +1,46 @@
+Second pass dvd rip... The set of commands was too long, so I had to separate
+                              them into two.
+
+Terminal - Second pass dvd rip... The set of commands was too long, so I
+had to separate them into two.
+mencoder dvd://<title> -dvd-device <device> -aid 128 -info srcform='ripped
+by mencoder' -oac mp3lame -lameopts abr:br=128 -ovc xvid -xvidencopts
+pass=2:bitrate=-700000 -ofps 30000/1001 -o '<outputfile.avi>'
+
+User: din7
+Second pass dvd rip... The set of commands was too long, so I had to
+separate them into two.
+
+This set of commands will rip a dvd title using a 2 pass mencoder xvid
+encode. It will provide a great quality rip. It will rip as close to 700MB
+as possible. (note the bitrate of -700000)
+
+Enjoy!
+
+How do i find out what to put in and ?
+
+Comment by vinnie_ 63 weeks and 4 days ago
+
+well... let me try this again.
+
+How do i find out what to put in
+
+<title>
+
+and
+
+<device>
+
+?
+
+Comment by vinnie_ 63 weeks and 4 days ago
+
+You can use lsdvd to list the contents of the dvd, and device should be
+something along the lines of /dev/dvd, or /dev/cdrom, or even /dev/sr0.
+
+Comment by din7 63 weeks and 2 days ago
+
+also you can use -dvd-device /path/to/iso or alhocol mdf
+
+Comment by bornbewild 38 weeks and 1 day ago
+

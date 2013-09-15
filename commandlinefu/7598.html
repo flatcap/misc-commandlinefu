@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        SuperFly
+      </div>
+      <div class='summary'>
+        Convert a string to "Title Case"
+      </div>
+      <div class='command'>
+        echo "this is a test" | sed 's/.*/\L&amp;/; s/[a-z]*/\u&amp;/g'
+      </div>
+      <div class='sample'>
+        <pre>
+$ echo "this is a test" | sed 's/.*/\L&amp;/; s/[a-z]*/\u&amp;/g'
+This Is A Test
+$
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Converts the first letter of each word to upper case
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        seungwon
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7608/convert-a-string-to-title-case" title="Find out what others think of this command">Convert a string to "Title Case"</a>
+      </div>
+      <div class='command'>
+        echo 'This is a TEST' | sed 's/[^ ]\+/\L\u&amp;/g'
+      </div>
+      <div class='sample'>
+        <pre>
+This Is A Test
+</pre>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        cjrogers
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7622/convert-a-string-to" title="Find out what others think of this command">Convert a string to</a>
+      </div>
+      <div class='command'>
+        python -c "print 'this is a test'.title()"
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Volt
+      </div>
+      <div class='text'>
+        <p>
+          Aw man, only works on Linux, not on BSD/Mac OS X.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

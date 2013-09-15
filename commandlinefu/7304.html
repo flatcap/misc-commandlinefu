@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        infinull
+      </div>
+      <div class='summary'>
+        print line and execute it in BASH
+      </div>
+      <div class='command'>
+        echo <span>&lt;command&gt;</span>; !#:0-$
+      </div>
+      <div class='desc'>
+        <p>
+          !# is the currennt line so far, by using !#:- you can go from the second arg (it's zero indexed) to the last ($)
+        </p>
+        <p>
+          (did I understand the problem correctly?)
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        unixmonkey8024
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7321/print-line-and-execute-it-in-bash" title="Find out what others think of this command">print line and execute it in BASH</a>
+      </div>
+      <div class='command'>
+        bash -x script.sh
+      </div>
+      <div class='sample'>
+        <pre>
++ uname -a
+Linux torgerde 2.6.35-22-generic #35-Ubuntu SMP Sat Oct 16 20:45:36 UTC 2010 x86_64 GNU/Linux
++ whoami
+robert
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          If script.sh contains only these two lines:
+        </p>
+        <p>
+          $ uname -a
+        </p>
+        <p>
+          $ whoami
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        depesz
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7308/print-line-and-execute-it-in-bash" title="Find out what others think of this command">print line and execute it in BASH</a>
+      </div>
+      <div class='command'>
+        set -x
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        unixmonkey20949
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8365/print-line-and-execute-it-in-bash" title="Find out what others think of this command">print line and execute it in BASH</a>
+      </div>
+      <div class='command'>
+        $ echo "command"; `!#:0-$
+      </div>
+      <div class='sample'>
+        <pre>
+$ echo "ls"; `!#:0-$
+
+echo "ls"; `echo "ls" ; `
+ls
+Android.mk  ardrv  devmgr  egl  file1
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          since we're repeating the command there after the semicolon, we only need one backtick
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        chaliyans
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7303/print-line-and-execute-it-in-bash" title="Find out what others think of this command">print line and execute it in BASH</a>
+      </div>
+      <div class='command'>
+        <span>&lt;TBD&gt;</span>
+      </div>
+      <div class='desc'>
+        <p>
+          Is there a way to print the line BASH is executing without copy+paste the line inside an 'echo' command?
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        unixmonkey20949
+      </div>
+      <div class='text'>
+        <p>
+          This cmdline prints twice for me.
+        </p>
+        <p>
+          If I do:
+        </p><code>echo "&lt;command&gt;"; `!#:0-$`</code>
+        <p>
+          This works for me..
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+Tip #23 / duplicate/merge output
+
+It can be useful to not only know what has gone to stdout and stderr but
+also where they occurred with respect to each other.
+Allow stderr to go to err.txt, stdout to out.txt and both to mix.txt
+
+((./program 2>&1 1>&3 | tee ~/err.txt) 3>&1 1>&2 | tee ~/out.txt) > ~/mix.txt 2>&1

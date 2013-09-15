@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        BobbyTables
+      </div>
+      <div class='summary'>
+        xargs for builtin bash commands
+      </div>
+      <div class='command'>
+        xargsb() { while read -r cmd; do ${@//'{}'/$cmd}; done; }
+      </div>
+      <div class='desc'>
+        <p>
+          Similar to xargs -i, but works with builtin bash commands (rather than running "bash -c ..." through xargs)
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        wytten
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7602/xargs-for-builtin-bash-commands" title="Find out what others think of this command">xargs for builtin bash commands</a>
+      </div>
+      <div class='command'>
+        bargs { while read i; do "$@" "$i"; done }
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        maelcum
+      </div>
+      <div class='text'>
+        <p>
+          wow. this is great. it took me 20 mins to decipher ${@//'{}'/}
+        </p>
+        <p>
+          and I've learned a lot about brace expansion that I had forgotten a long time about...
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

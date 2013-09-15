@@ -1,0 +1,8 @@
+Boot another OS at next startup
+
+Terminal - Boot another OS at next startup
+echo "savedefault --default=2 --once" | grub --batch; sudo reboot
+
+User: binfalse
+Boot another OS at next startup
+

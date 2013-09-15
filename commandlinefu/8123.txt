@@ -1,0 +1,38 @@
+Selecting a random file/folder of a folder
+
+a=(*); echo ${a[$((RANDOM % ${#a[@]}))]}
+
+Here's a bash version using an array.
+
+Alternatives
+
+There are 7 alternatives - vote for the best!
+
+Terminal - Alternatives
+shuf -n1 -e *
+
+Music
+
+I used only shuf command.
+
+ls -1 | shuf -n 1
+
+random file from files in directory
+
+for i in *; do echo "$i"; done | shuf -n1
+
+Choose random file from current folder. Avoids using ls.
+
+ls -1 | awk 'BEGIN{srand()} {x[NR] = $0} END{print "Selected", x[1 +
+int(rand() * NR)]}'
+
+Selected srandom.awk
+
+I use this command to select a random movie from my movie collection..
+
+ls -1 | sort -R | sed -n 's/^/Selected /;1p'
+
+/tmp$ ls -1 | sort -R | sed -n 's/^/Selected /;1p'
+Selected keyring-dn8fNC
+
+Select a file/folder at random.

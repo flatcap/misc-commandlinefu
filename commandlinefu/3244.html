@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        unixbhaskar
+      </div>
+      <div class='summary'>
+        Seach google from the command line in Unofficial google shell
+      </div>
+      <div class='command'>
+        http://goosh.org
+      </div>
+      <div class='sample'>
+        <pre>
+Once the command prompt come and you type something to search like below:
+
+guest@goosh.org:/web&gt; nagios
+  1)    Nagios - The Industry Standard in IT Infrastructure Monitoring
+Nagios provides enterprise-class Open Source monitoring of hosts, services, ... Learn why organizations around the world trust Nagios to handle their IT ...
+http://www.nagios.org/
+ 
+  2)    Nagios - About Nagios
+Nagios is a powerful monitoring system that enables organizations to identify and resolve IT infrastructure problems before they affect critical business ...
+http://www.nagios.org/about/
+ 
+  3)    Nagios - Wikipedia, the free encyclopedia
+Nagios (pronounced /&amp;#712;n&amp;#593;&amp;#720;&amp;#609;i.o&amp;#650;s/) is a popular open source computer system and network monitoring software application. It watches hosts and services, ...
+http://en.wikipedia.org/wiki/Nagios
+ 
+  4)    Nagios Enterprises
+Industry-leading, professional support contracts for Nagios ensure that your organization's critical IT infrastructure monitoring doesn't miss a beat. ...
+http://www.nagios.com/
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          You can try it . Nice shell interface to search google from the command line.Visit <a href="http://goosh.org" rel="nofollow">http://goosh.org</a> in your browser.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        op4
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/3815/google-search" title="Find out what others think of this command">google search</a>
+      </div>
+      <div class='command'>
+        perl -e '$i=0;while($i&lt;10){open(WGET,qq/|xargs lynx -dump/);printf WGET qq{http://www.google.com/search?q=site:g33kinfo.com&amp;hl=en&amp;start=$i&amp;sa=N},$i+=10}'|grep '\/\/g33kinfo.com\/'
+      </div>
+      <div class='sample'>
+        <pre>
+  12. http://g33kinfo.com/
+  15. http://g33kinfo.com/info/?p=386
+  18. http://g33kinfo.com/info/?p=440
+  20. http://g33kinfo.com/info/?p=441
+  22. http://g33kinfo.com/info/?p=288
+  25. http://g33kinfo.com/info/?p=355
+  28. http://g33kinfo.com/info/?p=327
+  31. http://g33kinfo.com/info/?p=400
+  34. http://g33kinfo.com/info/?p=102
+  37. http://g33kinfo.com/info/?p=402
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          not my cmd... found on the web
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

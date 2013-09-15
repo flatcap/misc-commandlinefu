@@ -1,0 +1,17 @@
+Tip #154 / Port forwarding that automatically disconnects 
+
+If you want to tunnel a long-lived connection over SSH such that the
+tunnel goes away when the application disconnects, try something like the
+following example:
+
+ssh -f -q -L 5900:localhost:5900 user@remotehost.com sleep 60
+
+By executing "sleep 60" remotely, the tunnel stays alive for at least 60
+seconds, and assuming your application has connected by then, the tunnel
+will continue to stay alive until the application disconnects.
+
+The options given above are perfect for executing this command from a
+script; it is quiet (-q) and goes to background after prompting for a
+password (-f). This particular example forwards the VNC protocol so that
+when your VNC client connects to localhost, it connects securely to
+remotehost.com over the tunnel.

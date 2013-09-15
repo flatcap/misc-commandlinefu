@@ -1,0 +1,47 @@
+Place the NUM-th argument of the most recent command on the shell
+
+<ALT>+<.> or <ALT>+<NUM>+<.> or <ALT>+<NUM>,<ALT>+<.>
+
+After executing a command with multiple arguments like
+
+cp ./temp/test.sh ~/prog/ifdown.sh
+
+you can paste any argument of the previous command to the console, like
+
+ls -l ALT+1+.
+
+is equivalent to
+
+ls -l ./temp/test.sh
+
+ALT+0+. stands for command itself ('ls' in this case)
+
+Simple ALT+. cycles through last arguments of previous commands.
+
+Alternatives
+
+There are 6 alternatives - vote for the best!
+
+Terminal - Alternatives
+'ALT+.' or '<ESC> .'
+
+When typing out long arguments, such as:
+
+cp file.txt /var/www/wp-content/uploads/2009/03/
+
+You can put that argument on your command line by holding down the ALT key
+and pressing the period '.' or by pressing <ESC> then the period '.'. For
+example:
+
+cd 'ALT+.'
+
+would put '/var/www/wp-content/uploads/2009/03/ as my argument. Keeping
+pressing 'ALT+.' to cycle through arguments of your commands starting from
+most recent to oldest. This can save a ton of typing.
+
+<ESC> .
+<ALT> .
+<alt+.>
+<Esc> _
+
+This works if your terminal is in Vi mode

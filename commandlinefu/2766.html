@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        0x89
+      </div>
+      <div class='summary'>
+        ssh autocomplete
+      </div>
+      <div class='command'>
+        complete -W "$(echo $(grep '^ssh ' .bash_history | sort -u | sed 's/^ssh //'))" ssh
+      </div>
+      <div class='desc'>
+        <p>
+          Stop tormenting the poor animal cat. See <a href="http://sial.org/howto/shell/useless-cat/." rel="nofollow">http://sial.org/howto/shell/useless-cat/.</a>
+        </p>
+        <p>
+          Edit:
+        </p>
+        <p>
+          replaced
+        </p><code>sort | uniq</code>
+        <p>
+          by
+        </p><code>sort -u</code>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        viner
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/2747/ssh-autocomplete" title="Find out what others think of this command">ssh autocomplete</a>
+      </div>
+      <div class='command'>
+        complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
+      </div>
+      <div class='sample'>
+        <pre>
+$ssh myserver.&lt;tab&gt;
+$ssh myserver.insanelylongcompanynamethatishardtospell.com
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Add to your bash profile to minimize carpal tunnel syndrome.
+        </p>
+        <p>
+          Doesn't work with user@hostname but appending "-l user" works fine if needed.
+        </p>
+        <p>
+          Works for ping as well..
+        </p>
+        <p>
+          complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ping
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        bashrc
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9086/ssh-autocomplete-based-on-.sshconfig" title="Find out what others think of this command">ssh autocomplete based on ~/.ssh/config</a>
+      </div>
+      <div class='command'>
+        perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
+      </div>
+      <div class='desc'>
+        <p>
+          I use this in my bashrc to expand hosts defined in ~/.ssh/config:
+        </p>
+        <p>
+          function _ssh_completion() {
+        </p>
+        <p>
+          perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
+        </p>
+        <p>
+          }
+        </p>
+        <p>
+          complete -W "$(_ssh_completion)" ssh
+        </p>
+        <p>
+          Here's a great article on how to setup your own ~/.ssh/config:
+        </p>
+        <p>
+          <a href="http://blogs.perl.org/users/smylers/2011/08/ssh-productivity-tips.html" rel="nofollow">http://blogs.perl.org/users/smylers/2011/08/ssh-productivity-tips.html</a>
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        daodennis
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8675/enable-tab-completion-for-known-ssh-hosts" title="Find out what others think of this command">Enable tab completion for known SSH hosts</a>
+      </div>
+      <div class='command'>
+        complete -W "$(sed 's/;.*//;' /etc/hosts | awk ' /^[[:digit:]]/ {$1 = "";print tolower($0)}')" ssh
+      </div>
+      <div class='desc'>
+        <p>
+          If you have a lot of hosts in /etc/hosts this would be very useful. Anyone have any more concise examples?
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        sammcj
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8562/enable-tab-completion-for-known-ssh-hosts" title="Find out what others think of this command">Enable tab completion for known SSH hosts</a>
+      </div>
+      <div class='command'>
+        complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        kulor
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/2759/ssh-autocomplete" title="Find out what others think of this command">ssh autocomplete</a>
+      </div>
+      <div class='command'>
+        complete -W "$(echo `cat .bash_history | egrep '^ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh
+      </div>
+      <div class='desc'>
+        <p>
+          Could use your ssh bash history if your known_hosts are hashed and you want to keep it hashed
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        CodSpirit
+      </div>
+      <div class='text'>
+        <p>
+          Really good
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

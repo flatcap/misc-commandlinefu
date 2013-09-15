@@ -1,0 +1,11 @@
+show ls colors with demo
+
+Terminal - show ls colors with demo
+echo $LS_COLORS | sed 's/:/\n/g' | awk -F= '!/^$/{printf("%s
+\x1b[%smdemo\x1b[0m\n",$0,$2)}'
+
+User: bones7456
+show ls colors with demo
+
+This can show all ls colors, with a demo.
+

@@ -1,0 +1,68 @@
+Remove executable bit from all files in the current directory recursively,
+                       excluding other directories
+
+Terminal - Remove executable bit from all files in the current directory
+recursively, excluding other directories
+chmod -R -x+X *
+
+User: CodSpirit
+Remove executable bit from all files in the current directory recursively,
+excluding other directories
+
+With GNU chmod at least it is that simple.
+
+
+
+find . ! -type d -exec chmod -x {}\;
+
+User: drashkeev
+Remove executable bit from all files in the current directory recursively,
+excluding other directories
+
+Useful if you have copied files from an OS without a permission structure
+(for example, DOS) and you need to disable all executable files but want
+to be able to descend into your directories.
+
+chmod -R u=rw-x+X,g=r-x+X,o= .
+
+ -rw-r-----   1 www-data www-data 3353273 Jun 21 17:58 XP_Help_20100621.zip
+ drwxr-x---   8 www-data www-data    4096 Jun  3  2009 Widgetized_HomePage
+ drwxr-x---  12 www-data www-data    4096 Jan 12  2010 Wizard_Old_Concept
+ drwxr-x---   5 www-data www-data    4096 Oct 21  2009 Wizard_New_Concept
+
+User: donnoman
+Remove executable bit from all files in the current directory recursively,
+excluding other directories, firm permissions
+
+forces user to rw, group to r, and other to no access.
+
+files will not be marked executable.
+
+directories will be executable for users and groups only.
+
+find . -type f -exec chmod 640 {} ';'
+
+User: lionping
+Remove executable bit from all files in the current directory recursively,
+excluding other directories, firm permissions
+find . -type f -exec chmod a-x {} \;
+
+User: bandie91
+Remove executable bit from all files in the current directory recursively,
+excluding other directories, firm permissions
+find . -type f | while read f; do chmod -x "$f"; done
+
+User: alesplin
+Remove executable bit from all files in the current directory recursively,
+excluding other directories
+
+I hate -exec with find, and this pattern quickly expands to other tasks.
+
+
+Not bad. I usually did that with something like what drashkeev proposed
+but I always found it too long.
+
+I never cared to look further the chmod man... Brilliant!
+
+Comment by rbossy 47 weeks and 6 days ago
+

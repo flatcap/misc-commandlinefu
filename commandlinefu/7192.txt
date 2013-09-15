@@ -1,0 +1,24 @@
+strip non-constant number of directories from tar archive while decompressing
+
+tar --transform 's#.*/\([^/]*\)$#\1#' -xzvf test-archive.tar.gz
+
+$ tar tzvf test-archive.tar.gz
+./path/to/first/file/a.txt
+./another/path/to/files/to/be/archived/b.txt
+./another/path/to/files/to/be/archived/c.txt
+
+$ tar --transform 's#.*/\([^/]*\)$#\1#' -xzvf test-archive.tar.gz
+$ ls
+a.txt
+b.txt
+c.txt
+test-archive.tar.gz
+
+If you want to decompress the files from an archive to current directory
+by stripping all directory paths, use --transform option to strip path
+information. Unfortunately, --strip-components option is good if the
+target files have same and constant depth of folders.
+
+What others think
+
+Instant tarbomb!

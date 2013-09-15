@@ -1,0 +1,56 @@
+Nicely display permissions in octal format with filename
+
+Terminal - Nicely display permissions in octal format with filename
+stat -c '%A %a %n' *
+
+ -rwxrwxr-x 775 argv.csh
+ -rwxr-xr-x 755 array.sh
+ -rwxrwxr-x 775 backup
+ -rw-r--r-- 644 bash_trap
+ -rw-r--r-- 644 bash_wait
+
+User: servermanaged
+Nicely display permissions in octal format with filename
+
+Nicely display permissions in octal format and filename for a given
+directory
+
+
+
+
+stat -f '%Sp %p %N' * | rev | sed -E
+'s/^([^[:space:]]+)[[:space:]]([[:digit:]]{4})[^[:space:]]*[[:space:]]([^[:space:]]+)/\1
+\2 \3/' | rev
+
+ -r-xr-xr-x 0555 cat
+ -r-xr-xr-x 0555 chflags
+ -r-xr-xr-x 0555 chio
+ -r-xr-xr-x 0555 chmod
+ -r-xr-xr-x 0555 cp
+ -r-xr-xr-x 0555 csh
+ -r-xr-xr-x 0555 date
+ -r-xr-xr-x 0555 dd
+ -r-xr-xr-x 0555 df
+ -r-xr-xr-x 0555 domainname
+
+User: vwal
+Nicely display permissions in octal format with filename
+
+Since the original command (#1873) didn't work on FreeBSD whose stat lacks
+the "-c" switch, I wrote an alternative that does. This command shows also
+the fourth digit of octal format permissions which yields the sticky bit
+information.
+
+
+Huh. Didn't know stat let you format the output manually like that.
+
+Comment by kaedenn 78 weeks and 6 days ago
+
+Yes it can :)
+
+Comment by servermanaged 78 weeks and 6 days ago
+
+When in doubt, ask a `man`
+
+Comment by linuxrawkstar 62 weeks and 1 day ago
+

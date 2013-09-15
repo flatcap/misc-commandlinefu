@@ -1,0 +1,84 @@
+bash shortcut: !$ !^ !* !:3 !:h and !:t
+
+Terminal - bash shortcut: !$ !^ !* !:3 !:h and !:t
+echo foo bar foobar barfoo && echo !$ !^ !:3 !* && echo /usr/bin/foobar&&
+echo !$:h !$:t
+
+User: lhb
+bash shortcut: !$ !^ !* !:3 !:h and !:t
+
+When expanding, bash output the command, so don't be affraid if you type
+the command.
+
+Here is the details:
+
+First examples:
+
+echo foo bar foobar barfoo
+
+First argument:
+
+echo !$
+
+echo barfoo
+
+barfoo
+
+(Note that typing echo foo bar foobar barfoo && echo !$, bash substitute
+!$ with $:1)
+
+Last argument:
+
+echo foo bar foobar barfoo && echo !^
+
+echo foo bar foobar barfoo && echo barfoo
+
+foo bar foobar barfoo
+
+barfoo
+
+All the arguments:
+
+echo !*
+
+echo foo bar foobar barfoo
+
+foo bar foobar barfoo
+
+The third argument:
+
+echo foo bar foobar barfoo && echo !:3
+
+echo foo bar foobar barfoo && echo foobar
+
+foo bar foobar barfoo
+
+foobar
+
+You may want to add {} for large numbers: echo !:{11} for example
+
+Now with path:
+
+echo /usr/bin/foobar
+
+/usr/bin/foobar
+
+For the head:
+
+echo !$:h
+
+echo /usr/bin
+
+/usr/bin
+
+And the tail:
+
+echo !$:t
+
+echo foobar
+
+foobar
+
+You also may want to try !:h and !:t or !!3-4 for the third and the fourth
+(so !!:* == !!:1-$)
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        point_to_null
+      </div>
+      <div class='summary'>
+        Draw kernel module dependancy graph.
+      </div>
+      <div class='command'>
+        lsmod | awk 'BEGIN{print "digraph{"}{split($4, a, ","); for (i in a) print $1, "-&gt;", a[i]}END{print "}"}'|display
+      </div>
+      <div class='desc'>
+        <p>
+          parse "lsmod" output to "dot" format and pass it to "display". Without perl!
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        bandie91
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9775/draw-kernel-module-dependancy-graph." title="Find out what others think of this command">Draw kernel module dependancy graph.</a>
+      </div>
+      <div class='command'>
+        lsmod | perl -e 'print "digraph \"lsmod\" {";&lt;&gt;;while(&lt;&gt;){@_=split/\s+/; print "\"$_[0]\" -&gt; \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -
+      </div>
+      <div class='desc'>
+        <p>
+          parse `lsmod' output and pass to `dot' drawing utility then finally pass it to an image viewer
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          Nice, however, my display needs this before it:
+        </p><code>dot -Tpng |</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        threv
+      </div>
+      <div class='text'>
+        <p>
+          Brilliant!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

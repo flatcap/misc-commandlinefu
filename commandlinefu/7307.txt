@@ -1,0 +1,8 @@
+Bash alias for creating screen session containing IRSSI, named irssi, while
+checking if existing session is created
+
+alias irssi="screen -wipe; screen -A -U -x -R -S irssi irssi"
+
+Bash alias for easy irssi within screen, attempts to attach to existing
+irssi session, if one exists, otherwise creates one - Including wipe for
+when system reboots and leaves "dead" session.

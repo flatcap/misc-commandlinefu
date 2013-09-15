@@ -1,0 +1,32 @@
+Rapidly invoke an editor to write a long, complex, or tricky command
+
+<ESC> v
+
+Allows you to edit your command using your chosen editor. Works in bash
+with "set -o vi".
+
+Alternatives
+
+There are 2 alternatives - vote for the best!
+
+Terminal - Alternatives
+ctrl-x e
+
+GNU nano 2.0.7         File: /tmp/bash-fc-30782221326
+
+# begin writing some exceedingly long and complex command in the editor...
+
+Next time you are using your shell, try typing ctrl-x e (that is holding
+control key press x and then e). The shell will take what you've written
+on the command line thus far and paste it into the editor specified by
+$EDITOR. Then you can edit at leisure using all the powerful macros and
+commands of vi, emacs, nano, or whatever.
+
+bash-hotkey: <CTRL+x+e>
+
+* in bash-shell You can capture the current commandline to a text-editor:
+
+* simply press: CTRL+x+e
+
+* Your current commandline will pe put into Your default text-editor
+(export EDITOR=vim)

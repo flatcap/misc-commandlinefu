@@ -1,0 +1,50 @@
+IFS - use entire lines in your for cycles
+
+Terminal - IFS - use entire lines in your for cycles
+export IFS=$(echo -e "\n")
+
+ $ cat file
+ line one
+ line two
+ $ for i in `cat file`; do echo $i; done
+ line
+ one
+ line
+ two
+ $ export IFS=$(echo -e "\n")
+ $ for i in `cat file`; do echo $i; done
+ line one
+ line two
+
+User: darkpand
+IFS - use entire lines in your for cycles
+
+When you use a "for" construct, it cycles on every word. If you want to
+cycle on a line-by-line basis (and, well, you can't use xargs -n1 :D), you
+can set the IFS variable to .
+
+
+Not bad. Here's an alternative using read (this doesn't require you to
+change IFS)
+
+while read i; do echo "$i"; done < file
+
+(You can cat the file into the while, if you prefer)
+
+If you *do* want to alter IFS, you can do it more simply (in bash at
+least) like this:
+
+export IFS=$'\n'
+
+Comment by flatcap 65 weeks and 5 days ago
+
+A good idea is also to start with a OLDIFS=$IFS
+
+Then your loop
+
+Then back to real life with IFS=$OLDIFS
+
+You can avoid problems by doing this
+
+Comment by michauko 65 weeks and 4 days ago
+

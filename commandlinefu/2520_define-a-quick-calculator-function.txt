@@ -1,0 +1,169 @@
+Define a quick calculator function
+
+Terminal - Define a quick calculator function
+? () { echo "$*" | bc -l; }
+
+ 23?
+
+User: fizz
+Define a quick calculator function
+
+defines a handy function for quick calculations from cli.
+
+once defined:
+
+? 10*2+3
+
+Another way to do that would be:
+
+? () { let myresult="$*" ; echo $myresult; }
+
+That would avoid changing context (launching a new process, that's what
+"bc" is) and would be much faster if you are using the calculations in
+some loop or whatever.
+
+To ensure that, I made a quick test: I defined "?" as my function, and "x"
+as your function, and measured their times for a simple compound
+calculation:
+
+time ( for a in {0..999}; do ? "($a*$a-$a)/($a+$a+1)" > /dev/null ; done )
+
+real 0m0.767s
+
+user 0m0.624s
+
+sys 0m0.144s
+
+time ( for a in {0..999}; do x "($a*$a-$a)/($a+$a+1)" > /dev/null ; done )
+
+real 0m6.777s
+
+user 0m1.544s
+
+sys 0m4.548s
+
+Of course, it might be that you would miss some functionality for advanced
+calculations using the internal shell syntax instead of bc. But then
+again, bc (-l or not) has its limitations: you can't use it for
+non-integer exponentials, that is:
+
+echo "2^(1/3)" | bc -l
+
+Runtime warning (func=(main), adr=9): non-zero scale in exponent
+
+I would recommend installing the "concalc" package if you need better
+mathematical evaluations in shell commands:
+
+echo "2^(1/3)" | concalc
+
+1.25992104989487316
+
+Comment by Patola 67 weeks and 2 days ago
+
+sweet! many uses for this, also thanks for concalc...
+
+Comment by wires 67 weeks and 2 days ago
+
+I prefer the Pari calculator which in this situation can be invoked as "gp
+-q". It gives you tons of functions and an obscene number of decimal
+points.
+
+For some reason when I try to run the "?" function defined above I just
+get "bash: z: command not found" and for "help ?" I get "help: no help
+topics match `z'". Any ideas why?
+
+Comment by dstahlke 67 weeks and 2 days ago
+
+@dstahlke this is because you have a file named z in the current
+directory, the shell expands ? to z, so you get this error message
+
+Comment by unixmonkey4488 67 weeks and 1 day ago
+
+As long as I've been bash'ing, I didn't know you could use
+
+?
+
+as a function name. Thanks for the example for that, even if I don't use
+the calculator function! :)
+
+Comment by hal0thane 67 weeks and 1 day ago
+
+Is it actually necessary to define a function for "bc"?
+
+It is simple enough to do this:
+
+<<< "x=1; y=2; p=3*x+2*y; p" bc -l
+Comment by mpb 67 weeks and 1 day ago
+
+you can use bash format for very simple calculations like
+
+echo $[ 1*2 + 3 ]
+
+
+Comment by elementa13 67 weeks and 1 day ago
+bc <<< 10*2+3
+Comment by mpb 66 weeks and 5 days ago
+
+Here is what I have defines: ? for bash arithmetic, calc for awk
+arithmetic, and a here-string for bc -l arithmetic:
+
+# bash arithmetic function ? { echo $[$*] } # awk arithmetic (floating
+point result) function calc(){ awk "BEGIN{ print $* }" ;} bc -l<<<3/7
+Comment by greppo 38 weeks and 1 day ago
+
+Different calculators for different levels:
+
+bash for simplest integer operations:
+
+echo $[2*(3+5)]
+
+
+awk for floating point and powers
+
+function ? { awk "BEGIN{ print $* }" ;} ? '((2+1)/7)^3.5'
+
+0.0515325
+
+concalc for full scientific functions:
+
+concalc<<<'sin(32^(1/3))'
+
+-0.0332033464121159848
+
+bc for high precision:
+
+bc -l<<<3/7
+
+.42857142857142857142
+
+gp for number theory:
+
+gp -qf
+
+2.6040699049291378729513930560926568818 E574964
+
+Comment by greppo 38 weeks and 1 day ago
+
+Fixing that:
+
+gp for number theory:
+
+gp -qf
+
+2.6040699049291378729513930560926568818 E574964
+
+Comment by greppo 38 weeks and 1 day ago
+
+gp for number theory:
+
+gp -qf<<<'123456! + 0.'
+
+2.6040699049291378729513930560926568818 E574964
+
+Comment by greppo 38 weeks and 1 day ago
+
+Now if anyone has a way to delete or modify typos in comments, please let
+me know.
+
+Comment by greppo 38 weeks and 1 day ago
+

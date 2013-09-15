@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        benoit_c_lbn
+      </div>
+      <div class='summary'>
+        Get memory total from /proc/meminfo in Gigs
+      </div>
+      <div class='command'>
+        awk '{ printf "%.2f", $2/1024/1024 ; exit}' /proc/meminfo
+      </div>
+      <div class='sample'>
+        <pre>
+1.72
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          when you can do it , avoid pipe
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        vivekp
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9661/get-memory-total-from-procmeminfo-in-gigs" title="Find out what others think of this command">Get memory total from /proc/meminfo in Gigs</a>
+      </div>
+      <div class='command'>
+        awk '( $1 == "MemTotal:" ) { print $2/1048576 }' /proc/meminfo
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        joedistro
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9691/get-memory-total-from-procmeminfo-in-gigs" title="Find out what others think of this command">Get memory total from /proc/meminfo in Gigs</a>
+      </div>
+      <div class='command'>
+        free -g
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        wekoch
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/9656/get-memory-total-from-procmeminfo-in-gigs" title="Find out what others think of this command">Get memory total from /proc/meminfo in Gigs</a>
+      </div>
+      <div class='command'>
+        memnum=$(awk '{ print $2 }' /proc/meminfo |head -n1); echo "$memnum / 1024 / 1024" | bc -l
+      </div>
+      <div class='desc'>
+        <p>
+          Probably more trouble than its worth, but worked for the obscure need.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

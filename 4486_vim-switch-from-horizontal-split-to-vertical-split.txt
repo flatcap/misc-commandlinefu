@@ -1,0 +1,15 @@
+Vim: Switch from Horizontal split to Vertical split
+
+Terminal - Vim: Switch from Horizontal split to Vertical split
+^W-L
+
+User: pyrho
+Vim: Switch from Horizontal split to Vertical split
+
+This allows to switch from horizontal to vertical split, putting the
+current buffer on the right side of the vertical split. To put it on the
+right use ^W-H.
+
+In a similar way, to switch from Vertical to Horizontal, do ^W-J (for
+bottom) and ^W-K (for top), but you vimers all guessed that one already :P
+

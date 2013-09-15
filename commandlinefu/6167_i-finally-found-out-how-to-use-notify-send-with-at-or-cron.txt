@@ -1,0 +1,43 @@
+I finally found out how to use notify-send with at or cron
+
+Terminal - I finally found out how to use notify-send with at or cron
+echo "export DISPLAY=:0; export XAUTHORITY=~/.Xauthority; notify-send
+test" | at now+1minute
+
+User: claudelepoisson
+I finally found out how to use notify-send with at or cron
+
+You can write a script that does this :
+
+remind <minutes> [<message>]
+
+
+
+DISPLAY=:0.0 XAUTHORITY=~/.Xauthority notify-send test
+
+User: aurium
+Better way to use notify-send with at or cron
+
+we don't need to export variables to set a env to a command, we may do
+this before the command directly
+
+echo notify-send test | at now+1minute
+
+User: polar
+I finally found out how to use notify-send with at or cron
+
+The simplest way to do it.
+
+Works for me, at least. (Why are the variables being set?)
+
+
+Aha. That makes sense.
+
+Comment by kaedenn 11 weeks and 1 day ago
+
+with more explanation here:
+
+http://cweiske.de/tagebuch/DBus%20notify-send%20over%20network.htm
+
+Comment by nickwe 11 weeks and 1 day ago
+

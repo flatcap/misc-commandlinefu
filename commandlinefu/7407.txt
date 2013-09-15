@@ -1,0 +1,24 @@
+rename files according to file with colums of corresponding names
+
+awk '{ movecmd = "mv " $1 " " $2 ; system(movecmd) }'
+file_with_colums_of_names
+
+text file has to have at least two colums, where the first one contains
+the actual filenames of the files to rename, the second one the names you
+want the corresponding file to be renamed to, e.g.:
+
+00b7ee34-a8a2-421e-9294-c34d9501a2da_opencast_video_itunes-wcb.mp4
+lecture_01.mp4
+
+029273fb-3cd4-40ca-9b3c-9df099997976_opencast_video_itunes-wcb.mp4
+lecture_02.mp4
+
+etc.
+
+Alternatives
+
+Terminal - Alternatives
+xargs -n 2 mv < file_with_colums_of_names
+
+Maybe simpler, but again, don't know how it will work with space in
+filename.

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        Bonster
+      </div>
+      <div class='summary'>
+        reverse order of file
+      </div>
+      <div class='command'>
+        awk '{a[i++]=$0} END {for (j=i-1; j&gt;=0;) print a[j--] }'
+      </div>
+      <div class='desc'>
+        <p>
+          awk reverse order of lines (emulates "tac")
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        grep
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/832/reverse-order-of-file" title="Find out what others think of this command">reverse order of file</a>
+      </div>
+      <div class='command'>
+        sed '1!G;h;$!d'
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        hell9001
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8540/reverse-order-of-file" title="Find out what others think of this command">reverse order of file</a>
+      </div>
+      <div class='command'>
+        tac $FILE
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        till
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8538/reverse-order-of-file" title="Find out what others think of this command">reverse order of file</a>
+      </div>
+      <div class='command'>
+        printf "g/^/m0\nw\nq"|ed $FILE
+      </div>
+      <div class='desc'>
+        <p>
+          also works in vim
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        SQUIIDUX
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/8557/reverse-order-of-file" title="Find out what others think of this command">reverse order of file</a>
+      </div>
+      <div class='command'>
+        tac $FILETOREVERSE
+      </div>
+    </div>
+  </body>
+</html>

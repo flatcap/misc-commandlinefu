@@ -1,0 +1,18 @@
+Bind a key with a command
+
+bind -x '"\C-l":ls -l'
+
+the -x option is for binding to a shell command
+
+Alternatives
+
+Terminal - Alternatives
+bind '"\C-l":"ls -l\n"'
+
+Now type Ctrl-l and it will list all files
+
+What others think
+
+Alternatively, one can put the bind argument in ~/.inputrc file.
+
+Additional benefit is that you can use conditionals there.

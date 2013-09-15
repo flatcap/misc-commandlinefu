@@ -1,0 +1,14 @@
+How to get an absolute value
+
+Terminal - How to get an absolute value
+abs_value=-1234; echo ${abs_value#-}
+
+ 1234
+
+User: prasadwani
+How to get an absolute value
+
+Whenever we are only interested in difference between two numbers and not
+the positive/negative values we can use this in script.
+
+

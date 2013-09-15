@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        h3xx
+      </div>
+      <div class='summary'>
+        Copy sparse files
+      </div>
+      <div class='command'>
+        cp --sparse=always <span>&lt;SRC&gt;</span> <span>&lt;DST&gt;</span>
+      </div>
+      <div class='sample'>
+        <pre>
+# create a file with zeroes
+$ dd if=/dev/zero bs=1M count=5 of=full-5m 
+# copy with sparsity detection
+$ cp --sparse=always full-5m sparse-5m
+
+# they look the same...
+$ ls -lah full-5m sparse-5m
+-rw-r--r-- 1 h3xx users 5.0M Sep  7 03:05 full-5m
+-rw-r--r-- 1 h3xx users 5.0M Sep  7 03:04 sparse-5m
+
+# but they're different!
+$ du -h full-5m sparse-5m
+5.1M    full-5m
+5.0K    sparse-5m
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          This causes cp to detect and omit large blocks of nulls. Sparse files are useful for implying a lot of disk space without actually having to write it all out.
+        </p>
+        <p>
+          <a href="http://en.wikipedia.org/wiki/Sparse_file" rel="nofollow">http://en.wikipedia.org/wiki/Sparse_file</a>
+        </p>
+        <p>
+          You can use it in a pipe too:
+        </p><code>dd if=/dev/zero bs=1M count=5 |cp --sparse=always /dev/stdin SPARSE_FILE</code>
+      </div>
+    </div>
+  </body>
+</html>

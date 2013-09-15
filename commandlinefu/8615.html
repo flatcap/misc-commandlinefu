@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='summary'>
+        Content search.
+      </div>
+      <div class='command'>
+        ff() { local IFS='|'; grep -rinE "$*" . ; }
+      </div>
+      <div class='sample'>
+        <pre>
+$ ff bin exit
+./clfu:1:#!/bin/bash
+./clfu:26:  exit 0
+./cipa:1:#!/bin/bash
+./cipa:6:exit 0
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Grep will read the contents of each file in PWD and will use the REs $1 $2 ... $n to match the contents.
+        </p>
+        <p>
+          In case of match, grep will print the appropriate file, line number and the matching line.
+        </p>
+        <p>
+          It's just easier to write
+        </p><code>ff word1 word2 word3</code>
+        <p>
+          Instead of
+        </p><code>grep -rinE 'word1|word2|word3' .</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        magma_camel
+      </div>
+      <div class='text'>
+        <p>
+          good job for an alias
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='text'>
+        <p>
+          Aliases do not take arguments.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        karol
+      </div>
+      <div class='text'>
+        <p>
+          &gt; Aliases do not take arguments.
+        </p>
+        <p>
+          They do but local: can only be used in a function.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='text'>
+        <p>
+          No. Again - Aliases do not take arguments. I'm sorry.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        karol
+      </div>
+      <div class='text'>
+        <code>[karol@black test]$ type foo</code> <code>foo is aliased to `echo -e "1a\n2b\n3c\n4d" | grep -E ""$@"'</code> <code>[karol@black test]$ foo "2|4"</code> <code>2b</code> <code>4d</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='text'>
+        <p>
+          I do not buy your tricks, old lady.
+        </p>
+        <p>
+          It's not using the "$@" there. that's expanding to nothing. any arguments you pass to an alias just get tacked on to the end
+        </p><code>alias foo='printf "%s\n" 1a 2b 3c 4d | grep -E'</code> <code>foo '2|4'</code> <code>2b</code> <code>4d</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        karol
+      </div>
+      <div class='text'>
+        <p>
+          &gt; any arguments you pass to an alias just get tacked on to the end
+        </p>
+        <p>
+          Of course ;P
+        </p><code>[karol@black ~]$ type bar</code> <code>bar is aliased to `echo one "$1" two "$2"'</code> <code>[karol@black ~]$ bar 1 2</code> <code>one two 1 2</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='text'>
+        <p>
+          What are you trying to show? the 1 needs to be between 'one' 'two'
+        </p>
+        <p>
+          and not at the end of the line.
+        </p>
+        <p>
+          Your example shows exactly what I demonstrated earlier.
+        </p>
+        <p>
+          Anyway, when you are thinking 'Should I use an alias or a function?' just use a function.
+        </p>
+        <p>
+          Aliases do not holds code, functions do.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

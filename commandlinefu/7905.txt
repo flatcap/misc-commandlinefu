@@ -1,0 +1,46 @@
+Console clock -- within screen
+
+echo 'hardstatus alwayslastline " %d-%m-%y %c:%s | %w"' >>
+$HOME/.screenrc; screen
+
+Configures screen to always display the clock in the last line (has to be
+configured only once).
+
+After that you not only have got the possibility to detach sessions and
+run them in background, but also have got a nice clock permanently on your
+screen.
+
+Alternatives
+
+There are 9 alternatives - vote for the best!
+
+Terminal - Alternatives
+yes "echo -ne '\r'\`date\`;sleep 1" | sh
+watch -n1 'date "+%T"'
+
+Every 1.0s: date "+%T"
+
+11:33:02
+
+A console clock with the current time.
+
+yes 'clear;printf "\n\n\n\n\t\t\t`date`\n";sleep 1' | sh
+
+This command will automatically clear the old clock time, and show the new
+clock time.
+
+It will also slightly format it.
+
+watch -t -n1 'date "+%r %F %A"'
+
+08:03:57 PM 2011-02-15 Tuesday
+
+Shows a simple clock in the console
+
+-t param removes the watch header
+
+Ctrl-c to exit
+
+while sleep 1; do echo -n "\r`date`"; done
+
+Does the same but without a pipe and a new shell.

@@ -1,0 +1,51 @@
+sort a list of comma separated numbers: sort_csn
+
+sort_csn () { echo "${1}" | sed -e "s/,/\n/g"| sort -nu | awk
+'{printf("%s,",$0)} END {printf("\n")}' | sed -e "s/,$//"; }
+
+$ sort_csn () { echo "${1}" | sed -e "s/,/\n/g"| sort -nu | awk '{printf("%s,",$0)} END {printf("\n")}' | sed -e "s/,$//"; }
+$ sort_csn 443,22,80,8200,1533,21,1723,1352,25
+21,22,25,80,443,1352,1533,1723,8200
+
+"sort_csn" is a function to sort a comma separated list of numbers.
+
+Define the the function with this:
+
+sort_csn () { echo "${1}" | sed -e "s/,/\n/g"| sort -nu | awk
+'{printf("%s,",$0)} END {printf("\n")}' | sed -e "s/,$//"; }
+
+Use the function like this:
+
+sort_csn 443,22,80,8200,1533,21,1723,1352,25
+
+21,22,25,80,443,1352,1533,1723,8200
+
+One example where this is useful is when port scanning with nmap and
+getting a list of open ports in random order. If you use Nessus, you may
+need to create a scan policy for that set of specific ports and it is
+clearer to read with the port numbers in ascending order (left to right).
+
+Caveat: no spaces in the comma separated list (just
+number1,number2,number3,etc).
+
+A variation of this to sort a comma separated list of strings:
+
+sort_css () { echo "${1}" | sed -e "s/,/\n/g"| sort -u | awk
+'{printf("%s,",$0)} END {printf("\n")}' | sed -e "s/,$//"; }
+
+usage:
+
+sort_css apples,pears,grapes,melons,oranges
+
+apples,grapes,melons,oranges,pears
+
+What others think
+
+Wow, that's a lot of code. How about simplifying it to this :-)
+
+sort_csn () { echo $1 | tr , '\n' | sort -nu | paste -s -d,; }
+
+tr 'translates' the commas into newlines, then sort, then paste -s
+(serial) with -d, (comma delimiters).
+
+That's good fu! Tnx :-)

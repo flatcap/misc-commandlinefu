@@ -1,0 +1,15 @@
+Keep a close eye on a backgrounded job
+
+Terminal - Keep a close eye on a backgrounded job
+lsof -p$!
+
+User: zlemini
+Keep a close eye on a backgrounded job
+
+Run a command in the background, then follow it up with lsof -p$!.
+
+Useful as a very quick way to troubleshoot something.
+
+lsof -p$! -r2 # can be used to keep updating the lsof display at 2s
+intervals, filter the output as needed.
+

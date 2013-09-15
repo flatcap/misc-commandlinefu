@@ -1,0 +1,25 @@
+Add a function you've defined to .bashrc
+
+Terminal - Add a function you've defined to .bashrc
+addfunction () { declare -f $1 >> ~/.bashrc ; }
+
+User: dagh
+Add a function you've defined to .bashrc
+
+Example: To store the function addfunction after you have defined it:
+
+addfunction addfunction
+
+What an excellent idea.
+
+Comment by haivu 81 weeks and 2 days ago
+
+One of the coolest things I've seen on here.
+
+Comment by goodevilgenius 81 weeks and 2 days ago
+
+promptly added to my bashrc. Probably I'll never use it, but Genius must
+not be forgotten.
+
+Comment by lucainvernizzi 80 weeks and 5 days ago
+

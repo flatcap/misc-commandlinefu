@@ -1,0 +1,10 @@
+diff two sorted files
+
+Terminal - diff two sorted files
+diff <(sort file1.txt) <(sort file2.txt)
+
+User: unixmonkey1356
+diff two sorted files
+
+Sees if two records differ in their entries, irrespective of order.
+

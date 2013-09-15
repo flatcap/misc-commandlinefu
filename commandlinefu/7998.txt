@@ -1,0 +1,7 @@
+copy files with space in the name from some directory to another directory
+
+find /any/directory/to/backup/ -type f -exec cp -t /any/directory/destiny/
+--parents "{}" \;
+
+In many cases this is necesary copy all files in some directory, but them
+files contains spaces, no are dump, this command help to do this

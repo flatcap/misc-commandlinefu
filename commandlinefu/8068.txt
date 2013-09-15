@@ -1,0 +1,62 @@
+Deal with dot files safely
+
+rm -rf .??*
+
+[root@centos CRM]# ls -al
+total 40
+drwxrwxr-x  3 gregg gregg 4096 Mar 10 22:59 .
+drwxr-xr-x 29 gregg gregg 4096 Mar 10 22:59 ..
+-rw-rw-r--  1 gregg gregg   28 Nov 24  2008 .cvsignore
+-rw-rw-r--  1 gregg gregg  146 Nov 25  2008 .htaccess
+drwxrwxr-x  6 gregg gregg 4096 Nov 24  2008 .svn
+[root@centos CRM]# mv .??* ../
+[root@centos CRM]# ls -al
+total 16
+drwxrwxr-x  2 gregg gregg 4096 Mar 10 22:59 .
+drwxr-xr-x 30 gregg gregg 4096 Mar 10 22:59 ..
+
+rm -rf .* matches ".." and thus one goes up a level and wipes out more
+than intended.
+
+In bash, .??* safely accomplishes what one intends - remove those .files
+
+The ? matches most characters except "/", thus .?? does not match ../ and
+so one is safe.
+
+Alternatives
+
+There are 2 alternatives - vote for the best!
+
+Terminal - Alternatives
+rm -r .[!.]*
+rm -rf .[!.]*
+
+What others think
+
+.??* does not match .a, .b, ...
+
+.[!.]* does.
+
+.??* does not match .a, .b, ...
+
+.[!.]* does.
+
+man bash discusses GLOBIGNORE which does this, but I can't wrap my head
+around the logic. GLOBIGNORE=.:.. seems to DTRT:
+
+ls .* -d
+
+. .. .keep
+
+GLOBIGNORE=.:.. ls .* -d
+
+.keep
+
+@greggster: gnu rm complains, but it won't allow me to remove ..
+
+What version of rm do you have where .* can equate to ../*
+
+@NatureShadow: very nice
+
+The shell expands ".*" before its passed to the rm command. What shell are
+you using? echo $SHELL should display it.

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        dbbolton
+      </div>
+      <div class='summary'>
+        Generate a shortened URL with is.gd
+      </div>
+      <div class='command'>
+        isgd () { curl 'http://is.gd/create.php?format=simple&amp;url='"$1" ; printf "\n" }
+      </div>
+      <div class='sample'>
+        <pre>
+% isgd 'commandlinefu.com'
+http://is.gd/IjoOpX
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Check the API. You shouldn't need sed. The print-newline at the end is to prevent zsh from inserting a % after the end-of-output.
+        </p>
+        <p>
+          Also works with <a href="http://v.gd" rel="nofollow">http://v.gd</a>
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        tatsu
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/3523/shorten-url-using-curl-sed-and-is.gd" title="Find out what others think of this command">shorten url using curl, sed and is.gd</a>
+      </div>
+      <div class='command'>
+        curl -s -d URL="$1" http://is.gd/create.php | sed '/Your new shortened/!d;s/.*value="\([^"]*\)".*/\1/'
+      </div>
+      <div class='desc'>
+        <p>
+          Just create a function in your .bashrc like this
+        </p>
+        <p>
+          shorturl() {
+        </p>
+        <p>
+          curl -s -d URL="$1" <a href="http://is.gd/create.php" rel="nofollow">http://is.gd/create.php</a> | sed '/Your new shortened/!d;s/.*value="\([^"]*\)".*/\1/'
+        </p>
+        <p>
+          }
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

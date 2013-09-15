@@ -1,0 +1,7 @@
+Tip #572 / Print until no match 
+
+This bit of sed will print the contents of a file until the first line
+which doesn't contain the specified expression. A useful alternative to
+'head' when you're not sure how much of the file you need.
+
+sed -n '/Hello/!q; p'

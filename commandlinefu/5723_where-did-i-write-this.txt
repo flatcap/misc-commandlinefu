@@ -1,0 +1,52 @@
+Where did i write this?
+
+Terminal - Where did i write this?
+function ffo { local x=("$@") IFS='|';grep -nir -E "${x[*]}" *; }
+
+ rany@rany-laptop:~/bin$ ff progname bash
+
+ myfind:1:#!/bin/bash
+ myfind:101:     err_msg="${PROGNAME}: ${1}"
+ newacc:1:#!/bin/bash
+ new_function:1:#!/bin/bash
+ new_function:62:PROGNAME=$(basename $0)
+
+User: RanyAlbeg
+Where did i write this?
+
+ffo = find in file or ( OR relation )
+
+Will search PWD for text files that contain $1 OR $2 OR $3 etc.
+
+Display:
+
+[file name]:[line number]:[matching line]
+
+
+You could just set the internal field separator locally rather than
+messing around with storing it and resetting it:
+
+function ff { local x=($@) IFS='|';grep -nir -E "${x[*]}" *; }
+Comment by eightmillion 19 weeks and 3 days ago
+
+Nice. Though you should probably quote the $@ so you can search for things
+with whitespace in them:
+
+function ff { local x=("$@") IFS='|';grep -nir -E "${x[*]}" *; }
+
+So this works as expected:
+
+ff "foo bar" baz
+Comment by flatcap 19 weeks and 3 days ago
+
+Thank you.
+
+I changed the command according to your recommendations.
+
+Comment by RanyAlbeg 19 weeks and 2 days ago
+
+Nice! I'd suggest replacing the last "*" with ".", so that you won't miss
+the hidden files and directories such as .profile and .ssh.
+
+Comment by plyl 19 weeks and 2 days ago
+

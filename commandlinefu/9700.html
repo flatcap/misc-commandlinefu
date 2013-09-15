@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        jambino
+      </div>
+      <div class='summary'>
+        sort the contents of a text file in place.
+      </div>
+      <div class='command'>
+        sort -g list.txt -o $_
+      </div>
+      <div class='sample'>
+        <pre>
+Ape
+apple
+Apple
+Banana
+Harold Kumar Digby
+harry
+Tape
+001
+01
+1
+
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          sorts the contents of a file without the need for a second file to take the sorted output.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Robin
+      </div>
+      <div class='text'>
+        <p>
+          The $_ shell variable expands to the last argument to the previous command. You could use brace expansion, like this:
+        </p><code>sort -g -o list.txt{,}</code>
+        <p>
+          or history expansion, like this:
+        </p><code>sort -g -o list.txt !#:$</code>
+        <p>
+          or
+        </p><code>sort -g list.txt -o !#:2</code>
+      </div>
+    </div>
+  </body>
+</html>

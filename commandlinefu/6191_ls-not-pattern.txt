@@ -1,0 +1,39 @@
+ls not pattern
+
+Terminal - ls not pattern
+ls !(*.gz)
+
+User: c0t0d0
+ls not pattern
+
+Negative shell globs already come with bash. Make sure to turn on extended
+pattern matching with 'shopt -e extglob'.
+
+
+
+ls -I "*.gz"
+
+User: CodSpirit
+ls not pattern
+
+Hides some entries from listing.
+
+ls *[^.gz]
+
+ $ ls
+ file1 file2.gz file3.gz
+ $ ls *[^.gz]
+ file1
+
+User: elofland
+ls not pattern
+
+I've been looking for a way to do this for a while, get a not pattern for
+shell globs. This works, I'm using to grab logs from a remote server via
+scp.
+
+
+that should be `shopt -s extglob`.
+
+Comment by intuited 10 weeks ago
+

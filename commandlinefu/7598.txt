@@ -1,0 +1,20 @@
+Convert a string to "Title Case"
+
+echo "this is a test" | sed 's/.*/\L&/; s/[a-z]*/\u&/g'
+
+$ echo "this is a test" | sed 's/.*/\L&/; s/[a-z]*/\u&/g'
+This Is A Test
+$
+
+Converts the first letter of each word to upper case
+
+Alternatives
+
+There are 2 alternatives - vote for the best!
+
+Terminal - Alternatives
+echo 'This is a TEST' | sed 's/[^ ]\+/\L\u&/g'
+
+This Is A Test
+
+python -c "print 'this is a test'.title()"

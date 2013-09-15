@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        swordfischer
+      </div>
+      <div class='summary'>
+        Screenshot pipe to remote host, adding URL to clipboard, notifying when done. (without saving locally)
+      </div>
+      <div class='command'>
+        DATE=$(date +%Y-%m-%d_%H-%M-%S)-$(($(date +%N)/10000000)); HOST=ssh_host; DEST=file_dest; URL=url/screenshot_$DATE.png; import -window root png:- | ssh $HOST "cat &gt; $DEST/screenshot_$DATE.png"; echo $URL | xclip; notify-send -u low "Title" "Message"
+      </div>
+      <div class='sample'>
+        <pre>
+DATE=$(date +%Y-%m-%d_%H-%M-%S)-$(($(date +%N)/10000000)); HOST=swordfischer.com; DEST=/home/swordfischer/public_html; URL=https://swordfischer.com/upload/screenshot_$DATE.png; import -window root png:- | ssh $HOST "cat &gt; $DEST/screenshot_$DATE.png"; echo $URL | xclip; notify-send -u low "Screenshot Taken" "Entire screen.\nCopied to clipboard"
+
+https://swordfischer.com/upload/screenshot_2011-08-13_02-32-55-74.png
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Requires you to have password free login to remote host ;)
+        </p>
+        <p>
+          Requires xclip and notify-send (If you want to put into clipboard and be notified when action is completed).
+        </p>
+        <p>
+          DATE=$(date +%Y-%m-%d_%H-%M-%S)-$(($(date +%N)/10000000));
+        </p>
+        <p>
+          HOST="ssh host of your choice";
+        </p>
+        <p>
+          DEST="destination folder without trailing slash";
+        </p>
+        <p>
+          URL="URL for file if uploaded to web enabled dir ie.
+        </p>
+        <p>
+          import -window root png:- | ssh $HOST "cat &gt; $DEST/screenshot_$DATE.png";
+        </p>
+        <p>
+          echo $URL | xclip; notify-send -u low "Screenshot Taken" "Entire screen.\nCopied to clipboard"
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        0disse0
+      </div>
+      <div class='text'>
+        <p>
+          very interesting command, I'll try once the next day with my end users
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Mozai
+      </div>
+      <div class='text'>
+        <p>
+          where do the 'xclip' and 'notify-send' programs come from? They're not installed by default on my Ubuntu nor CentOS workstations.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

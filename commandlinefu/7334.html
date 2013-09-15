@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        unixmonkey15279
+      </div>
+      <div class='summary'>
+        delete multiple files from git index that have already been deleted from disk
+      </div>
+      <div class='command'>
+        git status | grep deleted | awk '{print $3}' | xargs git rm
+      </div>
+      <div class='desc'>
+        <p>
+          delete multiple files from git index that have already been deleted from disk. this is pretty terrible, I'm looking for a better way.
+        </p>
+        <p>
+          (much better!! <a href="http://www.commandlinefu.com/commands/view/1246/git-remove-files-which-have-been-deleted%29" rel="nofollow">http://www.commandlinefu.com/commands/view/1246/git-remove-files-which-have-been-deleted)</a>
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        unefunge
+      </div>
+      <div class='text'>
+        <p>
+          I'll just comment it (no alternative version). Your solution is good enough.
+        </p>
+        <p>
+          1. It's one of these 'awk which is basically "cut"' cases.
+        </p><code>git status |grep deleted | cut -d" " -f3 | xargs git rm</code>
+        <p>
+          2. You can combine grep and awk jobs:
+        </p><code>git status | awk '/deleted/{print $3}' | xargs git rm</code>
+        <p>
+          3. An equivalent version without xargs would look like this. (Just in case you're interested in commands you're gona to execute: replace 'sh' with 'less')
+        </p><code>git status | awk '/deleted/{print "git rm " $3}' | sh</code>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+alt + 1 .
+
+Terminal - alt + 1 .
+alt + 1 .
+
+User: elementa13
+alt + 1 .
+
+alt + number + dot will insert last command argument at $number place, alt
++ 0 + . will print last command name. For example
+
+ls /tmp /var ls /usr /home
+
+alt + 1 + . will result in '/usr' , if you press alt + . again, it will
+result in '/tmp'
+
+alt + 0 + . -> 'ls'
+
+Note that you still need to hold alt while hitting '.'
+
+I was confused at first.
+
+Comment by Weboide 73 weeks and 4 days ago
+

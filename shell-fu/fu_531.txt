@@ -1,0 +1,7 @@
+Tip #531 / Check command history without running 
+
+!command:p
+
+!command will search your history and execute the first command matching
+'command'. If you don't feel safe doing this put :p which prints the
+command rather than executing it.

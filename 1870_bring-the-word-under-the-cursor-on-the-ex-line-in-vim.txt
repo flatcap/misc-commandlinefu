@@ -1,0 +1,38 @@
+Bring the word under the cursor on the :ex line in Vim
+
+Terminal - Bring the word under the cursor on the :ex line in Vim
+:<C-R><C-W>
+
+User: pyrho
+Bring the word under the cursor on the :ex line in Vim
+
+Very handy to bring the word currently under the cursor into a :s command
+in Vim.
+
+Example:
+
+If the cursor was on the word "eggs":
+
+:s/ ==> :s/eggs
+
+As a long time vim user, I'm always delighted to find a new gem like this
+one. Thank you.
+
+Comment by flatcap 78 weeks and 6 days ago
+
+Great - i've always wanted such a shortcut - plus 1 from me.
+
+Cheers!
+
+Comment by zwergnase 78 weeks and 6 days ago
+
+Thank, this is very useful.
+
+I checked some other variants by :help
+
+Like :/
+
+which is for inserting the last search pattern
+
+Comment by Vereb 57 weeks and 4 days ago
+

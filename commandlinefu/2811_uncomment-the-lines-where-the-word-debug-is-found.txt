@@ -1,0 +1,8 @@
+uncomment the lines where the word DEBUG is found
+
+Terminal - uncomment the lines where the word DEBUG is found
+sed '/^#.*DEBUG.*/ s/^#//' $FILE
+
+User: svg
+uncomment the lines where the word DEBUG is found
+

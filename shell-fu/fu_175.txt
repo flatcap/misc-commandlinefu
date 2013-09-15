@@ -1,0 +1,11 @@
+Tip #175 / Automatically do an ls after each cd 
+
+Add the following to your profile/bashrc etc:
+
+cd() {
+if [ -n "$1" ]; then
+builtin cd "$@" && ls
+else
+builtin cd ~ && ls
+fi
+}

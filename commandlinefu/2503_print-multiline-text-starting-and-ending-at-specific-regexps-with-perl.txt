@@ -1,0 +1,20 @@
+Print multiline text starting and ending at specific regexps with perl
+
+Terminal - Print multiline text starting and ending at specific regexps
+with perl
+man fetchmail | perl -ne 'undef $/; print $1 if m/^.*?(-k \| --keep.*)-K
+\| --nokeep.*$/smg'
+
+ -k | --keep
+            (Keyword:  keep)  Keep  retrieved messages on the remote mailserver.  Normally, messages are deleted from the folder on the mailserver after they have been retrieved.  Specifying
+            the keep option causes retrieved messages to remain in your folder on the mailserver.  This option does not work with ETRN or ODMR. If used with POP3, it is recommended  to  also
+            specify the --uidl option or uidl keyword.
+
+User: unixmonkey4437
+Print multiline text starting and ending at specific regexps with perl
+
+Using perl, here, we grep the man page of fetchmail to find the paragraph
+starting with '-k | --keep' and ending before the paragraph starting with
+'-K | --nokeep'
+
+

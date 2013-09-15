@@ -1,0 +1,43 @@
+connect via ssh using mac address
+
+Terminal - connect via ssh using mac address
+sudo arp -s 192.168.1.200 00:35:cf:56:b2:2g temp && ssh root@192.168.1.200
+
+User: svg
+connect via ssh using mac address
+
+Instead of looking for the right ip address, just pick whatever address
+you like and set a static ip mapping.
+
+
+
+ssh root@`for ((i=100; i<=110; i++));do arp -a 192.168.1.$i; done | grep
+00:35:cf:56:b2:2g | awk '{print $2}' | sed -e 's/(//' -e 's/)//'`
+
+ ssh: connect to host 192.168.1.103 port 22: No route to host
+
+User: gean01
+connect via ssh using mac address
+
+Connect to a machine running ssh using mac address by using the "arp"
+command
+
+
+Does this require the chosen address to be on the same subnet as the
+computer from which you are ssh-ing?
+
+Comment by clindseysmith 55 weeks and 5 days ago
+
+@clindseysmith yes, it does.
+
+Comment by svg 55 weeks and 5 days ago
+
+@svg this doesn't work for me. My two devices are both connected to a
+CISCO 2960 switch. Maybe my switch is being too fancy? My issue is that
+I'm swapping devices on and off my test network as I test them before
+fielding them. Each device has its MAC printed on it but I don't know for
+sure what IP the last person to configure the device used... so I thought
+this command would be perfect but I can't seem to get it to work.
+
+Comment by clindseysmith 55 weeks and 1 day ago
+

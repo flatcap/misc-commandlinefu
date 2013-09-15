@@ -1,0 +1,7 @@
+Tip #742 / Sort the lines of a file by length 
+
+The command below can be used to sort the lines of a file by ascending
+order (shortest first). Change 'sort -n' to 'sort -nr' to sort in
+descending order (longest first).
+
+cat /etc/passwd | awk '{print length, $0}' | sort -n | awk '{$1=""; print $0 }'

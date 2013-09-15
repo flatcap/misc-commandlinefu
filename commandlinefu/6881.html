@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        hackerb9
+      </div>
+      <div class='summary'>
+        Adjust gamma so monitor doesn't mess up your body's clock
+      </div>
+      <div class='command'>
+        xrandr | sed -n 's/ connected.*//p' | xargs -n1 -tri xrandr --output {} --brightness 0.7 --gamma 2:3:4
+      </div>
+      <div class='sample'>
+        <pre>
+There is no output, but here's the output from xrandr so you can see the input to the sed regex. It is simply grabbing the first word from any line that says "SUCHANDSO connected"
+$ xrandr
+Screen 0: minimum 320 x 200, current 1600 x 1200, maximum 4096 x 4096
+VGA-0 connected 1600x1200+0+0 (normal left inverted right x axis y axis) 352mm x 264mm
+   1920x1440      60.0 +
+   1024x768       85.0 +   85.0     75.1     75.0     70.1     60.0  
+   1856x1392      60.0     60.0  
+   1792x1344      60.0     60.0  
+   1920x1200      59.9  
+   1600x1200      85.0*    75.0     75.0     70.0     65.0     60.0  
+   1680x1050      84.9     74.9     69.9     60.0  
+   1600x1024      60.2  
+   1400x1050      85.0     85.0     74.9     74.8     70.0     60.0     60.0  
+   1280x1024      85.0     75.0     60.0  
+   1440x900       84.8     75.0     59.9  
+   1280x960       85.0     60.0  
+   1360x768       60.0     59.8  
+   1280x800       84.9     74.9     59.8  
+   1152x864      100.0     85.1     85.0     75.0     75.0     70.0     60.0  
+   1280x768       84.8     74.9     59.9  
+   832x624        74.6  
+   800x600        85.1     85.1     72.2     75.0     60.3     56.2  
+   848x480        60.0  
+   640x480        85.0     75.0     72.8     75.0     60.0     59.9     59.9  
+   720x400        85.0     70.1  
+   640x400        85.1  
+   640x350        85.1  
+S-video disconnected (normal left inverted right x axis y axis)
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          [UPDATE: Now works for multiple connected outputs]
+        </p>
+        <p>
+          I woke up around midnight with an urge to do some late night hacking, but I didn't want a bright monitor screwing up my body's circadian rhythm. I've heard that at night blue (short wavelength) lights are particularly bad for your diurnal clock. That may be a bunch of hooey, but it is true that redder (longer wavelength) colors are easier on my eyes at night.
+        </p>
+        <p>
+          This command makes the screen dimmer and adjusts the gamma curves to improve contrast, particularly darkening blues and greens (R&Eacute;&pound;=2, G&Eacute;&pound;=3, B&Eacute;&pound;=4). To reset your screen to normal, you can run this command:
+        </p><code>xrandr | sed -n 's/ connected.*//p' | xargs -n1 -tri xrandr --output {} --brightness 1 --gamma 1:1:1</code>
+        <p>
+          or, more briefly,
+        </p><code>xgamma -g 1</code>
+        <p>
+          Note: The sed part is fragile and wrong. I'm doing it this way because of a misfeature in xrandr(1), which requires an output be specified but has no programmatic way of querying available outputs. Someone needs to patch up xrandr to be shell script friendly or at least add virtual outputs named "PRIMARY" and "ALL".
+        </p>
+        <p>
+          .
+        </p>
+        <p>
+          Todo: Screen should dim (gradually) at sunset and brighten at sunrise. I think this could be done with a self-resubmitting at job, but I'm running into the commandlinefu 127 character limit just getting the sunrise time:
+        </p><code>wget http://aa.usno.navy.mil/cgi-bin/aa_pap.pl --post-data=$(date "+xxy=%Y&amp;xxm=%m&amp;xxd=%d")"&amp;st=WA&amp;place=Seattle" -q -O- | sed -rn 's/\W*Sunrise\W*(.*)/\1/p'</code>
+        <p>
+          I hope some clever hacker comes up with a command line interface to Google's "OneBox", since the correct time shows up as the first hit when googling for "sunrise:cityname".
+        </p>
+        <p>
+          .
+        </p>
+        <p>
+          [Thank you to @flatcap for the sed improvement, which is much better than the head|tail|cut silliness I had before. And thank you to @braunmagrin for pointing out that the "connected" output may not be on the second line.]
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        thingsgoboom
+      </div>
+      <div class='text'>
+        <p>
+          Hey this is a really cool idea. I have thought about something similar, but never really knew how to do it. You said you were running out of room on CLF's 127 character business. If you figure out how to do the dimming will you send it to me? Thanks!
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        binarysys
+      </div>
+      <div class='text'>
+        <p>
+          http://www.omgubuntu.co.uk/2010/05/alleviate-tired-eyes-in-ubuntu-with-redshift
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        binarysys
+      </div>
+      <div class='text'>
+        <p>
+          Let me try that again.
+        </p>
+        <p>
+          Redshift, works great for this.
+        </p>
+        <p>
+          http://www.omgubuntu.co.uk/2010/05/alleviate-tired-eyes-in-ubuntu-with-redshift
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          All that nonsense:
+        </p><code>head -2 | tail -1 | cut -f1 -d' '</code>
+        <p>
+          can be simplified to:
+        </p><code>sed -n '2{s/ .*//;p}'</code>
+        <p>
+          Meaning:
+        </p><code>sed -n # don't output anything</code> <code>2{...;...} # when you get to line 2 perform some commands</code> <code>s/ .*// # search for a space and other stuff, replace with nothing</code> <code>p # print the result</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        braunmagrin
+      </div>
+      <div class='text'>
+        <p>
+          Maybe you could use:
+        </p>
+        <p>
+          `xrandr | grep "[^s]connected"` instead.
+        </p>
+        <p>
+          This searches in the output of xrandr for the output that is connected, which may not be in the second line.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        braunmagrin
+      </div>
+      <div class='text'>
+        <p>
+          I`m sorry.
+        </p>
+        <p>
+          xrandr on Ubuntu 10.04 doesn't have the brightness option.
+        </p>
+        <p>
+          Try to use this instead, it works even if the connected output isn't in the second line.
+        </p><code>xrandr --output `xrandr | grep "[^s]connected" | cut -f1 -d' '` --gamma 2:3:4</code>
+        <p>
+          "grep [^s]connected" searches for a expression that contains "connected" with any character before, besides 's' (from "disconnected").
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        flatcap
+      </div>
+      <div class='text'>
+        <p>
+          @braunmagrin: Fair enough. Try this:
+        </p><code>sed -n '/ connected/{s/ .*//;p}'</code>
+        <p>
+          Fewer characters and only one process started rather than two.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        hackerb9
+      </div>
+      <div class='text'>
+        <p>
+          @flatcap, @braunmagrin thanks for the tips!
+        </p>
+        <p>
+          @thingsgoboom here are a pair of self-resubmitting scripts which set the gamma appropriately and then use "at" to schedule the other script to run. Put the contents of these into files in your path (e.g., your home directory), mark them executable, and then run one of them. As long as you stay logged on, they will keep running each other at the correct time.
+        </p>
+        <p>
+          .
+        </p>
+        <p>
+          ~/bin/nighttime.sh
+        </p><code>xrandr \</code> <code>| sed -n 's/ connected.*//p' \</code> <code>| xargs -n1 -tri xrandr --output {} --brightness 0.7 --gamma 2:3:4 \</code> <code>|| exit 1</code> <code>echo `env` daytime.sh | at $(wget http://aa.usno.navy.mil/cgi-bin/aa_pap.pl --post-data=$(date "+xxy=%Y&amp;xxm=%m&amp;xxd=%d")"&amp;st=WA&amp;place=Seattle" -q -O- | sed -rn 's/.*Sunrise\W*(.*)/\1/p' | tr -d . ) &gt;/dev/null 2&gt;&amp;1</code>
+        <p>
+          .
+        </p>
+        <p>
+          ~/bin/daytime.sh
+        </p><code>xgamma -q -g 1 || exit 1</code> <code>echo `env` nighttime.sh | at $(wget http://aa.usno.navy.mil/cgi-bin/aa_pap.pl --post-data=$(date "+xxy=%Y&amp;xxm=%m&amp;xxd=%d")"&amp;st=WA&amp;place=Seattle" -q -O- | sed -rn 's/.*Sunset\W*(.*)/\1/p' | tr -d . ) &gt;/dev/null 2&gt;&amp;1</code>
+        <p>
+          .
+        </p>
+        <p>
+          You'll have to remove the $ from the front of each line, of course. I only put it there because that's the only way commandlinefu lets me markup that something is code.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

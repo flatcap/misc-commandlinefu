@@ -1,0 +1,20 @@
+Remove old unused kernels from Red Hat Enterprise Linux 5 & Fedora 12/13
+
+Terminal - Remove old unused kernels from Red Hat Enterprise Linux 5 &
+Fedora 12/13
+/usr/bin/package-cleanup --oldkernels --count=3
+
+User: SuperFly
+Remove old unused kernels from Red Hat Enterprise Linux 5 & Fedora 12/13
+
+Install using yum install yum-utils
+
+Options include:
+
+--oldkernels Remove old kernel and kernel-devel packages
+
+--count=KERNELCOUNT Number of kernel packages to keep on the system
+(default 2)
+
+use package-cleanup --help for a complete list
+

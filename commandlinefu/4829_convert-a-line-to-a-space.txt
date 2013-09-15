@@ -1,0 +1,48 @@
+convert a line to a space
+
+Terminal - convert a line to a space
+cat file | tr '\n' ''
+
+User: bortoelnino
+convert a line to a space
+
+
+
+echo $(cat file)
+
+User: tlacuache
+convert a line to a space
+sed 's/.*/ /'
+
+User: putnamhill
+convert a line to a space
+
+The first version printed:
+
+tr: empty string2
+
+The second version printed:
+
+sed: -i may not be used with stdin
+
+Maybe I misunderstood the orginal problem.
+
+
+The "cat" isn't really necessary since you can use redirection like this:
+
+< file tr '\n' ' '
+
+or this:
+
+tr '\n' ' ' < file
+Comment by eightmillion 34 weeks and 6 days ago
+
+or
+
+tr -d '\n'
+Comment by johnraff 34 weeks ago
+
+Sorry - ignore above: you wanted a space...
+
+Comment by johnraff 34 weeks ago
+

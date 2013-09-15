@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        DoNotRememberMe
+      </div>
+      <div class='summary'>
+        Search $PATH for a command or something similar
+      </div>
+      <div class='command'>
+        find ${PATH//:/ } -name \*bash\*
+      </div>
+      <div class='sample'>
+        <pre>
+/bin/bash
+/usr/bin/rbash
+/usr/bin/bashbug
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Searches your $PATH for whatever you substitute for bash, though not sure if this will work if you substitute a different shell for bash!
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        dennisw
+      </div>
+      <div class='text'>
+        <p>
+          It works as is in ksh-93 (don't know about others) and if you do
+        </p><code>setopt shwordsplit</code>
+        <p>
+          it will work in zsh.
+        </p>
+        <p>
+          For csh:
+        </p><code>find `echo $PATH | sed 's/:/ /g'` -name \*bash\*</code>
+      </div>
+    </div>
+  </body>
+</html>

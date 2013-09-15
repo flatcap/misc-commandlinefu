@@ -1,0 +1,17 @@
+Tip #33 / Because wireshark is big and nc is small.
+
+mknod backpipe p; while nc -l -p 80 0<backpipe | tee -a inflow | \
+nc localhost 81 | tee -a outflow 1>backpipe; do echo \"restarting\"; done
+
+Listen on localhost:80, forward to localhost:81 and log both sides of the
+conversation to outflow, automatically restarting if the connection dies.
+#1 zod
+socat -v TCP4-LISTEN:80 TCP4:localhost:81 will do the same and is way more
+readable
+#2 George Avasar
+So...
+If I get it, which I might not, you're creating a fifo device and using
+netcat to port forward traffic from port 80/tcp to port 81/tcp, and you
+want to see the traffic too.
+
+How does that relate to you title? Wireshark can't port forward.

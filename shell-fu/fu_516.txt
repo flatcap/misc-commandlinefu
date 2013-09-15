@@ -1,0 +1,25 @@
+Tip #516 / Transfer files with netcat 
+
+On client machine
+
+nc -lpvv port > file
+
+On server machine
+
+nc -vv clientip port < file
+
+Example :
+
+Client: nc -l -p 6868 > file.txt
+Server: nc 31.41.59.26 6868 < file.txt
+
+#1 cperkins
+Sweet.  Great for pen-testing. Thanks!
+#2 kibou
+I use something quite similar, but IMO simpler, especially for more than
+one file:
+
+Client:
+nc -l -p 6868 | tar -xvvf -
+
+Server:

@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='summary'>
+        Remove all but one specific file
+      </div>
+      <div class='command'>
+        rm -f !(survivior.txt)
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        hutch
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/5351/delete-all-files-in-a-folder-that-dont-match-a-certain-file-extension" title="Find out what others think of this command">Delete all files in a folder that don't match a certain file extension</a>
+      </div>
+      <div class='command'>
+        rm !(*.foo|*.bar|*.baz)
+      </div>
+      <div class='sample'>
+        <pre>
+Example: rm !(*.tex|*.pdf) deletes all except the tex and pdf files.
+</pre>
+      </div>
+      <div class='desc'>
+        <p>
+          Deletes all files in a folder that are NOT *.foo, *.bar or *.baz files. Edit the pattern inside the brackets as you like.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        haplo
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/4576/remove-everything-except-that-file" title="Find out what others think of this command">Remove everything except that file</a>
+      </div>
+      <div class='command'>
+        find . ! -name <span>&lt;FILENAME&gt;</span> -delete
+      </div>
+      <div class='desc'>
+        <p>
+          it will remove everything except the file names matching you can use also use wildcards
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        sputnick
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/4570/remove-everything-except-that-file" title="Find out what others think of this command">Remove everything except that file</a>
+      </div>
+      <div class='command'>
+        ( shopt -s extglob; rm !(<span>&lt;PATTERN&gt;</span>) )
+      </div>
+      <div class='desc'>
+        <p>
+          Remove everything except that file with shell tricks inside a subshell to avoid changes in the environment.
+        </p><code>help shopt</code>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        strzel_a
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7319/takes-all-file-except-file-between-" title="Find out what others think of this command">Takes all file except file between !()</a>
+      </div>
+      <div class='command'>
+        rm !(file_to_keep_undeleted)
+      </div>
+      <div class='desc'>
+        <p>
+          Go to tmp :
+        </p>
+        <p>
+          cd /tmp; mkdir retmp; cd retmp
+        </p>
+        <p>
+          Create 10 files :
+        </p>
+        <p>
+          for i in {1..10}; do touch test$i; done
+        </p>
+        <p>
+          Remove all files except test10 :
+        </p>
+        <p>
+          rm !(test10)
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        Vilemirth
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/7724/remove-all-the-files-except-abc-in-the-directory" title="Find out what others think of this command">Remove all the files except abc in the directory</a>
+      </div>
+      <div class='command'>
+        rm *[!abc]
+      </div>
+      <div class='desc'>
+        <p>
+          Bash method to remove all files but "abc".
+        </p>
+        <p>
+          It would be 'rm *~abc' in Zsh.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        bogomips
+      </div>
+      <div class='text'>
+        <p>
+          Thx! Usual I done it with
+        </p><code>find . ! -name ...</code>
+        <p>
+          Nice tip.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Minoru
+      </div>
+      <div class='text'>
+        <p>
+          Humph? It does not work in Z-Shell neither in BASH. Am I doing something wrong?
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Minoru
+      </div>
+      <div class='text'>
+        <p>
+          Got it working in BASH. It's all about 'extglob' option???set it:
+        </p><code>shopt -s extglob</code>
+        <p>
+          and command would work.
+        </p>
+        <p>
+          Still looking for solution for ZSH.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='text'>
+        <p>
+          For zsh rm -f ^survivior.txt will do but it requires extended_glob
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        Minoru
+      </div>
+      <div class='text'>
+        <p>
+          Thanks, RanyAlbeg. That really works!
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='text'>
+        <p>
+          You welcome ;)
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        matthewdavis
+      </div>
+      <div class='text'>
+        <p>
+          I never feel comfortable specifying the file I want to keep in an rm command.
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        RanyAlbeg
+      </div>
+      <div class='text'>
+        <p>
+          Use backups a few times and then you'll get used to it.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

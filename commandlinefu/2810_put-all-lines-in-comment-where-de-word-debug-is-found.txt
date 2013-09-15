@@ -1,0 +1,14 @@
+put all lines in comment where de word DEBUG is found
+
+Terminal - put all lines in comment where de word DEBUG is found
+sed -i 's/^.*DEBUG.*/#&/' $file
+
+User: svg
+put all lines in comment where de word DEBUG is found
+
+"sed -i" is very powerfull. I love it. :-)
+
+myfile.txt instead of $file ?
+
+Comment by flux 62 weeks and 4 days ago
+

@@ -1,0 +1,15 @@
+retab in vim, tab to space or space to tab, useful in python
+
+:ret
+
+usage：
+
+:[rang]ret[!][tabstop value]
+
+python is indent sensitive, after command
+
+:set list
+
+you may see your codes are mixed with tab and space
+
+ret can help you to convert space to tab or tab to space

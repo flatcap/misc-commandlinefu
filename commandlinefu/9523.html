@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+  <head>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <title>
+      command line fu
+    </title>
+  </head>
+  <body>
+    <div class='terminal'>
+      <div class='author'>
+        dbr
+      </div>
+      <div class='summary'>
+        sort lines by length
+      </div>
+      <div class='command'>
+        perl -C -e 'print for sort { length $a &lt;=&gt; length $b or $a cmp $b } &lt;&gt;' &lt; /usr/share/dict/words | tail
+      </div>
+      <div class='desc'>
+        <p>
+          making it "sound" more "natural" language like -- additionally sorting the longest words alphabetically:
+        </p>
+        <p>
+          this approach is using:
+        </p>
+        <p>
+          * to get at all lines of input
+        </p>
+        <p>
+          * post-"for" structure
+        </p>
+        <p>
+          * short-circuit-or in sort: if the lengths are the same, then sort alphabetically otherwise don't even evaluate the right hand side of the or
+        </p>
+        <p>
+          * -C sets all input and ouput channels to utf8
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        haivu
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/3428/identify-long-lines-in-a-file" title="Find out what others think of this command">Identify long lines in a file</a>
+      </div>
+      <div class='command'>
+        awk 'length&gt;72' file
+      </div>
+      <div class='desc'>
+        <p>
+          This command displays a list of lines that are longer than 72 characters. I use this command to identify those lines in my scripts and cut them short the way I like it.
+        </p>
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        syssyphus
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/3434/sort-lines-by-length" title="Find out what others think of this command">sort lines by length</a>
+      </div>
+      <div class='command'>
+        perl -lne '$l{$_}=length;END{for(sort{$l{$a}&lt;=&gt;$l{$b}}keys %l){print}}' &lt; /usr/share/dict/words | tail
+      </div>
+    </div>
+    <div class='terminal'>
+      <div class='author'>
+        ashawley
+      </div>
+      <div class='summary'>
+        <a href="/commands/view/3724/sort-lines-by-length" title="Find out what others think of this command">sort lines by length</a>
+      </div>
+      <div class='command'>
+        awk '{print length, $0;}' | sort -nr
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        unixmonkey21861
+      </div>
+      <div class='text'>
+        <p>
+          perl -ne 'printf("%d\t%s", length, $_)'&lt; /usr/share/dict/words | sort -n | tail | cut -f2
+        </p>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        alperyilmaz
+      </div>
+      <div class='text'>
+        <p>
+          this is not better just showing that schwartzian transform can be applied in perl one-liner..
+        </p><code>perl -C -e 'print map { $_-&gt;[0] } sort { $a-&gt;[1] &lt;=&gt; $b-&gt;[1] } map { [$_,length $_] } &lt;&gt;' &lt; /usr/share/dict/words | tail</code>
+      </div>
+    </div>
+    <div class='comment'>
+      <div class='author'>
+        dbr
+      </div>
+      <div class='text'>
+        <p>
+          the first approach was to show a more 'idiomatic' version to syssyphus' approach.
+        </p>
+        <p>
+          the cool thing with schwartzian transforms is, you can plug more parts in, e.g. this equivalent (not efficient!):
+        </p><code>perl -C -e 'print map { $_-&gt;[0] } reverse grep { $got++ &lt; 1_0 } reverse sort { $a-&gt;[1] &lt;=&gt; $b-&gt;[1] } map { [$_,length $_] } &lt;&gt;' &lt; /usr/share/dict/words</code>
+      </div>
+    </div>
+  </body>
+</html>
