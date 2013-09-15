@@ -4,20 +4,25 @@ div.command {
 	padding: 1em;
 }
 
-div.summary {
+div#terminal-header {
 	border: 1px solid green;
 	background: #dfd;
 	padding: 1em;
 }
 
-div.desc {
+h1 {
+	font-size: 120%;
+	font-weight: bold;
+}
+
+div.description {
 	border: 1px solid blue;
 	background: #cff;
 	padding: 1em;
 	margin-bottom: 1em;
 }
 
-div.sample {
+div.sample-output {
 	border: 1px solid blue;
 	background: #ddf;
 	padding: 1em;
