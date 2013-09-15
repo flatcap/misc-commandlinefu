@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         perl -e 'print "P1\n256 256\n", map {$_&amp;($_&gt;&gt;8)?1:0} (0..0xffff)' | display
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2589">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
@@ -37,13 +37,13 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         perl -le '$l=80;$l2="!" x $l;substr+($l2^=$l2),$l/2,1,"\xFF";{local $_=$l2;y/\0\xFF/ ^/;print;($lf,$rt)=map{substr $l2 x 2,$_%$l,$l;}1,-1;$l2=$lf^$rt;select undef,undef,undef,.1;redo}'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-12435">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
                                         ^
@@ -63,7 +63,7 @@
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/12435/draw-a-sierpinski-triangle" title="Find out what others think of this command">Draw a Sierpinski triangle</a>
+                <a href="/commands/view/12435/draw-a-sierpinski-triangle">Draw a Sierpinski triangle</a>
               </div>
               <div class="description">
                 <p>
@@ -72,7 +72,7 @@
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

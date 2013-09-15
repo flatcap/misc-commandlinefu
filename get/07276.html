@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         awk 'BEGIN{RS="\0"}{gsub(/\n/,"<span>&lt;SOMETEXT&gt;</span>");print}' file.txt
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7276">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ echo -e "asdf\n\n\nqwerty\nasdf\n" | awk 'BEGIN{RS="\0"}{gsub(/\n/,"&lt;SOMETEXT&gt;");print}'
@@ -43,18 +43,18 @@ asdf&lt;SOMETEXT&gt;qwerty&lt;SOMETEXT&gt;asdf&lt;SOMETEXT&gt;
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         cat file | tr "\n" " "
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7211">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7211/join-lines" title="Find out what others think of this command">Join lines</a>
+                <a href="/commands/view/7211/join-lines">Join lines</a>
               </div>
               <div class="description">
                 <p>
@@ -64,15 +64,15 @@ asdf&lt;SOMETEXT&gt;qwerty&lt;SOMETEXT&gt;asdf&lt;SOMETEXT&gt;
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         tr "\n" " " &lt; file
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7248">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7248/join-lines" title="Find out what others think of this command">Join lines</a>
+                <a href="/commands/view/7248/join-lines">Join lines</a>
               </div>
               <div class="description">
                 <p>
@@ -82,10 +82,10 @@ asdf&lt;SOMETEXT&gt;qwerty&lt;SOMETEXT&gt;asdf&lt;SOMETEXT&gt;
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         perl -pe 'eof()||s/\n/<span>&lt;SOMETEXT&gt;</span>/g' file.txt
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7210">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ cat file.txt
@@ -101,7 +101,7 @@ line one, line two, line three, line four, line five
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7210/join-lines" title="Find out what others think of this command">Join lines</a>
+                <a href="/commands/view/7210/join-lines">Join lines</a>
               </div>
               <div class="description">
                 <p>
@@ -112,15 +112,15 @@ line one, line two, line three, line four, line five
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         cat file | tr -d "\n"
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7212">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7212/join-lines" title="Find out what others think of this command">Join lines</a>
+                <a href="/commands/view/7212/join-lines">Join lines</a>
               </div>
               <div class="description">
                 <p>
@@ -130,20 +130,20 @@ line one, line two, line three, line four, line five
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         echo -e "aa\nbb\ncc\ndd\n123" | sed -e :a -e "/$/N; s/\n/;/; ta"
                                                 </div>
-            <div class="sample-output c5" id="sample-output-1914">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/1914/join-lines" title="Find out what others think of this command">Join lines</a>
+                <a href="/commands/view/1914/join-lines">Join lines</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

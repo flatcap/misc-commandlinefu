@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         t=$(df|awk 'NR!=1{sum+=$2}END{print sum}');sudo du / --max-depth=1|sed '$d'|sort -rn -k1 | awk -v t=$t 'OFMT="%d" {M=64; for (a=0;a&lt;$1;a++){if (a&gt;c){c=a}}br=a/c;b=M*br;for(x=0;x&lt;b;x++){printf "\033[1;31m" "|" "\033[0m"}print " "$2" "(a/t*100)"% total"}'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9797">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| /usr 5.71248% total
@@ -46,9 +46,9 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
-          <div class="pagination"></div>
+
         </div>
 
 

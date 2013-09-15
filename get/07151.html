@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         tail -f file | awk '{now=strftime("%F %T%z\t");sub(/^/, now);print}'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7151">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
@@ -33,18 +33,18 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         tail -f file | while read line; do echo -n $(date -u -Ins); echo -e "\t$line"; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7110">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7110/monitor-a-file-with-tail-with-timestamps-added" title="Find out what others think of this command">Monitor a file with tail with timestamps added</a>
+                <a href="/commands/view/7110/monitor-a-file-with-tail-with-timestamps-added">Monitor a file with tail with timestamps added</a>
               </div>
               <div class="description">
                 <p>
@@ -57,10 +57,10 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         tail -f file | while read line; do printf "$(date -u '+%F %T%z')\t$line\n"; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7140">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 ....
@@ -72,7 +72,7 @@
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7140/monitor-a-file-with-tail-with-timestamps-added" title="Find out what others think of this command">Monitor a file with tail with timestamps added</a>
+                <a href="/commands/view/7140/monitor-a-file-with-tail-with-timestamps-added">Monitor a file with tail with timestamps added</a>
               </div>
               <div class="description">
                 <p>
@@ -82,20 +82,20 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         tail -f file |xargs -IX printf "$(date -u)\t%s\n" X
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7156">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7156/monitor-a-file-with-tail-with-timestamps-added" title="Find out what others think of this command">Monitor a file with tail with timestamps added</a>
+                <a href="/commands/view/7156/monitor-a-file-with-tail-with-timestamps-added">Monitor a file with tail with timestamps added</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

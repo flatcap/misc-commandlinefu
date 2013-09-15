@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         read -p 'Script: ' S &amp;&amp; C=$S.crypt H='eval "$((dd if=$0 bs=1 skip=//|gpg -d)2&gt;/dev/null)"; exit;' &amp;&amp; gpg -c&lt;$S|cat &gt;$C &lt;(echo $H|sed s://:$(echo "$H"|wc -c):) - &lt;(chmod +x $C)
                                                 </div>
-            <div class="sample-output c5" id="sample-output-11991">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ cat script.bash
@@ -81,13 +81,13 @@ hello, world
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         echo "eval \"\$(dd if=\$0 bs=1 skip=XX 2&gt;/dev/null|gpg -d 2&gt;/dev/null)\"; exit" &gt; script.secure; sed -i s:XX:$(stat -c%s script.secure): script.secure; gpg -c &lt; script.bash &gt;&gt; script.secure; chmod +x script.secure
                                                 </div>
-            <div class="sample-output c5" id="sample-output-11985">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ cat script.bash
@@ -112,7 +112,7 @@ eval "$(dd if=$0 bs=1 skip=69 2&gt;/dev/null|gpg -d 2&gt;/dev/null)"; exit
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/11985/encrypt-and-password-protect-execution-of-any-bash-script" title="Find out what others think of this command">Encrypt and password-protect execution of any bash script</a>
+                <a href="/commands/view/11985/encrypt-and-password-protect-execution-of-any-bash-script">Encrypt and password-protect execution of any bash script</a>
               </div>
               <div class="description">
                 <p>
@@ -136,7 +136,7 @@ eval "$(dd if=$0 bs=1 skip=69 2&gt;/dev/null|gpg -d 2&gt;/dev/null)"; exit
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

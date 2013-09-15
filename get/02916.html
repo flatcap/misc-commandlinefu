@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for I in $(mysql -e 'show databases' -s --skip-column-names); do mysqldump $I | gzip &gt; "$I.sql.gz"; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2916">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
@@ -33,32 +33,32 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for db in $(mysql -e 'show databases' -s --skip-column-names); do mysqldump $db | gzip &gt; "/backups/mysqldump-$(hostname)-$db-$(date +%Y-%m-%d-%H.%M.%S).gz"; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-3436">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/3436/backup-all-mysql-databases-to-individual-files" title="Find out what others think of this command">Backup all MySQL Databases to individual files</a>
+                <a href="/commands/view/3436/backup-all-mysql-databases-to-individual-files">Backup all MySQL Databases to individual files</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for I in `echo "show databases;" | mysql | grep -v Database`; do mysqldump $I &gt; "$I.sql"; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-798">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/798/backup-all-mysql-databases-to-individual-files" title="Find out what others think of this command">Backup all MySQL Databases to individual files</a>
+                <a href="/commands/view/798/backup-all-mysql-databases-to-individual-files">Backup all MySQL Databases to individual files</a>
               </div>
               <div class="description">
                 <p>
@@ -68,15 +68,15 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         mysql -e 'show databases' | sed -n '2,$p' | xargs -I DB 'mysqldump DB &gt; DB.sql'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-3631">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/3631/backup-all-mysql-databases-to-individual-files" title="Find out what others think of this command">Backup all MySQL Databases to individual files</a>
+                <a href="/commands/view/3631/backup-all-mysql-databases-to-individual-files">Backup all MySQL Databases to individual files</a>
               </div>
               <div class="description">
                 <p>
@@ -86,15 +86,15 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         while read; do mysqldump $REPLY | gzip &gt; "/backup/mysql/$REPLY.sql.gz"; done &lt; &lt;( mysql -e 'show databases' -s --skip-column-names )
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9773">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9773/backup-all-mysql-databases-to-individual-files" title="Find out what others think of this command">Backup all MySQL Databases to individual files</a>
+                <a href="/commands/view/9773/backup-all-mysql-databases-to-individual-files">Backup all MySQL Databases to individual files</a>
               </div>
               <div class="description">
                 <p>
@@ -104,15 +104,15 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         mysql -e 'show databases' -s --skip-column-names | egrep -v "^(test|mysql|performance_schema|information_schema)$" | parallel --gnu "mysqldump --routines {} &gt; {}_daily.sql"
                                                 </div>
-            <div class="sample-output c5" id="sample-output-12527">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/12527/backup-all-mysql-databases-to-individual-files" title="Find out what others think of this command">Backup all MySQL Databases to individual files</a>
+                <a href="/commands/view/12527/backup-all-mysql-databases-to-individual-files">Backup all MySQL Databases to individual files</a>
               </div>
               <div class="description">
                 <p>
@@ -124,7 +124,7 @@
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

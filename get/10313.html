@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         alias sortfast='sort -S$(($(sed '\''/MemF/!d;s/[^0-9]*//g'\'' /proc/meminfo)/2048)) $([ `nproc` -gt 1 ]&amp;&amp;echo -n --parallel=`nproc`)'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10313">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 89/490MB        4.22 2.03 1.01 2/85 7081
@@ -52,9 +52,9 @@ $ sort -S400M -u -i -f --parallel=4 files.nocombined.sorted | pv &gt; ~/files.no
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
-          <div class="pagination"></div>
+
         </div>
 
 

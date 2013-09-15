@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2345">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 2009-06-03 12:21:35 +0900 3 hours ago      add_cool_functionality
@@ -44,27 +44,27 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for k in `git branch|sed s/^..//`;do echo -e `git log -1 --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" "$k"`\\t"$k";done|sort
                                                 </div>
-            <div class="sample-output c5" id="sample-output-4503">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/4503/show-git-branches-by-date-useful-for-showing-active-branches" title="Find out what others think of this command">Show git branches by date - useful for showing active branches</a>
+                <a href="/commands/view/4503/show-git-branches-by-date-useful-for-showing-active-branches">Show git branches by date - useful for showing active branches</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for k in `git branch|sed s/^..//`;do echo -e `git log -1 --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" "$k" --`\\t"$k";done|sort
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9623">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 http://cl.ly/2t1U1s0K3G0n2A2W473u
@@ -84,7 +84,7 @@ psh:foursquare.web ryan$
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9623/show-git-branches-by-date-useful-for-showing-active-branches" title="Find out what others think of this command">Show git branches by date - useful for showing active branches</a>
+                <a href="/commands/view/9623/show-git-branches-by-date-useful-for-showing-active-branches">Show git branches by date - useful for showing active branches</a>
               </div>
               <div class="description">
                 <p>
@@ -94,10 +94,10 @@ psh:foursquare.web ryan$
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for k in $(git branch | sed /\*/d); do echo "$(git log -1 --pretty=format:"%ct" $k) $k"; done | sort -r | awk '{print $2}'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10554">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 master
@@ -108,7 +108,7 @@ this-shit-works
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10554/show-git-branches-by-date-useful-for-showing-active-branches" title="Find out what others think of this command">Show git branches by date - useful for showing active branches</a>
+                <a href="/commands/view/10554/show-git-branches-by-date-useful-for-showing-active-branches">Show git branches by date - useful for showing active branches</a>
               </div>
               <div class="description">
                 <p>
@@ -118,24 +118,24 @@ this-shit-works
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         git for-each-ref --sort='-authordate' --format='%(refname)%09%(authordate)' refs/heads | sed -e 's-refs/heads/--'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-11317">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/11317/show-git-branches-by-date-useful-for-showing-active-branches" title="Find out what others think of this command">Show git branches by date - useful for showing active branches</a>
+                <a href="/commands/view/11317/show-git-branches-by-date-useful-for-showing-active-branches">Show git branches by date - useful for showing active branches</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         brd = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ; done | sort -r; }; f"
                                                 </div>
-            <div class="sample-output c5" id="sample-output-11331">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ git brd
@@ -151,7 +151,7 @@ $ git brd -r
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/11331/show-git-branches-by-date-useful-for-showing-active-branches" title="Find out what others think of this command">Show git branches by date - useful for showing active branches</a>
+                <a href="/commands/view/11331/show-git-branches-by-date-useful-for-showing-active-branches">Show git branches by date - useful for showing active branches</a>
               </div>
               <div class="description">
                 <p>
@@ -160,7 +160,7 @@ $ git brd -r
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

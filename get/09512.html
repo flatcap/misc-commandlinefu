@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         expandurl() { wget -S $1 2&gt;&amp;1 | grep ^Location; }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9512">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 Location: http://is.gd/jAdSZ3 [following]
@@ -43,13 +43,13 @@ Location: https://wiki.ubuntu.com/UbuntuOpenWeek [following]
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         expandurl() { curl -sIL $1 | grep ^Location; }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9515">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 Location: http://is.gd/jAdSZ3 [following]
@@ -59,7 +59,7 @@ Location: https://wiki.ubuntu.com/UbuntuOpenWeek [following]
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9515/expand-shortened-urls" title="Find out what others think of this command">Expand shortened URLs</a>
+                <a href="/commands/view/9515/expand-shortened-urls">Expand shortened URLs</a>
               </div>
               <div class="description">
                 <p>
@@ -70,10 +70,10 @@ Location: https://wiki.ubuntu.com/UbuntuOpenWeek [following]
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         expandurl() { curl -s "http://api.longurl.org/v2/expand?url=${1}&amp;format=php" | awk -F '"' '{print $4}' }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-11783">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ expandurl http://ae7.st/s/4O
@@ -83,7 +83,7 @@ http://arstechnica.com/tech-policy/2013/01/all-backscatter-pornoscanners-to-be-r
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/11783/expand-shortened-urls" title="Find out what others think of this command">Expand shortened URLs</a>
+                <a href="/commands/view/11783/expand-shortened-urls">Expand shortened URLs</a>
               </div>
               <div class="description">
                 <p>
@@ -93,10 +93,10 @@ http://arstechnica.com/tech-policy/2013/01/all-backscatter-pornoscanners-to-be-r
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         expandurl() { curl -sIL $1 2&gt;&amp;1 | awk '/^Location/ {print $2}' | tail -n1; }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9517">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 https://wiki.ubuntu.com/UbuntuOpenWeek
@@ -105,7 +105,7 @@ https://wiki.ubuntu.com/UbuntuOpenWeek
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9517/expand-shortened-urls" title="Find out what others think of this command">Expand shortened URLs</a>
+                <a href="/commands/view/9517/expand-shortened-urls">Expand shortened URLs</a>
               </div>
               <div class="description">
                 <p>
@@ -115,7 +115,7 @@ https://wiki.ubuntu.com/UbuntuOpenWeek
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         s(){ sed 's/./\n\0/g'&lt;&lt;&lt;$1|sort;};cmp -s &lt;(s foobar) &lt;(s farboo)||echo -n "not ";echo anagram
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7917">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
@@ -52,18 +52,18 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         (echo foobar; echo farboo) | perl -E 'say[sort&lt;&gt;=~/./g]~~[sort&lt;&gt;=~/./g]?"anagram":"not anagram"'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7912">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7912/are-the-two-lines-anagrams" title="Find out what others think of this command">Are the two lines anagrams?</a>
+                <a href="/commands/view/7912/are-the-two-lines-anagrams">Are the two lines anagrams?</a>
               </div>
               <div class="description">
                 <p>
@@ -73,10 +73,10 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         anagram(){ s(){ sed 's/./\n\0/g'&lt;&lt;&lt;$1|sort;};cmp -s &lt;(s $1) &lt;(s $2)||echo -n "not ";echo anagram; }; anagram foobar farboo;
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7919">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ anagram night thing
@@ -88,7 +88,7 @@ not anagram
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7919/are-the-two-lines-anagrams" title="Find out what others think of this command">Are the two lines anagrams?</a>
+                <a href="/commands/view/7919/are-the-two-lines-anagrams">Are the two lines anagrams?</a>
               </div>
               <div class="description">
                 <p>
@@ -97,7 +97,7 @@ not anagram
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

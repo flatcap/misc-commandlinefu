@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         curl -s http://en.m.wikipedia.org/wiki/List_of_Internet_top-level_domains | sed -n '/&lt;tr valign="top"&gt;/{s/&lt;[^&gt;]*&gt;//g;p}'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-11683">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 .aero
@@ -67,13 +67,13 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         curl http://en.m.wikipedia.org/wiki/List_of_Internet_top-level_domains | grep "&lt;tr valign=\"top\"&gt;" | awk -F"&gt;" '{ print $5 }' | awk -F"&lt;" '{ print $1 }'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-11682">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 .aero
@@ -93,7 +93,7 @@
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/11682/oneliner-to-get-domain-names-list-of-all-existing-domain-names-from-wikipedia" title="Find out what others think of this command">Oneliner to get domain names list of all existing domain names (from wikipedia)</a>
+                <a href="/commands/view/11682/oneliner-to-get-domain-names-list-of-all-existing-domain-names-from-wikipedia">Oneliner to get domain names list of all existing domain names (from wikipedia)</a>
               </div>
               <div class="description">
                 <p>
@@ -102,7 +102,7 @@
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

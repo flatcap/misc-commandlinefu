@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for i in `seq 0 9` A B C D E F; do for j in `seq 0 9` A B C D E F; do HEX=\$\'\\x${i}${j}\'; if ! eval grep -qF "$HEX" file; then eval echo $HEX \\x${i}${j}; fi; done; done 2&gt; /dev/null | less
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9998">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
@@ -37,18 +37,18 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         perl -e '$f = join("", &lt;&gt;); for (0..127) {$_ = chr($_); if (/[[:print:]]/) {print if index($f, $_) &lt; 0}} print "\n"'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10004">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10004/delimiter-hunting" title="Find out what others think of this command">Delimiter Hunting</a>
+                <a href="/commands/view/10004/delimiter-hunting">Delimiter Hunting</a>
               </div>
               <div class="description">
                 <p>
@@ -58,10 +58,10 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         comm -13 &lt;(od -vw1 -tu1 dummy.txt|cut -c9-|sort -u) &lt;(seq 0 127|sort)|perl -pe '$_=chr($_)'|od -c
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10023">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 0000000  \0 001  \n   j   k  \v  \f   z   {   |   }   ~ 177  \r 016 017
@@ -77,7 +77,7 @@
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10023/delimiter-hunting" title="Find out what others think of this command">Delimiter Hunting</a>
+                <a href="/commands/view/10023/delimiter-hunting">Delimiter Hunting</a>
               </div>
               <div class="description">
                 <p>
@@ -86,7 +86,7 @@
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

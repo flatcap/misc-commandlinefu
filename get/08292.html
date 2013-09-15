@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         eval ls -l /proc/{$(pgrep -d, COMMAND)}/cwd
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8292">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ eval ls -l /proc/{$(pgrep -d, vim)}/cwd
@@ -46,18 +46,18 @@ lrwxrwxrwx 1 root root 0 Apr 13 18:31 /proc/3945/cwd -&gt; /
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         echo "${0%/*}"
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8307">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8307/find-out-the-starting-directory-of-a-script" title="Find out what others think of this command">Find out the starting directory of a script</a>
+                <a href="/commands/view/8307/find-out-the-starting-directory-of-a-script">Find out the starting directory of a script</a>
               </div>
               <div class="description">
                 <p>
@@ -67,43 +67,43 @@ lrwxrwxrwx 1 root root 0 Apr 13 18:31 /proc/3945/cwd -&gt; /
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         echo COMMAND | xargs -ixxx ps -C xxx -o pid= | xargs -ixxx ls -l /proc/xxx/cwd
                                                 </div>
-            <div class="sample-output c5" id="sample-output-1193">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/1193/find-out-current-working-directory-of-a-process" title="Find out what others think of this command">Find out current working directory of a process</a>
+                <a href="/commands/view/1193/find-out-current-working-directory-of-a-process">Find out current working directory of a process</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         readlink /proc/self/cwd
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8301">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8301/find-out-current-working-directory-of-a-process" title="Find out what others think of this command">Find out current working directory of a process</a>
+                <a href="/commands/view/8301/find-out-current-working-directory-of-a-process">Find out current working directory of a process</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         mydir=$(cd $(dirname ${BASH_SOURCE:-$0});pwd)
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8358">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8358/find-out-the-starting-directory-of-a-script" title="Find out what others think of this command">Find out the starting directory of a script</a>
+                <a href="/commands/view/8358/find-out-the-starting-directory-of-a-script">Find out the starting directory of a script</a>
               </div>
               <div class="description">
                 <p>
@@ -113,10 +113,10 @@ lrwxrwxrwx 1 root root 0 Apr 13 18:31 /proc/3945/cwd -&gt; /
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         pwdx $(pgrep command)
                                                 </div>
-            <div class="sample-output c5" id="sample-output-11833">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
  $ pwdx $(pgrep bash)
@@ -128,7 +128,7 @@ lrwxrwxrwx 1 root root 0 Apr 13 18:31 /proc/3945/cwd -&gt; /
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/11833/find-out-current-working-directory-of-a-process" title="Find out what others think of this command">Find out current working directory of a process</a>
+                <a href="/commands/view/11833/find-out-current-working-directory-of-a-process">Find out current working directory of a process</a>
               </div>
               <div class="description">
                 <p>
@@ -137,7 +137,7 @@ lrwxrwxrwx 1 root root 0 Apr 13 18:31 /proc/3945/cwd -&gt; /
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

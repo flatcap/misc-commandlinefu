@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         dig +short txt <span>&lt;keyword&gt;</span>.wp.dg.cx
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2829">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ dig +short txt unix.wp.dg.cx
@@ -52,13 +52,13 @@ $ dig +short txt unix.wp.dg.cx
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         mwiki() { dig +short txt "$*".wp.dg.cx; }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-5187">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ mwiki Richard Stallman
@@ -68,7 +68,7 @@ $ mwiki Richard Stallman
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/5187/query-wikipedia-via-console-over-dns" title="Find out what others think of this command">Query Wikipedia via console over DNS</a>
+                <a href="/commands/view/5187/query-wikipedia-via-console-over-dns">Query Wikipedia via console over DNS</a>
               </div>
               <div class="description">
                 <p>
@@ -78,52 +78,52 @@ $ mwiki Richard Stallman
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         mwiki () { blah=`echo $@ | sed -e 's/ /_/g'`; dig +short txt $blah.wp.dg.cx; }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-4591">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/4591/query-wikipedia-via-console-over-dns" title="Find out what others think of this command">Query Wikipedia via console over DNS</a>
+                <a href="/commands/view/4591/query-wikipedia-via-console-over-dns">Query Wikipedia via console over DNS</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         nslookup -q=txt <span>&lt;topic&gt;</span>.wp.dg.cx
                                                 </div>
-            <div class="sample-output c5" id="sample-output-5514">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/5514/query-wikipedia-via-console-over-dns" title="Find out what others think of this command">Query Wikipedia via console over DNS</a>
+                <a href="/commands/view/5514/query-wikipedia-via-console-over-dns">Query Wikipedia via console over DNS</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         mwiki () { dig +short txt `echo $*|sed 's| *|_|g'`.wp.dg.cx; }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7772">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7772/query-wikipedia-via-console-over-dns" title="Find out what others think of this command">Query Wikipedia via console over DNS</a>
+                <a href="/commands/view/7772/query-wikipedia-via-console-over-dns">Query Wikipedia via console over DNS</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         wiki() { local IFS=_; dig +short txt "${*^}".wp.dg.cx; }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9293">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 rany:~$ wiki richard stallman
@@ -136,12 +136,12 @@ rany:~$
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9293/query-wikipedia-over-dns" title="Find out what others think of this command">Query wikipedia over DNS</a>
+                <a href="/commands/view/9293/query-wikipedia-over-dns">Query wikipedia over DNS</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 
@@ -183,7 +183,7 @@ rany:~$
                                                                 We can add some GUI spice to teh absue :P , dep==&gt; zenity
                                                         </p>
               <p>
-                                                                zenity --info --text="$(dig +short txt $(zenity --entry --title="Search wiki" --text="Enter your search word:").wp.dg.cx)"
+                                                                zenity --info --text="$(dig +short txt $(zenity --entry -- --text="Enter your search word:").wp.dg.cx)"
                                                         </p>
             </div>
           </div>

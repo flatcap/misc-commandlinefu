@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         DATE=$(date +%Y-%m-%d_%H-%M-%S)-$(($(date +%N)/10000000)); HOST=ssh_host; DEST=file_dest; URL=url/screenshot_$DATE.png; import -window root png:- | ssh $HOST "cat &gt; $DEST/screenshot_$DATE.png"; echo $URL | xclip; notify-send -u low "Title" "Message"
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9004">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 DATE=$(date +%Y-%m-%d_%H-%M-%S)-$(($(date +%N)/10000000)); HOST=swordfischer.com; DEST=/home/swordfischer/public_html; URL=https://swordfischer.com/upload/screenshot_$DATE.png; import -window root png:- | ssh $HOST "cat &gt; $DEST/screenshot_$DATE.png"; echo $URL | xclip; notify-send -u low "Screenshot Taken" "Entire screen.\nCopied to clipboard"
@@ -64,9 +64,9 @@ https://swordfischer.com/upload/screenshot_2011-08-13_02-32-55-74.png
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
-          <div class="pagination"></div>
+
         </div>
 
 

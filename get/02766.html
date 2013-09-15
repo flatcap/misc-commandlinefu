@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         complete -W "$(echo $(grep '^ssh ' .bash_history | sort -u | sed 's/^ssh //'))" ssh
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2766">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
@@ -48,13 +48,13 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2747">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ssh myserver.&lt;tab&gt;
@@ -64,7 +64,7 @@ $ssh myserver.insanelylongcompanynamethatishardtospell.com
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/2747/ssh-autocomplete" title="Find out what others think of this command">ssh autocomplete</a>
+                <a href="/commands/view/2747/ssh-autocomplete">ssh autocomplete</a>
               </div>
               <div class="description">
                 <p>
@@ -83,15 +83,15 @@ $ssh myserver.insanelylongcompanynamethatishardtospell.com
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9086">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9086/ssh-autocomplete-based-on-.sshconfig" title="Find out what others think of this command">ssh autocomplete based on ~/.ssh/config</a>
+                <a href="/commands/view/9086/ssh-autocomplete-based-on-.sshconfig">ssh autocomplete based on ~/.ssh/config</a>
               </div>
               <div class="description">
                 <p>
@@ -119,15 +119,15 @@ $ssh myserver.insanelylongcompanynamethatishardtospell.com
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         complete -W "$(sed 's/;.*//;' /etc/hosts | awk ' /^[[:digit:]]/ {$1 = "";print tolower($0)}')" ssh
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8675">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8675/enable-tab-completion-for-known-ssh-hosts" title="Find out what others think of this command">Enable tab completion for known SSH hosts</a>
+                <a href="/commands/view/8675/enable-tab-completion-for-known-ssh-hosts">Enable tab completion for known SSH hosts</a>
               </div>
               <div class="description">
                 <p>
@@ -137,15 +137,15 @@ $ssh myserver.insanelylongcompanynamethatishardtospell.com
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         complete -W "$(while IFS=' ,' read host t; do echo $host; done &lt; ~/.ssh/known_hosts)" ssh
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7836">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7836/ssh-autocomplete" title="Find out what others think of this command">ssh autocomplete</a>
+                <a href="/commands/view/7836/ssh-autocomplete">ssh autocomplete</a>
               </div>
               <div class="description">
                 <p>
@@ -159,20 +159,20 @@ $ssh myserver.insanelylongcompanynamethatishardtospell.com
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8562">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8562/enable-tab-completion-for-known-ssh-hosts" title="Find out what others think of this command">Enable tab completion for known SSH hosts</a>
+                <a href="/commands/view/8562/enable-tab-completion-for-known-ssh-hosts">Enable tab completion for known SSH hosts</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

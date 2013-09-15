@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ssh root@`for ((i=100; i&lt;=110; i++));do arp -a 192.168.1.$i; done | grep 00:35:cf:56:b2:2g | awk '{print $2}' | sed -e 's/(//' -e 's/)//'`
                                                 </div>
-            <div class="sample-output c5" id="sample-output-3398">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 ssh: connect to host 192.168.1.103 port 22: No route to host
@@ -41,18 +41,18 @@ ssh: connect to host 192.168.1.103 port 22: No route to host
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         sudo arp -s 192.168.1.200 00:35:cf:56:b2:2g temp &amp;&amp; ssh root@192.168.1.200
                                                 </div>
-            <div class="sample-output c5" id="sample-output-3447">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/3447/connect-via-ssh-using-mac-address" title="Find out what others think of this command">connect via ssh using mac address</a>
+                <a href="/commands/view/3447/connect-via-ssh-using-mac-address">connect via ssh using mac address</a>
               </div>
               <div class="description">
                 <p>
@@ -61,7 +61,7 @@ ssh: connect to host 192.168.1.103 port 22: No route to host
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

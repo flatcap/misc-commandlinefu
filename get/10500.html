@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         find . -type f -print0 | xargs -0 du -h | sort -hr | head -20
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10500">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 64M        ./icons/gnome/icon-theme.cache
@@ -79,18 +79,18 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         find . -mount -type f -printf "%k %p\n" | sort -rg | cut -d \ -f 2- | xargs -I {} du -sh {} | less
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10499">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10499/recursively-find-top-20-largest-files-1mb-sort-human-readable-format" title="Find out what others think of this command">Recursively find top 20 largest files (&gt; 1MB) sort human readable format</a>
+                <a href="/commands/view/10499/recursively-find-top-20-largest-files-1mb-sort-human-readable-format">Recursively find top 20 largest files (&gt; 1MB) sort human readable format</a>
               </div>
               <div class="description">
                 <p>
@@ -99,7 +99,7 @@
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

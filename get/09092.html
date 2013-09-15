@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         SCALE=3; WIDTHL=10; WIDTHR=60; BAR="12345678"; BAR="${BAR//?/==========}"; while read LEFT RIGHT rest ; do RIGHT=$((RIGHT/SCALE)); printf "%${WIDTHL}s: %-${WIDTHR}s\n" "${LEFT:0:$WIDTHL}" "|${BAR:0:$RIGHT}*"; done &lt; dataset.dat
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9092">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ cat dataset.dat
@@ -56,9 +56,9 @@ $ SCALE=1; WIDTHL=10; WIDTHR=60; BAR="12345678"; BAR="${BAR//?/==========}"; whi
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
-          <div class="pagination"></div>
+
         </div>
 
 

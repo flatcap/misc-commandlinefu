@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         up () { if [ "${1/[^0-9]/}" == "$1" ]; then p=./; for i in $(seq 1 $1); do p=${p}../; done; cd $p; else echo 'usage: up N'; fi }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10630">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 /home/someone/directory$ up
@@ -44,13 +44,13 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         up() { local x='';for i in $(seq ${1:-1});do x="$x../"; done;cd $x; }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10751">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 Add this to your .BASHRC file and you can simply type up to cd back one directory, up 2 to cd twice, up 10 to cd ten times... better then b,bb,bbb,bbbb aliases
@@ -59,7 +59,7 @@ Add this to your .BASHRC file and you can simply type up to cd back one director
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10751/quickly-cd-out-of-directories-without-5-aliases" title="Find out what others think of this command">Quickly CD Out Of Directories Without 5+ Aliases</a>
+                <a href="/commands/view/10751/quickly-cd-out-of-directories-without-5-aliases">Quickly CD Out Of Directories Without 5+ Aliases</a>
               </div>
               <div class="description">
                 <p>
@@ -69,15 +69,15 @@ Add this to your .BASHRC file and you can simply type up to cd back one director
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         up() { [ $(( $1 + 0 )) -gt 0 ] &amp;&amp; cd $(eval "printf '../'%.0s {1..$1}"); }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10878">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10878/quickly-cd-out-of-directories" title="Find out what others think of this command">Quickly CD Out Of Directories</a>
+                <a href="/commands/view/10878/quickly-cd-out-of-directories">Quickly CD Out Of Directories</a>
               </div>
               <div class="description">
                 <p>
@@ -86,7 +86,7 @@ Add this to your .BASHRC file and you can simply type up to cd back one director
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

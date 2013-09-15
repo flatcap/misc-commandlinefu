@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         shuf -n4 /usr/share/dict/words | tr -d '\n'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8990">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 DolbycuspidspromulgatedAmundsen
@@ -44,13 +44,13 @@ DolbycuspidspromulgatedAmundsen
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         shuf -n4 /usr/share/dict/words | sed -e ':a;N;$!ba;s/\n/ /g;s/'\''//g;s/\b\(.\)/\u\1/g;s/ //g'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8995">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 EyestrainOctogenariansCatechisingDepression
@@ -59,7 +59,7 @@ EyestrainOctogenariansCatechisingDepression
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8995/alternative-way-to-generate-an-xkcd-936-style-4-word-password-usig-sed" title="Find out what others think of this command">Alternative way to generate an XKCD #936 style 4 word password usig sed</a>
+                <a href="/commands/view/8995/alternative-way-to-generate-an-xkcd-936-style-4-word-password-usig-sed">Alternative way to generate an XKCD #936 style 4 word password usig sed</a>
               </div>
               <div class="description">
                 <p>
@@ -78,10 +78,10 @@ EyestrainOctogenariansCatechisingDepression
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         echo $(grep "^[^']\{3,5\}$" /usr/share/dict/words|shuf -n4)
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9099">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 potty Aspen seedy curt
@@ -90,7 +90,7 @@ potty Aspen seedy curt
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9099/generate-an-xkcd-936-style-4-word-password" title="Find out what others think of this command">Generate an XKCD #936 style 4 word password</a>
+                <a href="/commands/view/9099/generate-an-xkcd-936-style-4-word-password">Generate an XKCD #936 style 4 word password</a>
               </div>
               <div class="description">
                 <p>
@@ -100,10 +100,10 @@ potty Aspen seedy curt
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         jot 4 | awk '{ print "wc -l /usr/share/dict/words | awk '"'"'{ print \"echo $[ $RANDOM * $RANDOM % \" $1 \"]\" }'"'"' | bash | awk '"'"'{ print \"sed -n \" $1 \"p /usr/share/dict/words\" }'"'"' | bash" }' | bash | tr -d '\n' | sed 's/$/\n/'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9024">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 rackettwiseheartedgellytutoressn
@@ -112,7 +112,7 @@ rackettwiseheartedgellytutoressn
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9024/generate-an-xkcd-936-style-4-word-password" title="Find out what others think of this command">Generate an XKCD #936 style 4 word password</a>
+                <a href="/commands/view/9024/generate-an-xkcd-936-style-4-word-password">Generate an XKCD #936 style 4 word password</a>
               </div>
               <div class="description">
                 <p>
@@ -125,10 +125,10 @@ rackettwiseheartedgellytutoressn
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         shuf /usr/share/dict/words |grep "^[^']\{3,5\}$" |head -n4
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9102">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 nukes
@@ -140,7 +140,7 @@ vain
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9102/generate-an-xkcd-936-style-4-word-password" title="Find out what others think of this command">Generate an XKCD #936 style 4 word password</a>
+                <a href="/commands/view/9102/generate-an-xkcd-936-style-4-word-password">Generate an XKCD #936 style 4 word password</a>
               </div>
               <div class="description">
                 <p>
@@ -153,10 +153,10 @@ vain
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         perl -F'\s+' -anE 'push @w,$F[1];END{$r.=splice @w,rand @w,1 for(1..4);say $r}' diceware.wordlist.asc
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9114">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 snapcodonmarshstink
@@ -165,7 +165,7 @@ snapcodonmarshstink
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9114/generate-an-xkcd-936-style-4-word-password" title="Find out what others think of this command">Generate an XKCD #936 style 4 word password</a>
+                <a href="/commands/view/9114/generate-an-xkcd-936-style-4-word-password">Generate an XKCD #936 style 4 word password</a>
               </div>
               <div class="description">
                 <p>
@@ -177,7 +177,7 @@ snapcodonmarshstink
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

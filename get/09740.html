@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         while true; do cat /proc/net/dev; sleep 1; done | awk -v dc="date \"+%T\"" '/eth0/{i = $2 - oi; o = $10 - oo; oi = $2; oo = $10; dc|getline d; close(dc); if (a++) printf "%s %8.2f KiB/s in %8.2f KiB/s out\n", d, i/1024, o/1024}'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9740">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 02:18:43     1.71 KiB/s in     0.11 KiB/s out
@@ -50,9 +50,9 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
-          <div class="pagination"></div>
+
         </div>
 
 

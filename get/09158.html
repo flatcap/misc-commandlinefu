@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         awk '{print $0/60;}' /proc/uptime
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9158">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
@@ -37,18 +37,18 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         bc &lt;&lt;&lt; `uptime | sed -e 's/^.*up //' -e 's/[^0-9:].*//' | sed 's/:/*60+/g'`
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9140">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9140/uptime-in-minute" title="Find out what others think of this command">Uptime in minute</a>
+                <a href="/commands/view/9140/uptime-in-minute">Uptime in minute</a>
               </div>
               <div class="description">
                 <p>
@@ -58,24 +58,24 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         uptime | awk -F ',' ' {print $1} ' | awk ' {print $3} ' | awk -F ':' ' {hrs=$1; min=$2; print hrs*60 + min} '
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9166">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9166/uptime-in-minute" title="Find out what others think of this command">Uptime in minute</a>
+                <a href="/commands/view/9166/uptime-in-minute">Uptime in minute</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         uptime | awk -F ',' ' {print $1" "$2}'|awk ' {print $3" "$4" "$5}' | sed '1,$s/:/ /' | awk ' {if ($4 =="user") print $1*60 + $2;else if ($2=="mins") print $1;else print $1*24*60 + $2*60 + $3}'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-12515">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 44384
@@ -84,7 +84,7 @@
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/12515/uptime-in-minute" title="Find out what others think of this command">Uptime in minute</a>
+                <a href="/commands/view/12515/uptime-in-minute">Uptime in minute</a>
               </div>
               <div class="description">
                 <p>
@@ -93,7 +93,7 @@
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

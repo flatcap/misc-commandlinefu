@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         wget --auth-no-challenge --server-response -O- $url 2&gt;&amp;1 | grep "Cookie" | sed "s/^ Set-//g" &gt; cookie.txt; wget --auth-no-challenge --server-response --http-user="user" --http-password="pw" --header="$(cat cookie.txt)" -O- $url
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7200">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 --2010-12-01 09:18:49--  http://your.url/
@@ -74,9 +74,9 @@ Saving to: `STDOUT'
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
-          <div class="pagination"></div>
+
         </div>
 
 

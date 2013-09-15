@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for i in /var/spool/cron/*; do echo ${i##*/}; sed 's/^/\t/' $i; echo; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10964">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 flatcap
@@ -45,18 +45,18 @@ root
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for user in $(cut -f1 -d: /etc/passwd); do echo "### Crontabs for $user ####"; crontab -u $user -l; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10961">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10961/show-crontabs-for-all-users" title="Find out what others think of this command">Show crontabs for all users</a>
+                <a href="/commands/view/10961/show-crontabs-for-all-users">Show crontabs for all users</a>
               </div>
               <div class="description">
                 <p>
@@ -66,15 +66,15 @@ root
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for i in /var/spool/cron/tabs/*; do echo ${i##*/}; sed 's/^/\t/' $i; echo; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10972">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10972/show-crontabs-for-all-users" title="Find out what others think of this command">Show crontabs for all users</a>
+                <a href="/commands/view/10972/show-crontabs-for-all-users">Show crontabs for all users</a>
               </div>
               <div class="description">
                 <p>
@@ -84,15 +84,15 @@ root
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for user in $(getent passwd|cut -f1 -d:); do echo "### Crontabs for $user ####"; crontab -u $user -l; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10962">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10962/show-crontabs-for-all-users" title="Find out what others think of this command">Show crontabs for all users</a>
+                <a href="/commands/view/10962/show-crontabs-for-all-users">Show crontabs for all users</a>
               </div>
               <div class="description">
                 <p>
@@ -101,7 +101,7 @@ root
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

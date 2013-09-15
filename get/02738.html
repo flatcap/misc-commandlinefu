@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ifconfig | perl -nle'/dr:(\S+)/ &amp;&amp; print $1'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2738">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 10.200.10.147
@@ -48,13 +48,13 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ &amp;&amp; print $1'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2825">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 10.200.10.147
@@ -64,7 +64,7 @@
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/2825/get-all-ips-via-ifconfig" title="Find out what others think of this command">Get all IPs via ifconfig</a>
+                <a href="/commands/view/2825/get-all-ips-via-ifconfig">Get all IPs via ifconfig</a>
               </div>
               <div class="description">
                 <p>
@@ -74,15 +74,15 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ifconfig | awk -F':| +' '/ddr:/{print $4}'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2765">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/2765/get-all-ips-via-ifconfig" title="Find out what others think of this command">Get all IPs via ifconfig</a>
+                <a href="/commands/view/2765/get-all-ips-via-ifconfig">Get all IPs via ifconfig</a>
               </div>
               <div class="description">
                 <p>
@@ -99,10 +99,10 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ifconfig | awk '/ddr:[0-9]/ {sub(/addr:/, ""); print $2}'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2824">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 ifconfig | awk '/ddr:[0-9]/ {sub(/addr:/, ""); print $2}'
@@ -113,7 +113,7 @@ ifconfig | awk '/ddr:[0-9]/ {sub(/addr:/, ""); print $2}'
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/2824/get-all-ips-via-ifconfig" title="Find out what others think of this command">Get all IPs via ifconfig</a>
+                <a href="/commands/view/2824/get-all-ips-via-ifconfig">Get all IPs via ifconfig</a>
               </div>
               <div class="description">
                 <p>
@@ -132,34 +132,34 @@ ifconfig | awk '/ddr:[0-9]/ {sub(/addr:/, ""); print $2}'
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ifconfig | awk '/inet / {sub(/addr:/, "", $2); print $2}'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9840">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9840/get-all-ips-via-ifconfig" title="Find out what others think of this command">Get all IPs via ifconfig</a>
+                <a href="/commands/view/9840/get-all-ips-via-ifconfig">Get all IPs via ifconfig</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ipconfig getpacket en0 | grep yi| sed s."yiaddr = "."en0: ". ipconfig getpacket en1 | grep yi| sed s."yiaddr = "."en1: ".
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2795">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/2795/get-all-ips-via-ifconfig" title="Find out what others think of this command">Get all IPs via ifconfig</a>
+                <a href="/commands/view/2795/get-all-ips-via-ifconfig">Get all IPs via ifconfig</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

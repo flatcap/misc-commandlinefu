@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         watch -n 10 killall -USR1 dd
                                                 </div>
-            <div class="sample-output c5" id="sample-output-4009">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
@@ -33,13 +33,13 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         killall -INFO dd
                                                 </div>
-            <div class="sample-output c5" id="sample-output-5440">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 The result of executing "killall -INFO dd" 3 times from a different terminal:
@@ -59,7 +59,7 @@ $&gt; dd if=sample_input_file of=sample_output_file
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/5440/check-the-status-of-dd-in-progress-os-x" title="Find out what others think of this command">check the status of 'dd' in progress (OS X)</a>
+                <a href="/commands/view/5440/check-the-status-of-dd-in-progress-os-x">check the status of 'dd' in progress (OS X)</a>
               </div>
               <div class="description">
                 <p>
@@ -69,10 +69,10 @@ $&gt; dd if=sample_input_file of=sample_output_file
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         CTRL + T
                                                 </div>
-            <div class="sample-output c5" id="sample-output-11666">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 load: 1.24  cmd: dd 4960 uninterruptible 0.26u 4.59s
@@ -84,7 +84,7 @@ load: 1.24  cmd: dd 4960 uninterruptible 0.26u 4.59s
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/11666/check-the-status-of-dd-in-progress-os-x" title="Find out what others think of this command">check the status of 'dd' in progress (OS X)</a>
+                <a href="/commands/view/11666/check-the-status-of-dd-in-progress-os-x">check the status of 'dd' in progress (OS X)</a>
               </div>
               <div class="description">
                 <p>
@@ -94,15 +94,15 @@ load: 1.24  cmd: dd 4960 uninterruptible 0.26u 4.59s
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         while killall -USR1 dd; do sleep 5; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-4011">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/4011/check-the-status-of-dd-in-progress" title="Find out what others think of this command">check the status of 'dd' in progress</a>
+                <a href="/commands/view/4011/check-the-status-of-dd-in-progress">check the status of 'dd' in progress</a>
               </div>
               <div class="description">
                 <p>
@@ -112,15 +112,15 @@ load: 1.24  cmd: dd 4960 uninterruptible 0.26u 4.59s
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ps auxww |grep " dd " |grep -v grep |awk '{print $2}' |while read pid; do kill -USR1 $pid; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-1067">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/1067/check-the-status-of-dd-in-progress" title="Find out what others think of this command">check the status of 'dd' in progress</a>
+                <a href="/commands/view/1067/check-the-status-of-dd-in-progress">check the status of 'dd' in progress</a>
               </div>
               <div class="description">
                 <p>
@@ -130,10 +130,10 @@ load: 1.24  cmd: dd 4960 uninterruptible 0.26u 4.59s
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         pv -tpreb /dev/sda | dd of=/dev/sdb bs=1M
                                                 </div>
-            <div class="sample-output c5" id="sample-output-12632">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 675MiB 0:02:53 [ 4.2MiB/s] [=======&gt;                               ]  9% ETA 0:27:00
@@ -142,7 +142,7 @@ load: 1.24  cmd: dd 4960 uninterruptible 0.26u 4.59s
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/12632/check-the-status-of-dd-in-progress-os-x" title="Find out what others think of this command">check the status of 'dd' in progress (OS X)</a>
+                <a href="/commands/view/12632/check-the-status-of-dd-in-progress-os-x">check the status of 'dd' in progress (OS X)</a>
               </div>
               <div class="description">
                 <p>
@@ -151,7 +151,7 @@ load: 1.24  cmd: dd 4960 uninterruptible 0.26u 4.59s
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

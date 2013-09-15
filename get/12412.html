@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         perl -e 'printf "%o\n", (stat shift)[2]&amp;07777' file
                                                 </div>
-            <div class="sample-output c5" id="sample-output-12412">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 777
@@ -41,18 +41,18 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         lso(){ jot -w '%04d' 7778 0000 7777 |sed '/[89]/d;s,.*,printf '"'"'&amp; '"'"';chmod &amp; '"$1"';ls -l '"$1"'|sed s/-/./,' \ |sh \ |{ echo "lso(){";echo "ls \$@ \\";echo " |sed '";sed 's, ,@,2;s,@.*,,;s,\(.* \)\(.*\),s/\2/\1/,;s, ,,';echo \';echo };};}
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10019">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10019/ls-output-with-mode-in-octal" title="Find out what others think of this command">ls output with mode in octal</a>
+                <a href="/commands/view/10019/ls-output-with-mode-in-octal">ls output with mode in octal</a>
               </div>
               <div class="description">
                 <p>
@@ -185,20 +185,20 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ls -l | sed -e 's/--x/1/g' -e 's/-w-/2/g' -e 's/-wx/3/g' -e 's/r--/4/g' -e 's/r-x/5/g' -e 's/rw-/6/g' -e 's/rwx/7/g' -e 's/---/0/g'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10021">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10021/ls-output-octal" title="Find out what others think of this command">ls output - octal</a>
+                <a href="/commands/view/10021/ls-output-octal">ls output - octal</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

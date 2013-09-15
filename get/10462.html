@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         alias tail='tail -n $((${LINES:-`tput lines 2&gt;/dev/null||echo -n 80`} - 7))'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10462">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 [7995:7993 - 0:2497] [askapache@n1-backbone5:pts/0 +1] ~ $ lsof -a -d 1 -d 0-4 -w|tail
@@ -85,18 +85,18 @@ lsof    17475 askapache    4r   DIR   0,96     0 1078132745 /proc/17475/fd
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         tail() { thbin="/usr/bin/tail"; if [ "${1:0:1}" != "-" ]; then fc=$(($#==0?1:$#)); lpf="$((($LINES - 3 - 2 * $fc) / $fc))"; lpf="$(($lpf&lt;1?2:$lpf))"; [ $fc -eq 1 ] &amp;&amp; $thbin -n $lpf "$@" | /usr/bin/fold -w $COLUMNS | $thbin -n $lpf || $thbin -n $lpf...
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10474">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10474/a-tail-function-for-automatic-smart-output" title="Find out what others think of this command">a tail function for automatic smart output</a>
+                <a href="/commands/view/10474/a-tail-function-for-automatic-smart-output">a tail function for automatic smart output</a>
               </div>
               <div class="description">
                 <code>tail() { thbin="/usr/bin/tail"; if [ "${1:0:1}" != "-" ]; then fc=$(($#==0?1:$#)); lpf="$((($LINES - 3 - 2 * $fc) / $fc))"; lpf="$(($lpf&lt;1?2:$lpf))"; [ $fc -eq 1 ] &amp;&amp; $thbin -n $lpf "$@" | /usr/bin/fold -w $COLUMNS | $thbin -n $lpf || $thbin -n $lpf "$@"; else $thbin "$@"; fi; unset lpf fc thbin; }</code>
@@ -118,7 +118,7 @@ lsof    17475 askapache    4r   DIR   0,96     0 1078132745 /proc/17475/fd
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

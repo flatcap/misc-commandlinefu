@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         awk '{ printf "%.2f", $2/1024/1024 ; exit}' /proc/meminfo
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9680">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 1.72
@@ -41,46 +41,46 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         awk '( $1 == "MemTotal:" ) { print $2/1048576 }' /proc/meminfo
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9661">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9661/get-memory-total-from-procmeminfo-in-gigs" title="Find out what others think of this command">Get memory total from /proc/meminfo in Gigs</a>
+                <a href="/commands/view/9661/get-memory-total-from-procmeminfo-in-gigs">Get memory total from /proc/meminfo in Gigs</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         free -g
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9691">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9691/get-memory-total-from-procmeminfo-in-gigs" title="Find out what others think of this command">Get memory total from /proc/meminfo in Gigs</a>
+                <a href="/commands/view/9691/get-memory-total-from-procmeminfo-in-gigs">Get memory total from /proc/meminfo in Gigs</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         memnum=$(awk '{ print $2 }' /proc/meminfo |head -n1); echo "$memnum / 1024 / 1024" | bc -l
                                                 </div>
-            <div class="sample-output c5" id="sample-output-9656">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/9656/get-memory-total-from-procmeminfo-in-gigs" title="Find out what others think of this command">Get memory total from /proc/meminfo in Gigs</a>
+                <a href="/commands/view/9656/get-memory-total-from-procmeminfo-in-gigs">Get memory total from /proc/meminfo in Gigs</a>
               </div>
               <div class="description">
                 <p>
@@ -89,7 +89,7 @@
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

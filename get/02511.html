@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         find -L /proc/*/fd -links 0 2&gt;/dev/null
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2511">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ dd if=/dev/zero of=bigfile bs=1M count=3000
@@ -56,13 +56,13 @@ lr-x------ 1 u4x6691 unixadm 64 Jun 26 14:42 /proc/2035/fd/3 -&gt; /tmp/bigfile 
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ls -l /proc/*/fd/* | grep 'deleted'| grep "\/proc.*\file-name-part"
                                                 </div>
-            <div class="sample-output c5" id="sample-output-11268">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 to@tolaptop:~$ ls -l /proc/*/fd/* | grep 'deleted'| grep "\/proc.*\.mp3"
@@ -73,7 +73,7 @@ lr-x------ 1 totti root 64 2012-09-13 14:24 /proc/3275/fd/27 -&gt; /home/to/Down
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/11268/find-removed-files-still-in-use-via-proc" title="Find out what others think of this command">Find removed files still in use via /proc</a>
+                <a href="/commands/view/11268/find-removed-files-still-in-use-via-proc">Find removed files still in use via /proc</a>
               </div>
               <div class="description">
                 <p>
@@ -86,7 +86,7 @@ lr-x------ 1 totti root 64 2012-09-13 14:24 /proc/3275/fd/27 -&gt; /home/to/Down
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for f in /sys/class/net/*; do echo -e "$(basename $f)\t$(cat $f/address)"; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8491">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 eth0       00:1d:09:xx:xx:xx
@@ -46,55 +46,55 @@ wlan0   00:22:fb:xx:xx:xx
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         lsmac() { ifconfig -a | sed '/eth\|wl/!d;s/ Link.*HWaddr//' ; }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8125">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8125/list-your-macs-address" title="Find out what others think of this command">List your MACs address</a>
+                <a href="/commands/view/8125/list-your-macs-address">List your MACs address</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         cat /sys/class/net/eth0/address
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8457">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8457/list-your-macs-address" title="Find out what others think of this command">List your MACs address</a>
+                <a href="/commands/view/8457/list-your-macs-address">List your MACs address</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ifconfig eth0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8366">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8366/list-your-macs-address" title="Find out what others think of this command">List your MACs address</a>
+                <a href="/commands/view/8366/list-your-macs-address">List your MACs address</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         cat /sys/class/net/*/address
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8581">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 00:23:54:19:c8:bc
@@ -104,7 +104,7 @@ wlan0   00:22:fb:xx:xx:xx
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8581/list-your-macs-address" title="Find out what others think of this command">List your MACs address</a>
+                <a href="/commands/view/8581/list-your-macs-address">List your MACs address</a>
               </div>
               <div class="description">
                 <p>
@@ -114,15 +114,15 @@ wlan0   00:22:fb:xx:xx:xx
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ip link | awk '/link/ {print $2}'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8168">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8168/list-your-macs-address" title="Find out what others think of this command">List your MACs address</a>
+                <a href="/commands/view/8168/list-your-macs-address">List your MACs address</a>
               </div>
               <div class="description">
                 <p>
@@ -131,7 +131,7 @@ wlan0   00:22:fb:xx:xx:xx
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

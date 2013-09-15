@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         summpkg() { rpm -qfi "$@"; }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8778">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 ~$ summpkg /bin/sort
@@ -61,18 +61,18 @@ the old GNU fileutils, sh-utils, and textutils packages.
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         dpkg -S `which nm` | cut -d':' -f1 | (read PACKAGE; echo "[${PACKAGE}]"; dpkg -s "${PACKAGE}"; dpkg -L "${PACKAGE}") | less
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2658">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/2658/a-commands-package-details" title="Find out what others think of this command">A command's package details</a>
+                <a href="/commands/view/2658/a-commands-package-details">A command's package details</a>
               </div>
               <div class="description">
                 <p>
@@ -82,10 +82,10 @@ the old GNU fileutils, sh-utils, and textutils packages.
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         function summpkg { dpkg -s $(dpkg -S $1 | egrep -w $(which $1)$ | awk -F: '{print $1}') ; }
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8777">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ summpkg nm
@@ -112,7 +112,7 @@ Original-Maintainer: Matthias Klose &lt;doko@debian.org&gt;
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8777/a-commands-package-details" title="Find out what others think of this command">A command's package details</a>
+                <a href="/commands/view/8777/a-commands-package-details">A command's package details</a>
               </div>
               <div class="description">
                 <p>
@@ -125,7 +125,7 @@ Original-Maintainer: Matthias Klose &lt;doko@debian.org&gt;
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         tr '\0' '\377' &lt; /dev/zero|dd count=$((<span>&lt;bytes&gt;</span>/512))
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8236">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 $ time tr '\0' '\377' &lt; /dev/zero|dd count=$((24*1024*2)) &gt; /dev/null
@@ -55,18 +55,18 @@ dd count=$((24*1024*2)) &gt; /dev/null  0.01s user 0.03s system 76% cpu 0.052 to
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ghc -e "mapM_ (\_-&gt;Data.ByteString.Char8.putStr (Data.ByteString.Char8.replicate (1024*1024) '\\255')) [1..24]"
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8237">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8237/a-fast-way-to-repeat-output-a-byte" title="Find out what others think of this command">a fast way to repeat output a byte</a>
+                <a href="/commands/view/8237/a-fast-way-to-repeat-output-a-byte">a fast way to repeat output a byte</a>
               </div>
               <div class="description">
                 <p>
@@ -75,7 +75,7 @@ dd count=$((24*1024*2)) &gt; /dev/null  0.01s user 0.03s system 76% cpu 0.052 to
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

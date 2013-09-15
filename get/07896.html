@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         files -type f | xargs -n100 | while read l; do mkdir $((++f)); cp $l $f; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7896">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
@@ -49,18 +49,18 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         find files/ -type f | while read line; do if [ $((i++%100)) -eq 0 ]; then mkdir $((++folder)); fi; cp $line $folder/; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7870">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7870/reorder-file-with-max-100-file-per-folder" title="Find out what others think of this command">Reorder file with max 100 file per folder</a>
+                <a href="/commands/view/7870/reorder-file-with-max-100-file-per-folder">Reorder file with max 100 file per folder</a>
               </div>
               <div class="description">
                 <p>
@@ -73,10 +73,10 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         folder=0;mkdir $folder; while find -maxdepth 1 -type f -exec mv "{}" $folder \; -quit ; do if [ $( ls $folder | wc -l ) -ge 100 ]; then folder=$(( $folder + 1 )); mkdir $folder; fi ; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-7856">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 Nothing but files and folder
@@ -85,7 +85,7 @@ Nothing but files and folder
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/7856/reorder-file-with-max-100-file-per-folder" title="Find out what others think of this command">Reorder file with max 100 file per folder</a>
+                <a href="/commands/view/7856/reorder-file-with-max-100-file-per-folder">Reorder file with max 100 file per folder</a>
               </div>
               <div class="description">
                 <p>
@@ -100,7 +100,7 @@ Nothing but files and folder
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         sed -e's/%\([0-9A-F][0-9A-F]\)/\\\\\x\1/g' | xargs echo -e
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2285">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
@@ -41,27 +41,27 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         perl -pe 's/%([0-9a-f]{2})/sprintf("%s", pack("H2",$1))/eig'
                                                 </div>
-            <div class="sample-output c5" id="sample-output-4157">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/4157/urldecoding" title="Find out what others think of this command">urldecoding</a>
+                <a href="/commands/view/4157/urldecoding">urldecoding</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         VAR="%23%21%2fbin%2fbash" ; printf -v VAR "%b" "${VAR//\%/\x}" ; echo $VAR
                                                 </div>
-            <div class="sample-output c5" id="sample-output-10014">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 #!/bin/bash
@@ -70,7 +70,7 @@
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/10014/urldecoding-with-one-pure-bash-builtin" title="Find out what others think of this command">urldecoding with one pure BASH builtin</a>
+                <a href="/commands/view/10014/urldecoding-with-one-pure-bash-builtin">urldecoding with one pure BASH builtin</a>
               </div>
               <div class="description">
                 <p>
@@ -83,10 +83,10 @@
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         printf $(echo -n $1 | sed 's/\\/\\\\/g;s/\(%\)\([0-9a-fA-F][0-9a-fA-F]\)/\\x\2/g')
                                                 </div>
-            <div class="sample-output c5" id="sample-output-4151">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 Hello%20World
@@ -101,7 +101,7 @@ gives
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/4151/urldecoding" title="Find out what others think of this command">urldecoding</a>
+                <a href="/commands/view/4151/urldecoding">urldecoding</a>
               </div>
               <div class="description">
                 <p>
@@ -114,15 +114,15 @@ gives
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ls * | while read fin;do fout=$(echo -n $fin | sed -e's/%\([0-9A-F][0-9A-F]\)/\\\\\x\1/g' | xargs echo -e);if [ "$fout" != "$fin" ];then echo "mv '$fin' '$fout'";fi;done | bash -x
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8472">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8472/urldecoding" title="Find out what others think of this command">urldecoding</a>
+                <a href="/commands/view/8472/urldecoding">urldecoding</a>
               </div>
               <div class="description">
                 <p>
@@ -132,10 +132,10 @@ gives
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         echo "q+werty%3D%2F%3B" | php -r "echo urldecode(file_get_contents('php://stdin'));"
                                                 </div>
-            <div class="sample-output c5" id="sample-output-12510">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 q werty=/;
@@ -144,7 +144,7 @@ q werty=/;
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/12510/urldecoding" title="Find out what others think of this command">urldecoding</a>
+                <a href="/commands/view/12510/urldecoding">urldecoding</a>
               </div>
               <div class="description">
                 <p>
@@ -153,7 +153,7 @@ q werty=/;
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

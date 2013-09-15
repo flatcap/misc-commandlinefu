@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         ls *.jpg | awk -F'.' '{ printf "%s %04d.%s\n", $0, $1, $2; }' | xargs -n2 mv
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8379">
+            <div class="sample-output c5">
               <div class="output">
                 <pre>
 mv 10.jpg 0010.jpg
@@ -65,18 +65,18 @@ mv 9.jpg 0009.jpg
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         rename 's/\d+/sprintf("%04d",$&amp;)/e' *.jpg
                                                 </div>
-            <div class="sample-output c5" id="sample-output-8383">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/8383/numeric-zero-padding-file-rename" title="Find out what others think of this command">Numeric zero padding file rename</a>
+                <a href="/commands/view/8383/numeric-zero-padding-file-rename">Numeric zero padding file rename</a>
               </div>
               <div class="description">
                 <p>
@@ -86,20 +86,20 @@ mv 9.jpg 0009.jpg
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         for i in $(seq -w 0 100) ; do mv prefix$(( 10#$i )).jpg prefix${i}.jpg ; done
                                                 </div>
-            <div class="sample-output c5" id="sample-output-11843">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/11843/numeric-zero-padding-file-rename" title="Find out what others think of this command">Numeric zero padding file rename</a>
+                <a href="/commands/view/11843/numeric-zero-padding-file-rename">Numeric zero padding file rename</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 

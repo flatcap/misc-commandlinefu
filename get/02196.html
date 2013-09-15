@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         function autoCompleteHostname() { local hosts; local cur; hosts=($(awk '{print $1}' ~/.ssh/known_hosts | cut -d, -f1)); cur=${COMP_WORDS[COMP_CWORD]}; COMPREPLY=($(compgen -W '${hosts[@]}' -- $cur )) } complete -F autoCompleteHostname ssh
                                                 </div>
-            <div class="sample-output c5" id="sample-output-2196">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
@@ -55,9 +55,9 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
-          <div class="pagination"></div>
+
         </div>
 
 

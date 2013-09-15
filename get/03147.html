@@ -16,10 +16,10 @@
         </div>
         <div class="terminal-display" id="terminal-display-main">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         pgrep -u `id -u` firefox-bin || find ~/.mozilla/firefox -name '*.sqlite'|(while read -e f; do echo 'vacuum;'|sqlite3 "$f" ; done)
                                                 </div>
-            <div class="sample-output c5" id="sample-output-3147">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
@@ -37,32 +37,32 @@
         <h3>
                                         Alternatives
                                 </h3>
-        <p class="c8"></p>
+
         <div class="terminal-display">
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         find ~/.mozilla/firefox/ -type f -name "*.sqlite" -exec sqlite3 {} VACUUM \;
                                                 </div>
-            <div class="sample-output c5" id="sample-output-3277">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/3277/cleanup-firefoxs-database." title="Find out what others think of this command">Cleanup firefox's database.</a>
+                <a href="/commands/view/3277/cleanup-firefoxs-database.">Cleanup firefox's database.</a>
               </div>
               <div class="description"></div>
             </div>
           </div>
           <div class="one-liner">
-            <div class="line command" title="Click to select this command">
+            <div class="line command">
                                                         find ~/Library/Application\ Support/Firefox/ -type f -name "*.sqlite" -exec sqlite3 {} VACUUM \;
                                                 </div>
-            <div class="sample-output c5" id="sample-output-3286">
+            <div class="sample-output c5">
               <div class="output"></div>
             </div>
             <div class="details">
               <div class="summary">
-                <a href="/commands/view/3286/cleanup-firefoxs-database." title="Find out what others think of this command">Cleanup firefox's database.</a>
+                <a href="/commands/view/3286/cleanup-firefoxs-database.">Cleanup firefox's database.</a>
               </div>
               <div class="description">
                 <p>
@@ -71,7 +71,7 @@
               </div>
             </div>
           </div>
-          <div class="pagination"></div>
+
         </div>
 
 
