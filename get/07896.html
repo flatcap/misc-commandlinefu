@@ -1,86 +1,74 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Reorder file with max 100 file per folder</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Reorder file with max 100 file per folder
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Reorder file with max 100 file per folder
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                Reorder file with max 100 file per folder
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                files -type f | xargs -n100 | while read l; do mkdir $((++f)); cp $l $f; done
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Take a folder full of files and split it into smaller folders containing a maximum number of files. In this case, 100 files per directory.
+                                </p>
+                                <p>
+                                        find creates the list of files
+                                </p>
+                                <p>
+                                        xargs breaks up the list into groups of 100
+                                </p>
+                                <p>
+                                        for each group, create a directory and copy in the files
+                                </p>
+                                <p>
+                                        Note: This command won't work if there is whitespace in the filenames (but then again, neither do the alternative commands :-)
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        find files/ -type f | while read line; do if [ $((i++%100)) -eq 0 ]; then mkdir $((++folder)); fi; cp $line $folder/; done
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                files -type f | xargs -n100 | while read l; do mkdir $((++f)); cp $l $f; done
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Take a folder full of files and split it into smaller folders containing a maximum number of files. In this case, 100 files per directory.
-                                                        </p>
-                                                        <p>
-                                                                find creates the list of files
-                                                        </p>
-                                                        <p>
-                                                                xargs breaks up the list into groups of 100
-                                                        </p>
-                                                        <p>
-                                                                for each group, create a directory and copy in the files
-                                                        </p>
-                                                        <p>
-                                                                Note: This command won't work if there is whitespace in the filenames (but then again, neither do the alternative commands :-)
-                                                        </p>
-                                                </div>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                Smaller Code
+                                        </p>
+                                        <p>
+                                                Better Runtime
+                                        </p>
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        find files/ -type f | while read line; do if [ $((i++%100)) -eq 0 ]; then mkdir $((++folder)); fi; cp $line $folder/; done
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Smaller Code
-                                                                </p>
-                                                                <p>
-                                                                        Better Runtime
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        folder=0;mkdir $folder; while find -maxdepth 1 -type f -exec mv "{}" $folder \; -quit ; do if [ $( ls $folder | wc -l ) -ge 100 ]; then folder=$(( $folder + 1 )); mkdir $folder; fi ; done
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        folder=0;mkdir $folder; while find -maxdepth 1 -type f -exec mv "{}" $folder \; -quit ; do if [ $( ls $folder | wc -l ) -ge 100 ]; then folder=$(( $folder + 1 )); mkdir $folder; fi ; done
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 Nothing but files and folder
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        If you have a folder with thousand of files and want to have many folder with only 100 file per folder, run this.
-                                                                </p>
-                                                                <p>
-                                                                        It will create 0/,1/ etc and put 100 file inside each one.
-                                                                </p>
-                                                                <p>
-                                                                        But find will return true even if it don't find anything ...
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                If you have a folder with thousand of files and want to have many folder with only 100 file per folder, run this.
+                                        </p>
+                                        <p>
+                                                It will create 0/,1/ etc and put 100 file inside each one.
+                                        </p>
+                                        <p>
+                                                But find will return true even if it don't find anything ...
+                                        </p>
                                 </div>
                         </div>
                 </div>

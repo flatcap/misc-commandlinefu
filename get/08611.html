@@ -1,45 +1,37 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>have tar decide compression based on filename</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        have tar decide compression based on filename
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                have tar decide compression based on filename
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                tar -caf some_dir.tar.xz some_dir
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                the -a flag causes tar to automatically pick the right compressor to filter the archive through, based on the file extension. e.g.
-                                                        </p>
-                                                        <p>
-                                                                "tar -xaf archive.tar.xz" is equivalent to "tar -xJf archive.tar.xz"
-                                                        </p>
-                                                        <p>
-                                                                "tar -xaf archive.tar.gz" is equivalent to "tar -xzf archive.tar.gz"
-                                                        </p>
-                                                        <p>
-                                                                No need to remember -z is gzip, -j is bzip2, -Z is .Z, -J is xz, and so on :)
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                <div id="terminal-header">
+                        <h1>
+                                have tar decide compression based on filename
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                tar -caf some_dir.tar.xz some_dir
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        the -a flag causes tar to automatically pick the right compressor to filter the archive through, based on the file extension. e.g.
+                                </p>
+                                <p>
+                                        "tar -xaf archive.tar.xz" is equivalent to "tar -xJf archive.tar.xz"
+                                </p>
+                                <p>
+                                        "tar -xaf archive.tar.gz" is equivalent to "tar -xzf archive.tar.gz"
+                                </p>
+                                <p>
+                                        No need to remember -z is gzip, -j is bzip2, -Z is .Z, -J is xz, and so on :)
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

@@ -1,157 +1,140 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Remove all the files except abc in the directory</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Remove all the files except abc in the directory
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Remove all the files except abc in the directory
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                rm *[!teste0,teste1,teste2]
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Remove all the files except abc in the directory
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                rm *[!teste0,teste1,teste2]
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 $ ls
 teste0  teste1  teste2  teste3  teste4  teste5  teste6  teste7  teste8  teste9
 $ rm *[!teste0,teste1,teste2]
 $ ls
 teste0  teste1
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Remove all arquives except the list.
-                                                        </p>
-                                                        <p>
-                                                                Can't have space between the commas.
-                                                        </p>
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Remove all arquives except the list.
+                                </p>
+                                <p>
+                                        Can't have space between the commas.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        rm !(*.foo|*.bar|*.baz)
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        rm !(*.foo|*.bar|*.baz)
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="sample-output c5 output">
+                                        <pre>
 Example: rm !(*.tex|*.pdf) deletes all except the tex and pdf files.
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Deletes all files in a folder that are NOT *.foo, *.bar or *.baz files. Edit the pattern inside the brackets as you like.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        rm -f !(survivior.txt)
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        find . ! -name <span>&lt;FILENAME&gt;</span> -delete
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        it will remove everything except the file names matching you can use also use wildcards
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ( shopt -s extglob; rm !(<span>&lt;PATTERN&gt;</span>) )
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Remove everything except that file with shell tricks inside a subshell to avoid changes in the environment.
-                                                                </p><code>help shopt</code>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        rm !(file_to_keep_undeleted)
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Go to tmp :
-                                                                </p>
-                                                                <p>
-                                                                        cd /tmp; mkdir retmp; cd retmp
-                                                                </p>
-                                                                <p>
-                                                                        Create 10 files :
-                                                                </p>
-                                                                <p>
-                                                                        for i in {1..10}; do touch test$i; done
-                                                                </p>
-                                                                <p>
-                                                                        Remove all files except test10 :
-                                                                </p>
-                                                                <p>
-                                                                        rm !(test10)
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
+                                <div class="details description">
                                         <p>
-                                                Wrong. Take a look:
-                                        </p>
-                                        <p>
-                                                rany:~/Desktop$ ls
-                                        </p>
-                                        <p>
-                                                rany:~/Desktop$ &gt;test0 &gt;test1 &gt;test2 &gt;footest0 &gt;footest1
-                                        </p>
-                                        <p>
-                                                rany:~/Desktop$ rm *[!test0,test1]
-                                        </p>
-                                        <p>
-                                                rany:~/Desktop$ ls
-                                        </p>
-                                        <p>
-                                                footest0 footest1 test0 test1
-                                        </p>
-                                        <p>
-                                                rany:~/Desktop$
-                                        </p>
-                                        <p>
-                                                That is a wrong glob to use.
-                                        </p>
-                                        <p>
-                                                Use !(test0|test1|test2) instead.
+                                                Deletes all files in a folder that are NOT *.foo, *.bar or *.baz files. Edit the pattern inside the brackets as you like.
                                         </p>
                                 </div>
                         </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        rm -f !(survivior.txt)
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        find . ! -name <span>&lt;FILENAME&gt;</span> -delete
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                it will remove everything except the file names matching you can use also use wildcards
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ( shopt -s extglob; rm !(<span>&lt;PATTERN&gt;</span>) )
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Remove everything except that file with shell tricks inside a subshell to avoid changes in the environment.
+                                        </p><code>help shopt</code>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        rm !(file_to_keep_undeleted)
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Go to tmp :
+                                        </p>
+                                        <p>
+                                                cd /tmp; mkdir retmp; cd retmp
+                                        </p>
+                                        <p>
+                                                Create 10 files :
+                                        </p>
+                                        <p>
+                                                for i in {1..10}; do touch test$i; done
+                                        </p>
+                                        <p>
+                                                Remove all files except test10 :
+                                        </p>
+                                        <p>
+                                                rm !(test10)
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                Wrong. Take a look:
+                        </p>
+                        <p>
+                                rany:~/Desktop$ ls
+                        </p>
+                        <p>
+                                rany:~/Desktop$ &gt;test0 &gt;test1 &gt;test2 &gt;footest0 &gt;footest1
+                        </p>
+                        <p>
+                                rany:~/Desktop$ rm *[!test0,test1]
+                        </p>
+                        <p>
+                                rany:~/Desktop$ ls
+                        </p>
+                        <p>
+                                footest0 footest1 test0 test1
+                        </p>
+                        <p>
+                                rany:~/Desktop$
+                        </p>
+                        <p>
+                                That is a wrong glob to use.
+                        </p>
+                        <p>
+                                Use !(test0|test1|test2) instead.
+                        </p>
                 </div>
         </body>
 </html>

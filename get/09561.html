@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Command line calculator</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Command line calculator
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Command line calculator
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                alias calc='python -ic "from math import *; from random import *"'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Command line calculator
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                alias calc='python -ic "from math import *; from random import *"'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 $ calc
 &gt;&gt;&gt; 22.0/7
 3.1428571428571428
@@ -28,88 +24,75 @@ $ calc
 3.1428571428571428
 &gt;&gt;&gt;
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                use python as calculator, press ctrl+d to exit
-                                                        </p>
-                                                        <p>
-                                                                reminder: when doing factions add atleast one decimal number like so
-                                                        </p>
-                                                        <p>
-                                                                22.0/7 or 22/7.0
-                                                        </p>
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        use python as calculator, press ctrl+d to exit
+                                </p>
+                                <p>
+                                        reminder: when doing factions add atleast one decimal number like so
+                                </p>
+                                <p>
+                                        22.0/7 or 22/7.0
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        awk "BEGIN{ print $* }"
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        awk "BEGIN{ print $* }"
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        works with fractions like 1/3.5
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        calc() { python -c "from math import *; print $1"; }
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="details description">
+                                        <p>
+                                                works with fractions like 1/3.5
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        calc() { python -c "from math import *; print $1"; }
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 &gt; calc "sin(pi/3.0)**2"
 0.75
 &gt; calc "log(e)"
 1.0
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        This function defines a command line calculator that handles everything pythons math module can handle, e.g. trigonometric functions, sqrt, log, erf, ... (see <a href="http://docs.python.org/library/math.html)." rel="nofollow">http://docs.python.org/library/math.html).</a> It even knows about the constants pi and e.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        calc() { bc &lt;&lt;&lt; $*; }
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        python -ic "from __future__ import division; from math import *; from random import *"
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        This opens a python command line. You can use math and random and float-division is enabled (without appending .0 to integers). I just don't know how to specify a standard precision.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        calc() { echo "scale=4; ${*//,/.}" | bc -l; }
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        This is an "argument calculator" funktion. The precision is set to 4 and you can use dot (.) or comma (,) as decimal mark (which is great for german users with a comma on the numpad).
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                This function defines a command line calculator that handles everything pythons math module can handle, e.g. trigonometric functions, sqrt, log, erf, ... (see <a href="http://docs.python.org/library/math.html)." rel="nofollow">http://docs.python.org/library/math.html).</a> It even knows about the constants pi and e.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        calc() { bc &lt;&lt;&lt; $*; }
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        python -ic "from __future__ import division; from math import *; from random import *"
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                This opens a python command line. You can use math and random and float-division is enabled (without appending .0 to integers). I just don't know how to specify a standard precision.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        calc() { echo "scale=4; ${*//,/.}" | bc -l; }
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                This is an "argument calculator" funktion. The precision is set to 4 and you can use dot (.) or comma (,) as decimal mark (which is great for german users with a comma on the numpad).
+                                        </p>
                                 </div>
                         </div>
                 </div>

@@ -1,68 +1,58 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>add the result of a command into vi</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        add the result of a command into vi
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                add the result of a command into vi
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                !!command
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                in command mode, navigate your cursor to the line where you want the command output to appear, and hit "!!". No need to enter edit mode or even type a ":" (colon).
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                :r! <span>&lt;bash_command&gt;</span>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                ':r!ls -l' results in listing the files in the current directory and paste it into vi
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        This filters the current line through a command, rather than just running a command and adding the output to the buffer.
-                                                </p>
-                                                <p>
-                                                        For instance, if you start with the line "example" and press !!, then type "wc -c" and press enter, "example" will be replaced with "8". (7 characters in "example", plus the newline.)
-                                                </p>
-                                                <p>
-                                                        So the contents of the line you do the !! on are given as standard input to the program. If all you wanted was to run the command with no input that might not be what you want. So to run the command and capture output, but not give any input, you want something like
-                                                </p><code>:r !date</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        tremby, you're right.
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                add the result of a command into vi
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                !!command
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        in command mode, navigate your cursor to the line where you want the command output to appear, and hit "!!". No need to enter edit mode or even type a ":" (colon).
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                :r! <span>&lt;bash_command&gt;</span>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        ':r!ls -l' results in listing the files in the current directory and paste it into vi
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        This filters the current line through a command, rather than just running a command and adding the output to the buffer.
+                                </p>
+                                <p>
+                                        For instance, if you start with the line "example" and press !!, then type "wc -c" and press enter, "example" will be replaced with "8". (7 characters in "example", plus the newline.)
+                                </p>
+                                <p>
+                                        So the contents of the line you do the !! on are given as standard input to the program. If all you wanted was to run the command with no input that might not be what you want. So to run the command and capture output, but not give any input, you want something like
+                                </p><code>:r !date</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        tremby, you're right.
+                                </p>
                         </div>
                 </div>
         </body>

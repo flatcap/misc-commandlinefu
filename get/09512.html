@@ -1,139 +1,125 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Expand shortened URLs</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Expand shortened URLs
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Expand shortened URLs
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                expandurl() { wget -S $1 2&gt;&amp;1 | grep ^Location; }
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Expand shortened URLs
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                expandurl() { wget -S $1 2&gt;&amp;1 | grep ^Location; }
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 Location: http://is.gd/jAdSZ3 [following]
 Location: https://wiki.ubuntu.com/UbuntuOpenWeek [following]
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                This shell function uses wget(1) to show what site a shortened URL is pointing to, even if there are many nested shortened URLs. This is a great way to test whether or not the shortened URL is sending you to a malicious site, or somewhere nasty that you don't want to visit. The sample output is from:
-                                                        </p><code>expandurl http://t.co/LDWqmtDM</code>
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        This shell function uses wget(1) to show what site a shortened URL is pointing to, even if there are many nested shortened URLs. This is a great way to test whether or not the shortened URL is sending you to a malicious site, or somewhere nasty that you don't want to visit. The sample output is from:
+                                </p><code>expandurl http://t.co/LDWqmtDM</code>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        expandurl() { curl -sIL $1 | grep ^Location; }
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        expandurl() { curl -sIL $1 | grep ^Location; }
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="sample-output c5 output">
+                                        <pre>
 Location: http://is.gd/jAdSZ3 [following]
 Location: https://wiki.ubuntu.com/UbuntuOpenWeek [following]
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        curl(1) is more portable than wget(1) across Unices, so here is an alternative doing the same thing with greater portability. This shell function uses curl(1) to show what site a shortened URL is pointing to, even if there are many nested shortened URLs. This is a great way to test whether or not the shortened URL is sending you to a malicious site, or somewhere nasty that you don't want to visit. The sample output is from:
-                                                                </p><code>expandurl http://t.co/LDWqmtDM</code>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        expandurl() { curl -s "http://api.longurl.org/v2/expand?url=${1}&amp;format=php" | awk -F '"' '{print $4}' }
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                curl(1) is more portable than wget(1) across Unices, so here is an alternative doing the same thing with greater portability. This shell function uses curl(1) to show what site a shortened URL is pointing to, even if there are many nested shortened URLs. This is a great way to test whether or not the shortened URL is sending you to a malicious site, or somewhere nasty that you don't want to visit. The sample output is from:
+                                        </p><code>expandurl http://t.co/LDWqmtDM</code>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        expandurl() { curl -s "http://api.longurl.org/v2/expand?url=${1}&amp;format=php" | awk -F '"' '{print $4}' }
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 $ expandurl http://ae7.st/s/4O
 http://arstechnica.com/tech-policy/2013/01/all-backscatter-pornoscanners-to-be-removed-from-us-airports/
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        This relies on a public API from <a href="http://longurl.org." rel="nofollow">http://longurl.org.</a> So, this has the weakness that if the service disappears, the function will break. However, it has the advantage that the shortened URL service will not be tracking your IP address and other metrics, but instead will track longurl.org. Thus, you can remain anonymous from the shortened URL services (although not anonymous from longurl.org). It does no sanity checking that you have provided an argument. If you do not provide one, "message" is displayed to STDOUT.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        expandurl() { curl -sIL $1 2&gt;&amp;1 | awk '/^Location/ {print $2}' | tail -n1; }
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                This relies on a public API from <a href="http://longurl.org." rel="nofollow">http://longurl.org.</a> So, this has the weakness that if the service disappears, the function will break. However, it has the advantage that the shortened URL service will not be tracking your IP address and other metrics, but instead will track longurl.org. Thus, you can remain anonymous from the shortened URL services (although not anonymous from longurl.org). It does no sanity checking that you have provided an argument. If you do not provide one, "message" is displayed to STDOUT.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        expandurl() { curl -sIL $1 2&gt;&amp;1 | awk '/^Location/ {print $2}' | tail -n1; }
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 https://wiki.ubuntu.com/UbuntuOpenWeek
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        This shell function uses curl(1) as it is more portable than wget(1) across Unices, to show what site a shortened URL is pointing to, even if there are many nested shortened URLs. It is a refinement to <a href="http://www.commandlinefu.com/commands/view/9515/expand-shortened-urls" rel="nofollow">www.commandlinefu.com/commands/view/9515/expand-shortened-urls</a> to make it better for use in scripts. Only displays final result.
-                                                                </p><code>expandurl http://t.co/LDWqmtDM</code>
-                                                        </div>
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        sweet!
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Nice, however with bash, you'll need a ; at the end of the grep part.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Nice, But would like to see a version of this that only prints the last line and/or drops the "Location: " and " [following]" bits.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        @flatcap updated. thx. simple missing typo. glad someone is paying attention
-                                                </p>
-                                                <p>
-                                                        @defiantredpill seems simple enough to use by replacing grep(1) with awk(1). submit an alternative!
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        @atoponce I forked your curl version instead, just waiting for a mod to look at it as it was my first command.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        The wget version not only prints locations, it also downloads.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        expandurl() { curl -sIL $1 2&gt;&amp;1 | awk '/^Location/ {print $2}' | tail -n1; }
-                                                </p>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                This shell function uses curl(1) as it is more portable than wget(1) across Unices, to show what site a shortened URL is pointing to, even if there are many nested shortened URLs. It is a refinement to <a href="http://www.commandlinefu.com/commands/view/9515/expand-shortened-urls" rel="nofollow">www.commandlinefu.com/commands/view/9515/expand-shortened-urls</a> to make it better for use in scripts. Only displays final result.
+                                        </p><code>expandurl http://t.co/LDWqmtDM</code>
                                 </div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        sweet!
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Nice, however with bash, you'll need a ; at the end of the grep part.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Nice, But would like to see a version of this that only prints the last line and/or drops the "Location: " and " [following]" bits.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        @flatcap updated. thx. simple missing typo. glad someone is paying attention
+                                </p>
+                                <p>
+                                        @defiantredpill seems simple enough to use by replacing grep(1) with awk(1). submit an alternative!
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        @atoponce I forked your curl version instead, just waiting for a mod to look at it as it was my first command.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        The wget version not only prints locations, it also downloads.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        expandurl() { curl -sIL $1 2&gt;&amp;1 | awk '/^Location/ {print $2}' | tail -n1; }
+                                </p>
                         </div>
                 </div>
         </body>

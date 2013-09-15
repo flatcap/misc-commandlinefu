@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Read null character seperated fields from a file</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Read null character seperated fields from a file
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Read null character seperated fields from a file
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                read -d ""
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Read null character seperated fields from a file
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                read -d ""
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 -rw-r--r-- 1 totti root     1 2011-10-25 23:13 a
 -rw-r--r-- 1 totti root     1 2011-10-25 23:59 a?b
 drwxr-xr-x 2 totti root  4096 2011-10-25 23:00 a?b?c
@@ -28,28 +24,24 @@ drwxr-xr-x 2 totti root  4096 2011-10-25 23:00 a?b?c
 -rw-r--r-- 1 totti root     6 2011-10-25 23:09 a.t
 drwxr-xr-x 2 totti root  4096 2011-10-26 00:11 h"i
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Handle any bad named file which contains ",',\n,\b,\t,` etc
-                                                        </p>
-                                                        <p>
-                                                                Store the file name as null character separated list
-                                                        </p><code>find . -print0 &gt;name.lst</code>
-                                                        <p>
-                                                                and retrieve it using
-                                                        </p><code>read -r -d ""</code>
-                                                        <p>
-                                                                Eg:
-                                                        </p><code>find . -print0 &gt;name.lst;</code> <code>cat name.lst| while IFS="" read -r -d "" file;</code> <code>do</code> <code>ls -l "$file";</code> <code>done</code>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Handle any bad named file which contains ",',\n,\b,\t,` etc
+                                </p>
+                                <p>
+                                        Store the file name as null character separated list
+                                </p><code>find . -print0 &gt;name.lst</code>
+                                <p>
+                                        and retrieve it using
+                                </p><code>read -r -d ""</code>
+                                <p>
+                                        Eg:
+                                </p><code>find . -print0 &gt;name.lst;</code> <code>cat name.lst| while IFS="" read -r -d "" file;</code> <code>do</code> <code>ls -l "$file";</code> <code>done</code>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

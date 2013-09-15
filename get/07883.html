@@ -1,90 +1,83 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Right-align text in console using pipe like ( command | right )</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Right-align text in console using pipe like ( command | right )
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Right-align text in console using pipe like ( command | right )
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                $ right(){ l="$(cat -)"; s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})));echo "$(while ((j--&gt;0)); do printf " ";done;)$l";done;}; ls --color=none / | right
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Nice, but POSIX wc doesn't have -L. You can use awk instead; just replace the
-                                                </p>
-                                                <p>
-                                                        wc -L
-                                                </p>
-                                                <p>
-                                                        with
-                                                </p>
-                                                <p>
-                                                        awk ' { if ( length &gt; L ) { L=length} }END{ print L}'
-                                                </p>
-                                                <p>
-                                                        and you're there. Doing this takes the function beyond 255 chars, which may be a problem (so don't one-line it).
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Also worth noting that these don't right-justify the text (within your terminal window confines). They just right align any lines coming out. So a single line is still flush-left, and the longest line still begins at column zero.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Yep...
-                                                </p>
-                                                <p>
-                                                        If you want to define the linesize you can do samething like it:
-                                                </p><code>right(){ l="$(cat -)"; [ -n "$1" ] &amp;&amp; s=$1 || s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})));echo "$(while ((j--&gt;0)); do printf " ";done;)$l";done;}; ls --color=none / | right 150</code>
-                                                <p>
-                                                        with this u can pass the linesize as parametter or remove the parametter and use the max-line-size of input
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Seems overly complicated.
-                                                </p><code>right(){ while read;do printf "%${1:-${COLUMNS:-80}}s\n" "$REPLY";done };ls / | right</code>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        @eightmillion, this way is simple, but you lost the alignment by text, you will have only the column alignment.
-                                                </p>
-                                                <p>
-                                                        and "tput cols" works for me, ${COLUMNS} is not set.
-                                                </p>
-                                                <p>
-                                                        then I think
-                                                </p>
-                                                <p>
-                                                        right(){ while read;do printf "%${1:-$(tput cols)}s\n" "$REPLY";done };ls / --color=none | right
-                                                </p>
-                                                <p>
-                                                        more efetive in you example.
-                                                </p>
-                                                <p>
-                                                        tnks for your way.
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Right-align text in console using pipe like ( command | right )
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                $ right(){ l="$(cat -)"; s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})));echo "$(while ((j--&gt;0)); do printf " ";done;)$l";done;}; ls --color=none / | right
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Nice, but POSIX wc doesn't have -L. You can use awk instead; just replace the
+                                </p>
+                                <p>
+                                        wc -L
+                                </p>
+                                <p>
+                                        with
+                                </p>
+                                <p>
+                                        awk ' { if ( length &gt; L ) { L=length} }END{ print L}'
+                                </p>
+                                <p>
+                                        and you're there. Doing this takes the function beyond 255 chars, which may be a problem (so don't one-line it).
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Also worth noting that these don't right-justify the text (within your terminal window confines). They just right align any lines coming out. So a single line is still flush-left, and the longest line still begins at column zero.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Yep...
+                                </p>
+                                <p>
+                                        If you want to define the linesize you can do samething like it:
+                                </p><code>right(){ l="$(cat -)"; [ -n "$1" ] &amp;&amp; s=$1 || s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})));echo "$(while ((j--&gt;0)); do printf " ";done;)$l";done;}; ls --color=none / | right 150</code>
+                                <p>
+                                        with this u can pass the linesize as parametter or remove the parametter and use the max-line-size of input
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Seems overly complicated.
+                                </p><code>right(){ while read;do printf "%${1:-${COLUMNS:-80}}s\n" "$REPLY";done };ls / | right</code>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        @eightmillion, this way is simple, but you lost the alignment by text, you will have only the column alignment.
+                                </p>
+                                <p>
+                                        and "tput cols" works for me, ${COLUMNS} is not set.
+                                </p>
+                                <p>
+                                        then I think
+                                </p>
+                                <p>
+                                        right(){ while read;do printf "%${1:-$(tput cols)}s\n" "$REPLY";done };ls / --color=none | right
+                                </p>
+                                <p>
+                                        more efetive in you example.
+                                </p>
+                                <p>
+                                        tnks for your way.
+                                </p>
                         </div>
                 </div>
         </body>

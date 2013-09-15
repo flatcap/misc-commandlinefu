@@ -1,71 +1,60 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>grep certain file types recursively</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        grep certain file types recursively
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                grep certain file types recursively
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                grep certain file types recursively
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                grep -r --include="*.[ch]" pattern .
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        doesn't do case-insensitive filenames like iname but otherwise likely to be faster
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        find . -name "*.[ch]" | xargs grep "TODO"
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                grep -r --include="*.[ch]" pattern .
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                doesn't do case-insensitive filenames like iname but otherwise likely to be faster
-                                                        </p>
-                                                </div>
-                                        </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        find . -name "*.[ch]" -exec grep "TODO" {} +
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        find . -name "*.[ch]" | xargs grep "TODO"
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        find . -name "*.[ch]" -exec grep "TODO" {} +
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        -exec works better and faster then using a pipe
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                -exec works better and faster then using a pipe
+                                        </p>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        just add the -i option to grep to get case-insensitivity.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I know its documented the way you say it, so perhaps its a bug I'm seeing. But as of GNU grep 2.5.4 on Mandriva 2009.1, the "-i" only affects the pattern, not the filename
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        just add the -i option to grep to get case-insensitivity.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I know its documented the way you say it, so perhaps its a bug I'm seeing. But as of GNU grep 2.5.4 on Mandriva 2009.1, the "-i" only affects the pattern, not the filename
+                                </p>
                         </div>
                 </div>
         </body>

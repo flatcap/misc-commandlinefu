@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Alias TAIL for automatic smart output</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Alias TAIL for automatic smart output
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Alias TAIL for automatic smart output
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                alias tail='tail -n $((${LINES:-`tput lines 2&gt;/dev/null||echo -n 80`} - 7))'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Alias TAIL for automatic smart output
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                alias tail='tail -n $((${LINES:-`tput lines 2&gt;/dev/null||echo -n 80`} - 7))'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 [7995:7993 - 0:2497] [askapache@n1-backbone5:pts/0 +1] ~ $ lsof -a -d 1 -d 0-4 -w|tail
 COMMAND   PID USER   FD   TYPE DEVICE  SIZE       NODE NAME
 bash     7995 askapache    0u   CHR  136,0                2 /dev/pts/0
@@ -42,91 +38,85 @@ lsof    17475 askapache    3r   DIR   0,96     0          1 /proc
 lsof    17475 askapache    4r   DIR   0,96     0 1078132745 /proc/17475/fd
 [7995:7993 - 0:2497] [askapache@n1-backbone5:pts/0 +1] ~ $
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Run the alias command, then issue
-                                                        </p><code>ps aux | tail</code>
-                                                        <p>
-                                                                and resize your terminal window (putty/console/hyperterm/xterm/etc) then issue the same command and you'll understand.
-                                                        </p><code>${LINES:-`tput lines 2&gt;/dev/null||echo -n 12`}</code>
-                                                        <p>
-                                                                Insructs the shell that if LINES is not set or null to use the output from `tput lines` ( ncurses based terminal access ) to get the number of lines in your terminal. But furthermore, in case that doesn't work either, it will default to using the default of 80.
-                                                        </p>
-                                                        <p>
-                                                                The default for TAIL is to output the last 10 lines, this alias changes the default to output the last x lines instead, where x is the number of lines currently displayed on your terminal - 7. The -7 is there so that the top line displayed is the command you ran that used TAIL, ie the prompt.
-                                                        </p>
-                                                        <p>
-                                                                Depending on whether your PS1 and/or PROMPT_COMMAND output more than 1 line (mine is 3) you will want to increase from -2. So with my prompt being the following, I need -7, or - 5 if I only want to display the commandline at the top. ( <a href="http://www.askapache.com/linux/bash-power-prompt.html" rel="nofollow">http://www.askapache.com/linux/bash-power-prompt.html</a> )
-                                                        </p>
-                                                        <p>
-                                                                275MB/748MB
-                                                        </p>
-                                                        <p>
-                                                                [7995:7993 - 0:186] 06:26:49 Thu Apr 08 [askapache@n1-backbone5:/dev/pts/0 +1] ~
-                                                        </p>
-                                                        <p>
-                                                                In most shells the LINES variable is created automatically at login and updated when the terminal is resized (28 linux, 23/20 others for SIGWINCH) to contain the number of vertical lines that can fit in your terminal window. Because the alias doesn't hard-code the current LINES but relys on the $LINES variable, this is a dynamic alias that will always work on a tty device.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                tail() { thbin="/usr/bin/tail"; if [ "${1:0:1}" != "-" ]; then fc=$(($#==0?1:$#)); lpf="$((($LINES - 3 - 2 * $fc) / $fc))"; lpf="$(($lpf&lt;1?2:$lpf))"; [ $fc -eq 1 ] &amp;&amp; $thbin -n $lpf "$@" | /usr/bin/fold -w $COLUMNS | $thbin -n $lpf || $thbin -n $lpf...
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <code>tail() { thbin="/usr/bin/tail"; if [ "${1:0:1}" != "-" ]; then fc=$(($#==0?1:$#)); lpf="$((($LINES - 3 - 2 * $fc) / $fc))"; lpf="$(($lpf&lt;1?2:$lpf))"; [ $fc -eq 1 ] &amp;&amp; $thbin -n $lpf "$@" | /usr/bin/fold -w $COLUMNS | $thbin -n $lpf || $thbin -n $lpf "$@"; else $thbin "$@"; fi; unset lpf fc thbin; }</code>
-                                                        <p>
-                                                                This is a function that implements an improved version of tail. It tries to limit the number of lines so that the screen is filled completely. It works with pipes, single and multiple files. If you add different options to tail, they will overwrite the settings from the function.
-                                                        </p>
-                                                        <p>
-                                                                It doesn't work very well when too many files (with wrapped lines) are specified.
-                                                        </p>
-                                                        <p>
-                                                                Its optimised for my three-line prompt.
-                                                        </p>
-                                                        <p>
-                                                                It also works for head. Just s/tail/head/g
-                                                        </p>
-                                                        <p>
-                                                                Don't set 'thbin="tail"', this might lead to a forkbomb.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
-                                                </p>
-                                                <p>
-                                                        shopt -s checkwinsize
-                                                </p>
-                                                <p>
-                                                        ps auxfwww
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        If I understand correctly, this is basically to output a last page. And because of long lines (wider than terminal width COLUMNS), setting the number lines is not really helpful. The command you input may still be pushed out of screen because some lines will be wraped into two or three.
-                                                </p>
-                                                <p>
-                                                        I prefer this something like:
-                                                </p><code>ps aux | fold -w $COLUMNS | tail -n $((LINES - 2))</code>
-                                                <p>
-                                                        The only drawback is long lines are wrapped by adding line returns. So if you resize, the output will not look pretty. If you use tmux, it does not matter since tmux also wraps long lines with line returns.
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Run the alias command, then issue
+                                </p><code>ps aux | tail</code>
+                                <p>
+                                        and resize your terminal window (putty/console/hyperterm/xterm/etc) then issue the same command and you'll understand.
+                                </p><code>${LINES:-`tput lines 2&gt;/dev/null||echo -n 12`}</code>
+                                <p>
+                                        Insructs the shell that if LINES is not set or null to use the output from `tput lines` ( ncurses based terminal access ) to get the number of lines in your terminal. But furthermore, in case that doesn't work either, it will default to using the default of 80.
+                                </p>
+                                <p>
+                                        The default for TAIL is to output the last 10 lines, this alias changes the default to output the last x lines instead, where x is the number of lines currently displayed on your terminal - 7. The -7 is there so that the top line displayed is the command you ran that used TAIL, ie the prompt.
+                                </p>
+                                <p>
+                                        Depending on whether your PS1 and/or PROMPT_COMMAND output more than 1 line (mine is 3) you will want to increase from -2. So with my prompt being the following, I need -7, or - 5 if I only want to display the commandline at the top. ( <a href="http://www.askapache.com/linux/bash-power-prompt.html" rel="nofollow">http://www.askapache.com/linux/bash-power-prompt.html</a> )
+                                </p>
+                                <p>
+                                        275MB/748MB
+                                </p>
+                                <p>
+                                        [7995:7993 - 0:186] 06:26:49 Thu Apr 08 [askapache@n1-backbone5:/dev/pts/0 +1] ~
+                                </p>
+                                <p>
+                                        In most shells the LINES variable is created automatically at login and updated when the terminal is resized (28 linux, 23/20 others for SIGWINCH) to contain the number of vertical lines that can fit in your terminal window. Because the alias doesn't hard-code the current LINES but relys on the $LINES variable, this is a dynamic alias that will always work on a tty device.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                tail() { thbin="/usr/bin/tail"; if [ "${1:0:1}" != "-" ]; then fc=$(($#==0?1:$#)); lpf="$((($LINES - 3 - 2 * $fc) / $fc))"; lpf="$(($lpf&lt;1?2:$lpf))"; [ $fc -eq 1 ] &amp;&amp; $thbin -n $lpf "$@" | /usr/bin/fold -w $COLUMNS | $thbin -n $lpf || $thbin -n $lpf...
+                        </div>
+                        <div class="details description">
+                                <code>tail() { thbin="/usr/bin/tail"; if [ "${1:0:1}" != "-" ]; then fc=$(($#==0?1:$#)); lpf="$((($LINES - 3 - 2 * $fc) / $fc))"; lpf="$(($lpf&lt;1?2:$lpf))"; [ $fc -eq 1 ] &amp;&amp; $thbin -n $lpf "$@" | /usr/bin/fold -w $COLUMNS | $thbin -n $lpf || $thbin -n $lpf "$@"; else $thbin "$@"; fi; unset lpf fc thbin; }</code>
+                                <p>
+                                        This is a function that implements an improved version of tail. It tries to limit the number of lines so that the screen is filled completely. It works with pipes, single and multiple files. If you add different options to tail, they will overwrite the settings from the function.
+                                </p>
+                                <p>
+                                        It doesn't work very well when too many files (with wrapped lines) are specified.
+                                </p>
+                                <p>
+                                        Its optimised for my three-line prompt.
+                                </p>
+                                <p>
+                                        It also works for head. Just s/tail/head/g
+                                </p>
+                                <p>
+                                        Don't set 'thbin="tail"', this might lead to a forkbomb.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
+                                </p>
+                                <p>
+                                        shopt -s checkwinsize
+                                </p>
+                                <p>
+                                        ps auxfwww
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        If I understand correctly, this is basically to output a last page. And because of long lines (wider than terminal width COLUMNS), setting the number lines is not really helpful. The command you input may still be pushed out of screen because some lines will be wraped into two or three.
+                                </p>
+                                <p>
+                                        I prefer this something like:
+                                </p><code>ps aux | fold -w $COLUMNS | tail -n $((LINES - 2))</code>
+                                <p>
+                                        The only drawback is long lines are wrapped by adding line returns. So if you resize, the output will not look pretty. If you use tmux, it does not matter since tmux also wraps long lines with line returns.
+                                </p>
                         </div>
                 </div>
         </body>

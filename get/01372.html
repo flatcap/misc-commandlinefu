@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>useful tail on /var/log to avoid old logs or/and gzipped files</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        useful tail on /var/log to avoid old logs or/and gzipped files
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                useful tail on /var/log to avoid old logs or/and gzipped files
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                tail -f *[!.1][!.gz]
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                useful tail on /var/log to avoid old logs or/and gzipped files
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                tail -f *[!.1][!.gz]
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 root@llistes:/var/log/mailman# tail -f *[!.1][!.gz]
 ==&gt; error &lt;==
 ==&gt; post &lt;==
@@ -41,44 +37,40 @@ Mar 05 13:49:58 2009 (32332) test: new nice@renice.co.uk,
 Mar 05 13:49:58 2009 (32332) test: new thisisanemail@somailed.it,
 ==&gt; vette &lt;==
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                with discard wilcards in bash you can "tail" newer logs files to see what happen, any error, info, warn...
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Really nice !
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I was wondering if somebody could explain to me what exactly the function of the square brackets is.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        From the bash manpage, under "Pattern Matching", "[...] Matches any one of the enclosed characters."
-                                                </p>
-                                                <p>
-                                                        "If the first character following the [ is a ! or a ^ then any character not enclosed is matched."
-                                                </p>
-                                                <p>
-                                                        RTFM.
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        with discard wilcards in bash you can "tail" newer logs files to see what happen, any error, info, warn...
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Really nice !
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I was wondering if somebody could explain to me what exactly the function of the square brackets is.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        From the bash manpage, under "Pattern Matching", "[...] Matches any one of the enclosed characters."
+                                </p>
+                                <p>
+                                        "If the first character following the [ is a ! or a ^ then any character not enclosed is matched."
+                                </p>
+                                <p>
+                                        RTFM.
+                                </p>
                         </div>
                 </div>
         </body>

@@ -1,72 +1,60 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>find files in a date range</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        find files in a date range
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                find files in a date range
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                find files in a date range
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                find . -type f -newermt "2010-01-01" ! -newermt "2010-06-01"
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Find files in a specific date range - in this case, the first half of last year.
+                                </p>
+                                <p>
+                                        -newermt = modification time of the file is more recent than this date
+                                </p>
+                                <p>
+                                        GNU find allows any date specfication that GNU date would accept, e.g.
+                                </p><code>find . -type f -newermt "3 years ago" ! -newermt "2 years ago"</code>
+                                <p>
+                                        or
+                                </p><code>find . -type f -newermt "last monday"</code>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        touch -t 201001010000 begin; touch -t 201012312359.59 end; find . -newer begin -a ! -newer end
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                find . -type f -newermt "2010-01-01" ! -newermt "2010-06-01"
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Find files in a specific date range - in this case, the first half of last year.
-                                                        </p>
-                                                        <p>
-                                                                -newermt = modification time of the file is more recent than this date
-                                                        </p>
-                                                        <p>
-                                                                GNU find allows any date specfication that GNU date would accept, e.g.
-                                                        </p><code>find . -type f -newermt "3 years ago" ! -newermt "2 years ago"</code>
-                                                        <p>
-                                                                or
-                                                        </p><code>find . -type f -newermt "last monday"</code>
-                                                </div>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                Example above will recursively find files in current directory created/modified in 2010.
+                                        </p>
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        touch -t 201001010000 begin; touch -t 201012312359.59 end; find . -newer begin -a ! -newer end
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Example above will recursively find files in current directory created/modified in 2010.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        find . -cnewer &lt;file a&gt; -and ! -cnewer &lt;file b&gt;
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        This command finds all the files whose status has changed between the ctime of the older and newer .
-                                                                </p>
-                                                                <p>
-                                                                        Very useful if you can see from an ls listing a block of consecutive files you want to move or delete, but can't figure out exactly the time range by date.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        find . -cnewer &lt;file a&gt; -and ! -cnewer &lt;file b&gt;
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                This command finds all the files whose status has changed between the ctime of the older and newer .
+                                        </p>
+                                        <p>
+                                                Very useful if you can see from an ls listing a block of consecutive files you want to move or delete, but can't figure out exactly the time range by date.
+                                        </p>
                                 </div>
                         </div>
                 </div>

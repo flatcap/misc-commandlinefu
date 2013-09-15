@@ -1,58 +1,50 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Script Terminal Session</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Script Terminal Session
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Script Terminal Session
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                script -f /tmp/foo; tail -f /tmp/foo
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Script Terminal Session
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                script -f /tmp/foo; tail -f /tmp/foo
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 &lt;Terminal Output from First Terminal is in /tmp/foo&gt;
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                script -f /tmp/foo will place all output of the terminal, including carriage returns, to a file. This file can be tail dash-eff'ed by one or more other terminals to display the information of the main terminal. Good way to share one's screen on short notice.
-                                                        </p>
-                                                        <p>
-                                                                Note: This produces a very accurate output, but that includes depending on the size of your terminal to be the same. You can clear screens or even resize the terminal for others using this function; I use it in conjunction with the "mid" command in my list.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        If you like that, you'll really love screen(1).
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Screen is pretty cool, but I haven't been able to do that without setuid. This command can be run on a system by a user without sudo.
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        script -f /tmp/foo will place all output of the terminal, including carriage returns, to a file. This file can be tail dash-eff'ed by one or more other terminals to display the information of the main terminal. Good way to share one's screen on short notice.
+                                </p>
+                                <p>
+                                        Note: This produces a very accurate output, but that includes depending on the size of your terminal to be the same. You can clear screens or even resize the terminal for others using this function; I use it in conjunction with the "mid" command in my list.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        If you like that, you'll really love screen(1).
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Screen is pretty cool, but I haven't been able to do that without setuid. This command can be run on a system by a user without sudo.
+                                </p>
                         </div>
                 </div>
         </body>

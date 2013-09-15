@@ -1,114 +1,97 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Console clock -- within screen</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Console clock -- within screen
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Console clock -- within screen
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                Console clock -- within screen
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                echo 'hardstatus alwayslastline " %d-%m-%y %c:%s | %w"' &gt;&gt; $HOME/.screenrc; screen
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Configures screen to always display the clock in the last line (has to be configured only once).
+                                </p>
+                                <p>
+                                        After that you not only have got the possibility to detach sessions and run them in background, but also have got a nice clock permanently on your screen.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        watch -t -n1 'date "+%r %F %A"'
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                echo 'hardstatus alwayslastline " %d-%m-%y %c:%s | %w"' &gt;&gt; $HOME/.screenrc; screen
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Configures screen to always display the clock in the last line (has to be configured only once).
-                                                        </p>
-                                                        <p>
-                                                                After that you not only have got the possibility to detach sessions and run them in background, but also have got a nice clock permanently on your screen.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        watch -t -n1 'date "+%r %F %A"'
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="sample-output c5 output">
+                                        <pre>
 08:03:57 PM 2011-02-15 Tuesday
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Shows a simple clock in the console
-                                                                </p>
-                                                                <p>
-                                                                        -t param removes the watch header
-                                                                </p>
-                                                                <p>
-                                                                        Ctrl-c to exit
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        yes "echo -ne '\r'\`date\`;sleep 1" | sh
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        watch -n1 'date "+%T"'
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Shows a simple clock in the console
+                                        </p>
+                                        <p>
+                                                -t param removes the watch header
+                                        </p>
+                                        <p>
+                                                Ctrl-c to exit
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        yes "echo -ne '\r'\`date\`;sleep 1" | sh
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        watch -n1 'date "+%T"'
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 Every 1.0s: date "+%T"
 11:33:02
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        A console clock with the current time.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        yes 'clear;printf "\n\n\n\n\t\t\t`date`\n";sleep 1' | sh
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        This command will automatically clear the old clock time, and show the new clock time.
-                                                                </p>
-                                                                <p>
-                                                                        It will also slightly format it.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        while sleep 1; do echo -n "\r`date`"; done
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Does the same but without a pipe and a new shell.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                A console clock with the current time.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        yes 'clear;printf "\n\n\n\n\t\t\t`date`\n";sleep 1' | sh
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                This command will automatically clear the old clock time, and show the new clock time.
+                                        </p>
+                                        <p>
+                                                It will also slightly format it.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        while sleep 1; do echo -n "\r`date`"; done
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Does the same but without a pipe and a new shell.
+                                        </p>
                                 </div>
                         </div>
                 </div>

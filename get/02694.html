@@ -1,39 +1,31 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>First pass dvd rip... The set of commands was too long, so I had to separate them into two.</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        First pass dvd rip... The set of commands was too long, so I had to separate them into two.
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                First pass dvd rip... The set of commands was too long, so I had to separate them into two.
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                mencoder dvd://<span>&lt;title&gt;</span> -dvd-device <span>&lt;device&gt;</span> -aid 128 -info srcform='ripped by mencoder' -oac mp3lame -lameopts abr:br=128 -ovc xvid -xvidencopts pass=1:chroma_opt:vhq=4:bvhq=1:quant_type=mpeg -vf pp=de,crop=0:0:0:0, -ofps 30000/1001 -o '/dev/null'
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                This set of commands will rip a dvd title using a 2 pass mencoder xvid encode. It will provide a great quality rip. It will rip as close to 700MB as possible. (note the bitrate of -700000)
-                                                        </p>
-                                                        <p>
-                                                                Enjoy!
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                <div id="terminal-header">
+                        <h1>
+                                First pass dvd rip... The set of commands was too long, so I had to separate them into two.
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                mencoder dvd://<span>&lt;title&gt;</span> -dvd-device <span>&lt;device&gt;</span> -aid 128 -info srcform='ripped by mencoder' -oac mp3lame -lameopts abr:br=128 -ovc xvid -xvidencopts pass=1:chroma_opt:vhq=4:bvhq=1:quant_type=mpeg -vf pp=de,crop=0:0:0:0, -ofps 30000/1001 -o '/dev/null'
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        This set of commands will rip a dvd title using a 2 pass mencoder xvid encode. It will provide a great quality rip. It will rip as close to 700MB as possible. (note the bitrate of -700000)
+                                </p>
+                                <p>
+                                        Enjoy!
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

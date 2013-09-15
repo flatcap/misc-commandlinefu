@@ -1,115 +1,100 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>run command on a group of nodes in parallel</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        run command on a group of nodes in parallel
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                run command on a group of nodes in parallel
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                run command on a group of nodes in parallel
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                echo -n m{1..5}.cluster.net | xargs -d' ' -n1 -P5 -I{} ssh {} 'uptime'
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        echo "uptime" | pee "ssh host1" "ssh host2" "ssh host3"
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                echo -n m{1..5}.cluster.net | xargs -d' ' -n1 -P5 -I{} ssh {} 'uptime'
-                                        </div>
-                                        <div class="details">
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                The pee command is in the moreutils package.
+                                        </p>
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        echo "uptime" | pee "ssh host1" "ssh host2" "ssh host3"
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        The pee command is in the moreutils package.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        echo "uptime" | tee &gt;(ssh host1) &gt;(ssh host2) &gt;(ssh host3)
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        mussh -h host1 host2 host3 -c uptime
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        xargs -n1 -P100 -I{} sh -c 'ssh {} uptime &gt;output/{} 2&gt;error/{}' &lt;hostlist
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Do the same as pssh, just in shell syntax.
-                                                                </p>
-                                                                <p>
-                                                                        Put your hosts in hostlist, one per line.
-                                                                </p>
-                                                                <p>
-                                                                        Command outputs are gathered in output and error directories.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        seq 1 5 | parallel ssh {}.cluster.net uptime
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Parallel is from https://savannah.nongnu.org/projects/parallel/
-                                                                </p>
-                                                                <p>
-                                                                        Other examples would be:
-                                                                </p>
-                                                                <p>
-                                                                        (echo foss.org.my; echo <a href="http://www.debian.org;" rel="nofollow">www.debian.org;</a> echo <a href="http://www.freenetproject.org)" rel="nofollow">www.freenetproject.org)</a> | parallel traceroute
-                                                                </p>
-                                                                <p>
-                                                                        seq -f %04g 0 9999 | parallel -X rm pict{}.jpg
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        echo "uptime" | tee &gt;(ssh host1) &gt;(ssh host2) &gt;(ssh host3)
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        pdsh
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        It would be more readable using Parallel https://savannah.nongnu.org/projects/parallel/
-                                                </p>
-                                                <p>
-                                                        seq 1 5 | parallel ssh {} uptime
-                                                </p>
-                                        </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        mussh -h host1 host2 host3 -c uptime
                                 </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        xargs -n1 -P100 -I{} sh -c 'ssh {} uptime &gt;output/{} 2&gt;error/{}' &lt;hostlist
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Do the same as pssh, just in shell syntax.
+                                        </p>
+                                        <p>
+                                                Put your hosts in hostlist, one per line.
+                                        </p>
+                                        <p>
+                                                Command outputs are gathered in output and error directories.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        seq 1 5 | parallel ssh {}.cluster.net uptime
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Parallel is from https://savannah.nongnu.org/projects/parallel/
+                                        </p>
+                                        <p>
+                                                Other examples would be:
+                                        </p>
+                                        <p>
+                                                (echo foss.org.my; echo <a href="http://www.debian.org;" rel="nofollow">www.debian.org;</a> echo <a href="http://www.freenetproject.org)" rel="nofollow">www.freenetproject.org)</a> | parallel traceroute
+                                        </p>
+                                        <p>
+                                                seq -f %04g 0 9999 | parallel -X rm pict{}.jpg
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        pdsh
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        It would be more readable using Parallel https://savannah.nongnu.org/projects/parallel/
+                                </p>
+                                <p>
+                                        seq 1 5 | parallel ssh {} uptime
+                                </p>
                         </div>
                 </div>
         </body>

@@ -1,97 +1,89 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Go to the next sibling directory in alphabetical order</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Go to the next sibling directory in alphabetical order
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Go to the next sibling directory in alphabetical order
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                for d in `find .. -mindepth 1 -maxdepth 1 -type d | sort`; do if [[ `basename $d` &gt; `basename $PWD` ]]; then cd $d; break; fi; done
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Sometimes you have to browse your way through a lot of sub-directories. This command cd to the next sub-directory in alphabetical order. For example, if you have the directories "lectures/01-intro", "lectures/02-basic", "lectures/03-advanced" and so on, and your PWD is "02-basic", it jumps to "03-advanced".
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Wow.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        This isn't working for me. Can anyone tell me why? I'm using bash on both CygWin and Ubuntu. It doesn't work in either place.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Okay, got it now. The done is missing from the end of the command sequence. "...fi; done" should be on the end.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        about half the characters:
-                                                </p><code>cd ../"$(ls -AF ..|grep '/'|grep -A1 `basename $PWD`|tail -n 1)"</code>
-                                                <p>
-                                                        my ls(1) at least says its already sorted alphabetically if no flags are given and since files can't have '/' in their names...
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        ls -v or sort -v would be appropriated here.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        xizdaqrian - Thanks, I added the "done".
-                                                </p>
-                                                <p>
-                                                        linkinpark342 - I like your solution! Do you mind if I'll post updated commands later? It should work for "prev" as well.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        gwiener, go for it. previous directory would just change the -A1 to -B1 and the tail to head.
-                                                </p><code>cd ../"$(ls -AF ..|grep '/'|grep -B1 `basename $PWD`|head -n 1)"</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        If you don't add -v to ls (or sort) you will have the following probleme. file100.tex will be listed before file30.tex.
-                                                </p>
-                                                <p>
-                                                        <a href="http://www.gnu.org/software/coreutils/manual/html_node/More-details-about-version-sort.html" rel="nofollow">http://www.gnu.org/software/coreutils/manual/html_node/More-details-about-version-sort.html</a>
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Hi guys, I propose this one :
-                                                </p><code>cd $(printf '%s\n' ../*/ | awk '/'"${PWD##*/}"'/{getline;print;}')</code>
-                                                <p>
-                                                        ;)
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Go to the next sibling directory in alphabetical order
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                for d in `find .. -mindepth 1 -maxdepth 1 -type d | sort`; do if [[ `basename $d` &gt; `basename $PWD` ]]; then cd $d; break; fi; done
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Sometimes you have to browse your way through a lot of sub-directories. This command cd to the next sub-directory in alphabetical order. For example, if you have the directories "lectures/01-intro", "lectures/02-basic", "lectures/03-advanced" and so on, and your PWD is "02-basic", it jumps to "03-advanced".
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Wow.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        This isn't working for me. Can anyone tell me why? I'm using bash on both CygWin and Ubuntu. It doesn't work in either place.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Okay, got it now. The done is missing from the end of the command sequence. "...fi; done" should be on the end.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        about half the characters:
+                                </p><code>cd ../"$(ls -AF ..|grep '/'|grep -A1 `basename $PWD`|tail -n 1)"</code>
+                                <p>
+                                        my ls(1) at least says its already sorted alphabetically if no flags are given and since files can't have '/' in their names...
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        ls -v or sort -v would be appropriated here.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        xizdaqrian - Thanks, I added the "done".
+                                </p>
+                                <p>
+                                        linkinpark342 - I like your solution! Do you mind if I'll post updated commands later? It should work for "prev" as well.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        gwiener, go for it. previous directory would just change the -A1 to -B1 and the tail to head.
+                                </p><code>cd ../"$(ls -AF ..|grep '/'|grep -B1 `basename $PWD`|head -n 1)"</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        If you don't add -v to ls (or sort) you will have the following probleme. file100.tex will be listed before file30.tex.
+                                </p>
+                                <p>
+                                        <a href="http://www.gnu.org/software/coreutils/manual/html_node/More-details-about-version-sort.html" rel="nofollow">http://www.gnu.org/software/coreutils/manual/html_node/More-details-about-version-sort.html</a>
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Hi guys, I propose this one :
+                                </p><code>cd $(printf '%s\n' ../*/ | awk '/'"${PWD##*/}"'/{getline;print;}')</code>
+                                <p>
+                                        ;)
+                                </p>
                         </div>
                 </div>
         </body>

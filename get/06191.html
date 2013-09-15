@@ -1,78 +1,66 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>ls not pattern</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        ls not pattern
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                ls not pattern
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                ls not pattern
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                ls !(*.gz)
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Negative shell globs already come with bash. Make sure to turn on extended pattern matching with 'shopt -e extglob'.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ls -I "*.gz"
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                ls !(*.gz)
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Negative shell globs already come with bash. Make sure to turn on extended pattern matching with 'shopt -e extglob'.
-                                                        </p>
-                                                </div>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                Hides some entries from listing.
+                                        </p>
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ls -I "*.gz"
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Hides some entries from listing.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ls *[^.gz]
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ls *[^.gz]
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 $ ls
 file1 file2.gz file3.gz
 $ ls *[^.gz]
 file1
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        I've been looking for a way to do this for a while, get a not pattern for shell globs. This works, I'm using to grab logs from a remote server via scp.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
+                                <div class="details description">
                                         <p>
-                                                that should be `shopt -s extglob`.
+                                                I've been looking for a way to do this for a while, get a not pattern for shell globs. This works, I'm using to grab logs from a remote server via scp.
                                         </p>
                                 </div>
                         </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                that should be `shopt -s extglob`.
+                        </p>
                 </div>
         </body>
 </html>

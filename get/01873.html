@@ -1,50 +1,44 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Nicely display permissions in octal format with filename</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Nicely display permissions in octal format with filename
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Nicely display permissions in octal format with filename
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                stat -c '%A %a %n' *
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Nicely display permissions in octal format with filename
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                stat -c '%A %a %n' *
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 -rwxrwxr-x 775 argv.csh
 -rwxr-xr-x 755 array.sh
 -rwxrwxr-x 775 backup
 -rw-r--r-- 644 bash_trap
 -rw-r--r-- 644 bash_wait
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Nicely display permissions in octal format and filename for a given directory
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                stat -f '%Sp %p %N' * | rev | sed -E 's/^([^[:space:]]+)[[:space:]]([[:digit:]]{4})[^[:space:]]*[[:space:]]([^[:space:]]+)/\1 \2 \3/' | rev
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Nicely display permissions in octal format and filename for a given directory
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                stat -f '%Sp %p %N' * | rev | sed -E 's/^([^[:space:]]+)[[:space:]]([[:digit:]]{4})[^[:space:]]*[[:space:]]([^[:space:]]+)/\1 \2 \3/' | rev
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 -r-xr-xr-x 0555 cat
 -r-xr-xr-x 0555 chflags
 -r-xr-xr-x 0555 chio
@@ -56,35 +50,31 @@
 -r-xr-xr-x 0555 df
 -r-xr-xr-x 0555 domainname
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Since the original command (#1873) didn't work on FreeBSD whose stat lacks the "-c" switch, I wrote an alternative that does. This command shows also the fourth digit of octal format permissions which yields the sticky bit information.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Huh. Didn't know stat let you format the output manually like that.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Yes it can :)
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        When in doubt, ask a `man`
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Since the original command (#1873) didn't work on FreeBSD whose stat lacks the "-c" switch, I wrote an alternative that does. This command shows also the fourth digit of octal format permissions which yields the sticky bit information.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Huh. Didn't know stat let you format the output manually like that.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Yes it can :)
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        When in doubt, ask a `man`
+                                </p>
                         </div>
                 </div>
         </body>

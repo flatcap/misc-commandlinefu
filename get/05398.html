@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Find all files currently open in Vim and/or gVim</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Find all files currently open in Vim and/or gVim
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Find all files currently open in Vim and/or gVim
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                vim -r 2&gt;&amp;1 | grep '\.sw.' -A 5 | grep 'still running' -B 5
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Find all files currently open in Vim and/or gVim
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                vim -r 2&gt;&amp;1 | grep '\.sw.' -A 5 | grep 'still running' -B 5
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 1.    README.txt.swp
           owned by: rkulla   dated: Sat Apr 17 11:43:43 2010
          file name: ~rkulla/checkouts/projects/imgv/trunk/README.txt
@@ -40,36 +36,32 @@
          user name: rkulla   host name: blackbird
         process ID: 10104 (still running)
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Catches .swp, .swo, .swn, etc.
-                                                        </p>
-                                                        <p>
-                                                                If you have access to lsof, it'll give you more compressed output and show you the associated terminals (e.g., pts/5, which you could then use 'w' to figure out where it's originating from): lsof | grep '\.sw.$'
-                                                        </p>
-                                                        <p>
-                                                                If you have swp files turned off, you can do something like: ps x | grep '[g,v]im', but it won't tell you about files open in buffers, via :e [file].
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                - Prefer the command in your description:
-                                        </p><code>lsof | grep '\.sw.$'</code>
-                                        <p>
-                                                Useful for "undeleting" files.
-                                        </p>
-                                </div>
                         </div>
+                        <div class="details description">
+                                <p>
+                                        Catches .swp, .swo, .swn, etc.
+                                </p>
+                                <p>
+                                        If you have access to lsof, it'll give you more compressed output and show you the associated terminals (e.g., pts/5, which you could then use 'w' to figure out where it's originating from): lsof | grep '\.sw.$'
+                                </p>
+                                <p>
+                                        If you have swp files turned off, you can do something like: ps x | grep '[g,v]im', but it won't tell you about files open in buffers, via :e [file].
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                - Prefer the command in your description:
+                        </p><code>lsof | grep '\.sw.$'</code>
+                        <p>
+                                Useful for "undeleting" files.
+                        </p>
                 </div>
         </body>
 </html>

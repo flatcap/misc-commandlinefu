@@ -1,36 +1,28 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>List all the files that have been deleted while they were still open.</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        List all the files that have been deleted while they were still open.
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                List all the files that have been deleted while they were still open.
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                lsof | egrep "^COMMAND|deleted"
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                If your customer deletes a file that is still in use by a process, that space does not get freed up (will not show up in df) until that process either closes the file on its own, or is killed.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                <div id="terminal-header">
+                        <h1>
+                                List all the files that have been deleted while they were still open.
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                lsof | egrep "^COMMAND|deleted"
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        If your customer deletes a file that is still in use by a process, that space does not get freed up (will not show up in df) until that process either closes the file on its own, or is killed.
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

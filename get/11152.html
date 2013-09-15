@@ -1,45 +1,38 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Connected to first screen session created</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Connected to first screen session created
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Connected to first screen session created
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                screen -x $(screen -ls | awk 'NR == 2 { print $1 }')
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                Your command actually connects to the most RECENTLY created session, because screen lists them in reverse order.
-                                        </p>
-                                        <p>
-                                                If you actually wanted the FIRST created, alter your awk to something like:
-                                        </p><code>screen -x $(screen -ls | awk '/^\t/{ x=$1 }; END { print x }')</code>
-                                        <p>
-                                                Alternatively, you can find the most recently unused (detached) screen:
-                                        </p><code>screen -x $(screen -ls | awk '/(Detached)/{x=$1;exit} END { print x }')</code>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Connected to first screen session created
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                screen -x $(screen -ls | awk 'NR == 2 { print $1 }')
                         </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                Your command actually connects to the most RECENTLY created session, because screen lists them in reverse order.
+                        </p>
+                        <p>
+                                If you actually wanted the FIRST created, alter your awk to something like:
+                        </p><code>screen -x $(screen -ls | awk '/^\t/{ x=$1 }; END { print x }')</code>
+                        <p>
+                                Alternatively, you can find the most recently unused (detached) screen:
+                        </p><code>screen -x $(screen -ls | awk '/(Detached)/{x=$1;exit} END { print x }')</code>
                 </div>
         </body>
 </html>

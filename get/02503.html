@@ -1,44 +1,36 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Print multiline text starting and ending at specific regexps with perl</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Print multiline text starting and ending at specific regexps with perl
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Print multiline text starting and ending at specific regexps with perl
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                man fetchmail | perl -ne 'undef $/; print $1 if m/^.*?(-k \| --keep.*)-K \| --nokeep.*$/smg'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Print multiline text starting and ending at specific regexps with perl
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                man fetchmail | perl -ne 'undef $/; print $1 if m/^.*?(-k \| --keep.*)-K \| --nokeep.*$/smg'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 -k | --keep
               (Keyword:  keep)  Keep  retrieved messages on the remote mailserver.  Normally, messages are deleted from the folder on the mailserver after they have been retrieved.  Specifying
               the keep option causes retrieved messages to remain in your folder on the mailserver.  This option does not work with ETRN or ODMR. If used with POP3, it is recommended  to  also
               specify the --uidl option or uidl keyword.
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Using perl, here, we grep the man page of fetchmail to find the paragraph starting with '-k | --keep' and ending before the paragraph starting with '-K | --nokeep'
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Using perl, here, we grep the man page of fetchmail to find the paragraph starting with '-k | --keep' and ending before the paragraph starting with '-K | --nokeep'
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

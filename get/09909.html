@@ -1,96 +1,83 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>list with full path</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        list with full path
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                list with full path
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                printf "$PWD/%s\n" *
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                list with full path
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                printf "$PWD/%s\n" *
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 $ touch apple banana cherry
 $ printf "$PWD/%s\n" *
 /home/flatcap/apple
 /home/flatcap/banana
 /home/flatcap/cherry
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                List the full path of some files.
-                                                        </p>
-                                                        <p>
-                                                                You can add ".*" on the end if you want to display hidden files.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ls -d $PWD/*
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ls -d1 $PWD/{.*,*}
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        find $(pwd) -maxdepth 1 -name "*" -printf "%p\n"
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        find `pwd` -maxdepth 1 -exec ls --color -d {} \;
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ls -d1 $PWD/*
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                alias find='find $(echo $HOME) -name'
-                                        </p>
-                                        <p>
-                                                usage: find filename.ext or find filename* etc...
-                                        </p>
-                                </div>
                         </div>
+                        <div class="details description">
+                                <p>
+                                        List the full path of some files.
+                                </p>
+                                <p>
+                                        You can add ".*" on the end if you want to display hidden files.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ls -d $PWD/*
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ls -d1 $PWD/{.*,*}
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        find $(pwd) -maxdepth 1 -name "*" -printf "%p\n"
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        find `pwd` -maxdepth 1 -exec ls --color -d {} \;
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ls -d1 $PWD/*
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                alias find='find $(echo $HOME) -name'
+                        </p>
+                        <p>
+                                usage: find filename.ext or find filename* etc...
+                        </p>
                 </div>
         </body>
 </html>

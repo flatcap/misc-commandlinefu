@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>quickest (i blv) way to get the current program name minus the path (BASH)</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        quickest (i blv) way to get the current program name minus the path (BASH)
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                quickest (i blv) way to get the current program name minus the path (BASH)
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                path_stripped_programname="${0##*/}"
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                quickest (i blv) way to get the current program name minus the path (BASH)
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                path_stripped_programname="${0##*/}"
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 If called from within a shell script named /home/jimmie/foo.sh:
 #!/bin/bash
 path_stripped_programname="${0##*/}"
@@ -28,64 +24,60 @@ echo $path_stripped_programname
 OUTPUT:
 foo.sh
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Useful in shell scripts when you're trying to get the shell script name without the full path - and easier than awking or cutting. Bash pattern matching and variable manip is fun.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        I've always used "$(basename $0)", seems to be easier to remember for me :)
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        "basename" is an external program while the above uses a shell built-in and is considerably faster:
-                                                </p><code>f=$HOME/readme.txt ; echo -n "$(basename $f)\t" ; time (for i in $(seq 1 100000) ; do echo $(basename $f) &gt; /dev/null ; done)</code>
-                                                <p>
-                                                        readme.txt 2m16.21s real 0m29.38s user 1m35.14s system
-                                                </p><code>f=$HOME/readme.txt ; echo -n "${f##*/}\t" ; time (for i in $(seq 1 100000) ; do echo "${f##*/}\t" &gt; /dev/null ; done)</code>
-                                                <p>
-                                                        readme.txt 0m2.39s real 0m1.42s user 0m0.80s system
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Nice. I tend to use basename, but only because I can never figure out the syntax of "${0##*/}" in a hurry!
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I don't anticipate calling basename 100000 times any time soon, so I'm going to stick with it to aid in readability. This appeals but I know I'll forget it. Still a thumbs up though. Thanks.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        By defining basename as a function, you can have the best of both worlds: the shell's speed and the ease of use of a command: <a href="http://cfajohnson.com/shell/scripts/basename-sh" rel="nofollow">http://cfajohnson.com/shell/scripts/basename-sh</a>
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        cfajohnson for the win. Regarding penpen's timings, the slowness of basename is not the string processing, but the spawning of a new process just to do very little work 100000 times.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        I'm sorry jimmie, you've exceeded the message length limit for Twitter by more than double. You can start by conforming to accepted usage standards and make use of the proper form "ur" and eliminating all articles and most conjunctions. Or you could spell out "believe" and "manipulation" and avoid inviting sarcasm.
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Useful in shell scripts when you're trying to get the shell script name without the full path - and easier than awking or cutting. Bash pattern matching and variable manip is fun.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        I've always used "$(basename $0)", seems to be easier to remember for me :)
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        "basename" is an external program while the above uses a shell built-in and is considerably faster:
+                                </p><code>f=$HOME/readme.txt ; echo -n "$(basename $f)\t" ; time (for i in $(seq 1 100000) ; do echo $(basename $f) &gt; /dev/null ; done)</code>
+                                <p>
+                                        readme.txt 2m16.21s real 0m29.38s user 1m35.14s system
+                                </p><code>f=$HOME/readme.txt ; echo -n "${f##*/}\t" ; time (for i in $(seq 1 100000) ; do echo "${f##*/}\t" &gt; /dev/null ; done)</code>
+                                <p>
+                                        readme.txt 0m2.39s real 0m1.42s user 0m0.80s system
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Nice. I tend to use basename, but only because I can never figure out the syntax of "${0##*/}" in a hurry!
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I don't anticipate calling basename 100000 times any time soon, so I'm going to stick with it to aid in readability. This appeals but I know I'll forget it. Still a thumbs up though. Thanks.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        By defining basename as a function, you can have the best of both worlds: the shell's speed and the ease of use of a command: <a href="http://cfajohnson.com/shell/scripts/basename-sh" rel="nofollow">http://cfajohnson.com/shell/scripts/basename-sh</a>
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        cfajohnson for the win. Regarding penpen's timings, the slowness of basename is not the string processing, but the spawning of a new process just to do very little work 100000 times.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        I'm sorry jimmie, you've exceeded the message length limit for Twitter by more than double. You can start by conforming to accepted usage standards and make use of the proper form "ur" and eliminating all articles and most conjunctions. Or you could spell out "believe" and "manipulation" and avoid inviting sarcasm.
+                                </p>
                         </div>
                 </div>
         </body>

@@ -1,37 +1,32 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>free up memory</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        free up memory
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                free up memory
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                free up memory
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                echo 3 &gt; /proc/sys/vm/drop_caches
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        free &amp;&amp; sync &amp;&amp; echo 3 &gt; /proc/sys/vm/drop_caches &amp;&amp; free
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                echo 3 &gt; /proc/sys/vm/drop_caches
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        free &amp;&amp; sync &amp;&amp; echo 3 &gt; /proc/sys/vm/drop_caches &amp;&amp; free
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="sample-output c5 output">
+                                        <pre>
              total       used       free     shared    buffers     cached
 Mem:       1018916     980832      38084          0      46924     355764
 -/+ buffers/cache:     578144     440772
@@ -41,21 +36,19 @@ Mem:       1018916     685008     333908          0        224     108252
 -/+ buffers/cache:     576532     442384
 Swap:      2064376        128    2064248
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        The Linux kernel uses unused memory in caches. When you execute "free" you never get the "real" available memory.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        sync &amp;&amp; echo 1 &gt; /proc/sys/vm/drop_caches
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                The Linux kernel uses unused memory in caches. When you execute "free" you never get the "real" available memory.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        sync &amp;&amp; echo 1 &gt; /proc/sys/vm/drop_caches
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 free -t
 before:
              total       used       free     shared    buffers     cached
@@ -65,125 +58,115 @@ after:
              total       used       free     shared    buffers     cached
 Mem:       4041140    1078048    2963092          0        900      54600
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        run sync first to flush useful things out to disk!!!
-                                                                </p>
-                                                                <p>
-                                                                        To free pagecache:
-                                                                </p>
-                                                                <p>
-                                                                        echo 1 &gt; /proc/sys/vm/drop_caches
-                                                                </p>
-                                                                <p>
-                                                                        To free dentries and inodes:
-                                                                </p>
-                                                                <p>
-                                                                        echo 2 &gt; /proc/sys/vm/drop_caches
-                                                                </p>
-                                                                <p>
-                                                                        To free pagecache, dentries and inodes:
-                                                                </p>
-                                                                <p>
-                                                                        echo 3 &gt; /proc/sys/vm/drop_caches
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        sync; echo 3 | sudo tee /proc/sys/vm/drop_caches
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                run sync first to flush useful things out to disk!!!
+                                        </p>
+                                        <p>
+                                                To free pagecache:
+                                        </p>
+                                        <p>
+                                                echo 1 &gt; /proc/sys/vm/drop_caches
+                                        </p>
+                                        <p>
+                                                To free dentries and inodes:
+                                        </p>
+                                        <p>
+                                                echo 2 &gt; /proc/sys/vm/drop_caches
+                                        </p>
+                                        <p>
+                                                To free pagecache, dentries and inodes:
+                                        </p>
+                                        <p>
+                                                echo 3 &gt; /proc/sys/vm/drop_caches
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        sync; echo 3 | sudo tee /proc/sys/vm/drop_caches
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 3
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        where proc filesystem mounted under /proc
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        sync &amp;&amp; echo 3 | sudo tee /proc/sys/vm/drop_caches
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Found here: <a href="http://ubuntuforums.org/showthread.php?t=589975" rel="nofollow">http://ubuntuforums.org/showthread.php?t=589975</a>
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        /sbin/sysctl -w vm.drop_caches=3
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        =1 --&gt; to free pagecache
-                                                                </p>
-                                                                <p>
-                                                                        =2 --&gt; to free dentries and inodes
-                                                                </p>
-                                                                <p>
-                                                                        =3 --&gt; to free pagecache, dentries and inodes
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Better use sysctl instead of echo :
-                                                </p>
-                                                <p>
-                                                        /sbin/sysctl vm.drop_caches=3o
-                                                </p>
-                                                <p>
-                                                        1 --&gt; to free pagecache
-                                                </p>
-                                                <p>
-                                                        2 --&gt; to free dentries and inodes
-                                                </p>
-                                                <p>
-                                                        3 --&gt; to free pagecache, dentries and inodes
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Why would calling sysctl be better than calling echo?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        There is no big difference but with echo you can make a mistake, for example echo 4 or any bad value will work but sysctl is a tool especially designed to configure kernel parameters:
-                                                </p>
-                                                <p>
-                                                        /sbin/sysctl -w vm.drop_caches=4
-                                                </p>
-                                                <p>
-                                                        sysctl: setting key "vm.drop_caches": Argument invalide
-                                                </p>
-                                                <p>
-                                                        vm.drop_caches = 4
-                                                </p>
-                                                <p>
-                                                        Sysctl also allow you to edit /etc/sysctl.conf to make the change permanent.
-                                                </p>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                where proc filesystem mounted under /proc
+                                        </p>
                                 </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        sync &amp;&amp; echo 3 | sudo tee /proc/sys/vm/drop_caches
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Found here: <a href="http://ubuntuforums.org/showthread.php?t=589975" rel="nofollow">http://ubuntuforums.org/showthread.php?t=589975</a>
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        /sbin/sysctl -w vm.drop_caches=3
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                =1 --&gt; to free pagecache
+                                        </p>
+                                        <p>
+                                                =2 --&gt; to free dentries and inodes
+                                        </p>
+                                        <p>
+                                                =3 --&gt; to free pagecache, dentries and inodes
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Better use sysctl instead of echo :
+                                </p>
+                                <p>
+                                        /sbin/sysctl vm.drop_caches=3o
+                                </p>
+                                <p>
+                                        1 --&gt; to free pagecache
+                                </p>
+                                <p>
+                                        2 --&gt; to free dentries and inodes
+                                </p>
+                                <p>
+                                        3 --&gt; to free pagecache, dentries and inodes
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Why would calling sysctl be better than calling echo?
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        There is no big difference but with echo you can make a mistake, for example echo 4 or any bad value will work but sysctl is a tool especially designed to configure kernel parameters:
+                                </p>
+                                <p>
+                                        /sbin/sysctl -w vm.drop_caches=4
+                                </p>
+                                <p>
+                                        sysctl: setting key "vm.drop_caches": Argument invalide
+                                </p>
+                                <p>
+                                        vm.drop_caches = 4
+                                </p>
+                                <p>
+                                        Sysctl also allow you to edit /etc/sysctl.conf to make the change permanent.
+                                </p>
                         </div>
                 </div>
         </body>

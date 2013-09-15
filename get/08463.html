@@ -1,44 +1,36 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Create a backup copy of a MySQL database on the same host</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Create a backup copy of a MySQL database on the same host
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Create a backup copy of a MySQL database on the same host
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                mysqldump OLD_DB | cat &lt;(echo "CREATE DATABASE NEW_DB; USE NEW_DB;") - | mysql
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                This should probably only be used for testing in a dev environment as it's not terribly efficient, but if you're doing something that might trash a DB and you still want the old data available, this works like a charm.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                Seems a little more direct:
-                                        </p><code>(echo "CREATE DATABASE NEW_DB; USE NEW_DB;";mysqldump OLD_DB;)|mysql</code>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Create a backup copy of a MySQL database on the same host
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                mysqldump OLD_DB | cat &lt;(echo "CREATE DATABASE NEW_DB; USE NEW_DB;") - | mysql
                         </div>
+                        <div class="details description">
+                                <p>
+                                        This should probably only be used for testing in a dev environment as it's not terribly efficient, but if you're doing something that might trash a DB and you still want the old data available, this works like a charm.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                Seems a little more direct:
+                        </p><code>(echo "CREATE DATABASE NEW_DB; USE NEW_DB;";mysqldump OLD_DB;)|mysql</code>
                 </div>
         </body>
 </html>

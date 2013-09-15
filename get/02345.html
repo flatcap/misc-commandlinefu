@@ -1,57 +1,50 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Show git branches by date - useful for showing active branches</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Show git branches by date - useful for showing active branches
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Show git branches by date - useful for showing active branches
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Show git branches by date - useful for showing active branches
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 2009-06-03 12:21:35 +0900 3 hours ago      add_cool_functionality
 2009-06-02 16:15:13 +0900 24 hours ago  remove_strange_bug
 2009-06-02 16:12:20 +0900 24 hours ago  implement_observer
 2009-06-02 14:42:58 +0900 25 hours ago  experiment_with_bobcat_feature
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Print out list of all branches with last commit date to the branch, including relative time since commit and color coding.
-                                                        </p>
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Print out list of all branches with last commit date to the branch, including relative time since commit and color coding.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        for k in `git branch|sed s/^..//`;do echo -e `git log -1 --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" "$k"`\\t"$k";done|sort
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        for k in `git branch|sed s/^..//`;do echo -e `git log -1 --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" "$k"`\\t"$k";done|sort
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        for k in `git branch|sed s/^..//`;do echo -e `git log -1 --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" "$k" --`\\t"$k";done|sort
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        for k in `git branch|sed s/^..//`;do echo -e `git log -1 --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" "$k" --`\\t"$k";done|sort
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 http://cl.ly/2t1U1s0K3G0n2A2W473u
 psh:foursquare.web ryan$ for k in `git branch|sed s/^..//`;do echo -e `git log -1 --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" "$k" --`\\t"$k";done|sort
 2011-09-21 15:14:09 -0400 6 weeks ago   i18n
@@ -63,47 +56,42 @@ psh:foursquare.web ryan$ for k in `git branch|sed s/^..//`;do echo -e `git log -
 2011-11-01 09:40:05 -0400 17 hours ago  snl
 psh:foursquare.web ryan$
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        This fixes a bug found in the other scripts which fail when a branch has the same name as a file or directory in the current directory.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        for k in $(git branch | sed /\*/d); do echo "$(git log -1 --pretty=format:"%ct" $k) $k"; done | sort -r | awk '{print $2}'
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                This fixes a bug found in the other scripts which fail when a branch has the same name as a file or directory in the current directory.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        for k in $(git branch | sed /\*/d); do echo "$(git log -1 --pretty=format:"%ct" $k) $k"; done | sort -r | awk '{print $2}'
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 master
 testing
 this-shit-works
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Simpler and without all of the coloring gimmicks. This just returns a list of branches with the most recent first. This should be useful for cleaning your remotes.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        git for-each-ref --sort='-authordate' --format='%(refname)%09%(authordate)' refs/heads | sed -e 's-refs/heads/--'
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        brd = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ; done | sort -r; }; f"
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Simpler and without all of the coloring gimmicks. This just returns a list of branches with the most recent first. This should be useful for cleaning your remotes.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        git for-each-ref --sort='-authordate' --format='%(refname)%09%(authordate)' refs/heads | sed -e 's-refs/heads/--'
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        brd = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ; done | sort -r; }; f"
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 $ git brd
 2012-09-13 06:03:06 -0700 (2 weeks ago) master
 2012-08-20 02:32:13 -0700 (6 weeks ago) feature-foo
@@ -112,69 +100,65 @@ $ git brd -r
 2012-09-13 06:03:06 -0700 (2 weeks ago) origin/master
 2012-09-13 06:03:06 -0700 (2 weeks ago) origin/HEAD
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Add this line to your ~/.gitconfig for a git alias "git brd" (i.e., brd = (br)anch+(d)ate) which sorts branches by date. Allows you to pass in limited "git branch" options such as "-r" (remote) or "-a" (all). (Note: forum added "$" prefix to command; obviously in gitconfig there is no "$" prefix.)
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Is there a good way to add that to the git alias?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        You can't add it as a git alias because it's using a bash for loop to run the command several times. What you can do is add a script at /usr/local/bin/git-branch-dates containing:
-                                                </p>
-                                                <p>
-                                                        #!/bin/bash
-                                                </p>
-                                                <p>
-                                                        for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r
-                                                </p>
-                                                <p>
-                                                        Git automatically searches through any bash scripts on your path that start with git- so you can now run:
-                                                </p><code>git branch-dates</code>
-                                                <p>
-                                                        and the script will be run.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Of course you can add it as a git alias!
-                                                </p>
-                                                <p>
-                                                        A git alias which is
-                                                </p>
-                                                <p>
-                                                        "!f() { ...bash script here...; }; f"
-                                                </p>
-                                                <p>
-                                                        works just fine. So, if you add an alias which says
-                                                </p>
-                                                <p>
-                                                        brel = "!f() { for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:'%Cgreen%ci %Cblue%cr%Creset' $k|head -n 1` \\\t$k; done | sort -r; }; f"
-                                                </p><code>git brel</code>
-                                                <p>
-                                                        will do the proper thing.
-                                                </p>
-                                                <p>
-                                                        Of course, the single command
-                                                </p><code>git for-each-ref --sort=-committerdate --format='%1B[32m%(committerdate:iso8601) %1B[34m%(committerdate:relative) %1B[0;m%(refname:short)' refs/heads/</code>
-                                                <p>
-                                                        is easier to alias :)
-                                                </p>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                Add this line to your ~/.gitconfig for a git alias "git brd" (i.e., brd = (br)anch+(d)ate) which sorts branches by date. Allows you to pass in limited "git branch" options such as "-r" (remote) or "-a" (all). (Note: forum added "$" prefix to command; obviously in gitconfig there is no "$" prefix.)
+                                        </p>
                                 </div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Is there a good way to add that to the git alias?
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        You can't add it as a git alias because it's using a bash for loop to run the command several times. What you can do is add a script at /usr/local/bin/git-branch-dates containing:
+                                </p>
+                                <p>
+                                        #!/bin/bash
+                                </p>
+                                <p>
+                                        for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r
+                                </p>
+                                <p>
+                                        Git automatically searches through any bash scripts on your path that start with git- so you can now run:
+                                </p><code>git branch-dates</code>
+                                <p>
+                                        and the script will be run.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Of course you can add it as a git alias!
+                                </p>
+                                <p>
+                                        A git alias which is
+                                </p>
+                                <p>
+                                        "!f() { ...bash script here...; }; f"
+                                </p>
+                                <p>
+                                        works just fine. So, if you add an alias which says
+                                </p>
+                                <p>
+                                        brel = "!f() { for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:'%Cgreen%ci %Cblue%cr%Creset' $k|head -n 1` \\\t$k; done | sort -r; }; f"
+                                </p><code>git brel</code>
+                                <p>
+                                        will do the proper thing.
+                                </p>
+                                <p>
+                                        Of course, the single command
+                                </p><code>git for-each-ref --sort=-committerdate --format='%1B[32m%(committerdate:iso8601) %1B[34m%(committerdate:relative) %1B[0;m%(refname:short)' refs/heads/</code>
+                                <p>
+                                        is easier to alias :)
+                                </p>
                         </div>
                 </div>
         </body>

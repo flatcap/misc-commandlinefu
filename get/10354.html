@@ -1,69 +1,59 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>open a screenshot of a remote desktop via ssh</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        open a screenshot of a remote desktop via ssh
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                open a screenshot of a remote desktop via ssh
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                xloadimage &lt;(ssh USER@HOSTNAME DISPLAY=:0.0 import -window root png:-)
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                open a screenshot of a remote desktop via ssh
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                xloadimage &lt;(ssh USER@HOSTNAME DISPLAY=:0.0 import -window root png:-)
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 /dev/fd/63 is 2880x1200 PNG image, color type RGB, 8 bit
   Building XImage...done
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                standard image viewers do not seem to be able to open a FIFO file. xloadimage was the first one i've stumbled upon that can handle this.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                ssh user@host "ffmpeg -f x11grab -s 1920x1080 -i :0 -r 1 -t 1 -f mjpeg -" | display
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                More stealthy ffmpeg method. The imagemagick 'import' method causes a system beep.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Nice. You can perform the same trick with "display" from the ImageMagick tools.
-                                                </p><code>display &lt;(ssh USER@HOSTNAME DISPLAY=:0.0 import -window root png:-)</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <code>ssh USER@HOSTNAME DISPLAY=:0 import -window root png:- | display</code>
-                                                <p>
-                                                        This way works if you dont have password-less ssh logins and need to input the password.
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        standard image viewers do not seem to be able to open a FIFO file. xloadimage was the first one i've stumbled upon that can handle this.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                ssh user@host "ffmpeg -f x11grab -s 1920x1080 -i :0 -r 1 -t 1 -f mjpeg -" | display
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        More stealthy ffmpeg method. The imagemagick 'import' method causes a system beep.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Nice. You can perform the same trick with "display" from the ImageMagick tools.
+                                </p><code>display &lt;(ssh USER@HOSTNAME DISPLAY=:0.0 import -window root png:-)</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <code>ssh USER@HOSTNAME DISPLAY=:0 import -window root png:- | display</code>
+                                <p>
+                                        This way works if you dont have password-less ssh logins and need to input the password.
+                                </p>
                         </div>
                 </div>
         </body>

@@ -1,37 +1,32 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>check the status of 'dd' in progress</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        check the status of 'dd' in progress
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                check the status of 'dd' in progress
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                check the status of 'dd' in progress
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                watch -n 10 killall -USR1 dd
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        killall -INFO dd
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                watch -n 10 killall -USR1 dd
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        killall -INFO dd
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="sample-output c5 output">
+                                        <pre>
 The result of executing "killall -INFO dd" 3 times from a different terminal:
 $&gt; dd if=sample_input_file of=sample_output_file
 832320+0 records in
@@ -44,76 +39,64 @@ $&gt; dd if=sample_input_file of=sample_output_file
 1146880+0 records out
 587202560 bytes transferred in 30.464571 secs (19274933 bytes/sec)
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        "killall -USR1 dd" does not work in OS X for me. However, sending INFO instead of USR1 works.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        CTRL + T
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                "killall -USR1 dd" does not work in OS X for me. However, sending INFO instead of USR1 works.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        CTRL + T
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 load: 1.24  cmd: dd 4960 uninterruptible 0.26u 4.59s
 476897+0 records in
 476896+0 records out
 244170752 bytes transferred in 323.318769 secs (755201 bytes/sec)
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Sends SIGINFO to the process. This is a BSD feature OS X inherited. You must have the terminal window executing dd selected when entering CTRL + T for this to work.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        while killall -USR1 dd; do sleep 5; done
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Stops when the (last) dd process exits.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ps auxww |grep " dd " |grep -v grep |awk '{print $2}' |while read pid; do kill -USR1 $pid; done
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Check the status of a 'dd' in progress. useful when creating very large dumps and want to see how far along it is. Sending the kill -USR1 forces dd to dump it's progress to stdout
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        pv -tpreb /dev/sda | dd of=/dev/sdb bs=1M
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Sends SIGINFO to the process. This is a BSD feature OS X inherited. You must have the terminal window executing dd selected when entering CTRL + T for this to work.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        while killall -USR1 dd; do sleep 5; done
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Stops when the (last) dd process exits.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ps auxww |grep " dd " |grep -v grep |awk '{print $2}' |while read pid; do kill -USR1 $pid; done
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Check the status of a 'dd' in progress. useful when creating very large dumps and want to see how far along it is. Sending the kill -USR1 forces dd to dump it's progress to stdout
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        pv -tpreb /dev/sda | dd of=/dev/sdb bs=1M
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 675MiB 0:02:53 [ 4.2MiB/s] [=======&gt;                               ]  9% ETA 0:27:00
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Your platform may not have pv by default. If you are using Homebew on OSX, simply 'brew install pv'.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Your platform may not have pv by default. If you are using Homebew on OSX, simply 'brew install pv'.
+                                        </p>
                                 </div>
                         </div>
                 </div>

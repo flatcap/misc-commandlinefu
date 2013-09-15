@@ -1,78 +1,66 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Remove comments</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Remove comments
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Remove comments
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                Remove comments
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                sed -re '/^#/d ; s/#.*$//'
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Delete all comments (#) on text :
+                                </p>
+                                <p>
+                                        It deletes the entire comment line and remove comments form end of others.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        sed -e '/^#/d' -e 's/#.*$//' in
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                sed -re '/^#/d ; s/#.*$//'
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Delete all comments (#) on text :
-                                                        </p>
-                                                        <p>
-                                                                It deletes the entire comment line and remove comments form end of others.
-                                                        </p>
-                                                </div>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                Use sed to remove comments from a file.
+                                        </p>
+                                        <p>
+                                                In this example the comments begin with #.
+                                        </p>
+                                        <p>
+                                                The command '/^#/d' remove line starting with #.
+                                        </p>
+                                        <p>
+                                                The command 's/#.*$//' remove comments at end of lines.
+                                        </p>
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        sed -e '/^#/d' -e 's/#.*$//' in
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Use sed to remove comments from a file.
-                                                                </p>
-                                                                <p>
-                                                                        In this example the comments begin with #.
-                                                                </p>
-                                                                <p>
-                                                                        The command '/^#/d' remove line starting with #.
-                                                                </p>
-                                                                <p>
-                                                                        The command 's/#.*$//' remove comments at end of lines.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        sed -i -e '/^#[^!].*/d' -e 's/\(.*[^!]\)#.*[^}]/\1/' <span>&lt;filename&gt;</span>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        as suggest in frans coment :
-                                                                </p>
-                                                                <p>
-                                                                        '/^#[^!].*/d' -&gt; remove if line begin with # except shebang #!/bin/bash
-                                                                </p>
-                                                                <p>
-                                                                        's/\(.*[^!]\)#.*[^}]/\1/' -&gt; remove inline comments except shebang and ${variable#}
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        sed -i -e '/^#[^!].*/d' -e 's/\(.*[^!]\)#.*[^}]/\1/' <span>&lt;filename&gt;</span>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                as suggest in frans coment :
+                                        </p>
+                                        <p>
+                                                '/^#[^!].*/d' -&gt; remove if line begin with # except shebang #!/bin/bash
+                                        </p>
+                                        <p>
+                                                's/\(.*[^!]\)#.*[^}]/\1/' -&gt; remove inline comments except shebang and ${variable#}
+                                        </p>
                                 </div>
                         </div>
                 </div>

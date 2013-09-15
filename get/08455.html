@@ -1,91 +1,81 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Show a config file without comments</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Show a config file without comments
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Show a config file without comments
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                Show a config file without comments
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                grep -Pv '^\S*(#|$)'
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        egrep -v "^$|^[[:space:]]*#" /etc/some/file
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                grep -Pv '^\S*(#|$)'
-                                        </div>
-                                        <div class="details">
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                Shows a file without comments (at least those starting by #)
+                                        </p>
+                                        <p>
+                                                - removes empty lines
+                                        </p>
+                                        <p>
+                                                - removes lines starting by # or "some spaces/tabs then #'"
+                                        </p>
+                                        <p>
+                                                Useful when you want to quickly see what you have to customize on a freshly installed application without reading the comments that sometimes are a full 1000 lines documentation :)
+                                        </p>
+                                        <p>
+                                                While posting, I saw this <a href="http://www.commandlinefu.com/commands/view/1041/display-contents-of-a-file-wo-any-comments-or-blank-lines" rel="nofollow">http://www.commandlinefu.com/commands/view/1041/display-contents-of-a-file-wo-any-comments-or-blank-lines</a>
+                                        </p>
+                                        <p>
+                                                But it's dirty and incomplete, to my mind
+                                        </p>
+                                        <p>
+                                                My original goal was to remove lines like "\t*#" but I can't figure out how to do a egrep '\t' on a command-line. Two workarounds if needed:
+                                        </p><code>egrep -v 'press control + V then TAB then #' /your/file</code>
+                                        <p>
+                                                or
+                                        </p><code>egrep -v -f some_file /your/file #where some_file contains what you want to exclude, example a really inserted TAB</code>
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        egrep -v "^$|^[[:space:]]*#" /etc/some/file
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Shows a file without comments (at least those starting by #)
-                                                                </p>
-                                                                <p>
-                                                                        - removes empty lines
-                                                                </p>
-                                                                <p>
-                                                                        - removes lines starting by # or "some spaces/tabs then #'"
-                                                                </p>
-                                                                <p>
-                                                                        Useful when you want to quickly see what you have to customize on a freshly installed application without reading the comments that sometimes are a full 1000 lines documentation :)
-                                                                </p>
-                                                                <p>
-                                                                        While posting, I saw this <a href="http://www.commandlinefu.com/commands/view/1041/display-contents-of-a-file-wo-any-comments-or-blank-lines" rel="nofollow">http://www.commandlinefu.com/commands/view/1041/display-contents-of-a-file-wo-any-comments-or-blank-lines</a>
-                                                                </p>
-                                                                <p>
-                                                                        But it's dirty and incomplete, to my mind
-                                                                </p>
-                                                                <p>
-                                                                        My original goal was to remove lines like "\t*#" but I can't figure out how to do a egrep '\t' on a command-line. Two workarounds if needed:
-                                                                </p><code>egrep -v 'press control + V then TAB then #' /your/file</code>
-                                                                <p>
-                                                                        or
-                                                                </p><code>egrep -v -f some_file /your/file #where some_file contains what you want to exclude, example a really inserted TAB</code>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        egrep -v "^$|^#" file
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        egrep -v "^[[:blank:]]*($|#|//|/\*| \*|\*/)" somefile
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        sed -e 's/#.*//;/^\s*$/d'
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        grep -v ^# /etc/somefile.conf | grep .
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        egrep -v "^$|^#" file
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        egrep -v "^[[:blank:]]*($|#|//|/\*| \*|\*/)" somefile
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        sed -e 's/#.*//;/^\s*$/d'
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        grep -v ^# /etc/somefile.conf | grep .
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 $ cat yum.conf
 [main]
 cachedir=/var/cache/yum/$basearch/$releasever
@@ -122,42 +112,38 @@ plugins=1
 installonly_limit=3
 color=never
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        easier to remember
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        sed -e 's/#.*//;/^\s*$/d'
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        grep ^[^#] file
-                                                </p>
-                                                <p>
-                                                        Shorter than this, I don't think so.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        grep ^[^#/^$] file
-                                                </p>
-                                                <p>
-                                                        To include "$" too
-                                                </p>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                easier to remember
+                                        </p>
                                 </div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        sed -e 's/#.*//;/^\s*$/d'
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        grep ^[^#] file
+                                </p>
+                                <p>
+                                        Shorter than this, I don't think so.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        grep ^[^#/^$] file
+                                </p>
+                                <p>
+                                        To include "$" too
+                                </p>
                         </div>
                 </div>
         </body>

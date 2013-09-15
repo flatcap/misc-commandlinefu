@@ -1,128 +1,120 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Power cd - Add a couple of useful features to 'cd'</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Power cd - Add a couple of useful features to 'cd'
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Power cd - Add a couple of useful features to 'cd'
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                cd() { if [ -n "$1" ]; then [ -f "$1" ] &amp;&amp; set -- "${1%/*}"; else [ -n "$CDDIR" ] &amp;&amp; set -- "$CDDIR"; fi; command cd "$@"; }
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Power cd - Add a couple of useful features to 'cd'
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                cd() { if [ -n "$1" ]; then [ -f "$1" ] &amp;&amp; set -- "${1%/*}"; else [ -n "$CDDIR" ] &amp;&amp; set -- "$CDDIR"; fi; command cd "$@"; }
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 ~$ export CDDIR=/home/flatcap/work
 ~$ cd
 ~/work$ unset CDDIR
 ~/work$ cd
 ~$
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Move efficiently between directories.
-                                                        </p>
-                                                        <p>
-                                                                .
-                                                        </p>
-                                                        <p>
-                                                                This command adds a couple of extra features to cd, without affecting normal use.
-                                                        </p>
-                                                        <p>
-                                                                CDPATH use is also unaffected. It introduces and environment variable CDDIR which is used as an alternate home directory.
-                                                        </p>
-                                                        <p>
-                                                                .
-                                                        </p>
-                                                        <p>
-                                                                Note: I don't want to alter $HOME because then all my dot files will move.
-                                                        </p>
-                                                        <p>
-                                                                .
-                                                        </p>
-                                                        <p>
-                                                                Examples:
-                                                        </p>
-                                                        <p>
-                                                                .
-                                                        </p><code>cd dir</code>
-                                                        <p>
-                                                                Change directory to "dir" (using CDPATH if necessary)
-                                                        </p>
-                                                        <p>
-                                                                .
-                                                        </p><code>cd dir/file.txt</code>
-                                                        <p>
-                                                                Change directory to "dir" (containing folder of "file.txt")
-                                                        </p>
-                                                        <p>
-                                                                This allows you to cut'n'paste, or use
-                                                        </p>
-                                                        <p>
-                                                                .
-                                                        </p>
-                                                        <p>
-                                                                CDDIR is unset
-                                                        </p><code>cd</code>
-                                                        <p>
-                                                                Change directory to $HOME
-                                                        </p>
-                                                        <p>
-                                                                .
-                                                        </p>
-                                                        <p>
-                                                                CDDIR=/home/flatcap/work
-                                                        </p><code>cd</code>
-                                                        <p>
-                                                                Change directory to /home/flatcap/work
-                                                        </p>
-                                                        <p>
-                                                                .
-                                                        </p>
-                                                        <p>
-                                                                For convenience, put the command, and the following, in your .bashrc or .bash_profile
-                                                        </p>
-                                                        <p>
-                                                                export CDDIR="/home/flatcap/work"
-                                                        </p>
-                                                        <p>
-                                                                alias cdd="CDDIR=$(pwd)"
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Holy convenient. I hate having to erase filenames when I cut-and-paste.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I like those features. I'll have to rework my own cd function to include them on my boxes. (see #8253)
-                                                </p>
-                                                <p>
-                                                        <a href="http://www.commandlinefu.com/commands/view/8253/" rel="nofollow">http://www.commandlinefu.com/commands/view/8253/</a>
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Move efficiently between directories.
+                                </p>
+                                <p>
+                                        .
+                                </p>
+                                <p>
+                                        This command adds a couple of extra features to cd, without affecting normal use.
+                                </p>
+                                <p>
+                                        CDPATH use is also unaffected. It introduces and environment variable CDDIR which is used as an alternate home directory.
+                                </p>
+                                <p>
+                                        .
+                                </p>
+                                <p>
+                                        Note: I don't want to alter $HOME because then all my dot files will move.
+                                </p>
+                                <p>
+                                        .
+                                </p>
+                                <p>
+                                        Examples:
+                                </p>
+                                <p>
+                                        .
+                                </p><code>cd dir</code>
+                                <p>
+                                        Change directory to "dir" (using CDPATH if necessary)
+                                </p>
+                                <p>
+                                        .
+                                </p><code>cd dir/file.txt</code>
+                                <p>
+                                        Change directory to "dir" (containing folder of "file.txt")
+                                </p>
+                                <p>
+                                        This allows you to cut'n'paste, or use
+                                </p>
+                                <p>
+                                        .
+                                </p>
+                                <p>
+                                        CDDIR is unset
+                                </p><code>cd</code>
+                                <p>
+                                        Change directory to $HOME
+                                </p>
+                                <p>
+                                        .
+                                </p>
+                                <p>
+                                        CDDIR=/home/flatcap/work
+                                </p><code>cd</code>
+                                <p>
+                                        Change directory to /home/flatcap/work
+                                </p>
+                                <p>
+                                        .
+                                </p>
+                                <p>
+                                        For convenience, put the command, and the following, in your .bashrc or .bash_profile
+                                </p>
+                                <p>
+                                        export CDDIR="/home/flatcap/work"
+                                </p>
+                                <p>
+                                        alias cdd="CDDIR=$(pwd)"
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Holy convenient. I hate having to erase filenames when I cut-and-paste.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I like those features. I'll have to rework my own cd function to include them on my boxes. (see #8253)
+                                </p>
+                                <p>
+                                        <a href="http://www.commandlinefu.com/commands/view/8253/" rel="nofollow">http://www.commandlinefu.com/commands/view/8253/</a>
+                                </p>
                         </div>
                 </div>
         </body>

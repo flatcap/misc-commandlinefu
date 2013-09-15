@@ -1,50 +1,42 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>find builtin in bash v4+</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        find builtin in bash v4+
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                find builtin in bash v4+
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                ls -l /etc/**/*killall
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                find builtin in bash v4+
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                ls -l /etc/**/*killall
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 [root@localhost ~]# ls -l /etc/**/*killall
 -rwxr-xr-x. 1 root root 652 Apr 19 15:47 /etc/init.d/killall
 lrwxrwxrwx. 1 root root  17 May 31 06:00 /etc/rc0.d/S00killall -&gt; ../init.d/killall
 lrwxrwxrwx. 1 root root  17 May 31 06:00 /etc/rc6.d/S00killall -&gt; ../init.d/killall
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                This command will give you the same list of files as "find /etc/ -name '*killall' | xargs ls -l".
-                                                        </p>
-                                                        <p>
-                                                                In a simpler format just do 'ls /etc/**/file'.
-                                                        </p>
-                                                        <p>
-                                                                It uses shell globbing, so it will also work with other commands, like "cp /etc/**/sshd sshd_backup".
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        This command will give you the same list of files as "find /etc/ -name '*killall' | xargs ls -l".
+                                </p>
+                                <p>
+                                        In a simpler format just do 'ls /etc/**/file'.
+                                </p>
+                                <p>
+                                        It uses shell globbing, so it will also work with other commands, like "cp /etc/**/sshd sshd_backup".
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

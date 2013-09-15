@@ -1,37 +1,32 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>list all opened ports on host</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        list all opened ports on host
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                list all opened ports on host
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                list all opened ports on host
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                sudo lsof -P -i -n -sTCP:LISTEN
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        netstat -plnt
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                sudo lsof -P -i -n -sTCP:LISTEN
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        netstat -plnt
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="sample-output c5 output">
+                                        <pre>
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
 tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      13443/apache2
@@ -40,46 +35,41 @@ tcp6       0      0 :::25565                :::*                    LISTEN      
 tcp6       0      0 :::6667                 :::*                    LISTEN      12101/bitlbee
 tcp6       0      0 :::22                   :::*                    LISTEN      801/sshd
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        While `lsof` will work, why not use the tool designed explicitly for this job?
-                                                                </p>
-                                                                <p>
-                                                                        (If not run as root, you will only see the names of PID you own)
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        nmap -p 1-65535 --open localhost
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        netstat -nptl
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Alternative of OJM snippet :
-                                                                </p>
-                                                                <p>
-                                                                        This one show the IP too, where ports bind. It's very important, because if there's only 127.0.0.1 instead of 0.0.0.0, connections from internet are rejected.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        time { i=0; while [ $(( i &lt; 65535 )) -eq 1 ] ; do nc -zw2 localhost $((++i)) &amp;&amp; echo port $i opened ; done; }
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                While `lsof` will work, why not use the tool designed explicitly for this job?
+                                        </p>
+                                        <p>
+                                                (If not run as root, you will only see the names of PID you own)
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        nmap -p 1-65535 --open localhost
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        netstat -nptl
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Alternative of OJM snippet :
+                                        </p>
+                                        <p>
+                                                This one show the IP too, where ports bind. It's very important, because if there's only 127.0.0.1 instead of 0.0.0.0, connections from internet are rejected.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        time { i=0; while [ $(( i &lt; 65535 )) -eq 1 ] ; do nc -zw2 localhost $((++i)) &amp;&amp; echo port $i opened ; done; }
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 port 22 opened
 port 80 opened
 port 631 opened
@@ -107,18 +97,14 @@ real    4m33.201s
 user    1m16.657s
 sys     2m42.194s
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        in loop, until the last port (65535), list all opened ports on host.
-                                                                </p>
-                                                                <p>
-                                                                        in the sample I used localhost, but you can replace with any host to test.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                in loop, until the last port (65535), list all opened ports on host.
+                                        </p>
+                                        <p>
+                                                in the sample I used localhost, but you can replace with any host to test.
+                                        </p>
                                 </div>
                         </div>
                 </div>

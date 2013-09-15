@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Watch and keep history of a command</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Watch and keep history of a command
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Watch and keep history of a command
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                CMD="who";SEC=1;N=0;OLD="";NEW=""; while `sleep $SEC`; do OLD="$NEW"; NEW="$(eval $CMD)"; DIFF=`diff &lt;( echo "$OLD" ) &lt;( echo "$NEW" )`; if [ -n "$DIFF" ]; then date; echo "Diff #$N (${SEC}s): $CMD"; echo "$DIFF"; fi; N=$[$N+1]; done | tee /tmp/keepr
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Watch and keep history of a command
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                CMD="who";SEC=1;N=0;OLD="";NEW=""; while `sleep $SEC`; do OLD="$NEW"; NEW="$(eval $CMD)"; DIFF=`diff &lt;( echo "$OLD" ) &lt;( echo "$NEW" )`; if [ -n "$DIFF" ]; then date; echo "Diff #$N (${SEC}s): $CMD"; echo "$DIFF"; fi; N=$[$N+1]; done | tee /tmp/keepr
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 Mon Dec 25 14:15:30 EST 2099
 Diff #0 (1s): who
 1c1
@@ -36,25 +32,21 @@ Diff #11 (1s): who
 1a2
 &lt; [notme]  pts/2        2099-12-25 14:15 ([i.forget])
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Watch any command (pipes ok, quotes be careful) and keep history in a file. Good for watching and recording any kind of status or error condition, file creations, etc. The choice of "who" as CMD was just to show an obvious usage.
-                                                        </p>
-                                                        <p>
-                                                                Uses plenty of shell tricks that can be disassembled for simpler stuff. It's deliberately not perfect, but it is generic, and can be customized for your own uses. Had to shorten a little to meet 255 chars.
-                                                        </p>
-                                                        <p>
-                                                                Better than "watch" how? It keeps a date log of what is going on, and tee'd output is plain-text.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Watch any command (pipes ok, quotes be careful) and keep history in a file. Good for watching and recording any kind of status or error condition, file creations, etc. The choice of "who" as CMD was just to show an obvious usage.
+                                </p>
+                                <p>
+                                        Uses plenty of shell tricks that can be disassembled for simpler stuff. It's deliberately not perfect, but it is generic, and can be customized for your own uses. Had to shorten a little to meet 255 chars.
+                                </p>
+                                <p>
+                                        Better than "watch" how? It keeps a date log of what is going on, and tee'd output is plain-text.
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Show database sql schema from Remote or Local database</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Show database sql schema from Remote or Local database
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Show database sql schema from Remote or Local database
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                mysqldump -u<span>&lt;dbusername&gt;</span> -p<span>&lt;dbpassword&gt;</span> <span>&lt;databasename&gt;</span> --no-data --tables
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Show database sql schema from Remote or Local database
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                mysqldump -u<span>&lt;dbusername&gt;</span> -p<span>&lt;dbpassword&gt;</span> <span>&lt;databasename&gt;</span> --no-data --tables
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 CREATE TABLE `contacts` (
   `id` int(10) NOT NULL auto_increment,
   `firstname` text NOT NULL,
@@ -36,19 +32,15 @@ CREATE TABLE `contacts` (
   PRIMARY KEY  (`id`),
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                After ssh into server, run this command to show all the table structure and schema.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        After ssh into server, run this command to show all the table structure and schema.
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

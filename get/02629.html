@@ -1,47 +1,39 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Outputs files with ascii art in the intended form.</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Outputs files with ascii art in the intended form.
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Outputs files with ascii art in the intended form.
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                iconv -f437 -tutf8 asciiart.nfo
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Files containing ascii art (e.g. with .nfo extension) are typically not correctly reproduced at the command line when using cat. With iconv one can easily write a wrapper to solve this:
-                                                        </p><code>#!/bin/bash</code> <code>if [ -z "$@" ]; then echo "Usage: $(basename $0) file [file] ..."</code> <code>else iconv -f437 -tutf8 "$@"; fi</code> <code>exit 0</code>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                "437" is what may be otherwise called "Extended Ascii"
-                                        </p>
-                                        <p>
-                                                <a href="http://en.wikipedia.org/wiki/Code_page_437" rel="nofollow">http://en.wikipedia.org/wiki/Code_page_437</a>
-                                        </p>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Outputs files with ascii art in the intended form.
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                iconv -f437 -tutf8 asciiart.nfo
                         </div>
+                        <div class="details description">
+                                <p>
+                                        Files containing ascii art (e.g. with .nfo extension) are typically not correctly reproduced at the command line when using cat. With iconv one can easily write a wrapper to solve this:
+                                </p><code>#!/bin/bash</code> <code>if [ -z "$@" ]; then echo "Usage: $(basename $0) file [file] ..."</code> <code>else iconv -f437 -tutf8 "$@"; fi</code> <code>exit 0</code>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                "437" is what may be otherwise called "Extended Ascii"
+                        </p>
+                        <p>
+                                <a href="http://en.wikipedia.org/wiki/Code_page_437" rel="nofollow">http://en.wikipedia.org/wiki/Code_page_437</a>
+                        </p>
                 </div>
         </body>
 </html>

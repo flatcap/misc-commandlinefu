@@ -1,82 +1,72 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Get the time and date of the last server reboot</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Get the time and date of the last server reboot
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Get the time and date of the last server reboot
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                Get the time and date of the last server reboot
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                date -d "$(uptime | awk '{gsub(/,/,"",$3);gsub(/:/," hours ",$3); print "- " $3 " minutes"}')"
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        last reboot
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                date -d "$(uptime | awk '{gsub(/,/,"",$3);gsub(/:/," hours ",$3); print "- " $3 " minutes"}')"
-                                        </div>
-                                        <div class="details">
-                                        </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        last reboot
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        last reboot
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        last reboot
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="sample-output c5 output">
+                                        <pre>
 reboot   system boot  2.6.40.4-5.fc15. Fri Sep 30 10:40 - 09:41 (19+23:00)
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        - shorter
-                                                                </p>
-                                                                <p>
-                                                                        - more readable
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        You can also find the time in the output of:
-                                                </p><code>last reboot | head -1</code>
-                                                <p>
-                                                        and the less portable (Linux only):
-                                                </p><code>date -d "$(awk '{print $1 " seconds ago"}' /proc/uptime)"</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I would prefer the "last" command too. Does anyone know if the "last" command proposed by flatcap is not portable?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        +1 for flatcap's tip.
-                                                </p>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                - shorter
+                                        </p>
+                                        <p>
+                                                - more readable
+                                        </p>
                                 </div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        You can also find the time in the output of:
+                                </p><code>last reboot | head -1</code>
+                                <p>
+                                        and the less portable (Linux only):
+                                </p><code>date -d "$(awk '{print $1 " seconds ago"}' /proc/uptime)"</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I would prefer the "last" command too. Does anyone know if the "last" command proposed by flatcap is not portable?
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        +1 for flatcap's tip.
+                                </p>
                         </div>
                 </div>
         </body>

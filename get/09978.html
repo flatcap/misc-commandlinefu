@@ -1,83 +1,75 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Daemonize nc - Transmit a file like a http server</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Daemonize nc - Transmit a file like a http server
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Daemonize nc - Transmit a file like a http server
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                while ( nc -l 80 &lt; /file.htm &gt; : ) ; do : ; done &amp;
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Daemonize nc - Transmit a file like a http server
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                while ( nc -l 80 &lt; /file.htm &gt; : ) ; do : ; done &amp;
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 [$$] # Number of PID
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Allow to launch nc like a daemon, in background until you still stop it.
-                                                        </p>
-                                                        <p>
-                                                                You can stop it with kill %1 (jobs method) or kill PID.
-                                                        </p>
-                                                        <p>
-                                                                The -k option can force nc to listen another connection, but if you use redirection, it will work only one time.
-                                                        </p>
-                                                        <p>
-                                                                The loop's inside doesn't do anything, but we can imagine to send a message to screen when a connection is established
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Very nice, but why stop at a static file:
-                                                </p><code>COUNT=0; while ( nc -l 80 &lt;&lt;&lt; "You are connection $COUNT" &gt; :) ; do ((COUNT++)) ; done &amp;</code>
-                                                <p>
-                                                        Gives the output:
-                                                </p><code>curl localhost</code> <code>You are connection 1</code> <code>curl localhost</code> <code>You are connection 2</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Cool, although would lean toward a non-privileged port as its less hassle.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        I really like webfs for this type of http serving: <a href="http://goo.gl/sVWQ3" rel="nofollow">http://goo.gl/sVWQ3</a>
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        @kaji :
-                                                </p>
-                                                <p>
-                                                        Thanks to share that package.
-                                                </p>
-                                                <p>
-                                                        I didn't know it !
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Allow to launch nc like a daemon, in background until you still stop it.
+                                </p>
+                                <p>
+                                        You can stop it with kill %1 (jobs method) or kill PID.
+                                </p>
+                                <p>
+                                        The -k option can force nc to listen another connection, but if you use redirection, it will work only one time.
+                                </p>
+                                <p>
+                                        The loop's inside doesn't do anything, but we can imagine to send a message to screen when a connection is established
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Very nice, but why stop at a static file:
+                                </p><code>COUNT=0; while ( nc -l 80 &lt;&lt;&lt; "You are connection $COUNT" &gt; :) ; do ((COUNT++)) ; done &amp;</code>
+                                <p>
+                                        Gives the output:
+                                </p><code>curl localhost</code> <code>You are connection 1</code> <code>curl localhost</code> <code>You are connection 2</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Cool, although would lean toward a non-privileged port as its less hassle.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        I really like webfs for this type of http serving: <a href="http://goo.gl/sVWQ3" rel="nofollow">http://goo.gl/sVWQ3</a>
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        @kaji :
+                                </p>
+                                <p>
+                                        Thanks to share that package.
+                                </p>
+                                <p>
+                                        I didn't know it !
+                                </p>
                         </div>
                 </div>
         </body>

@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Center text in console with simple pipe like</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Center text in console with simple pipe like
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Center text in console with simple pipe like
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                center(){ l="$(cat -)"; s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})/2));echo "$(while ((--j&gt;0)); do printf " ";done;)$l";done;}; ls --color=none / | center
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Center text in console with simple pipe like
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                center(){ l="$(cat -)"; s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})/2));echo "$(while ((--j&gt;0)); do printf " ";done;)$l";done;}; ls --color=none / | center
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 center(){ l="$(cat -)"; s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})/2));echo "$(while ((--j&gt;0)); do printf " ";done;)$l";done;};
 $ls --color=none / | center
             bin
@@ -50,40 +46,36 @@ session_mm_apache2handler0.sem
             usr
             var
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Center the output text in max line length of buffered output pipe;
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Very nice... but how about this:
-                                                </p><code>center(){ C=$(tput cols);IFS="";while read L; do S=$((($C-${#L})/2+${#L}));printf "%${S}s\n" $L;done }</code>
-                                                <p>
-                                                        Building on the work of glaudiston and eightmillion, of course :-)
-                                                </p>
-                                                <p>
-                                                        PS Pascal's Triangle looks fantastic!
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <code>tput cols</code>
-                                                <p>
-                                                        Return the console width... I did not knew yet... very nice.
-                                                </p>
-                                                <p>
-                                                        tnx
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Center the output text in max line length of buffered output pipe;
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Very nice... but how about this:
+                                </p><code>center(){ C=$(tput cols);IFS="";while read L; do S=$((($C-${#L})/2+${#L}));printf "%${S}s\n" $L;done }</code>
+                                <p>
+                                        Building on the work of glaudiston and eightmillion, of course :-)
+                                </p>
+                                <p>
+                                        PS Pascal's Triangle looks fantastic!
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <code>tput cols</code>
+                                <p>
+                                        Return the console width... I did not knew yet... very nice.
+                                </p>
+                                <p>
+                                        tnx
+                                </p>
                         </div>
                 </div>
         </body>

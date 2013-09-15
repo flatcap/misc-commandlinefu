@@ -1,36 +1,28 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Recursively grep for string and format output for vi(m)</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Recursively grep for string and format output for vi(m)
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Recursively grep for string and format output for vi(m)
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                mgc() { grep --exclude=cscope* --color=always -rni $1 . |perl -pi -e 's/:/ +/' |perl -pi -e 's/^(.+)$/vi $1/g' |perl -pi -e 's/:/ /'; }
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                This is a big time saver for me. I often grep source code and need to edit the findings. A single highlight of the mouse and middle mouse click (in gnome terminal) and I'm editing the exact line I just found. The color highlighting helps interpret the data.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                <div id="terminal-header">
+                        <h1>
+                                Recursively grep for string and format output for vi(m)
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                mgc() { grep --exclude=cscope* --color=always -rni $1 . |perl -pi -e 's/:/ +/' |perl -pi -e 's/^(.+)$/vi $1/g' |perl -pi -e 's/:/ /'; }
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        This is a big time saver for me. I often grep source code and need to edit the findings. A single highlight of the mouse and middle mouse click (in gnome terminal) and I'm editing the exact line I just found. The color highlighting helps interpret the data.
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

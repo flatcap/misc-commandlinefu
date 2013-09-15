@@ -1,91 +1,81 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>To know the IP address of the machine current running on the network</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        To know the IP address of the machine current running on the network
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                To know the IP address of the machine current running on the network
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                fping -g 192.168.1.1 192.168.1.10 -r 1 | grep -v unreachable | awk '{print $1}'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                To know the IP address of the machine current running on the network
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                fping -g 192.168.1.1 192.168.1.10 -r 1 | grep -v unreachable | awk '{print $1}'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 192.168.1.1
 192.168.1.2
 192.168.1.7
 192.168.1.8
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                List all the machine ip's currently running on your network
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                fping -r1 -Aag <span>&lt;network&gt;</span>/<span>&lt;cidr_mask&gt;</span> 2&gt;/dev/null | sort -gt. -k4
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        List all the machine ip's currently running on your network
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                fping -r1 -Aag <span>&lt;network&gt;</span>/<span>&lt;cidr_mask&gt;</span> 2&gt;/dev/null | sort -gt. -k4
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 fping -r1 -Aag 192.168.nnn.0/24 2&gt;/dev/null | sort -gt. -k4
 192.168.nnn.110
 192.168.nnn.220
 192.168.nnn.231
 192.168.nnn.241
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Prevents the need for the grep &amp; awk statements. Sort is optional if you don't care about the output order. The network range can also be specified as in the original post.
-                                                        </p>
-                                                        <p>
-                                                                -A Display targets by address rather than DNS name. (Probably unnecessary...)
-                                                        </p>
-                                                        <p>
-                                                                -a Show systems that are alive.
-                                                        </p>
-                                                        <p>
-                                                                S fping -r1 -ag 192.168.nnn.0/24 2&gt;/dev/null
-                                                        </p>
-                                                        <p>
-                                                                Without sorting...
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        fping -g doesn't work on debian-squeeze
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I'm sorry, it works, my mistake
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Prevents the need for the grep &amp; awk statements. Sort is optional if you don't care about the output order. The network range can also be specified as in the original post.
+                                </p>
+                                <p>
+                                        -A Display targets by address rather than DNS name. (Probably unnecessary...)
+                                </p>
+                                <p>
+                                        -a Show systems that are alive.
+                                </p>
+                                <p>
+                                        S fping -r1 -ag 192.168.nnn.0/24 2&gt;/dev/null
+                                </p>
+                                <p>
+                                        Without sorting...
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        fping -g doesn't work on debian-squeeze
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I'm sorry, it works, my mistake
+                                </p>
                         </div>
                 </div>
         </body>

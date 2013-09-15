@@ -1,87 +1,77 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Find the package a command belongs to on rpm-based distros</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Find the package a command belongs to on rpm-based distros
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Find the package a command belongs to on rpm-based distros
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                whichpkg() { rpm -qf "$@"; }
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Find the package a command belongs to on rpm-based distros
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                whichpkg() { rpm -qf "$@"; }
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 ~$ whichpkg /bin/sort
 coreutils-8.10-2.fc15.x86_64
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Find the package a file belongs to on an rpm-based distro.
-                                                        </p>
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Find the package a file belongs to on an rpm-based distro.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        dpkg -S $( which ls )
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        dpkg -S $( which ls )
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        function whichpkg() { readlink -f "$(which $1)" | xargs --no-run-if-empty dpkg -S; }
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        function whichpkg() { readlink -f "$(which $1)" | xargs --no-run-if-empty dpkg -S; }
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 $ function whichpkg(){ readlink -f "$(which $1)" | xargs --no-run-if-empty dpkg -S; }
 $whichpkg rlogin
 openssh-client: /usr/bin/ssh
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        This revision to my command (command #8851) was called for when it failed to find the parent
-                                                                </p>
-                                                                <p>
-                                                                        package of 'rlogin', which is really a deep symbolic link to /usr/bin/ssh.
-                                                                </p>
-                                                                <p>
-                                                                        This revision fixes this newfound issue, while ensuring fixes of other older issues work too.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        apt-file search iostat
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        whichpkg () { dpkg -S $1 | egrep -w $(readlink -f "$(which $1)")$; }
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                This revision to my command (command #8851) was called for when it failed to find the parent
+                                        </p>
+                                        <p>
+                                                package of 'rlogin', which is really a deep symbolic link to /usr/bin/ssh.
+                                        </p>
+                                        <p>
+                                                This revision fixes this newfound issue, while ensuring fixes of other older issues work too.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        apt-file search iostat
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        whichpkg () { dpkg -S $1 | egrep -w $(readlink -f "$(which $1)")$; }
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 $ whichpkg write
 bsdmainutils: /usr/bin/bsd-write
 $ whichpkg telnet
@@ -89,24 +79,22 @@ telnet: /usr/bin/telnet.netkit
 $ whichpkg ftp
 ftp: /usr/bin/netkit-ftp
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Advanced revision to the command 8776 . This revision follows symbolic links.
-                                                                </p>
-                                                                <p>
-                                                                        The quotation-marks surrounding $(which $1) allows for graceful handling of errors ( ie. readlink does not complain incase 'which' command generates (null) output)
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        function whichpkg { dpkg -S $1 | egrep -w $(which $1)$; }
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Advanced revision to the command 8776 . This revision follows symbolic links.
+                                        </p>
+                                        <p>
+                                                The quotation-marks surrounding $(which $1) allows for graceful handling of errors ( ie. readlink does not complain incase 'which' command generates (null) output)
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        function whichpkg { dpkg -S $1 | egrep -w $(which $1)$; }
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 $ whichpkg cron
 cron: /usr/sbin/cron
 $ whichpkg ls
@@ -114,34 +102,30 @@ coreutils: /bin/ls
 $ whichpkg intentionally-non-existent
 dpkg: *intentionally-non-existent* not found.
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Similar to command 7822, but handles errors gracefully.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        on this site you can vote for the most interesting commands. someone has made a habit always to vote in a negative way my commands. I want to make a habit of positive or negative vote and declare it openly.
-                                                </p>
-                                                <p>
-                                                        +1 for this command
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        This is useful on rpm based systems like RedHat/SuSE/CentOS. I wonder if this was voted down by the Debian/Ubuntu folks? The dpkg alternatives don't work on rpm systems. +1 from me for the "rpm -qf" part. I'm not sure you need a function (or alias) for it, but either way it's useful and unfairly voted down.
-                                                </p>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                Similar to command 7822, but handles errors gracefully.
+                                        </p>
                                 </div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        on this site you can vote for the most interesting commands. someone has made a habit always to vote in a negative way my commands. I want to make a habit of positive or negative vote and declare it openly.
+                                </p>
+                                <p>
+                                        +1 for this command
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        This is useful on rpm based systems like RedHat/SuSE/CentOS. I wonder if this was voted down by the Debian/Ubuntu folks? The dpkg alternatives don't work on rpm systems. +1 from me for the "rpm -qf" part. I'm not sure you need a function (or alias) for it, but either way it's useful and unfairly voted down.
+                                </p>
                         </div>
                 </div>
         </body>

@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Deal with dot files safely</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Deal with dot files safely
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Deal with dot files safely
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                rm -rf .??*
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Deal with dot files safely
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                rm -rf .??*
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 [root@centos CRM]# ls -al
 total 40
 drwxrwxr-x  3 gregg gregg 4096 Mar 10 22:59 .
@@ -34,88 +30,82 @@ total 16
 drwxrwxr-x  2 gregg gregg 4096 Mar 10 22:59 .
 drwxr-xr-x 30 gregg gregg 4096 Mar 10 22:59 ..
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                rm -rf .* matches ".." and thus one goes up a level and wipes out more than intended.
-                                                        </p>
-                                                        <p>
-                                                                In bash, .??* safely accomplishes what one intends - remove those .files
-                                                        </p>
-                                                        <p>
-                                                                The ? matches most characters except "/", thus .?? does not match ../ and so one is safe.
-                                                        </p>
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        rm -rf .* matches ".." and thus one goes up a level and wipes out more than intended.
+                                </p>
+                                <p>
+                                        In bash, .??* safely accomplishes what one intends - remove those .files
+                                </p>
+                                <p>
+                                        The ? matches most characters except "/", thus .?? does not match ../ and so one is safe.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        rm -r .[!.]*
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        rm -r .[!.]*
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        rm -rf .[!.]*
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        rm -rf .[!.]*
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        .??* does not match .a, .b, ...
-                                                </p>
-                                                <p>
-                                                        .[!.]* does.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        .??* does not match .a, .b, ...
-                                                </p>
-                                                <p>
-                                                        .[!.]* does.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        man bash discusses GLOBIGNORE which does this, but I can't wrap my head around the logic. GLOBIGNORE=.:.. seems to DTRT:
-                                                </p><code>ls .* -d</code>
-                                                <p>
-                                                        . .. .keep
-                                                </p><code>GLOBIGNORE=.:..</code> <code>ls .* -d</code>
-                                                <p>
-                                                        .keep
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        @greggster: gnu rm complains, but it won't allow me to remove ..
-                                                </p>
-                                                <p>
-                                                        What version of rm do you have where .* can equate to ../*
-                                                </p>
-                                                <p>
-                                                        @NatureShadow: very nice
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        The shell expands ".*" before its passed to the rm command. What shell are you using? echo $SHELL should display it.
-                                                </p>
-                                        </div>
-                                </div>
+                                <div class="details"></div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        .??* does not match .a, .b, ...
+                                </p>
+                                <p>
+                                        .[!.]* does.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        .??* does not match .a, .b, ...
+                                </p>
+                                <p>
+                                        .[!.]* does.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        man bash discusses GLOBIGNORE which does this, but I can't wrap my head around the logic. GLOBIGNORE=.:.. seems to DTRT:
+                                </p><code>ls .* -d</code>
+                                <p>
+                                        . .. .keep
+                                </p><code>GLOBIGNORE=.:..</code> <code>ls .* -d</code>
+                                <p>
+                                        .keep
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        @greggster: gnu rm complains, but it won't allow me to remove ..
+                                </p>
+                                <p>
+                                        What version of rm do you have where .* can equate to ../*
+                                </p>
+                                <p>
+                                        @NatureShadow: very nice
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        The shell expands ".*" before its passed to the rm command. What shell are you using? echo $SHELL should display it.
+                                </p>
                         </div>
                 </div>
         </body>

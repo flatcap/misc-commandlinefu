@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Check to see if a command exists</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Check to see if a command exists
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Check to see if a command exists
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                command -v <span>&lt;command&gt;</span>
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Check to see if a command exists
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                command -v <span>&lt;command&gt;</span>
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 $ command -v ls
 /usr/bin/ls
 $ echo $?
@@ -29,27 +25,23 @@ $ command -v flskaj
 $ echo $?
 1
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                This is useful for scripting.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                the "which" command is the same thing with more options. The "whereis" command will give you the locations of ALL versions of the command, plus the man pages and links.
-                                        </p>
-                                </div>
                         </div>
+                        <div class="details description">
+                                <p>
+                                        This is useful for scripting.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                the "which" command is the same thing with more options. The "whereis" command will give you the locations of ALL versions of the command, plus the man pages and links.
+                        </p>
                 </div>
         </body>
 </html>

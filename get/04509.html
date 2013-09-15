@@ -1,91 +1,83 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Resize a Terminal Window</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Resize a Terminal Window
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Resize a Terminal Window
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                printf "\e[8;70;180;t"
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Replace 70 with the desired height.
-                                                        </p>
-                                                        <p>
-                                                                Replace 180 with the desired width.
-                                                        </p>
-                                                        <p>
-                                                                I put it in my bashrc, because by default my terminal is too small.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Neat. :)
-                                                </p>
-                                                <p>
-                                                        Under MacOS using Terminal, if you set the height and width to absurdly huge values, this will perfectly fullscreen the Terminal window.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Nice. Of course if you're using gnome-terminal, then there's no need: change the shortcut to run:
-                                                </p><code>gnome-terminal --maximize</code> <code>gnome-terminal --full-screen</code>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Doesn't work in PuTTY on Windows ;oP
-                                                </p>
-                                                <p>
-                                                        If you know what size you want to make your xterm (e.g. the 70 &amp; 180) you can start a larger xterm with:
-                                                </p><code>xterm -geometry 70x180</code>
-                                                <p>
-                                                        (or use -geo for geometry)
-                                                </p>
-                                                <p>
-                                                        and place it in the right place on screen with:
-                                                </p><code>xterm -geo 70x180+5+10</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        This is typically something I've done by editing /usr/share/vte/termcap/xterm, but that tends to get reset a lot on upgrades. This is good because I can just add it to my .bashrc, which has the added benefit of surviving full reinstalls and new machines (I sync my .bashrc around). Nice :)
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Good to know... gnome-terminal will let you say:
-                                                </p>
-                                                <p>
-                                                        resize -s 70 180
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        It would be a lot better to do this with tput(1) -- assuming you have the one from ncurses, at least -- rather than hard-coding the control sequences like that.
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Resize a Terminal Window
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                printf "\e[8;70;180;t"
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Replace 70 with the desired height.
+                                </p>
+                                <p>
+                                        Replace 180 with the desired width.
+                                </p>
+                                <p>
+                                        I put it in my bashrc, because by default my terminal is too small.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Neat. :)
+                                </p>
+                                <p>
+                                        Under MacOS using Terminal, if you set the height and width to absurdly huge values, this will perfectly fullscreen the Terminal window.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Nice. Of course if you're using gnome-terminal, then there's no need: change the shortcut to run:
+                                </p><code>gnome-terminal --maximize</code> <code>gnome-terminal --full-screen</code>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Doesn't work in PuTTY on Windows ;oP
+                                </p>
+                                <p>
+                                        If you know what size you want to make your xterm (e.g. the 70 &amp; 180) you can start a larger xterm with:
+                                </p><code>xterm -geometry 70x180</code>
+                                <p>
+                                        (or use -geo for geometry)
+                                </p>
+                                <p>
+                                        and place it in the right place on screen with:
+                                </p><code>xterm -geo 70x180+5+10</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        This is typically something I've done by editing /usr/share/vte/termcap/xterm, but that tends to get reset a lot on upgrades. This is good because I can just add it to my .bashrc, which has the added benefit of surviving full reinstalls and new machines (I sync my .bashrc around). Nice :)
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Good to know... gnome-terminal will let you say:
+                                </p>
+                                <p>
+                                        resize -s 70 180
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        It would be a lot better to do this with tput(1) -- assuming you have the one from ncurses, at least -- rather than hard-coding the control sequences like that.
+                                </p>
                         </div>
                 </div>
         </body>

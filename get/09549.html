@@ -1,49 +1,41 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Run a command when a file is changed</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Run a command when a file is changed
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Run a command when a file is changed
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                while inotifywait -e modify /tmp/myfile; do firefox; done
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                while :; do n=$(md5 myfile); if [ "$h" != "$n" ]; then h=$n; scp myfile myserver:mydir/myfile; fi; sleep 1; done
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                If you don't have inotifywait, here's a bash version:
-                                        </p>
-                                        <p>
-                                                <a href="http://www.commandlinefu.com/commands/view/6876/run-a-command-whenever-a-file-is-touched" rel="nofollow">http://www.commandlinefu.com/commands/view/6876/run-a-command-whenever-a-file-is-touched</a>
-                                        </p>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Run a command when a file is changed
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                while inotifywait -e modify /tmp/myfile; do firefox; done
                         </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                while :; do n=$(md5 myfile); if [ "$h" != "$n" ]; then h=$n; scp myfile myserver:mydir/myfile; fi; sleep 1; done
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                If you don't have inotifywait, here's a bash version:
+                        </p>
+                        <p>
+                                <a href="http://www.commandlinefu.com/commands/view/6876/run-a-command-whenever-a-file-is-touched" rel="nofollow">http://www.commandlinefu.com/commands/view/6876/run-a-command-whenever-a-file-is-touched</a>
+                        </p>
                 </div>
         </body>
 </html>

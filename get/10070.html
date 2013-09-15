@@ -1,72 +1,64 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Switch workspace</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Switch workspace
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Switch workspace
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                wmctrl -o 100,0
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                For a demo try
-                                                        </p><code>wmctrl -o 100,0; sleep 3; wmctrl -o 1500,0; sleep 3; wmctrl -o 3000,0; sleep 3; wmctrl -o 4500,0;</code>
-                                                        <p>
-                                                                Actually
-                                                        </p><code>wmctrl -o &lt;width x Number&gt;,0;</code>
-                                                        <p>
-                                                                to switch to that workspace
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        I don't have 100, 1500, 3000, or 4500 workspaces!
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Width in pixel. Eg: 1-&gt; 1366 [from 1366x768 ]
-                                                </p>
-                                                <p>
-                                                        2-&gt; 2732
-                                                </p>
-                                                <p>
-                                                        and so on upto N work space.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Isn't "workspace" the Gnome name for "desktop"? I'm a KDE guy but I have four desktops configured and each one has its own windows open. If I click on another desktop (on my taskbar) those windows go away and the windows on the new desktop appear. If that's the same as workspaces, can't you just use the -s parameter on wmctrl and avoid multiplying by the screen width? If not, what's a workspace?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I do like the wmctrl command though. I didn't have it installed and wasn't aware of it. Now I do and am. Thanks.
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Switch workspace
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                wmctrl -o 100,0
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        For a demo try
+                                </p><code>wmctrl -o 100,0; sleep 3; wmctrl -o 1500,0; sleep 3; wmctrl -o 3000,0; sleep 3; wmctrl -o 4500,0;</code>
+                                <p>
+                                        Actually
+                                </p><code>wmctrl -o &lt;width x Number&gt;,0;</code>
+                                <p>
+                                        to switch to that workspace
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        I don't have 100, 1500, 3000, or 4500 workspaces!
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Width in pixel. Eg: 1-&gt; 1366 [from 1366x768 ]
+                                </p>
+                                <p>
+                                        2-&gt; 2732
+                                </p>
+                                <p>
+                                        and so on upto N work space.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Isn't "workspace" the Gnome name for "desktop"? I'm a KDE guy but I have four desktops configured and each one has its own windows open. If I click on another desktop (on my taskbar) those windows go away and the windows on the new desktop appear. If that's the same as workspaces, can't you just use the -s parameter on wmctrl and avoid multiplying by the screen width? If not, what's a workspace?
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I do like the wmctrl command though. I didn't have it installed and wasn't aware of it. Now I do and am. Thanks.
+                                </p>
                         </div>
                 </div>
         </body>

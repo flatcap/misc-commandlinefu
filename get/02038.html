@@ -1,150 +1,142 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Convert camelCase to underscores (camel_case)</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Convert camelCase to underscores (camel_case)
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Convert camelCase to underscores (camel_case)
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                sed -r 's/([a-z]+)([A-Z][a-z]+)/\1_\l\2/g' file.txt
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Convert camelCase to underscores (camel_case)
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                sed -r 's/([a-z]+)([A-Z][a-z]+)/\1_\l\2/g' file.txt
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 $ cat file.txt
 camelCase
 $ sed -r 's/([a-z]+)([A-Z][a-z]+)/\1_\l\2/g' file.txt
 camel_case
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Useful for switching over someone else's coding style who uses camelCase notation to your style using all lowercase with underscores.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        A great one. Thanks.
-                                                </p>
-                                                <p>
-                                                        You missed the underscore though, this should be:
-                                                </p>
-                                                <p>
-                                                        sed -r 's/([a-z]+)([A-Z][a-z]+)/\1_\l\2/g' file.txt
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Fixed. I had it in the sample output, but must have missed it in the command itself. Thanks.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Good job
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Where's the reverse? :-)
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        btw, it's good for names like camelCase, but not for camelCaseLong
-                                                </p>
-                                                <p>
-                                                        :)
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I think this is a little more robust:
-                                                </p>
-                                                <p>
-                                                        It converts CamelCaseWord or camelCaseWord to camel_case_word (the last pipe is needed to handle the CamelCaseWord case)
-                                                </p>
-                                                <p>
-                                                        sed 's/\([A-Z]\)/_\l\1/g' file.txt | sed 's/^_\([a-z]\)/\1/g'
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        and this is the reverse:
-                                                </p>
-                                                <p>
-                                                        camel_case_word to camelCaseWord:
-                                                </p>
-                                                <p>
-                                                        sed 's/_\([a-z]\)/\u\1/g' file.txt
-                                                </p>
-                                                <p>
-                                                        camel_case_word to CamelCaseWord
-                                                </p>
-                                                <p>
-                                                        sed 's/_\([a-z]\)/\u\1/g' file.txt | sed 's/^\([a-z]\)/\u\1/g'
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        LC_COLLATE=C
-                                                </p>
-                                                <p>
-                                                        LC_CTYPE=C
-                                                </p>
-                                                <p>
-                                                        export LC_CTYPE LC_COLLATE
-                                                </p>
-                                                <p>
-                                                        The exports above fix a problem where [a-z] is case-insensitive
-                                                </p>
-                                                <p>
-                                                        Here's an explanation from the sed man page (Gnu Sed 4)
-                                                </p>
-                                                <p>
-                                                        [a-z] is case insensitive
-                                                </p>
-                                                <p>
-                                                        You are encountering problems with locales. POSIX mandates that [a-z] uses the current locale's collation order - in C parlance, that means using strcoll(3) instead of strcmp(3). Some locales have a case-insensitive collation order, others don't.
-                                                </p>
-                                                <p>
-                                                        Another problem is that [a-z] tries to use collation symbols. This only happens if you are on the GNU system, using GNU libc's regular expression matcher instead of compiling the one supplied with GNU sed. In a Danish locale, for example, the regular expression ^[a-z]$ matches the string `aa', because this is a single collating symbol that comes after `a' and before `b'; `ll' behaves similarly in Spanish locales, or `ij' in Dutch locales.
-                                                </p>
-                                                <p>
-                                                        To work around these problems, which may cause bugs in shell scripts, set the LC_COLLATE and LC_CTYPE environment variables to `C'.
-                                                </p>
-                                                <p>
-                                                        Here's an example of a line that was having problems due to the case-insensitive problem. Exporting LC_COLLATE and LC_CTYPES fixed the problem. It has to be done each time you log in though. I'm hesitant to put this export into my .profile, as I'm not sure what it will do to the rest of the system programs.
-                                                </p><code>sed -r 's/([a-z]+)([A-Z][a-z]+)/\1_\l\2/g' invalid_name2.txt</code>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        sed -r 's/([^A-Z-])([A-Z])/\1_\2/g' file.txt
-                                                </p>
-                                                <p>
-                                                        Replace CamelCaseWord by Camel_Case_Word
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Useful for switching over someone else's coding style who uses camelCase notation to your style using all lowercase with underscores.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        A great one. Thanks.
+                                </p>
+                                <p>
+                                        You missed the underscore though, this should be:
+                                </p>
+                                <p>
+                                        sed -r 's/([a-z]+)([A-Z][a-z]+)/\1_\l\2/g' file.txt
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Fixed. I had it in the sample output, but must have missed it in the command itself. Thanks.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Good job
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Where's the reverse? :-)
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        btw, it's good for names like camelCase, but not for camelCaseLong
+                                </p>
+                                <p>
+                                        :)
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I think this is a little more robust:
+                                </p>
+                                <p>
+                                        It converts CamelCaseWord or camelCaseWord to camel_case_word (the last pipe is needed to handle the CamelCaseWord case)
+                                </p>
+                                <p>
+                                        sed 's/\([A-Z]\)/_\l\1/g' file.txt | sed 's/^_\([a-z]\)/\1/g'
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        and this is the reverse:
+                                </p>
+                                <p>
+                                        camel_case_word to camelCaseWord:
+                                </p>
+                                <p>
+                                        sed 's/_\([a-z]\)/\u\1/g' file.txt
+                                </p>
+                                <p>
+                                        camel_case_word to CamelCaseWord
+                                </p>
+                                <p>
+                                        sed 's/_\([a-z]\)/\u\1/g' file.txt | sed 's/^\([a-z]\)/\u\1/g'
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        LC_COLLATE=C
+                                </p>
+                                <p>
+                                        LC_CTYPE=C
+                                </p>
+                                <p>
+                                        export LC_CTYPE LC_COLLATE
+                                </p>
+                                <p>
+                                        The exports above fix a problem where [a-z] is case-insensitive
+                                </p>
+                                <p>
+                                        Here's an explanation from the sed man page (Gnu Sed 4)
+                                </p>
+                                <p>
+                                        [a-z] is case insensitive
+                                </p>
+                                <p>
+                                        You are encountering problems with locales. POSIX mandates that [a-z] uses the current locale's collation order - in C parlance, that means using strcoll(3) instead of strcmp(3). Some locales have a case-insensitive collation order, others don't.
+                                </p>
+                                <p>
+                                        Another problem is that [a-z] tries to use collation symbols. This only happens if you are on the GNU system, using GNU libc's regular expression matcher instead of compiling the one supplied with GNU sed. In a Danish locale, for example, the regular expression ^[a-z]$ matches the string `aa', because this is a single collating symbol that comes after `a' and before `b'; `ll' behaves similarly in Spanish locales, or `ij' in Dutch locales.
+                                </p>
+                                <p>
+                                        To work around these problems, which may cause bugs in shell scripts, set the LC_COLLATE and LC_CTYPE environment variables to `C'.
+                                </p>
+                                <p>
+                                        Here's an example of a line that was having problems due to the case-insensitive problem. Exporting LC_COLLATE and LC_CTYPES fixed the problem. It has to be done each time you log in though. I'm hesitant to put this export into my .profile, as I'm not sure what it will do to the rest of the system programs.
+                                </p><code>sed -r 's/([a-z]+)([A-Z][a-z]+)/\1_\l\2/g' invalid_name2.txt</code>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        sed -r 's/([^A-Z-])([A-Z])/\1_\2/g' file.txt
+                                </p>
+                                <p>
+                                        Replace CamelCaseWord by Camel_Case_Word
+                                </p>
                         </div>
                 </div>
         </body>

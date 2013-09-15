@@ -1,91 +1,81 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Use tee to process a pipe with two or more processes</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Use tee to process a pipe with two or more processes
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Use tee to process a pipe with two or more processes
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                echo "tee can split a pipe in two"|tee &gt;(rev) &gt;(tr ' ' '_')
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Use tee to process a pipe with two or more processes
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                echo "tee can split a pipe in two"|tee &gt;(rev) &gt;(tr ' ' '_')
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 tee can split a pipe in two
 tee_can_split_a_pipe_in_two
 owt ni epip a tilps nac eet
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Tee can be used to split a pipe into multiple streams for one or more process to work it. You can add more " &gt;()" for even more fun.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                tee &gt;(cat - &gt;&amp;2)
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Tee can be used to split a pipe into multiple streams for one or more process to work it. You can add more " &gt;()" for even more fun.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                tee &gt;(cat - &gt;&amp;2)
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 $ bash --version |tee  &gt;(cat - &gt;&amp;2) | wc -l
 GNU bash, version 3.2.49(1)-release (i586-suse-linux-gnu)
 Copyright (C) 2007 Free Software Foundation, Inc.
 2
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                the tee command does fine with file names, but not so much with file descriptors, such as &amp;2 (stderr). This uses process redirection to tee to the specified descriptor.
-                                                        </p>
-                                                        <p>
-                                                                In the sample output, it's being used to tee to stderr, which is connected with the terminal, and to wc -l, which is also outputting to the terminal. The result is the output of bash --version followed by the linecount
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Cool trick!
-                                                </p>
-                                                <p>
-                                                        Unfortunately Cygwin has a bug in 1.7 that prevents this from working. AIX also has problems with it - it runs once but hangs after that. I thought it was leaving pipes around but it still hangs if I delete them from /tmp. Any help is much appreciated.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        My debian show this error: tee: /dev/fd/63: File or directory not found
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Here is the magic behind it:
-                                                </p>
-                                                <p>
-                                                        <a href="http://tldp.org/LDP/abs/html/process-sub.html" rel="nofollow">http://tldp.org/LDP/abs/html/process-sub.html</a>
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        the tee command does fine with file names, but not so much with file descriptors, such as &amp;2 (stderr). This uses process redirection to tee to the specified descriptor.
+                                </p>
+                                <p>
+                                        In the sample output, it's being used to tee to stderr, which is connected with the terminal, and to wc -l, which is also outputting to the terminal. The result is the output of bash --version followed by the linecount
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Cool trick!
+                                </p>
+                                <p>
+                                        Unfortunately Cygwin has a bug in 1.7 that prevents this from working. AIX also has problems with it - it runs once but hangs after that. I thought it was leaving pipes around but it still hangs if I delete them from /tmp. Any help is much appreciated.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        My debian show this error: tee: /dev/fd/63: File or directory not found
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Here is the magic behind it:
+                                </p>
+                                <p>
+                                        <a href="http://tldp.org/LDP/abs/html/process-sub.html" rel="nofollow">http://tldp.org/LDP/abs/html/process-sub.html</a>
+                                </p>
                         </div>
                 </div>
         </body>

@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Debug how files are being accessed by a process</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Debug how files are being accessed by a process
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Debug how files are being accessed by a process
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                inotifywait -m -r .
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Debug how files are being accessed by a process
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                inotifywait -m -r .
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 x220:/tmp/foo$ inotifywait -m -r .
 Setting up watches.  Beware: since -r was given, this may take a while!
 Watches established.
@@ -29,19 +25,15 @@ Watches established.
 ./ ATTRIB bar
 ./ CLOSE_WRITE,CLOSE bar
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Instead of looking through `lsof` results, use inotifywait!
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Instead of looking through `lsof` results, use inotifywait!
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

@@ -1,53 +1,45 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Emulate a dual-screen using vnc</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Emulate a dual-screen using vnc
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Emulate a dual-screen using vnc
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                x2vnc {-west|-east|-north|-south} computer-ip:display-number
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                This command use vnc to connect to another computer and emulate an dual-screen enviroment.
-                                                        </p>
-                                                        <p>
-                                                                Example of use:
-                                                        </p><code>x2vnc -west 192.168.0.100:0</code>
-                                                        <p>
-                                                                After this, if vnc server needs an password, will be prompt in the shell.
-                                                        </p>
-                                                        <p>
-                                                                p.s.: sorry my english
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                I absolutely LOVE x2vnc. At one point in my job I was doing Windows desktop support, but also Linux administration. I had a Linux machine and a Windows machine, and joined them into one "big desktop" with x2vnc. It was awesome. Best of both worlds.
-                                        </p>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Emulate a dual-screen using vnc
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                x2vnc {-west|-east|-north|-south} computer-ip:display-number
                         </div>
+                        <div class="details description">
+                                <p>
+                                        This command use vnc to connect to another computer and emulate an dual-screen enviroment.
+                                </p>
+                                <p>
+                                        Example of use:
+                                </p><code>x2vnc -west 192.168.0.100:0</code>
+                                <p>
+                                        After this, if vnc server needs an password, will be prompt in the shell.
+                                </p>
+                                <p>
+                                        p.s.: sorry my english
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                I absolutely LOVE x2vnc. At one point in my job I was doing Windows desktop support, but also Linux administration. I had a Linux machine and a Windows machine, and joined them into one "big desktop" with x2vnc. It was awesome. Best of both worlds.
+                        </p>
                 </div>
         </body>
 </html>

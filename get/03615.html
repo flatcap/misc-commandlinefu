@@ -1,42 +1,33 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Sum size of files returned from FIND</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Sum size of files returned from FIND
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Sum size of files returned from FIND
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                find [path] [expression] -exec du -ab {} \; | awk '{total+=$0}END{print total}'
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                (echo 0; find [args...] -printf '%s +\n'; echo p) | dc
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Just an alternative. Here the output of the subshell statement is a complete script for dc so you can save it, manipulate it with some other tool or just debug it with less.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Sum size of files returned from FIND
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                find [path] [expression] -exec du -ab {} \; | awk '{total+=$0}END{print total}'
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                (echo 0; find [args...] -printf '%s +\n'; echo p) | dc
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Just an alternative. Here the output of the subshell statement is a complete script for dc so you can save it, manipulate it with some other tool or just debug it with less.
+                                </p>
                         </div>
                 </div>
         </body>

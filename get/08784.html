@@ -1,82 +1,73 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>read squid logs with human-readable timestamp</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        read squid logs with human-readable timestamp
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                read squid logs with human-readable timestamp
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                tail -f /var/log/squid/access.log | perl -p -e 's/^([0-9]*)/"[".localtime($1)."]"/e'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                read squid logs with human-readable timestamp
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                tail -f /var/log/squid/access.log | perl -p -e 's/^([0-9]*)/"[".localtime($1)."]"/e'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 before:
 1310045550.240 0 10.10.10.27 TCP_HIT/200 1344 GET http://somedomain.com/ (...)
 after:
 [Thu Jul  7 15:32:30 2011].240 0 10.10.10.27 TCP_HIT/200 1344 GET http://somedomain.com (...)
 </pre>
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                tail -f /var/log/squid/access.loc | ccze -CA
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                The same with colors
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        That looks quite clever.
-                                                </p>
-                                                <p>
-                                                        What would be useful, though, is an example.
-                                                </p>
-                                                <p>
-                                                        What does the log look like before and after.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        example added :-)
-                                                </p>
-                                                <p>
-                                                        thanks for your comment!
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        +1
-                                                </p>
-                                                <p>
-                                                        it seems to me a very good command, and then give you a positive point
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                tail -f /var/log/squid/access.loc | ccze -CA
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        The same with colors
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        That looks quite clever.
+                                </p>
+                                <p>
+                                        What would be useful, though, is an example.
+                                </p>
+                                <p>
+                                        What does the log look like before and after.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        example added :-)
+                                </p>
+                                <p>
+                                        thanks for your comment!
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        +1
+                                </p>
+                                <p>
+                                        it seems to me a very good command, and then give you a positive point
+                                </p>
                         </div>
                 </div>
         </body>

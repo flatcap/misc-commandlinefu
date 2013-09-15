@@ -1,44 +1,36 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Squish repeated delimiters into one</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Squish repeated delimiters into one
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Squish repeated delimiters into one
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                echo "hello::::there" | tr -s ':'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Squish repeated delimiters into one
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                echo "hello::::there" | tr -s ':'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 hello:there
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                This can be particularly useful used in conjunction with a following cut command like
-                                                        </p><code>echo "hello::::there" | tr -s ':' | cut -d':' -f2</code>
-                                                        <p>
-                                                                which prints 'there'. Much easier that guessing at -f values for cut. I know 'tr -s' is used in lots of commands here already but I just figured out the -s flag and thought it deserved to be highlighted :)
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        This can be particularly useful used in conjunction with a following cut command like
+                                </p><code>echo "hello::::there" | tr -s ':' | cut -d':' -f2</code>
+                                <p>
+                                        which prints 'there'. Much easier that guessing at -f values for cut. I know 'tr -s' is used in lots of commands here already but I just figured out the -s flag and thought it deserved to be highlighted :)
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

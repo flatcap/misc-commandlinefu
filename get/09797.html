@@ -1,108 +1,100 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>du with colored bar graph</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        du with colored bar graph
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                du with colored bar graph
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                t=$(df|awk 'NR!=1{sum+=$2}END{print sum}');sudo du / --max-depth=1|sed '$d'|sort -rn -k1 | awk -v t=$t 'OFMT="%d" {M=64; for (a=0;a&lt;$1;a++){if (a&gt;c){c=a}}br=a/c;b=M*br;for(x=0;x&lt;b;x++){printf "\033[1;31m" "|" "\033[0m"}print " "$2" "(a/t*100)"% total"}'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                du with colored bar graph
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                t=$(df|awk 'NR!=1{sum+=$2}END{print sum}');sudo du / --max-depth=1|sed '$d'|sort -rn -k1 | awk -v t=$t 'OFMT="%d" {M=64; for (a=0;a&lt;$1;a++){if (a&gt;c){c=a}}br=a/c;b=M*br;for(x=0;x&lt;b;x++){printf "\033[1;31m" "|" "\033[0m"}print " "$2" "(a/t*100)"% total"}'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| /usr 5.71248% total
 |||||||||||||||||||||||||||||||||||| /var 3.19542% total
 ||||||||||||||||| /home 1.49544% total
 ||||||||| /lib 0.75594% total
 || /boot 0.154587% total
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                i'm using gawk, you may get varying mileage with other varieties. You might want to change the / after du to say, /home/ or /var or something, otherwise this command might take quite some time to complete. Sorry it's so obsfucated, I had to turn a script into a one-liner under 255 characters for commandlinefu. Note: the bar ratio is relative, so the highest ratio of the total disk, "anchors" the rest of the graph. EDIT: the math was slightly wrong, fixed it. Also, made it compliant with older versions of df.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Getting this error.
-                                                </p>
-                                                <p>
-                                                        du: warning: summarising conflicts with --max-depth=1
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Not sure why that would happen. According to the du source code, that should only happen:
-                                                </p>
-                                                <p>
-                                                        if (opt_summarize_only &amp;&amp; max_depth_specified &amp;&amp; max_depth != 0)
-                                                </p>
-                                                <p>
-                                                        and unless you added a max-depth=0, or -s, i'm not sure why it would give you that error. I'm curios, what version of du are you running, and what OS ?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Ubuntu 10.10 x64
-                                                </p>
-                                                <p>
-                                                        du (GNU coreutils) 8.5
-                                                </p>
-                                                <p>
-                                                        Cheers
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        what happens when you run:
-                                                </p>
-                                                <p>
-                                                        sudo du / --max-depth=1|sort -rn -k1
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Same thing bud :|
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Got it right!
-                                                </p>
-                                                <p>
-                                                        Thanks
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        "for (a=0;ac){c=a}}" this loop is completely useless (and also responsable of the slowness of your command since a can be very large)
-                                                </p>
-                                                <p>
-                                                        substitute it with a=$1; if (a&gt;c){c=a}
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        i'm using gawk, you may get varying mileage with other varieties. You might want to change the / after du to say, /home/ or /var or something, otherwise this command might take quite some time to complete. Sorry it's so obsfucated, I had to turn a script into a one-liner under 255 characters for commandlinefu. Note: the bar ratio is relative, so the highest ratio of the total disk, "anchors" the rest of the graph. EDIT: the math was slightly wrong, fixed it. Also, made it compliant with older versions of df.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Getting this error.
+                                </p>
+                                <p>
+                                        du: warning: summarising conflicts with --max-depth=1
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Not sure why that would happen. According to the du source code, that should only happen:
+                                </p>
+                                <p>
+                                        if (opt_summarize_only &amp;&amp; max_depth_specified &amp;&amp; max_depth != 0)
+                                </p>
+                                <p>
+                                        and unless you added a max-depth=0, or -s, i'm not sure why it would give you that error. I'm curios, what version of du are you running, and what OS ?
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Ubuntu 10.10 x64
+                                </p>
+                                <p>
+                                        du (GNU coreutils) 8.5
+                                </p>
+                                <p>
+                                        Cheers
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        what happens when you run:
+                                </p>
+                                <p>
+                                        sudo du / --max-depth=1|sort -rn -k1
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Same thing bud :|
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Got it right!
+                                </p>
+                                <p>
+                                        Thanks
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        "for (a=0;ac){c=a}}" this loop is completely useless (and also responsable of the slowness of your command since a can be very large)
+                                </p>
+                                <p>
+                                        substitute it with a=$1; if (a&gt;c){c=a}
+                                </p>
                         </div>
                 </div>
         </body>

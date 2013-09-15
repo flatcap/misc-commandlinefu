@@ -1,101 +1,89 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>sort lines by length</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        sort lines by length
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                sort lines by length
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                sort lines by length
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                perl -C -e 'print for sort { length $a &lt;=&gt; length $b or $a cmp $b } &lt;&gt;' &lt; /usr/share/dict/words | tail
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        making it "sound" more "natural" language like -- additionally sorting the longest words alphabetically:
+                                </p>
+                                <p>
+                                        this approach is using:
+                                </p>
+                                <p>
+                                        * to get at all lines of input
+                                </p>
+                                <p>
+                                        * post-"for" structure
+                                </p>
+                                <p>
+                                        * short-circuit-or in sort: if the lengths are the same, then sort alphabetically otherwise don't even evaluate the right hand side of the or
+                                </p>
+                                <p>
+                                        * -C sets all input and ouput channels to utf8
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        awk 'length&gt;72' file
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                perl -C -e 'print for sort { length $a &lt;=&gt; length $b or $a cmp $b } &lt;&gt;' &lt; /usr/share/dict/words | tail
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                making it "sound" more "natural" language like -- additionally sorting the longest words alphabetically:
-                                                        </p>
-                                                        <p>
-                                                                this approach is using:
-                                                        </p>
-                                                        <p>
-                                                                * to get at all lines of input
-                                                        </p>
-                                                        <p>
-                                                                * post-"for" structure
-                                                        </p>
-                                                        <p>
-                                                                * short-circuit-or in sort: if the lengths are the same, then sort alphabetically otherwise don't even evaluate the right hand side of the or
-                                                        </p>
-                                                        <p>
-                                                                * -C sets all input and ouput channels to utf8
-                                                        </p>
-                                                </div>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                This command displays a list of lines that are longer than 72 characters. I use this command to identify those lines in my scripts and cut them short the way I like it.
+                                        </p>
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        awk 'length&gt;72' file
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        This command displays a list of lines that are longer than 72 characters. I use this command to identify those lines in my scripts and cut them short the way I like it.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        perl -lne '$l{$_}=length;END{for(sort{$l{$a}&lt;=&gt;$l{$b}}keys %l){print}}' &lt; /usr/share/dict/words | tail
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        awk '{print length, $0;}' | sort -nr
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        perl -lne '$l{$_}=length;END{for(sort{$l{$a}&lt;=&gt;$l{$b}}keys %l){print}}' &lt; /usr/share/dict/words | tail
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        perl -ne 'printf("%d\t%s", length, $_)'&lt; /usr/share/dict/words | sort -n | tail | cut -f2
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        this is not better just showing that schwartzian transform can be applied in perl one-liner..
-                                                </p><code>perl -C -e 'print map { $_-&gt;[0] } sort { $a-&gt;[1] &lt;=&gt; $b-&gt;[1] } map { [$_,length $_] } &lt;&gt;' &lt; /usr/share/dict/words | tail</code>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        the first approach was to show a more 'idiomatic' version to syssyphus' approach.
-                                                </p>
-                                                <p>
-                                                        the cool thing with schwartzian transforms is, you can plug more parts in, e.g. this equivalent (not efficient!):
-                                                </p><code>perl -C -e 'print map { $_-&gt;[0] } reverse grep { $got++ &lt; 1_0 } reverse sort { $a-&gt;[1] &lt;=&gt; $b-&gt;[1] } map { [$_,length $_] } &lt;&gt;' &lt; /usr/share/dict/words</code>
-                                        </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        awk '{print length, $0;}' | sort -nr
                                 </div>
+                                <div class="details"></div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        perl -ne 'printf("%d\t%s", length, $_)'&lt; /usr/share/dict/words | sort -n | tail | cut -f2
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        this is not better just showing that schwartzian transform can be applied in perl one-liner..
+                                </p><code>perl -C -e 'print map { $_-&gt;[0] } sort { $a-&gt;[1] &lt;=&gt; $b-&gt;[1] } map { [$_,length $_] } &lt;&gt;' &lt; /usr/share/dict/words | tail</code>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        the first approach was to show a more 'idiomatic' version to syssyphus' approach.
+                                </p>
+                                <p>
+                                        the cool thing with schwartzian transforms is, you can plug more parts in, e.g. this equivalent (not efficient!):
+                                </p><code>perl -C -e 'print map { $_-&gt;[0] } reverse grep { $got++ &lt; 1_0 } reverse sort { $a-&gt;[1] &lt;=&gt; $b-&gt;[1] } map { [$_,length $_] } &lt;&gt;' &lt; /usr/share/dict/words</code>
                         </div>
                 </div>
         </body>

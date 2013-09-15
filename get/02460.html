@@ -1,73 +1,65 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>vim insert current filename</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        vim insert current filename
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                vim insert current filename
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                :r! echo %
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                insert filename
-                                                        </p>
-                                                        <p>
-                                                                Normal mode: "%p
-                                                        </p>
-                                                        <p>
-                                                                Insert mode: %
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        good point
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Ctrl-r % built-in :)
-                                                </p>
-                                                <p>
-                                                        to insert last search Ctrl-r /
-                                                </p>
-                                                <p>
-                                                        to insert last cmd Ctrl-r :
-                                                </p>
-                                                <p>
-                                                        to insert reg 'a' Ctrl-r a
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        r! echo %:p
-                                                </p>
-                                                <p>
-                                                        vim insert current filename with fullpath
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                vim insert current filename
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                :r! echo %
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        insert filename
+                                </p>
+                                <p>
+                                        Normal mode: "%p
+                                </p>
+                                <p>
+                                        Insert mode: %
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        good point
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Ctrl-r % built-in :)
+                                </p>
+                                <p>
+                                        to insert last search Ctrl-r /
+                                </p>
+                                <p>
+                                        to insert last cmd Ctrl-r :
+                                </p>
+                                <p>
+                                        to insert reg 'a' Ctrl-r a
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        r! echo %:p
+                                </p>
+                                <p>
+                                        vim insert current filename with fullpath
+                                </p>
                         </div>
                 </div>
         </body>

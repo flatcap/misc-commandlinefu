@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Robust expansion (i.e. crash) of bash variables with a typo</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Robust expansion (i.e. crash) of bash variables with a typo
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Robust expansion (i.e. crash) of bash variables with a typo
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                set -eu
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Robust expansion (i.e. crash) of bash variables with a typo
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                set -eu
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 $ cat safe-cacheclean.sh
 #!/bin/bash
 set -eu
@@ -30,42 +26,38 @@ rm -rf "$CACHEDI/bin"
 $ ./safe-cacheclean.sh
 ./safe-cacheclean.sh: line 7: CACHEDI: unbound variable
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                By default bash expands an unbound variable to an empty string. This can be dangerous, if a critical variable name (a path prefix for example) has a typo. The -u option causes bash to treat this as an error, and the -e option causes it to exit in case of an error. These two together will make your scripts a lot safer against typos.
-                                                        </p>
-                                                        <p>
-                                                                The default behaviour can be explicitly requested using the ${NAME:-} syntax.
-                                                        </p>
-                                                        <p>
-                                                                A (less explicit) variation: #!/bin/bash -eu
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        The -e and -u options are POSIX standard, so they should work with any /bin/sh, not just bash.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Btw, you need to be careful with commands like grep and find that exit with nonzero when they don't find anything. To make matters worse, failures like these are completely silent. These kinds of commands need to be "guarded" by e.g. adding '|| echo "Nothing found"' or something after them.
-                                                </p>
-                                                <p>
-                                                        IMHO this kind of problem is less dangerous and easier to solve than the problems caused by not using set -eu, though.
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        By default bash expands an unbound variable to an empty string. This can be dangerous, if a critical variable name (a path prefix for example) has a typo. The -u option causes bash to treat this as an error, and the -e option causes it to exit in case of an error. These two together will make your scripts a lot safer against typos.
+                                </p>
+                                <p>
+                                        The default behaviour can be explicitly requested using the ${NAME:-} syntax.
+                                </p>
+                                <p>
+                                        A (less explicit) variation: #!/bin/bash -eu
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        The -e and -u options are POSIX standard, so they should work with any /bin/sh, not just bash.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Btw, you need to be careful with commands like grep and find that exit with nonzero when they don't find anything. To make matters worse, failures like these are completely silent. These kinds of commands need to be "guarded" by e.g. adding '|| echo "Nothing found"' or something after them.
+                                </p>
+                                <p>
+                                        IMHO this kind of problem is less dangerous and easier to solve than the problems caused by not using set -eu, though.
+                                </p>
                         </div>
                 </div>
         </body>

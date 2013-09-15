@@ -1,79 +1,69 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Terminal redirection</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Terminal redirection
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Terminal redirection
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                script /dev/null | tee /dev/pts/3
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                can display the commands and their output to another user who is connected to another terminal, by example pts/3
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                script -f /dev/pts/3
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Will redirect output of current session to another terminal, e.g. /dev/pts/3
-                                                        </p>
-                                                        <p>
-                                                                Courtesy of bassu, <a href="http://www.commandlinefu.com/commands/by/bassu" rel="nofollow">http://www.commandlinefu.com/commands/by/bassu</a>
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        This can be done without redirecting the output to blackhole and without using tee. Simply use:
-                                                </p><code>script -f /dev/pts/3</code>
-                                                <p>
-                                                        Thats it! But the other person on /pts/3 would of course get the readonly terminal session which I believe is not better than using 'screen' and sharing live sessions with more interactive shell.
-                                                </p>
-                                                <p>
-                                                        Bassu.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I dunno, it'd be handy for a classroom setting or such.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Couldn't you also just do:
-                                                </p><code>script &gt; /dev/pts/1</code>
-                                                <p>
-                                                        or something similar?
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Terminal redirection
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                script /dev/null | tee /dev/pts/3
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        can display the commands and their output to another user who is connected to another terminal, by example pts/3
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                script -f /dev/pts/3
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Will redirect output of current session to another terminal, e.g. /dev/pts/3
+                                </p>
+                                <p>
+                                        Courtesy of bassu, <a href="http://www.commandlinefu.com/commands/by/bassu" rel="nofollow">http://www.commandlinefu.com/commands/by/bassu</a>
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        This can be done without redirecting the output to blackhole and without using tee. Simply use:
+                                </p><code>script -f /dev/pts/3</code>
+                                <p>
+                                        Thats it! But the other person on /pts/3 would of course get the readonly terminal session which I believe is not better than using 'screen' and sharing live sessions with more interactive shell.
+                                </p>
+                                <p>
+                                        Bassu.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I dunno, it'd be handy for a classroom setting or such.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Couldn't you also just do:
+                                </p><code>script &gt; /dev/pts/1</code>
+                                <p>
+                                        or something similar?
+                                </p>
                         </div>
                 </div>
         </body>

@@ -1,39 +1,31 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Set your profile so that you resume or start a screen session on login</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Set your profile so that you resume or start a screen session on login
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Set your profile so that you resume or start a screen session on login
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                echo "screen -DR" &gt;&gt; ~/.bash_profile
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                From screen's manpage: "Attach here and now. In detail this means: If a session is running, then reattach. If necessary detach and logout remotely first. If it was not running create it and notify the user. This is the author's favorite."
-                                                        </p>
-                                                        <p>
-                                                                Toss this in your ~/.bash_profile so that you never have that "oh crap" moment where you wanted to run something in screen and didn't.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                <div id="terminal-header">
+                        <h1>
+                                Set your profile so that you resume or start a screen session on login
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                echo "screen -DR" &gt;&gt; ~/.bash_profile
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        From screen's manpage: "Attach here and now. In detail this means: If a session is running, then reattach. If necessary detach and logout remotely first. If it was not running create it and notify the user. This is the author's favorite."
+                                </p>
+                                <p>
+                                        Toss this in your ~/.bash_profile so that you never have that "oh crap" moment where you wanted to run something in screen and didn't.
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

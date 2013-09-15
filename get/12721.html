@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Get the Nth argument of the last command (handling spaces correctly)</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Get the Nth argument of the last command (handling spaces correctly)
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Get the Nth argument of the last command (handling spaces correctly)
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                !:n
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Get the Nth argument of the last command (handling spaces correctly)
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                !:n
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 # This handles white space embedded in an argument correctly
 $ cp /etc/passwd "This little piggy went to market"
 $ echo !:2
@@ -33,62 +29,56 @@ $ echo This little piggy went to market
 $ echo "First argument !^, last argument: !$"
 First argument This, last argument: market
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Bash's history expansion character, "!", has many features, including "!:" for choosing a specific argument (or range of arguments) from the history. The gist is any number after !: is the number of the argument you want, with !:1 being the first argument and !:0 being the command. See the sample output for a few examples. For full details search for "^HISTORY EXPANSION" in the bash(1) man page.
-                                                        </p>
-                                                        <p>
-                                                                &ensp;
-                                                        </p>
-                                                        <p>
-                                                                &ensp;Note that this version improves on the previous function in that it handles arguments that include whitespace correctly.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                function garg () { tail -n 1 ${HISTFILE} | awk "{ print \$$1 }" }
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Bash's history expansion character, "!", has many features, including "!:" for choosing a specific argument (or range of arguments) from the history. The gist is any number after !: is the number of the argument you want, with !:1 being the first argument and !:0 being the command. See the sample output for a few examples. For full details search for "^HISTORY EXPANSION" in the bash(1) man page.
+                                </p>
+                                <p>
+                                        &ensp;
+                                </p>
+                                <p>
+                                        &ensp;Note that this version improves on the previous function in that it handles arguments that include whitespace correctly.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                function garg () { tail -n 1 ${HISTFILE} | awk "{ print \$$1 }" }
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 $ echo "This little piggy went to the market"
 This little piggy went to the market
 $ garg 5
 went
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                This gets the Nth argument in the last line of your history file. This is useful where history is being written after each command, and you want to use arguments from the previous command in the current command, such as when doing copies/moving directories etc.
-                                                        </p>
-                                                        <p>
-                                                                I wrote this after getting irritated with having to continually type in long paths/arguments.
-                                                        </p>
-                                                        <p>
-                                                                You could also use $_ if all you want is the last argument.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                Thanks for that. I always used !!:2 etc.
-                                        </p>
-                                        <p>
-                                                I didn't realise I could save an entire keypress :-)
-                                        </p>
-                                </div>
                         </div>
+                        <div class="details description">
+                                <p>
+                                        This gets the Nth argument in the last line of your history file. This is useful where history is being written after each command, and you want to use arguments from the previous command in the current command, such as when doing copies/moving directories etc.
+                                </p>
+                                <p>
+                                        I wrote this after getting irritated with having to continually type in long paths/arguments.
+                                </p>
+                                <p>
+                                        You could also use $_ if all you want is the last argument.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                Thanks for that. I always used !!:2 etc.
+                        </p>
+                        <p>
+                                I didn't realise I could save an entire keypress :-)
+                        </p>
                 </div>
         </body>
 </html>

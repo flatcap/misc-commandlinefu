@@ -1,67 +1,59 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Substrings a variable</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Substrings a variable
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Substrings a variable
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                var='123456789'; echo ${var:<span>&lt;start_pos&gt;</span>:<span>&lt;offset&gt;</span>}
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Substrings a variable
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                var='123456789'; echo ${var:<span>&lt;start_pos&gt;</span>:<span>&lt;offset&gt;</span>}
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 ~$ var='123456789'; echo ${var:4}
 56789
 ~$ var='123456789'; echo ${var:4:2}
 56
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                substrings a variable starting at position.
-                                                        </p>
-                                                        <p>
-                                                                If no offset given prints rest of the line
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Very useful. You can further cut the substring down without going all the way to the end. A third value allows you to specify the length of the desired substring.
-                                                </p><code>var='123456789'; echo ${var:4:2}</code>
-                                                <p>
-                                                        56
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Works in bash &amp; zsh
-                                                </p>
-                                                <p>
-                                                        Does not work in /bin/sh nor /bin/dash
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        substrings a variable starting at position.
+                                </p>
+                                <p>
+                                        If no offset given prints rest of the line
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Very useful. You can further cut the substring down without going all the way to the end. A third value allows you to specify the length of the desired substring.
+                                </p><code>var='123456789'; echo ${var:4:2}</code>
+                                <p>
+                                        56
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Works in bash &amp; zsh
+                                </p>
+                                <p>
+                                        Does not work in /bin/sh nor /bin/dash
+                                </p>
                         </div>
                 </div>
         </body>

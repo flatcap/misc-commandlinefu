@@ -1,46 +1,38 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>download a list of urls</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        download a list of urls
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                download a list of urls
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                cat urls.txt | xargs -n1 curl -O --max-time 10 --retry 3 --retry-delay 1
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                cat urls.txt | wget -i- -T 10 -t 3 --waitretry 1
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                Or use xargs --arg-file (-a) option:
-                                        </p><code>xargs -a urls.txt -n1 curl -O --max-time 10 --retry 3 --retry-delay 1</code>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                download a list of urls
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                cat urls.txt | xargs -n1 curl -O --max-time 10 --retry 3 --retry-delay 1
                         </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                cat urls.txt | wget -i- -T 10 -t 3 --waitretry 1
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                Or use xargs --arg-file (-a) option:
+                        </p><code>xargs -a urls.txt -n1 curl -O --max-time 10 --retry 3 --retry-delay 1</code>
                 </div>
         </body>
 </html>

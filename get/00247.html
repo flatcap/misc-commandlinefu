@@ -1,81 +1,73 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Quick way to sum every numbers in a file written line by line</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Quick way to sum every numbers in a file written line by line
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Quick way to sum every numbers in a file written line by line
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                (sed 's/^/x+=/' [yourfile] ; echo x) | bc
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                If you have a file full of numbers written line by line, you can sum every line to get the total.
-                                                        </p>
-                                                        <p>
-                                                                With a file like this:
-                                                        </p>
-                                                        <p>
-                                                                3443535
-                                                        </p>
-                                                        <p>
-                                                                9878977
-                                                        </p>
-                                                        <p>
-                                                                67554
-                                                        </p>
-                                                        <p>
-                                                                987798
-                                                        </p>
-                                                        <p>
-                                                                232324
-                                                        </p>
-                                                        <p>
-                                                                you will got:
-                                                        </p>
-                                                        <p>
-                                                                14610188
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <code>(tr '\n' +; echo 0) &lt; file | bc</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <code>awk '{sum += $0} END {print sum}'</code>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        "you will got:
-                                                </p>
-                                                <p>
-                                                        14610188"
-                                                </p>
-                                                <p>
-                                                        'got'? I think the poster meant 'get'.
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Quick way to sum every numbers in a file written line by line
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                (sed 's/^/x+=/' [yourfile] ; echo x) | bc
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        If you have a file full of numbers written line by line, you can sum every line to get the total.
+                                </p>
+                                <p>
+                                        With a file like this:
+                                </p>
+                                <p>
+                                        3443535
+                                </p>
+                                <p>
+                                        9878977
+                                </p>
+                                <p>
+                                        67554
+                                </p>
+                                <p>
+                                        987798
+                                </p>
+                                <p>
+                                        232324
+                                </p>
+                                <p>
+                                        you will got:
+                                </p>
+                                <p>
+                                        14610188
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <code>(tr '\n' +; echo 0) &lt; file | bc</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <code>awk '{sum += $0} END {print sum}'</code>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        "you will got:
+                                </p>
+                                <p>
+                                        14610188"
+                                </p>
+                                <p>
+                                        'got'? I think the poster meant 'get'.
+                                </p>
                         </div>
                 </div>
         </body>

@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Execute most recent command containing search string.</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Execute most recent command containing search string.
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Execute most recent command containing search string.
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                !?<span>&lt;string&gt;</span>?
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Execute most recent command containing search string.
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                !?<span>&lt;string&gt;</span>?
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 # !?sdb1?
 cryptsetup luksOpen /dev/sdb1 fs_backup
 Enter luks passphrase:
@@ -29,30 +25,26 @@ Example:
 # !?sdb1?:p
 cryptsetup luksOpen /dev/sdb1 fs_backup
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Execute the most recent command containing search string.
-                                                        </p>
-                                                        <p>
-                                                                This differs from !string as that only refers to the most recent command starting with search string.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                Only valid for Bash shell
-                                        </p>
-                                </div>
                         </div>
+                        <div class="details description">
+                                <p>
+                                        Execute the most recent command containing search string.
+                                </p>
+                                <p>
+                                        This differs from !string as that only refers to the most recent command starting with search string.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                Only valid for Bash shell
+                        </p>
                 </div>
         </body>
 </html>

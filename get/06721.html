@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Sort on multiple dis-contiguous keys/fields (can even specify key number/field from the end)</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Sort on multiple dis-contiguous keys/fields (can even specify key number/field from the end)
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Sort on multiple dis-contiguous keys/fields (can even specify key number/field from the end)
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                file /bin/* | msort -j -l -n-1 -n2 2&gt; /dev/null
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Sort on multiple dis-contiguous keys/fields (can even specify key number/field from the end)
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                file /bin/* | msort -j -l -n-1 -n2 2&gt; /dev/null
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 .
 .
 /bin/zgrep:                Bourne-Again shell script text executable
@@ -36,42 +32,38 @@
 .
 .
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Notes:
-                                                        </p>
-                                                        <p>
-                                                                1) -n-1 means sort key is the last field
-                                                        </p>
-                                                        <p>
-                                                                2) -l is important if each separate record is on a new line (usually so for text files)
-                                                        </p>
-                                                        <p>
-                                                                3) -j tells msort not to create log file (msort.log) in the working directory
-                                                        </p>
-                                                        <p>
-                                                                4) may need to install msort package.
-                                                        </p>
-                                                        <p>
-                                                                5) msort does lot more. Check man msort
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                It's in aptitude, for those of you who don't have it:
-                                        </p><code>aptitude install msort</code>
-                                </div>
                         </div>
+                        <div class="details description">
+                                <p>
+                                        Notes:
+                                </p>
+                                <p>
+                                        1) -n-1 means sort key is the last field
+                                </p>
+                                <p>
+                                        2) -l is important if each separate record is on a new line (usually so for text files)
+                                </p>
+                                <p>
+                                        3) -j tells msort not to create log file (msort.log) in the working directory
+                                </p>
+                                <p>
+                                        4) may need to install msort package.
+                                </p>
+                                <p>
+                                        5) msort does lot more. Check man msort
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                It's in aptitude, for those of you who don't have it:
+                        </p><code>aptitude install msort</code>
                 </div>
         </body>
 </html>

@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Inserts the results of an autocompletion in the command line</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Inserts the results of an autocompletion in the command line
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Inserts the results of an autocompletion in the command line
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                ESC *
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Inserts the results of an autocompletion in the command line
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                ESC *
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 $ echo &lt;ESC&gt;&lt;*&gt;
 gives
 $ echo aaa aab aba abb baa bab bba bbb
@@ -33,171 +29,167 @@ gives
 $ \: \! . .. ... .... \[ \[\[ ]] \{ } 4xml 4xpath 4xslt 4xupdate 822-date 915resolution _a2dismod _a2dissite _a2enmod _a2ensite a2p a2ping aa-audit aa-autodep aa-complain aa-enforce aa-genprof aa-logprof aa-status aa-unconfined accept accessdb aconnect acpi acpi_available acpid acpi_fakekey acpi_listen acroread acyclic
 (I stopped but it's basically the list of all the commands).
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Pressing ESC then * will insert in the command line the results of the autocompletion.
-                                                        </p>
-                                                        <p>
-                                                                It's hard to explain but if you look the sample output or do
-                                                        </p><code>echo ESC *</code>
-                                                        <p>
-                                                                you will understand quickly.
-                                                        </p>
-                                                        <p>
-                                                                By the way, few reminders about ESC :
-                                                        </p>
-                                                        <p>
-                                                                - Hold ESC does the same thing as tab tab
-                                                        </p>
-                                                        <p>
-                                                                - 'ESC .' inserts the last argument of last command (can be done many times in order to get the last argument of all previous commands)
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        interesting :)
-                                                </p><code>&lt;ESC&gt; *</code>
-                                                <p>
-                                                        returns all the commands in a row.
-                                                </p><code>&lt;ALT&gt;&lt;NUM&gt;&lt;.&gt;</code>
-                                                <p>
-                                                        grabs the 'NUM' argument from the previous command and puts it in the current command. 'NUM'=0 is the command
-                                                </p>
-                                                <p>
-                                                        eg.
-                                                </p>
-                                                <p>
-                                                        #ls a b c
-                                                </p>
-                                                <p>
-                                                        --some output--
-                                                </p>
-                                                <p>
-                                                        # #that is equal to 'ls b'
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        formating messed up the example above
-                                                </p>
-                                                <p>
-                                                        eg:
-                                                </p><code>ls a b c</code>
-                                                <p>
-                                                        --some output
-                                                </p><code>&lt;ALT&gt;&lt;0&gt;&lt;.&gt; &lt;ALT&gt;&lt;2&gt;&lt;.&gt;</code>
-                                                <p>
-                                                        # is equal to 'ls b'
-                                                </p>
-                                                <p>
-                                                        you have to holt the 'Alt' key the whole time.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Thanks a lot, that's awesome.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I don't see in which case that's interesting. To make a for loop, simply remplace the command by "*" :
-                                                </p><code>for i in *; do somethingWith $i; done</code>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Sputnick &gt; because it's inserted in your command line, you can add/remove/change elements easily.
-                                                </p>
-                                                <p>
-                                                        And pressing 2 keys is faster than remembering the syntax for the for loop.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Excellent!! Thanks for this.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        It also works with wildcard filtering:
-                                                </p><code>echo *.ogg&lt;ESC&gt;* # List *.ogg files</code> <code>echo *w*&lt;ESC&gt;* # List filenames containing 'w'</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Seems to not work on Fedora 8/Bash
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        @ozymandias
-                                                </p>
-                                                <p>
-                                                        What version of bash are you using? Mine is 3.2.39, and it works here.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <code>bash --version</code>
-                                                <p>
-                                                        GNU bash, version 3.2.33(1)-release (i386-redhat-linux-gnu)
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Whoa. Nice. Works fine here, on a gentoo machine .. "GNU bash, version 4.0.17(2)-release (x86_64-pc-linux-gnu)"
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Not trying to be a hater, but stuff like this is why I use zsh. In zsh there is no mystery as to how this works, it just does.
-                                                </p><code>echo *&lt;TAB&gt;</code>
-                                                <p>
-                                                        When I'm forced to use bash, I try and make it act like zsh so I can keep my sanity*. So far I've failed :)
-                                                </p>
-                                                <p>
-                                                        *says the long time zsh user. But seriously, give it a shot...
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Under bash 3.2.39 I can get echo *.c to work but ls -l *.c does not. Am I doing something wrong?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Same version, same problem.
-                                                </p>
-                                                <p>
-                                                        Works :
-                                                </p><code>echo * esc-*</code> <code>any_other_command esc-*</code> <code>echo *.c esc-*</code>
-                                                <p>
-                                                        Does not work :
-                                                </p><code>any_other_command *.c esc-*</code>
-                                                <p>
-                                                        I just can't understand.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <code>Alt *</code>
-                                                <p>
-                                                        Does the same; I find it easier to type.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Work fine on ksh@AIX server ; )
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Pressing ESC then * will insert in the command line the results of the autocompletion.
+                                </p>
+                                <p>
+                                        It's hard to explain but if you look the sample output or do
+                                </p><code>echo ESC *</code>
+                                <p>
+                                        you will understand quickly.
+                                </p>
+                                <p>
+                                        By the way, few reminders about ESC :
+                                </p>
+                                <p>
+                                        - Hold ESC does the same thing as tab tab
+                                </p>
+                                <p>
+                                        - 'ESC .' inserts the last argument of last command (can be done many times in order to get the last argument of all previous commands)
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        interesting :)
+                                </p><code>&lt;ESC&gt; *</code>
+                                <p>
+                                        returns all the commands in a row.
+                                </p><code>&lt;ALT&gt;&lt;NUM&gt;&lt;.&gt;</code>
+                                <p>
+                                        grabs the 'NUM' argument from the previous command and puts it in the current command. 'NUM'=0 is the command
+                                </p>
+                                <p>
+                                        eg.
+                                </p>
+                                <p>
+                                        #ls a b c
+                                </p>
+                                <p>
+                                        --some output--
+                                </p>
+                                <p>
+                                        # #that is equal to 'ls b'
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        formating messed up the example above
+                                </p>
+                                <p>
+                                        eg:
+                                </p><code>ls a b c</code>
+                                <p>
+                                        --some output
+                                </p><code>&lt;ALT&gt;&lt;0&gt;&lt;.&gt; &lt;ALT&gt;&lt;2&gt;&lt;.&gt;</code>
+                                <p>
+                                        # is equal to 'ls b'
+                                </p>
+                                <p>
+                                        you have to holt the 'Alt' key the whole time.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Thanks a lot, that's awesome.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I don't see in which case that's interesting. To make a for loop, simply remplace the command by "*" :
+                                </p><code>for i in *; do somethingWith $i; done</code>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Sputnick &gt; because it's inserted in your command line, you can add/remove/change elements easily.
+                                </p>
+                                <p>
+                                        And pressing 2 keys is faster than remembering the syntax for the for loop.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Excellent!! Thanks for this.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        It also works with wildcard filtering:
+                                </p><code>echo *.ogg&lt;ESC&gt;* # List *.ogg files</code> <code>echo *w*&lt;ESC&gt;* # List filenames containing 'w'</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Seems to not work on Fedora 8/Bash
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        @ozymandias
+                                </p>
+                                <p>
+                                        What version of bash are you using? Mine is 3.2.39, and it works here.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <code>bash --version</code>
+                                <p>
+                                        GNU bash, version 3.2.33(1)-release (i386-redhat-linux-gnu)
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Whoa. Nice. Works fine here, on a gentoo machine .. "GNU bash, version 4.0.17(2)-release (x86_64-pc-linux-gnu)"
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Not trying to be a hater, but stuff like this is why I use zsh. In zsh there is no mystery as to how this works, it just does.
+                                </p><code>echo *&lt;TAB&gt;</code>
+                                <p>
+                                        When I'm forced to use bash, I try and make it act like zsh so I can keep my sanity*. So far I've failed :)
+                                </p>
+                                <p>
+                                        *says the long time zsh user. But seriously, give it a shot...
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Under bash 3.2.39 I can get echo *.c to work but ls -l *.c does not. Am I doing something wrong?
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Same version, same problem.
+                                </p>
+                                <p>
+                                        Works :
+                                </p><code>echo * esc-*</code> <code>any_other_command esc-*</code> <code>echo *.c esc-*</code>
+                                <p>
+                                        Does not work :
+                                </p><code>any_other_command *.c esc-*</code>
+                                <p>
+                                        I just can't understand.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <code>Alt *</code>
+                                <p>
+                                        Does the same; I find it easier to type.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Work fine on ksh@AIX server ; )
+                                </p>
                         </div>
                 </div>
         </body>

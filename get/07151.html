@@ -1,89 +1,77 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Monitor a file with tail with timestamps added</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Monitor a file with tail with timestamps added
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Monitor a file with tail with timestamps added
-                                        </h1>
+                <div id="terminal-header">
+                        <h1>
+                                Monitor a file with tail with timestamps added
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                tail -f file | awk '{now=strftime("%F %T%z\t");sub(/^/, now);print}'
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        tail -f file | while read line; do echo -n $(date -u -Ins); echo -e "\t$line"; done
                                 </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                tail -f file | awk '{now=strftime("%F %T%z\t");sub(/^/, now);print}'
-                                        </div>
-                                        <div class="details">
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                This is useful when watching a log file that does not contain timestamps itself.
+                                        </p>
+                                        <p>
+                                                If the file already has content when starting the command, the first lines will have the "wrong" timestamp when the command was started and not when the lines were originally written.
+                                        </p>
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        tail -f file | while read line; do echo -n $(date -u -Ins); echo -e "\t$line"; done
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        This is useful when watching a log file that does not contain timestamps itself.
-                                                                </p>
-                                                                <p>
-                                                                        If the file already has content when starting the command, the first lines will have the "wrong" timestamp when the command was started and not when the lines were originally written.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        tail -f file | while read line; do printf "$(date -u '+%F %T%z')\t$line\n"; done
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        tail -f file | while read line; do printf "$(date -u '+%F %T%z')\t$line\n"; done
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 ....
 2010-11-24 05:46:58+0000        ##########
 2010-11-24 05:46:59+0000        #  EOF   #
 2010-11-24 05:46:59+0000        ##########
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Should be a bit more portable since echo -e/n and date's -Ins are not.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        tail -f file |xargs -IX printf "$(date -u)\t%s\n" X
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Nice, but you can make it much shorter:
-                                                </p><code>tail -f file | awk '{sub(/^/,strftime("%F %T%z\t"));print}'</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Yup, thanks.
-                                                </p>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                Should be a bit more portable since echo -e/n and date's -Ins are not.
+                                        </p>
                                 </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        tail -f file |xargs -IX printf "$(date -u)\t%s\n" X
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Nice, but you can make it much shorter:
+                                </p><code>tail -f file | awk '{sub(/^/,strftime("%F %T%z\t"));print}'</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Yup, thanks.
+                                </p>
                         </div>
                 </div>
         </body>

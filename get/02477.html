@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Create a system overview dashboard on F12 key</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Create a system overview dashboard on F12 key
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Create a system overview dashboard on F12 key
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                bind '"\e[24~"':"\"ps -elF;df -h;free -mt;netstat -lnpt;who -a\C-m"""
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Create a system overview dashboard on F12 key
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                bind '"\e[24~"':"\"ps -elF;df -h;free -mt;netstat -lnpt;who -a\C-m"""
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN    RSS PSR STIME TTY          TIME CMD
 4 S root         1     0  0  76   0 -   371 -        528   1 Jun02 ?        00:00:01 init [2]
 1 S bind     31818     1  0  80   0 -  9274 rt_sig  2728   1 Jun02 ?        00:00:00 /usr/sbin/named -t /var/named/run-root -c /etc/named.conf -u bind
@@ -50,72 +46,68 @@ tcp        0      0 0.0.0.0:8443            0.0.0.0:*               LISTEN     1
 root     - pts/0        2009-06-22 01:01   .         32484 (p57a704d4.dip0.t-ipconnect.de)
            pts/1        2009-06-21 20:42              5497 id=ts/1  term=0 exit=0
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Command binds a set of commands to the F12 key.
-                                                        </p>
-                                                        <p>
-                                                                Feel free to alter the dashboard according to your own needs.
-                                                        </p>
-                                                        <p>
-                                                                How to find the key codes?
-                                                        </p>
-                                                        <p>
-                                                                Type
-                                                        </p><code>read</code>
-                                                        <p>
-                                                                Then press the desired key (example: F5)
-                                                        </p><code>^[[15~</code>
-                                                        <p>
-                                                                Try
-                                                        </p><code>bind '"\e[15~"':"\"ssh su@ip-address\C-m"""</code>
-                                                        <p>
-                                                                or
-                                                        </p><code>bind '"\e[16~"':"\"apachectl -k restart\C-m"""</code>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Lots of info, but a very useful trick!
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I've read the manual of bash but I can't understand the point of "\C-m".
-                                                </p>
-                                                <p>
-                                                        Great trick by the way, thanks a lot...
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        yeah, what's the "-a\C-m" for?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        heckuva lot more info that fits on one screen. hardly a dashboard, but i guess some could see that as useful. If you're going to throw out that much information then you might as well add lsof in!
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        That last piece is for a return. If you omit the \C-m piece the command will print to the screen and you'll still need to hit enter.
-                                                </p>
-                                                <p>
-                                                        NICE STUFF
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Command binds a set of commands to the F12 key.
+                                </p>
+                                <p>
+                                        Feel free to alter the dashboard according to your own needs.
+                                </p>
+                                <p>
+                                        How to find the key codes?
+                                </p>
+                                <p>
+                                        Type
+                                </p><code>read</code>
+                                <p>
+                                        Then press the desired key (example: F5)
+                                </p><code>^[[15~</code>
+                                <p>
+                                        Try
+                                </p><code>bind '"\e[15~"':"\"ssh su@ip-address\C-m"""</code>
+                                <p>
+                                        or
+                                </p><code>bind '"\e[16~"':"\"apachectl -k restart\C-m"""</code>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Lots of info, but a very useful trick!
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I've read the manual of bash but I can't understand the point of "\C-m".
+                                </p>
+                                <p>
+                                        Great trick by the way, thanks a lot...
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        yeah, what's the "-a\C-m" for?
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        heckuva lot more info that fits on one screen. hardly a dashboard, but i guess some could see that as useful. If you're going to throw out that much information then you might as well add lsof in!
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        That last piece is for a return. If you omit the \C-m piece the command will print to the screen and you'll still need to hit enter.
+                                </p>
+                                <p>
+                                        NICE STUFF
+                                </p>
                         </div>
                 </div>
         </body>

@@ -1,54 +1,44 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Remove duplicate rows of an un-sorted file based on a single column</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Remove duplicate rows of an un-sorted file based on a single column
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Remove duplicate rows of an un-sorted file based on a single column
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                perl -ane 'print unless $x{$F[0]}++' infile &gt; outfile
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <code>F[0] filters using first word. $F[1] - 2nd, and so on.</code>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                awk '{ if ($1 in stored_lines) x=1; else print; stored_lines[$1]=1 }' infile.txt &gt; outfile.txt
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                The command (above) will remove any duplicate rows based on the FIRST column of data in an un-sorted file.
-                                                        </p>
-                                                        <p>
-                                                                The '$1' represents a positional parameter. You can change both instances of '$1' in the command to remove duplicates based on a different column, for instance, the third:
-                                                        </p><code>awk '{ if ($3 in stored_lines) x=1; else print; stored_lines[$3]=1 }' infile.txt &gt; outfile.txt</code>
-                                                        <p>
-                                                                Or you can change it to '$0' to base the removal on the whole row:
-                                                        </p><code>awk '{ if ($0 in stored_lines) x=1; else print; stored_lines[$0]=1 }' infile.txt &gt; outfile.txt</code>
-                                                        <p>
-                                                                ** Note: I wouldn't use this on a MASSIVE file, unless you're RAM-rich ;) **
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Remove duplicate rows of an un-sorted file based on a single column
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                perl -ane 'print unless $x{$F[0]}++' infile &gt; outfile
+                        </div>
+                        <div class="details description">
+                                <code>F[0] filters using first word. $F[1] - 2nd, and so on.</code>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                awk '{ if ($1 in stored_lines) x=1; else print; stored_lines[$1]=1 }' infile.txt &gt; outfile.txt
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        The command (above) will remove any duplicate rows based on the FIRST column of data in an un-sorted file.
+                                </p>
+                                <p>
+                                        The '$1' represents a positional parameter. You can change both instances of '$1' in the command to remove duplicates based on a different column, for instance, the third:
+                                </p><code>awk '{ if ($3 in stored_lines) x=1; else print; stored_lines[$3]=1 }' infile.txt &gt; outfile.txt</code>
+                                <p>
+                                        Or you can change it to '$0' to base the removal on the whole row:
+                                </p><code>awk '{ if ($0 in stored_lines) x=1; else print; stored_lines[$0]=1 }' infile.txt &gt; outfile.txt</code>
+                                <p>
+                                        ** Note: I wouldn't use this on a MASSIVE file, unless you're RAM-rich ;) **
+                                </p>
                         </div>
                 </div>
         </body>

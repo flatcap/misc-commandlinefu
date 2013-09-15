@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>FizzBuzz one-liner in Python</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        FizzBuzz one-liner in Python
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                FizzBuzz one-liner in Python
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                python -c'for i in range(1,101):print"FizzBuzz"[i*i%3*4:8--i**4%5]or i'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                FizzBuzz one-liner in Python
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                python -c'for i in range(1,101):print"FizzBuzz"[i*i%3*4:8--i**4%5]or i'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 1
 2
 Fizz
@@ -122,43 +118,39 @@ Fizz
 Fizz
 Buzz
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                A common programming question for interviewers to ask potential job candidates is to code "FizzBuzz". That is, if a number is divisible by 3, then it should display "Fizz". If a number is divisible by 5, it should display "Buzz". If it is divisible by both, then it should display "FizzBuzz". Otherwise, display the current number between 1 and 100.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        What does 8--i**4%5 do? (Never seen -- in python)
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        ok. its just 8-(-I).
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Why would an interviewer be impressed by a seeming entry for an obfuscated code contest? It would make more sense to write a clear code block as an example of code you and others would have to maintain.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I never said an interviewer would be impressed with this. I only gave background to what the FizzBuzz problem is.
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        A common programming question for interviewers to ask potential job candidates is to code "FizzBuzz". That is, if a number is divisible by 3, then it should display "Fizz". If a number is divisible by 5, it should display "Buzz". If it is divisible by both, then it should display "FizzBuzz". Otherwise, display the current number between 1 and 100.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        What does 8--i**4%5 do? (Never seen -- in python)
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        ok. its just 8-(-I).
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Why would an interviewer be impressed by a seeming entry for an obfuscated code contest? It would make more sense to write a clear code block as an example of code you and others would have to maintain.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I never said an interviewer would be impressed with this. I only gave background to what the FizzBuzz problem is.
+                                </p>
                         </div>
                 </div>
         </body>

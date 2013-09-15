@@ -1,36 +1,28 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Most Commonly Used Grep Options</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Most Commonly Used Grep Options
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Most Commonly Used Grep Options
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                GREP_OPTIONS='-D skip --binary-files=without-match --ignore-case'
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                This is very helpful to place in a shell startup file and will make grep use those options all the time. This example is nice as it won't show those warning messages, skips devices like fifos and pipes, and ignores case by default.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                <div id="terminal-header">
+                        <h1>
+                                Most Commonly Used Grep Options
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                GREP_OPTIONS='-D skip --binary-files=without-match --ignore-case'
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        This is very helpful to place in a shell startup file and will make grep use those options all the time. This example is nice as it won't show those warning messages, skips devices like fifos and pipes, and ignores case by default.
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

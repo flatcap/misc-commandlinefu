@@ -1,60 +1,52 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>silent/shh - shorthand to make commands really quiet</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        silent/shh - shorthand to make commands really quiet
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                silent/shh - shorthand to make commands really quiet
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                silent(){ $@ &gt; /dev/null 2&gt;&amp;1; }; alias shh=silent
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Sometimes I just want to run a command quietly but all that keyboard shifting makes my fingers hurt. This little function does the job eg.:
-                                                        </p><code>if shh type less; then PAGER=less; fi</code>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Nice idea, but why bother with the alias? Why not just call the function "ssh"?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        For clarity? 'silent' is a bit more explicit than 'shh'.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Being dyslexic, it took a few minutes to figure out that you weren't doing something odd with ssh!
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Wouldn't it be safer to put the $@ in double quotes to have each of the parameters (including the command itself) properly quoted, even if they contain blanks?!
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                silent/shh - shorthand to make commands really quiet
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                silent(){ $@ &gt; /dev/null 2&gt;&amp;1; }; alias shh=silent
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Sometimes I just want to run a command quietly but all that keyboard shifting makes my fingers hurt. This little function does the job eg.:
+                                </p><code>if shh type less; then PAGER=less; fi</code>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Nice idea, but why bother with the alias? Why not just call the function "ssh"?
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        For clarity? 'silent' is a bit more explicit than 'shh'.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Being dyslexic, it took a few minutes to figure out that you weren't doing something odd with ssh!
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Wouldn't it be safer to put the $@ in double quotes to have each of the parameters (including the command itself) properly quoted, even if they contain blanks?!
+                                </p>
                         </div>
                 </div>
         </body>

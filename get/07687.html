@@ -1,109 +1,100 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Shell recorder with replay</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Shell recorder with replay
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Shell recorder with replay
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                script -t /tmp/mylog.out 2&gt;/tmp/mylog.time; &lt;do your work&gt;; &lt;CTRL-D&gt;; scriptreplay /tmp/mylog.time /tmp/mylog.out
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                If you provide the option -t to the script command and redirect stderr into a file, the timing information on what is going on on the terminal, is also stored.
-                                                        </p>
-                                                        <p>
-                                                                You can replay the session via the scriptreplay command, where you can also provide a speedup factor (see the man page for details).
-                                                        </p>
-                                                        <p>
-                                                                Great for demonstration purposes ...
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                script -t 2&gt; timing.txt -a session.txt ; Run some commands here; exit; scriptreplay timing.txt session.txt
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Where does scriptreplay come from?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        It's part of the util-linux package
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Not on CentOS 5
-                                                </p><code>david.ward@om012234 ~ $</code> <code>rpm -ql util-linux |grep reply</code> <code>david.ward@om012234 ~ $</code> <code>rpm -qa util-linux</code> <code>util-linux-2.13-0.50.el5.x86_64</code> <code>david.ward@om012234 ~ $</code> <code>rpm -ql util-linux |grep reply</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Tried to grep for replay instead of reply?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Oh oops. But yes.
-                                                </p><code>david.ward@om012234 ~ $</code> <code>rpm -ql util-linux |grep replay</code> <code>david.ward@om012234 ~ $</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        &gt; cat /etc/SuSE-release
-                                                </p>
-                                                <p>
-                                                        SUSE Linux Enterprise Server 11 (x86_64)
-                                                </p>
-                                                <p>
-                                                        VERSION = 11
-                                                </p>
-                                                <p>
-                                                        PATCHLEVEL = 1
-                                                </p>
-                                                <p>
-                                                        &gt; rpm -ql util-linux |grep replay
-                                                </p>
-                                                <p>
-                                                        /usr/bin/scriptreplay
-                                                </p>
-                                                <p>
-                                                        /usr/share/man/man1/scriptreplay.1.gz
-                                                </p>
-                                                <p>
-                                                        Ok, you win :D. So maybe this is SuSE specific.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Haha. Maybe it (scriptreplay) should be on all distros. Sound great.
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Shell recorder with replay
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                script -t /tmp/mylog.out 2&gt;/tmp/mylog.time; &lt;do your work&gt;; &lt;CTRL-D&gt;; scriptreplay /tmp/mylog.time /tmp/mylog.out
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        If you provide the option -t to the script command and redirect stderr into a file, the timing information on what is going on on the terminal, is also stored.
+                                </p>
+                                <p>
+                                        You can replay the session via the scriptreplay command, where you can also provide a speedup factor (see the man page for details).
+                                </p>
+                                <p>
+                                        Great for demonstration purposes ...
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                script -t 2&gt; timing.txt -a session.txt ; Run some commands here; exit; scriptreplay timing.txt session.txt
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Where does scriptreplay come from?
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        It's part of the util-linux package
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Not on CentOS 5
+                                </p><code>david.ward@om012234 ~ $</code> <code>rpm -ql util-linux |grep reply</code> <code>david.ward@om012234 ~ $</code> <code>rpm -qa util-linux</code> <code>util-linux-2.13-0.50.el5.x86_64</code> <code>david.ward@om012234 ~ $</code> <code>rpm -ql util-linux |grep reply</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Tried to grep for replay instead of reply?
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Oh oops. But yes.
+                                </p><code>david.ward@om012234 ~ $</code> <code>rpm -ql util-linux |grep replay</code> <code>david.ward@om012234 ~ $</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        &gt; cat /etc/SuSE-release
+                                </p>
+                                <p>
+                                        SUSE Linux Enterprise Server 11 (x86_64)
+                                </p>
+                                <p>
+                                        VERSION = 11
+                                </p>
+                                <p>
+                                        PATCHLEVEL = 1
+                                </p>
+                                <p>
+                                        &gt; rpm -ql util-linux |grep replay
+                                </p>
+                                <p>
+                                        /usr/bin/scriptreplay
+                                </p>
+                                <p>
+                                        /usr/share/man/man1/scriptreplay.1.gz
+                                </p>
+                                <p>
+                                        Ok, you win :D. So maybe this is SuSE specific.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Haha. Maybe it (scriptreplay) should be on all distros. Sound great.
+                                </p>
                         </div>
                 </div>
         </body>

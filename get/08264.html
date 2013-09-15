@@ -1,114 +1,104 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Replace spaces with tabs &amp; format file source recursively within a directory</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Replace spaces with tabs &amp; format file source recursively within a directory
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Replace spaces with tabs &amp; format file source recursively within a directory
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                find . -type f -name \*.php | while IFS="" read i; do expand -t4 "$i" &gt; "$i-"; mv "$i-" "$i"; done
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Recursively find php files and replace tab characters with spaces.
-                                                        </p>
-                                                        <p>
-                                                                Options:
-                                                        </p>
-                                                        <p>
-                                                                "\*.php" -- replace this with the files you wish to find
-                                                        </p>
-                                                        <p>
-                                                                "expand" -- replace tabs with spaces (use "unexpand" to replace spaces with tabs)
-                                                        </p>
-                                                        <p>
-                                                                "-t4" -- tabs represent 4 spaces
-                                                        </p>
-                                                        <p>
-                                                                Note: The IFS="" in the middle is to prevent 'read' from eating leading/trailing whitespace in filenames.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                find $DIR -name *.php -exec vim -u NONE -c 'set ft=php' -c 'set shiftwidth=4' -c 'set tabstop=4' -c 'set noexpandtab!' -c 'set noet' -c 'retab!' -c 'bufdo! "execute normal gg=G"' -c wq {} \;
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                The sample command searches for PHP files replacing tabs with spaces.
-                                                        </p><code>-u NONE # don't use vimrc</code>
-                                                        <p>
-                                                                Instead of
-                                                        </p><code>retab!</code>
-                                                        <p>
-                                                                one may pass
-                                                        </p><code>retab! 4</code>
-                                                        <p>
-                                                                for instance.
-                                                        </p>
-                                                        <p>
-                                                                Look at this <a href="http://susepaste.org/69028693" rel="nofollow">http://susepaste.org/69028693</a> also
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        flatcap, it expands/unexpands *all* file contents. Isn't it?
-                                                </p>
-                                                <p>
-                                                        While my command uses smart vim formatting to *indent* using tabs, not touching those in strings, for instance
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Really? Unfortunately, I can't get your command to work.
-                                                </p>
-                                                <p>
-                                                        From the vim help on retab: Careful: This command modifies any characters inside of strings in a C program. Use "\t" to avoid this (that's a good habit anyway).
-                                                </p>
-                                                <p>
-                                                        By adding --initial to expand (or --first-only to unexpand), it will only work on leading whitespace.
-                                                </p>
-                                                <p>
-                                                        As a heavy user of vim, I'd have done this by macro or bufdo. Spawning vim for every file will really slow things down.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        flatcap, what about constructions like
-                                                </p><code>$a = array(</code> <code>'key1' =&gt; '12',</code> <code>'longlongkey' =&gt; 'someghing',</code> <code>'second-long-k' =&gt; 12.34,</code> <code>);</code>
-                                                <p>
-                                                        ?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        It didn't format like what I mean. Look at this: <a href="http://susepaste.org/28853675" rel="nofollow">http://susepaste.org/28853675</a>
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Replace spaces with tabs &amp; format file source recursively within a directory
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                find . -type f -name \*.php | while IFS="" read i; do expand -t4 "$i" &gt; "$i-"; mv "$i-" "$i"; done
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Recursively find php files and replace tab characters with spaces.
+                                </p>
+                                <p>
+                                        Options:
+                                </p>
+                                <p>
+                                        "\*.php" -- replace this with the files you wish to find
+                                </p>
+                                <p>
+                                        "expand" -- replace tabs with spaces (use "unexpand" to replace spaces with tabs)
+                                </p>
+                                <p>
+                                        "-t4" -- tabs represent 4 spaces
+                                </p>
+                                <p>
+                                        Note: The IFS="" in the middle is to prevent 'read' from eating leading/trailing whitespace in filenames.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                find $DIR -name *.php -exec vim -u NONE -c 'set ft=php' -c 'set shiftwidth=4' -c 'set tabstop=4' -c 'set noexpandtab!' -c 'set noet' -c 'retab!' -c 'bufdo! "execute normal gg=G"' -c wq {} \;
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        The sample command searches for PHP files replacing tabs with spaces.
+                                </p><code>-u NONE # don't use vimrc</code>
+                                <p>
+                                        Instead of
+                                </p><code>retab!</code>
+                                <p>
+                                        one may pass
+                                </p><code>retab! 4</code>
+                                <p>
+                                        for instance.
+                                </p>
+                                <p>
+                                        Look at this <a href="http://susepaste.org/69028693" rel="nofollow">http://susepaste.org/69028693</a> also
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        flatcap, it expands/unexpands *all* file contents. Isn't it?
+                                </p>
+                                <p>
+                                        While my command uses smart vim formatting to *indent* using tabs, not touching those in strings, for instance
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Really? Unfortunately, I can't get your command to work.
+                                </p>
+                                <p>
+                                        From the vim help on retab: Careful: This command modifies any characters inside of strings in a C program. Use "\t" to avoid this (that's a good habit anyway).
+                                </p>
+                                <p>
+                                        By adding --initial to expand (or --first-only to unexpand), it will only work on leading whitespace.
+                                </p>
+                                <p>
+                                        As a heavy user of vim, I'd have done this by macro or bufdo. Spawning vim for every file will really slow things down.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        flatcap, what about constructions like
+                                </p><code>$a = array(</code> <code>'key1' =&gt; '12',</code> <code>'longlongkey' =&gt; 'someghing',</code> <code>'second-long-k' =&gt; 12.34,</code> <code>);</code>
+                                <p>
+                                        ?
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        It didn't format like what I mean. Look at this: <a href="http://susepaste.org/28853675" rel="nofollow">http://susepaste.org/28853675</a>
+                                </p>
                         </div>
                 </div>
         </body>

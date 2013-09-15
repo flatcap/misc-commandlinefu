@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Change time format in log, UNIX Timestamp to Human readable</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Change time format in log, UNIX Timestamp to Human readable
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Change time format in log, UNIX Timestamp to Human readable
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                sed -r 's/(\[|])//g' | awk ' { $1=strftime("%D %T",$1); print }'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Change time format in log, UNIX Timestamp to Human readable
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                sed -r 's/(\[|])//g' | awk ' { $1=strftime("%D %T",$1); print }'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 Input :
 [1325199600] CURRENT SERVICE STATE: HOST01;Loopback;OK;HARD;1;Loopback0:UP:1 UP: OK
 [1325199600] CURRENT SERVICE STATE: HOST01;Uptime Routers SFR;OK;HARD;1;Information only: 114 days
@@ -28,27 +24,23 @@ Ouput :
 12/30/11 00:00:00 CURRENT SERVICE STATE: HOST01;Loopback;OK;HARD;1;Loopback0:UP:1 UP: OK
 12/30/11 00:00:00 CURRENT SERVICE STATE: HOST01;Uptime Routers SFR;OK;HARD;1;Information only: 114 days
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                It remove the square bracket and convert UNIX time to human readable time for all line of a stream (or file).
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                That rocks.
-                                        </p>
-                                </div>
                         </div>
+                        <div class="details description">
+                                <p>
+                                        It remove the square bracket and convert UNIX time to human readable time for all line of a stream (or file).
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                That rocks.
+                        </p>
                 </div>
         </body>
 </html>

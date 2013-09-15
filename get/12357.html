@@ -1,117 +1,109 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>prevent large files from being cached in memory (backups!)</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        prevent large files from being cached in memory (backups!)
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                prevent large files from being cached in memory (backups!)
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                nocache &lt;I/O-heavy-command&gt;
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                We all know...
-                                                        </p><code>nice -n19</code>
-                                                        <p>
-                                                                for low CPU priority.
-                                                        </p>
-                                                        <p>
-                                                                &#8199;
-                                                        </p><code>ionice -c3</code>
-                                                        <p>
-                                                                for low I/O priority.
-                                                        </p>
-                                                        <p>
-                                                                &#8199;
-                                                        </p>
-                                                        <p>
-                                                                nocache can be useful in related scenarios, when we operate on very large files just a single time, e.g. a backup job. It advises the kernel that no caching is required for the involved files, so our current file cache is not erased, potentially decreasing performance on other, more typical file I/O, e.g. on a desktop.
-                                                        </p>
-                                                        <p>
-                                                                &#8199;
-                                                        </p>
-                                                        <p>
-                                                                <a href="http://askubuntu.com/questions/122857" rel="nofollow">http://askubuntu.com/questions/122857</a>
-                                                        </p>
-                                                        <p>
-                                                                https://github.com/Feh/nocache
-                                                        </p>
-                                                        <p>
-                                                                <a href="http://packages.debian.org/search?keywords=nocache" rel="nofollow">http://packages.debian.org/search?keywords=nocache</a>
-                                                        </p>
-                                                        <p>
-                                                                <a href="http://packages.ubuntu.com/search?keywords=nocache" rel="nofollow">http://packages.ubuntu.com/search?keywords=nocache</a> (seems to be unavailable in ubuntu...)
-                                                        </p>
-                                                        <p>
-                                                                &#8199;
-                                                        </p>
-                                                        <p>
-                                                                To undo caching of a single file in hindsight, you can do
-                                                        </p><code>cachedel &lt;OneSingleFile&gt;</code>
-                                                        <p>
-                                                                &#8199;
-                                                        </p>
-                                                        <p>
-                                                                To check the cache status of a file, do
-                                                        </p><code>cachestats &lt;OneSingleFile&gt;</code>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Damn, that's useful!
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        +1
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Wonderful.
-                                                </p>
-                                                <p>
-                                                        Share a website with you ,
-                                                </p>
-                                                <p>
-                                                        ( <a href="http://www.alib88.com/" rel="nofollow">http://www.alib88.com/</a> )
-                                                </p>
-                                                <p>
-                                                        Believe you will love it.
-                                                </p>
-                                                <p>
-                                                        We accept any form of payment.
-                                                </p>
-                                                <p>
-                                                        <a href="http://www.alib88.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.alib88.com/Michael-Kors-Handbags-n2447/</a>
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        For those on Ubuntu Precise, I have a backport of nocache in my PPA: https://launchpad.net/~fmarier/+archive/ppa/+index?field.series_filter=precise&amp;batch=75&amp;memo=75&amp;start=75
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                prevent large files from being cached in memory (backups!)
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                nocache &lt;I/O-heavy-command&gt;
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        We all know...
+                                </p><code>nice -n19</code>
+                                <p>
+                                        for low CPU priority.
+                                </p>
+                                <p>
+                                        &#8199;
+                                </p><code>ionice -c3</code>
+                                <p>
+                                        for low I/O priority.
+                                </p>
+                                <p>
+                                        &#8199;
+                                </p>
+                                <p>
+                                        nocache can be useful in related scenarios, when we operate on very large files just a single time, e.g. a backup job. It advises the kernel that no caching is required for the involved files, so our current file cache is not erased, potentially decreasing performance on other, more typical file I/O, e.g. on a desktop.
+                                </p>
+                                <p>
+                                        &#8199;
+                                </p>
+                                <p>
+                                        <a href="http://askubuntu.com/questions/122857" rel="nofollow">http://askubuntu.com/questions/122857</a>
+                                </p>
+                                <p>
+                                        https://github.com/Feh/nocache
+                                </p>
+                                <p>
+                                        <a href="http://packages.debian.org/search?keywords=nocache" rel="nofollow">http://packages.debian.org/search?keywords=nocache</a>
+                                </p>
+                                <p>
+                                        <a href="http://packages.ubuntu.com/search?keywords=nocache" rel="nofollow">http://packages.ubuntu.com/search?keywords=nocache</a> (seems to be unavailable in ubuntu...)
+                                </p>
+                                <p>
+                                        &#8199;
+                                </p>
+                                <p>
+                                        To undo caching of a single file in hindsight, you can do
+                                </p><code>cachedel &lt;OneSingleFile&gt;</code>
+                                <p>
+                                        &#8199;
+                                </p>
+                                <p>
+                                        To check the cache status of a file, do
+                                </p><code>cachestats &lt;OneSingleFile&gt;</code>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Damn, that's useful!
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        +1
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Wonderful.
+                                </p>
+                                <p>
+                                        Share a website with you ,
+                                </p>
+                                <p>
+                                        ( <a href="http://www.alib88.com/" rel="nofollow">http://www.alib88.com/</a> )
+                                </p>
+                                <p>
+                                        Believe you will love it.
+                                </p>
+                                <p>
+                                        We accept any form of payment.
+                                </p>
+                                <p>
+                                        <a href="http://www.alib88.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.alib88.com/Michael-Kors-Handbags-n2447/</a>
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        For those on Ubuntu Precise, I have a backport of nocache in my PPA: https://launchpad.net/~fmarier/+archive/ppa/+index?field.series_filter=precise&amp;batch=75&amp;memo=75&amp;start=75
+                                </p>
                         </div>
                 </div>
         </body>

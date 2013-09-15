@@ -1,71 +1,61 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Watch several log files of different machines in a single multitail window on your own machine</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Watch several log files of different machines in a single multitail window on your own machine
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Watch several log files of different machines in a single multitail window on your own machine
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                multitail -l 'ssh machine1 "tail -f /var/log/apache2/error.log"' -l 'ssh machine2 "tail -f /var/log/apache2/error.log"'
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                this way you have the multitail with all its options running on your own machine with the tails of the two remote machines inside :)
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                multitail /var/log/messages /var/log/apache2/access.log /var/log/mail.info
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                It works like a "tail -f" on several files.
-                                                        </p>
-                                                        <p>
-                                                                Use the number keys 0-9 to set a baseline in the numbered window.
-                                                        </p>
-                                                        <p>
-                                                                Pressing "b" let you scroll back in one of the windows.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div class="comment comment0 body" id="comments">
-                                        <p>
-                                                There is another tool that was designed for this:
-                                        </p>
-                                        <p>
-                                                <a href="http://dollyfish.net.nz/projects/monkeytail" rel="nofollow">http://dollyfish.net.nz/projects/monkeytail</a>
-                                        </p>
-                                        <p>
-                                                The syntax (and the fact that you can put options in a config file) is quite nice.
-                                        </p>
-                                        <p>
-                                                Look for the "monkeytail" package in Debian/Ubuntu which provides the "mtail" binary.
-                                        </p>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Watch several log files of different machines in a single multitail window on your own machine
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                multitail -l 'ssh machine1 "tail -f /var/log/apache2/error.log"' -l 'ssh machine2 "tail -f /var/log/apache2/error.log"'
                         </div>
+                        <div class="details description">
+                                <p>
+                                        this way you have the multitail with all its options running on your own machine with the tails of the two remote machines inside :)
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                multitail /var/log/messages /var/log/apache2/access.log /var/log/mail.info
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        It works like a "tail -f" on several files.
+                                </p>
+                                <p>
+                                        Use the number keys 0-9 to set a baseline in the numbered window.
+                                </p>
+                                <p>
+                                        Pressing "b" let you scroll back in one of the windows.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div class="comment comment0 body" id="comments">
+                        <p>
+                                There is another tool that was designed for this:
+                        </p>
+                        <p>
+                                <a href="http://dollyfish.net.nz/projects/monkeytail" rel="nofollow">http://dollyfish.net.nz/projects/monkeytail</a>
+                        </p>
+                        <p>
+                                The syntax (and the fact that you can put options in a config file) is quite nice.
+                        </p>
+                        <p>
+                                Look for the "monkeytail" package in Debian/Ubuntu which provides the "mtail" binary.
+                        </p>
                 </div>
         </body>
 </html>

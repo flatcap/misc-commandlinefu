@@ -1,65 +1,53 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>BASH: Print shell variable into AWK</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        BASH: Print shell variable into AWK
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
+                <div id="terminal-header">
+                        <h1>
+                                BASH: Print shell variable into AWK
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                MyVAR=84; awk '{ print "'"$MyVAR"'" }'
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        MyVAR=85 awk '{ print ENVIRON["MyVAR"] }'
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Alternatively:
+                                        </p>
+                                        <p>
+                                                export MyVAR=84; awk '{ print ENVIRON["MyVAR"] }'
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        MyVAR=86; awk -v n=$MyVAR '{print n}'
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        VAR="foo" ; awk '{ print '"$VAR"' }'
+                                </div>
+                                <div class="details description">
+                                        <p>
                                                 BASH: Print shell variable into AWK
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                MyVAR=84; awk '{ print "'"$MyVAR"'" }'
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        MyVAR=85 awk '{ print ENVIRON["MyVAR"] }'
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Alternatively:
-                                                                </p>
-                                                                <p>
-                                                                        export MyVAR=84; awk '{ print ENVIRON["MyVAR"] }'
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        MyVAR=86; awk -v n=$MyVAR '{print n}'
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        VAR="foo" ; awk '{ print '"$VAR"' }'
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        BASH: Print shell variable into AWK
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
+                                        </p>
                                 </div>
                         </div>
                 </div>

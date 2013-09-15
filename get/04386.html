@@ -1,42 +1,34 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Parse an RPM name into its components - fast</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Parse an RPM name into its components - fast
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Parse an RPM name into its components - fast
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                parse_rpm() { RPM=$1;B=${RPM##*/};B=${B%.rpm};A=${B##*.};B=${B%.*};R=${B##*-};B=${B%-*};V=${B##*-};B=${B%-*};N=$B;echo "$N $V $R $A"; }
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                parse_rpm xorg-x11-fonts-ISO8859-1-75dpi-7.1-2.1.el5.noarch.rpm
-                                                        </p>
-                                                        <p>
-                                                                xorg-x11-fonts-ISO8859-1-75dpi 7.1 2.1.el5 noarch
-                                                        </p>
-                                                        <p>
-                                                                It's a little tricky because RPM names can contain '-' and the name, version and release number can contain '.' This is one or two orders of magnitude faster than using rpm itself:
-                                                        </p><code>rpm -qp --queryformat '%{N} %{V} %{R} %{ARCH}\n' $RPM</code>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                <div id="terminal-header">
+                        <h1>
+                                Parse an RPM name into its components - fast
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                parse_rpm() { RPM=$1;B=${RPM##*/};B=${B%.rpm};A=${B##*.};B=${B%.*};R=${B##*-};B=${B%-*};V=${B##*-};B=${B%-*};N=$B;echo "$N $V $R $A"; }
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        parse_rpm xorg-x11-fonts-ISO8859-1-75dpi-7.1-2.1.el5.noarch.rpm
+                                </p>
+                                <p>
+                                        xorg-x11-fonts-ISO8859-1-75dpi 7.1 2.1.el5 noarch
+                                </p>
+                                <p>
+                                        It's a little tricky because RPM names can contain '-' and the name, version and release number can contain '.' This is one or two orders of magnitude faster than using rpm itself:
+                                </p><code>rpm -qp --queryformat '%{N} %{V} %{R} %{ARCH}\n' $RPM</code>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

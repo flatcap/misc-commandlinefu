@@ -1,58 +1,50 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Serial console to a Vmware VM</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Serial console to a Vmware VM
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Serial console to a Vmware VM
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                socat unix-connect:/tmp/socket stdio,echo=0,raw
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Create a serial console with "socket (named pipe)" of "/tmp/socket", "from:server, to:virtual machine" in vmware player, etc.. gui. Run the above command after you have booted the guest OS (which should also be configured for serial console).
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        It looks interesting but can you please explain where do you point to the virtual machine console device file in the command 'is it /tmp/socket ??'
-                                                </p>
-                                                <p>
-                                                        Thanks in advance
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Yes the "/tmp/socket" is the serial port socket connection which is set by the user in VMWare. In VMWare Player, this is referred to as a "named pipe". `socat` uses the term "UNIX domain socket" (from the manpage). So change "/tmp/socket" to whatever you had set in VMWare.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Omit the ",raw" if you want to keep the parent shell's job control (ctrl-c, ctrl-z, etc). Personally, I like to use ",raw" as shown above because it allows me to use ctrl-c in the VM console. The downside is that now you will have no (known?) way to exit from socat. (I simply use `killall socat` from another terminal).
-                                                </p>
-                                        </div>
-                                </div>
+                <div id="terminal-header">
+                        <h1>
+                                Serial console to a Vmware VM
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                socat unix-connect:/tmp/socket stdio,echo=0,raw
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Create a serial console with "socket (named pipe)" of "/tmp/socket", "from:server, to:virtual machine" in vmware player, etc.. gui. Run the above command after you have booted the guest OS (which should also be configured for serial console).
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        It looks interesting but can you please explain where do you point to the virtual machine console device file in the command 'is it /tmp/socket ??'
+                                </p>
+                                <p>
+                                        Thanks in advance
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Yes the "/tmp/socket" is the serial port socket connection which is set by the user in VMWare. In VMWare Player, this is referred to as a "named pipe". `socat` uses the term "UNIX domain socket" (from the manpage). So change "/tmp/socket" to whatever you had set in VMWare.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Omit the ",raw" if you want to keep the parent shell's job control (ctrl-c, ctrl-z, etc). Personally, I like to use ",raw" as shown above because it allows me to use ctrl-c in the VM console. The downside is that now you will have no (known?) way to exit from socat. (I simply use `killall socat` from another terminal).
+                                </p>
                         </div>
                 </div>
         </body>

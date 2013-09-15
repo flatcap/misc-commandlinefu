@@ -1,138 +1,121 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Delete all files in a folder that don't match a certain file extension</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Delete all files in a folder that don't match a certain file extension
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Delete all files in a folder that don't match a certain file extension
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                rm !(*.foo|*.bar|*.baz)
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Delete all files in a folder that don't match a certain file extension
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                rm !(*.foo|*.bar|*.baz)
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 Example: rm !(*.tex|*.pdf) deletes all except the tex and pdf files.
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Deletes all files in a folder that are NOT *.foo, *.bar or *.baz files. Edit the pattern inside the brackets as you like.
-                                                        </p>
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Deletes all files in a folder that are NOT *.foo, *.bar or *.baz files. Edit the pattern inside the brackets as you like.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        rm -f !(survivior.txt)
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        rm -f !(survivior.txt)
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        find . ! -name <span>&lt;FILENAME&gt;</span> -delete
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        it will remove everything except the file names matching you can use also use wildcards
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ( shopt -s extglob; rm !(<span>&lt;PATTERN&gt;</span>) )
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Remove everything except that file with shell tricks inside a subshell to avoid changes in the environment.
-                                                                </p><code>help shopt</code>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        rm !(file_to_keep_undeleted)
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Go to tmp :
-                                                                </p>
-                                                                <p>
-                                                                        cd /tmp; mkdir retmp; cd retmp
-                                                                </p>
-                                                                <p>
-                                                                        Create 10 files :
-                                                                </p>
-                                                                <p>
-                                                                        for i in {1..10}; do touch test$i; done
-                                                                </p>
-                                                                <p>
-                                                                        Remove all files except test10 :
-                                                                </p>
-                                                                <p>
-                                                                        rm !(test10)
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        find . -type f ! -name "*.foo" -name "*.bar" -delete
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        find . ! -name <span>&lt;FILENAME&gt;</span> -delete
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                it will remove everything except the file names matching you can use also use wildcards
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ( shopt -s extglob; rm !(<span>&lt;PATTERN&gt;</span>) )
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Remove everything except that file with shell tricks inside a subshell to avoid changes in the environment.
+                                        </p><code>help shopt</code>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        rm !(file_to_keep_undeleted)
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                Go to tmp :
+                                        </p>
+                                        <p>
+                                                cd /tmp; mkdir retmp; cd retmp
+                                        </p>
+                                        <p>
+                                                Create 10 files :
+                                        </p>
+                                        <p>
+                                                for i in {1..10}; do touch test$i; done
+                                        </p>
+                                        <p>
+                                                Remove all files except test10 :
+                                        </p>
+                                        <p>
+                                                rm !(test10)
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        find . -type f ! -name "*.foo" -name "*.bar" -delete
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 enki 13:09:08 /tmp/foo/bar $ find . ! -name "*.xml" ! -name "*.js" -type f -delete
 enki 13:12:23 /tmp/foo/bar $
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        This command is recursive and will delete in all directories in ".". It will find and delete all files not specified with ! -name "pattern". In this case it's file extensions. -type f means it will only find files and not directories. Finally the -delete flag ask find to delete what it matches. You can test the command by running it first without delete and it will list the files it will delete when you run it.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Note: This is a feature of bash, not rm, and it only works if you've enabled 'extglob' (Extended Pattern Matching):
-                                                </p><code>shopt -s extglob</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        why i just get the message: "bash: !: event not found" on Ubuntu?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        I get the answer just above! I do think this is a nice command
-                                                </p>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                This command is recursive and will delete in all directories in ".". It will find and delete all files not specified with ! -name "pattern". In this case it's file extensions. -type f means it will only find files and not directories. Finally the -delete flag ask find to delete what it matches. You can test the command by running it first without delete and it will list the files it will delete when you run it.
+                                        </p>
                                 </div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Note: This is a feature of bash, not rm, and it only works if you've enabled 'extglob' (Extended Pattern Matching):
+                                </p><code>shopt -s extglob</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        why i just get the message: "bash: !: event not found" on Ubuntu?
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        I get the answer just above! I do think this is a nice command
+                                </p>
                         </div>
                 </div>
         </body>

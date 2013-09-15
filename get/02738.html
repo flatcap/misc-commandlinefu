@@ -1,153 +1,137 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Get all IPs via ifconfig</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Get all IPs via ifconfig
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Get all IPs via ifconfig
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                ifconfig | perl -nle'/dr:(\S+)/ &amp;&amp; print $1'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Get all IPs via ifconfig
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                ifconfig | perl -nle'/dr:(\S+)/ &amp;&amp; print $1'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 10.200.10.147
 127.0.0.1
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Fetches the IPs and ONLY the IPs from ifconfig. Simplest, shortest, cleanest.
-                                                        </p>
-                                                        <p>
-                                                                Perl is too good to be true...
-                                                        </p>
-                                                        <p>
-                                                                (P.S.: credit should go to Peteris Krumins at catonmat.net)
-                                                        </p>
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Fetches the IPs and ONLY the IPs from ifconfig. Simplest, shortest, cleanest.
+                                </p>
+                                <p>
+                                        Perl is too good to be true...
+                                </p>
+                                <p>
+                                        (P.S.: credit should go to Peteris Krumins at catonmat.net)
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ &amp;&amp; print $1'
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ &amp;&amp; print $1'
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="sample-output c5 output">
+                                        <pre>
 10.200.10.147
 127.0.0.1
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        works on Linux and Solaris. I think it will work on nearly all *nix-es
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ifconfig | awk -F':| +' '/ddr:/{print $4}'
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        and, a lot uglier, with sed:
-                                                                </p><code>ifconfig | sed -n '/inet addr:/s/[^:]\+:\(\S\+\).*/\1/p'</code>
-                                                                <p>
-                                                                        Edit:
-                                                                </p>
-                                                                <p>
-                                                                        Wanted to be shorter than the perl version. Still think that the perl version is the best..
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ifconfig | awk '/ddr:[0-9]/ {sub(/addr:/, ""); print $2}'
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                works on Linux and Solaris. I think it will work on nearly all *nix-es
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ifconfig | awk -F':| +' '/ddr:/{print $4}'
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                and, a lot uglier, with sed:
+                                        </p><code>ifconfig | sed -n '/inet addr:/s/[^:]\+:\(\S\+\).*/\1/p'</code>
+                                        <p>
+                                                Edit:
+                                        </p>
+                                        <p>
+                                                Wanted to be shorter than the perl version. Still think that the perl version is the best..
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ifconfig | awk '/ddr:[0-9]/ {sub(/addr:/, ""); print $2}'
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 ifconfig | awk '/ddr:[0-9]/ {sub(/addr:/, ""); print $2}'
 192.168.1.23
 127.0.0.1
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        The initial version of this command also outputted extra empty lines, so it went like this:
-                                                                </p>
-                                                                <p>
-                                                                        192.168.166.48
-                                                                </p>
-                                                                <p>
-                                                                        127.0.0.1
-                                                                </p>
-                                                                <p>
-                                                                        This happened on Ubuntu, i haven't tested on anything else.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ifconfig | awk '/inet / {sub(/addr:/, "", $2); print $2}'
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        ipconfig getpacket en0 | grep yi| sed s."yiaddr = "."en0: ". ipconfig getpacket en1 | grep yi| sed s."yiaddr = "."en1: ".
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Perl++!
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Great, I'll be using this. Thanks.
-                                                </p>
-                                                <p>
-                                                        One question, know a way to have this pull just a specific interface's IP from ifconfig?
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Won't work on non-Linux Unices. Modded down.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <code>ifconfig | grep "inet addr" | cut -d: -f2 | cut -d' ' -f1</code>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                The initial version of this command also outputted extra empty lines, so it went like this:
+                                        </p>
+                                        <p>
+                                                192.168.166.48
+                                        </p>
+                                        <p>
+                                                127.0.0.1
+                                        </p>
+                                        <p>
+                                                This happened on Ubuntu, i haven't tested on anything else.
+                                        </p>
                                 </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ifconfig | awk '/inet / {sub(/addr:/, "", $2); print $2}'
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        ipconfig getpacket en0 | grep yi| sed s."yiaddr = "."en0: ". ipconfig getpacket en1 | grep yi| sed s."yiaddr = "."en1: ".
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Perl++!
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Great, I'll be using this. Thanks.
+                                </p>
+                                <p>
+                                        One question, know a way to have this pull just a specific interface's IP from ifconfig?
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Won't work on non-Linux Unices. Modded down.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <code>ifconfig | grep "inet addr" | cut -d: -f2 | cut -d' ' -f1</code>
                         </div>
                 </div>
         </body>

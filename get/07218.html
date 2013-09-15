@@ -1,104 +1,92 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Function to split a string into an array</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Function to split a string into an array
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Function to split a string into an array
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                read -a ARR &lt;&lt;&lt;'world domination now!'; echo ${ARR[2]};
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Function to split a string into an array
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                read -a ARR &lt;&lt;&lt;'world domination now!'; echo ${ARR[2]};
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 read -a ARR &lt;&lt;&lt;'world domination now!'; echo ${ARR[2]};
 now!
 IFS=":" read -a ARR &lt;&lt;&lt;"$PATH"; echo ${ARR[2]};
 /usr/local/bin
 </pre>
-                                        </div>
-                                        <div class="details">
-                                        </div>
+                        </div>
+                        <div class="details"></div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        command &lt;&lt;&lt; word
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        command &lt;&lt;&lt; word
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        Don't do this:
-                                                                </p><code>echo word | command</code>
-                                                                <p>
-                                                                        Using a bash "here strings" and "here documents" look leeter than piping echo into the command. Also prevents subshell execution. Word is also expanded as usual.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        Split() { eval "$1=( \"$(echo "${!1}" | sed "s/$2/\" \"/g")\" )"; }
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="details description">
+                                        <p>
+                                                Don't do this:
+                                        </p><code>echo word | command</code>
+                                        <p>
+                                                Using a bash "here strings" and "here documents" look leeter than piping echo into the command. Also prevents subshell execution. Word is also expanded as usual.
+                                        </p>
+                                </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        Split() { eval "$1=( \"$(echo "${!1}" | sed "s/$2/\" \"/g")\" )"; }
+                                </div>
+                                <div class="sample-output c5 output">
+                                        <pre>
 Example usage :
 $ TEST="jhfz:lkhf :lhf:h0258:r"
 $ Split TEST ":"
 $ echo ${TEST[@]}
 "jhfz" "lkhf " "lhf" "h0258" "r"
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        It works as a method applicated to a variable, converts the string variable into an array
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        Split() { SENT=${*} ; sentarry=( ${SENT} ) ; while [[ ${#sentarry[@]} -gt 0 ]] ; do printf "%s\n" "${sentarry[0]}" ; sentarry=( ${sentarry[@]:1} ) ; done ; }
-                                                </div>
-                                                <div class="details">
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Good one !
-                                                </p>
-                                                <p>
-                                                        it works with a variable within double quotes like :
-                                                </p><code>V='world domination now!'</code> <code>read -a ARR &lt;&lt;&lt;"$V"; echo ${ARR[2]};</code>
-                                                <p>
-                                                        And the separator can be changed (to ':') this way:
-                                                </p><code>IFS=':' read -a ARR &lt;&lt;&lt;"$V"; echo ${ARR[2]};</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        have you by chance seen the "sample output"?
-                                                </p>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                It works as a method applicated to a variable, converts the string variable into an array
+                                        </p>
                                 </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        Split() { SENT=${*} ; sentarry=( ${SENT} ) ; while [[ ${#sentarry[@]} -gt 0 ]] ; do printf "%s\n" "${sentarry[0]}" ; sentarry=( ${sentarry[@]:1} ) ; done ; }
+                                </div>
+                                <div class="details"></div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Good one !
+                                </p>
+                                <p>
+                                        it works with a variable within double quotes like :
+                                </p><code>V='world domination now!'</code> <code>read -a ARR &lt;&lt;&lt;"$V"; echo ${ARR[2]};</code>
+                                <p>
+                                        And the separator can be changed (to ':') this way:
+                                </p><code>IFS=':' read -a ARR &lt;&lt;&lt;"$V"; echo ${ARR[2]};</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        have you by chance seen the "sample output"?
+                                </p>
                         </div>
                 </div>
         </body>

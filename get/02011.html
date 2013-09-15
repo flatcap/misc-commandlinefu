@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>delete a line from your shell history</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        delete a line from your shell history
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                delete a line from your shell history
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                history -d
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                delete a line from your shell history
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                history -d
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 ssh host
 mypass
 -bash: mypass: command not found
@@ -31,41 +27,37 @@ history -d 1
 history
     1  history
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                If you're a moron like me, sometimes your fingers get away from you and you, for example, enter your password when you're already authenticated to ssh-agent, sudo, etc., and your password ends up in shell history. Here's how to get it out.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        I have to use this one quite often.
-                                                </p>
-                                                <p>
-                                                        My usage isn't usually to remove passwords, but because I've accidentally pasted a large number of lines into a terminal window. Have to use a for loop to delete a bunch of lines.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Wow, commandlinefu just taught me the fix for an annoyance I have had for years! Thanks so much.
-                                                </p>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        You can also remove the command by moving to the command and delete that line. And followed by up/down key (not enter), the command will be erased.
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        If you're a moron like me, sometimes your fingers get away from you and you, for example, enter your password when you're already authenticated to ssh-agent, sudo, etc., and your password ends up in shell history. Here's how to get it out.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        I have to use this one quite often.
+                                </p>
+                                <p>
+                                        My usage isn't usually to remove passwords, but because I've accidentally pasted a large number of lines into a terminal window. Have to use a for loop to delete a bunch of lines.
+                                </p>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Wow, commandlinefu just taught me the fix for an annoyance I have had for years! Thanks so much.
+                                </p>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        You can also remove the command by moving to the command and delete that line. And followed by up/down key (not enter), the command will be erased.
+                                </p>
                         </div>
                 </div>
         </body>

@@ -1,113 +1,101 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>change up n directories</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        change up n directories
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                change up n directories
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                up () { if [ "${1/[^0-9]/}" == "$1" ]; then p=./; for i in $(seq 1 $1); do p=${p}../; done; cd $p; else echo 'usage: up N'; fi }
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                change up n directories
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                up () { if [ "${1/[^0-9]/}" == "$1" ]; then p=./; for i in $(seq 1 $1); do p=${p}../; done; cd $p; else echo 'usage: up N'; fi }
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 /home/someone/directory$ up
 /home/someone$ up 2
 /$ cd -
 /home/someone$
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Change n directories up, without parameters change one up
-                                                        </p>
-                                                </div>
-                                        </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Change n directories up, without parameters change one up
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display">
+                        <div class="one-liner">
+                                <div class="line command">
+                                        up() { local x='';for i in $(seq ${1:-1});do x="$x../"; done;cd $x; }
                                 </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display">
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        up() { local x='';for i in $(seq ${1:-1});do x="$x../"; done;cd $x; }
-                                                </div>
-                                                <div class="sample-output c5 output">
-                                                        <pre>
+                                <div class="sample-output c5 output">
+                                        <pre>
 Add this to your .BASHRC file and you can simply type up to cd back one directory, up 2 to cd twice, up 10 to cd ten times... better then b,bb,bbb,bbbb aliases
 </pre>
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        I wrote this a long time ago, wondering why this wasn't floating around somewhere out there (at least not where I could find).. this seems much more simple than multiple aliases and can cd out of directories easier.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="one-liner">
-                                                <div class="line command">
-                                                        up() { [ $(( $1 + 0 )) -gt 0 ] &amp;&amp; cd $(eval "printf '../'%.0s {1..$1}"); }
-                                                </div>
-                                                <div class="details">
-                                                        <div class="description">
-                                                                <p>
-                                                                        `up 3` will climb the directory tree by three steps. `up asdf` will do nothing, and returns exit code 1 as an error should.
-                                                                </p>
-                                                        </div>
-                                                </div>
-                                        </div>
                                 </div>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        I like your numeric test, but I can still save you a few characters...
-                                                </p>
-                                                <p>
-                                                        If you reverse the shell replace, it becomes shorter:
-                                                </p><code>if [ -z "$1//[0-9]/" ]; then</code>
-                                                <p>
-                                                        Next, you need to initialise p, but empty is fine
-                                                </p><code>p=;</code>
-                                                <p>
-                                                        My final suggestion makes the command longer :-0, but it avoids using seq (making it faster)
-                                                </p><code>for ((i=0;i&lt;${1:-1};i++)); do</code>
-                                                <p>
-                                                        That leaves:
-                                                </p><code>up() { if [ -z "${1//[0-9]/}" ]; then p=; for ((i=0;i&lt;${1:-1};i++)); do p=${p}../; done; cd $p; else echo 'usage: up N'; fi }</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Nice modified, flatcap!
-                                                </p>
-                                                <p>
-                                                        I like your shorter numeric test and the default $1 value (1) in the for-loop.
-                                                </p>
-                                                <p>
-                                                        But I think it's better to keep p=./; rather p=;
-                                                </p>
-                                                <p>
-                                                        Because it will cd to $HOME, if you type "$ up 0".
-                                                </p>
-                                                <p>
-                                                        I think keep "$ up 0" in current directory is better. (maybe)
-                                                </p>
-                                        </div>
+                                <div class="details description">
+                                        <p>
+                                                I wrote this a long time ago, wondering why this wasn't floating around somewhere out there (at least not where I could find).. this seems much more simple than multiple aliases and can cd out of directories easier.
+                                        </p>
                                 </div>
+                        </div>
+                        <div class="one-liner">
+                                <div class="line command">
+                                        up() { [ $(( $1 + 0 )) -gt 0 ] &amp;&amp; cd $(eval "printf '../'%.0s {1..$1}"); }
+                                </div>
+                                <div class="details description">
+                                        <p>
+                                                `up 3` will climb the directory tree by three steps. `up asdf` will do nothing, and returns exit code 1 as an error should.
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        I like your numeric test, but I can still save you a few characters...
+                                </p>
+                                <p>
+                                        If you reverse the shell replace, it becomes shorter:
+                                </p><code>if [ -z "$1//[0-9]/" ]; then</code>
+                                <p>
+                                        Next, you need to initialise p, but empty is fine
+                                </p><code>p=;</code>
+                                <p>
+                                        My final suggestion makes the command longer :-0, but it avoids using seq (making it faster)
+                                </p><code>for ((i=0;i&lt;${1:-1};i++)); do</code>
+                                <p>
+                                        That leaves:
+                                </p><code>up() { if [ -z "${1//[0-9]/}" ]; then p=; for ((i=0;i&lt;${1:-1};i++)); do p=${p}../; done; cd $p; else echo 'usage: up N'; fi }</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Nice modified, flatcap!
+                                </p>
+                                <p>
+                                        I like your shorter numeric test and the default $1 value (1) in the for-loop.
+                                </p>
+                                <p>
+                                        But I think it's better to keep p=./; rather p=;
+                                </p>
+                                <p>
+                                        Because it will cd to $HOME, if you type "$ up 0".
+                                </p>
+                                <p>
+                                        I think keep "$ up 0" in current directory is better. (maybe)
+                                </p>
                         </div>
                 </div>
         </body>

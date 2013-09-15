@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Multi line grep using sed and specifying open/close tags</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Multi line grep using sed and specifying open/close tags
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Multi line grep using sed and specifying open/close tags
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                cat file.txt | sed -e /&lt;opening tag&gt;/d -e /&lt;closing tag&gt;/G | sed -e '/./{H;$!d;}' -e 'x;/&lt;string to search&gt;/!d;'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Multi line grep using sed and specifying open/close tags
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                cat file.txt | sed -e /&lt;opening tag&gt;/d -e /&lt;closing tag&gt;/G | sed -e '/./{H;$!d;}' -e 'x;/&lt;string to search&gt;/!d;'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 The command:
 cat file.txt | sed -e /^$/d -e /++-/G | sed -e '/./{H;$!d;}' -e 'x;/Lorem/!d;'
 Will print the message:
@@ -33,30 +29,28 @@ But not:
 Vestibulum fermentum molestie nunc a interdum.
 ++-
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Working with log files that contains variable length messages wrapped between open and close tags it may be useful to filter the messages upon a keyword.
-                                                        </p>
-                                                        <p>
-                                                                This works fine with GNU sed version 4.2 or higher, so pay attention to some unix distros (solaris, hp-ux, etc.).
-                                                        </p>
-                                                        <p>
-                                                                Linux should be ok.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <div class="terminal-display one-liner">
-                                        <div class="line command">
-                                                sed '/'"&lt;opening tag&gt;"'/,/'"&lt;closing tag&gt;"'/{/'"&lt;closing tag&gt;"'/d;p};d' "<span>&lt;file&gt;</span>"
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Working with log files that contains variable length messages wrapped between open and close tags it may be useful to filter the messages upon a keyword.
+                                </p>
+                                <p>
+                                        This works fine with GNU sed version 4.2 or higher, so pay attention to some unix distros (solaris, hp-ux, etc.).
+                                </p>
+                                <p>
+                                        Linux should be ok.
+                                </p>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <div class="terminal-display one-liner">
+                        <div class="line command">
+                                sed '/'"&lt;opening tag&gt;"'/,/'"&lt;closing tag&gt;"'/{/'"&lt;closing tag&gt;"'/d;p};d' "<span>&lt;file&gt;</span>"
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 daveqb@localhost /tmp $
 cat test
 one two three
@@ -69,15 +63,11 @@ sed '/'"four"'/,/'"six"'/{/'"six"'/d;p};d' "test"
 four
 five
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                This line does not include your closing tag in the output.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        This line does not include your closing tag in the output.
+                                </p>
                         </div>
                 </div>
         </body>

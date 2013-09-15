@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Copy modified files between two Git commits</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Copy modified files between two Git commits
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Copy modified files between two Git commits
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                git diff --name-only --diff-filter=AMXTCR HEAD~2 HEAD | xargs -l -I{} cp --parents --verbose "{}" target_dir
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Copy modified files between two Git commits
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                git diff --name-only --diff-filter=AMXTCR HEAD~2 HEAD | xargs -l -I{} cp --parents --verbose "{}" target_dir
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 db -&gt; target_dir/db
 `db/db.sql' -&gt; `target_dir/db/db.sql'
 site -&gt; target_dir/site
@@ -41,14 +37,11 @@ site/templates/my_template/html/mod_latestnews -&gt; target_dir/site/templates/m
 `site/templates/my_template/html/mod_latestnews/default.php' -&gt; `target_dir/site/templates/my_template/html/mod_latestnews/default.php'
 `site/templates/my_template/index.php' -&gt; `target_dir/site/templates/my_template/index.php'
 </pre>
-                                        </div>
-                                        <div class="details">
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
                         </div>
+                        <div class="details"></div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

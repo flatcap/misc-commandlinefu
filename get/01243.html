@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Sort dotted quads</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Sort dotted quads
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Sort dotted quads
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                sort -nt . -k 1,1 -k 2,2 -k 3,3 -k 4,4
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Sort dotted quads
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                sort -nt . -k 1,1 -k 2,2 -k 3,3 -k 4,4
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 sort -nt . -k 1,1 -k 2,2 -k 3 -k 4  /tmp/j
 2.159.416.20
 3.4.160.100
@@ -30,19 +26,15 @@ sort -nt . -k 1,1 -k 2,2 -k 3 -k 4  /tmp/j
 3.195.144.22
 10.159.164.22
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Sort a list of IPV4 addresses in numerical order. Great as a filter, or within vim using !}
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Sort a list of IPV4 addresses in numerical order. Great as a filter, or within vim using !}
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

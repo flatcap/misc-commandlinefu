@@ -1,41 +1,33 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Extract the MBR ID of a device</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Extract the MBR ID of a device
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Extract the MBR ID of a device
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                dd if=/dev/sda bs=1 count=4 skip=$((0x1b8)) 2&gt;/dev/null | hexdump -n4 -e '"0x%x\n"'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Extract the MBR ID of a device
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                dd if=/dev/sda bs=1 count=4 skip=$((0x1b8)) 2&gt;/dev/null | hexdump -n4 -e '"0x%x\n"'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 0x8de54e0a
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Useful when you want to know the mbrid of a device - for the purpose of making it bootable. Certain hybridiso distros, for eg the OpenSUSE live ISO uses the mbrid to find the live media. Use this command to find out the mbrid of your USB drive and then edit the /grub/mbrid file to match it.
-                                                        </p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Useful when you want to know the mbrid of a device - for the purpose of making it bootable. Certain hybridiso distros, for eg the OpenSUSE live ISO uses the mbrid to find the live media. Use this command to find out the mbrid of your USB drive and then edit the /grub/mbrid file to match it.
+                                </p>
                         </div>
                 </div>
+                <h3>
+                        Alternatives
+                </h3>
         </body>
 </html>

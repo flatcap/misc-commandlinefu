@@ -1,26 +1,22 @@
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-                <title>Show me a histogram of the busiest minutes in a log file:</title>
-		<link rel='stylesheet' href='style.css' type='text/css' />
+                <title>
+                        Show me a histogram of the busiest minutes in a log file:
+                </title>
+                <link rel='stylesheet' href='style.css' type='text/css' />
         </head>
         <body>
-                <div id="wrapper">
-                        <div id="left-block">
-                                <div id="terminal-header">
-                                        <h1>
-                                                Show me a histogram of the busiest minutes in a log file:
-                                        </h1>
-                                </div>
-                                <div class="terminal-display one-liner" id="terminal-display-main">
-                                        <div class="line command">
-                                                cat /var/log/secure.log | awk '{print substr($0,0,12)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}'
-                                        </div>
-                                        <div class="sample-output c5 output">
-                                                <pre>
+                <div id="terminal-header">
+                        <h1>
+                                Show me a histogram of the busiest minutes in a log file:
+                        </h1>
+                </div>
+                <div class="terminal-display one-liner" id="terminal-display-main">
+                        <div class="line command">
+                                cat /var/log/secure.log | awk '{print substr($0,0,12)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}'
+                        </div>
+                        <div class="sample-output c5 output">
+                                <pre>
 -macbook:~ root# cat /var/log/secure.log | awk '{print substr($0,0,12)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}' | head
    9 Jul 21 20:21 *********
    9 Jul 20 19:46 *********
@@ -32,43 +28,39 @@
    4 Jul 20 21:25 ****
    4 Jul 20 21:12 ****
 </pre>
-                                        </div>
-                                        <div class="details">
-                                                <div class="description">
-                                                        <p>
-                                                                Busiest seconds:
-                                                        </p><code>cat /var/log/secure.log | awk '{print substr($0,0,15)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}'</code>
-                                                </div>
-                                        </div>
-                                </div>
-                                <h3>
-                                        Alternatives
-                                </h3>
-                                <h3>
-                                        What others think
-                                </h3>
-                                <div id="comments">
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Nicely done!! I would remove cat to make it a little more efficient:
-                                                </p><code>awk '{print substr($0,0,15)}' /var/log/secure.log | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}'</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        I would replace the first awk with:
-                                                </p><code>cut -c1-12</code>
-                                        </div>
-                                        <div class="comment comment0 body">
-                                                <p>
-                                                        Love it. Thanks. To check my log4j files for the current hour I tweaked to:
-                                                </p><code>grep "^$(date '+%Y-%m-%d %H')" /blah/blah/logs/someLog4j.log | awk '{print substr($0,0,17)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}';echo</code>
-                                        </div>
-                                        <div class="comment comment1 body">
-                                                <p>
-                                                        Fantastic! Great little tool.
-                                                </p>
-                                        </div>
-                                </div>
+                        </div>
+                        <div class="details description">
+                                <p>
+                                        Busiest seconds:
+                                </p><code>cat /var/log/secure.log | awk '{print substr($0,0,15)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}'</code>
+                        </div>
+                </div>
+                <h3>
+                        Alternatives
+                </h3>
+                <h3>
+                        What others think
+                </h3>
+                <div id="comments">
+                        <div class="comment comment0 body">
+                                <p>
+                                        Nicely done!! I would remove cat to make it a little more efficient:
+                                </p><code>awk '{print substr($0,0,15)}' /var/log/secure.log | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}'</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        I would replace the first awk with:
+                                </p><code>cut -c1-12</code>
+                        </div>
+                        <div class="comment comment0 body">
+                                <p>
+                                        Love it. Thanks. To check my log4j files for the current hour I tweaked to:
+                                </p><code>grep "^$(date '+%Y-%m-%d %H')" /blah/blah/logs/someLog4j.log | awk '{print substr($0,0,17)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}';echo</code>
+                        </div>
+                        <div class="comment comment1 body">
+                                <p>
+                                        Fantastic! Great little tool.
+                                </p>
                         </div>
                 </div>
         </body>
