@@ -35,35 +35,19 @@
     <div id="wrapper">
         
         <div id="right-block">
-            
-<div class="box-copy">
-    <a class="visibility-toggle" id="box-copy-intro">Hide</a>
-    <h3>What's this?</h3>
-    <div class="toggleable">
-        <p><strong>commandlinefu.com</strong> is the place to record those command-line gems that you return to again and again.</p>
-        <p>Delete that bloated snippets file you've been using and share your personal repository with the world.  
-        That way others can gain from your <abbr title="Command-line interface">CLI</abbr> wisdom and you from theirs too.  All commands can be commented on, discussed and 
-        voted up or down. </p>
-        <hr />
-        <p>If you have a new feature suggestion or find a bug, please 
-        get in touch via <a href="http://commandlinefu.uservoice.com/"><strong>http://commandlinefu.uservoice.com/</strong></a><p>
-    </div>
-</div>
-<div class="box-copy">
-    <h3>Get involved!</h3>
-    <p>
-    You can sign-in using <strong>OpenID credentials</strong>, or register a traditional username and password.
-    </p>
-    <div class="visitor-options">
-        <a href="/users/openid" id="openid-link" title="I am part of the new-save and would like to use OpenID credentials">OpenID</a> 
-        <div style="float:left;padding:10px 0px;margin:0px 10px 0px 0">or</div> 
-        <a href="/users/signin" id="sign-in-link" title="I've been here before - let me in">Sign in</a> 
-        <a href="/users/register" id="register-link" title="I am Amish and am wary of new technology">Register</a>
-    </div>
-    <p>
-    First-time OpenID users will be automatically assigned a username which can be changed after signing in.
-    </p>
-</div>
+                <div class="box-copy-you">
+        <strong>flatcap</strong>
+        <div style="padding: 4px 0">
+            <a href="/commands/by/flatcap">Your commands</a> | 
+            <a href="/users/profile">Profile</a> | 
+            <a href="/commands/favourites">Favourites</a> |
+            <a href="/users/signout">Sign out</a>
+        </div>
+        <div class="user-options">
+            <a href="/commands/edit" class="link-you">Create a new command</a>
+                    </div>
+            </div>
+
 
 
 <script type="text/javascript"><!--
@@ -3844,7 +3828,12 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                          
                             <a href="/commands/tagged/1699/domain-name">domain name</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/11683">edit</a>
+                            <a href="/commands/delete/11683" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-11683">1</div>
                     <div class="voting-options">
@@ -3915,7 +3904,12 @@ root
                          
                             <a href="/commands/tagged/1513/for-loop">for loop</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/10964">edit</a>
+                            <a href="/commands/delete/10964" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-10964">0</div>
                     <div class="voting-options">
@@ -3976,7 +3970,12 @@ root
                          
                             <a href="/commands/tagged/616/cal">cal</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/10726">edit</a>
+                            <a href="/commands/delete/10726" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-10726">2</div>
                     <div class="voting-options">
@@ -4029,7 +4028,12 @@ root
                          
                             <a href="/commands/tagged/123/find">find</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/10665">edit</a>
+                            <a href="/commands/delete/10665" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-10665">0</div>
                     <div class="voting-options">
@@ -4116,7 +4120,12 @@ root
                          
                             <a href="/commands/tagged/2103/head">head,</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/10500">edit</a>
+                            <a href="/commands/delete/10500" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-10500">6</div>
                     <div class="voting-options">
@@ -4197,7 +4206,12 @@ root
                          
                             <a href="/commands/tagged/407/tr">tr</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/10440">edit</a>
+                            <a href="/commands/delete/10440" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-10440">0</div>
                     <div class="voting-options">
@@ -4252,7 +4266,12 @@ root
                          
                             <a href="/commands/using/sed">sed</a>
                                             </div>
-                                                                            </div>
+                                                                                    <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/10401">edit</a>
+                            <a href="/commands/delete/10401" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-10401">0</div>
                     <div class="voting-options">
@@ -4301,7 +4320,12 @@ banana.example.com     6</pre>
                          
                             <a href="/commands/tagged/13/mysql">mysql</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/9938">edit</a>
+                            <a href="/commands/delete/9938" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-9938">5</div>
                     <div class="voting-options">
@@ -4361,7 +4385,12 @@ $ printf &quot;$PWD/%s\n&quot; *
                          
                             <a href="/commands/tagged/920/printf">printf</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/9909">edit</a>
+                            <a href="/commands/delete/9909" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-9909">3</div>
                     <div class="voting-options">
@@ -4420,7 +4449,12 @@ $ printf &quot;$PWD/%s\n&quot; *
                          
                             <a href="/commands/tagged/110/sed">sed</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/9890">edit</a>
+                            <a href="/commands/delete/9890" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-9890">5</div>
                     <div class="voting-options">
@@ -4438,7 +4472,7 @@ $ printf &quot;$PWD/%s\n&quot; *
                 <div class="options">
                                     <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-9890'))">Show sample output</a> |
                                 <a href="/commands/view/9890/print-all-lines-between-two-line-numbers#comment">Comments (4)</a> |
-                                <a class="favourite-link" id="toggle-favourite-9890" href="javascript:void(0)">Add to favourites</a> |
+                                <a class="favourite-link" id="toggle-favourite-9890" href="javascript:void(0)">Remove from favourites</a> |
                 <a class="report-link" id="report-9890" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
                 <a href="/commands/edit/0/9890" title="Submit a superior alternative">Submit alternative</a> |
                 <a href="/commands/duplicate/9890" title="Report as duplicate">Report as a duplicate</a>
@@ -4478,7 +4512,12 @@ $ printf &quot;$PWD/%s\n&quot; *
                          
                             <a href="/commands/tagged/1450/uuid">uuid</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/9750">edit</a>
+                            <a href="/commands/delete/9750" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-9750">-1</div>
                     <div class="voting-options">
@@ -4533,7 +4572,12 @@ coreutils-8.10-2.fc15.x86_64
                          
                             <a href="/commands/tagged/60/rpm">rpm</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/8779">edit</a>
+                            <a href="/commands/delete/8779" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-8779">0</div>
                     <div class="voting-options">
@@ -4606,7 +4650,12 @@ the old GNU fileutils, sh-utils, and textutils packages.</pre>
                          
                             <a href="/commands/tagged/60/rpm">rpm</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/8778">edit</a>
+                            <a href="/commands/delete/8778" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-8778">0</div>
                     <div class="voting-options">
@@ -4661,7 +4710,12 @@ the old GNU fileutils, sh-utils, and textutils packages.</pre>
                          
                             <a href="/commands/tagged/332/dates">dates</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/8721">edit</a>
+                            <a href="/commands/delete/8721" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-8721">26</div>
                     <div class="voting-options">
@@ -4730,7 +4784,12 @@ the old GNU fileutils, sh-utils, and textutils packages.</pre>
                          
                             <a href="/commands/tagged/1147/set">set</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/8701">edit</a>
+                            <a href="/commands/delete/8701" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-8701">0</div>
                     <div class="voting-options">
@@ -4824,7 +4883,12 @@ necuzora.png  seeheoye.gif  veefeiwa.jpg
                          
                             <a href="/commands/tagged/1009/pwgen">pwgen</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/8686">edit</a>
+                            <a href="/commands/delete/8686" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-8686">1</div>
                     <div class="voting-options">
@@ -4898,7 +4962,12 @@ necuzora.png  seeheoye.gif  veefeiwa.jpg
                          
                             <a href="/commands/tagged/1810/whitespace">whitespace</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/8264">edit</a>
+                            <a href="/commands/delete/8264" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-8264">-4</div>
                     <div class="voting-options">
@@ -4964,7 +5033,12 @@ Selected keyring-dn8fNC</pre>
                          
                             <a href="/commands/tagged/514/random">random</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/8086">edit</a>
+                            <a href="/commands/delete/8086" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-8086">-5</div>
                     <div class="voting-options">
@@ -5029,7 +5103,12 @@ Selected keyring-dn8fNC</pre>
                          
                             <a href="/commands/tagged/1387/counter">counter</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/7938">edit</a>
+                            <a href="/commands/delete/7938" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-7938">11</div>
                     <div class="voting-options">
@@ -5094,7 +5173,12 @@ Selected keyring-dn8fNC</pre>
                          
                             <a href="/commands/tagged/1739/cmp">cmp</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/7917">edit</a>
+                            <a href="/commands/delete/7917" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-7917">-3</div>
                     <div class="voting-options">
@@ -5165,7 +5249,12 @@ Selected keyring-dn8fNC</pre>
                          
                             <a href="/commands/tagged/544/cp">cp</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/7896">edit</a>
+                            <a href="/commands/delete/7896" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-7896">-2</div>
                     <div class="voting-options">
@@ -5231,7 +5320,12 @@ Selected keyring-dn8fNC</pre>
                          
                             <a href="/commands/tagged/878/math">math</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/7849">edit</a>
+                            <a href="/commands/delete/7849" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-7849">0</div>
                     <div class="voting-options">
@@ -5302,7 +5396,12 @@ Selected keyring-dn8fNC</pre>
                          
                             <a href="/commands/tagged/878/math">math</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/7833">edit</a>
+                            <a href="/commands/delete/7833" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
                     <div class="num-votes" id="num-votes-7833">0</div>
                     <div class="voting-options">
@@ -5362,6 +5461,6 @@ Selected keyring-dn8fNC</pre>
             }
     </script>
     
-    <script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-5.newrelic.com","cf136d8e04","1677136","YlcAYREAXBBQBhAIC1sdI1YXCF0NHiYLDAlUXAZGTANL",0,274,new Date().getTime(),"","","","",""]);</script>
+    <script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-5.newrelic.com","cf136d8e04","1677136","YlcAYREAXBBQBhAIC1sdI1YXCF0NHiYLDAlUXAZGTANL",0,295,new Date().getTime(),"","","","",""]);</script>
 </body>
 </html>

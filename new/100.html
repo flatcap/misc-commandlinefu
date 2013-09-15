@@ -17,9 +17,9 @@
     
     <link rel="search" type="application/opensearchdescription+xml" title="commandlinefu.com search plugin" href="/mozilla_search_plugin.xml" />
     
-            <link href="http://feeds2.feedburner.com/Command-line-fu" title="RSS" type="application/rss+xml" rel="alternate" />
+            <link href="/commands/favourites/rss" title="RSS" type="application/rss+xml" rel="alternate" />
         
-    <title>All commands | commandlinefu.com</title>
+    <title>Your favourites | commandlinefu.com</title>
     
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js?load=effects,controls"></script>
@@ -35,35 +35,19 @@
     <div id="wrapper">
         
         <div id="right-block">
-            
-<div class="box-copy">
-    <a class="visibility-toggle" id="box-copy-intro">Hide</a>
-    <h3>What's this?</h3>
-    <div class="toggleable">
-        <p><strong>commandlinefu.com</strong> is the place to record those command-line gems that you return to again and again.</p>
-        <p>Delete that bloated snippets file you've been using and share your personal repository with the world.  
-        That way others can gain from your <abbr title="Command-line interface">CLI</abbr> wisdom and you from theirs too.  All commands can be commented on, discussed and 
-        voted up or down. </p>
-        <hr />
-        <p>If you have a new feature suggestion or find a bug, please 
-        get in touch via <a href="http://commandlinefu.uservoice.com/"><strong>http://commandlinefu.uservoice.com/</strong></a><p>
-    </div>
-</div>
-<div class="box-copy">
-    <h3>Get involved!</h3>
-    <p>
-    You can sign-in using <strong>OpenID credentials</strong>, or register a traditional username and password.
-    </p>
-    <div class="visitor-options">
-        <a href="/users/openid" id="openid-link" title="I am part of the new-save and would like to use OpenID credentials">OpenID</a> 
-        <div style="float:left;padding:10px 0px;margin:0px 10px 0px 0">or</div> 
-        <a href="/users/signin" id="sign-in-link" title="I've been here before - let me in">Sign in</a> 
-        <a href="/users/register" id="register-link" title="I am Amish and am wary of new technology">Register</a>
-    </div>
-    <p>
-    First-time OpenID users will be automatically assigned a username which can be changed after signing in.
-    </p>
-</div>
+                <div class="box-copy-you">
+        <strong>flatcap</strong>
+        <div style="padding: 4px 0">
+            <a href="/commands/by/flatcap">Your commands</a> | 
+            <a href="/users/profile">Profile</a> | 
+            <a href="/commands/favourites">Favourites</a> |
+            <a href="/users/signout">Sign out</a>
+        </div>
+        <div class="user-options">
+            <a href="/commands/edit" class="link-you">Create a new command</a>
+                    </div>
+            </div>
+
 
 
 <script type="text/javascript"><!--
@@ -105,6 +89,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                 <li>&raquo; <a style="color:white;font-weight:bold;" href="http://feeds2.feedburner.com/Command-line-fu">all commands</a></li>
                 <li>&raquo; <a style="color:white;font-weight:bold;" href="/feed/threeup">commands with 3 up-votes</a> (commandlinefu3)</li>
                 <li>&raquo; <a style="color:white;font-weight:bold;" href="/feed/tenup">commands with 10 up-votes</a> (commandlinefu10)</li>
+                                <li>&raquo; <a style="color:white;font-weight:bold;" href="/commands/favourites/rss">your favourites</a></li>
                                 </ul>
             </dd>
         </dl>
@@ -3767,15 +3752,15 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
         </div>
         
         <div id="flash" style="display:none">
-            You must be signed in to view favourites        </div>
+                    </div>
         
         <div id="left-block">
             <div id="terminal-header">
     <h1></h1>
     <div id="terminal-summary">
         <form action="/commands/filter" method="post">
-            <input type="hidden" name="base-url" value="/commands/browse" />
-            <strong>All commands</strong> from
+            <input type="hidden" name="base-url" value="/commands/favourites" />
+            <strong>Your favourites</strong> from
             <select name="time-period">
                                     <option value="last-day" >the last day</option>
                                     <option value="last-week" >the last week</option>
@@ -3799,512 +3784,226 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
         <a class="terminal-button terminal-button-restore" style="display:none"></a>
         <a class="terminal-button terminal-button-minimise" ></a>
         <img style="float:left;margin-right:4px;" src="/images/terminal-options.gif" />
-        Terminal - All commands - 10,959 results
+        Terminal - Your favourites - 132 results
     </div>
                 <div class="one-liner">
             <div class="line" title="Click to select this command">
-                <div class="command">!:n</div>
+                <div class="command">sed -i -e 's/[ \t]*$//;/^$/N;/\n$/D' sourcefiletocleanup</div>
             </div>
-            <div style="display:none" class="sample-output" id="sample-output-12721">
+            <div style="display:none" class="sample-output" id="sample-output-10231">
                 <div class="output-meta">
                     This is sample output - yours may be different.
                 </div>
                 <div class="output">
-                    <pre># This handles white space embedded in an argument correctly
-$ cp /etc/passwd &quot;This little piggy went to market&quot;
-$ echo !:2 
-This little piggy went to market
-
-# Note that redirection operators are numbered as arguments
-$ sort &quot;This little piggy went to market&quot; &gt;&quot;Home again, home again, jiggity jig&quot;
-$ mv !:3 !:1
-
-# Abbreviations for the first and last argument
-$ echo This little piggy went to market
-$ echo &quot;First argument !^, last argument: !$&quot;
-First argument This, last argument: market
-</pre>
+                    <pre></pre>
                 </div> 
             </div>
             <div class="details">
                 <div class="meta">
                     <div class="date">
-                    2013-09-15 03:41:13                    </div>
+                    2012-02-10 11:09:54                    </div>
                     <div class="author">
-                        User: <a href="/commands/by/hackerb9">hackerb9</a>
+                        User: <a href="/commands/by/bibe">bibe</a>
                     </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/sed">sed</a>
+                                            </div>
+                                                                            </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-10231">1</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-10231">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-10231">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/10231/cleanup-a-source-text-file-removing-trailing-spacestabs-and-multiple-consecutive-blank-lines" title="Find out what others think of this command">Cleanup a (source) text file, removing trailing spaces/tabs and multiple consecutive blank lines</a>
+                </div>
+                <div class="description">
+                    <p>I used this command (in addition to a code formatting tool) to "cleanup" a bunch of PHP files</p> 
+                </div>
+                <div class="options">
+                                <a href="/commands/view/10231/cleanup-a-source-text-file-removing-trailing-spacestabs-and-multiple-consecutive-blank-lines#comment">Comments (0)</a> |
+                                <a class="favourite-link" id="toggle-favourite-10231" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-10231" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/10231" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/10231" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">full() {local i;for i in $*;do readlink -f $i;done}</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-10222">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre></pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2012-02-09 11:40:05                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/flxndn">flxndn</a>
+                    </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/readlink">readlink</a>
+                                            </div>
+                                                                            </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-10222">0</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-10222">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-10222">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/10222/function-that-show-the-full-path-of-every-argument." title="Find out what others think of this command">Function that show the full path of every argument.</a>
+                </div>
+                <div class="description">
+                    <p>You can use the command "full" not only with one item, with items with diferent paths, and with relatives and absolute paths.</p> 
+                </div>
+                <div class="options">
+                                <a href="/commands/view/10222/function-that-show-the-full-path-of-every-argument.#comment">Comments (0)</a> |
+                                <a class="favourite-link" id="toggle-favourite-10222" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-10222" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/10222" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/10222" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">ls -l | gawk -v FIELDWIDTHS='1 3 3 3' '{print $2}'</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-10209">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre></pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2012-02-08 08:18:25                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/kev">kev</a>
+                    </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/gawk">gawk</a>
+                         
+                            <a href="/commands/using/ls">ls</a>
+                                            </div>
                                                             <div class="functions">
                         Tags:
                          
-                            <a href="/commands/tagged/29/history">history</a>
-                         
-                            <a href="/commands/tagged/34/bash">bash</a>
-                         
-                            <a href="/commands/tagged/287/bang">bang</a>
-                         
-                            <a href="/commands/tagged/1049/argument">argument</a>
-                         
-                            <a href="/commands/tagged/2548/bang-colon">bang-colon</a>
+                            <a href="/commands/tagged/824/gawk">gawk</a>
                                             </div>
                                                         </div>
                 <div class="votes">
-                    <div class="num-votes" id="num-votes-12721">5</div>
+                    <div class="num-votes" id="num-votes-10209">4</div>
                     <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12721">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12721">Down</a>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-10209">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-10209">Down</a>
                     </div>
                 </div>
                 <div class="summary">
-                    <a href="/commands/view/12721/get-the-nth-argument-of-the-last-command-handling-spaces-correctly" title="Find out what others think of this command">Get the Nth argument of the last command (handling spaces correctly)</a>
-                </div>
-                <div class="description">
-                    <p>Bash's history expansion character, "!", has many features, including "!:" for choosing a specific argument (or range of arguments) from the history. The gist is any number after !: is the number of the argument you want, with !:1 being the first argument and !:0 being the command.  See the sample output for a few examples. For full details search for "^HISTORY EXPANSION" in the bash(1) man page.</p>
-<p>&#8194;</p>
-<p>&#8194;Note that this version improves on the previous function in that it handles arguments that include whitespace correctly.</p> 
-                </div>
-                <div class="options">
-                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-12721'))">Show sample output</a> |
-                                <a href="/commands/view/12721/get-the-nth-argument-of-the-last-command-handling-spaces-correctly#comment">Comments (1)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12721" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12721" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12721" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12721" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">cat /dev/zero &gt; /dev/sda</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12719">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre></pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-13 21:47:48                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/fhh">fhh</a>
-                    </div>
-                                        <div class="functions">
-                        Functions:
-                         
-                            <a href="/commands/using/cat">cat</a>
-                                            </div>
-                                                                            </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12719">0</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12719">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12719">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12719/dd-ifdevnull-ofdevsda" title="Find out what others think of this command">dd if=/dev/null of=/dev/sda</a>
-                </div>
-                <div class="description">
-                    <p>Exactly the same effect with 3 less characters ;-) (Removes all files/filesystems of a harddisk. It removes EVERYTHING of your hard disk. Be careful when to select a device.)</p>
-<p>You can press Ctrl + C after few seconds</p>
-<p>(No output)</p> 
-                </div>
-                <div class="options">
-                                <a href="/commands/view/12719/dd-ifdevnull-ofdevsda#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12719" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12719" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12719" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12719" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">grep --color -R &quot;text&quot; directory/</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12718">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre></pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-13 18:55:22                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/jmorganwalker">jmorganwalker</a>
-                    </div>
-                                        <div class="functions">
-                        Functions:
-                         
-                            <a href="/commands/using/grep">grep</a>
-                                            </div>
-                                                                            </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12718">0</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12718">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12718">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12718/grep-for-text-within-all-files-in-a-folder-structure" title="Find out what others think of this command">Grep for text within all files in a folder structure</a>
+                    <a href="/commands/view/10209/gawk-gets-fixed-width-field" title="Find out what others think of this command">gawk gets fixed width field</a>
                 </div>
                 <div class="description">
                      
                 </div>
                 <div class="options">
-                                <a href="/commands/view/12718/grep-for-text-within-all-files-in-a-folder-structure#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12718" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12718" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12718" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12718" title="Report as duplicate">Report as a duplicate</a>
+                                <a href="/commands/view/10209/gawk-gets-fixed-width-field#comment">Comments (1)</a> |
+                                <a class="favourite-link" id="toggle-favourite-10209" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-10209" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/10209" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/10209" title="Report as duplicate">Report as a duplicate</a>
                 </div>
             </div>
         </div>
                 <div class="one-liner">
             <div class="line" title="Click to select this command">
-                <div class="command">iostat -d -x 10 5</div>
+                <div class="command">sed -r 's/(\[|])//g' | awk ' { $1=strftime(&quot;%D %T&quot;,$1); print }'</div>
             </div>
-            <div style="display:none" class="sample-output" id="sample-output-12717">
+            <div style="display:none" class="sample-output" id="sample-output-10168">
                 <div class="output-meta">
                     This is sample output - yours may be different.
                 </div>
                 <div class="output">
-                    <pre></pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-13 18:54:11                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/jmorganwalker">jmorganwalker</a>
-                    </div>
-                                                                            </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12717">0</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12717">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12717">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12717/check-disk-io" title="Find out what others think of this command">Check disk I/O</a>
-                </div>
-                <div class="description">
-                     
-                </div>
-                <div class="options">
-                                <a href="/commands/view/12717/check-disk-io#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12717" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12717" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12717" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12717" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">pbpaste | coffee -bcsp | tail -n +2</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12716">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre>foo(&quot;abc&quot;, function() {
-  return &quot;blah&quot;;
-});
+                    <pre>Input :
+[1325199600] CURRENT SERVICE STATE: HOST01;Loopback;OK;HARD;1;Loopback0:UP:1 UP: OK
+[1325199600] CURRENT SERVICE STATE: HOST01;Uptime Routers SFR;OK;HARD;1;Information only: 114 days
 
-
-(given this text on the clipboard:)
-foo &quot;abc&quot;, -&gt;
-  &quot;blah&quot;</pre>
+Ouput :
+12/30/11 00:00:00 CURRENT SERVICE STATE: HOST01;Loopback;OK;HARD;1;Loopback0:UP:1 UP: OK
+12/30/11 00:00:00 CURRENT SERVICE STATE: HOST01;Uptime Routers SFR;OK;HARD;1;Information only: 114 days</pre>
                 </div> 
             </div>
             <div class="details">
                 <div class="meta">
                     <div class="date">
-                    2013-09-13 04:50:27                    </div>
+                    2012-02-03 13:07:37                    </div>
                     <div class="author">
-                        User: <a href="/commands/by/roryokane">roryokane</a>
-                    </div>
-                                        <div class="functions">
-                        Functions:
-                         
-                            <a href="/commands/using/tail">tail</a>
-                                            </div>
-                                                            <div class="functions">
-                        Tags:
-                         
-                            <a href="/commands/tagged/1478/javascript">javascript</a>
-                         
-                            <a href="/commands/tagged/1746/mac-os-x">mac os x</a>
-                         
-                            <a href="/commands/tagged/2369/compile">compile</a>
-                         
-                            <a href="/commands/tagged/2547/coffeescript">coffeescript</a>
-                                            </div>
-                                                        </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12716">-1</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12716">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12716">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12716/compile-coffeescript-on-mac-clipboard-to-javascript-and-print-it" title="Find out what others think of this command">Compile CoffeeScript on Mac clipboard to JavaScript and print it</a>
-                </div>
-                <div class="description">
-                    <p>This particular combination of flags mimics Try CoffeeScript (on <a href="http://coffeescript.org/#try:)" rel="nofollow">http://coffeescript.org/#try:)</a> as closely as possible. And the `tail` call removes the comment `// Generated by CoffeeScript 1.6.3`.</p>
-<p>See `coffee -h` for explanation of `coffee`'s flags.</p> 
-                </div>
-                <div class="options">
-                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-12716'))">Show sample output</a> |
-                                <a href="/commands/view/12716/compile-coffeescript-on-mac-clipboard-to-javascript-and-print-it#comment">Comments (2)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12716" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12716" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12716" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12716" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">ln -s /BASE/* /TARGET/</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12715">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre></pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-12 18:47:35                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/thehitman">thehitman</a>
-                    </div>
-                                        <div class="functions">
-                        Functions:
-                         
-                            <a href="/commands/using/ln">ln</a>
-                                            </div>
-                                                            <div class="functions">
-                        Tags:
-                         
-                            <a href="/commands/tagged/34/bash">bash</a>
-                                            </div>
-                                                        </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12715">0</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12715">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12715">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12715/symlink-all-files-from-a-base-directory-to-a-target-directory" title="Find out what others think of this command">Symlink all files from a base directory to a target directory</a>
-                </div>
-                <div class="description">
-                    <p>Simple and easy to remember, if it already exists then it just ignores it.</p> 
-                </div>
-                <div class="options">
-                                <a href="/commands/view/12715/symlink-all-files-from-a-base-directory-to-a-target-directory#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12715" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12715" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12715" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12715" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">info foo |less</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12714">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre>File: coreutils.info,  Node: ls invocation,  Next: dir invocation,  Up: Directory listing
-
-10.1 `ls': List directory contents
-==================================
-
-The `ls' program lists information about files (of any type, including
-directories).  Options and file arguments can be intermixed
-arbitrarily, as usual.</pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-12 16:49:08                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/StefanLasiewski">StefanLasiewski</a>
-                    </div>
-                                        <div class="functions">
-                        Functions:
-                         
-                            <a href="/commands/using/info">info</a>
-                                            </div>
-                                                            <div class="functions">
-                        Tags:
-                         
-                            <a href="/commands/tagged/99/less">less</a>
-                         
-                            <a href="/commands/tagged/303/info">info</a>
-                                            </div>
-                                                        </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12714">0</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12714">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12714">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12714/use-gnu-info-with-a-pager" title="Find out what others think of this command">Use GNU info with a pager</a>
-                </div>
-                <div class="description">
-                    <p>This command is similar to the above, but is much simpler to remember. Sure, it's isn't as precise as the parent command, but most people aren't going to remember those --flags anyways unless you stick it into your .bashrc on every single system that you manage.</p> 
-                </div>
-                <div class="options">
-                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-12714'))">Show sample output</a> |
-                                <a href="/commands/view/12714/use-gnu-info-with-a-pager#comment">Comments (1)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12714" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12714" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12714" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12714" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">rename 's/.xls/.ods/g' *.xls</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12713">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre></pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-12 13:42:56                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/jedifu">jedifu</a>
-                    </div>
-                                        <div class="functions">
-                        Functions:
-                         
-                            <a href="/commands/using/rename">rename</a>
-                                            </div>
-                                                            <div class="functions">
-                        Tags:
-                         
-                            <a href="/commands/tagged/34/bash">bash</a>
-                         
-                            <a href="/commands/tagged/64/linux">Linux</a>
-                                            </div>
-                                                        </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12713">1</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12713">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12713">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12713/command-to-rename-multiple-file-in-one-go" title="Find out what others think of this command">Command to rename multiple file in one go</a>
-                </div>
-                <div class="description">
-                     
-                </div>
-                <div class="options">
-                                <a href="/commands/view/12713/command-to-rename-multiple-file-in-one-go#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12713" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12713" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12713" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12713" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">grep &quot;10/Sep/2013&quot; access.log| cut -d[ -f2 | cut -d] -f1 | awk -F: '{print $2&quot;:&quot;$3}' | sort -nk1 -nk2 | uniq -c | awk '{ if ($1 &gt; 10) print $0}'</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12712">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre></pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-12 08:45:38                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/bormarek">bormarek</a>
+                        User: <a href="/commands/by/Zulu">Zulu</a>
                     </div>
                                         <div class="functions">
                         Functions:
                          
                             <a href="/commands/using/awk">awk</a>
                          
-                            <a href="/commands/using/cut">cut</a>
-                         
-                            <a href="/commands/using/grep">grep</a>
-                         
-                            <a href="/commands/using/sort">sort</a>
-                         
-                            <a href="/commands/using/uniq">uniq</a>
+                            <a href="/commands/using/sed">sed</a>
                                             </div>
-                                                                            </div>
+                                                            <div class="functions">
+                        Tags:
+                         
+                            <a href="/commands/tagged/110/sed">sed</a>
+                         
+                            <a href="/commands/tagged/112/awk">awk</a>
+                         
+                            <a href="/commands/tagged/1696/timestamp">timestamp</a>
+                                            </div>
+                                                        </div>
                 <div class="votes">
-                    <div class="num-votes" id="num-votes-12712">1</div>
+                    <div class="num-votes" id="num-votes-10168">0</div>
                     <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12712">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12712">Down</a>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-10168">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-10168">Down</a>
                     </div>
                 </div>
                 <div class="summary">
-                    <a href="/commands/view/12712/apache-statistics" title="Find out what others think of this command">apache statistics</a>
+                    <a href="/commands/view/10168/change-time-format-in-log-unix-timestamp-to-human-readable" title="Find out what others think of this command">Change time format in log, UNIX Timestamp to Human readable</a>
                 </div>
                 <div class="description">
-                     
+                    <p>It remove the square bracket and convert UNIX time to human readable time for all line of a stream (or file).</p> 
                 </div>
                 <div class="options">
-                                <a href="/commands/view/12712/apache-statistics#comment">Comments (1)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12712" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12712" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12712" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12712" title="Report as duplicate">Report as a duplicate</a>
+                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-10168'))">Show sample output</a> |
+                                <a href="/commands/view/10168/change-time-format-in-log-unix-timestamp-to-human-readable#comment">Comments (1)</a> |
+                                <a class="favourite-link" id="toggle-favourite-10168" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-10168" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/10168" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/10168" title="Report as duplicate">Report as a duplicate</a>
                 </div>
             </div>
         </div>
                 <div class="one-liner">
             <div class="line" title="Click to select this command">
-                <div class="command">perl -p -e 's/\$(\w+)/$ENV{$1}/g;' &lt;files...&gt;</div>
+                <div class="command">sed -re '/^#/d ; s/#.*$// ; /^\s*$/d'</div>
             </div>
-            <div style="display:none" class="sample-output" id="sample-output-12711">
+            <div style="display:none" class="sample-output" id="sample-output-10164">
                 <div class="output-meta">
                     This is sample output - yours may be different.
                 </div>
@@ -4315,105 +4014,52 @@ arbitrarily, as usual.</pre>
             <div class="details">
                 <div class="meta">
                     <div class="date">
-                    2013-09-11 20:57:07                    </div>
+                    2012-02-02 18:12:52                    </div>
                     <div class="author">
-                        User: <a href="/commands/by/Kurposkano">Kurposkano</a>
+                        User: <a href="/commands/by/Zulu">Zulu</a>
                     </div>
                                         <div class="functions">
                         Functions:
                          
-                            <a href="/commands/using/perl">perl</a>
-                                            </div>
-                                                                            </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12711">0</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12711">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12711">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12711/replace-all-environment-variable-references-in-files-with-environemnt-variable-values" title="Find out what others think of this command">Replace all environment variable references in files with environemnt variable values</a>
-                </div>
-                <div class="description">
-                     
-                </div>
-                <div class="options">
-                                <a href="/commands/view/12711/replace-all-environment-variable-references-in-files-with-environemnt-variable-values#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12711" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12711" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12711" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12711" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">dig +short <span>&lt;domain&gt;</span></div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12710">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre>$ dig +short nu.nl
-62.69.166.254</pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-11 13:01:03                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/Iz7ueNae">Iz7ueNae</a>
-                    </div>
-                                        <div class="functions">
-                        Functions:
-                         
-                            <a href="/commands/using/dig">dig</a>
+                            <a href="/commands/using/sed">sed</a>
                                             </div>
                                                             <div class="functions">
                         Tags:
                          
-                            <a href="/commands/tagged/112/awk">awk</a>
-                         
-                            <a href="/commands/tagged/118/tail">tail</a>
-                         
-                            <a href="/commands/tagged/707/ip-address">ip address</a>
-                         
-                            <a href="/commands/tagged/901/nslookup">nslookup</a>
-                         
-                            <a href="/commands/tagged/1006/url">url</a>
+                            <a href="/commands/tagged/110/sed">sed</a>
                                             </div>
                                                         </div>
                 <div class="votes">
-                    <div class="num-votes" id="num-votes-12710">-1</div>
+                    <div class="num-votes" id="num-votes-10164">-1</div>
                     <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12710">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12710">Down</a>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-10164">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-10164">Down</a>
                     </div>
                 </div>
                 <div class="summary">
-                    <a href="/commands/view/12710/get-ip-address-from-domain" title="Find out what others think of this command">Get IP address from domain</a>
+                    <a href="/commands/view/10164/remove-superfluous-from-conf-file" title="Find out what others think of this command">Remove superfluous from conf file</a>
                 </div>
                 <div class="description">
-                    <p>shorter (thus better ;-)</p> 
+                    <p>Use it with cat and '|' for know what is used in a conf file.</p>
+<p>For example cat /etc/squid/squid.conf | sed -re '/^#/d ; s/#.*$// ; /^\s$/d' :</p>
+<p>Show you what you use in your file conf.</p>
+<p>It removes all comments and empty lines.</p>
+<p>Empty lines are lines with nothing, a tab, or a space.</p> 
                 </div>
                 <div class="options">
-                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-12710'))">Show sample output</a> |
-                                <a href="/commands/view/12710/get-ip-address-from-domain#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12710" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12710" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12710" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12710" title="Report as duplicate">Report as a duplicate</a>
+                                <a href="/commands/view/10164/remove-superfluous-from-conf-file#comment">Comments (1)</a> |
+                                <a class="favourite-link" id="toggle-favourite-10164" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-10164" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/10164" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/10164" title="Report as duplicate">Report as a duplicate</a>
                 </div>
             </div>
         </div>
                 <div class="one-liner">
             <div class="line" title="Click to select this command">
-                <div class="command">rsync -v -r --size-only --compare-dest=../A/ B/ C/</div>
+                <div class="command">sed -re '/^#/d ; s/#.*$//'</div>
             </div>
-            <div style="display:none" class="sample-output" id="sample-output-12708">
+            <div style="display:none" class="sample-output" id="sample-output-10160">
                 <div class="output-meta">
                     This is sample output - yours may be different.
                 </div>
@@ -4424,412 +4070,115 @@ arbitrarily, as usual.</pre>
             <div class="details">
                 <div class="meta">
                     <div class="date">
-                    2013-09-10 21:41:16                    </div>
+                    2012-02-01 20:39:23                    </div>
                     <div class="author">
-                        User: <a href="/commands/by/knoppix5">knoppix5</a>
+                        User: <a href="/commands/by/Zulu">Zulu</a>
                     </div>
                                         <div class="functions">
                         Functions:
                          
-                            <a href="/commands/using/rsync">rsync</a>
+                            <a href="/commands/using/sed">sed</a>
                                             </div>
                                                             <div class="functions">
                         Tags:
                          
-                            <a href="/commands/tagged/68/diff">diff</a>
-                         
-                            <a href="/commands/tagged/181/copy">copy</a>
-                         
-                            <a href="/commands/tagged/241/directories">directories</a>
-                         
-                            <a href="/commands/tagged/269/rsync">rsync</a>
-                         
-                            <a href="/commands/tagged/581/compare">compare</a>
+                            <a href="/commands/tagged/110/sed">sed</a>
                                             </div>
                                                         </div>
                 <div class="votes">
-                    <div class="num-votes" id="num-votes-12708">5</div>
+                    <div class="num-votes" id="num-votes-10160">-1</div>
                     <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12708">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12708">Down</a>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-10160">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-10160">Down</a>
                     </div>
                 </div>
                 <div class="summary">
-                    <a href="/commands/view/12708/all-what-exists-in-dir-b-and-not-in-dir-a-will-be-copied-from-dir-b-to-new-or-existing-dir-c" title="Find out what others think of this command">All what exists in dir B and not in dir A will be copied from dir B to new or existing dir C</a>
+                    <a href="/commands/view/10160/remove-comments" title="Find out what others think of this command">Remove comments</a>
                 </div>
                 <div class="description">
-                    <p>Assumed dir A, B, C are subdirs of the current dir</p>
-<p>Exact syntax of the command is:</p>
-<p>rsync -v -r --size-only --compare-dest=/path_to_A/A/ /path_to_B/B/ /path_to_C/C/</p>
-<p>(do not omit end-slashes, since that would copy only the names and not the contents of subdirs of dir B to dir C)</p>
-<p>You can replace --size-only with --checksum for more thorough file differences validation</p>
-<p>Useful switch:</p>
-<p>-n, --dry-run               perform a trial run with no changes made</p> 
+                    <p>Delete all comments (#) on text :</p>
+<p>It deletes the entire comment line and remove comments form end of others.</p> 
                 </div>
                 <div class="options">
-                                <a href="/commands/view/12708/all-what-exists-in-dir-b-and-not-in-dir-a-will-be-copied-from-dir-b-to-new-or-existing-dir-c#comment">Comments (1)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12708" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12708" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12708" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12708" title="Report as duplicate">Report as a duplicate</a>
+                                <a href="/commands/view/10160/remove-comments#comment">Comments (0)</a> |
+                                <a class="favourite-link" id="toggle-favourite-10160" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-10160" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/10160" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/10160" title="Report as duplicate">Report as a duplicate</a>
                 </div>
             </div>
         </div>
                 <div class="one-liner">
             <div class="line" title="Click to select this command">
-                <div class="command">watch -d &quot;rabbitmqctl -q list_connections | awk '{gsub(/[ \t]+/, \&quot;\&quot;, \$1); print \$1}' | sort | uniq -c | sort -nr&quot;</div>
+                <div class="command">exec -a &quot;/sbin/getty 38400 tty7&quot; your_cmd -erase_all_files</div>
             </div>
-            <div style="display:none" class="sample-output" id="sample-output-12707">
+            <div style="display:none" class="sample-output" id="sample-output-10156">
                 <div class="output-meta">
                     This is sample output - yours may be different.
                 </div>
                 <div class="output">
-                    <pre>    280 APP-01
-     45 APP_SERVER
-     44 APP_SERVER-X
-     38 APP_SERVER64
-     36 APP-03
-     34 APP-02
-     31 APP-04
-</pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-10 20:52:01                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/mrwulf">mrwulf</a>
-                    </div>
-                                        <div class="functions">
-                        Functions:
-                         
-                            <a href="/commands/using/watch">watch</a>
-                                            </div>
-                                                            <div class="functions">
-                        Tags:
-                         
-                            <a href="/commands/tagged/583/watch">watch</a>
-                         
-                            <a href="/commands/tagged/2545/rabbitmq">rabbitmq</a>
-                         
-                            <a href="/commands/tagged/2546/rabbitmqctl">rabbitmqctl</a>
-                                            </div>
-                                                        </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12707">0</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12707">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12707">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12707/watch-the-number-of-rabbitmq-connections-by-user-sorted" title="Find out what others think of this command">Watch the number of RabbitMQ connections by user (sorted)</a>
-                </div>
-                <div class="description">
-                    <p>Must have rabbitmqctl: https://www.rabbitmq.com/man/rabbitmqctl.1.man.html</p>
-<p>See connections as the change, by user, sorted.</p> 
-                </div>
-                <div class="options">
-                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-12707'))">Show sample output</a> |
-                                <a href="/commands/view/12707/watch-the-number-of-rabbitmq-connections-by-user-sorted#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12707" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12707" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12707" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12707" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">netstat -ntu | awk ' $5 ~ /^(::ffff:|[0-9|])/ { gsub(&quot;::ffff:&quot;,&quot;&quot;,$5); print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12706">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre>    239 192.168.26.242
-    129 172.16.12.3
-     12 192.168.26.241
-     12 172.16.12.2
-      2 127.0.0.1
-      1 172.16.12.66
-      1 172.16.115.246</pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-10 19:28:06                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/mrwulf">mrwulf</a>
-                    </div>
-                                        <div class="functions">
-                        Functions:
-                         
-                            <a href="/commands/using/awk">awk</a>
-                         
-                            <a href="/commands/using/cut">cut</a>
-                         
-                            <a href="/commands/using/netstat">netstat</a>
-                         
-                            <a href="/commands/using/sort">sort</a>
-                         
-                            <a href="/commands/using/uniq">uniq</a>
-                                            </div>
-                                                            <div class="functions">
-                        Tags:
-                         
-                            <a href="/commands/tagged/102/sort">sort</a>
-                         
-                            <a href="/commands/tagged/112/awk">awk</a>
-                         
-                            <a href="/commands/tagged/113/uniq">uniq</a>
-                         
-                            <a href="/commands/tagged/130/ip">IP</a>
-                         
-                            <a href="/commands/tagged/300/netstat">netstat</a>
-                         
-                            <a href="/commands/tagged/301/cut">cut</a>
-                                            </div>
-                                                        </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12706">0</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12706">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12706">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12706/netstat-with-group-by-ip-adress" title="Find out what others think of this command">netstat with group by (ip adress)</a>
-                </div>
-                <div class="description">
-                    <p>Same as the rest, but handle IPv6 short IPs. Also, sort in the order that you're probably looking for.</p> 
-                </div>
-                <div class="options">
-                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-12706'))">Show sample output</a> |
-                                <a href="/commands/view/12706/netstat-with-group-by-ip-adress#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12706" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12706" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12706" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12706" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">&lt;Meta-p&gt; (aka <span>&lt;ALT+P&gt;</span>)</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12703">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre>### Start typing a command, say &quot;nm&quot;, 
-$ nm      # Realize you've done this before, so press M-p (hold ALT and hit P)
-$ nm /usr/bin/wine       # Bash completes the line from history! Yay!
-### Not the one you wanted? Just keep hitting M-p until you find the one you want.
-$ nm /usr/bin/wineserver
-### Need to be more specific? Note that the cursor is still after the &quot;nm&quot; that we typed at first, so if we hit &quot;a&quot; it shows this:
-$ nma /usr/bin/wineserver
-### ...but then, another press of M-p and, voil?, we get:
-$ nmap -sUT -p- localhost
-### Just go ahead and hit enter (you don't need to be at the end of the line) and it runs:
-Starting Nmap 7.21 ( http://nmap.org ) at 2018-02-29 09:20 XGT
-Interesting ports on localhost (127.0.0.1):
-Not shown: 131045 closed ports
-PORT      STATE         SERVICE
-22/tcp    open          ssh
-25/tcp    open          smtp
-80/tcp    open          http
+                    <pre>$ exec -a &quot;/sbin/getty 38400 tty7&quot; your_cmd -erase_all_files
+
+$ ps -ef
+[...]
+user1       8765  2655  0 18:39 pts/7    00:00:00 /sbin/getty 38400 tty7
 [...]</pre>
                 </div> 
             </div>
             <div class="details">
                 <div class="meta">
                     <div class="date">
-                    2013-09-10 17:13:02                    </div>
+                    2012-02-01 10:54:03                    </div>
                     <div class="author">
-                        User: <a href="/commands/by/hackerb9">hackerb9</a>
-                    </div>
-                                                            <div class="functions">
-                        Tags:
-                         
-                            <a href="/commands/tagged/34/bash">bash</a>
-                         
-                            <a href="/commands/tagged/1263/tcsh">tcsh</a>
-                                            </div>
-                                                        </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12703">4</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12703">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12703">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12703/find-previously-entered-commands-requires-configuring-.inputrc" title="Find out what others think of this command">find previously entered commands (requires configuring .inputrc)</a>
-                </div>
-                <div class="description">
-                    <p>[Click the "show sample output" link to see how to use this keystroke.]</p>
-<p>&#8194;</p>
-<p>Meta-p is one of my all time most used and most loved features of working at the command line. It's also one that surprisingly few people know about. To use it with bash (actually in any readline application), you'll need to add a couple lines to your .inputrc then have bash reread the .inputrc using the bind command:</p>
-<p>&#8195;</p>
-<code>echo '&quot;\en&quot;: history-search-forward' &gt;&gt; ~/.inputrc</code>
-<p>&#8195;</p>
-<code>echo '&quot;\ep&quot;: history-search-backward' &gt;&gt; ~/.inputrc</code>
-<p>&#8195;</p>
-<code>bind -f ~/.inputrc</code>
-<p>&#8195;</p>
-<p>&#8195; I first learned about this feature in tcsh. When I switched over to bash about fifteen years ago, I had assumed I'd prefer ^R to search in reverse. Intuitively ^R seemed better since you could search for an argument instead of a command. I think that, like using a microkernel for the Hurd, it sounded so obviously right fifteen years ago, but that was only because the older way had benefits we hadn't known about.</p>
-<p>&#8194;</p>
-<p>&#8194; I think many of you who use the command line as much as I do know that we can just be thinking about what results we want and our fingers will start typing the commands needed. I assume it's some sort of parallel processing going on with the linguistic part of the brain. Unfortunately, that parallelism doesn't seem to work (at least for me) with searching the history. I realize I can save myself typing using the history shortly after my fingers have already started "speaking". But, when I hit ^R in Bash, everything I've already typed gets ignored and I have to stop and think again about what I was doing. It's a small bump in the road but it can be annoying, especially for long-time command line users. Usually M-p is exactly what I need to save myself time and trouble.</p>
-<p>&#8194;</p>
-<p>&#8195; If you use the command line a lot, please give Meta-p a try. You may be surprised how it frees your brain to process more smoothly in parallel. (Or maybe it won't. Post here and let me know either way. &#9786;)</p> 
-                </div>
-                <div class="options">
-                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-12703'))">Show sample output</a> |
-                                <a href="/commands/view/12703/find-previously-entered-commands-requires-configuring-.inputrc#comment">Comments (2)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12703" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12703" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12703" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12703" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">od -An -N1 -tu1 /dev/random</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12702">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre> 189</pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-10 08:57:16                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/sucotronic">sucotronic</a>
+                        User: <a href="/commands/by/mhs">mhs</a>
                     </div>
                                         <div class="functions">
                         Functions:
                          
-                            <a href="/commands/using/od">od</a>
+                            <a href="/commands/using/exec">exec</a>
                                             </div>
                                                             <div class="functions">
                         Tags:
                          
-                            <a href="/commands/tagged/514/random">random</a>
+                            <a href="/commands/tagged/319/exec">exec</a>
                          
-                            <a href="/commands/tagged/1482/number">number</a>
+                            <a href="/commands/tagged/721/ps">ps</a>
                          
-                            <a href="/commands/tagged/1483/integer">integer</a>
+                            <a href="/commands/tagged/2112/process-table">process table</a>
                                             </div>
                                                         </div>
                 <div class="votes">
-                    <div class="num-votes" id="num-votes-12702">4</div>
+                    <div class="num-votes" id="num-votes-10156">16</div>
                     <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12702">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12702">Down</a>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-10156">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-10156">Down</a>
                     </div>
                 </div>
                 <div class="summary">
-                    <a href="/commands/view/12702/random-number-between-1-and-256" title="Find out what others think of this command">Random Number Between 1 And 256</a>
+                    <a href="/commands/view/10156/hide-the-name-of-a-process-listed-in-the-ps-output" title="Find out what others think of this command">Hide the name of a process listed in the `ps` output</a>
                 </div>
                 <div class="description">
-                    <p>It takes a byte from /dev/random whose source is the kernel entropy pool (better source than other solutions).</p> 
+                    <code>exec -a $NAME $COMMAND $ARGS</code>
+<p>`your_cmd -erase_all_files` is the real process, but harmless-looking getty appears in the process table.</p>
+<p>Never actually had a need to do this, but interesting nonetheless...  Tested in bash, dash.</p>
+<code>-a $NAME</code>
+<p>"pass NAME as the zeroth argument to COMMAND", i.e. customise the name of the process (as commonly seen with `ps`)</p> 
                 </div>
                 <div class="options">
-                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-12702'))">Show sample output</a> |
-                                <a href="/commands/view/12702/random-number-between-1-and-256#comment">Comments (4)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12702" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12702" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12702" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12702" title="Report as duplicate">Report as a duplicate</a>
+                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-10156'))">Show sample output</a> |
+                                <a href="/commands/view/10156/hide-the-name-of-a-process-listed-in-the-ps-output#comment">Comments (2)</a> |
+                                <a class="favourite-link" id="toggle-favourite-10156" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-10156" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/10156" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/10156" title="Report as duplicate">Report as a duplicate</a>
                 </div>
             </div>
         </div>
                 <div class="one-liner">
             <div class="line" title="Click to select this command">
-                <div class="command">function garg () { tail -n 1 ${HISTFILE} | awk &quot;{ print \$$1 }&quot; }</div>
+                <div class="command">sed '${/^$/d}' file</div>
             </div>
-            <div style="display:none" class="sample-output" id="sample-output-12701">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre>$ echo &quot;This little piggy went to the market&quot;
-This little piggy went to the market
-$ garg 5
-went</pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-10 04:07:46                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/plasticphyte">plasticphyte</a>
-                    </div>
-                                        <div class="functions">
-                        Functions:
-                         
-                            <a href="/commands/using/awk">awk</a>
-                         
-                            <a href="/commands/using/tail">tail</a>
-                                            </div>
-                                                            <div class="functions">
-                        Tags:
-                         
-                            <a href="/commands/tagged/29/history">history</a>
-                         
-                            <a href="/commands/tagged/34/bash">bash</a>
-                         
-                            <a href="/commands/tagged/112/awk">awk</a>
-                         
-                            <a href="/commands/tagged/354/function">function</a>
-                         
-                            <a href="/commands/tagged/1049/argument">argument</a>
-                         
-                            <a href="/commands/tagged/1746/mac-os-x">mac os x</a>
-                                            </div>
-                                                        </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12701">0</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12701">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12701">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12701/get-the-nth-argument-of-the-last-command-in-histfile" title="Find out what others think of this command">Get the Nth argument of the last command in $HISTFILE</a>
-                </div>
-                <div class="description">
-                    <p>This gets the Nth argument in the last line of your history file. This is useful where history is being written after each command, and you want to use arguments from the previous command in the current command, such as when doing copies/moving directories etc.</p>
-<p>I wrote this after getting irritated with having to continually type in long paths/arguments.</p>
-<p>You could also use $_ if all you want is the last argument.</p> 
-                </div>
-                <div class="options">
-                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-12701'))">Show sample output</a> |
-                                <a href="/commands/view/12701/get-the-nth-argument-of-the-last-command-in-histfile#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12701" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12701" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12701" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12701" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">:v/./d</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12700">
+            <div style="display:none" class="sample-output" id="sample-output-10103">
                 <div class="output-meta">
                     This is sample output - yours may be different.
                 </div>
@@ -4840,10 +4189,438 @@ went</pre>
             <div class="details">
                 <div class="meta">
                     <div class="date">
-                    2013-09-08 23:22:02                    </div>
+                    2012-01-25 14:07:55                    </div>
                     <div class="author">
-                        User: <a href="/commands/by/MarxBro">MarxBro</a>
+                        User: <a href="/commands/by/moogmusic">moogmusic</a>
                     </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/sed">sed</a>
+                                            </div>
+                                                                            </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-10103">4</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-10103">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-10103">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/10103/delete-last-line-of-a-file-if-it-is-blank" title="Find out what others think of this command">Delete Last Line of a File if it is Blank</a>
+                </div>
+                <div class="description">
+                    <p>Use sed to remove the last line of a file only if it is empty.</p> 
+                </div>
+                <div class="options">
+                                <a href="/commands/view/10103/delete-last-line-of-a-file-if-it-is-blank#comment">Comments (1)</a> |
+                                <a class="favourite-link" id="toggle-favourite-10103" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-10103" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/10103" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/10103" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">wmctrl -o 100,0</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-10070">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre></pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2012-01-19 14:36:20                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/totti">totti</a>
+                    </div>
+                                                            <div class="functions">
+                        Tags:
+                         
+                            <a href="/commands/tagged/2104/switc">switc</a>
+                                            </div>
+                                                        </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-10070">0</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-10070">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-10070">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/10070/switch-workspace" title="Find out what others think of this command">Switch workspace</a>
+                </div>
+                <div class="description">
+                    <p>For a demo try</p>
+<code>wmctrl -o 100,0; sleep 3; wmctrl -o 1500,0; sleep 3; wmctrl -o 3000,0; sleep 3; wmctrl -o 4500,0;</code>
+<p>Actually </p>
+<code>wmctrl -o &lt;width x Number&gt;,0; </code>
+<p>to switch to that workspace</p> 
+                </div>
+                <div class="options">
+                                <a href="/commands/view/10070/switch-workspace#comment">Comments (4)</a> |
+                                <a class="favourite-link" id="toggle-favourite-10070" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-10070" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/10070" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/10070" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">dpkg-repack firefox</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-10037">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre>-rw-r--r--  1 root    root       15193596 2012-01-13 12:29 firefox_8.0+build1-0ubuntu0.11.04.3_i386.deb</pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2012-01-13 11:47:40                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/knoppix5">knoppix5</a>
+                    </div>
+                                                            <div class="functions">
+                        Tags:
+                         
+                            <a href="/commands/tagged/40/debian">Debian</a>
+                         
+                            <a href="/commands/tagged/181/copy">copy</a>
+                         
+                            <a href="/commands/tagged/544/cp">cp</a>
+                         
+                            <a href="/commands/tagged/897/install">install</a>
+                         
+                            <a href="/commands/tagged/1218/package">package</a>
+                                            </div>
+                                                        </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-10037">8</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-10037">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-10037">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/10037/put-an-unpacked-.deb-package-back-together" title="Find out what others think of this command">put an unpacked .deb package back together</a>
+                </div>
+                <div class="description">
+                    <p>If  any  changes  have been made to the package while it was unpacked (ie, conffiles files in /etc modi&#8208;fied), the new package will inherit the changes.</p>
+<p>       This  way you can  make  it easy to copy packages from one computer to another, or to recreate packages  that are installed on your system, but no longer available elsewhere.</p>
+<p>Note: dpkg-repack will place the created package in the current directory.</p> 
+                </div>
+                <div class="options">
+                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-10037'))">Show sample output</a> |
+                                <a href="/commands/view/10037/put-an-unpacked-.deb-package-back-together#comment">Comments (2)</a> |
+                                <a class="favourite-link" id="toggle-favourite-10037" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-10037" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/10037" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/10037" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">sed 's/$/uniqueString/' file.old | sed 's/,/\n/g' | sed ':loop;/^\&quot;[^\&quot;]*$/N;s/\n/,/;/[^\&quot;]$/t loop' | sed ':loop;N;s/\n/@/g;/uniqueString$/!b loop;s/uniqueString$//' &gt; file.new</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-10005">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre></pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2012-01-06 10:06:40                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/moogmusic">moogmusic</a>
+                    </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/sed">sed</a>
+                                            </div>
+                                                            <div class="functions">
+                        Tags:
+                         
+                            <a href="/commands/tagged/110/sed">sed</a>
+                         
+                            <a href="/commands/tagged/267/csv">CSV</a>
+                         
+                            <a href="/commands/tagged/1784/delimiter">delimiter</a>
+                                            </div>
+                                                        </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-10005">0</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-10005">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-10005">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/10005/rebuild-a-delimited-file-with-a-unique-delimiter" title="Find out what others think of this command">Rebuild a Delimited File with a Unique Delimiter</a>
+                </div>
+                <div class="description">
+                    <p>Useful for CSV files. In the command, the file in question is comma delimited but contains double quoted fields containing commas and contains no @ symbols (as confirmed with <a href="http://www.commandlinefu.com/commands/view/9998/delimiter-hunting)." rel="nofollow">http://www.commandlinefu.com/commands/view/9998/delimiter-hunting).</a> This command converts the delimiting commas to @s while preserving the commas in the fields using the "uniqueString" to mark the ends of lines.</p> 
+                </div>
+                <div class="options">
+                                <a href="/commands/view/10005/rebuild-a-delimited-file-with-a-unique-delimiter#comment">Comments (0)</a> |
+                                <a class="favourite-link" id="toggle-favourite-10005" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-10005" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/10005" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/10005" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">perl -e '$f = join(&quot;&quot;, &lt;&gt;); for (0..127) {$_ = chr($_); if (/[[:print:]]/) {print if index($f, $_) &lt; 0}} print &quot;\n&quot;'</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-10004">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre></pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2012-01-05 23:38:06                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/putnamhill">putnamhill</a>
+                    </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/perl">perl</a>
+                                            </div>
+                                                            <div class="functions">
+                        Tags:
+                         
+                            <a href="/commands/tagged/104/perl">perl</a>
+                         
+                            <a href="/commands/tagged/2095/slurp">slurp</a>
+                                            </div>
+                                                        </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-10004">0</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-10004">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-10004">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/10004/delimiter-hunting" title="Find out what others think of this command">Delimiter Hunting</a>
+                </div>
+                <div class="description">
+                    <p>Here's a perl version that only considers printable characters. Change the regex /[[:print:]]/ to look for different sets of delimiter characters.</p> 
+                </div>
+                <div class="options">
+                                <a href="/commands/view/10004/delimiter-hunting#comment">Comments (0)</a> |
+                                <a class="favourite-link" id="toggle-favourite-10004" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-10004" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/10004" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/10004" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">for i in `seq 0 9` A B C D E F; do for j in `seq 0 9` A B C D E F; do HEX=\$\'\\x${i}${j}\'; if ! eval grep -qF &quot;$HEX&quot; file; then eval echo $HEX \\x${i}${j}; fi; done; done 2&gt; /dev/null | less</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-9998">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre></pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2012-01-05 10:09:07                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/moogmusic">moogmusic</a>
+                    </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/echo">echo</a>
+                         
+                            <a href="/commands/using/eval">eval</a>
+                         
+                            <a href="/commands/using/grep">grep</a>
+                                            </div>
+                                                                            </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-9998">0</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9998">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9998">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/9998/delimiter-hunting" title="Find out what others think of this command">Delimiter Hunting</a>
+                </div>
+                <div class="description">
+                    <p>Scan a file and print out a list of ASCII characters that are not used in the file which can then be safely used to delimit fields. Useful when needing to convert CSV files using "," to a single character delimiter. Piping it into less at the end (which could be redundant) stops the command characters being interpreted by the terminal.</p> 
+                </div>
+                <div class="options">
+                                <a href="/commands/view/9998/delimiter-hunting#comment">Comments (0)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9998" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9998" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9998" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9998" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">while ( nc -l 80 &lt; /file.htm &gt; : ) ; do : ; done &amp;</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-9978">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre>[$$] # Number of PID</pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2012-01-02 02:17:25                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/Zulu">Zulu</a>
+                    </div>
+                                                            <div class="functions">
+                        Tags:
+                         
+                            <a href="/commands/tagged/255/while">while</a>
+                         
+                            <a href="/commands/tagged/556/nc">nc</a>
+                         
+                            <a href="/commands/tagged/1537/daemon">daemon</a>
+                                            </div>
+                                                        </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-9978">11</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9978">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9978">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/9978/daemonize-nc-transmit-a-file-like-a-http-server" title="Find out what others think of this command">Daemonize nc - Transmit a file like a http server</a>
+                </div>
+                <div class="description">
+                    <p>Allow to launch nc like a daemon, in background until you still stop it.</p>
+<p>You can stop it with kill %1 (jobs method) or kill PID.</p>
+<p>The -k option can force nc to listen  another connection, but if you use redirection, it will work only one time.</p>
+<p>The loop's inside doesn't do anything, but we can imagine to send a message to screen when a connection is established</p> 
+                </div>
+                <div class="options">
+                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-9978'))">Show sample output</a> |
+                                <a href="/commands/view/9978/daemonize-nc-transmit-a-file-like-a-http-server#comment">Comments (4)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9978" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9978" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9978" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9978" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">alias o='xdg-open &quot;$@&quot; 2&gt;/dev/null'</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-9952">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre></pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2011-12-26 08:52:22                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/Bonster">Bonster</a>
+                    </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/alias">alias</a>
+                                            </div>
+                                                                            </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-9952">-3</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9952">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9952">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/9952/open-any-file-and-suppress-error-warnings-message" title="Find out what others think of this command">Open any file and suppress error warnings message</a>
+                </div>
+                <div class="description">
+                    <p>use xdg-open without looking at error messages</p>
+<p>examples msg:</p>
+<p>(nautilus:3955): Gtk-WARNING **: Theme parsing error: Notebook.css:21:15: Junk at end of value</p> 
+                </div>
+                <div class="options">
+                                <a href="/commands/view/9952/open-any-file-and-suppress-error-warnings-message#comment">Comments (2)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9952" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9952" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9952" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9952" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">ls | vim +'set bt=nowrite' -</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-9945">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre></pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2011-12-24 07:33:49                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/kev">kev</a>
+                    </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/ls">ls</a>
+                         
+                            <a href="/commands/using/vim">vim</a>
+                                            </div>
                                                             <div class="functions">
                         Tags:
                          
@@ -4851,90 +4628,32 @@ went</pre>
                                             </div>
                                                         </div>
                 <div class="votes">
-                    <div class="num-votes" id="num-votes-12700">4</div>
+                    <div class="num-votes" id="num-votes-9945">5</div>
                     <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12700">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12700">Down</a>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9945">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9945">Down</a>
                     </div>
                 </div>
                 <div class="summary">
-                    <a href="/commands/view/12700/delete-all-empty-lines-from-a-file-with-vim" title="Find out what others think of this command">Delete all empty lines from a file with vim</a>
-                </div>
-                <div class="description">
-                    <p>If you need to delete lines that may contain space characters (such as tabs or spaces) as well as empty ones, try:</p>
-<code>:v/\S/d</code>
-<p>Just an alternative.</p> 
-                </div>
-                <div class="options">
-                                <a href="/commands/view/12700/delete-all-empty-lines-from-a-file-with-vim#comment">Comments (1)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12700" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12700" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12700" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12700" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">vim test.c &amp;&amp; gcc -x c -o a.out test.c &amp;&amp; ./a.out &amp;&amp; rm a.out test.c</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12698">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre></pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-08 15:09:09                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/ari2015">ari2015</a>
-                    </div>
-                                        <div class="functions">
-                        Functions:
-                         
-                            <a href="/commands/using/gcc">gcc</a>
-                         
-                            <a href="/commands/using/rm">rm</a>
-                         
-                            <a href="/commands/using/vim">vim</a>
-                                            </div>
-                                                            <div class="functions">
-                        Tags:
-                         
-                            <a href="/commands/tagged/8/programming">Programming</a>
-                                            </div>
-                                                        </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12698">0</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12698">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12698">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12698/quickly-write-and-run-a-c-program." title="Find out what others think of this command">Quickly write and run a C program.</a>
+                    <a href="/commands/view/9945/vim-read-stdin" title="Find out what others think of this command">vim read stdin</a>
                 </div>
                 <div class="description">
                      
                 </div>
                 <div class="options">
-                                <a href="/commands/view/12698/quickly-write-and-run-a-c-program.#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12698" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12698" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12698" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12698" title="Report as duplicate">Report as a duplicate</a>
+                                <a href="/commands/view/9945/vim-read-stdin#comment">Comments (3)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9945" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9945" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9945" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9945" title="Report as duplicate">Report as a duplicate</a>
                 </div>
             </div>
         </div>
                 <div class="one-liner">
             <div class="line" title="Click to select this command">
-                <div class="command"><span>&lt;ctrl&gt;</span>+r</div>
+                <div class="command">tar czf git_mods_circa_dec23.tgz --files-from &lt;(git ls-files -m)</div>
             </div>
-            <div style="display:none" class="sample-output" id="sample-output-12697">
+            <div style="display:none" class="sample-output" id="sample-output-9944">
                 <div class="output-meta">
                     This is sample output - yours may be different.
                 </div>
@@ -4945,92 +4664,52 @@ went</pre>
             <div class="details">
                 <div class="meta">
                     <div class="date">
-                    2013-09-08 13:49:19                    </div>
+                    2011-12-23 15:31:21                    </div>
                     <div class="author">
-                        User: <a href="/commands/by/zvyn">zvyn</a>
-                    </div>
-                                                                            </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12697">4</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12697">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12697">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12697/find-previously-entered-commands" title="Find out what others think of this command">find previously entered commands</a>
-                </div>
-                <div class="description">
-                    <p>Searches bash-history in reverse order (last entered commands first). Pressing ctrl+r again shows the next matching entry.</p> 
-                </div>
-                <div class="options">
-                                <a href="/commands/view/12697/find-previously-entered-commands#comment">Comments (3)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12697" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12697" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12697" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12697" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">du -hd1 | sort -hr</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12696">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre></pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-08 01:32:23                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/while0pass">while0pass</a>
+                        User: <a href="/commands/by/jemptymethod">jemptymethod</a>
                     </div>
                                         <div class="functions">
                         Functions:
                          
-                            <a href="/commands/using/du">du</a>
-                         
-                            <a href="/commands/using/sort">sort</a>
+                            <a href="/commands/using/tar">tar</a>
                                             </div>
                                                             <div class="functions">
                         Tags:
                          
-                            <a href="/commands/tagged/34/bash">bash</a>
+                            <a href="/commands/tagged/67/git">git</a>
+                         
+                            <a href="/commands/tagged/238/tar">tar</a>
+                         
+                            <a href="/commands/tagged/2078/process-substitution">process substitution</a>
                                             </div>
                                                         </div>
                 <div class="votes">
-                    <div class="num-votes" id="num-votes-12696">1</div>
+                    <div class="num-votes" id="num-votes-9944">0</div>
                     <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12696">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12696">Down</a>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9944">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9944">Down</a>
                     </div>
                 </div>
                 <div class="summary">
-                    <a href="/commands/view/12696/list-subfolders-from-largest-to-smallest-with-sizes-in-human-readable-form" title="Find out what others think of this command">List subfolders from largest to smallest with sizes in human readable form</a>
+                    <a href="/commands/view/9944/create-tarball-of-files-modified-in-git" title="Find out what others think of this command">Create tarball of files modified in git</a>
                 </div>
                 <div class="description">
                      
                 </div>
                 <div class="options">
-                                <a href="/commands/view/12696/list-subfolders-from-largest-to-smallest-with-sizes-in-human-readable-form#comment">Comments (1)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12696" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12696" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12696" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12696" title="Report as duplicate">Report as a duplicate</a>
+                                <a href="/commands/view/9944/create-tarball-of-files-modified-in-git#comment">Comments (0)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9944" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9944" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9944" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9944" title="Report as duplicate">Report as a duplicate</a>
                 </div>
             </div>
         </div>
                 <div class="one-liner">
             <div class="line" title="Click to select this command">
-                <div class="command">cat /var/log/apache2/access_logs | cut -d' ' -f1 | sort | uniq -c | sort -n</div>
+                <div class="command">xmlstarlet sel -t -c &quot;/path/to/element&quot; file.xml</div>
             </div>
-            <div style="display:none" class="sample-output" id="sample-output-12695">
+            <div style="display:none" class="sample-output" id="sample-output-9922">
                 <div class="output-meta">
                     This is sample output - yours may be different.
                 </div>
@@ -5041,164 +4720,221 @@ went</pre>
             <div class="details">
                 <div class="meta">
                     <div class="date">
-                    2013-09-07 23:57:31                    </div>
+                    2011-12-19 06:20:46                    </div>
                     <div class="author">
-                        User: <a href="/commands/by/while0pass">while0pass</a>
+                        User: <a href="/commands/by/kev">kev</a>
+                    </div>
+                                                            <div class="functions">
+                        Tags:
+                         
+                            <a href="/commands/tagged/736/xmlstarlet">xmlstarlet</a>
+                                            </div>
+                                                        </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-9922">9</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9922">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9922">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/9922/extract-element-of-xml" title="Find out what others think of this command">extract element of xml</a>
+                </div>
+                <div class="description">
+                     
+                </div>
+                <div class="options">
+                                <a href="/commands/view/9922/extract-element-of-xml#comment">Comments (1)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9922" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9922" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9922" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9922" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">cp -r * .??* /dest</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-9918">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre></pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2011-12-16 23:41:03                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/atoponce">atoponce</a>
+                    </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/cp">cp</a>
+                                            </div>
+                                                            <div class="functions">
+                        Tags:
+                         
+                            <a href="/commands/tagged/148/mv">mv</a>
+                         
+                            <a href="/commands/tagged/387/rm">rm</a>
+                         
+                            <a href="/commands/tagged/544/cp">cp</a>
+                                            </div>
+                                                        </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-9918">5</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9918">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9918">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/9918/copy-all-files-including-hidden-files-recursively-without-traversing-backward" title="Find out what others think of this command">Copy all files, including hidden files, recursively without traversing backward</a>
+                </div>
+                <div class="description">
+                    <p>You could do the following, however, brace expansion with {} is not defined in POSIX, and therefore not guaranteed to work in all shells. But, if it does, it's more convenient (although it's certainly not less typing):</p>
+<code>cp -r {*,.??*} /dest</code>
+<p>Sometimes there are times when I need to cp(1), mv(1) or rm(1) files recursively, but don't want to traverse the previous directory by following ../../../../ etc out of the current directory. This command prevents that. The secret sauce is ".??*". The file globbing ensures that it must start with a dot, and be followed by at least two characters. So, three characters must exist in the filename, which eliminates "." and "..".</p> 
+                </div>
+                <div class="options">
+                                <a href="/commands/view/9918/copy-all-files-including-hidden-files-recursively-without-traversing-backward#comment">Comments (6)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9918" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9918" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9918" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9918" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">cat /proc/PID/limits</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-9893">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre>Limit                     Soft Limit           Hard Limit           Units
+...
+Max processes             20000                20000                processes
+Max open files            100000               100000               files
+</pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2011-12-14 16:49:06                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/dmmst19">dmmst19</a>
                     </div>
                                         <div class="functions">
                         Functions:
                          
                             <a href="/commands/using/cat">cat</a>
-                         
-                            <a href="/commands/using/cut">cut</a>
-                         
-                            <a href="/commands/using/sort">sort</a>
-                         
-                            <a href="/commands/using/uniq">uniq</a>
-                                            </div>
-                                                            <div class="functions">
-                        Tags:
-                         
-                            <a href="/commands/tagged/130/ip">IP</a>
-                         
-                            <a href="/commands/tagged/642/apache2">apache2</a>
-                         
-                            <a href="/commands/tagged/1609/filter">filter</a>
-                         
-                            <a href="/commands/tagged/2543/requests">requests</a>
-                                            </div>
-                                                        </div>
-                <div class="votes">
-                    <div class="num-votes" id="num-votes-12695">1</div>
-                    <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12695">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12695">Down</a>
-                    </div>
-                </div>
-                <div class="summary">
-                    <a href="/commands/view/12695/filter-ips-in-apache-access-logs-based-on-use" title="Find out what others think of this command">Filter IP's in apache access logs based on use</a>
-                </div>
-                <div class="description">
-                    <p>The first sort is necessary for ips in a list to be actually unique.</p> 
-                </div>
-                <div class="options">
-                                <a href="/commands/view/12695/filter-ips-in-apache-access-logs-based-on-use#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12695" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12695" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12695" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12695" title="Report as duplicate">Report as a duplicate</a>
-                </div>
-            </div>
-        </div>
-                <div class="one-liner">
-            <div class="line" title="Click to select this command">
-                <div class="command">tac ~/.bash_history | grep -w</div>
-            </div>
-            <div style="display:none" class="sample-output" id="sample-output-12694">
-                <div class="output-meta">
-                    This is sample output - yours may be different.
-                </div>
-                <div class="output">
-                    <pre></pre>
-                </div> 
-            </div>
-            <div class="details">
-                <div class="meta">
-                    <div class="date">
-                    2013-09-07 15:53:30                    </div>
-                    <div class="author">
-                        User: <a href="/commands/by/hamsolo474">hamsolo474</a>
-                    </div>
-                                        <div class="functions">
-                        Functions:
-                         
-                            <a href="/commands/using/grep">grep</a>
-                         
-                            <a href="/commands/using/tac">tac</a>
                                             </div>
                                                                             </div>
                 <div class="votes">
-                    <div class="num-votes" id="num-votes-12694">-3</div>
+                    <div class="num-votes" id="num-votes-9893">9</div>
                     <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12694">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12694">Down</a>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9893">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9893">Down</a>
                     </div>
                 </div>
                 <div class="summary">
-                    <a href="/commands/view/12694/find-previously-entered-commands" title="Find out what others think of this command">find previously entered commands</a>
+                    <a href="/commands/view/9893/find-ulimit-values-of-currently-running-process" title="Find out what others think of this command">Find ulimit values of currently running process</a>
                 </div>
                 <div class="description">
-                    <p>greps your bash history for whatever you type in at the end returning it in reverse chronological order (most recent invocations first), should work on all distros.</p>
-<p>works well as an alias</p> 
+                    <p>When dealing with system resource limits like max number of processes and open files per user, it can be hard to tell exactly what's happening. The /etc/security/limits.conf file defines the ceiling for the values, but not what they currently are, while </p>
+<code>ulimit -a</code>
+<p> will show you the current values for your shell, and you can set them for new logins in /etc/profile and/or ~/.bashrc with a command like:</p>
+<code>ulimit -S -n 100000 &gt;/dev/null 2&gt;&amp;1</code>
+<p>But with the variability in when those files get read (login vs any shell startup, interactive vs non-interactive) it can be difficult to know for sure what values apply to processes that are currently running, like database or app servers. Just find the PID via "ps aux | grep programname", then look at that PID's "limits" file in /proc. Then you'll know for sure what actually applies to that process.</p> 
                 </div>
                 <div class="options">
-                                <a href="/commands/view/12694/find-previously-entered-commands#comment">Comments (1)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12694" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12694" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12694" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12694" title="Report as duplicate">Report as a duplicate</a>
+                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-9893'))">Show sample output</a> |
+                                <a href="/commands/view/9893/find-ulimit-values-of-currently-running-process#comment">Comments (0)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9893" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9893" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9893" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9893" title="Report as duplicate">Report as a duplicate</a>
                 </div>
             </div>
         </div>
                 <div class="one-liner">
             <div class="line" title="Click to select this command">
-                <div class="command">dig +short google.com</div>
+                <div class="command">sed -n '3,6p' /path/to/file</div>
             </div>
-            <div style="display:none" class="sample-output" id="sample-output-12693">
+            <div style="display:none" class="sample-output" id="sample-output-9890">
                 <div class="output-meta">
                     This is sample output - yours may be different.
                 </div>
                 <div class="output">
-                    <pre></pre>
+                    <pre>$ seq 10 | sed -n '3,6p'
+3
+4
+5
+6
+</pre>
                 </div> 
             </div>
             <div class="details">
                 <div class="meta">
                     <div class="date">
-                    2013-09-06 20:51:49                    </div>
+                    2011-12-14 15:09:38                    </div>
                     <div class="author">
-                        User: <a href="/commands/by/petiteabeille">petiteabeille</a>
+                        User: <a href="/commands/by/flatcap">flatcap</a>
                     </div>
                                         <div class="functions">
                         Functions:
                          
-                            <a href="/commands/using/dig">dig</a>
+                            <a href="/commands/using/sed">sed</a>
                                             </div>
                                                             <div class="functions">
                         Tags:
                          
-                            <a href="/commands/tagged/663/dig">dig</a>
-                         
-                            <a href="/commands/tagged/707/ip-address">ip address</a>
+                            <a href="/commands/tagged/110/sed">sed</a>
                                             </div>
-                                                        </div>
+                                                                <div class="admin">
+                            Admin:
+                            <a href="/commands/edit/9890">edit</a>
+                            <a href="/commands/delete/9890" onclick="if(!confirm('Are you sure you want to delete this command?')){return false}" >delete</a>
+                        </div>
+                                                            </div>
                 <div class="votes">
-                    <div class="num-votes" id="num-votes-12693">1</div>
+                    <div class="num-votes" id="num-votes-9890">5</div>
                     <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12693">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12693">Down</a>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9890">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9890">Down</a>
                     </div>
                 </div>
                 <div class="summary">
-                    <a href="/commands/view/12693/get-ip-address-from-domain" title="Find out what others think of this command">Get IP address from domain</a>
+                    <a href="/commands/view/9890/print-all-lines-between-two-line-numbers" title="Find out what others think of this command">Print all lines between two line numbers</a>
                 </div>
                 <div class="description">
-                     
+                    <p>Print all lines between two line numbers</p>
+<p>This command uses sed(1) to print all lines between two known line numbers in a file. Useful for seeing output in a log file, where the line numbers are known. The above command will print all lines between, and including, lines 3 and 6.</p> 
                 </div>
                 <div class="options">
-                                <a href="/commands/view/12693/get-ip-address-from-domain#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12693" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12693" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12693" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12693" title="Report as duplicate">Report as a duplicate</a>
+                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-9890'))">Show sample output</a> |
+                                <a href="/commands/view/9890/print-all-lines-between-two-line-numbers#comment">Comments (4)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9890" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9890" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9890" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9890" title="Report as duplicate">Report as a duplicate</a>
                 </div>
             </div>
         </div>
                 <div class="one-liner">
             <div class="line" title="Click to select this command">
-                <div class="command">for I in $(awk -v LIMIT=500 -F: '($3&gt;=LIMIT) &amp;&amp; ($3!=65534)' /etc/passwd | cut -f 1-1 -d ':' | xargs); do usermod -g YOURGROUP $I ; done</div>
+                <div class="command">awk 'NR &gt;= 3 &amp;&amp; NR &lt;= 6' /path/to/file</div>
             </div>
-            <div style="display:none" class="sample-output" id="sample-output-12692">
+            <div style="display:none" class="sample-output" id="sample-output-9889">
                 <div class="output-meta">
                     This is sample output - yours may be different.
                 </div>
@@ -5209,58 +4945,246 @@ went</pre>
             <div class="details">
                 <div class="meta">
                     <div class="date">
-                    2013-09-06 15:18:16                    </div>
+                    2011-12-14 14:28:56                    </div>
                     <div class="author">
-                        User: <a href="/commands/by/Edoard">Edoard</a>
+                        User: <a href="/commands/by/atoponce">atoponce</a>
                     </div>
                                         <div class="functions">
                         Functions:
                          
                             <a href="/commands/using/awk">awk</a>
-                         
-                            <a href="/commands/using/cut">cut</a>
-                         
-                            <a href="/commands/using/usermod">usermod</a>
                                             </div>
                                                             <div class="functions">
                         Tags:
                          
-                            <a href="/commands/tagged/64/linux">Linux</a>
-                         
-                            <a href="/commands/tagged/805/users">users</a>
+                            <a href="/commands/tagged/112/awk">awk</a>
                                             </div>
                                                         </div>
                 <div class="votes">
-                    <div class="num-votes" id="num-votes-12692">0</div>
+                    <div class="num-votes" id="num-votes-9889">4</div>
                     <div class="voting-options">
-                        <a href="javascript:void(0)" class="vote-button" id="vote-up-12692">Up</a><br/>
-                        <a href="javascript:void(0)" class="vote-button" id="vote-down-12692">Down</a>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9889">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9889">Down</a>
                     </div>
                 </div>
                 <div class="summary">
-                    <a href="/commands/view/12692/changes-the-initial-login-group-for-all-users-with-gid-500-specified-with-limit-to-group-yourgroup" title="Find out what others think of this command">Changes the initial login group for all users with GID &gt; 500 (specified with LIMIT), to group YOURGROUP</a>
+                    <a href="/commands/view/9889/print-all-lines-between-two-line-numbers" title="Find out what others think of this command">Print all lines between two line numbers</a>
                 </div>
                 <div class="description">
-                    <p>Credit for the awk command goes to: <a href="http://www.cyberciti.biz/faq/howto-move-migrate-user-accounts-old-to-new-server/" rel="nofollow">http://www.cyberciti.biz/faq/howto-move-migrate-user-accounts-old-to-new-server/</a></p> 
+                    <p>This command uses awk(1) to print all lines between two known line numbers in a file. Useful for seeing output in a log file, where the line numbers are known. The above command will print all lines between, and including, lines 3 and 6.</p> 
                 </div>
                 <div class="options">
-                                <a href="/commands/view/12692/changes-the-initial-login-group-for-all-users-with-gid-500-specified-with-limit-to-group-yourgroup#comment">Comments (0)</a> |
-                                <a class="favourite-link" id="toggle-favourite-12692" href="javascript:void(0)">Add to favourites</a> |
-                <a class="report-link" id="report-12692" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
-                <a href="/commands/edit/0/12692" title="Submit a superior alternative">Submit alternative</a> |
-                <a href="/commands/duplicate/12692" title="Report as duplicate">Report as a duplicate</a>
+                                <a href="/commands/view/9889/print-all-lines-between-two-line-numbers#comment">Comments (3)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9889" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9889" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9889" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9889" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">function xzv() { THREADS=`grep processor /proc/cpuinfo | wc -l`; for file in $*; do pv -s `stat -c%s $file` &lt; $file | pxz -q -T $THREADS &gt; $file.xz ; done; }</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-9887">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre></pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2011-12-14 08:22:08                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/oernii2">oernii2</a>
+                    </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/file">file</a>
+                         
+                            <a href="/commands/using/wc">wc</a>
+                                            </div>
+                                                            <div class="functions">
+                        Tags:
+                         
+                            <a href="/commands/tagged/525/compression">compression</a>
+                         
+                            <a href="/commands/tagged/696/parallel">parallel</a>
+                         
+                            <a href="/commands/tagged/916/oernii">oernii</a>
+                         
+                            <a href="/commands/tagged/1865/xz">xz</a>
+                                            </div>
+                                                        </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-9887">0</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9887">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9887">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/9887/parallel-xz-with-progress-bar" title="Find out what others think of this command">Parallel XZ with progress bar</a>
+                </div>
+                <div class="description">
+                    <p>You need: pxz for the actual work (<a href="http://jnovy.fedorapeople.org/pxz/)." rel="nofollow">http://jnovy.fedorapeople.org/pxz/).</a> The function could be better with better multifile and stdin/out support.</p> 
+                </div>
+                <div class="options">
+                                <a href="/commands/view/9887/parallel-xz-with-progress-bar#comment">Comments (2)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9887" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9887" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9887" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9887" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">hex() { printf &quot;%X\n&quot; $1; }</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-9877">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre></pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2011-12-13 04:45:21                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/4Aiur">4Aiur</a>
+                    </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/printf">printf</a>
+                                            </div>
+                                                            <div class="functions">
+                        Tags:
+                         
+                            <a href="/commands/tagged/34/bash">bash</a>
+                         
+                            <a href="/commands/tagged/160/hex">hex</a>
+                         
+                            <a href="/commands/tagged/567/numbers">numbers</a>
+                         
+                            <a href="/commands/tagged/802/dc">dc</a>
+                                            </div>
+                                                        </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-9877">7</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9877">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9877">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/9877/convert-from-decimal-to-hexadecimal" title="Find out what others think of this command">convert from decimal to hexadecimal</a>
+                </div>
+                <div class="description">
+                     
+                </div>
+                <div class="options">
+                                <a href="/commands/view/9877/convert-from-decimal-to-hexadecimal#comment">Comments (0)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9877" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9877" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9877" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9877" title="Report as duplicate">Report as a duplicate</a>
+                </div>
+            </div>
+        </div>
+                <div class="one-liner">
+            <div class="line" title="Click to select this command">
+                <div class="command">sed -i &quot;s/\(\x09\{1,\}\)\|\( \{1,\}\)/ /g;s/\(\x09\{1,\}$\)\|\( \{1,\}$\)//g&quot; brisati.txt</div>
+            </div>
+            <div style="display:none" class="sample-output" id="sample-output-9871">
+                <div class="output-meta">
+                    This is sample output - yours may be different.
+                </div>
+                <div class="output">
+                    <pre>$ cat brisati.txt
+[       ]&lt;--one tab
+[                       ]&lt;--three tabs                    
+[ ]&lt;--one space
+[   ]&lt;--three spaces
+$ sed -i &quot;s/\(\x09\{1,\}\)\|\( \{1,\}\)/ /g;s/\(\x09\{1,\}$\)\|\( \{1,\}$\)//g&quot; brisati.txt;cat brisati.txt
+[ ]&lt;--one tab
+[ ]&lt;--three tabs
+[ ]&lt;--one space
+[ ]&lt;--three spaces
+</pre>
+                </div> 
+            </div>
+            <div class="details">
+                <div class="meta">
+                    <div class="date">
+                    2011-12-12 10:24:03                    </div>
+                    <div class="author">
+                        User: <a href="/commands/by/knoppix5">knoppix5</a>
+                    </div>
+                                        <div class="functions">
+                        Functions:
+                         
+                            <a href="/commands/using/sed">sed</a>
+                                            </div>
+                                                            <div class="functions">
+                        Tags:
+                         
+                            <a href="/commands/tagged/110/sed">sed</a>
+                         
+                            <a href="/commands/tagged/465/replace">replace</a>
+                         
+                            <a href="/commands/tagged/466/multiple">multiple</a>
+                         
+                            <a href="/commands/tagged/1098/spaces">spaces</a>
+                         
+                            <a href="/commands/tagged/1758/textfile">textfile</a>
+                         
+                            <a href="/commands/tagged/1809/tabs">tabs</a>
+                                            </div>
+                                                        </div>
+                <div class="votes">
+                    <div class="num-votes" id="num-votes-9871">-4</div>
+                    <div class="voting-options">
+                        <a href="javascript:void(0)" class="vote-button" id="vote-up-9871">Up</a><br/>
+                        <a href="javascript:void(0)" class="vote-button" id="vote-down-9871">Down</a>
+                    </div>
+                </div>
+                <div class="summary">
+                    <a href="/commands/view/9871/get-rid-of-multiple-spacestabs-in-a-text-file" title="Find out what others think of this command">Get rid of multiple spaces/tabs in a text file</a>
+                </div>
+                <div class="description">
+                    <p>This command does the following:</p>
+<p>- converts any sequence of multiple spaces/tabs to one space only</p>
+<p>- completely removes any space(s)/tab(s) at the end of each line</p>
+<p>(If spaces and tabs are mixed in a sequence i.e. [tab][tab][space][tab], you have to execute this command twice!)</p> 
+                </div>
+                <div class="options">
+                                    <a href="javascript:void(0)" onclick="Terminal.toggleSampleOutput($(this),$('sample-output-9871'))">Show sample output</a> |
+                                <a href="/commands/view/9871/get-rid-of-multiple-spacestabs-in-a-text-file#comment">Comments (3)</a> |
+                                <a class="favourite-link" id="toggle-favourite-9871" href="javascript:void(0)">Remove from favourites</a> |
+                <a class="report-link" id="report-9871" href="javascript:void(0)" title="Report this command as malicious">Report as malicious</a> |
+                <a href="/commands/edit/0/9871" title="Submit a superior alternative">Submit alternative</a> |
+                <a href="/commands/duplicate/9871" title="Report as duplicate">Report as a duplicate</a>
                 </div>
             </div>
         </div>
                 <div class="pagination">
-            &nbsp;<b>1</b>&nbsp;<a href="/commands/browse/25">2</a>&nbsp;<a href="/commands/browse/50">3</a>&nbsp;<a href="/commands/browse/25">&gt;</a>&nbsp;&nbsp;<a href="/commands/browse/10950">Last &rsaquo;</a>        </div>
+            <a href="/commands/favourites/100/">&lsaquo; First</a>&nbsp;&nbsp;<a href="/commands/favourites/100/75">&lt;</a>&nbsp;<a href="/commands/favourites/100/50">3</a>&nbsp;<a href="/commands/favourites/100/75">4</a>&nbsp;<b>5</b>&nbsp;<a href="/commands/favourites/100/125">6</a>&nbsp;<a href="/commands/favourites/100/125">&gt;</a>&nbsp;        </div>
     </div>
         </div>
         
         <div id="footer">
         
             <div class="advertising">
-                Our <a href="http://www.braindumps.com">braindumps</a> is the best source to keep up with latest trends in IT.  Spark up your IT expertise with <a href="http://www.braindumps.com/VCP-410.htm">VCP-410 dumps</a> and <a href="http://www.braindumps.com/640-802.htm">640-802 dumps</a>.            </div>
+                            </div>
         </div>
     </div>
     
@@ -5280,6 +5204,6 @@ went</pre>
             }
     </script>
     
-    <script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-5.newrelic.com","cf136d8e04","1677136","YlcAYREAXBBQBhAIC1sdI1YXCF0NHiYLDAlUXAZGTANADEYWAQ==",0,236,new Date().getTime(),"","","","",""]);</script>
+    <script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-5.newrelic.com","cf136d8e04","1677136","YlcAYREAXBBQBhAIC1sdI1YXCF0NHiYLDAlUXAZGTAdTFV4QFggQUEE=",0,620,new Date().getTime(),"","","","",""]);</script>
 </body>
 </html>
