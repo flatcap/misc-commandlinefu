@@ -1,18 +1,2 @@
---2013-09-15 13:25:48--  http://www.commandlinefu.com/commands/view/00209
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/209/check-command-history-but-avoid-running-it [following]
---2013-09-15 13:25:48--  http://www.commandlinefu.com/commands/view/209/check-command-history-but-avoid-running-it
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘00209.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  180K
-   100K .......... .......... .......... .......... ..........  180K
-   150K .......... .......... ..........                        219K=1.0s
-
-2013-09-15 13:25:49 (185 KB/s) - ‘00209.html’ saved [184795]
-
+http://www.commandlinefu.com/commands/view/00209
+http://www.commandlinefu.com/commands/view/209/check-command-history-but-avoid-running-it

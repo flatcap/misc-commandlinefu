@@ -1,18 +1,2 @@
---2013-09-15 13:26:29--  http://www.commandlinefu.com/commands/view/01333
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/1333/shut-of-the-screen. [following]
---2013-09-15 13:26:29--  http://www.commandlinefu.com/commands/view/1333/shut-of-the-screen.
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘01333.html’
-
-     0K .......... .......... .......... .......... ..........  119K
-    50K .......... .......... .......... .......... ..........  356K
-   100K .......... .......... .......... .......... ..........  179K
-   150K .......... .......... .......                           194K=1.0s
-
-2013-09-15 13:26:31 (181 KB/s) - ‘01333.html’ saved [181416]
-
+http://www.commandlinefu.com/commands/view/01333
+http://www.commandlinefu.com/commands/view/1333/shut-of-the-screen.

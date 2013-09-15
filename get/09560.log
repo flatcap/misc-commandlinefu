@@ -1,18 +1,2 @@
---2013-09-15 13:36:16--  http://www.commandlinefu.com/commands/view/09560
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/9560/wc-in-perl [following]
---2013-09-15 13:36:17--  http://www.commandlinefu.com/commands/view/9560/wc-in-perl
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘09560.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  179K
-   150K .......... .......... ..                               56.4M=0.8s
-
-2013-09-15 13:36:18 (205 KB/s) - ‘09560.html’ saved [176312]
-
+http://www.commandlinefu.com/commands/view/09560
+http://www.commandlinefu.com/commands/view/9560/wc-in-perl

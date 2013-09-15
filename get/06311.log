@@ -1,18 +1,2 @@
---2013-09-15 13:30:58--  http://www.commandlinefu.com/commands/view/06311
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/6311/converts-uppercase-chars-in-a-string-to-lowercase [following]
---2013-09-15 13:30:58--  http://www.commandlinefu.com/commands/view/6311/converts-uppercase-chars-in-a-string-to-lowercase
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘06311.html’
-
-     0K .......... .......... .......... .......... ..........  119K
-    50K .......... .......... .......... .......... ..........  356K
-   100K .......... .......... .......... .......... ..........  178K
-   150K .......... .......... ..........                        216K=1.0s
-
-2013-09-15 13:30:59 (184 KB/s) - ‘06311.html’ saved [184681]
-
+http://www.commandlinefu.com/commands/view/06311
+http://www.commandlinefu.com/commands/view/6311/converts-uppercase-chars-in-a-string-to-lowercase

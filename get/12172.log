@@ -1,18 +1,2 @@
---2013-09-15 13:40:54--  http://www.commandlinefu.com/commands/view/12172
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/12172/broadcast-your-shell-thru-ports-5000-5001-5002-... [following]
---2013-09-15 13:40:54--  http://www.commandlinefu.com/commands/view/12172/broadcast-your-shell-thru-ports-5000-5001-5002-...
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘12172.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  356K
-   150K .......... .......... .......... .                      116M=0.7s
-
-2013-09-15 13:40:55 (259 KB/s) - ‘12172.html’ saved [185918]
-
+http://www.commandlinefu.com/commands/view/12172
+http://www.commandlinefu.com/commands/view/12172/broadcast-your-shell-thru-ports-5000-5001-5002-...

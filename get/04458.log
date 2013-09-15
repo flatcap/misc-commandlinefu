@@ -1,18 +1,2 @@
---2013-09-15 13:29:50--  http://www.commandlinefu.com/commands/view/04458
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/4458/setup-a-persistant-ssh-tunnel-w-pre-shared-key-authentication [following]
---2013-09-15 13:29:50--  http://www.commandlinefu.com/commands/view/4458/setup-a-persistant-ssh-tunnel-w-pre-shared-key-authentication
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘04458.html’
-
-     0K .......... .......... .......... .......... ..........  119K
-    50K .......... .......... .......... .......... ..........  178K
-   100K .......... .......... .......... .......... ..........  178K
-   150K .......... .......... ...                               117M=1.0s
-
-2013-09-15 13:29:52 (176 KB/s) - ‘04458.html’ saved [177235]
-
+http://www.commandlinefu.com/commands/view/04458
+http://www.commandlinefu.com/commands/view/4458/setup-a-persistant-ssh-tunnel-w-pre-shared-key-authentication

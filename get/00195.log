@@ -1,18 +1,2 @@
---2013-09-15 13:25:44--  http://www.commandlinefu.com/commands/view/00195
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/195/ride-another-ssh-agent [following]
---2013-09-15 13:25:45--  http://www.commandlinefu.com/commands/view/195/ride-another-ssh-agent
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘00195.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  179K
-   150K .......... .......... ..                                164K=1.0s
-
-2013-09-15 13:25:46 (177 KB/s) - ‘00195.html’ saved [177083]
-
+http://www.commandlinefu.com/commands/view/00195
+http://www.commandlinefu.com/commands/view/195/ride-another-ssh-agent

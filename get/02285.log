@@ -1,18 +1,2 @@
---2013-09-15 13:27:16--  http://www.commandlinefu.com/commands/view/02285
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/2285/urldecoding [following]
---2013-09-15 13:27:17--  http://www.commandlinefu.com/commands/view/2285/urldecoding
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘02285.html’
-
-     0K .......... .......... .......... .......... ..........  157K
-    50K .......... .......... .......... .......... ..........  208K
-   100K .......... .......... .......... .......... ..........  278K
-   150K .......... .......... .......... ..........             291K=0.9s
-
-2013-09-15 13:27:18 (217 KB/s) - ‘02285.html’ saved [195221]
-
+http://www.commandlinefu.com/commands/view/02285
+http://www.commandlinefu.com/commands/view/2285/urldecoding

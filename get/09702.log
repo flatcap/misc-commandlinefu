@@ -1,18 +1,2 @@
---2013-09-15 13:36:56--  http://www.commandlinefu.com/commands/view/09702
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/9702/sort-the-output-of-the-du-command-by-largest-first-using-human-readable-output. [following]
---2013-09-15 13:36:57--  http://www.commandlinefu.com/commands/view/9702/sort-the-output-of-the-du-command-by-largest-first-using-human-readable-output.
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘09702.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  178K
-   150K .......... .......... ......                            191K=1.0s
-
-2013-09-15 13:36:58 (180 KB/s) - ‘09702.html’ saved [180830]
-
+http://www.commandlinefu.com/commands/view/09702
+http://www.commandlinefu.com/commands/view/9702/sort-the-output-of-the-du-command-by-largest-first-using-human-readable-output.

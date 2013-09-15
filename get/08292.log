@@ -1,18 +1,2 @@
---2013-09-15 13:33:29--  http://www.commandlinefu.com/commands/view/08292
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/8292/find-out-current-working-directory-of-a-process [following]
---2013-09-15 13:33:30--  http://www.commandlinefu.com/commands/view/8292/find-out-current-working-directory-of-a-process
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘08292.html’
-
-     0K .......... .......... .......... .......... ..........  180K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  225K
-   150K .......... .......... .......... .........              414K=0.9s
-
-2013-09-15 13:33:31 (217 KB/s) - ‘08292.html’ saved [194373]
-
+http://www.commandlinefu.com/commands/view/08292
+http://www.commandlinefu.com/commands/view/8292/find-out-current-working-directory-of-a-process

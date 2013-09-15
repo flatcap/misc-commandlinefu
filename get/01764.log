@@ -1,18 +1,2 @@
---2013-09-15 13:26:40--  http://www.commandlinefu.com/commands/view/01764
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/1764/display-a-block-of-text-with-awk [following]
---2013-09-15 13:26:41--  http://www.commandlinefu.com/commands/view/1764/display-a-block-of-text-with-awk
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘01764.html’
-
-     0K .......... .......... .......... .......... ..........  120K
-    50K .......... .......... .......... .......... ..........  180K
-   100K .......... .......... .......... .......... ..........  360K
-   150K .......... .......... .......... ..                     226K=1.0s
-
-2013-09-15 13:26:42 (187 KB/s) - ‘01764.html’ saved [186989]
-
+http://www.commandlinefu.com/commands/view/01764
+http://www.commandlinefu.com/commands/view/1764/display-a-block-of-text-with-awk

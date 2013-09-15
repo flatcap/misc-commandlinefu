@@ -1,18 +1,2 @@
---2013-09-15 13:28:22--  http://www.commandlinefu.com/commands/view/02923
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/2923/sum-columns-from-csv-column-col [following]
---2013-09-15 13:28:22--  http://www.commandlinefu.com/commands/view/2923/sum-columns-from-csv-column-col
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘02923.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  279K
-   150K .......... .......... ........                          278K=0.8s
-
-2013-09-15 13:28:23 (212 KB/s) - ‘02923.html’ saved [182333]
-
+http://www.commandlinefu.com/commands/view/02923
+http://www.commandlinefu.com/commands/view/2923/sum-columns-from-csv-column-col

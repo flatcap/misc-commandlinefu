@@ -1,18 +1,2 @@
---2013-09-15 13:35:40--  http://www.commandlinefu.com/commands/view/09441
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/9441/join-lines-split-with-backslash-at-the-end [following]
---2013-09-15 13:35:40--  http://www.commandlinefu.com/commands/view/9441/join-lines-split-with-backslash-at-the-end
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘09441.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  358K
-   150K .......... .......... ........                          201K=0.8s
-
-2013-09-15 13:35:41 (212 KB/s) - ‘09441.html’ saved [182402]
-
+http://www.commandlinefu.com/commands/view/09441
+http://www.commandlinefu.com/commands/view/9441/join-lines-split-with-backslash-at-the-end

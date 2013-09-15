@@ -1,18 +1,2 @@
---2013-09-15 13:27:31--  http://www.commandlinefu.com/commands/view/02460
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/2460/vim-insert-current-filename [following]
---2013-09-15 13:27:31--  http://www.commandlinefu.com/commands/view/2460/vim-insert-current-filename
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘02460.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  178K
-   100K .......... .......... .......... .......... ..........  178K
-   150K .......... .......... ...                               121M=0.8s
-
-2013-09-15 13:27:32 (206 KB/s) - ‘02460.html’ saved [177861]
-
+http://www.commandlinefu.com/commands/view/02460
+http://www.commandlinefu.com/commands/view/2460/vim-insert-current-filename

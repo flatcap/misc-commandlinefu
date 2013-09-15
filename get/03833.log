@@ -1,18 +1,2 @@
---2013-09-15 13:29:07--  http://www.commandlinefu.com/commands/view/03833
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/3833/localize-provenance-of-current-established-connections [following]
---2013-09-15 13:29:08--  http://www.commandlinefu.com/commands/view/3833/localize-provenance-of-current-established-connections
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘03833.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  337K
-   150K .......... .......... ...                               178K=0.8s
-
-2013-09-15 13:29:09 (206 KB/s) - ‘03833.html’ saved [177583]
-
+http://www.commandlinefu.com/commands/view/03833
+http://www.commandlinefu.com/commands/view/3833/localize-provenance-of-current-established-connections

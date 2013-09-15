@@ -1,18 +1,2 @@
---2013-09-15 13:28:40--  http://www.commandlinefu.com/commands/view/03344
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/3344/display-an-embeded-help-message-from-bash-script-header [following]
---2013-09-15 13:28:40--  http://www.commandlinefu.com/commands/view/3344/display-an-embeded-help-message-from-bash-script-header
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘03344.html’
-
-     0K .......... .......... .......... .......... ..........  120K
-    50K .......... .......... .......... .......... ..........  181K
-   100K .......... .......... .......... .......... ..........  360K
-   150K .......... .......... ....                              176K=1.0s
-
-2013-09-15 13:28:41 (180 KB/s) - ‘03344.html’ saved [178538]
-
+http://www.commandlinefu.com/commands/view/03344
+http://www.commandlinefu.com/commands/view/3344/display-an-embeded-help-message-from-bash-script-header

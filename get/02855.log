@@ -1,18 +1,2 @@
---2013-09-15 13:28:12--  http://www.commandlinefu.com/commands/view/02855
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/2855/show-log-message-including-which-files-changed-for-a-given-commit-in-git. [following]
---2013-09-15 13:28:12--  http://www.commandlinefu.com/commands/view/2855/show-log-message-including-which-files-changed-for-a-given-commit-in-git.
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘02855.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  178K
-   100K .......... .......... .......... .......... ..........  178K
-   150K .......... .......... ..                               83.9M=0.8s
-
-2013-09-15 13:28:13 (204 KB/s) - ‘02855.html’ saved [176428]
-
+http://www.commandlinefu.com/commands/view/02855
+http://www.commandlinefu.com/commands/view/2855/show-log-message-including-which-files-changed-for-a-given-commit-in-git.

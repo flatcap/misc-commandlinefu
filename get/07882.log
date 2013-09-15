@@ -1,18 +1,2 @@
---2013-09-15 13:32:44--  http://www.commandlinefu.com/commands/view/07882
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/7882/center-text-in-console-with-simple-pipe-like [following]
---2013-09-15 13:32:44--  http://www.commandlinefu.com/commands/view/7882/center-text-in-console-with-simple-pipe-like
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘07882.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  178K
-   100K .......... .......... .......... .......... ..........  178K
-   150K .......... .......... ....                             78.6M=0.8s
-
-2013-09-15 13:32:45 (207 KB/s) - ‘07882.html’ saved [178733]
-
+http://www.commandlinefu.com/commands/view/07882
+http://www.commandlinefu.com/commands/view/7882/center-text-in-console-with-simple-pipe-like

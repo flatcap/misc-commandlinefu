@@ -1,18 +1,2 @@
---2013-09-15 13:35:35--  http://www.commandlinefu.com/commands/view/09398
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/9398/suppress-output-of-loud-commands-you-dont-want-to-hear-from [following]
---2013-09-15 13:35:35--  http://www.commandlinefu.com/commands/view/9398/suppress-output-of-loud-commands-you-dont-want-to-hear-from
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘09398.html’
-
-     0K .......... .......... .......... .......... ..........  119K
-    50K .......... .......... .......... .......... ..........  357K
-   100K .......... .......... .......... .......... ..........  278K
-   150K .......... .......... ........                          279K=0.8s
-
-2013-09-15 13:35:36 (212 KB/s) - ‘09398.html’ saved [182335]
-
+http://www.commandlinefu.com/commands/view/09398
+http://www.commandlinefu.com/commands/view/9398/suppress-output-of-loud-commands-you-dont-want-to-hear-from

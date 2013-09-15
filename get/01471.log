@@ -1,18 +1,2 @@
---2013-09-15 13:26:34--  http://www.commandlinefu.com/commands/view/01471
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/1471/list-all-the-files-that-have-been-deleted-while-they-were-still-open. [following]
---2013-09-15 13:26:34--  http://www.commandlinefu.com/commands/view/1471/list-all-the-files-that-have-been-deleted-while-they-were-still-open.
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘01471.html’
-
-     0K .......... .......... .......... .......... ..........  157K
-    50K .......... .......... .......... .......... ..........  207K
-   100K .......... .......... .......... .......... ..........  280K
-   150K .......... .......... ..                               34.0M=0.7s
-
-2013-09-15 13:26:35 (234 KB/s) - ‘01471.html’ saved [176953]
-
+http://www.commandlinefu.com/commands/view/01471
+http://www.commandlinefu.com/commands/view/1471/list-all-the-files-that-have-been-deleted-while-they-were-still-open.

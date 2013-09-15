@@ -1,18 +1,2 @@
---2013-09-15 13:28:17--  http://www.commandlinefu.com/commands/view/02916
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/2916/backup-all-mysql-databases-to-individual-files [following]
---2013-09-15 13:28:17--  http://www.commandlinefu.com/commands/view/2916/backup-all-mysql-databases-to-individual-files
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘02916.html’
-
-     0K .......... .......... .......... .......... ..........  180K
-    50K .......... .......... .......... .......... ..........  180K
-   100K .......... .......... .......... .......... ..........  180K
-   150K .......... .......... .......... .......                267K=1.0s
-
-2013-09-15 13:28:18 (193 KB/s) - ‘02916.html’ saved [191569]
-
+http://www.commandlinefu.com/commands/view/02916
+http://www.commandlinefu.com/commands/view/2916/backup-all-mysql-databases-to-individual-files

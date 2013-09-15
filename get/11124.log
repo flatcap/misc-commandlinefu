@@ -1,18 +1,2 @@
---2013-09-15 13:39:39--  http://www.commandlinefu.com/commands/view/11124
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/11124/hide-files-in-ls-by-adding-support-for-.hidden-files [following]
---2013-09-15 13:39:39--  http://www.commandlinefu.com/commands/view/11124/hide-files-in-ls-by-adding-support-for-.hidden-files
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘11124.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  177K
-   150K .......... .......... ...                              94.1M=0.8s
-
-2013-09-15 13:39:41 (206 KB/s) - ‘11124.html’ saved [177542]
-
+http://www.commandlinefu.com/commands/view/11124
+http://www.commandlinefu.com/commands/view/11124/hide-files-in-ls-by-adding-support-for-.hidden-files

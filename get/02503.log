@@ -1,18 +1,2 @@
---2013-09-15 13:27:37--  http://www.commandlinefu.com/commands/view/02503
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/2503/print-multiline-text-starting-and-ending-at-specific-regexps-with-perl [following]
---2013-09-15 13:27:38--  http://www.commandlinefu.com/commands/view/2503/print-multiline-text-starting-and-ending-at-specific-regexps-with-perl
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘02503.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  178K
-   100K .......... .......... .......... .......... ..........  178K
-   150K .......... .......... ...                               104M=0.8s
-
-2013-09-15 13:27:39 (206 KB/s) - ‘02503.html’ saved [177808]
-
+http://www.commandlinefu.com/commands/view/02503
+http://www.commandlinefu.com/commands/view/2503/print-multiline-text-starting-and-ending-at-specific-regexps-with-perl

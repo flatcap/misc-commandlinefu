@@ -1,18 +1,2 @@
---2013-09-15 13:31:25--  http://www.commandlinefu.com/commands/view/06936
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/6936/show-exit-status-of-all-portions-of-a-piped-command-eg.-ls-this_doesnt_exist-wc [following]
---2013-09-15 13:31:25--  http://www.commandlinefu.com/commands/view/6936/show-exit-status-of-all-portions-of-a-piped-command-eg.-ls-this_doesnt_exist-wc
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘06936.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  278K
-   150K .......... .......... ..                                225K=0.8s
-
-2013-09-15 13:31:26 (206 KB/s) - ‘06936.html’ saved [176598]
-
+http://www.commandlinefu.com/commands/view/06936
+http://www.commandlinefu.com/commands/view/6936/show-exit-status-of-all-portions-of-a-piped-command-eg.-ls-this_doesnt_exist-wc

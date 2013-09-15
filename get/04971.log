@@ -1,18 +1,2 @@
---2013-09-15 13:30:10--  http://www.commandlinefu.com/commands/view/04971
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/4971/mouse-tracking [following]
---2013-09-15 13:30:10--  http://www.commandlinefu.com/commands/view/4971/mouse-tracking
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘04971.html’
-
-     0K .......... .......... .......... .......... ..........  181K
-    50K .......... .......... .......... .......... ..........  180K
-   100K .......... .......... .......... .......... ..........  361K
-   150K .......... .......... ..                                165K=0.8s
-
-2013-09-15 13:30:12 (208 KB/s) - ‘04971.html’ saved [177080]
-
+http://www.commandlinefu.com/commands/view/04971
+http://www.commandlinefu.com/commands/view/4971/mouse-tracking

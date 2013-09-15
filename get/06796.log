@@ -1,18 +1,2 @@
---2013-09-15 13:31:18--  http://www.commandlinefu.com/commands/view/06796
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/6796/execute-a-file-in-vim-with-the-bininterpreter-in-the-first-line [following]
---2013-09-15 13:31:18--  http://www.commandlinefu.com/commands/view/6796/execute-a-file-in-vim-with-the-bininterpreter-in-the-first-line
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘06796.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  179K
-   150K .......... .......... ..                                159K=1.0s
-
-2013-09-15 13:31:20 (176 KB/s) - ‘06796.html’ saved [176291]
-
+http://www.commandlinefu.com/commands/view/06796
+http://www.commandlinefu.com/commands/view/6796/execute-a-file-in-vim-with-the-bininterpreter-in-the-first-line

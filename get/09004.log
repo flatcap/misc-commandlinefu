@@ -1,18 +1,2 @@
---2013-09-15 13:34:50--  http://www.commandlinefu.com/commands/view/09004
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/9004/screenshot-pipe-to-remote-host-adding-url-to-clipboard-notifying-when-done.-without-saving-locally [following]
---2013-09-15 13:34:50--  http://www.commandlinefu.com/commands/view/9004/screenshot-pipe-to-remote-host-adding-url-to-clipboard-notifying-when-done.-without-saving-locally
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘09004.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  119K
-   100K .......... .......... .......... .......... ..........  357K
-   150K .......... .......... ......                            187K=1.0s
-
-2013-09-15 13:34:51 (180 KB/s) - ‘09004.html’ saved [180324]
-
+http://www.commandlinefu.com/commands/view/09004
+http://www.commandlinefu.com/commands/view/9004/screenshot-pipe-to-remote-host-adding-url-to-clipboard-notifying-when-done.-without-saving-locally

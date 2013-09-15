@@ -1,18 +1,2 @@
---2013-09-15 13:26:57--  http://www.commandlinefu.com/commands/view/01948
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/1948/terminal-redirection [following]
---2013-09-15 13:26:57--  http://www.commandlinefu.com/commands/view/1948/terminal-redirection
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘01948.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  178K
-   150K .......... .......... ......                           56.1M=0.8s
-
-2013-09-15 13:26:58 (210 KB/s) - ‘01948.html’ saved [180881]
-
+http://www.commandlinefu.com/commands/view/01948
+http://www.commandlinefu.com/commands/view/1948/terminal-redirection

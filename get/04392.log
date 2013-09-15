@@ -1,18 +1,2 @@
---2013-09-15 13:29:42--  http://www.commandlinefu.com/commands/view/04392
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/4392/sum-using-awk [following]
---2013-09-15 13:29:42--  http://www.commandlinefu.com/commands/view/4392/sum-using-awk
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘04392.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  178K
-   100K .......... .......... .......... .......... ..........  356K
-   150K .......... .......... ...                               164K=0.8s
-
-2013-09-15 13:29:43 (206 KB/s) - ‘04392.html’ saved [177172]
-
+http://www.commandlinefu.com/commands/view/04392
+http://www.commandlinefu.com/commands/view/4392/sum-using-awk

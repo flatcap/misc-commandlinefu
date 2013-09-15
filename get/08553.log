@@ -1,18 +1,2 @@
---2013-09-15 13:34:04--  http://www.commandlinefu.com/commands/view/08553
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/8553/find-out-which-process-uses-an-old-lib-and-needs-a-restart-after-a-system-update [following]
---2013-09-15 13:34:04--  http://www.commandlinefu.com/commands/view/8553/find-out-which-process-uses-an-old-lib-and-needs-a-restart-after-a-system-update
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘08553.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  356K
-   150K .......... .......... ........                          205K=0.8s
-
-2013-09-15 13:34:05 (213 KB/s) - ‘08553.html’ saved [182929]
-
+http://www.commandlinefu.com/commands/view/08553
+http://www.commandlinefu.com/commands/view/8553/find-out-which-process-uses-an-old-lib-and-needs-a-restart-after-a-system-update

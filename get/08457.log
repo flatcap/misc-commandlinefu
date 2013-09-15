@@ -1,18 +1,2 @@
---2013-09-15 13:33:54--  http://www.commandlinefu.com/commands/view/08457
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/8457/list-your-macs-address [following]
---2013-09-15 13:33:54--  http://www.commandlinefu.com/commands/view/8457/list-your-macs-address
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘08457.html’
-
-     0K .......... .......... .......... .......... ..........  156K
-    50K .......... .......... .......... .......... ..........  210K
-   100K .......... .......... .......... .......... ..........  179K
-   150K .......... .......... .......... .....                  254K=1.0s
-
-2013-09-15 13:33:55 (190 KB/s) - ‘08457.html’ saved [189758]
-
+http://www.commandlinefu.com/commands/view/08457
+http://www.commandlinefu.com/commands/view/8457/list-your-macs-address

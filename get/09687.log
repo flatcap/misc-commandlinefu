@@ -1,18 +1,2 @@
---2013-09-15 13:36:53--  http://www.commandlinefu.com/commands/view/09687
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/9687/simple-calculus [following]
---2013-09-15 13:36:53--  http://www.commandlinefu.com/commands/view/9687/simple-calculus
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘09687.html’
-
-     0K .......... .......... .......... .......... ..........  180K
-    50K .......... .......... .......... .......... ..........  180K
-   100K .......... .......... .......... .......... ..........  180K
-   150K .......... .......... ...                               169K=1.0s
-
-2013-09-15 13:36:55 (178 KB/s) - ‘09687.html’ saved [177657]
-
+http://www.commandlinefu.com/commands/view/09687
+http://www.commandlinefu.com/commands/view/9687/simple-calculus

@@ -1,18 +1,2 @@
---2013-09-15 13:27:52--  http://www.commandlinefu.com/commands/view/02657
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/2657/test-your-total-disk-io-capacity-regardless-of-caching-to-find-out-how-fast-the-true-speed-of-your-disks-are [following]
---2013-09-15 13:27:53--  http://www.commandlinefu.com/commands/view/2657/test-your-total-disk-io-capacity-regardless-of-caching-to-find-out-how-fast-the-true-speed-of-your-disks-are
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘02657.html’
-
-     0K .......... .......... .......... .......... ..........  119K
-    50K .......... .......... .......... .......... ..........  355K
-   100K .......... .......... .......... .......... ..........  178K
-   150K .......... .......... ........                         73.5M=0.8s
-
-2013-09-15 13:27:54 (211 KB/s) - ‘02657.html’ saved [182531]
-
+http://www.commandlinefu.com/commands/view/02657
+http://www.commandlinefu.com/commands/view/2657/test-your-total-disk-io-capacity-regardless-of-caching-to-find-out-how-fast-the-true-speed-of-your-disks-are

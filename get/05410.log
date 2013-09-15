@@ -1,18 +1,2 @@
---2013-09-15 13:30:28--  http://www.commandlinefu.com/commands/view/05410
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/5410/intercept-stdoutstderr-of-another-process [following]
---2013-09-15 13:30:28--  http://www.commandlinefu.com/commands/view/5410/intercept-stdoutstderr-of-another-process
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘05410.html’
-
-     0K .......... .......... .......... .......... ..........  181K
-    50K .......... .......... .......... .......... ..........  181K
-   100K .......... .......... .......... .......... ..........  181K
-   150K .......... .......... ..........                       67.6M=0.8s
-
-2013-09-15 13:30:29 (217 KB/s) - ‘05410.html’ saved [184400]
-
+http://www.commandlinefu.com/commands/view/05410
+http://www.commandlinefu.com/commands/view/5410/intercept-stdoutstderr-of-another-process

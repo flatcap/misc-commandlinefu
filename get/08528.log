@@ -1,18 +1,2 @@
---2013-09-15 13:34:00--  http://www.commandlinefu.com/commands/view/08528
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/8528/join-every-five-lines [following]
---2013-09-15 13:34:01--  http://www.commandlinefu.com/commands/view/8528/join-every-five-lines
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘08528.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  179K
-   150K .......... .......... ...                              49.1M=0.8s
-
-2013-09-15 13:34:02 (206 KB/s) - ‘08528.html’ saved [177276]
-
+http://www.commandlinefu.com/commands/view/08528
+http://www.commandlinefu.com/commands/view/8528/join-every-five-lines

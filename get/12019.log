@@ -1,18 +1,2 @@
---2013-09-15 13:40:39--  http://www.commandlinefu.com/commands/view/12019
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/12019/convert-uppercase-to-lowercase [following]
---2013-09-15 13:40:39--  http://www.commandlinefu.com/commands/view/12019/convert-uppercase-to-lowercase
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘12019.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  178K
-   100K .......... .......... .......... .......... ..........  179K
-   150K .......... .......... ...                              79.7M=0.8s
-
-2013-09-15 13:40:40 (206 KB/s) - ‘12019.html’ saved [177361]
-
+http://www.commandlinefu.com/commands/view/12019
+http://www.commandlinefu.com/commands/view/12019/convert-uppercase-to-lowercase

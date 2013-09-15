@@ -1,18 +1,2 @@
---2013-09-15 13:27:42--  http://www.commandlinefu.com/commands/view/02520
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/2520/define-a-quick-calculator-function [following]
---2013-09-15 13:27:43--  http://www.commandlinefu.com/commands/view/2520/define-a-quick-calculator-function
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘02520.html’
-
-     0K .......... .......... .......... .......... ..........  181K
-    50K .......... .......... .......... .......... ..........  181K
-   100K .......... .......... .......... .......... ..........  181K
-   150K .......... .......... .......... .....                  253K=1.0s
-
-2013-09-15 13:27:44 (191 KB/s) - ‘02520.html’ saved [189468]
-
+http://www.commandlinefu.com/commands/view/02520
+http://www.commandlinefu.com/commands/view/2520/define-a-quick-calculator-function

@@ -1,18 +1,2 @@
---2013-09-15 13:29:58--  http://www.commandlinefu.com/commands/view/04547
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/4547/grep-by-paragraph-instead-of-by-line. [following]
---2013-09-15 13:29:59--  http://www.commandlinefu.com/commands/view/4547/grep-by-paragraph-instead-of-by-line.
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘04547.html’
-
-     0K .......... .......... .......... .......... ..........  180K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  179K
-   150K .......... .......... .......                           136M=0.8s
-
-2013-09-15 13:30:00 (212 KB/s) - ‘04547.html’ saved [181466]
-
+http://www.commandlinefu.com/commands/view/04547
+http://www.commandlinefu.com/commands/view/4547/grep-by-paragraph-instead-of-by-line.

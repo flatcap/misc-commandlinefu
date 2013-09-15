@@ -1,18 +1,2 @@
---2013-09-15 13:31:10--  http://www.commandlinefu.com/commands/view/06652
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/6652/remove-all-but-one-specific-file [following]
---2013-09-15 13:31:11--  http://www.commandlinefu.com/commands/view/6652/remove-all-but-one-specific-file
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘06652.html’
-
-     0K .......... .......... .......... .......... ..........  180K
-    50K .......... .......... .......... .......... ..........  180K
-   100K .......... .......... .......... .......... ..........  358K
-   150K .......... .......... .......... .......... .           228K=0.9s
-
-2013-09-15 13:31:12 (218 KB/s) - ‘06652.html’ saved [195817]
-
+http://www.commandlinefu.com/commands/view/06652
+http://www.commandlinefu.com/commands/view/6652/remove-all-but-one-specific-file

@@ -1,18 +1,2 @@
---2013-09-15 13:28:13--  http://www.commandlinefu.com/commands/view/02870
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/2870/display-the-definition-of-a-shell-function [following]
---2013-09-15 13:28:14--  http://www.commandlinefu.com/commands/view/2870/display-the-definition-of-a-shell-function
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘02870.html’
-
-     0K .......... .......... .......... .......... ..........  119K
-    50K .......... .......... .......... .......... ..........  358K
-   100K .......... .......... .......... .......... ..........  179K
-   150K .......... .......... ..                                161K=1.0s
-
-2013-09-15 13:28:15 (177 KB/s) - ‘02870.html’ saved [176522]
-
+http://www.commandlinefu.com/commands/view/02870
+http://www.commandlinefu.com/commands/view/2870/display-the-definition-of-a-shell-function

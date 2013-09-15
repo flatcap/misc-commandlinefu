@@ -1,18 +1,2 @@
---2013-09-15 13:34:53--  http://www.commandlinefu.com/commands/view/09015
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/9015/find-the-most-recently-changed-files-recursively [following]
---2013-09-15 13:34:53--  http://www.commandlinefu.com/commands/view/9015/find-the-most-recently-changed-files-recursively
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘09015.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  178K
-   100K .......... .......... .......... .......... ..........  356K
-   150K .......... .......... ...                               171K=0.8s
-
-2013-09-15 13:34:55 (207 KB/s) - ‘09015.html’ saved [178118]
-
+http://www.commandlinefu.com/commands/view/09015
+http://www.commandlinefu.com/commands/view/9015/find-the-most-recently-changed-files-recursively

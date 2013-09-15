@@ -1,18 +1,2 @@
---2013-09-15 13:32:15--  http://www.commandlinefu.com/commands/view/07597
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/7597/find-files-in-multiple-tar-files [following]
---2013-09-15 13:32:15--  http://www.commandlinefu.com/commands/view/7597/find-files-in-multiple-tar-files
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘07597.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  280K
-   150K .......... .......... ...                               235K=0.8s
-
-2013-09-15 13:32:16 (207 KB/s) - ‘07597.html’ saved [177856]
-
+http://www.commandlinefu.com/commands/view/07597
+http://www.commandlinefu.com/commands/view/7597/find-files-in-multiple-tar-files

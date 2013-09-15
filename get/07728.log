@@ -1,18 +1,2 @@
---2013-09-15 13:32:33--  http://www.commandlinefu.com/commands/view/07728
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/7728/a-web-2.0-domain-name-generator-and-look-for-register-availability [following]
---2013-09-15 13:32:33--  http://www.commandlinefu.com/commands/view/7728/a-web-2.0-domain-name-generator-and-look-for-register-availability
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘07728.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  357K
-   150K .......... .......... .....                             643K=0.7s
-
-2013-09-15 13:32:34 (237 KB/s) - ‘07728.html’ saved [179243]
-
+http://www.commandlinefu.com/commands/view/07728
+http://www.commandlinefu.com/commands/view/7728/a-web-2.0-domain-name-generator-and-look-for-register-availability

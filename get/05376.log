@@ -1,18 +1,2 @@
---2013-09-15 13:30:25--  http://www.commandlinefu.com/commands/view/05376
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/5376/see-multiple-progress-bars-at-once-for-multiple-pipes-with-pv [following]
---2013-09-15 13:30:25--  http://www.commandlinefu.com/commands/view/5376/see-multiple-progress-bars-at-once-for-multiple-pipes-with-pv
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘05376.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  178K
-   100K .......... .......... .......... .......... ..........  178K
-   150K .......... .......... ...                              86.0M=0.8s
-
-2013-09-15 13:30:26 (206 KB/s) - ‘05376.html’ saved [177368]
-
+http://www.commandlinefu.com/commands/view/05376
+http://www.commandlinefu.com/commands/view/5376/see-multiple-progress-bars-at-once-for-multiple-pipes-with-pv

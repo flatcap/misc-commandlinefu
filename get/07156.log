@@ -1,18 +1,2 @@
---2013-09-15 13:31:41--  http://www.commandlinefu.com/commands/view/07156
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/7156/monitor-a-file-with-tail-with-timestamps-added [following]
---2013-09-15 13:31:41--  http://www.commandlinefu.com/commands/view/7156/monitor-a-file-with-tail-with-timestamps-added
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘07156.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  179K
-   150K .......... .......... .......... ..                     235K=1.0s
-
-2013-09-15 13:31:42 (187 KB/s) - ‘07156.html’ saved [187112]
-
+http://www.commandlinefu.com/commands/view/07156
+http://www.commandlinefu.com/commands/view/7156/monitor-a-file-with-tail-with-timestamps-added

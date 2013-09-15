@@ -1,18 +1,2 @@
---2013-09-15 13:29:52--  http://www.commandlinefu.com/commands/view/04478
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/4478/silentshh-shorthand-to-make-commands-really-quiet [following]
---2013-09-15 13:29:52--  http://www.commandlinefu.com/commands/view/4478/silentshh-shorthand-to-make-commands-really-quiet
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘04478.html’
-
-     0K .......... .......... .......... .......... ..........  156K
-    50K .......... .......... .......... .......... ..........  208K
-   100K .......... .......... .......... .......... ..........  357K
-   150K .......... .......... ....                              177K=0.8s
-
-2013-09-15 13:29:53 (208 KB/s) - ‘04478.html’ saved [178944]
-
+http://www.commandlinefu.com/commands/view/04478
+http://www.commandlinefu.com/commands/view/4478/silentshh-shorthand-to-make-commands-really-quiet

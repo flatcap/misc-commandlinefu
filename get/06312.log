@@ -1,18 +1,2 @@
---2013-09-15 13:30:59--  http://www.commandlinefu.com/commands/view/06312
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/6312/squish-repeated-delimiters-into-one [following]
---2013-09-15 13:31:00--  http://www.commandlinefu.com/commands/view/6312/squish-repeated-delimiters-into-one
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘06312.html’
-
-     0K .......... .......... .......... .......... ..........  120K
-    50K .......... .......... .......... .......... ..........  180K
-   100K .......... .......... .......... .......... ..........  360K
-   150K .......... .......... ...                               168K=1.0s
-
-2013-09-15 13:31:01 (179 KB/s) - ‘06312.html’ saved [177339]
-
+http://www.commandlinefu.com/commands/view/06312
+http://www.commandlinefu.com/commands/view/6312/squish-repeated-delimiters-into-one

@@ -1,18 +1,2 @@
---2013-09-15 13:37:29--  http://www.commandlinefu.com/commands/view/09808
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/9808/remove-.jpg-smaller-than-500x500 [following]
---2013-09-15 13:37:30--  http://www.commandlinefu.com/commands/view/9808/remove-.jpg-smaller-than-500x500
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘09808.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  119K
-   100K .......... .......... .......... .......... ..........  356K
-   150K .......... .......... ..                                160K=1.0s
-
-2013-09-15 13:37:31 (176 KB/s) - ‘09808.html’ saved [176570]
-
+http://www.commandlinefu.com/commands/view/09808
+http://www.commandlinefu.com/commands/view/9808/remove-.jpg-smaller-than-500x500

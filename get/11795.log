@@ -1,18 +1,2 @@
---2013-09-15 13:40:18--  http://www.commandlinefu.com/commands/view/11795
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/11795/turn-white-color-to-transparent-for-a-series-of-png-images [following]
---2013-09-15 13:40:18--  http://www.commandlinefu.com/commands/view/11795/turn-white-color-to-transparent-for-a-series-of-png-images
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘11795.html’
-
-     0K .......... .......... .......... .......... ..........  119K
-    50K .......... .......... .......... .......... ..........  355K
-   100K .......... .......... .......... .......... ..........  178K
-   150K .......... .......... ...                              66.3M=0.8s
-
-2013-09-15 13:40:20 (205 KB/s) - ‘11795.html’ saved [177262]
-
+http://www.commandlinefu.com/commands/view/11795
+http://www.commandlinefu.com/commands/view/11795/turn-white-color-to-transparent-for-a-series-of-png-images

@@ -1,18 +1,2 @@
---2013-09-15 13:30:13--  http://www.commandlinefu.com/commands/view/05071
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/5071/search-path-for-a-command-or-something-similar [following]
---2013-09-15 13:30:14--  http://www.commandlinefu.com/commands/view/5071/search-path-for-a-command-or-something-similar
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘05071.html’
-
-     0K .......... .......... .......... .......... ..........  181K
-    50K .......... .......... .......... .......... ..........  181K
-   100K .......... .......... .......... .......... ..........  181K
-   150K .......... .......... ...                               586K=0.9s
-
-2013-09-15 13:30:15 (199 KB/s) - ‘05071.html’ saved [177555]
-
+http://www.commandlinefu.com/commands/view/05071
+http://www.commandlinefu.com/commands/view/5071/search-path-for-a-command-or-something-similar

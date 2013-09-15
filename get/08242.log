@@ -1,18 +1,2 @@
---2013-09-15 13:33:23--  http://www.commandlinefu.com/commands/view/08242
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/8242/sed-patd-without-using-sed-no-re-limited-to-shell-patterns-aka-globbing [following]
---2013-09-15 13:33:23--  http://www.commandlinefu.com/commands/view/8242/sed-patd-without-using-sed-no-re-limited-to-shell-patterns-aka-globbing
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘08242.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  355K
-   150K .......... .......... ....                              179K=0.8s
-
-2013-09-15 13:33:24 (209 KB/s) - ‘08242.html’ saved [179044]
-
+http://www.commandlinefu.com/commands/view/08242
+http://www.commandlinefu.com/commands/view/8242/sed-patd-without-using-sed-no-re-limited-to-shell-patterns-aka-globbing

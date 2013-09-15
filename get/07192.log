@@ -1,18 +1,2 @@
---2013-09-15 13:31:42--  http://www.commandlinefu.com/commands/view/07192
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/7192/strip-non-constant-number-of-directories-from-tar-archive-while-decompressing [following]
---2013-09-15 13:31:43--  http://www.commandlinefu.com/commands/view/7192/strip-non-constant-number-of-directories-from-tar-archive-while-decompressing
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘07192.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  180K
-   100K .......... .......... .......... .......... ..........  360K
-   150K .......... .......... ....                              176K=0.8s
-
-2013-09-15 13:31:44 (208 KB/s) - ‘07192.html’ saved [178451]
-
+http://www.commandlinefu.com/commands/view/07192
+http://www.commandlinefu.com/commands/view/7192/strip-non-constant-number-of-directories-from-tar-archive-while-decompressing

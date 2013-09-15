@@ -1,18 +1,2 @@
---2013-09-15 13:37:24--  http://www.commandlinefu.com/commands/view/09794
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/9794/set-up-alarm-with-fade-in-for-graceful-awakening [following]
---2013-09-15 13:37:25--  http://www.commandlinefu.com/commands/view/9794/set-up-alarm-with-fade-in-for-graceful-awakening
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘09794.html’
-
-     0K .......... .......... .......... .......... ..........  180K
-    50K .......... .......... .......... .......... ..........  119K
-   100K .......... .......... .......... .......... ..........  359K
-   150K .......... .......... ...                               169K=1.0s
-
-2013-09-15 13:37:26 (178 KB/s) - ‘09794.html’ saved [177628]
-
+http://www.commandlinefu.com/commands/view/09794
+http://www.commandlinefu.com/commands/view/9794/set-up-alarm-with-fade-in-for-graceful-awakening

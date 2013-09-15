@@ -1,18 +1,2 @@
---2013-09-15 13:29:45--  http://www.commandlinefu.com/commands/view/04417
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/4417/typing-the-current-date-or-any-string-via-a-shortcut-as-if-the-keys-had-been-actually-typed-with-the-hardware-keyboard-in-any-application. [following]
---2013-09-15 13:29:45--  http://www.commandlinefu.com/commands/view/4417/typing-the-current-date-or-any-string-via-a-shortcut-as-if-the-keys-had-been-actually-typed-with-the-hardware-keyboard-in-any-application.
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘04417.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  178K
-   100K .......... .......... .......... .......... ..........  179K
-   150K .......... .......... .......                           196K=1.0s
-
-2013-09-15 13:29:47 (181 KB/s) - ‘04417.html’ saved [181718]
-
+http://www.commandlinefu.com/commands/view/04417
+http://www.commandlinefu.com/commands/view/4417/typing-the-current-date-or-any-string-via-a-shortcut-as-if-the-keys-had-been-actually-typed-with-the-hardware-keyboard-in-any-application.

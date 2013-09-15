@@ -1,18 +1,2 @@
---2013-09-15 13:29:27--  http://www.commandlinefu.com/commands/view/04182
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/4182/quickest-i-blv-way-to-get-the-current-program-name-minus-the-path-bash [following]
---2013-09-15 13:29:27--  http://www.commandlinefu.com/commands/view/4182/quickest-i-blv-way-to-get-the-current-program-name-minus-the-path-bash
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘04182.html’
-
-     0K .......... .......... .......... .......... ..........  119K
-    50K .......... .......... .......... .......... ..........  278K
-   100K .......... .......... .......... .......... ..........  207K
-   150K .......... .......... .......                           704K=0.9s
-
-2013-09-15 13:29:28 (202 KB/s) - ‘04182.html’ saved [181743]
-
+http://www.commandlinefu.com/commands/view/04182
+http://www.commandlinefu.com/commands/view/4182/quickest-i-blv-way-to-get-the-current-program-name-minus-the-path-bash

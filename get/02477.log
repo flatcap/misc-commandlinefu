@@ -1,18 +1,2 @@
---2013-09-15 13:27:36--  http://www.commandlinefu.com/commands/view/02477
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/2477/create-a-system-overview-dashboard-on-f12-key [following]
---2013-09-15 13:27:36--  http://www.commandlinefu.com/commands/view/2477/create-a-system-overview-dashboard-on-f12-key
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘02477.html’
-
-     0K .......... .......... .......... .......... ..........  179K
-    50K .......... .......... .......... .......... ..........  179K
-   100K .......... .......... .......... .......... ..........  226K
-   150K .......... .......... .......                           481K=0.8s
-
-2013-09-15 13:27:37 (212 KB/s) - ‘02477.html’ saved [182262]
-
+http://www.commandlinefu.com/commands/view/02477
+http://www.commandlinefu.com/commands/view/2477/create-a-system-overview-dashboard-on-f12-key

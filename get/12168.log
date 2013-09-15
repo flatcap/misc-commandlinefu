@@ -1,18 +1,2 @@
---2013-09-15 13:40:52--  http://www.commandlinefu.com/commands/view/12168
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/12168/sqlite3-cmd-to-extract-firefox-bookmarks-from-places.sqlite [following]
---2013-09-15 13:40:52--  http://www.commandlinefu.com/commands/view/12168/sqlite3-cmd-to-extract-firefox-bookmarks-from-places.sqlite
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘12168.html’
-
-     0K .......... .......... .......... .......... ..........  120K
-    50K .......... .......... .......... .......... ..........  357K
-   100K .......... .......... .......... .......... ..........  179K
-   150K .......... .......... ..                                164K=1.0s
-
-2013-09-15 13:40:54 (177 KB/s) - ‘12168.html’ saved [176991]
-
+http://www.commandlinefu.com/commands/view/12168
+http://www.commandlinefu.com/commands/view/12168/sqlite3-cmd-to-extract-firefox-bookmarks-from-places.sqlite

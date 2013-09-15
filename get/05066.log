@@ -1,18 +1,2 @@
---2013-09-15 13:30:12--  http://www.commandlinefu.com/commands/view/05066
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/5066/converting-vertical-line-to-horizontal-line [following]
---2013-09-15 13:30:12--  http://www.commandlinefu.com/commands/view/5066/converting-vertical-line-to-horizontal-line
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘05066.html’
-
-     0K .......... .......... .......... .......... ..........  119K
-    50K .......... .......... .......... .......... ..........  355K
-   100K .......... .......... .......... .......... ..........  178K
-   150K .......... .......... ..                                163K=1.0s
-
-2013-09-15 13:30:13 (176 KB/s) - ‘05066.html’ saved [176920]
-
+http://www.commandlinefu.com/commands/view/05066
+http://www.commandlinefu.com/commands/view/5066/converting-vertical-line-to-horizontal-line

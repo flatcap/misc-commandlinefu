@@ -1,18 +1,2 @@
---2013-09-15 13:25:58--  http://www.commandlinefu.com/commands/view/00379
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/379/zsh-prompt.-after-program-execution-with-no-error-after-failure. [following]
---2013-09-15 13:25:58--  http://www.commandlinefu.com/commands/view/379/zsh-prompt.-after-program-execution-with-no-error-after-failure.
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘00379.html’
-
-     0K .......... .......... .......... .......... ..........  178K
-    50K .......... .......... .......... .......... ..........  178K
-   100K .......... .......... .......... .......... ..........  354K
-   150K .......... .......... ...                               169K=0.8s
-
-2013-09-15 13:25:59 (206 KB/s) - ‘00379.html’ saved [177788]
-
+http://www.commandlinefu.com/commands/view/00379
+http://www.commandlinefu.com/commands/view/379/zsh-prompt.-after-program-execution-with-no-error-after-failure.

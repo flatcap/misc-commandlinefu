@@ -1,18 +1,2 @@
---2013-09-15 13:31:59--  http://www.commandlinefu.com/commands/view/07319
-Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
-Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://www.commandlinefu.com/commands/view/7319/takes-all-file-except-file-between- [following]
---2013-09-15 13:31:59--  http://www.commandlinefu.com/commands/view/7319/takes-all-file-except-file-between-
-Reusing existing connection to www.commandlinefu.com:80.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘07319.html’
-
-     0K .......... .......... .......... .......... ..........  180K
-    50K .......... .......... .......... .......... ..........  180K
-   100K .......... .......... .......... .......... ..........  280K
-   150K .......... .......... .......... .......                266K=0.9s
-
-2013-09-15 13:32:00 (214 KB/s) - ‘07319.html’ saved [191545]
-
+http://www.commandlinefu.com/commands/view/07319
+http://www.commandlinefu.com/commands/view/7319/takes-all-file-except-file-between-
