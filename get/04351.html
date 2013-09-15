@@ -1,49 +1,40 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 show ls colors with demo
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        echo $LS_COLORS | sed 's/:/\n/g' | awk -F= '!/^$/{printf("%s \x1b[%smdemo\x1b[0m\n",$0,$2)}'
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                echo $LS_COLORS | sed 's/:/\n/g' | awk -F= '!/^$/{printf("%s \x1b[%smdemo\x1b[0m\n",$0,$2)}'
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        show ls colors with demo
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                show ls colors with demo
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        This can show all ls colors, with a demo.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                This can show all ls colors, with a demo.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

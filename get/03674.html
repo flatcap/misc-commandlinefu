@@ -1,199 +1,174 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Changing the terminal title to the last shell command
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        trap 'echo -e "\e]0;$BASH_COMMAND\007"' DEBUG
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                trap 'echo -e "\e]0;$BASH_COMMAND\007"' DEBUG
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Changing the terminal title to the last shell command
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Changing the terminal title to the last shell command
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        You can set the previous bash command as the terminal title by this command.
-                                                                </p>
-                <p>
-                                                                        Explanation:
-                                                                </p>
-                <p>
-                                                                        -trap assigns a command to execute at a given bash signal.
-                                                                </p>
-                <p>
-                                                                        -in the $BASH_COMMAND you find the last command
-                                                                </p>
-                <p>
-                                                                        -you can set the terminal title with the escape sequence: \e]0;this is the title\007
-                                                                </p>
-                <p>
-                                                                        -to let the echo care about the backslashes give the -e to it
-                                                                </p>
-                <p>
-                                                                        Since trap is a built in bash command you find more informatin in 'man bash'for more
-                                                                </p>
-                <p>
-                                                                        Source: <a href="http://www.davidpashley.com/articles/xterm-titles-with-bash.html" rel="nofollow">http://www.davidpashley.com/articles/xterm-titles-with-bash.html</a>
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                You can set the previous bash command as the terminal title by this command.
+                                                        </p>
+                                                        <p>
+                                                                Explanation:
+                                                        </p>
+                                                        <p>
+                                                                -trap assigns a command to execute at a given bash signal.
+                                                        </p>
+                                                        <p>
+                                                                -in the $BASH_COMMAND you find the last command
+                                                        </p>
+                                                        <p>
+                                                                -you can set the terminal title with the escape sequence: \e]0;this is the title\007
+                                                        </p>
+                                                        <p>
+                                                                -to let the echo care about the backslashes give the -e to it
+                                                        </p>
+                                                        <p>
+                                                                Since trap is a built in bash command you find more informatin in 'man bash'for more
+                                                        </p>
+                                                        <p>
+                                                                Source: <a href="http://www.davidpashley.com/articles/xterm-titles-with-bash.html" rel="nofollow">http://www.davidpashley.com/articles/xterm-titles-with-bash.html</a>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         if [ "$SHELL" = '/bin/zsh' ]; then case $TERM in rxvt|*term|linux) preexec () { print -Pn "\e]0;$1\a" };; esac; fi
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3704/changing-the-terminal-title-to-the-last-shell-command">Changing the terminal title to the last shell command</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3704/changing-the-terminal-title-to-the-last-shell-command">Changing the terminal title to the last shell command</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Found the same command for zsh in <a href="http://www.davidpashley.com/articles/xterm-titles-with-bash.html" rel="nofollow">http://www.davidpashley.com/articles/xterm-titles-with-bash.html</a> - changed it a bit so that the behaviour is the same
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         [[ "x$TERM" == "xrxvt" || "x$XTERM_VERSION" == xXTerm* || "x$COLORTERM" == 'gnome-terminal' &amp;&amp; "x$SHELL" == */bin/zsh ]] &amp;&amp; preexec () { print -Pn "\e]0;$1\a" }
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3705/changing-the-terminal-title-to-the-last-shell-command">Changing the terminal title to the last shell command</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3705/changing-the-terminal-title-to-the-last-shell-command">Changing the terminal title to the last shell command</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Found another way, more compatible. Tested with xterm, aterm, gnome-terminal and rxvt (where it sets the window title) and guake (where it doesn't - after all, guake does not show the window title).
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Holy crap, that's nice!
-                                                        </p>
-              <p>
-                                                                I've got plenty of aliases that wrap lengthy commands and give me feedback in the titlebar. Your trap combined with a PROMPT_COMMAND opens up a whole new world!
-                                                        </p>
-              <p>
-                                                                Thanks.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Doesn't seems to work when sending process in background using "&amp;"
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                I don't have a problem with background tasks -- they show up as expected. However, I do see an unnecessary newline after every command. Try changing the command to use:
-                                                        </p>
-              <code>echo -ne</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Just for fairness, I found the similar trick in zsh:
-                                                        </p>
-              <p>
-                <a href="http://www.davidpashley.com/articles/xterm-titles-with-bash.html" rel="nofollow">http://www.davidpashley.com/articles/xterm-titles-with-bash.html</a>
-              </p>
-              <p>
-                                                                Although for the behaviour to be really identical, I'd change the code from the above URL to:
-                                                        </p>
-              <p>
-                                                                # Last command on window title:
-                                                        </p>
-              <p>
-                                                                if [ "$SHELL" = '/bin/zsh' ]
-                                                        </p>
-              <p>
-                                                                then
-                                                        </p>
-              <p>
-                                                                case $TERM in
-                                                        </p>
-              <p>
-                                                                rxvt|*term|linux)
-                                                        </p>
-              <p>
-                                                                preexec () { print -Pn "\e]0;$1\a" }
-                                                        </p>
-              <p>
-                                                                ;;
-                                                        </p>
-              <p>
-                                                                esac
-                                                        </p>
-              <p>
-                                                                fi
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Yes, you are right, i found it there. I didn't want to be unfair.
-                                                        </p>
-              <p>
-                                                                I started to collect these useful scripts here. I should have mention the source, sorry!
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                What about bash ENV.?
-                                                        </p>
-              <p>
-                                                                does any remedy there?
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Holy crap, that's nice!
+                                                </p>
+                                                <p>
+                                                        I've got plenty of aliases that wrap lengthy commands and give me feedback in the titlebar. Your trap combined with a PROMPT_COMMAND opens up a whole new world!
+                                                </p>
+                                                <p>
+                                                        Thanks.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Doesn't seems to work when sending process in background using "&amp;"
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        I don't have a problem with background tasks -- they show up as expected. However, I do see an unnecessary newline after every command. Try changing the command to use:
+                                                </p><code>echo -ne</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Just for fairness, I found the similar trick in zsh:
+                                                </p>
+                                                <p>
+                                                        <a href="http://www.davidpashley.com/articles/xterm-titles-with-bash.html" rel="nofollow">http://www.davidpashley.com/articles/xterm-titles-with-bash.html</a>
+                                                </p>
+                                                <p>
+                                                        Although for the behaviour to be really identical, I'd change the code from the above URL to:
+                                                </p>
+                                                <p>
+                                                        # Last command on window title:
+                                                </p>
+                                                <p>
+                                                        if [ "$SHELL" = '/bin/zsh' ]
+                                                </p>
+                                                <p>
+                                                        then
+                                                </p>
+                                                <p>
+                                                        case $TERM in
+                                                </p>
+                                                <p>
+                                                        rxvt|*term|linux)
+                                                </p>
+                                                <p>
+                                                        preexec () { print -Pn "\e]0;$1\a" }
+                                                </p>
+                                                <p>
+                                                        ;;
+                                                </p>
+                                                <p>
+                                                        esac
+                                                </p>
+                                                <p>
+                                                        fi
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Yes, you are right, i found it there. I didn't want to be unfair.
+                                                </p>
+                                                <p>
+                                                        I started to collect these useful scripts here. I should have mention the source, sorry!
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        What about bash ENV.?
+                                                </p>
+                                                <p>
+                                                        does any remedy there?
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

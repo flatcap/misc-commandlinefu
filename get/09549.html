@@ -1,72 +1,58 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Run a command when a file is changed
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        while inotifywait -e modify /tmp/myfile; do firefox; done
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                while inotifywait -e modify /tmp/myfile; do firefox; done
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Run a command when a file is changed
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Run a command when a file is changed
-                                                        </div>
-              <div class="description"></div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description"></div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
-                                                        while :; do n=$(md5 myfile); if [ "$h" != "$n" ]; then h=$n; scp myfile myserver:mydir/myfile; fi; sleep 1; done
+                                <div class="terminal-display one-liner">
+                                        <div class="line command">
+                                                while :; do n=$(md5 myfile); if [ "$h" != "$n" ]; then h=$n; scp myfile myserver:mydir/myfile; fi; sleep 1; done
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        <a href="/commands/view/12146/run-a-command-when-a-file-is-changed">Run a command when a file is changed</a>
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/12146/run-a-command-when-a-file-is-changed">Run a command when a file is changed</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                <div class="description"></div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        If you don't have inotifywait, here's a bash version:
-                                                </p>
-            <p>
-              <a href="http://www.commandlinefu.com/commands/view/6876/run-a-command-whenever-a-file-is-touched" rel="nofollow">http://www.commandlinefu.com/commands/view/6876/run-a-command-whenever-a-file-is-touched</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                If you don't have inotifywait, here's a bash version:
+                                        </p>
+                                        <p>
+                                                <a href="http://www.commandlinefu.com/commands/view/6876/run-a-command-whenever-a-file-is-touched" rel="nofollow">http://www.commandlinefu.com/commands/view/6876/run-a-command-whenever-a-file-is-touched</a>
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

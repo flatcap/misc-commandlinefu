@@ -1,157 +1,141 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 mkgo - Create a Directory and immediate go into it
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        mkgo newdir
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                mkgo newdir
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 ~$ mkgo cool
 cool$
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                mkgo - Create a Directory and immediate go into it
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        # put this in your .bashrc
-                                                                </p>
-                <p>
-                                                                        mkgo (){
-                                                                </p>
-                <p>
-                                                                        mkdir $1 &amp;&amp; cd $1
-                                                                </p>
-                <p>
-                                                                        }
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        mkgo - Create a Directory and immediate go into it
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                # put this in your .bashrc
+                                                        </p>
+                                                        <p>
+                                                                mkgo (){
+                                                        </p>
+                                                        <p>
+                                                                mkdir $1 &amp;&amp; cd $1
+                                                        </p>
+                                                        <p>
+                                                                }
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         mkdir /home/foo/doc/bar &amp;&amp; cd $_
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9000/mkdir-cd-into-it-as-single-command">mkdir &amp; cd into it as single command</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9000/mkdir-cd-into-it-as-single-command">mkdir &amp; cd into it as single command</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         The biggest advantage of this over the functions is that it is portable.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         md () { mkdir -p "$@" &amp;&amp; cd "$@"; }
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 abd-pb-2:bin md test
 abd-pb-2:test md a/b/c/d/e
 abd-pb-2:e
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3613/create-a-directory-and-change-into-it-at-the-same-time">Create a directory and change into it at the same time</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3613/create-a-directory-and-change-into-it-at-the-same-time">Create a directory and change into it at the same time</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         How often do you make a directory (or series of directories) and then change into it to do whatever? 99% of the time that is what I do.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         This BASH function 'md' will make the directory path then immediately change to the new directory. By using the 'mkdir -p' switch, the intermediate directories are created as well if they do not exist.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         function mcd() { [ -n "$1" ] &amp;&amp; mkdir -p "$@" &amp;&amp; cd "$1"; }
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 user@home:~$ mcd newdirectory
 user@home:newdirectory $
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/2241/combine-mkdir-foo-cd-foo-into-a-single-function-mcd-foo">combine `mkdir foo &amp;&amp; cd foo` into a single function `mcd foo`</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/2241/combine-mkdir-foo-cd-foo-into-a-single-function-mcd-foo">combine `mkdir foo &amp;&amp; cd foo` into a single function `mcd foo`</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         I find that I create a directory and then cd into that directory quite often. I found this little function on the internets somewhere and thought I'd share it. Just copy-paste it into you ~/.bash_profile and then `source ~/.bash_profile`.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         echo 'mkcd() { mkdir -p "$@" &amp;&amp; cd "$_"; }' &gt;&gt; ~/.bashrc
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 ~/#$ mkcd /path/to/new/folder
 /path/to/new/folder#$_
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/4566/mkdir-cd-into-it-as-single-command">mkdir &amp; cd into it as single command</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/4566/mkdir-cd-into-it-as-single-command">mkdir &amp; cd into it as single command</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         combines mkdir and cd
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         added quotes around $_, thanx to flatcap!
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

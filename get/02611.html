@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 IFS - use entire lines in your for cycles
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        export IFS=$(echo -e "\n")
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                export IFS=$(echo -e "\n")
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 $ cat file
 line one
 line two
@@ -35,79 +33,64 @@ $ for i in `cat file`; do echo $i; done
 line one
 line two
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                IFS - use entire lines in your for cycles
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        When you use a "for" construct, it cycles on every word. If you want to cycle on a line-by-line basis (and, well, you can't use xargs -n1 :D), you can set the IFS variable to .
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        IFS - use entire lines in your for cycles
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                When you use a "for" construct, it cycles on every word. If you want to cycle on a line-by-line basis (and, well, you can't use xargs -n1 :D), you can set the IFS variable to .
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Not bad. Here's an alternative using read (this doesn't require you to change IFS)
-                                                        </p>
-              <code>while read i; do echo "$i"; done &lt; file</code>
-              <p>
-                                                                (You can cat the file into the while, if you prefer)
-                                                        </p>
-              <p>
-                                                                If you *do* want to alter IFS, you can do it more simply (in bash at least) like this:
-                                                        </p>
-              <p>
-                                                                export IFS=$'\n'
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                A good idea is also to start with a OLDIFS=$IFS
-                                                        </p>
-              <p>
-                                                                Then your loop
-                                                        </p>
-              <p>
-                                                                Then back to real life with IFS=$OLDIFS
-                                                        </p>
-              <p>
-                                                                You can avoid problems by doing this
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                IFS is a shell-local variable, so there's no need to export it.
-                                                        </p>
-              <p>
-                                                                Also,
-                                                        </p>
-              <code>IFS=$'\n'</code>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Not bad. Here's an alternative using read (this doesn't require you to change IFS)
+                                                </p><code>while read i; do echo "$i"; done &lt; file</code>
+                                                <p>
+                                                        (You can cat the file into the while, if you prefer)
+                                                </p>
+                                                <p>
+                                                        If you *do* want to alter IFS, you can do it more simply (in bash at least) like this:
+                                                </p>
+                                                <p>
+                                                        export IFS=$'\n'
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        A good idea is also to start with a OLDIFS=$IFS
+                                                </p>
+                                                <p>
+                                                        Then your loop
+                                                </p>
+                                                <p>
+                                                        Then back to real life with IFS=$OLDIFS
+                                                </p>
+                                                <p>
+                                                        You can avoid problems by doing this
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        IFS is a shell-local variable, so there's no need to export it.
+                                                </p>
+                                                <p>
+                                                        Also,
+                                                </p><code>IFS=$'\n'</code>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

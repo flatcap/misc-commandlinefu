@@ -1,53 +1,43 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Backup (archive) your Gmail IMAP folders.
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        mailutil transfer {imap.gmail.com/ssl/user=john@gmail.com} Gmail/
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                mailutil transfer {imap.gmail.com/ssl/user=john@gmail.com} Gmail/
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Backup (archive) your Gmail IMAP folders.
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Backup (archive) your Gmail IMAP folders.
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Copies an entire hierarchy of mailboxes from the named POP3/IMAP/etc. source to the named destination. Mailboxes are created on the destination as needed. NOTE: The 'mailutil' is Washington's University 'mailutil' (apt-get install uw-mailutils). More examples
-                                                                </p>
-                <code>mailutil transfer {imap.gmail.com/ssl/user=you@gmail.com}INBOX Gmail/ ; mailutil check imap.gmail.com/ssl/user=you@gmail.com}\[Gmail\]/Spam</code>
-                <p>
-                                                                        If you use the utility in the first, append -v|-d flag(s) to the end the commands above (man mailutil).
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Copies an entire hierarchy of mailboxes from the named POP3/IMAP/etc. source to the named destination. Mailboxes are created on the destination as needed. NOTE: The 'mailutil' is Washington's University 'mailutil' (apt-get install uw-mailutils). More examples
+                                                        </p><code>mailutil transfer {imap.gmail.com/ssl/user=you@gmail.com}INBOX Gmail/ ; mailutil check imap.gmail.com/ssl/user=you@gmail.com}\[Gmail\]/Spam</code>
+                                                        <p>
+                                                                If you use the utility in the first, append -v|-d flag(s) to the end the commands above (man mailutil).
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

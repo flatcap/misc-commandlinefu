@@ -1,87 +1,70 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Draw kernel module dependancy graph.
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        lsmod | awk 'BEGIN{print "digraph{"}{split($4, a, ","); for (i in a) print $1, "-&gt;", a[i]}END{print "}"}'|display
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                lsmod | awk 'BEGIN{print "digraph{"}{split($4, a, ","); for (i in a) print $1, "-&gt;", a[i]}END{print "}"}'|display
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Draw kernel module dependancy graph.
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Draw kernel module dependancy graph.
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        parse "lsmod" output to "dot" format and pass it to "display". Without perl!
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                parse "lsmod" output to "dot" format and pass it to "display". Without perl!
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
-                                                        lsmod | perl -e 'print "digraph \"lsmod\" {";&lt;&gt;;while(&lt;&gt;){@_=split/\s+/; print "\"$_[0]\" -&gt; \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -
+                                <div class="terminal-display one-liner">
+                                        <div class="line command">
+                                                lsmod | perl -e 'print "digraph \"lsmod\" {";&lt;&gt;;while(&lt;&gt;){@_=split/\s+/; print "\"$_[0]\" -&gt; \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        <a href="/commands/view/9775/draw-kernel-module-dependancy-graph.">Draw kernel module dependancy graph.</a>
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9775/draw-kernel-module-dependancy-graph.">Draw kernel module dependancy graph.</a>
-              </div>
-              <div class="description">
-                <p>
-                                                                        parse `lsmod' output and pass to `dot' drawing utility then finally pass it to an image viewer
-                                                                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                parse `lsmod' output and pass to `dot' drawing utility then finally pass it to an image viewer
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Nice, however, my display needs this before it:
-                                                        </p>
-              <code>dot -Tpng |</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Brilliant!
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Nice, however, my display needs this before it:
+                                                </p><code>dot -Tpng |</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Brilliant!
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

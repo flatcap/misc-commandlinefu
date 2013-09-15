@@ -1,233 +1,219 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 ls output with mode in octal
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        perl -e 'printf "%o\n", (stat shift)[2]&amp;07777' file
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                perl -e 'printf "%o\n", (stat shift)[2]&amp;07777' file
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 777
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                ls output with mode in octal
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        one of the solutions from this stackexchange: <a href="http://unix.stackexchange.com/questions/71585/convert-ls-l-output-format-to-chmod-format" rel="nofollow">http://unix.stackexchange.com/questions/71585/convert-ls-l-output-format-to-chmod-format</a>
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        ls output with mode in octal
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                one of the solutions from this stackexchange: <a href="http://unix.stackexchange.com/questions/71585/convert-ls-l-output-format-to-chmod-format" rel="nofollow">http://unix.stackexchange.com/questions/71585/convert-ls-l-output-format-to-chmod-format</a>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         lso(){ jot -w '%04d' 7778 0000 7777 |sed '/[89]/d;s,.*,printf '"'"'&amp; '"'"';chmod &amp; '"$1"';ls -l '"$1"'|sed s/-/./,' \ |sh \ |{ echo "lso(){";echo "ls \$@ \\";echo " |sed '";sed 's, ,@,2;s,@.*,,;s,\(.* \)\(.*\),s/\2/\1/,;s, ,,';echo \';echo };};}
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10019/ls-output-with-mode-in-octal">ls output with mode in octal</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10019/ls-output-with-mode-in-octal">ls output with mode in octal</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         this requires the use of a throwaway file.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         it outputs a shell function.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         assuming the throwaway file is f.tmp
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         usage: &gt;f.tmp;lso f.tmp &gt; f.tmp; . f.tmp;rm f.tmp;lso -l ...
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         notes:
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         credit epons.org for the idea. however his version did not account for the sticky bit and other special cases.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         many of the 4096 permutations of file permissions make no practical sense. but chmod will still create them.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         one can achieve the same sort of octal output with stat(1), if that utility is available.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         here's another version to account for systems with seq(1) instead of jot(1):
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         lso(){
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         case $# in
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         1)
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         { case $(uname) in
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         FreeBSD)
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         jot -w '%04d' 7778 0000 7777 ;;
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         *)
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         seq -w 0000 7777 ;;
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         esac; } \
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         |sed '
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         /[89]/d
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         s,.*,printf '"'"'&amp; '"'"';chmod &amp; '"$1"';ls -l '"$1"'|sed s/-/./,' \
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         |sh \
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         |{
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         echo "lso(){";
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         echo "ls \$@ \\";
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         echo " |sed '";
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         sed '
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         s, ,@,2;
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         s,@.*,,;
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         s,\(.* \)\(.*\),s/\2/\1/,;
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         s, ,,';
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         echo \';
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         echo };
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         };
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         ;;
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         *)
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         echo "usage: lso tmp-file";
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         ;;
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         esac;
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         }
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         this won't print out types[1]. but its purpose is not to examine types. its focus is on mode and its purpose is to make mode easier to read (assuming one finds octal easier to read).
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         1. one could of course argue "everything is a file", but not always a "regular" one. e.g., a "directory" is really just a file comprising a list.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ls -l | sed -e 's/--x/1/g' -e 's/-w-/2/g' -e 's/-wx/3/g' -e 's/r--/4/g' -e 's/r-x/5/g' -e 's/rw-/6/g' -e 's/rwx/7/g' -e 's/---/0/g'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10021/ls-output-octal">ls output - octal</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10021/ls-output-octal">ls output - octal</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        Wonderful.
-                                                </p>
-            <p>
-                                                        Share a website with you ,
-                                                </p>
-            <p>
-                                                        ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
-                                                </p>
-            <p>
-                                                        Believe you will love it.
-                                                </p>
-            <p>
-                                                        We accept any form of payment.
-                                                </p>
-            <p>
-              <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                Wonderful.
+                                        </p>
+                                        <p>
+                                                Share a website with you ,
+                                        </p>
+                                        <p>
+                                                ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
+                                        </p>
+                                        <p>
+                                                Believe you will love it.
+                                        </p>
+                                        <p>
+                                                We accept any form of payment.
+                                        </p>
+                                        <p>
+                                                <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

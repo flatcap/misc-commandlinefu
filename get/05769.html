@@ -1,125 +1,109 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 make, or run a script, everytime a file in a directory is modified
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        while true; do inotifywait -r -e MODIFY dir/ &amp;&amp; make; done;
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                while true; do inotifywait -r -e MODIFY dir/ &amp;&amp; make; done;
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        make, or run a script, everytime a file in a directory is modified
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                make, or run a script, everytime a file in a directory is modified
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Uses inotifywait from inotify-tools ( <a href="http://wiki.github.com/rvoicilas/inotify-tools/" rel="nofollow">http://wiki.github.com/rvoicilas/inotify-tools/</a> ), that is compatible only with linux.
-                                                                </p>
-                <p>
-                                                                        Usefull when you work with files that have to be compiled.. latex, haml, c..
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Uses inotifywait from inotify-tools ( <a href="http://wiki.github.com/rvoicilas/inotify-tools/" rel="nofollow">http://wiki.github.com/rvoicilas/inotify-tools/</a> ), that is compatible only with linux.
+                                                        </p>
+                                                        <p>
+                                                                Usefull when you work with files that have to be compiled.. latex, haml, c..
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ontouchdo(){ while :; do a=$(stat -c%Y "$1"); [ "$b" != "$a" ] &amp;&amp; b="$a" &amp;&amp; sh -c "$2"; sleep 1; done }
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/6876/run-a-command-whenever-a-file-is-touched">run a command whenever a file is touched</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/6876/run-a-command-whenever-a-file-is-touched">run a command whenever a file is touched</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         This is useful if you'd like to see the output of a script while you edit it. Each time you save the file the command is executed. I thought for sure something like this already exists - and it probably does. I'm on an older system and tend to be missing some useful things.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Examples:
-                                                                </p>
-                <code>ontouchdo yourscript 'clear; yourscript somefiletoparse'</code>
-                <p>
+                                                                </p><code>ontouchdo yourscript 'clear; yourscript somefiletoparse'</code>
+                                                                <p>
                                                                         Edit yourscript in a separate window and see new results each time you save.
-                                                                </p>
-                <code>ontouchdo crufty.html 'clear; xmllint --noout crufty.html 2&gt;&amp;1 | head'</code>
-                <p>
+                                                                </p><code>ontouchdo crufty.html 'clear; xmllint --noout crufty.html 2&gt;&amp;1 | head'</code>
+                                                                <p>
                                                                         Keep editing krufty.html until the xmllint window is empty.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Note: Mac/bsd users should use stat -f%m. If you don't have stat, you can use perl -e '$f=shift; @s=stat($f); print "$s[9]\n";' $1
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         inotifywait -mrq -e CREATE --format %w%f /path/to/dir | while read FILE; do chmod g=u "$FILE"; done
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/6869/trigger-a-command-each-time-a-file-is-created-in-a-directory-inotify">Trigger a command each time a file is created in a directory (inotify)</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/6869/trigger-a-command-each-time-a-file-is-created-in-a-directory-inotify">Trigger a command each time a file is created in a directory (inotify)</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Listens for events in the directory. Each created file is displayed on stdout. Then each fileline is read by the loop and a command is run.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         This can be used to force permissions in a directory, as an alternative for umask.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         More details:
                                                                 </p>
-                <p>
-                  <a href="http://en.positon.org/post/A-solution-to-the-umask-problem%3A-inotify-to-force-permissions" rel="nofollow">http://en.positon.org/post/A-solution-to-the-umask-problem%3A-inotify-to-force-permissions</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                                <p>
+                                                                        <a href="http://en.positon.org/post/A-solution-to-the-umask-problem%3A-inotify-to-force-permissions" rel="nofollow">http://en.positon.org/post/A-solution-to-the-umask-problem%3A-inotify-to-force-permissions</a>
+                                                                </p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         while inotifywait -r -e MODIFY dir/; do make; done;
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/5800/make-or-run-a-script-everytime-a-file-in-a-directory-is-modified">make, or run a script, everytime a file in a directory is modified</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/5800/make-or-run-a-script-everytime-a-file-in-a-directory-is-modified">make, or run a script, everytime a file in a directory is modified</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

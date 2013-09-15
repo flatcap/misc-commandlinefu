@@ -1,57 +1,48 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Quick network status of machine
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        netstat -tn | awk 'NR&gt;2 {print $6}' | sort | uniq -c | sort -rn
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                netstat -tn | awk 'NR&gt;2 {print $6}' | sort | uniq -c | sort -rn
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
  1618 ESTABLISHED
  4 LAST_ACK
  2 SYN_RECV
  1 TIME_WAIT
  1 CLOSE_WAIT
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Quick network status of machine
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        credit to tumblr engineering blog @ <a href="http://engineering.tumblr.com/" rel="nofollow">http://engineering.tumblr.com/</a>
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Quick network status of machine
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                credit to tumblr engineering blog @ <a href="http://engineering.tumblr.com/" rel="nofollow">http://engineering.tumblr.com/</a>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

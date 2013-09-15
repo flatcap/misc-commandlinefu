@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 watch process stack, sampled at 1s intervals
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        watch -n 1 'pstack 12345 | tac'
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                watch -n 1 'pstack 12345 | tac'
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 Every 1.0s: pstack 2558 | tac                      Thu Feb  5 12:04:57 2009
 
 #24 0x00000030fea1d8b4 in __libc_start_main () from /lib64/libc.so.6
@@ -35,65 +33,52 @@ Every 1.0s: pstack 2558 | tac                      Thu Feb  5 12:04:57 2009
 #1  0x00002b2368b3ff86 in evaluate_peptide () from /n/site/inst/Linux-x86_64/bi
 #0  0x00002b2368b3f181 in score_spectrum () from /n/site/inst/Linux-x86_64/bioi
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                watch process stack, sampled at 1s intervals
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        This command repeatedly gets the specified process' stack using pstack (which is an insanely clever and tiny wrapper for gdb) and displays it fullscreen. Since it updates every second, you rapidly get an idea of where your program is stuck or spending time.
-                                                                </p>
-                <p>
-                                                                        The 'tac' is used to make the output grow down, which makes it less jumpy. If the output is too big for your screen, you can always leave the 'tac' off to see the inner calls. (Or, better yet--get a bigger screen.)
-                                                                </p>
-                <p>
-                                                                        Caveats: Won't work with stripped binaries and probably not well with threads, but you don't want to strip your binaries or use threads anyway.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        watch process stack, sampled at 1s intervals
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                This command repeatedly gets the specified process' stack using pstack (which is an insanely clever and tiny wrapper for gdb) and displays it fullscreen. Since it updates every second, you rapidly get an idea of where your program is stuck or spending time.
+                                                        </p>
+                                                        <p>
+                                                                The 'tac' is used to make the output grow down, which makes it less jumpy. If the output is too big for your screen, you can always leave the 'tac' off to see the inner calls. (Or, better yet--get a bigger screen.)
+                                                        </p>
+                                                        <p>
+                                                                Caveats: Won't work with stripped binaries and probably not well with threads, but you don't want to strip your binaries or use threads anyway.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                This sounds very neat, but I can't find a copy of pstack for Mac OS X. Anyone know of one?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                AFAIK, it's just a gdb script, so it shouldn't be OS-specific, though perhaps it would have to be tweaked slightly to work on OSX. Not sure where the canonical version is, but Debian seems to be getting it from RedHat.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                ubuntu pstack seems not work, gdb alias is:
-                                                        </p>
-              <p>
-                                                                gdb -ex "set pagination 0" -ex "thread apply all bt" --batch -p
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        This sounds very neat, but I can't find a copy of pstack for Mac OS X. Anyone know of one?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        AFAIK, it's just a gdb script, so it shouldn't be OS-specific, though perhaps it would have to be tweaked slightly to work on OSX. Not sure where the canonical version is, but Debian seems to be getting it from RedHat.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        ubuntu pstack seems not work, gdb alias is:
+                                                </p>
+                                                <p>
+                                                        gdb -ex "set pagination 0" -ex "thread apply all bt" --batch -p
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

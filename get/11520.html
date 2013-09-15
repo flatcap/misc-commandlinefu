@@ -1,47 +1,41 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Display the top ten running processes - sorted by memory usage
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        ps aux --sort -rss | head
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                ps aux --sort -rss | head
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Display the top ten running processes - sorted by memory usage
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Display the top ten running processes - sorted by memory usage
-                                                        </div>
-              <div class="description"></div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description"></div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ps aux | sort -nk +4 | tail
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 david    13257  0.1  1.8  80788 38736 ?        Sl   15:31   0:09 evince file:///tmp/phparch-xdebug-qa.pdf
 david     6755  0.3  2.1  87732 44272 ?        Sl   08:58   1:31 /usr/bin/cli /usr/lib/gnome-do/Do.exe
 david     6757  0.0  2.1  98872 44632 ?        Sl   08:58   0:23 /usr/bin/python /usr/local/bin/gwibber
@@ -53,26 +47,24 @@ david     9465  0.2  5.3 155852 110272 ?       S    09:05   1:13 /usr/lib/opera/
 david    10836  3.5  8.2 302092 170212 ?       Sl   15:24   3:48 /usr/lib/firefox-3.0.5/firefox -P default -no-remote
 david    27109  9.7 22.0 760784 454376 ?       Sl   09:56  42:16 /home/david/programs/pdt/eclipse/eclipse
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3/display-the-top-ten-running-processes-sorted-by-memory-usage">Display the top ten running processes - sorted by memory usage</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3/display-the-top-ten-running-processes-sorted-by-memory-usage">Display the top ten running processes - sorted by memory usage</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         ps returns all running processes which are then sorted by the 4th field in numerical order and the top 10 are sent to STDOUT.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ps -eo rss,vsz,pid,cputime,cmd --width 100 --sort rss,vsz | tail --lines 10
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 11576 286632 21435 00:00:00 /usr/lib/chromium-browser/chromium-browser --type=zygote
 12408  85576  1976 00:00:23 /usr/sbin/sensord -f daemon
 12684 271056 21433 00:00:01 /usr/lib/chromium-browser/chromium-browser
@@ -84,26 +76,24 @@ david    27109  9.7 22.0 760784 454376 ?       Sl   09:56  42:16 /home/david/pro
 169184 1046048 21468 00:03:40 /usr/lib/chromium-browser/chromium-browser --type=renderer --lang=en-U
 200040 299020 1885 09:35:08 /usr/bin/X :0 vt7 -nolisten tcp -auth /var/lib/xdm/authdir/authfiles/A:0
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10022/display-the-top-10-running-processes-sorted-by-memory-usage">Display the top 10 running processes - sorted by memory usage</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10022/display-the-top-10-running-processes-sorted-by-memory-usage">Display the top 10 running processes - sorted by memory usage</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         A pretty nice display of processes.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ps axo %mem,pid,euser,cmd | sort -nr | head -n 10
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 11.5  1957 lainme   firefox http://twitter.com/keyi_bu/status/256446157193093120/photo/1
  3.4  1813 lainme   /usr/bin/gnome-shell
  3.3  1867 lainme   /usr/bin/python2 /usr/bin/hotot-gtk3
@@ -115,24 +105,20 @@ david    27109  9.7 22.0 760784 454376 ?       Sl   09:56  42:16 /home/david/pro
  0.4  1821 lainme   nm-applet
  0.4  1785 lainme   /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11369/display-the-top-ten-running-processes-sorted-by-memory-usage">Display the top ten running processes - sorted by memory usage</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/11369/display-the-top-ten-running-processes-sorted-by-memory-usage">Display the top ten running processes - sorted by memory usage</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         A nicer display from <a href="http://www.web-manual.net/linux-3/find-out-top-10-cpu-memory-consuming-processes/" rel="nofollow">http://www.web-manual.net/linux-3/find-out-top-10-cpu-memory-consuming-processes/</a>
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

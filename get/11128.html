@@ -1,62 +1,52 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 from within vi, sort a block of IP addresses (ascending, removing duplicates)
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        !}sort -nut. -k 1,1 -k 2,2 -k 3,3 -k 4,4
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                !}sort -nut. -k 1,1 -k 2,2 -k 3,3 -k 4,4
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        from within vi, sort a block of IP addresses (ascending, removing duplicates)
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                from within vi, sort a block of IP addresses (ascending, removing duplicates)
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        The vi key sequence "!}" will feed the block of lines from the current position to the next blank line to the command provided: in this case "sort -nut. -k 1,1 -k 2,2 -k 3,3 -k 4,4".
-                                                                </p>
-                <p>
-                                                                        The sort is ascending, numeric (-n), removing duplicates (-u), using "." as key delimiter (-t .").
-                                                                </p>
-                <p>
-                                                                        The "-nut." is a memorable mnemonic :-).
-                                                                </p>
-                <p>
-                                                                        The same command (less the "!}") can, of course, be used from command line to sort a file of IP addresses in a text file.
-                                                                </p>
-                <p>
-                                                                        In the command line version, I found it also useful to remove blank lines and comment lines thusly:
-                                                                </p>
-                <code>&lt; IPaddresses.txt sed -e "/^#/d" -e "/^$/d" | sort -nut. -k 1,1 -k 2,2 -k 3,3 -k 4,4 # sort IP addresses</code>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                The vi key sequence "!}" will feed the block of lines from the current position to the next blank line to the command provided: in this case "sort -nut. -k 1,1 -k 2,2 -k 3,3 -k 4,4".
+                                                        </p>
+                                                        <p>
+                                                                The sort is ascending, numeric (-n), removing duplicates (-u), using "." as key delimiter (-t .").
+                                                        </p>
+                                                        <p>
+                                                                The "-nut." is a memorable mnemonic :-).
+                                                        </p>
+                                                        <p>
+                                                                The same command (less the "!}") can, of course, be used from command line to sort a file of IP addresses in a text file.
+                                                        </p>
+                                                        <p>
+                                                                In the command line version, I found it also useful to remove blank lines and comment lines thusly:
+                                                        </p><code>&lt; IPaddresses.txt sed -e "/^#/d" -e "/^$/d" | sort -nut. -k 1,1 -k 2,2 -k 3,3 -k 4,4 # sort IP addresses</code>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Check if a string is into a variable
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        [[ ${var##*yourstring*} != ${var} ]]
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                [[ ${var##*yourstring*} != ${var} ]]
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 $ var=foobar
 $ [[ ${var##*foo*} != ${var} ]]
 $ echo $?
@@ -30,74 +28,61 @@ $ [[ ${var##*notfoo*} != ${var} ]]
 $ echo $?
 1
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Check if a string is into a variable
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Returns true (0) if the string is into $var, or false (1) if not.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Check if a string is into a variable
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Returns true (0) if the string is into $var, or false (1) if not.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Wonderful.
-                                                        </p>
-              <p>
-                                                                Share a website with you ,
-                                                        </p>
-              <p>
-                                                                ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
-                                                        </p>
-              <p>
-                                                                Believe you will love it.
-                                                        </p>
-              <p>
-                                                                We accept any form of payment.
-                                                        </p>
-              <p>
-                <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
-              </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                bash has is own matching test. Better is:
-                                                        </p>
-              <p>
-                                                                [[ $var =~ "yourstring" ]]
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Thanks jld!!
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Wonderful.
+                                                </p>
+                                                <p>
+                                                        Share a website with you ,
+                                                </p>
+                                                <p>
+                                                        ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
+                                                </p>
+                                                <p>
+                                                        Believe you will love it.
+                                                </p>
+                                                <p>
+                                                        We accept any form of payment.
+                                                </p>
+                                                <p>
+                                                        <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        bash has is own matching test. Better is:
+                                                </p>
+                                                <p>
+                                                        [[ $var =~ "yourstring" ]]
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Thanks jld!!
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

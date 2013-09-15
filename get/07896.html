@@ -1,110 +1,98 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Reorder file with max 100 file per folder
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        files -type f | xargs -n100 | while read l; do mkdir $((++f)); cp $l $f; done
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                files -type f | xargs -n100 | while read l; do mkdir $((++f)); cp $l $f; done
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Reorder file with max 100 file per folder
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Reorder file with max 100 file per folder
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Take a folder full of files and split it into smaller folders containing a maximum number of files. In this case, 100 files per directory.
-                                                                </p>
-                <p>
-                                                                        find creates the list of files
-                                                                </p>
-                <p>
-                                                                        xargs breaks up the list into groups of 100
-                                                                </p>
-                <p>
-                                                                        for each group, create a directory and copy in the files
-                                                                </p>
-                <p>
-                                                                        Note: This command won't work if there is whitespace in the filenames (but then again, neither do the alternative commands :-)
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Take a folder full of files and split it into smaller folders containing a maximum number of files. In this case, 100 files per directory.
+                                                        </p>
+                                                        <p>
+                                                                find creates the list of files
+                                                        </p>
+                                                        <p>
+                                                                xargs breaks up the list into groups of 100
+                                                        </p>
+                                                        <p>
+                                                                for each group, create a directory and copy in the files
+                                                        </p>
+                                                        <p>
+                                                                Note: This command won't work if there is whitespace in the filenames (but then again, neither do the alternative commands :-)
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find files/ -type f | while read line; do if [ $((i++%100)) -eq 0 ]; then mkdir $((++folder)); fi; cp $line $folder/; done
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/7870/reorder-file-with-max-100-file-per-folder">Reorder file with max 100 file per folder</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/7870/reorder-file-with-max-100-file-per-folder">Reorder file with max 100 file per folder</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Smaller Code
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Better Runtime
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         folder=0;mkdir $folder; while find -maxdepth 1 -type f -exec mv "{}" $folder \; -quit ; do if [ $( ls $folder | wc -l ) -ge 100 ]; then folder=$(( $folder + 1 )); mkdir $folder; fi ; done
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 Nothing but files and folder
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/7856/reorder-file-with-max-100-file-per-folder">Reorder file with max 100 file per folder</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/7856/reorder-file-with-max-100-file-per-folder">Reorder file with max 100 file per folder</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         If you have a folder with thousand of files and want to have many folder with only 100 file per folder, run this.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         It will create 0/,1/ etc and put 100 file inside each one.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         But find will return true even if it don't find anything ...
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

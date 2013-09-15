@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Hide files in ls, by adding support for .hidden files!
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        alias ls='if [[ -f .hidden ]]; then while read l; do opts+=(--hide="$l"); done &lt; .hidden; fi; ls --color=auto "${opts[@]}"'
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                alias ls='if [[ -f .hidden ]]; then while read l; do opts+=(--hide="$l"); done &lt; .hidden; fi; ls --color=auto "${opts[@]}"'
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 ant@dev(/ntfs)# \ls -F
 $RECYCLE.BIN/  System Volume Information/  Shared/
 
@@ -32,30 +30,23 @@ System Volume Information
 ant@dev(/ntfs)# ls -F
 Shared/
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Hide files in ls, by adding support for .hidden files!
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Sometimes I would like to see hidden files, prefix with a period, but some files or folders I never want to see (and really wish I could just remove all together).
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Hide files in ls, by adding support for .hidden files!
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Sometimes I would like to see hidden files, prefix with a period, but some files or folders I never want to see (and really wish I could just remove all together).
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

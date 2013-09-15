@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 List files accessed by a command
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        strace -ff -e trace=file my_command 2&gt;&amp;1 | perl -ne 's/^[^"]+"(([^\\"]|\\[\\"nt])*)".*/$1/ &amp;&amp; print'
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                strace -ff -e trace=file my_command 2&gt;&amp;1 | perl -ne 's/^[^"]+"(([^\\"]|\\[\\"nt])*)".*/$1/ &amp;&amp; print'
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 $ strace -ff -e trace=file chmod 755 ~/bin/ftrace 2&gt;&amp;1 | perl -ne 's/^[^"]+"(([^\\"]|\\[\\"nt])*)".*/$1/ &amp;&amp; print'
 /bin/chmod
 /etc/ld.so.nohwcap
@@ -33,57 +31,44 @@ $ strace -ff -e trace=file chmod 755 ~/bin/ftrace 2&gt;&amp;1 | perl -ne 's/^[^"
 /home/tange/bin/ftrace
 /home/tange/bin/ftrace
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                List files accessed by a command
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Can be run as a script `ftrace` if my_command is substrituted with "$@"
-                                                                </p>
-                <p>
-                                                                        It is useful when running a command that fails and you have the feeling it is accessing a file you are not aware of.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        List files accessed by a command
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Can be run as a script `ftrace` if my_command is substrituted with "$@"
+                                                        </p>
+                                                        <p>
+                                                                It is useful when running a command that fails and you have the feeling it is accessing a file you are not aware of.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                What about using
-                                                        </p>
-              <code>| sed -n 's/^[^"]*"\([^"]*\)".*/\1/p'</code>
-              <p>
-                                                                instead, to reduce the overhead of loading up the entire perl interpreter?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Also add
-                                                        </p>
-              <code>| sort | uniq</code>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        What about using
+                                                </p><code>| sed -n 's/^[^"]*"\([^"]*\)".*/\1/p'</code>
+                                                <p>
+                                                        instead, to reduce the overhead of loading up the entire perl interpreter?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Also add
+                                                </p><code>| sort | uniq</code>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

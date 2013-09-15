@@ -1,73 +1,61 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Show seconds since modified of newest modified file in directory
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        echo $(( $( date +%s ) - $( stat -c %Y * | sort -nr | head -n 1 ) ))
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                echo $(( $( date +%s ) - $( stat -c %Y * | sort -nr | head -n 1 ) ))
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Show seconds since modified of newest modified file in directory
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Show seconds since modified of newest modified file in directory
-                                                        </div>
-              <div class="description"></div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description"></div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         FILE=`ls -ltr /var/lib/pgsql/backups/daily/ | tail -n1 | awk '{print $NF}'`; TIME=`stat -c %Y /var/lib/pgsql/backups/daily/$FILE`; NOW=`date +%s`; echo $((NOW-TIME))
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8449/show-seconds-since-modified-of-newest-modified-file-in-directory">Show seconds since modified of newest modified file in directory</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8449/show-seconds-since-modified-of-newest-modified-file-in-directory">Show seconds since modified of newest modified file in directory</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ls -atr /home/reports/*.csv -o --time-sty=+%s | tail -1 | awk '{print systime()-$5}'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8450/show-seconds-since-modified-of-newest-modified-file-in-directory">Show seconds since modified of newest modified file in directory</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8450/show-seconds-since-modified-of-newest-modified-file-in-directory">Show seconds since modified of newest modified file in directory</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

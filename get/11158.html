@@ -1,47 +1,41 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 detect partitions
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        sudo file -bs /dev/sda | sed -e 's/.*partition 1\(.*\) code offset.*/partition 1\1/g' -e 's/\(.\);/\1\n/g'
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                sudo file -bs /dev/sda | sed -e 's/.*partition 1\(.*\) code offset.*/partition 1\1/g' -e 's/\(.\);/\1\n/g'
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        detect partitions
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                detect partitions
-                                                        </div>
-              <div class="description"></div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description"></div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         file -s /dev/sd*
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 /dev/sda: x86 boot sector; GRand Unified Bootloader, stage1 version 0x3, stage2 address 0x2000, stage2 segment 0x200; partition 1: ID=0x83, active, starthead 1, startsector 63, 497952 sectors; partition 2: ID=0x5, starthead 0, startsector 498015, 141741495 sectors, code offset 0x63
 /dev/sda1: Linux rev 1.0 ext3 filesystem data, UUID=e56c6019-7b10-44c9-8692-6137b93648dd (needs journal recovery)
 /dev/sda2: x86 boot sector; partition 1: ID=0x8e, starthead 1, startsector 63, 141741432 sectors, extended partition table (last)\011, code offset 0x0
@@ -49,34 +43,30 @@
 /dev/sdb: x86 boot sector; partition 1: ID=0xee, starthead 0, startsector 1, 426759839 sectors, extended partition table (last)\011, code offset 0x0
 /dev/sdb1: LVM2 (Linux Logical Volume Manager) , UUID: Y6gkfwuq7FZeqoE35bIboE4HkdlOcme
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/7441/use-file1-to-view-device-information">Use file(1) to view device information</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/7441/use-file1-to-view-device-information">Use file(1) to view device information</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         file(1) can print details about certain devices in the /dev/ directory (block devices in this example). This helped me to know at a glance the location and revision of my bootloader, UUIDs, filesystem status, which partitions were primaries / logicals, etc.. without running several commands.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         See also:
-                                                                </p>
-                <code>file -s /dev/dm-*</code>
-                <code>file -s /dev/cciss/*</code>
-                <p>
+                                                                </p><code>file -s /dev/dm-*</code> <code>file -s /dev/cciss/*</code>
+                                                                <p>
                                                                         etc..
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         file -s /dev/sd*
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 /dev/sda: x86 boot sector; GRand Unified Bootloader, stage1 version 0x3, stage2 address 0x2000, stage2 segment 0x200; partition 1: ID=0x83, active, starthead 1, startsector 63, 497952 sectors; partition 2: ID=0x5, starthead 0, startsector 498015, 141741495 sectors, code offset 0x63
 /dev/sda1: Linux rev 1.0 ext3 filesystem data, UUID=e56c6019-7b10-44c9-8692-6137b93648dd (needs journal recovery)
 /dev/sda2: x86 boot sector; partition 1: ID=0x8e, starthead 1, startsector 63, 141741432 sectors, extended partition table (last)\011, code offset 0x0
@@ -84,34 +74,30 @@
 /dev/sdb: x86 boot sector; partition 1: ID=0xee, starthead 0, startsector 1, 426759839 sectors, extended partition table (last)\011, code offset 0x0
 /dev/sdb1: LVM2 (Linux Logical Volume Manager) , UUID: Y6gkfwuq7FZeqoE35bIboE4HkdlOcme
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/7441/use-file1-to-view-device-information">Use file(1) to view device information</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/7441/use-file1-to-view-device-information">Use file(1) to view device information</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         file(1) can print details about certain devices in the /dev/ directory (block devices in this example). This helped me to know at a glance the location and revision of my bootloader, UUIDs, filesystem status, which partitions were primaries / logicals, etc.. without running several commands.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         See also:
-                                                                </p>
-                <code>file -s /dev/dm-*</code>
-                <code>file -s /dev/cciss/*</code>
-                <p>
+                                                                </p><code>file -s /dev/dm-*</code> <code>file -s /dev/cciss/*</code>
+                                                                <p>
                                                                         etc..
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         blkid -c /dev/null
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 # blkid -pi -c /dev/null /dev/sda
 MINIMUM_IO_SIZE=512
 PHYSICAL_SECTOR_SIZE=512
@@ -137,53 +123,49 @@ PTTYPE=dos
 /dev/mapper/mpath18p1: UUID="e361ac4f-a9d3-4250-a14c-1cac6881844f" SEC_TYPE="ext2" TYPE="ext3"
 /dev/loop2: LABEL="INST_CD" TYPE="iso9660"
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11262/detect-partitions">detect partitions</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/11262/detect-partitions">detect partitions</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         `blkid` is an interface to libuuid - it can read Device Mapper, EVMS, LVM, MD, and regular block devices.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         -c /dev/null - Do not use cached output from /etc/blkid.tab or /etc/blkid/blkid.tab (RHEL)
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         -i - Display I/O Limits (aka I/O topology) information (not available in RHEL)
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         -p - Low-level superblock probing mode (not available in RHEL)
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         lsblk -o NAME,TYPE,FSTYPE,LABEL,SIZE,MODEL,MOUNTPOINT
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11264/detect-partitions">detect partitions</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/11264/detect-partitions">detect partitions</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Shows all block devices in a tree with descruptions of what they are.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         fsarchvier probe simple
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 [root@localhost ~]# fsarchiver probe simple
 [======DISK======] [=============NAME==============] [====SIZE====] [MAJ] [MIN]
 [sda             ] [ST12345678AS                   ] [   931.51 GB] [  8] [  0]
@@ -197,50 +179,41 @@ PTTYPE=dos
 [sdb1            ] [ntfs       ] [two              ] [   931.51 GB] [  8] [ 17]
 [dm-0            ] [ext4       ] [&lt;unknown&gt;        ] [   901.97 GB] [253] [  0]
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/12237/fsarchiver-probe-disks-and-partitions">fsarchiver - probe disks and partitions</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/12237/fsarchiver-probe-disks-and-partitions">fsarchiver - probe disks and partitions</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Another alternative to blkid, lsblk, file -s, cat /proc/paritions, fdisk -l, etc..
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Interesting.
-                                                        </p>
-              <p>
-                                                                You don't need to create a temporary file, simply add '-s' to the file command.
-                                                        </p>
-              <code>sudo file -bs /dev/sda | sed -e 's/.*partition 1\(.*\) code offset.*/partition 1\1/g' -e 's/\(.\);/\1\n/g'</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                I did not know the -s option to make file read a block device, thanks for pointing this.
-                                                        </p>
-              <p>
-                                                                I update the command according to your advices
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Interesting.
+                                                </p>
+                                                <p>
+                                                        You don't need to create a temporary file, simply add '-s' to the file command.
+                                                </p><code>sudo file -bs /dev/sda | sed -e 's/.*partition 1\(.*\) code offset.*/partition 1\1/g' -e 's/\(.\);/\1\n/g'</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        I did not know the -s option to make file read a block device, thanks for pointing this.
+                                                </p>
+                                                <p>
+                                                        I update the command according to your advices
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

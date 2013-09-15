@@ -1,110 +1,89 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Send pop-up notifications on Gnome
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        notify-send ["<span>&lt;title&gt;</span>"] "<span>&lt;body&gt;</span>"
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                notify-send ["<span>&lt;title&gt;</span>"] "<span>&lt;body&gt;</span>"
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Send pop-up notifications on Gnome
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Send pop-up notifications on Gnome
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        The title is optional.
-                                                                </p>
-                <p>
-                                                                        Options:
-                                                                </p>
-                <p>
-                                                                        -t: expire time in milliseconds.
-                                                                </p>
-                <p>
-                                                                        -u: urgency (low, normal, critical).
-                                                                </p>
-                <p>
-                                                                        -i: icon path.
-                                                                </p>
-                <p>
-                                                                        On Debian-based systems you may need to install the 'libnotify-bin' package.
-                                                                </p>
-                <p>
-                                                                        Useful to advise when a wget download or a simulation ends. Example:
-                                                                </p>
-                <code>wget URL ; notify-send "Done"</code>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                The title is optional.
+                                                        </p>
+                                                        <p>
+                                                                Options:
+                                                        </p>
+                                                        <p>
+                                                                -t: expire time in milliseconds.
+                                                        </p>
+                                                        <p>
+                                                                -u: urgency (low, normal, critical).
+                                                        </p>
+                                                        <p>
+                                                                -i: icon path.
+                                                        </p>
+                                                        <p>
+                                                                On Debian-based systems you may need to install the 'libnotify-bin' package.
+                                                        </p>
+                                                        <p>
+                                                                Useful to advise when a wget download or a simulation ends. Example:
+                                                        </p><code>wget URL ; notify-send "Done"</code>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Cool, but a more portable way of doing this is using the not so desktop dependent xmessage which I think is even more powerful. This will show you the gpl license
-                                                        </p>
-              <code>xmessage -file gpl.txt</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                gmessage is an xmessage clone based on GTK+
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                notify-send is quite good. I was ignorant of its existance, I've been using something similar written by Miguel Icaza. It's slightly better but you have to compile it from source.
-                                                        </p>
-              <p>
-                <a href="http://tirania.org/blog/archive/2004/Mar-11.html" rel="nofollow">http://tirania.org/blog/archive/2004/Mar-11.html</a>
-              </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                notify-send "Fortune" "`fortune`"
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <code>wget URL &amp;&amp; notify-send "Done" || notify-send "Failed"</code>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Cool, but a more portable way of doing this is using the not so desktop dependent xmessage which I think is even more powerful. This will show you the gpl license
+                                                </p><code>xmessage -file gpl.txt</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        gmessage is an xmessage clone based on GTK+
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        notify-send is quite good. I was ignorant of its existance, I've been using something similar written by Miguel Icaza. It's slightly better but you have to compile it from source.
+                                                </p>
+                                                <p>
+                                                        <a href="http://tirania.org/blog/archive/2004/Mar-11.html" rel="nofollow">http://tirania.org/blog/archive/2004/Mar-11.html</a>
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        notify-send "Fortune" "`fortune`"
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <code>wget URL &amp;&amp; notify-send "Done" || notify-send "Failed"</code>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

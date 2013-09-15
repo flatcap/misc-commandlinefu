@@ -1,73 +1,60 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Search $PATH for a command or something similar
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        find ${PATH//:/ } -name \*bash\*
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                find ${PATH//:/ } -name \*bash\*
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 /bin/bash
 /usr/bin/rbash
 /usr/bin/bashbug
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Search $PATH for a command or something similar
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Searches your $PATH for whatever you substitute for bash, though not sure if this will work if you substitute a different shell for bash!
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Search $PATH for a command or something similar
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Searches your $PATH for whatever you substitute for bash, though not sure if this will work if you substitute a different shell for bash!
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        It works as is in ksh-93 (don't know about others) and if you do
-                                                </p>
-            <code>setopt shwordsplit</code>
-            <p>
-                                                        it will work in zsh.
-                                                </p>
-            <p>
-                                                        For csh:
-                                                </p>
-            <code>find `echo $PATH | sed 's/:/ /g'` -name \*bash\*</code>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                It works as is in ksh-93 (don't know about others) and if you do
+                                        </p><code>setopt shwordsplit</code>
+                                        <p>
+                                                it will work in zsh.
+                                        </p>
+                                        <p>
+                                                For csh:
+                                        </p><code>find `echo $PATH | sed 's/:/ /g'` -name \*bash\*</code>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

@@ -1,127 +1,114 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Awk one-liner that sorts a css file by selector
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        awk '/.*{$/{s[$1]=z[$1]=j+0}{l[j++]=$0}END{asorti(s);for(v in s){while(l[z[s[v]]]!~/}$/)print l[z[s[v]]++];print"}"ORS}}'
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                awk '/.*{$/{s[$1]=z[$1]=j+0}{l[j++]=$0}END{asorti(s);for(v in s){while(l[z[s[v]]]!~/}$/)print l[z[s[v]]++];print"}"ORS}}'
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Awk one-liner that sorts a css file by selector
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Awk one-liner that sorts a css file by selector
-                                                        </div>
-              <div class="description"></div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description"></div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Can you give some examples? It just seems to mangle any CSS I give it.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                input:
-                                                        </p>
-              <p>
-                                                                h1 {
-                                                        </p>
-              <p>
-                                                                }
-                                                        </p>
-              <p>
-                                                                zomg {
-                                                        </p>
-              <p>
-                                                                color: green;
-                                                        </p>
-              <p>
-                                                                margin: 1px;
-                                                        </p>
-              <p>
-                                                                }
-                                                        </p>
-              <p>
-                                                                body {
-                                                        </p>
-              <p>
-                                                                color: red;
-                                                        </p>
-              <p>
-                                                                font-family: Arial;
-                                                        </p>
-              <p>
-                                                                }
-                                                        </p>
-              <p>
-                                                                output:
-                                                        </p>
-              <p>
-                                                                body {
-                                                        </p>
-              <p>
-                                                                color: red;
-                                                        </p>
-              <p>
-                                                                font-family: Arial;
-                                                        </p>
-              <p>
-                                                                }
-                                                        </p>
-              <p>
-                                                                h1 {
-                                                        </p>
-              <p>
-                                                                }
-                                                        </p>
-              <p>
-                                                                zomg {
-                                                        </p>
-              <p>
-                                                                color: green;
-                                                        </p>
-              <p>
-                                                                margin: 1px;
-                                                        </p>
-              <p>
-                                                                }
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Can you give some examples? It just seems to mangle any CSS I give it.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        input:
+                                                </p>
+                                                <p>
+                                                        h1 {
+                                                </p>
+                                                <p>
+                                                        }
+                                                </p>
+                                                <p>
+                                                        zomg {
+                                                </p>
+                                                <p>
+                                                        color: green;
+                                                </p>
+                                                <p>
+                                                        margin: 1px;
+                                                </p>
+                                                <p>
+                                                        }
+                                                </p>
+                                                <p>
+                                                        body {
+                                                </p>
+                                                <p>
+                                                        color: red;
+                                                </p>
+                                                <p>
+                                                        font-family: Arial;
+                                                </p>
+                                                <p>
+                                                        }
+                                                </p>
+                                                <p>
+                                                        output:
+                                                </p>
+                                                <p>
+                                                        body {
+                                                </p>
+                                                <p>
+                                                        color: red;
+                                                </p>
+                                                <p>
+                                                        font-family: Arial;
+                                                </p>
+                                                <p>
+                                                        }
+                                                </p>
+                                                <p>
+                                                        h1 {
+                                                </p>
+                                                <p>
+                                                        }
+                                                </p>
+                                                <p>
+                                                        zomg {
+                                                </p>
+                                                <p>
+                                                        color: green;
+                                                </p>
+                                                <p>
+                                                        margin: 1px;
+                                                </p>
+                                                <p>
+                                                        }
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

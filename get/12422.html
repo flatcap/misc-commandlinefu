@@ -1,119 +1,105 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Find files and list them sorted by modification time
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        find -printf "%C@ %p\n"|sort
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                find -printf "%C@ %p\n"|sort
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Find files and list them sorted by modification time
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Find files and list them sorted by modification time
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        This uses the ability of find (at least the one from GNU findutils that is shiped with most linux distros) to display change time as part of its output. No xargs needed.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                This uses the ability of find (at least the one from GNU findutils that is shiped with most linux distros) to display change time as part of its output. No xargs needed.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find -type f -print0 | xargs -r0 stat -c %y\ %n | sort
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/5720/find-files-and-list-them-sorted-by-modification-time">Find files and list them sorted by modification time</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/5720/find-files-and-list-them-sorted-by-modification-time">Find files and list them sorted by modification time</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Works with files containing spaces and for very large directories.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find . -type f -exec stat -f '%m %N' {} \; | sort -n
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10887/find-files-and-list-them-sorted-by-modification-time">Find files and list them sorted by modification time</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10887/find-files-and-list-them-sorted-by-modification-time">Find files and list them sorted by modification time</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         here's a version which works on OS X.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find -type f | xargs ls -1tr
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/12058/find-files-and-list-them-sorted-by-modification-time">Find files and list them sorted by modification time</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/12058/find-files-and-list-them-sorted-by-modification-time">Find files and list them sorted by modification time</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find . -type f -exec ls -tr {} +
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/5696/find-files-and-list-them-sorted-by-modification-time">Find files and list them sorted by modification time</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/5696/find-files-and-list-them-sorted-by-modification-time">Find files and list them sorted by modification time</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         List all files from the current directory and subdirectories, sorted by modification time, oldest first.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find . -type f | xargs ls -ltrhg
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 $ find tmp/ -type f | xargs ls -ltrhg
 -rw-r--r-- 1 emacs 4.9K 2010-05-24 13:53 tmp/chunkmemoryallocator.h
 -rwxr-xr-x 1 emacs 5.9K 2010-05-24 14:11 tmp/global.h
@@ -123,64 +109,58 @@ $ find tmp/ -type f | xargs ls -ltrhg
 -rw-r--r-- 1 emacs 2.3K 2010-05-24 15:55 tmp/loganalyzer.cpp
 -rw-r--r-- 1 emacs 1.5K 2010-05-24 16:41 tmp/browser.py
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/5703/find-files-and-list-them-sorted-by-modification-time">Find files and list them sorted by modification time</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/5703/find-files-and-list-them-sorted-by-modification-time">Find files and list them sorted by modification time</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         find and normal files and list them sorting with modification time without group
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         l: with detailed information
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         t: sort with modification time
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         r: reverse order
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         h: show file's size in human-readable format, such as K(kilobytes), M(megabyes) etc.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         g: do not show group
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        Wonderful.
-                                                </p>
-            <p>
-                                                        Share a website with you ,
-                                                </p>
-            <p>
-                                                        ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
-                                                </p>
-            <p>
-                                                        Believe you will love it.
-                                                </p>
-            <p>
-                                                        We accept any form of payment.
-                                                </p>
-            <p>
-              <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                Wonderful.
+                                        </p>
+                                        <p>
+                                                Share a website with you ,
+                                        </p>
+                                        <p>
+                                                ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
+                                        </p>
+                                        <p>
+                                                Believe you will love it.
+                                        </p>
+                                        <p>
+                                                We accept any form of payment.
+                                        </p>
+                                        <p>
+                                                <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

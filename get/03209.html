@@ -1,59 +1,53 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Show directories in the PATH, one per line
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        echo "${PATH//:/$'\n'}"
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                echo "${PATH//:/$'\n'}"
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 /usr/bin
 /bin
 /usr/sbin
 /sbin
 /usr/local/bin
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Show directories in the PATH, one per line
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Shorter version.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Show directories in the PATH, one per line
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Shorter version.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         echo $PATH | tr \: \\n
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 /usr/lib/qt-3.3/bin
 /usr/kerberos/bin
 /usr/lib/ccache
@@ -64,26 +58,24 @@
 /usr/sbin
 .... (and so on)
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3395/show-directories-in-the-path-one-per-line">Show directories in the PATH, one per line</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3395/show-directories-in-the-path-one-per-line">Show directories in the PATH, one per line</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         This version uses Pipes, but is easier for the common user to grasp... instead of using sed or some other more complicated method, it uses the tr command
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ( IFS=:; for p in $PATH; do echo $p; done )
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 /bin
 /usr/X11R6/bin
 /usr/sbin
@@ -91,50 +83,46 @@
 /usr/bin
 .
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/1542/show-directories-in-the-path-one-per-line">Show directories in the PATH, one per line</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/1542/show-directories-in-the-path-one-per-line">Show directories in the PATH, one per line</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         The output of "echo $PATH" is hard to read, this is much easier. The parentheses ensure that the change to the input field separator (IFS) only happens the the sub shell and not affecting the current shell.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         echo -e ${PATH//:/\\n}
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 /usr/local/bin
 /usr/bin
 /bin
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8950/show-directories-in-the-path-one-per-line">Show directories in the PATH, one per line</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8950/show-directories-in-the-path-one-per-line">Show directories in the PATH, one per line</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         quoteless
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         echo src::${PATH} | awk 'BEGIN{pwd=ENVIRON["PWD"];RS=":";FS="\n"}!$1{$1=pwd}$1!~/^\//{$1=pwd"/"$1}{print $1}'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 /tmp/src
 /tmp
 /usr/java/jdk1.6.0_11/bin
@@ -151,76 +139,62 @@
 /tmp/.
 /usr/java/apache-ant-1.7.0/bin
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3397/show-directories-in-the-path-one-per-line">Show directories in the PATH, one per line</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3397/show-directories-in-the-path-one-per-line">Show directories in the PATH, one per line</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Removes trailing newline; colon becomes record separator and newline becomes field separator, only the first field is ever printed. Replaces empty entries with $PWD. Also prepend relative directories (like ".") with the current directory ($PWD). Can change PWD with env(1) to get tricky in (non-Bourne) scripts.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         print -l $path
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3217/show-directories-in-the-path-one-per-line">Show directories in the PATH, one per line</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3217/show-directories-in-the-path-one-per-line">Show directories in the PATH, one per line</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         This doesn't work in bash, but in zsh you can typeset -T to bind a scalar variable to an array. $PATH and $path behave this way by default.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Shouldn't it be?: echo "${PATH//:/$'\n'}"
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Yes, it's like plasticdoc said, if not they will be displayed in one line, space separated.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <code>echo -e "${PATH//:/\n}"</code>
-              <p>
-                                                                Ya plasticdoc is correct. Using that builtin version is by far the best.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                display only existing+exec with only builtins: <a href="http://www.commandlinefu.com/commands/view/3535/show-only-existing-executable-dirs-in-path-using-only-builtin-bash-commands" rel="nofollow">http://www.commandlinefu.com/commands/view/3535/show-only-existing-executable-dirs-in-path-using-only-builtin-bash-commands</a>
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Shouldn't it be?: echo "${PATH//:/$'\n'}"
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Yes, it's like plasticdoc said, if not they will be displayed in one line, space separated.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <code>echo -e "${PATH//:/\n}"</code>
+                                                <p>
+                                                        Ya plasticdoc is correct. Using that builtin version is by far the best.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        display only existing+exec with only builtins: <a href="http://www.commandlinefu.com/commands/view/3535/show-only-existing-executable-dirs-in-path-using-only-builtin-bash-commands" rel="nofollow">http://www.commandlinefu.com/commands/view/3535/show-only-existing-executable-dirs-in-path-using-only-builtin-bash-commands</a>
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

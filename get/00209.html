@@ -1,210 +1,167 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Check command history, but avoid running it
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command-dangerous">
-                                                        !whatever:p
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command-dangerous">
+                                                !whatever:p
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Check command history, but avoid running it
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Check command history, but avoid running it
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        !whatever will search your command history and execute the first command that matches 'whatever'. If you don't feel safe doing this put :p on the end to print without executing. Recommended when running as superuser.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                !whatever will search your command history and execute the first command that matches 'whatever'. If you don't feel safe doing this put :p on the end to print without executing. Recommended when running as superuser.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                not working on my ubuntu machine or mac.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Pressing +r then start typing the command will show you live updates of the history as you type. You can also use the up and down arrows to find the one your looking for.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                @cowholio4: i got it working with both ubuntu and os x; you did not actually type in
-                                                        </p>
-              <code>!whatever:p</code>
-              <p>
-                                                                did you?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Works on Opensuse 11, very cool!
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                looklike it works, but may be batter to cat .bash_history?
-                                                        </p>
-              <p>
-                                                                or I`d just not understand the true meaning of this thing
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Oh! understood!
-                                                        </p>
-              <p>
-                                                                ubuntu 8.10 -works
-                                                        </p>
-              <p>
-                                                                debian etch - no -:(
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                @p3k
-                                                        </p>
-              <p>
-                                                                hahah.... thanks.
-                                                        </p>
-              <p>
-                                                                Still i prefer control + r
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                I can only think that the :p means "just kidding about re-executing it" :)
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                ctrl+r works better and everywhere.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                ... or you could just set histverify ("shopt -s histverify") and be done.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                On ubuntu also:
-                                                        </p>
-              <code>history|grep whatever</code>
-              <p>
-                                                                That will show every time in your history file the command has been called rather than just the last time.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Agree with C-r
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                use bash lusers! pkkid is right!
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                To those who say Ctrl-R works everwhere, try running Ctrl-R on csh/tcsh, or ksh, Ctrl-R only works on bash and Z shell. While !search:p works on many more, also it is more continent to type a simple command in than to use a shell feature, as you can use it in a string of commands.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                function hg(){ history | grep $1; }
-                                                        </p>
-              <p>
-                                                                Then "hg command" will print all previous commands
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                it works fine like this:
-                                                        </p>
-              <p>
-                                                                1. type
-                                                        </p>
-              <p>
-                                                                echo hello
-                                                        </p>
-              <p>
-                                                                then you have it in your history. now you can type:
-                                                        </p>
-              <p>
-                                                                !echo
-                                                        </p>
-              <p>
-                                                                and you get "echo hello" in your commandline with the cursor at the end, so you can edit it before you commit it or you press ^C to cancel
-                                                        </p>
-              <p>
-                                                                very useful!
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        not working on my ubuntu machine or mac.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Pressing +r then start typing the command will show you live updates of the history as you type. You can also use the up and down arrows to find the one your looking for.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        @cowholio4: i got it working with both ubuntu and os x; you did not actually type in
+                                                </p><code>!whatever:p</code>
+                                                <p>
+                                                        did you?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Works on Opensuse 11, very cool!
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        looklike it works, but may be batter to cat .bash_history?
+                                                </p>
+                                                <p>
+                                                        or I`d just not understand the true meaning of this thing
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Oh! understood!
+                                                </p>
+                                                <p>
+                                                        ubuntu 8.10 -works
+                                                </p>
+                                                <p>
+                                                        debian etch - no -:(
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        @p3k
+                                                </p>
+                                                <p>
+                                                        hahah.... thanks.
+                                                </p>
+                                                <p>
+                                                        Still i prefer control + r
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        I can only think that the :p means "just kidding about re-executing it" :)
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        ctrl+r works better and everywhere.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        ... or you could just set histverify ("shopt -s histverify") and be done.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        On ubuntu also:
+                                                </p><code>history|grep whatever</code>
+                                                <p>
+                                                        That will show every time in your history file the command has been called rather than just the last time.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Agree with C-r
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        use bash lusers! pkkid is right!
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        To those who say Ctrl-R works everwhere, try running Ctrl-R on csh/tcsh, or ksh, Ctrl-R only works on bash and Z shell. While !search:p works on many more, also it is more continent to type a simple command in than to use a shell feature, as you can use it in a string of commands.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        function hg(){ history | grep $1; }
+                                                </p>
+                                                <p>
+                                                        Then "hg command" will print all previous commands
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        it works fine like this:
+                                                </p>
+                                                <p>
+                                                        1. type
+                                                </p>
+                                                <p>
+                                                        echo hello
+                                                </p>
+                                                <p>
+                                                        then you have it in your history. now you can type:
+                                                </p>
+                                                <p>
+                                                        !echo
+                                                </p>
+                                                <p>
+                                                        and you get "echo hello" in your commandline with the cursor at the end, so you can edit it before you commit it or you press ^C to cancel
+                                                </p>
+                                                <p>
+                                                        very useful!
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

@@ -1,66 +1,57 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Use the arguments used in the last command
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        mkdir !*
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                mkdir !*
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 ~$ cd Desktop/Notes
 Error: No such file or directory.
 ~$ mkdir -v !*
 mkdir: The directory ?Desktop/Notes? has been created.
 ~$ !-2
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Use the arguments used in the last command
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Very basic, but who knows..
-                                                                </p>
-                <p>
-                                                                        mkdir !$ should work too, only uses 'the last' argument.
-                                                                </p>
-                <p>
-                                                                        !-2 executes cd Desktop/Notes again.
-                                                                </p>
-                <p>
-                                                                        More tips in 'man history'
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Use the arguments used in the last command
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Very basic, but who knows..
+                                                        </p>
+                                                        <p>
+                                                                mkdir !$ should work too, only uses 'the last' argument.
+                                                        </p>
+                                                        <p>
+                                                                !-2 executes cd Desktop/Notes again.
+                                                        </p>
+                                                        <p>
+                                                                More tips in 'man history'
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

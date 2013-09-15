@@ -1,165 +1,144 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 32 bits or 64 bits?
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        getconf LONG_BIT
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                getconf LONG_BIT
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 32
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                32 bits or 64 bits?
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Easy and direct way to find this out.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        32 bits or 64 bits?
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Easy and direct way to find this out.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         getconf LONG_BIT
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 32
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11648/check-if-system-is-32bit-or-64bit">Check if system is 32bit or 64bit</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/11648/check-if-system-is-32bit-or-64bit">Check if system is 32bit or 64bit</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Needed a quick way to see if my server distro that I setup years ago was running 32bit or not, since with time I had forgotten.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Note: does not check _hardware_ e.g. /proc/cpuinfo but rather the kernel installed
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         arch
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11710/check-if-system-is-32bit-or-64bit">Check if system is 32bit or 64bit</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/11710/check-if-system-is-32bit-or-64bit">Check if system is 32bit or 64bit</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         sudo lshw -C cpu|grep width
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3603/32-bits-or-64-bits">32 bits or 64 bits?</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3603/32-bits-or-64-bits">32 bits or 64 bits?</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         grep -q '\&lt;lm\&gt;' /proc/cpuinfo &amp;&amp; echo 64 bits || echo 32 bits
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11875/check-if-hardware-is-32bit-or-64bit">Check if *hardware* is 32bit or 64bit</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/11875/check-if-hardware-is-32bit-or-64bit">Check if *hardware* is 32bit or 64bit</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         This command tell you if your hardware is 32 or 64 bits even if you install a 32bits OS on a 64 bits hardware.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         If your distro don't support the -q switch, try doing :
-                                                                </p>
-                <code>grep &amp;&gt;/dev/null '\&lt;lm\&gt;' /proc/cpuinfo &amp;&amp; echo 64 bits || echo 32 bits</code>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                                </p><code>grep &amp;&gt;/dev/null '\&lt;lm\&gt;' /proc/cpuinfo &amp;&amp; echo 64 bits || echo 32 bits</code>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         cat /proc/cpuinfo | grep " lm " &gt; /dev/null &amp;&amp; echo 64 bits || echo 32 bits
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11880/check-if-hardware-is-32bit-or-64bit">Check if *hardware* is 32bit or 64bit</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/11880/check-if-hardware-is-32bit-or-64bit">Check if *hardware* is 32bit or 64bit</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         CPU flags:
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         rm --&gt; 16-bit processor (real mode)
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         tm --&gt; 32-bit processor (? mode)
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         lm --&gt; 64-bit processor (long mode)
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        Does this return the system's capability or merely its current configuration? I ask because on the new box I recently built to learn with, it reported only 32-bit but I assume it's be 64-bit-capable. (I know this also depends on what version of the OS I installed so I'll do a little more digging on that too since I don't remember offhand.)
-                                                </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                Does this return the system's capability or merely its current configuration? I ask because on the new box I recently built to learn with, it reported only 32-bit but I assume it's be 64-bit-capable. (I know this also depends on what version of the OS I installed so I'll do a little more digging on that too since I don't remember offhand.)
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

@@ -1,166 +1,144 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Remove executable bit from all files in the current directory recursively, excluding other directories
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        chmod -R -x+X *
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                chmod -R -x+X *
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Remove executable bit from all files in the current directory recursively, excluding other directories
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Remove executable bit from all files in the current directory recursively, excluding other directories
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        With GNU chmod at least it is that simple.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                With GNU chmod at least it is that simple.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find . ! -type d -exec chmod -x {}\;
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/4008/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories">Remove executable bit from all files in the current directory recursively, excluding other directories</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/4008/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories">Remove executable bit from all files in the current directory recursively, excluding other directories</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Useful if you have copied files from an OS without a permission structure (for example, DOS) and you need to disable all executable files but want to be able to descend into your directories.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         chmod -R u=rw-x+X,g=r-x+X,o= .
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 -rw-r-----   1 www-data www-data 3353273 Jun 21 17:58 XP_Help_20100621.zip
 drwxr-x---   8 www-data www-data    4096 Jun  3  2009 Widgetized_HomePage
 drwxr-x---  12 www-data www-data    4096 Jan 12  2010 Wizard_Old_Concept
 drwxr-x---   5 www-data www-data    4096 Oct 21  2009 Wizard_New_Concept
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/6104/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories-firm-permissions">Remove executable bit from all files in the current directory recursively, excluding other directories, firm permissions</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/6104/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories-firm-permissions">Remove executable bit from all files in the current directory recursively, excluding other directories, firm permissions</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         forces user to rw, group to r, and other to no access.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         files will not be marked executable.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         directories will be executable for users and groups only.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find . -type f -exec chmod 640 {} ';'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/6115/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories-firm-permissions">Remove executable bit from all files in the current directory recursively, excluding other directories, firm permissions</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/6115/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories-firm-permissions">Remove executable bit from all files in the current directory recursively, excluding other directories, firm permissions</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find . -type f -exec chmod a-x {} \;
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/6123/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories-firm-permissions">Remove executable bit from all files in the current directory recursively, excluding other directories, firm permissions</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/6123/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories-firm-permissions">Remove executable bit from all files in the current directory recursively, excluding other directories, firm permissions</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find . -type f | while read f; do chmod -x "$f"; done
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/4013/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories">Remove executable bit from all files in the current directory recursively, excluding other directories</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/4013/remove-executable-bit-from-all-files-in-the-current-directory-recursively-excluding-other-directories">Remove executable bit from all files in the current directory recursively, excluding other directories</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         I hate -exec with find, and this pattern quickly expands to other tasks.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Not bad. I usually did that with something like what drashkeev proposed but I always found it too long.
-                                                        </p>
-              <p>
-                                                                I never cared to look further the chmod man... Brilliant!
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Underutilized by many. Using it for years like that. +1!
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Not bad. I usually did that with something like what drashkeev proposed but I always found it too long.
+                                                </p>
+                                                <p>
+                                                        I never cared to look further the chmod man... Brilliant!
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Underutilized by many. Using it for years like that. +1!
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

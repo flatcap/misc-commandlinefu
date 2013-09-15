@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 A "Web 2.0" domain name generator and look for register availability
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        for domain in $(pwgen -1A0B 6 10); do echo -ne "$domain.com "; if [ -z "$(whois -H $domain.com | grep -o 'No match for')" ]; then echo -ne "Not "; fi; echo "Available for register"; done
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                for domain in $(pwgen -1A0B 6 10); do echo -ne "$domain.com "; if [ -z "$(whois -H $domain.com | grep -o 'No match for')" ]; then echo -ne "Not "; fi; echo "Available for register"; done
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 imeibi.com Available for register
 ohthei.com Available for register
 ganixi.com Available for register
@@ -33,57 +31,44 @@ oonahg.com Available for register
 eijood.com Available for register
 taxuuc.com Available for register
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                A "Web 2.0" domain name generator and look for register availability
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        You would need pwgen installed first, on ubuntu you can get it by apt-get
-                                                                </p>
-                <code>sudo apt-get install pwgen</code>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        A "Web 2.0" domain name generator and look for register availability
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                You would need pwgen installed first, on ubuntu you can get it by apt-get
+                                                        </p><code>sudo apt-get install pwgen</code>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                What a fascinating command.
-                                                        </p>
-              <p>
-                                                                On Fedora, whois (jwhois) doesn't need the -H parameter.
-                                                        </p>
-              <p>
-                                                                I can tidy it up in a few ways: You don't need the -e option for echo. If you grep -q you don't need the subshell to hide the result. As you're only doing one thing in the 'if' statement, you can get rid of it. Also I shortened the variable name in the loop. Savings: about 25% :-)
-                                                        </p>
-              <code>for d in $(pwgen -1A0B 6 10); do echo -n "$d.com "; whois -H $d.com | grep -q 'No match for' || echo -n "Not "; echo "Available for register"; done</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                @flatcap True ! thanks for the enhancements :-)
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        What a fascinating command.
+                                                </p>
+                                                <p>
+                                                        On Fedora, whois (jwhois) doesn't need the -H parameter.
+                                                </p>
+                                                <p>
+                                                        I can tidy it up in a few ways: You don't need the -e option for echo. If you grep -q you don't need the subshell to hide the result. As you're only doing one thing in the 'if' statement, you can get rid of it. Also I shortened the variable name in the loop. Savings: about 25% :-)
+                                                </p><code>for d in $(pwgen -1A0B 6 10); do echo -n "$d.com "; whois -H $d.com | grep -q 'No match for' || echo -n "Not "; echo "Available for register"; done</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        @flatcap True ! thanks for the enhancements :-)
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

@@ -1,168 +1,131 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Listen to BBC Radio from the command line.
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        bbcradio() { local s PS3="Select a station: ";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations &amp; Local lcl";do break;done;s=($s);mplayer -playlist "http://www.bbc.co.uk/radio/listen/live/r"${s[@]: -1}".asx";}
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                bbcradio() { local s PS3="Select a station: ";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations &amp; Local lcl";do break;done;s=($s);mplayer -playlist "http://www.bbc.co.uk/radio/listen/live/r"${s[@]: -1}".asx";}
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Listen to BBC Radio from the command line.
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Listen to BBC Radio from the command line.
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        This command lets you select from 10 different BBC stations. When one is chosen, it streams it with mplayer.
-                                                                </p>
-                <p>
-                                                                        Requires: mplayer with wma support.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                This command lets you select from 10 different BBC stations. When one is chosen, it streams it with mplayer.
+                                                        </p>
+                                                        <p>
+                                                                Requires: mplayer with wma support.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Nice bash function! Thanks for share it.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                I was not familiar with the bash <a href="select"></a><a href="http://ss64.com/bash/select.html/a" rel="nofollow">http://ss64.com/bash/select.html</a> command... Do other shells support it?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                As far as I'm aware, the only other shell that supports the select statement is ksh. Tcsh, csh, ash, dash, sash, fish, and sh do not.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Does anyone know how I can make this an alias command? I tried alias radio=`...command...` but it doesn't work.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                @axelabs: zsh also supports select. @diggmc: Quoting can be a challenge, try:
-                                                        </p>
-              <code>alias zzz='echo "Select a station:";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations &amp; Local lcl";do break;done;echo mplayer -playlist "http://www.bbc.co.uk/radio/listen/live/r"$(echo "$s"|awk '\''{print $NF}'\'')".asx"'</code>
-              <p>
-                                                                @eightmillion: You don't need awk, you can do:
-                                                        </p>
-              <code>bbcradio() { local s;echo "Select a station:";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations &amp; Local lcl";do break;done; s=($s); s=${s[@]: -1}; $mplayer -playlist "http://www.bbc.co.uk/radio/listen/live/r"$s".asx";}</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                I meant to edit that "zzz" and change it to "radio". Oops.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Thanks Dennis. Using an array there is a great idea.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                I don't know why but it does not work for me... I'm using the gnome terminal and I've installed mplayer. I seems so nice to listen to the radio from the terminal... snif
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                a full listing of BBC radio channels is available here :
-                                                        </p>
-              <p>
-                <a href="http://bbcstreams.com/" rel="nofollow">http://bbcstreams.com/</a>
-              </p>
-              <p>
-                                                                -- thadiyan
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                very good, I got a radio, thanks
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                This doesn't work for me. Do you just paste it as is? I get the prompt after pressing enter.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Buzzcp, it's a function, so you have to call it after you define it (which is what this submission does). After you enter it in, you just have to enter "bbcradio" in your shell to listen. If you want to always have the command available, you'll need to add the function to your .bashrc file in your home directory.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                @dennisw: Quoting can be a challenge, try:
-                                                        </p>
-              <p>
-                                                                alias zzz='echo "Select a station:";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations &amp; Local lcl";do break;done;echo mplayer -playlist "
-                                                        </p>
-              <p>
-                                                                Sorry for the late response.
-                                                        </p>
-              <p>
-                                                                Thank You.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Nice bash function! Thanks for share it.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        I was not familiar with the bash <a href="select"></a><a href="http://ss64.com/bash/select.html/a" rel="nofollow">http://ss64.com/bash/select.html</a> command... Do other shells support it?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        As far as I'm aware, the only other shell that supports the select statement is ksh. Tcsh, csh, ash, dash, sash, fish, and sh do not.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Does anyone know how I can make this an alias command? I tried alias radio=`...command...` but it doesn't work.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        @axelabs: zsh also supports select. @diggmc: Quoting can be a challenge, try:
+                                                </p><code>alias zzz='echo "Select a station:";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations &amp; Local lcl";do break;done;echo mplayer -playlist "http://www.bbc.co.uk/radio/listen/live/r"$(echo "$s"|awk '\''{print $NF}'\'')".asx"'</code>
+                                                <p>
+                                                        @eightmillion: You don't need awk, you can do:
+                                                </p><code>bbcradio() { local s;echo "Select a station:";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations &amp; Local lcl";do break;done; s=($s); s=${s[@]: -1}; $mplayer -playlist "http://www.bbc.co.uk/radio/listen/live/r"$s".asx";}</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        I meant to edit that "zzz" and change it to "radio". Oops.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Thanks Dennis. Using an array there is a great idea.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        I don't know why but it does not work for me... I'm using the gnome terminal and I've installed mplayer. I seems so nice to listen to the radio from the terminal... snif
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        a full listing of BBC radio channels is available here :
+                                                </p>
+                                                <p>
+                                                        <a href="http://bbcstreams.com/" rel="nofollow">http://bbcstreams.com/</a>
+                                                </p>
+                                                <p>
+                                                        -- thadiyan
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        very good, I got a radio, thanks
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        This doesn't work for me. Do you just paste it as is? I get the prompt after pressing enter.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Buzzcp, it's a function, so you have to call it after you define it (which is what this submission does). After you enter it in, you just have to enter "bbcradio" in your shell to listen. If you want to always have the command available, you'll need to add the function to your .bashrc file in your home directory.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        @dennisw: Quoting can be a challenge, try:
+                                                </p>
+                                                <p>
+                                                        alias zzz='echo "Select a station:";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations &amp; Local lcl";do break;done;echo mplayer -playlist "
+                                                </p>
+                                                <p>
+                                                        Sorry for the late response.
+                                                </p>
+                                                <p>
+                                                        Thank You.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

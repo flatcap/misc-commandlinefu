@@ -1,191 +1,162 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Countdown Clock
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        MIN=10;for ((i=MIN*60;i&gt;=0;i--));do echo -ne "\r$(date -d"0+$i sec" +%H:%M:%S)";sleep 1;done
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                MIN=10;for ((i=MIN*60;i&gt;=0;i--));do echo -ne "\r$(date -d"0+$i sec" +%H:%M:%S)";sleep 1;done
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 00:09:59
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Countdown Clock
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Countdown clock - Counts down from $MIN minutes to zero.
-                                                                </p>
-                <p>
-                                                                        I let the date command do the maths.
-                                                                </p>
-                <p>
-                                                                        This version doesn't use seq.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Countdown Clock
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Countdown clock - Counts down from $MIN minutes to zero.
+                                                        </p>
+                                                        <p>
+                                                                I let the date command do the maths.
+                                                        </p>
+                                                        <p>
+                                                                This version doesn't use seq.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         MIN=1 &amp;&amp; for i in $(seq $(($MIN*60)) -1 1); do echo -n "$i, "; sleep 1; done; echo -e "\n\nBOOOM! Time to start."
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1,
 
 BOOOM! Time to start.
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/5886/countdown-clock">Countdown Clock</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/5886/countdown-clock">Countdown Clock</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Simple countdown clock that should be quite portable across any Bourne-compatible shell. I used to teach for a living, and I would run this code when it was time for a break. Usually, I would set "MIN" to 15 for a 15-minute break. The computer would be connected to a projector, so this would be projected on screen, front and center, for all to see.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         function countdown { case "$1" in -s) shift;; *) set $(($1 * 60));; esac; local S=" "; for i in $(seq "$1" -1 1); do echo -ne "$S\r $i\r"; sleep 1; done; echo -e "$S\rBOOM!"; }
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/5951/countdown-clock">Countdown Clock</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/5951/countdown-clock">Countdown Clock</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         The biggest advantage over atoponce's nifty original is not killing the scrollback. Written assuming bash, but shouldn't be terribly difficult to port to other shells. S should be multiple spaces, but I can't get commandlinefu to save/show them properly, any help?
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         MIN=10 &amp;&amp; for i in $(seq $(($MIN*60)) -1 1); do printf "\r%02d:%02d:%02d" $((i/3600)) $(( (i/60)%60)) $((i%60)); sleep 1; done
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/7937/countdown-clock">Countdown Clock</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/7937/countdown-clock">Countdown Clock</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                wonderful, I made a function out of it to be more variable:
-                                                        </p>
-              <p>
-                                                                countdown () { MIN=$1; for ((i=$((MIN*60));i&gt;=0;i--));do echo -ne "\r$(date -d"0+$i sec" +%H:%M:%S)";sleep 1;done;}
-                                                        </p>
-              <p>
-                                                                to call it with "countdown 10" for 10 min, "countdown 5" for 5 min, ...
-                                                        </p>
-              <p>
-                                                                thx
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                You're already in an arithmetic context in the for statement. There's no need for $(()):
-                                                        </p>
-              <code>MIN=10;for ((i=MIN*60;i&gt;=0;i--));do echo -ne "\r$(date -d"0+$i sec" +%H:%M:%S)";sleep 1;done</code>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                @dennisw: Very good point. Thanks for that. I've updated the command.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                test this!
-                                                        </p>
-              <p>
-                                                                MIN=1;for ((i=MIN*60;i&gt;=0;i--));do echo -ne "\r$(date -d"0+$i sec" +%H:%M:%S)";sleep 1;ls ; done
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Hi,
-                                                        </p>
-              <p>
-                                                                How do I get this to work on Ksh88 :-(-
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                hi flatcap
-                                                        </p>
-              <p>
-                                                                do you know how I can get your command to work in ksh88?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                @newbie01linux: Sorry, I don't know and I don't have access to ksh88.
-                                                        </p>
-              <p>
-                                                                Fedora has ksh93 and the command works in that.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        wonderful, I made a function out of it to be more variable:
+                                                </p>
+                                                <p>
+                                                        countdown () { MIN=$1; for ((i=$((MIN*60));i&gt;=0;i--));do echo -ne "\r$(date -d"0+$i sec" +%H:%M:%S)";sleep 1;done;}
+                                                </p>
+                                                <p>
+                                                        to call it with "countdown 10" for 10 min, "countdown 5" for 5 min, ...
+                                                </p>
+                                                <p>
+                                                        thx
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        You're already in an arithmetic context in the for statement. There's no need for $(()):
+                                                </p><code>MIN=10;for ((i=MIN*60;i&gt;=0;i--));do echo -ne "\r$(date -d"0+$i sec" +%H:%M:%S)";sleep 1;done</code>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        @dennisw: Very good point. Thanks for that. I've updated the command.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        test this!
+                                                </p>
+                                                <p>
+                                                        MIN=1;for ((i=MIN*60;i&gt;=0;i--));do echo -ne "\r$(date -d"0+$i sec" +%H:%M:%S)";sleep 1;ls ; done
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Hi,
+                                                </p>
+                                                <p>
+                                                        How do I get this to work on Ksh88 :-(-
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        hi flatcap
+                                                </p>
+                                                <p>
+                                                        do you know how I can get your command to work in ksh88?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        @newbie01linux: Sorry, I don't know and I don't have access to ksh88.
+                                                </p>
+                                                <p>
+                                                        Fedora has ksh93 and the command works in that.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

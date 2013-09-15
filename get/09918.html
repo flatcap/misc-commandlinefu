@@ -1,111 +1,87 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Copy all files, including hidden files, recursively without traversing backward
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        cp -r * .??* /dest
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                cp -r * .??* /dest
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Copy all files, including hidden files, recursively without traversing backward
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Copy all files, including hidden files, recursively without traversing backward
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        You could do the following, however, brace expansion with {} is not defined in POSIX, and therefore not guaranteed to work in all shells. But, if it does, it's more convenient (although it's certainly not less typing):
-                                                                </p>
-                <code>cp -r {*,.??*} /dest</code>
-                <p>
-                                                                        Sometimes there are times when I need to cp(1), mv(1) or rm(1) files recursively, but don't want to traverse the previous directory by following ../../../../ etc out of the current directory. This command prevents that. The secret sauce is ".??*". The file globbing ensures that it must start with a dot, and be followed by at least two characters. So, three characters must exist in the filename, which eliminates "." and "..".
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                You could do the following, however, brace expansion with {} is not defined in POSIX, and therefore not guaranteed to work in all shells. But, if it does, it's more convenient (although it's certainly not less typing):
+                                                        </p><code>cp -r {*,.??*} /dest</code>
+                                                        <p>
+                                                                Sometimes there are times when I need to cp(1), mv(1) or rm(1) files recursively, but don't want to traverse the previous directory by following ../../../../ etc out of the current directory. This command prevents that. The secret sauce is ".??*". The file globbing ensures that it must start with a dot, and be followed by at least two characters. So, three characters must exist in the filename, which eliminates "." and "..".
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                I think you've missed out a dot in the second example? {*,.??*}
-                                                        </p>
-              <p>
-                                                                It could also be written, saving 1 char, as:
-                                                        </p>
-              <code>cp -r {,.??}* /dest</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                What's wrong with 'cp -r . /dest'?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                @flatcap- Nice catch! Edited and fixed. Thanks!
-                                                        </p>
-              <p>
-                                                                @Fudo- That command does not copy hidden files- only non-hidden files in the current directory.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Absolutely wonderful.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                What about one-character hidden files? Like .a
-                                                        </p>
-              <p>
-                                                                I think it's incomplete.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                if you want all files (including hidden) just don't use file globbing:
-                                                        </p>
-              <code>cp -r ./ /dest</code>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        I think you've missed out a dot in the second example? {*,.??*}
+                                                </p>
+                                                <p>
+                                                        It could also be written, saving 1 char, as:
+                                                </p><code>cp -r {,.??}* /dest</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        What's wrong with 'cp -r . /dest'?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        @flatcap- Nice catch! Edited and fixed. Thanks!
+                                                </p>
+                                                <p>
+                                                        @Fudo- That command does not copy hidden files- only non-hidden files in the current directory.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Absolutely wonderful.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        What about one-character hidden files? Like .a
+                                                </p>
+                                                <p>
+                                                        I think it's incomplete.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        if you want all files (including hidden) just don't use file globbing:
+                                                </p><code>cp -r ./ /dest</code>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

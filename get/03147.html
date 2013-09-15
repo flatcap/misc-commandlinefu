@@ -1,127 +1,106 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Cleanup firefox's database.
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        pgrep -u `id -u` firefox-bin || find ~/.mozilla/firefox -name '*.sqlite'|(while read -e f; do echo 'vacuum;'|sqlite3 "$f" ; done)
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                pgrep -u `id -u` firefox-bin || find ~/.mozilla/firefox -name '*.sqlite'|(while read -e f; do echo 'vacuum;'|sqlite3 "$f" ; done)
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Cleanup firefox's database.
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Cleanup firefox's database.
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Sqlite database keeps collecting cruft as time passes, which can be cleaned by the 'vacuum;' command. This command cleans up the cruft in all sqlite files relating to the user you have logged in as. This command has to be run when firefox is not running, or it will exit displaying the pid of the firefox running.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Sqlite database keeps collecting cruft as time passes, which can be cleaned by the 'vacuum;' command. This command cleans up the cruft in all sqlite files relating to the user you have logged in as. This command has to be run when firefox is not running, or it will exit displaying the pid of the firefox running.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find ~/.mozilla/firefox/ -type f -name "*.sqlite" -exec sqlite3 {} VACUUM \;
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3277/cleanup-firefoxs-database.">Cleanup firefox's database.</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3277/cleanup-firefoxs-database.">Cleanup firefox's database.</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find ~/Library/Application\ Support/Firefox/ -type f -name "*.sqlite" -exec sqlite3 {} VACUUM \;
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3286/cleanup-firefoxs-database.">Cleanup firefox's database.</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3286/cleanup-firefoxs-database.">Cleanup firefox's database.</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         For Mac OS X users only
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                The first part isn't strictly necessary, right? Since sqlite will fail gracefully if firefox is already running? I think you could use find to do everything, with an admittedly odd-looking -exec argument:
-                                                        </p>
-              <code>find ~/.mozilla/firefox -name "*.sqlite" -exec bash -c "&lt;&lt;&lt;'vacuum;' sqlite {}" \;</code>
-              <p>
-                                                                using "here documents" to substitute a string for stdin. Putting echo before bash helps to see what commands would be run without running them :-).
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Yeah. I guess so. I was ujst being extra carefull with the pid part.
-                                                        </p>
-              <p>
-                                                                With the "do everything with find, I do completely agree with you. And it is better too, because it will correctly handle if there is a newline in the file name. Whereas my code will fail miserably.
-                                                        </p>
-              <p>
-                                                                But I would like to point out that you need to be carefull with your quotes.
-                                                        </p>
-              <p>
-                                                                find ~/.mozilla/firefox -name '*.sqlite' -exec bash -c "
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Wow, all this seemed to do it delete my profile. -1
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                @nvb4 delete your profile?? wierd. That should never happen unless your sqlite files were corrupted in the first place. Did you use a wrong version of sqlite?
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        The first part isn't strictly necessary, right? Since sqlite will fail gracefully if firefox is already running? I think you could use find to do everything, with an admittedly odd-looking -exec argument:
+                                                </p><code>find ~/.mozilla/firefox -name "*.sqlite" -exec bash -c "&lt;&lt;&lt;'vacuum;' sqlite {}" \;</code>
+                                                <p>
+                                                        using "here documents" to substitute a string for stdin. Putting echo before bash helps to see what commands would be run without running them :-).
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Yeah. I guess so. I was ujst being extra carefull with the pid part.
+                                                </p>
+                                                <p>
+                                                        With the "do everything with find, I do completely agree with you. And it is better too, because it will correctly handle if there is a newline in the file name. Whereas my code will fail miserably.
+                                                </p>
+                                                <p>
+                                                        But I would like to point out that you need to be carefull with your quotes.
+                                                </p>
+                                                <p>
+                                                        find ~/.mozilla/firefox -name '*.sqlite' -exec bash -c "
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Wow, all this seemed to do it delete my profile. -1
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        @nvb4 delete your profile?? wierd. That should never happen unless your sqlite files were corrupted in the first place. Did you use a wrong version of sqlite?
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

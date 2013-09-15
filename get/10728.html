@@ -1,56 +1,47 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Per country GET report, based on access log. Easy to transform to unique IP
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        cat /var/log/nginx/access.log | grep -oe '^[0-9.]\+' | perl -ne 'system("geoiplookup $_")' | grep -v found | grep -oe ', [A-Za-z ]\+$' | sort | uniq -c | sort -n
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                cat /var/log/nginx/access.log | grep -oe '^[0-9.]\+' | perl -ne 'system("geoiplookup $_")' | grep -v found | grep -oe ', [A-Za-z ]\+$' | sort | uniq -c | sort -n
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
      71 , Poland
     116 , France
     300 , United States
    2426 , Spain
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Per country GET report, based on access log. Easy to transform to unique IP
+                                                </div>
+                                                <div class="description">
+                                                        <p>
                                                                 Per country GET report, based on access log. Easy to transform to unique IP
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Per country GET report, based on access log. Easy to transform to unique IP
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

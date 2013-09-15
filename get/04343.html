@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Show permissions of current directory and all directories upwards to /
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        dir=$(pwd); while [ ! -z "$dir" ]; do ls -ld "$dir"; dir=${dir%/*}; done; ls -ld /
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                dir=$(pwd); while [ ! -z "$dir" ]; do ls -ld "$dir"; dir=${dir%/*}; done; ls -ld /
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 drwxr-xr-x 3 hudson nogroup 4096 2009-12-14 14:48 /var/lib/hudson/jobs/Product/workspace/foo-trunk/projects/Product/build/foo/db
 drwxr-xr-x 5 hudson nogroup 4096 2009-12-14 14:48 /var/lib/hudson/jobs/Product/workspace/foo-trunk/projects/Product/build/foo
 drwxr-xr-x 3 hudson nogroup 4096 2009-12-14 14:48 /var/lib/hudson/jobs/Product/workspace/foo-trunk/projects/Product/build
@@ -36,56 +34,46 @@ drwxr-xr-x 35 root root 4096 2009-12-07 14:38 /var/lib
 drwxr-xr-x 14 root root 4096 2009-11-03 12:11 /var
 drwxr-xr-x 21 root root 4096 2009-12-10 07:27 /
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Show permissions of current directory and all directories upwards to /
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Useful if a different user cannot access some directory and you want to know which directory on the way misses the x bit.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Show permissions of current directory and all directories upwards to /
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Useful if a different user cannot access some directory and you want to know which directory on the way misses the x bit.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
-                                                        namei -m $(pwd)
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                <div class="terminal-display one-liner">
+                                        <div class="line command">
+                                                namei -m $(pwd)
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 f: /home/foo/bar
  drwxr-xr-x /
  drwxr-xr-x home
  drwxr-xr-x foo
  drwxr-xr-x bar
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11037/show-permissions-of-current-directory-and-all-directories-upwards-to-">Show permissions of current directory and all directories upwards to /</a>
-              </div>
-              <div class="description">
-                <p>
-                                                                        NB not 'namei -m .', as it slices the path you give it.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        <a href="/commands/view/11037/show-permissions-of-current-directory-and-all-directories-upwards-to-">Show permissions of current directory and all directories upwards to /</a>
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                NB not 'namei -m .', as it slices the path you give it.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

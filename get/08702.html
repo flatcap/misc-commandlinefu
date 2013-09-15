@@ -1,62 +1,53 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Displays the current time using HTTP
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        curl -Is google.com | grep Date
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                curl -Is google.com | grep Date
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 Date: Fri, 24 Jun 2011 10:57:16 GMT
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Displays the current time using HTTP
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        This command will show the current GMT time using HTTP. This might be useful if you just want to know what's the current human-readable and accurate-enough time, without changing the system time, using a simple command that would work regardless of the availability of NTP.
-                                                                </p>
-                <p>
-                                                                        Note: To get a quicker and more accurate response, replace google.com with your local NTP server.
-                                                                </p>
-                <p>
-                                                                        Also can be used as an alternative to the "htpdate" program:
-                                                                </p>
-                <p>
-                  <a href="http://www.commandlinefu.com/commands/view/668/set-your-computers-clock-using-http-and-htp-http-time-protocol-when-ntpsntp-is-not-available" rel="nofollow">http://www.commandlinefu.com/commands/view/668/set-your-computers-clock-using-http-and-htp-http-time-protocol-when-ntpsntp-is-not-available</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Displays the current time using HTTP
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                This command will show the current GMT time using HTTP. This might be useful if you just want to know what's the current human-readable and accurate-enough time, without changing the system time, using a simple command that would work regardless of the availability of NTP.
+                                                        </p>
+                                                        <p>
+                                                                Note: To get a quicker and more accurate response, replace google.com with your local NTP server.
+                                                        </p>
+                                                        <p>
+                                                                Also can be used as an alternative to the "htpdate" program:
+                                                        </p>
+                                                        <p>
+                                                                <a href="http://www.commandlinefu.com/commands/view/668/set-your-computers-clock-using-http-and-htp-http-time-protocol-when-ntpsntp-is-not-available" rel="nofollow">http://www.commandlinefu.com/commands/view/668/set-your-computers-clock-using-http-and-htp-http-time-protocol-when-ntpsntp-is-not-available</a>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

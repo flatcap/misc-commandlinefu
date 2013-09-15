@@ -1,99 +1,85 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 sed /pat/!d without using sed (no RE; limited to shell patterns aka globbing)
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        se(){ while read a;do [ "$a" != "${a#*$@*}" ]&amp;&amp;echo $a;done ;} # usage: se pattern # use in place of sed /pat/!d where RE are overkill
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                se(){ while read a;do [ "$a" != "${a#*$@*}" ]&amp;&amp;echo $a;done ;} # usage: se pattern # use in place of sed /pat/!d where RE are overkill
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        sed /pat/!d without using sed (no RE; limited to shell patterns aka globbing)
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                sed /pat/!d without using sed (no RE; limited to shell patterns aka globbing)
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        POSIX requires this "string truncating" functionality.
-                                                                </p>
-                <p>
-                                                                        might as well use it, at least for very small tasks where invoking sed and using RE is overkill.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                POSIX requires this "string truncating" functionality.
+                                                        </p>
+                                                        <p>
+                                                                might as well use it, at least for very small tasks where invoking sed and using RE is overkill.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                You need to quote "$a" in the echo or it'll drop multiple spaces from the input. e.g.
-                                                        </p>
-              <code>echo "a b"|se a</code>
-              <p>
-                                                                a b
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                splante: thank you.
-                                                        </p>
-              <p>
-                                                                i have also used this one-liner as a simple way to transform tabs to spaces,
-                                                        </p>
-              <p>
-                                                                e.g., where output from a program wraps on the terminal solely because it uses tabs, making it more difficult to read.
-                                                        </p>
-              <p>
-                                                                fstat | se pattern
-                                                        </p>
-              <p>
-                                                                if we quote the "$a" variable then of course we'll get the tabs.
-                                                        </p>
-              <p>
-                                                                but in other situations quoting "$a" is useful. e.g. to prevent the shell from expanding certain characters. imagine if some program is listening on an internet socket, and you do
-                                                        </p>
-              <p>
-                                                                netstat | se LIS
-                                                        </p>
-              <p>
-                                                                you might not like what you get for the output, unless you have put quotes around "$a".
-                                                        </p>
-              <p>
-                                                                it seems this website might also benefit from some added attention to shell quoting: i can only see one space between a and b in your example.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        You need to quote "$a" in the echo or it'll drop multiple spaces from the input. e.g.
+                                                </p><code>echo "a b"|se a</code>
+                                                <p>
+                                                        a b
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        splante: thank you.
+                                                </p>
+                                                <p>
+                                                        i have also used this one-liner as a simple way to transform tabs to spaces,
+                                                </p>
+                                                <p>
+                                                        e.g., where output from a program wraps on the terminal solely because it uses tabs, making it more difficult to read.
+                                                </p>
+                                                <p>
+                                                        fstat | se pattern
+                                                </p>
+                                                <p>
+                                                        if we quote the "$a" variable then of course we'll get the tabs.
+                                                </p>
+                                                <p>
+                                                        but in other situations quoting "$a" is useful. e.g. to prevent the shell from expanding certain characters. imagine if some program is listening on an internet socket, and you do
+                                                </p>
+                                                <p>
+                                                        netstat | se LIS
+                                                </p>
+                                                <p>
+                                                        you might not like what you get for the output, unless you have put quotes around "$a".
+                                                </p>
+                                                <p>
+                                                        it seems this website might also benefit from some added attention to shell quoting: i can only see one space between a and b in your example.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

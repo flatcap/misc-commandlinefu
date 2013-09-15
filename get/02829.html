@@ -1,472 +1,393 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Query Wikipedia via console over DNS
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        dig +short txt <span>&lt;keyword&gt;</span>.wp.dg.cx
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                dig +short txt <span>&lt;keyword&gt;</span>.wp.dg.cx
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 $ dig +short txt unix.wp.dg.cx
 "Unix (officially trademarked as UNIX, sometimes also written as Unix with small caps) is a computer operating system originally developed in 1969 by a group of AT&amp;T employees at Bell Labs, including Ken Thompson, Dennis Ritchie, Douglas McIlroy, and Joe O" "ssanna. Today's Unix systems are split into various branches, developed over time by AT&amp;T as well as various commercial... http://a.vu/w:Unix"
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Query Wikipedia via console over DNS
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Query Wikipedia by issuing a DNS query for a TXT record. The TXT record will also include a short URL to the complete corresponding Wikipedia entry.You can also write a little shell script like:
-                                                                </p>
-                <code>$ cat wikisole.sh</code>
-                <code>#!/bin/sh</code>
-                <code>dig +short txt ${1}.wp.dg.cx</code>
-                <p>
-                                                                        and run it like
-                                                                </p>
-                <code>./wikisole.sh unix</code>
-                <p>
-                                                                        were your first option ($1) will be used as search term.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Query Wikipedia via console over DNS
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Query Wikipedia by issuing a DNS query for a TXT record. The TXT record will also include a short URL to the complete corresponding Wikipedia entry.You can also write a little shell script like:
+                                                        </p><code>$ cat wikisole.sh</code> <code>#!/bin/sh</code> <code>dig +short txt ${1}.wp.dg.cx</code>
+                                                        <p>
+                                                                and run it like
+                                                        </p><code>./wikisole.sh unix</code>
+                                                        <p>
+                                                                were your first option ($1) will be used as search term.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         mwiki() { dig +short txt "$*".wp.dg.cx; }
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 $ mwiki Richard Stallman
 "Richard Matthew Stallman (born March 16, 1953), often abbreviated \"rms\", is an American software freedom activist, hacker, and software developer. http://en.wikipedia.org/wiki/Richard_Stallman"
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/5187/query-wikipedia-via-console-over-dns">Query Wikipedia via console over DNS</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/5187/query-wikipedia-via-console-over-dns">Query Wikipedia via console over DNS</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Shorter version, works with multiple words.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         mwiki () { blah=`echo $@ | sed -e 's/ /_/g'`; dig +short txt $blah.wp.dg.cx; }
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/4591/query-wikipedia-via-console-over-dns">Query Wikipedia via console over DNS</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/4591/query-wikipedia-via-console-over-dns">Query Wikipedia via console over DNS</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         nslookup -q=txt <span>&lt;topic&gt;</span>.wp.dg.cx
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/5514/query-wikipedia-via-console-over-dns">Query Wikipedia via console over DNS</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/5514/query-wikipedia-via-console-over-dns">Query Wikipedia via console over DNS</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         mwiki () { dig +short txt `echo $*|sed 's| *|_|g'`.wp.dg.cx; }
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/7772/query-wikipedia-via-console-over-dns">Query Wikipedia via console over DNS</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/7772/query-wikipedia-via-console-over-dns">Query Wikipedia via console over DNS</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         wiki() { local IFS=_; dig +short txt "${*^}".wp.dg.cx; }
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 rany:~$ wiki richard stallman
 "Richard Matthew Stallman (born March 16, 1953), often abbreviated \"rms\", is an American software freedom activist, hacker, and software developer. http://en.wikipedia.org/wiki/Richard_Stallman"
 rany:~$ wiki bourne again shell
 "Bash is a free software Unix shell written for the GNU Project. Its name is an acronym which stands for Bourne-again shell. The name is a pun on the name of the Bourne shell (sh), an early and important Unix shell written by Stephen Bourne and distributed" " with Version 7 Unix circa 1978, and the concept of being \"born again\". Bash was created in 1987 by Brian Fox... http://a.vu/w:Bash"
 rany:~$
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9293/query-wikipedia-over-dns">Query wikipedia over DNS</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9293/query-wikipedia-over-dns">Query wikipedia over DNS</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                this is awesomely wacky
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Vote this up. One can feel the awesome behind this command :-)
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                cute DNS abuse :)
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Very very cool.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                We can add some GUI spice to teh absue :P , dep==&gt; zenity
-                                                        </p>
-              <p>
-                                                                zenity --info --text="$(dig +short txt $(zenity --entry -- --text="Enter your search word:").wp.dg.cx)"
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                This is simply awesome. In the shell script example, add quotes around the "${1}" and you can do multi-word searches using quotes in your arg, like:
-                                                        </p>
-              <code>./wikip.sh "gradient descent"</code>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Script with prettified output:
-                                                        </p>
-              <code>cat wikisole.sh</code>
-              <p>
-                                                                #!/bin/sh
-                                                        </p>
-              <p>
-                                                                COLUMNS=`tput cols`
-                                                        </p>
-              <p>
-                                                                dig +short txt "${1}".wp.dg.cx | sed -e 's/" "//g' -e 's/^"//g' -e 's/"$//g' -e 's/ http:/\n\nhttp:/' | fmt -w $COLUMNS
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                philipsd6's version as a function in bashrc:
-                                                        </p>
-              <p>
-                                                                function wiki () {
-                                                        </p>
-              <p>
-                                                                COLUMNS=`tput cols`
-                                                        </p>
-              <p>
-                                                                dig +short txt ${1}.wp.dg.cx | sed -e 's/" "//g' -e 's/^"//g' -e 's/"$//g' -e 's/ http:/\n\nhttp:/' | fmt -w $COLUMNS
-                                                        </p>
-              <p>
-                                                                }
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                You can also search for more than one word like this:
-                                                        </p>
-              <code>dig +short txt "multiple words".wp.dg.cx</code>
-              <p>
-                                                                I wrote a wrapper script that takes either 1 word or multiple words and formulates the syntax properly:
-                                                        </p>
-              <p>
-                                                                #!/bin/bash
-                                                        </p>
-              <p>
-                                                                function help {
-                                                        </p>
-              <p>
-                                                                echo -e "\n\tusage: $0 "
-                                                        </p>
-              <p>
-                                                                exit
-                                                        </p>
-              <p>
-                                                                }
-                                                        </p>
-              <p>
-                                                                if [ -z "$1" ]; then
-                                                        </p>
-              <p>
-                                                                help
-                                                        </p>
-              <p>
-                                                                fi
-                                                        </p>
-              <p>
-                                                                while [ "$1" != "" ]; do
-                                                        </p>
-              <p>
-                                                                if [ "$SEARCH" = "" ]; then
-                                                        </p>
-              <p>
-                                                                SEARCH="$1"
-                                                        </p>
-              <p>
-                                                                else
-                                                        </p>
-              <p>
-                                                                SEARCH="$SEARCH $1"
-                                                        </p>
-              <p>
-                                                                fi
-                                                        </p>
-              <p>
-                                                                shift
-                                                        </p>
-              <p>
-                                                                done
-                                                        </p>
-              <p>
-                                                                echo -e "\n\tLooking up $SEARCH\n"
-                                                        </p>
-              <p>
-                                                                dig +short txt "$SEARCH".wp.dg.cx
-                                                        </p>
-              <p>
-                                                                echo ""
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                I hate dig.
-                                                        </p>
-              <p>
-                                                                Why not use:
-                                                        </p>
-              <code>host -t txt linux.wp.dg.cx</code>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Simpler multiple words fix:
-                                                        </p>
-              <p>
-                                                                dig +short txt "`echo $@`".wp.dg.cx
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <code>dig +short txt &lt;keyword&gt;.wp.dg.cx | espeak</code>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                I wonder if we can do that with French language ( fr.wikipedia.org )
-                                                        </p>
-              <p>
-                                                                Like with this example : fr.wikipedia.org/wiki/Tse
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                OOps, <a href="http://fr.wikipedia.org/wiki/Services_de_terminal" rel="nofollow">http://fr.wikipedia.org/wiki/Services_de_terminal</a>
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <code>mwiki () { echo $@ &gt; foo; blah=`sed 's/ /_/g' foo`; dig +short txt $blah.wp.dg.cx; }</code>
-              <p>
-                                                                Sample output:
-                                                        </p>
-              <code>mwiki snow leopard</code>
-              <p>
-                                                                "The snow leopard (Uncia uncia or Panthera uncia), sometimes known as \"ounce,\" is a moderately large cat native to the mountain ranges of Central Asia. The classification of this species has been subject to change and its exact taxonomic position is still " "unclear.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                #! /bin/bash
-                                                        </p>
-              <p>
-                                                                echo please input your subject
-                                                        </p>
-              <p>
-                                                                read SUBJECT
-                                                        </p>
-              <p>
-                                                                dig +short txt SUBJECT.wp.dg.cx
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Shorter version, works with multiple words:
-                                                        </p>
-              <p>
-                                                                mwiki() { dig +short txt "$*".wp.dg.cx; }
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                on windows:
-                                                        </p>
-              <code>nslookup -q=txt shit.wp.dg.cx</code>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                "slookup -q=txt" does not appear to be valid (i have WinXP+SP3)...
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                sorry, in mean "Nslookup -q=txt"...
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Nice. These dns lookups seems faster than an actual http request.
-                                                        </p>
-              <p>
-                                                                But I don't like the disturbing " and \ and the missing linebreaks. Therefore by combining dorin's ID with a sed and fmt I get to:
-                                                        </p>
-              <code>mwiki() { dig +short txt $(echo $* | sed 's/ /_/g').wp.dg.cx|sed -E "s/\" \"|^\"|\"$|\\\\//g"|fmt; }</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                what do you need this for?
-                                                        </p>
-              <p>
-                                                                has it some advantages to to such a query over DNS?
-                                                        </p>
-              <p>
-                                                                why can't you use curl instead?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                how to convert the utf-8 encode result to itf-8?
-                                                        </p>
-              <p>
-                                                                e.g. when I query "Leon", I got "L\195\169on".
-                                                        </p>
-              <p>
-                                                                I tried to convert is using "echo -e", but echo only support \xC3\xA9 format.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                This command is great.
-                                                        </p>
-              <p>
-                                                                But when I run it now I get:
-                                                        </p>
-              <p>
-                                                                ;; connection timed out; no servers could be reached
-                                                        </p>
-              <p>
-                                                                Anyone know what's wrong? I looks like Wikipedia is blocking dns requests or something else has changed.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                JokesOnYou ... not sure exactly but you can stipulate the nameserver to query as a swich to dig, ie (using opendns).
-                                                        </p>
-              <p>
-                                                                dig @resolver1.opendns.com +short txt "${1}".wp.dg.cx
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        this is awesomely wacky
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Vote this up. One can feel the awesome behind this command :-)
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        cute DNS abuse :)
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Very very cool.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        We can add some GUI spice to teh absue :P , dep==&gt; zenity
+                                                </p>
+                                                <p>
+                                                        zenity --info --text="$(dig +short txt $(zenity --entry -- --text="Enter your search word:").wp.dg.cx)"
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        This is simply awesome. In the shell script example, add quotes around the "${1}" and you can do multi-word searches using quotes in your arg, like:
+                                                </p><code>./wikip.sh "gradient descent"</code>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Script with prettified output:
+                                                </p><code>cat wikisole.sh</code>
+                                                <p>
+                                                        #!/bin/sh
+                                                </p>
+                                                <p>
+                                                        COLUMNS=`tput cols`
+                                                </p>
+                                                <p>
+                                                        dig +short txt "${1}".wp.dg.cx | sed -e 's/" "//g' -e 's/^"//g' -e 's/"$//g' -e 's/ http:/\n\nhttp:/' | fmt -w $COLUMNS
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        philipsd6's version as a function in bashrc:
+                                                </p>
+                                                <p>
+                                                        function wiki () {
+                                                </p>
+                                                <p>
+                                                        COLUMNS=`tput cols`
+                                                </p>
+                                                <p>
+                                                        dig +short txt ${1}.wp.dg.cx | sed -e 's/" "//g' -e 's/^"//g' -e 's/"$//g' -e 's/ http:/\n\nhttp:/' | fmt -w $COLUMNS
+                                                </p>
+                                                <p>
+                                                        }
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        You can also search for more than one word like this:
+                                                </p><code>dig +short txt "multiple words".wp.dg.cx</code>
+                                                <p>
+                                                        I wrote a wrapper script that takes either 1 word or multiple words and formulates the syntax properly:
+                                                </p>
+                                                <p>
+                                                        #!/bin/bash
+                                                </p>
+                                                <p>
+                                                        function help {
+                                                </p>
+                                                <p>
+                                                        echo -e "\n\tusage: $0 "
+                                                </p>
+                                                <p>
+                                                        exit
+                                                </p>
+                                                <p>
+                                                        }
+                                                </p>
+                                                <p>
+                                                        if [ -z "$1" ]; then
+                                                </p>
+                                                <p>
+                                                        help
+                                                </p>
+                                                <p>
+                                                        fi
+                                                </p>
+                                                <p>
+                                                        while [ "$1" != "" ]; do
+                                                </p>
+                                                <p>
+                                                        if [ "$SEARCH" = "" ]; then
+                                                </p>
+                                                <p>
+                                                        SEARCH="$1"
+                                                </p>
+                                                <p>
+                                                        else
+                                                </p>
+                                                <p>
+                                                        SEARCH="$SEARCH $1"
+                                                </p>
+                                                <p>
+                                                        fi
+                                                </p>
+                                                <p>
+                                                        shift
+                                                </p>
+                                                <p>
+                                                        done
+                                                </p>
+                                                <p>
+                                                        echo -e "\n\tLooking up $SEARCH\n"
+                                                </p>
+                                                <p>
+                                                        dig +short txt "$SEARCH".wp.dg.cx
+                                                </p>
+                                                <p>
+                                                        echo ""
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        I hate dig.
+                                                </p>
+                                                <p>
+                                                        Why not use:
+                                                </p><code>host -t txt linux.wp.dg.cx</code>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Simpler multiple words fix:
+                                                </p>
+                                                <p>
+                                                        dig +short txt "`echo $@`".wp.dg.cx
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <code>dig +short txt &lt;keyword&gt;.wp.dg.cx | espeak</code>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        I wonder if we can do that with French language ( fr.wikipedia.org )
+                                                </p>
+                                                <p>
+                                                        Like with this example : fr.wikipedia.org/wiki/Tse
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        OOps, <a href="http://fr.wikipedia.org/wiki/Services_de_terminal" rel="nofollow">http://fr.wikipedia.org/wiki/Services_de_terminal</a>
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <code>mwiki () { echo $@ &gt; foo; blah=`sed 's/ /_/g' foo`; dig +short txt $blah.wp.dg.cx; }</code>
+                                                <p>
+                                                        Sample output:
+                                                </p><code>mwiki snow leopard</code>
+                                                <p>
+                                                        "The snow leopard (Uncia uncia or Panthera uncia), sometimes known as \"ounce,\" is a moderately large cat native to the mountain ranges of Central Asia. The classification of this species has been subject to change and its exact taxonomic position is still " "unclear.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        #! /bin/bash
+                                                </p>
+                                                <p>
+                                                        echo please input your subject
+                                                </p>
+                                                <p>
+                                                        read SUBJECT
+                                                </p>
+                                                <p>
+                                                        dig +short txt SUBJECT.wp.dg.cx
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Shorter version, works with multiple words:
+                                                </p>
+                                                <p>
+                                                        mwiki() { dig +short txt "$*".wp.dg.cx; }
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        on windows:
+                                                </p><code>nslookup -q=txt shit.wp.dg.cx</code>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        "slookup -q=txt" does not appear to be valid (i have WinXP+SP3)...
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        sorry, in mean "Nslookup -q=txt"...
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Nice. These dns lookups seems faster than an actual http request.
+                                                </p>
+                                                <p>
+                                                        But I don't like the disturbing " and \ and the missing linebreaks. Therefore by combining dorin's ID with a sed and fmt I get to:
+                                                </p><code>mwiki() { dig +short txt $(echo $* | sed 's/ /_/g').wp.dg.cx|sed -E "s/\" \"|^\"|\"$|\\\\//g"|fmt; }</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        what do you need this for?
+                                                </p>
+                                                <p>
+                                                        has it some advantages to to such a query over DNS?
+                                                </p>
+                                                <p>
+                                                        why can't you use curl instead?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        how to convert the utf-8 encode result to itf-8?
+                                                </p>
+                                                <p>
+                                                        e.g. when I query "Leon", I got "L\195\169on".
+                                                </p>
+                                                <p>
+                                                        I tried to convert is using "echo -e", but echo only support \xC3\xA9 format.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        This command is great.
+                                                </p>
+                                                <p>
+                                                        But when I run it now I get:
+                                                </p>
+                                                <p>
+                                                        ;; connection timed out; no servers could be reached
+                                                </p>
+                                                <p>
+                                                        Anyone know what's wrong? I looks like Wikipedia is blocking dns requests or something else has changed.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        JokesOnYou ... not sure exactly but you can stipulate the nameserver to query as a swich to dig, ie (using opendns).
+                                                </p>
+                                                <p>
+                                                        dig @resolver1.opendns.com +short txt "${1}".wp.dg.cx
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

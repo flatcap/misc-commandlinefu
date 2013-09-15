@@ -1,90 +1,72 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Change to $HOME - zsh, bash4
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        ~
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                ~
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Change to $HOME - zsh, bash4
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Change to $HOME - zsh, bash4
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        To change to $HOME in that manner you need to set a shell option. In zsh it is auto_cd, hence
-                                                                </p>
-                <code>setopt -o auto_cd</code>
-                <p>
-                                                                        in bash4 it is autocd, hence
-                                                                </p>
-                <code>shopt -s autocd</code>
-                <p>
-                                                                        What the option does is allow you to cd to a directory by just entering its name. This also works if the directory name is stored in a variable:
-                                                                </p>
-                <code>www=/var/www/lighttpd; $www</code>
-                <p>
-                                                                        sends you to /var/www/lighttpd.
-                                                                </p>
-                <p>
-                                                                        CAUTION: If a command or function name identical to the directory name exists it takes precedence.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                To change to $HOME in that manner you need to set a shell option. In zsh it is auto_cd, hence
+                                                        </p><code>setopt -o auto_cd</code>
+                                                        <p>
+                                                                in bash4 it is autocd, hence
+                                                        </p><code>shopt -s autocd</code>
+                                                        <p>
+                                                                What the option does is allow you to cd to a directory by just entering its name. This also works if the directory name is stored in a variable:
+                                                        </p><code>www=/var/www/lighttpd; $www</code>
+                                                        <p>
+                                                                sends you to /var/www/lighttpd.
+                                                        </p>
+                                                        <p>
+                                                                CAUTION: If a command or function name identical to the directory name exists it takes precedence.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Holy crap. Nice! I've read the bash manual more times that I care to admit, but I'd missed that one. However, I'll still find it easier to type cd than find the fiddly ~ button :-)
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                "$OLDPWD" does the same as "cd -", using that. However, just "-" does not take you back to the previous directory as in "cd -". But it's still very useful.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                just "cd" does the same. takes you home wherever you are.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Holy crap. Nice! I've read the bash manual more times that I care to admit, but I'd missed that one. However, I'll still find it easier to type cd than find the fiddly ~ button :-)
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        "$OLDPWD" does the same as "cd -", using that. However, just "-" does not take you back to the previous directory as in "cd -". But it's still very useful.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        just "cd" does the same. takes you home wherever you are.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

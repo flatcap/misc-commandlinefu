@@ -1,115 +1,98 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 print multiplication formulas
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i&lt;=NF;i++)printf("%dx%d=%d%s", i, NR, i*NR, i==NR?"\n":"\t")}'
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i&lt;=NF;i++)printf("%dx%d=%d%s", i, NR, i*NR, i==NR?"\n":"\t")}'
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        print multiplication formulas
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                print multiplication formulas
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        seq -s ' ' 1 9 | sed -n ':a;p;s/ *\w$//;h;/^$/t;b a;q' | tac | awk '{for(i=1;i
-                                                                </p>
-                <p>
-                                                                        1x1=1
-                                                                </p>
-                <p>
-                                                                        1x2=2 2x2=4
-                                                                </p>
-                <p>
-                                                                        1x3=3 2x3=6 3x3=9
-                                                                </p>
-                <p>
-                                                                        1x4=4 2x4=8 3x4=12 4x4=16
-                                                                </p>
-                <p>
-                                                                        1x5=5 2x5=10 3x5=15 4x5=20 5x5=25
-                                                                </p>
-                <p>
-                                                                        1x6=6 2x6=12 3x6=18 4x6=24 5x6=30 6x6=36
-                                                                </p>
-                <p>
-                                                                        1x7=7 2x7=14 3x7=21 4x7=28 5x7=35 6x7=42 7x7=49
-                                                                </p>
-                <p>
-                                                                        1x8=8 2x8=16 3x8=24 4x8=32 5x8=40 6x8=48 7x8=56 8x8=64
-                                                                </p>
-                <p>
-                                                                        1x9=9 2x9=18 3x9=27 4x9=36 5x9=45 6x9=54 7x9=63 8x9=72 9x9=81
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
-                                        Alternatives
-                                </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
-                                        What others think
-                                </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Genius.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Love it!
-                                                        </p>
-              <p>
-                                                                Formatting falls apart a little when going to 12 instead of 9 however due to use of tab character
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                I always make things difficulty and ugly!
-                                                        </p>
-              <p>
-                                                                for i in {1..9}; do for j in `seq 1 $i`; do echo -ne "${j}x${i}=$((j*i))\t"; done; echo; done
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
+                                                <div class="description">
+                                                        <p>
                                                                 seq -s ' ' 1 9 | sed -n ':a;p;s/ *\w$//;h;/^$/t;b a;q' | tac | awk '{for(i=1;i
                                                         </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                                        <p>
+                                                                1x1=1
+                                                        </p>
+                                                        <p>
+                                                                1x2=2 2x2=4
+                                                        </p>
+                                                        <p>
+                                                                1x3=3 2x3=6 3x3=9
+                                                        </p>
+                                                        <p>
+                                                                1x4=4 2x4=8 3x4=12 4x4=16
+                                                        </p>
+                                                        <p>
+                                                                1x5=5 2x5=10 3x5=15 4x5=20 5x5=25
+                                                        </p>
+                                                        <p>
+                                                                1x6=6 2x6=12 3x6=18 4x6=24 5x6=30 6x6=36
+                                                        </p>
+                                                        <p>
+                                                                1x7=7 2x7=14 3x7=21 4x7=28 5x7=35 6x7=42 7x7=49
+                                                        </p>
+                                                        <p>
+                                                                1x8=8 2x8=16 3x8=24 4x8=32 5x8=40 6x8=48 7x8=56 8x8=64
+                                                        </p>
+                                                        <p>
+                                                                1x9=9 2x9=18 3x9=27 4x9=36 5x9=45 6x9=54 7x9=63 8x9=72 9x9=81
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
+                                        Alternatives
+                                </h3>
+                                <div class="terminal-display"></div>
+                                <h3>
+                                        What others think
+                                </h3>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Genius.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Love it!
+                                                </p>
+                                                <p>
+                                                        Formatting falls apart a little when going to 12 instead of 9 however due to use of tab character
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        I always make things difficulty and ugly!
+                                                </p>
+                                                <p>
+                                                        for i in {1..9}; do for j in `seq 1 $i`; do echo -ne "${j}x${i}=$((j*i))\t"; done; echo; done
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        seq -s ' ' 1 9 | sed -n ':a;p;s/ *\w$//;h;/^$/t;b a;q' | tac | awk '{for(i=1;i
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

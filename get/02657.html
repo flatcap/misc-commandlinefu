@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Test your total disk IO capacity, regardless of caching, to find out how fast the TRUE speed of your disks are
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        time (dd if=/dev/zero of=blah.out bs=256M count=1 ; sync )
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                time (dd if=/dev/zero of=blah.out bs=256M count=1 ; sync )
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 1+0 records in
 1+0 records out
 268435456 bytes (268 MB) copied, 1.50648 seconds, 178 MB/s
@@ -30,74 +28,59 @@ real    0m7.119s
 user    0m0.002s
 sys     0m0.649s
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Test your total disk IO capacity, regardless of caching, to find out how fast the TRUE speed of your disks are
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Depending on the speed of you system, amount of RAM, and amount of free disk space, you can find out practically how fast your disks really are. When it completes, take the number of MB copied, and divide by the line showing the "real" number of seconds. In the sample output, the cached value shows a write speed of 178MB/s, which is unrealistic, while the calculated value using the output and the number of seconds shows it to be more like 35MB/s, which is feasible.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Test your total disk IO capacity, regardless of caching, to find out how fast the TRUE speed of your disks are
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Depending on the speed of you system, amount of RAM, and amount of free disk space, you can find out practically how fast your disks really are. When it completes, take the number of MB copied, and divide by the line showing the "real" number of seconds. In the sample output, the cached value shows a write speed of 178MB/s, which is unrealistic, while the calculated value using the output and the number of seconds shows it to be more like 35MB/s, which is feasible.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
-                                                        time dd if=/dev/zero of=blah.out oflag=direct bs=256M count=1
+                                <div class="terminal-display one-liner">
+                                        <div class="line command">
+                                                time dd if=/dev/zero of=blah.out oflag=direct bs=256M count=1
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        <a href="/commands/view/2661/test-your-total-disk-io-capacity-regardless-of-caching-to-find-out-how-fast-the-true-speed-of-your-disks-are">Test your total disk IO capacity, regardless of caching, to find out how fast the TRUE speed of your disks are</a>
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/2661/test-your-total-disk-io-capacity-regardless-of-caching-to-find-out-how-fast-the-true-speed-of-your-disks-are">Test your total disk IO capacity, regardless of caching, to find out how fast the TRUE speed of your disks are</a>
-              </div>
-              <div class="description">
-                <p>
-                                                                        Let dd use direct I/O to write directly to the disk without any caching. You'll encounter very different results with different block sizes (try with 1k, 4k, 1M, ... and appropriate count values).
-                                                                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Let dd use direct I/O to write directly to the disk without any caching. You'll encounter very different results with different block sizes (try with 1k, 4k, 1M, ... and appropriate count values).
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                nice but.. to play the real game use <a href="http://www.iozone.org" rel="nofollow">www.iozone.org</a> or bonnie
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                What you're doing here is really testing *filesystem* performance rather than disk IO. For actual "disk IO", do what ioggstream said or use hdparm:
-                                                        </p>
-              <code>hdparm -t /dev/sda</code>
-              <p>
-                                                                this will test drive throughput by actually streaming a write off the disk. Use the -T option to test how fast the cpu, memory, &amp; linux disk buffer cache can theoretically go.
-                                                        </p>
-              <p>
-                                                                The underlying filesystem can
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        nice but.. to play the real game use <a href="http://www.iozone.org" rel="nofollow">www.iozone.org</a> or bonnie
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        What you're doing here is really testing *filesystem* performance rather than disk IO. For actual "disk IO", do what ioggstream said or use hdparm:
+                                                </p><code>hdparm -t /dev/sda</code>
+                                                <p>
+                                                        this will test drive throughput by actually streaming a write off the disk. Use the -T option to test how fast the cpu, memory, &amp; linux disk buffer cache can theoretically go.
+                                                </p>
+                                                <p>
+                                                        The underlying filesystem can
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

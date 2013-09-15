@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Sorted, recursive long file listing
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        lsr() { find "${@:-.}" -print0 |sort -z |xargs -0 ls $LS_OPTIONS -dla; }
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                lsr() { find "${@:-.}" -print0 |sort -z |xargs -0 ls $LS_OPTIONS -dla; }
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 =[9 h3xx@necronomicon ~ ]= $ lsr ~/.cron
 drwx------ 10 h3xx users  304 Aug 13 01:45 /home/h3xx/.cron/
 drwx------  2 h3xx users  264 Aug 14 03:09 /home/h3xx/.cron/cron.01d/
@@ -56,41 +54,32 @@ lrwxrwxrwx  1 h3xx users   26 Aug 18  2008 /home/h3xx/.cron/cron.30m/process-spa
 -rwx--x--x  1 h3xx users 4122 Aug 13 01:34 /home/h3xx/.cron/install-crontab~*
 =[9 h3xx@necronomicon ~ ]= $
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Sorted, recursive long file listing
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Tells you everything you could ever want to know about all files and subdirectories. Great for package creators. Totally secure too.
-                                                                </p>
-                <p>
-                                                                        On my Slackware box, this gets set upon login:
-                                                                </p>
-                <code>LS_OPTIONS='-F -b -T 0 --color=auto'</code>
-                <p>
-                                                                        and
-                                                                </p>
-                <code>alias ls='/bin/ls $LS_OPTIONS'</code>
-                <p>
-                                                                        which works great.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Sorted, recursive long file listing
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Tells you everything you could ever want to know about all files and subdirectories. Great for package creators. Totally secure too.
+                                                        </p>
+                                                        <p>
+                                                                On my Slackware box, this gets set upon login:
+                                                        </p><code>LS_OPTIONS='-F -b -T 0 --color=auto'</code>
+                                                        <p>
+                                                                and
+                                                        </p><code>alias ls='/bin/ls $LS_OPTIONS'</code>
+                                                        <p>
+                                                                which works great.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

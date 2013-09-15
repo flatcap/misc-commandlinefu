@@ -1,107 +1,98 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 bulk rename files with sed, one-liner
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        ls * | sed -e 'p;s/foo/bar/' | xargs -n2 mv
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                ls * | sed -e 'p;s/foo/bar/' | xargs -n2 mv
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        bulk rename files with sed, one-liner
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                bulk rename files with sed, one-liner
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Renames all files in a directory named foo to bar.
-                                                                </p>
-                <p>
-                                                                        foobar1 gets renamed to barbar1
-                                                                </p>
-                <p>
-                                                                        barfoo2 gets renamed to barbar2
-                                                                </p>
-                <p>
-                                                                        fooobarfoo gets renamed to barobarfoo
-                                                                </p>
-                <p>
-                                                                        NOTE: Will break for files with spaces AND new lines AND for an empty expansion of the glob '*'
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Renames all files in a directory named foo to bar.
+                                                        </p>
+                                                        <p>
+                                                                foobar1 gets renamed to barbar1
+                                                        </p>
+                                                        <p>
+                                                                barfoo2 gets renamed to barbar2
+                                                        </p>
+                                                        <p>
+                                                                fooobarfoo gets renamed to barobarfoo
+                                                        </p>
+                                                        <p>
+                                                                NOTE: Will break for files with spaces AND new lines AND for an empty expansion of the glob '*'
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         for i in ./*foo*;do mv -- "$i" "${i//foo/bar}";done
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 Come on...
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8374/rename-all-files-which-contain-the-sub-string-foo-replacing-it-with-bar">Rename all files which contain the sub-string 'foo', replacing it with 'bar'</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8374/rename-all-files-which-contain-the-sub-string-foo-replacing-it-with-bar">Rename all files which contain the sub-string 'foo', replacing it with 'bar'</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         That is an alternative to command 8368.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Command 8368 is EXTREMELY NOT clever.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         1) Will break also for files with spaces AND new lines in them AND for an empty expansion of the glob '*'
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         2) For making such a simple task it uses two pipes, thus forking.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         3) xargs(1) is dangerous (broken) when processing filenames that are not NUL-terminated.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         4) ls shows you a representation of files. They are NOT file names (for simple names, they mostly happen to be equivalent). Do NOT try to parse it.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Why? see this :<a href="http://mywiki.wooledge.org/ParsingLs" rel="nofollow">http://mywiki.wooledge.org/ParsingLs</a>
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Recursive version:
-                                                                </p>
-                <code>find . -depth -name "*foo*" -exec bash -c 'for f; do base=${f##*/}; mv -- "$f" "${f%/*}/${base//foo/bar}"; done' _ {} +</code>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                                </p><code>find . -depth -name "*foo*" -exec bash -c 'for f; do base=${f##*/}; mv -- "$f" "${f%/*}/${base//foo/bar}"; done' _ {} +</code>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         rename 's/foo/bar/g' ./*
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 $ ls
 thisFileIsCalledDAVE
 
@@ -110,58 +101,52 @@ $ rename 's/DAVE/PETE/g' ./*
 $ ls
 thisFileIsCalledPETE
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8381/rename-all-files-which-contain-the-sub-string-foo-replacing-it-with-bar">Rename all files which contain the sub-string 'foo', replacing it with 'bar'</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8381/rename-all-files-which-contain-the-sub-string-foo-replacing-it-with-bar">Rename all files which contain the sub-string 'foo', replacing it with 'bar'</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Would this command line achieve the desired function? My CLI knowledge is not great so this could certainly be wrong. It is merely a suggestion for more experienced uses to critique. Best wishes roly :-)
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         for f in *; do mv "$f" "${f/foo/bar}"; done
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8370/bulk-rename-files-with-sed-one-liner">bulk rename files with sed, one-liner</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8370/bulk-rename-files-with-sed-one-liner">bulk rename files with sed, one-liner</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         without sed, but has no problems with files with spaces or other critical characters
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ls | sed 'p;s/foo/bar/' | xargs -n2 mv
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8371/bulk-rename-files-with-sed-one-liner">bulk rename files with sed, one-liner</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8371/bulk-rename-files-with-sed-one-liner">bulk rename files with sed, one-liner</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         rename foo bar directory/filename
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 $ ls -aF
 ... many filenames ...
 .xsession-errors.old
@@ -170,74 +155,58 @@ $ ls -aF
 ... many filenames ...
 .xsession-errors.vetust
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8409/rename-all-files-which-contain-the-sub-string-foo-replacing-it-with-bar">Rename all files which contain the sub-string 'foo', replacing it with 'bar'</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8409/rename-all-files-which-contain-the-sub-string-foo-replacing-it-with-bar">Rename all files which contain the sub-string 'foo', replacing it with 'bar'</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         rename command in my system -Fuduntu running 2.6.38 Linux Kernel- is an ELF 64-bit LSB executable, not a Perl script. man page for rename command shows syntax as "rename from to where" (or something like that), so I am doing just what I have been told...
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Source: <a href="http://languor.us/file-renaming-using-sed-and-xargs-prefixing-all-filenames-0-commandline" rel="nofollow">http://languor.us/file-renaming-using-sed-and-xargs-prefixing-all-filenames-0-commandline</a>
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                That's clever.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Very nice!
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                That's clever, but will break if you have filenames with spaces.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                That will attempt to move files even if the filename doesn't have the substring 'foo' in it. That will generate a lot of noise on stderr of the form "mv: 'baz' and 'baz' are the same file". Also, 'ls *' will pick up directory names, executing 'ls subdir_name' which will not include the path, giving many many "no such file or directory" errors.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Uwe's command is much nicer than mine:
-                                                        </p>
-              <p>
-                <a href="http://www.commandlinefu.com/commands/view/8370/bulk-rename-files-with-sed-one-liner" rel="nofollow">http://www.commandlinefu.com/commands/view/8370/bulk-rename-files-with-sed-one-liner</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Source: <a href="http://languor.us/file-renaming-using-sed-and-xargs-prefixing-all-filenames-0-commandline" rel="nofollow">http://languor.us/file-renaming-using-sed-and-xargs-prefixing-all-filenames-0-commandline</a>
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        That's clever.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Very nice!
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        That's clever, but will break if you have filenames with spaces.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        That will attempt to move files even if the filename doesn't have the substring 'foo' in it. That will generate a lot of noise on stderr of the form "mv: 'baz' and 'baz' are the same file". Also, 'ls *' will pick up directory names, executing 'ls subdir_name' which will not include the path, giving many many "no such file or directory" errors.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Uwe's command is much nicer than mine:
+                                                </p>
+                                                <p>
+                                                        <a href="http://www.commandlinefu.com/commands/view/8370/bulk-rename-files-with-sed-one-liner" rel="nofollow">http://www.commandlinefu.com/commands/view/8370/bulk-rename-files-with-sed-one-liner</a>
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

@@ -1,107 +1,89 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Unix commandline history substitution like ^foo^bar BUT for multiple replacements
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        !!:gs/Original/New/
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                !!:gs/Original/New/
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 # groovy extractCalls.groovy 20100407 &amp;&amp; groovy extractInvokes.groovy 20100408 &amp;&amp; groovy extractInvokes.groovy 20100409
 
 # !!:gs/extractInvokes.groovy/extractCallbacks.groovy/
 
 # groovy extractCallbacks.groovy 20100407 &amp;&amp; groovy extractCallbacks.groovy 20100408 &amp;&amp; groovy extractCallbacks.groovy 20100409
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Unix commandline history substitution like ^foo^bar BUT for multiple replacements
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        #1 You invoked a command chain.
-                                                                </p>
-                <p>
-                                                                        #2 You globaly replace the scriptnames and execute them direct
-                                                                </p>
-                <p>
-                                                                        #3 The new executed command chain
-                                                                </p>
-                <p>
-                                                                        [# ^foo^bar] would only replace the firts match [foo] with [bar].
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Unix commandline history substitution like ^foo^bar BUT for multiple replacements
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                #1 You invoked a command chain.
+                                                        </p>
+                                                        <p>
+                                                                #2 You globaly replace the scriptnames and execute them direct
+                                                        </p>
+                                                        <p>
+                                                                #3 The new executed command chain
+                                                        </p>
+                                                        <p>
+                                                                [# ^foo^bar] would only replace the firts match [foo] with [bar].
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                weeeeeeee! awesome.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Money!
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                You can also use command history indexing to get to more than the previous command...
-                                                        </p>
-              <code>echo foo foo foo</code>
-              <p>
-                                                                foo foo foo
-                                                        </p>
-              <code>ls</code>
-              <p>
-                                                                file1
-                                                        </p>
-              <code>!-2:gs/foo/bar/</code>
-              <p>
-                                                                bar bar bar
-                                                        </p>
-              <p>
-                                                                This is an indispensable cheatsheet for bash history manipulation: <a href="http://www.catonmat.net/download/bash-history-cheat-sheet.pdf" rel="nofollow">http://www.catonmat.net/download/bash-history-cheat-sheet.pdf</a>
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        weeeeeeee! awesome.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Money!
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        You can also use command history indexing to get to more than the previous command...
+                                                </p><code>echo foo foo foo</code>
+                                                <p>
+                                                        foo foo foo
+                                                </p><code>ls</code>
+                                                <p>
+                                                        file1
+                                                </p><code>!-2:gs/foo/bar/</code>
+                                                <p>
+                                                        bar bar bar
+                                                </p>
+                                                <p>
+                                                        This is an indispensable cheatsheet for bash history manipulation: <a href="http://www.catonmat.net/download/bash-history-cheat-sheet.pdf" rel="nofollow">http://www.catonmat.net/download/bash-history-cheat-sheet.pdf</a>
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

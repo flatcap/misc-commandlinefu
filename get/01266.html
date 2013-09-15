@@ -1,68 +1,57 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Resize A Mounted EXT3 File System
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        v=/dev/vg0/lv0; lvextend -L+200G $v &amp;&amp; resize2fs $v
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                v=/dev/vg0/lv0; lvextend -L+200G $v &amp;&amp; resize2fs $v
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Resize A Mounted EXT3 File System
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Resize A Mounted EXT3 File System
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Live extension of an ext3 file system on logical volume $v by 200GB without the need to unmount/remount.
-                                                                </p>
-                <p>
-                                                                        Requires that you have 1) a version of resize2fs that contains code merged from ext2online, and 2) kernel support for online resizing. (e.g. RHEL 5)
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Live extension of an ext3 file system on logical volume $v by 200GB without the need to unmount/remount.
+                                                        </p>
+                                                        <p>
+                                                                Requires that you have 1) a version of resize2fs that contains code merged from ext2online, and 2) kernel support for online resizing. (e.g. RHEL 5)
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        Here's a writeup I did on a more complicated version of this, including moving to a RAID 1 array:
-                                                </p>
-            <p>
-              <a href="http://www.hollenback.net/index.php/RaidLvmMigrate" rel="nofollow">http://www.hollenback.net/index.php/RaidLvmMigrate</a>
-            </p>
-            <p>
-                                                        thanks also for noting you need CentOS 5 to do online resizing. CentOS 4 doesn't do online ext3 resizing, you have to unmount the filesystem first.
-                                                </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                Here's a writeup I did on a more complicated version of this, including moving to a RAID 1 array:
+                                        </p>
+                                        <p>
+                                                <a href="http://www.hollenback.net/index.php/RaidLvmMigrate" rel="nofollow">http://www.hollenback.net/index.php/RaidLvmMigrate</a>
+                                        </p>
+                                        <p>
+                                                thanks also for noting you need CentOS 5 to do online resizing. CentOS 4 doesn't do online ext3 resizing, you have to unmount the filesystem first.
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

@@ -1,76 +1,63 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Generate Sha1, MD5 hash using echo
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        echo -n "password"|md5sum|awk '{print $1}'
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                echo -n "password"|md5sum|awk '{print $1}'
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 echo -n "password"|md5sum|awk '{print $1}'
 5f4dcc3b5aa765d61d8327deb882cf99
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Generate Sha1, MD5 hash using echo
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        This is mostly for my own notes but this command will compute a md5 message digest from the command line.
-                                                                </p>
-                <p>
-                                                                        You can also replace md5sum with other checksum commands (e.g., sha1sum)
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Generate Sha1, MD5 hash using echo
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                This is mostly for my own notes but this command will compute a md5 message digest from the command line.
+                                                        </p>
+                                                        <p>
+                                                                You can also replace md5sum with other checksum commands (e.g., sha1sum)
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Useless Use of Awk - use cut instead
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                md5 output contains only 16 different symbols - pass will not be very strong
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Useless Use of Awk - use cut instead
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        md5 output contains only 16 different symbols - pass will not be very strong
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

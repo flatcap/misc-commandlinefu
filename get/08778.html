@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 A file's rpm-package details
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        summpkg() { rpm -qfi "$@"; }
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                summpkg() { rpm -qfi "$@"; }
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 ~$ summpkg /bin/sort
 Name        : coreutils
 Version     : 8.10
@@ -44,50 +42,44 @@ Description :
 These are the GNU core utilities.  This package is the combination of
 the old GNU fileutils, sh-utils, and textutils packages.
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                A file's rpm-package details
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Find information about the rpm package which owns a certain file.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        A file's rpm-package details
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Find information about the rpm package which owns a certain file.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         dpkg -S `which nm` | cut -d':' -f1 | (read PACKAGE; echo "[${PACKAGE}]"; dpkg -s "${PACKAGE}"; dpkg -L "${PACKAGE}") | less
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/2658/a-commands-package-details">A command's package details</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/2658/a-commands-package-details">A command's package details</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         In Debian based distros, this command will list 'binutils' package details which contains 'nm' command. You can replace 'nm' to any other command.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         function summpkg { dpkg -s $(dpkg -S $1 | egrep -w $(which $1)$ | awk -F: '{print $1}') ; }
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 $ summpkg nm
 Package: binutils
 Status: install ok installed
@@ -108,50 +100,41 @@ Description: The GNU assembler, linker and binary utilities
  and various libraries to build programs.
 Original-Maintainer: Matthias Klose &lt;doko@debian.org&gt;
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8777/a-commands-package-details">A command's package details</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8777/a-commands-package-details">A command's package details</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         This version builds on my command 8776 (Find the package a command belongs to on debian-based distros). So if you use that command to find package name then you could alternatively use following for
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         package summary:
-                                                                </p>
-                <code>function summpkg { dpkg -s $(whichpkg $1 | awk -F: '{print $1}'); }</code>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                                </p><code>function summpkg { dpkg -s $(whichpkg $1 | awk -F: '{print $1}'); }</code>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                on this site you can vote for the most interesting commands. someone has made a habit always to vote in a negative way my commands. I want to make a habit of positive or negative vote and declare it openly.
-                                                        </p>
-              <p>
-                                                                +1 for this command
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Unfairly voted down. Not everyone is on Ubuntu/Debian. +1
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        on this site you can vote for the most interesting commands. someone has made a habit always to vote in a negative way my commands. I want to make a habit of positive or negative vote and declare it openly.
+                                                </p>
+                                                <p>
+                                                        +1 for this command
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Unfairly voted down. Not everyone is on Ubuntu/Debian. +1
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

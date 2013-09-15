@@ -1,147 +1,126 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Limit the cpu usage of a process
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        sudo cpulimit -p pid -l 50
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                sudo cpulimit -p pid -l 50
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 sudo cpulimit -p 4799 -l 10
 Process 4799 detected
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Limit the cpu usage of a process
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        This will limit the average amount of CPU it consumes.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Limit the cpu usage of a process
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                This will limit the average amount of CPU it consumes.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         prlimit --cpu=10 sort -u hugefile
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11949/limit-the-cpu-usage-of-a-process">Limit the cpu usage of a process</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/11949/limit-the-cpu-usage-of-a-process">Limit the cpu usage of a process</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Similar to `cpulimit`, although `prlimit` can be found shipped with recent util-linux.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Example: limit CPU consumption to 10% for a math problem which ordinarily takes up 100% CPU:
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Before:
-                                                                </p>
-                <code>bc -l &lt;(echo "1234123412341234^12341234")</code>
-                <p>
+                                                                </p><code>bc -l &lt;(echo "1234123412341234^12341234")</code>
+                                                                <p>
                                                                         See the difference `prlimit` makes:
-                                                                </p>
-                <code>prlimit --cpu=10 bc -l &lt;(echo "1234123412341234^12341234")</code>
-                <p>
+                                                                </p><code>prlimit --cpu=10 bc -l &lt;(echo "1234123412341234^12341234")</code>
+                                                                <p>
                                                                         To actually monitor the CPU usage, use `top`, `sar`, etc.. or:
-                                                                </p>
-                <code>pidstat -C 'bc' -hur -p ALL 1</code>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                                </p><code>pidstat -C 'bc' -hur -p ALL 1</code>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         sudo cpulimit -e Grooveshark -l 20
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 Process 2927 detected
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/7046/stop-grooveshark-destroying-your-cpu">Stop Grooveshark destroying your CPU</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/7046/stop-grooveshark-destroying-your-cpu">Stop Grooveshark destroying your CPU</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Will limit the amount of CPU time Grooveshark the greedy yet useful Adobe Air app will have.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Leaves the UI lagging a little, but crucially does not ruin the audio.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                CentOS 5.5 doesn't have it. What package can provide it?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                neither on fedora 16
-                                                        </p>
-              <p>
-                                                                # yum provides '*/cpulimit'
-                                                        </p>
-              <p>
-                                                                returns nothing
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                available on github:
-                                                        </p>
-              <p>
-                                                                https://github.com/opsengine/cpulimit
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        CentOS 5.5 doesn't have it. What package can provide it?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        neither on fedora 16
+                                                </p>
+                                                <p>
+                                                        # yum provides '*/cpulimit'
+                                                </p>
+                                                <p>
+                                                        returns nothing
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        available on github:
+                                                </p>
+                                                <p>
+                                                        https://github.com/opsengine/cpulimit
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

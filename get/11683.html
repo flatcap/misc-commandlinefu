@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Oneliner to get domain names list of all existing domain names (from wikipedia)
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        curl -s http://en.m.wikipedia.org/wiki/List_of_Internet_top-level_domains | sed -n '/&lt;tr valign="top"&gt;/{s/&lt;[^&gt;]*&gt;//g;p}'
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                curl -s http://en.m.wikipedia.org/wiki/List_of_Internet_top-level_domains | sed -n '/&lt;tr valign="top"&gt;/{s/&lt;[^&gt;]*&gt;//g;p}'
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 .aero
 .asia
 .biz
@@ -35,47 +33,42 @@
 .museum
 ... ETC
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Oneliner to get domain names list of all existing domain names (from wikipedia)
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Quietly get a webpage from wikipedia: curl -s
-                                                                </p>
-                <p>
-                                                                        By default, don't output anything: sed -n
-                                                                </p>
-                <p>
-                                                                        Search for interesting lines: /&lt;tr valign="top"&gt;/
-                                                                </p>
-                <p>
-                                                                        With the matching lines: {}
-                                                                </p>
-                <p>
-                                                                        Search and replace any html tags: s/&lt;[^&gt;]*&gt;//g
-                                                                </p>
-                <p>
-                                                                        Finally print the result: p
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Oneliner to get domain names list of all existing domain names (from wikipedia)
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Quietly get a webpage from wikipedia: curl -s
+                                                        </p>
+                                                        <p>
+                                                                By default, don't output anything: sed -n
+                                                        </p>
+                                                        <p>
+                                                                Search for interesting lines: /&lt;tr valign="top"&gt;/
+                                                        </p>
+                                                        <p>
+                                                                With the matching lines: {}
+                                                        </p>
+                                                        <p>
+                                                                Search and replace any html tags: s/&lt;[^&gt;]*&gt;//g
+                                                        </p>
+                                                        <p>
+                                                                Finally print the result: p
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
-                                                        curl http://en.m.wikipedia.org/wiki/List_of_Internet_top-level_domains | grep "&lt;tr valign=\"top\"&gt;" | awk -F"&gt;" '{ print $5 }' | awk -F"&lt;" '{ print $1 }'
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                <div class="terminal-display one-liner">
+                                        <div class="line command">
+                                                curl http://en.m.wikipedia.org/wiki/List_of_Internet_top-level_domains | grep "&lt;tr valign=\"top\"&gt;" | awk -F"&gt;" '{ print $5 }' | awk -F"&lt;" '{ print $1 }'
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 .aero
 .asia
 .biz
@@ -89,24 +82,19 @@
 .museum
 ... ETC
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11682/oneliner-to-get-domain-names-list-of-all-existing-domain-names-from-wikipedia">Oneliner to get domain names list of all existing domain names (from wikipedia)</a>
-              </div>
-              <div class="description">
-                <p>
-                                                                        Oneliner to get domain names list of all existing domain names (from wikipedia)
-                                                                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        <a href="/commands/view/11682/oneliner-to-get-domain-names-list-of-all-existing-domain-names-from-wikipedia">Oneliner to get domain names list of all existing domain names (from wikipedia)</a>
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Oneliner to get domain names list of all existing domain names (from wikipedia)
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

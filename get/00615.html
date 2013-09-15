@@ -1,57 +1,51 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 escape any command aliases
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        \[command]
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                \[command]
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        escape any command aliases
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                escape any command aliases
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        e.g. if rm is aliased for 'rm -i', you can escape the alias by prepending a backslash:
-                                                                </p>
-                <p>
-                                                                        rm [file] # WILL prompt for confirmation per the alias
-                                                                </p>
-                <p>
-                                                                        \rm [file] # will NOT prompt for confirmation per the default behavior of the command
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                e.g. if rm is aliased for 'rm -i', you can escape the alias by prepending a backslash:
+                                                        </p>
+                                                        <p>
+                                                                rm [file] # WILL prompt for confirmation per the alias
+                                                        </p>
+                                                        <p>
+                                                                \rm [file] # will NOT prompt for confirmation per the default behavior of the command
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         \foo
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 echo 'Hey, it works...' &gt; fooy.txt
 alias cat='somebunk -fFnrACesvVwwwwwlRQ +1337 --awesome-mode-engaged=1'
 cat fooy.txt
@@ -59,112 +53,88 @@ bash: somebunk: command not found
 \cat fooy.txt
 Hey, it works...
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9343/bypass-any-aliases-and-functions-for-the-command">bypass any aliases and functions for the command</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9343/bypass-any-aliases-and-functions-for-the-command">bypass any aliases and functions for the command</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         A simple directive which disables all aliases and functions for the command immediately following it. Shortcut for the bash built-in 'command' - "command linefoo".
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Think, {sic}...
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         \ls
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 directory listing generated by unaliased command (/bin/ls in this case)
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9996/temporarily-override-alias-of-any-command">temporarily override alias of any command</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9996/temporarily-override-alias-of-any-command">temporarily override alias of any command</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         say, someone has aliased ls to 'ls --color=always' and you want to temporarily override the alias (it does not override functions)
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                This is particularly useful for 'rm', which many distributions insist on aliasing to 'rm -i' (ignoring the bad habits that this inculcates).
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                I usually type in the full path to the command to make sure I'm using both the unaliased command and also to make sure I'm not launching something out of /usr/local/bin/. Using full paths to commands is also a good habit for any scripts that may run with elevated privileges.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                NOTE: Any type of quoting will work: backslash, single quote, double quote.
-                                                        </p>
-              <p>
-                                                                The Bash Reference Manual says "The first word of each simple command, if unquoted, is checked to see if it has an alias."
-                                                        </p>
-              <p>
-                                                                Thus, these will all execute the real unaliased rm command:
-                                                        </p>
-              <code>\rm file</code>
-              <code>'r'm file</code>
-              <code>"r"m file</code>
-              <code>'rm' file</code>
-              <code>"rm" file</code>
-              <code>command rm file</code>
-              <p>
-                                                                The last example doesn't rely on quoting. Moreover, it will execute the rm command even if your defined rm as a function.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Why not use
-                                                        </p>
-              <code>command ...</code>
-              <p>
-                                                                or
-                                                        </p>
-              <code>builtin ...</code>
-              <p>
-                                                                ... to make the selection with Bash? This also circumvents aliases and is safe for use in scripts.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Many distributions insist on 'rm -i' only as a root, and it's done for a good reason
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        This is particularly useful for 'rm', which many distributions insist on aliasing to 'rm -i' (ignoring the bad habits that this inculcates).
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        I usually type in the full path to the command to make sure I'm using both the unaliased command and also to make sure I'm not launching something out of /usr/local/bin/. Using full paths to commands is also a good habit for any scripts that may run with elevated privileges.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        NOTE: Any type of quoting will work: backslash, single quote, double quote.
+                                                </p>
+                                                <p>
+                                                        The Bash Reference Manual says "The first word of each simple command, if unquoted, is checked to see if it has an alias."
+                                                </p>
+                                                <p>
+                                                        Thus, these will all execute the real unaliased rm command:
+                                                </p><code>\rm file</code> <code>'r'm file</code> <code>"r"m file</code> <code>'rm' file</code> <code>"rm" file</code> <code>command rm file</code>
+                                                <p>
+                                                        The last example doesn't rely on quoting. Moreover, it will execute the rm command even if your defined rm as a function.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Why not use
+                                                </p><code>command ...</code>
+                                                <p>
+                                                        or
+                                                </p><code>builtin ...</code>
+                                                <p>
+                                                        ... to make the selection with Bash? This also circumvents aliases and is safe for use in scripts.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Many distributions insist on 'rm -i' only as a root, and it's done for a good reason
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

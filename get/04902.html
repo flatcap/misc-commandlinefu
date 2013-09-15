@@ -1,62 +1,51 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Restrict the bandwidth for the SCP command
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        scp -l10 pippo@serverciccio:/home/zutaniddu/* .
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                scp -l10 pippo@serverciccio:/home/zutaniddu/* .
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Restrict the bandwidth for the SCP command
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Restrict the bandwidth for the SCP command
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        the command is obvious, I know, but maybe not everyone knows that using the parameter "-l" you can limit the use of bandwidth command scp.
-                                                                </p>
-                <p>
-                                                                        In this example fetch all files from the directory zutaniddu and I copy them locally using only 10 Kbs
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                the command is obvious, I know, but maybe not everyone knows that using the parameter "-l" you can limit the use of bandwidth command scp.
+                                                        </p>
+                                                        <p>
+                                                                In this example fetch all files from the directory zutaniddu and I copy them locally using only 10 Kbs
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        this didnt work on backtrack R1 OS
-                                                </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                this didnt work on backtrack R1 OS
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

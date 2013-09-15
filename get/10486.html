@@ -1,226 +1,207 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Execute a command with a timeout
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        timeout -k 1m 30s some_command
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                timeout -k 1m 30s some_command
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Execute a command with a timeout
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Execute a command with a timeout
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        A timeout is great, but what if the command is taking longer than expected because it's hung up or ran into some other problem? That's where the -k option comes in. Run "some_command" and timeout after 30s. If the command is still running after 1 minute, it will receive a kill signal.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                A timeout is great, but what if the command is taking longer than expected because it's hung up or ran into some other problem? That's where the -k option comes in. Run "some_command" and timeout after 30s. If the command is still running after 1 minute, it will receive a kill signal.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         timeout 5s COMMAND
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9721/start-command-and-kill-it-if-still-running-after-5-seconds">Start COMMAND, and kill it if still running after 5 seconds</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9721/start-command-and-kill-it-if-still-running-after-5-seconds">Start COMMAND, and kill it if still running after 5 seconds</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         timeout 10 sleep 11
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3592/execute-a-command-with-a-timeout">Execute a command with a timeout</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3592/execute-a-command-with-a-timeout">Execute a command with a timeout</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         very_long_command&amp; sleep 10; kill $!
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/5488/run-a-command-for-a-given-time">Run a command for a given time</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/5488/run-a-command-for-a-given-time">Run a command for a given time</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         or "Execute a command with a timeout"
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Run a command in background, sleep 10 seconds, kill it.
-                                                                </p>
-                <code>! is the process id of the most recently executed background command.</code>
-                <p>
+                                                                </p><code>! is the process id of the most recently executed background command.</code>
+                                                                <p>
                                                                         You can test it with:
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         find /&amp; sleep10; kill $!
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         perl -e "alarm 10; exec @ARGV" "somecommand"
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 $ perl -e "alarm 10; exec @ARGV" "sleep 2; echo Hello"
 Hello
 $ perl -e "alarm 10; exec @ARGV" "sleep 20; echo Hello"
 Alarm clock
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3583/execute-a-command-with-a-timeout">Execute a command with a timeout</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3583/execute-a-command-with-a-timeout">Execute a command with a timeout</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         In this example the command "somecommand" will be executed and sent a SIGALARM signal if it runs for more than 10 seconds. It uses the perl alarm function. It's not 100% accurate on timing, but close enough. I found this really useful when executing scripts and commands that I knew might hang E.g. ones that connect to services that might not be running. Importantly this can be used within a sequential script. The command will not release control until either the command completes or the timeout is hit.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         $COMMAND 2&gt;&amp;1 &gt;/dev/null &amp; WPID=$!; sleep $TIMEOUT &amp;&amp; kill $! &amp; KPID=$!; wait $WPID
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/5686/execute-a-command-with-a-timeout">Execute a command with a timeout</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/5686/execute-a-command-with-a-timeout">Execute a command with a timeout</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         I like much more the perl solution, but without using perl. It launches a backgroup process that will kill the command if it lasts too much.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         A bigger function:
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         check_with_timeout() {
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         [ "$DEBUG" ] &amp;&amp; set -x
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         COMMAND=$1
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         TIMEOUT=$2
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         RET=0
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         # Launch command in backgroup
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         [ ! "$DEBUG" ] &amp;&amp; exec 6&gt;&amp;2 # Link file descriptor #6 with stderr.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         [ ! "$DEBUG" ] &amp;&amp; exec 2&gt; /dev/null # Send stderr to null (avoid the Terminated messages)
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         $COMMAND 2&gt;&amp;1 &gt;/dev/null &amp;
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         COMMAND_PID=$!
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         [ "$DEBUG" ] &amp;&amp; echo "Background command pid $COMMAND_PID, parent pid $$"
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         # Timer that will kill the command if timesout
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         sleep $TIMEOUT &amp;&amp; ps -p $COMMAND_PID -o pid,ppid |grep $$ | awk '{print $1}' | xargs kill &amp;
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         KILLER_PID=$!
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         [ "$DEBUG" ] &amp;&amp; echo "Killer command pid $KILLER_PID, parent pid $$"
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         wait $COMMAND_PID
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         RET=$?
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         # Kill the killer timer
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         [ "$DEBUG" ] &amp;&amp; ps -e -o pid,ppid |grep $KILLER_PID | awk '{print $1}' | xargs echo "Killing processes: "
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         ps -e -o pid,ppid |grep -v PID | grep $KILLER_PID | awk '{print $1}' | xargs kill
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         wait
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         sleep 1
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         [ ! "$DEBUG" ] &amp;&amp; exec 2&gt;&amp;6 6&gt;&amp;- # Restore stderr and close file descriptor #6.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         return $RET
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         }
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

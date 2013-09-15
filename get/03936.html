@@ -1,150 +1,127 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Go up multiple levels of directories quickly and easily.
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        cd() { if [[ "$1" =~ ^\.\.+$ ]];then local a dir;a=${#1};while [ $a -ne 1 ];do dir=${dir}"../";((a--));done;builtin cd $dir;else builtin cd "$@";fi ;}
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                cd() { if [[ "$1" =~ ^\.\.+$ ]];then local a dir;a=${#1};while [ $a -ne 1 ];do dir=${dir}"../";((a--));done;builtin cd $dir;else builtin cd "$@";fi ;}
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Go up multiple levels of directories quickly and easily.
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Go up multiple levels of directories quickly and easily.
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        This is a kind of wrapper around the shell builtin cd that allows a person to quickly go up several directories.
-                                                                </p>
-                <p>
-                                                                        Instead of typing:
-                                                                </p>
-                <p>
-                                                                        cd ../..
-                                                                </p>
-                <p>
-                                                                        A user can type:
-                                                                </p>
-                <p>
-                                                                        cd ...
-                                                                </p>
-                <p>
-                                                                        Instead of:
-                                                                </p>
-                <p>
-                                                                        cd ../../..
-                                                                </p>
-                <p>
-                                                                        Type:
-                                                                </p>
-                <p>
-                                                                        cd ....
-                                                                </p>
-                <p>
-                                                                        Add another period and it goes up four levels. Adding more periods will take you up more levels.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                This is a kind of wrapper around the shell builtin cd that allows a person to quickly go up several directories.
+                                                        </p>
+                                                        <p>
+                                                                Instead of typing:
+                                                        </p>
+                                                        <p>
+                                                                cd ../..
+                                                        </p>
+                                                        <p>
+                                                                A user can type:
+                                                        </p>
+                                                        <p>
+                                                                cd ...
+                                                        </p>
+                                                        <p>
+                                                                Instead of:
+                                                        </p>
+                                                        <p>
+                                                                cd ../../..
+                                                        </p>
+                                                        <p>
+                                                                Type:
+                                                        </p>
+                                                        <p>
+                                                                cd ....
+                                                        </p>
+                                                        <p>
+                                                                Add another period and it goes up four levels. Adding more periods will take you up more levels.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         alias ..="cd .."; alias ...="cd ../.."; alias ....="cd ../../.."
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3938/go-up-multiple-levels-of-directories-quickly-and-easily.">Go up multiple levels of directories quickly and easily.</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3938/go-up-multiple-levels-of-directories-quickly-and-easily.">Go up multiple levels of directories quickly and easily.</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Change to your taste. Much quicker than having to add 'cd' every time. Add it to your .bashrc or .bash_profile.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         alias ..="cd .." ...="cd ../.." ....="cd ../../.."
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3967/go-up-multiple-levels-of-directories-quickly-and-easily.">Go up multiple levels of directories quickly and easily.</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3967/go-up-multiple-levels-of-directories-quickly-and-easily.">Go up multiple levels of directories quickly and easily.</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                By using sed, I can reduce your function by 52 characters and extend it to any number of dots!
-                                                        </p>
-              <code>function cd() { if [[ "$1" =~ "^\.\.+$" ]];then builtin cd "$(echo $1 | sed -e 's/\.//' -e 's/\./..\//g')";else builtin cd "$@";fi }</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                flatcap, I had in mind something like that although your version doesn't seem to work for me on Bash 4.0.33.
-                                                        </p>
-              <p>
-                                                                I also have some reservations about using external programs for a shell builtin, so I came up with this test function that converts dots into the requisite number of "../"s.
-                                                        </p>
-              <code>test() { local a dir;a=${#1};while [ $a -ne 1 ];do dir=${dir}"../";((a--));done; echo $dir;}</code>
-              <p>
-                                                                It would be easy enough to incorporate if I could get that test condition to match correctly.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                I managed to get that test to work. I had to unquote the regular expression. Here's the new command that doesn't use any external programs:
-                                                        </p>
-              <code>cd() { if [[ "$1" =~ ^\.\.+$ ]];then local a dir;a=${#1};while [ $a -ne 1 ];do dir=${dir}"../";((a--));done;builtin cd $dir;else builtin cd "$@";fi ;}</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Nice!
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        By using sed, I can reduce your function by 52 characters and extend it to any number of dots!
+                                                </p><code>function cd() { if [[ "$1" =~ "^\.\.+$" ]];then builtin cd "$(echo $1 | sed -e 's/\.//' -e 's/\./..\//g')";else builtin cd "$@";fi }</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        flatcap, I had in mind something like that although your version doesn't seem to work for me on Bash 4.0.33.
+                                                </p>
+                                                <p>
+                                                        I also have some reservations about using external programs for a shell builtin, so I came up with this test function that converts dots into the requisite number of "../"s.
+                                                </p><code>test() { local a dir;a=${#1};while [ $a -ne 1 ];do dir=${dir}"../";((a--));done; echo $dir;}</code>
+                                                <p>
+                                                        It would be easy enough to incorporate if I could get that test condition to match correctly.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        I managed to get that test to work. I had to unquote the regular expression. Here's the new command that doesn't use any external programs:
+                                                </p><code>cd() { if [[ "$1" =~ ^\.\.+$ ]];then local a dir;a=${#1};while [ $a -ne 1 ];do dir=${dir}"../";((a--));done;builtin cd $dir;else builtin cd "$@";fi ;}</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Nice!
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

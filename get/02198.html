@@ -1,52 +1,43 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Go to the previous sibling directory in alphabetical order
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        cd ../"$(ls -F ..|grep '/'|grep -B1 `basename $PWD`|head -n 1)"
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                cd ../"$(ls -F ..|grep '/'|grep -B1 `basename $PWD`|head -n 1)"
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Go to the previous sibling directory in alphabetical order
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Go to the previous sibling directory in alphabetical order
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Based on linkinpark342 suggestion.
-                                                                </p>
-                <p>
-                                                                        Sometimes you have to browse your way through a lot of sub-directories. This command cd to the previous sub-directory in alphabetical order. For example, if you have the directories "lectures/01-intro", "lectures/02-basic", "lectures/03-advanced" and so on, and your PWD is "02-basic", it jumps to "01-intro".
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Based on linkinpark342 suggestion.
+                                                        </p>
+                                                        <p>
+                                                                Sometimes you have to browse your way through a lot of sub-directories. This command cd to the previous sub-directory in alphabetical order. For example, if you have the directories "lectures/01-intro", "lectures/02-basic", "lectures/03-advanced" and so on, and your PWD is "02-basic", it jumps to "01-intro".
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

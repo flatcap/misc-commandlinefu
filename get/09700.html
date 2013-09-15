@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 sort the contents of a text file in place.
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        sort -g list.txt -o $_
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                sort -g list.txt -o $_
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 Ape
 apple
 Apple
@@ -34,62 +32,47 @@ Tape
 1
 
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                sort the contents of a text file in place.
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        sorts the contents of a file without the need for a second file to take the sorted output.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        sort the contents of a text file in place.
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                sorts the contents of a file without the need for a second file to take the sorted output.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                The $_ shell variable expands to the last argument to the previous command. You could use brace expansion, like this:
-                                                        </p>
-              <code>sort -g -o list.txt{,}</code>
-              <p>
-                                                                or history expansion, like this:
-                                                        </p>
-              <code>sort -g -o list.txt !#:$</code>
-              <p>
-                                                                or
-                                                        </p>
-              <code>sort -g list.txt -o !#:2</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Since "$_" expands to the last argument of the previous command, it will fail if list.txt is not referenced previously
-                                                        </p>
-              <p>
-                                                                A better approach is to use history reference "!^" to the first argument (non-option) of the current command:
-                                                        </p>
-              <code>sort -g list.txt -o !^</code>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        The $_ shell variable expands to the last argument to the previous command. You could use brace expansion, like this:
+                                                </p><code>sort -g -o list.txt{,}</code>
+                                                <p>
+                                                        or history expansion, like this:
+                                                </p><code>sort -g -o list.txt !#:$</code>
+                                                <p>
+                                                        or
+                                                </p><code>sort -g list.txt -o !#:2</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Since "$_" expands to the last argument of the previous command, it will fail if list.txt is not referenced previously
+                                                </p>
+                                                <p>
+                                                        A better approach is to use history reference "!^" to the first argument (non-option) of the current command:
+                                                </p><code>sort -g list.txt -o !^</code>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

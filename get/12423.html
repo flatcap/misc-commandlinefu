@@ -1,92 +1,76 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Recursively add directories to $PATH
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        PATH="${PATH}:$(find ${HOME}/bin -type d | tr '\n' ':' | sed 's/:$//')"
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                PATH="${PATH}:$(find ${HOME}/bin -type d | tr '\n' ':' | sed 's/:$//')"
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Recursively add directories to $PATH
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Recursively add directories to $PATH
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Many users have a personal ~/bin folder for user scripts and other miscellaneous applications they can't or don't want to add to /usr/bin. But this folder can get large and unwieldy. The above command adds ~/bin and all its subdirectories to the PATH environment variable so the scripts can be organized without changing .bashrc.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Many users have a personal ~/bin folder for user scripts and other miscellaneous applications they can't or don't want to add to /usr/bin. But this folder can get large and unwieldy. The above command adds ~/bin and all its subdirectories to the PATH environment variable so the scripts can be organized without changing .bashrc.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                You can simplify the tr and sed by using paste instead:
-                                                        </p>
-              <code>... | paste -s -d:</code>
-              <p>
-                                                                Join the lines serially (-s) and use a colon delimiter (-d:)
-                                                        </p>
-              <code>PATH="${PATH}:$(find ${HOME}/bin -type d | paste -s -d:)"</code>
-              <p>
-                                                                You don't *need* the {}s around the env vars, either.
-                                                        </p>
-              <code>PATH="$PATH:$(find $HOME/bin -type d | paste -s -d:)"</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Wonderful.
-                                                        </p>
-              <p>
-                                                                Share a website with you ,
-                                                        </p>
-              <p>
-                                                                ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
-                                                        </p>
-              <p>
-                                                                Believe you will love it.
-                                                        </p>
-              <p>
-                                                                We accept any form of payment.
-                                                        </p>
-              <p>
-                <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        You can simplify the tr and sed by using paste instead:
+                                                </p><code>... | paste -s -d:</code>
+                                                <p>
+                                                        Join the lines serially (-s) and use a colon delimiter (-d:)
+                                                </p><code>PATH="${PATH}:$(find ${HOME}/bin -type d | paste -s -d:)"</code>
+                                                <p>
+                                                        You don't *need* the {}s around the env vars, either.
+                                                </p><code>PATH="$PATH:$(find $HOME/bin -type d | paste -s -d:)"</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Wonderful.
+                                                </p>
+                                                <p>
+                                                        Share a website with you ,
+                                                </p>
+                                                <p>
+                                                        ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
+                                                </p>
+                                                <p>
+                                                        Believe you will love it.
+                                                </p>
+                                                <p>
+                                                        We accept any form of payment.
+                                                </p>
+                                                <p>
+                                                        <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

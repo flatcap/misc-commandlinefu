@@ -1,64 +1,53 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Find ulimit values of currently running process
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        cat /proc/PID/limits
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                cat /proc/PID/limits
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 Limit                     Soft Limit           Hard Limit           Units
 ...
 Max processes             20000                20000                processes
 Max open files            100000               100000               files
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Find ulimit values of currently running process
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        When dealing with system resource limits like max number of processes and open files per user, it can be hard to tell exactly what's happening. The /etc/security/limits.conf file defines the ceiling for the values, but not what they currently are, while
-                                                                </p>
-                <code>ulimit -a</code>
-                <p>
-                                                                        will show you the current values for your shell, and you can set them for new logins in /etc/profile and/or ~/.bashrc with a command like:
-                                                                </p>
-                <code>ulimit -S -n 100000 &gt;/dev/null 2&gt;&amp;1</code>
-                <p>
-                                                                        But with the variability in when those files get read (login vs any shell startup, interactive vs non-interactive) it can be difficult to know for sure what values apply to processes that are currently running, like database or app servers. Just find the PID via "ps aux | grep programname", then look at that PID's "limits" file in /proc. Then you'll know for sure what actually applies to that process.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Find ulimit values of currently running process
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                When dealing with system resource limits like max number of processes and open files per user, it can be hard to tell exactly what's happening. The /etc/security/limits.conf file defines the ceiling for the values, but not what they currently are, while
+                                                        </p><code>ulimit -a</code>
+                                                        <p>
+                                                                will show you the current values for your shell, and you can set them for new logins in /etc/profile and/or ~/.bashrc with a command like:
+                                                        </p><code>ulimit -S -n 100000 &gt;/dev/null 2&gt;&amp;1</code>
+                                                        <p>
+                                                                But with the variability in when those files get read (login vs any shell startup, interactive vs non-interactive) it can be difficult to know for sure what values apply to processes that are currently running, like database or app servers. Just find the PID via "ps aux | grep programname", then look at that PID's "limits" file in /proc. Then you'll know for sure what actually applies to that process.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

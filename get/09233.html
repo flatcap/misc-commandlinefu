@@ -1,157 +1,135 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Capitalize first letter of each word in a string
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        read -ra words &lt;&lt;&lt; "<span>&lt;sentence&gt;</span>" &amp;&amp; echo "${words[@]^}"
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                read -ra words &lt;&lt;&lt; "<span>&lt;sentence&gt;</span>" &amp;&amp; echo "${words[@]^}"
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 read -ra words &lt;&lt;&lt; "one two three" &amp;&amp; echo "${words[@]^}"
 One Two Three
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Capitalize first letter of each word in a string
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        I find it useless but definitely simpler than #9230
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Capitalize first letter of each word in a string
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                I find it useless but definitely simpler than #9230
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         command &lt;&lt;&lt; word
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10333/this-is-how-you-should-push-a-string-in-a-commands-stdin.">This is how you should push a string in a command's stdin.</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10333/this-is-how-you-should-push-a-string-in-a-commands-stdin.">This is how you should push a string in a command's stdin.</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Don't do this:
-                                                                </p>
-                <code>echo word | command</code>
-                <p>
+                                                                </p><code>echo word | command</code>
+                                                                <p>
                                                                         Using a bash "here strings" and "here documents" look leeter than piping echo into the command. Also prevents subshell execution. Word is also expanded as usual.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         echo 'fOo BaR' | tr '[A-Z]' '[a-z]' | sed 's/\(^\| \)\([a-z]\)/\1\u\2/g'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 Foo Bar
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9230/capitalize-first-letter-of-each-word-in-a-string">Capitalize first letter of each word in a string</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9230/capitalize-first-letter-of-each-word-in-a-string">Capitalize first letter of each word in a string</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Capitalize first letter of each word in a string.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ruby -ne 'puts $_.split.collect(&amp;:capitalize).join(" ")' &lt;&lt;&lt; "pleAse cOuld YOu capiTalizE Me"
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9273/capitalize-first-letter-of-each-word-in-a-string-a-ruby-alternative">Capitalize first letter of each word in a string - A ruby alternative</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9273/capitalize-first-letter-of-each-word-in-a-string-a-ruby-alternative">Capitalize first letter of each word in a string - A ruby alternative</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         "-n" loops around ; "-e" executes the given quoted string ; "$_" is the current line ; "split" creates an array on white space; each item of the array is "collected" to be then "capitalized" ; the array is "joined" back into a string.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         echo 'fOo BaR' | ruby -e "p STDIN.gets.split.map(&amp;:capitalize).join(' ')"
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9234/capitalize-first-letter-of-each-word-in-a-string">Capitalize first letter of each word in a string</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9234/capitalize-first-letter-of-each-word-in-a-string">Capitalize first letter of each word in a string</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Ruby ftw
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                I get
-                                                        </p>
-              <code>sh: Syntax error: redirection unexpected</code>
-              <p>
-                                                                when I try this command.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                9230 and 9232 make the first letter of each word capital AND the subsequent letters lower case. Your alternative leaves the subsequent letters capital. In other words theirs converts 'fOo baR' to 'Foo Bar' and yours converts to 'FOo BaR'.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        I get
+                                                </p><code>sh: Syntax error: redirection unexpected</code>
+                                                <p>
+                                                        when I try this command.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        9230 and 9232 make the first letter of each word capital AND the subsequent letters lower case. Your alternative leaves the subsequent letters capital. In other words theirs converts 'fOo baR' to 'Foo Bar' and yours converts to 'FOo BaR'.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

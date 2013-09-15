@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 View all file operator expressions for any file, test, stat
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        testt(){ o=abcdefghLkprsStuwxOGN;echo $@;for((i=0;i&lt;${#o};i++));do c=${o:$i:1};test -$c $1 &amp;&amp; help test | sed "/^ *-$c/!d;1q;s/^[^T]*/-$c /;s/ if/ -/";done; }
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                testt(){ o=abcdefghLkprsStuwxOGN;echo $@;for((i=0;i&lt;${#o};i++));do c=${o:$i:1};test -$c $1 &amp;&amp; help test | sed "/^ *-$c/!d;1q;s/^[^T]*/-$c /;s/ if/ -/";done; }
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 $ testt /dev/pts/3
 /dev/pts/3
 -a True - file exists.
@@ -47,131 +45,119 @@ $ testt /home/askapache/.sq
 
 
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                View all file operator expressions for any file, test, stat
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Applies each file operator using the built-in test.
-                                                                </p>
-                <code>testt /home/askapache/.sq</code>
-                <p>
-                                                                        /home/askapache/.sq
-                                                                </p>
-                <p>
-                                                                        -a True - file exists.
-                                                                </p>
-                <p>
-                                                                        -d True - file is a directory.
-                                                                </p>
-                <p>
-                                                                        -e True - file exists.
-                                                                </p>
-                <p>
-                                                                        -r True - file is readable by you.
-                                                                </p>
-                <p>
-                                                                        -s True - file exists and is not empty.
-                                                                </p>
-                <p>
-                                                                        -w True - the file is writable by you.
-                                                                </p>
-                <p>
-                                                                        -x True - the file is executable by you.
-                                                                </p>
-                <p>
-                                                                        -O True - the file is effectively owned by you.
-                                                                </p>
-                <p>
-                                                                        -G True - the file is effectively owned by your group.
-                                                                </p>
-                <p>
-                                                                        -N True - the file has been modified since it was last read.
-                                                                </p>
-                <p>
-                                                                        Full Function:
-                                                                </p>
-                <p>
-                                                                        testt ()
-                                                                </p>
-                <p>
-                                                                        {
-                                                                </p>
-                <p>
-                                                                        local dp;
-                                                                </p>
-                <p>
-                                                                        until [ -z "${1:-}" ]; do
-                                                                </p>
-                <p>
-                                                                        dp="$1";
-                                                                </p>
-                <p>
-                                                                        [[ ! -a "$1" ]] &amp;&amp; dp="$PWD/$dp";
-                                                                </p>
-                <p>
-                                                                        command ls -w $((${COLUMNS:-80}-20)) -lA --color=tty -d "$dp";
-                                                                </p>
-                <p>
-                                                                        [[ -d "$dp" ]] &amp;&amp; find "$dp" -mount -depth -wholename "$dp" -printf '%.5m %10M %#15s %#9u %-9g %#5U %-5G %Am/%Ad/%AY %Cm/%Cd/%CY %Tm/%Td/%TY [%Y] %p\n' -a -quit 2&gt; /dev/null;
-                                                                </p>
-                <p>
-                                                                        for f in a b c d e f g h L k p r s S t u w x O G N;
-                                                                </p>
-                <p>
-                                                                        do
-                                                                </p>
-                <p>
-                                                                        test -$f "$dp" &amp;&amp; help test | sed "/-$f F/!d" | sed -e 's#^[\t ]*-\([a-zA-Z]\{1\}\) F[A-Z]*[\t ]* True if#-\1 "'$dp'" #g';
-                                                                </p>
-                <p>
-                                                                        done;
-                                                                </p>
-                <p>
-                                                                        shift;
-                                                                </p>
-                <p>
-                                                                        done
-                                                                </p>
-                <p>
-                                                                        }
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        View all file operator expressions for any file, test, stat
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Applies each file operator using the built-in test.
+                                                        </p><code>testt /home/askapache/.sq</code>
+                                                        <p>
+                                                                /home/askapache/.sq
+                                                        </p>
+                                                        <p>
+                                                                -a True - file exists.
+                                                        </p>
+                                                        <p>
+                                                                -d True - file is a directory.
+                                                        </p>
+                                                        <p>
+                                                                -e True - file exists.
+                                                        </p>
+                                                        <p>
+                                                                -r True - file is readable by you.
+                                                        </p>
+                                                        <p>
+                                                                -s True - file exists and is not empty.
+                                                        </p>
+                                                        <p>
+                                                                -w True - the file is writable by you.
+                                                        </p>
+                                                        <p>
+                                                                -x True - the file is executable by you.
+                                                        </p>
+                                                        <p>
+                                                                -O True - the file is effectively owned by you.
+                                                        </p>
+                                                        <p>
+                                                                -G True - the file is effectively owned by your group.
+                                                        </p>
+                                                        <p>
+                                                                -N True - the file has been modified since it was last read.
+                                                        </p>
+                                                        <p>
+                                                                Full Function:
+                                                        </p>
+                                                        <p>
+                                                                testt ()
+                                                        </p>
+                                                        <p>
+                                                                {
+                                                        </p>
+                                                        <p>
+                                                                local dp;
+                                                        </p>
+                                                        <p>
+                                                                until [ -z "${1:-}" ]; do
+                                                        </p>
+                                                        <p>
+                                                                dp="$1";
+                                                        </p>
+                                                        <p>
+                                                                [[ ! -a "$1" ]] &amp;&amp; dp="$PWD/$dp";
+                                                        </p>
+                                                        <p>
+                                                                command ls -w $((${COLUMNS:-80}-20)) -lA --color=tty -d "$dp";
+                                                        </p>
+                                                        <p>
+                                                                [[ -d "$dp" ]] &amp;&amp; find "$dp" -mount -depth -wholename "$dp" -printf '%.5m %10M %#15s %#9u %-9g %#5U %-5G %Am/%Ad/%AY %Cm/%Cd/%CY %Tm/%Td/%TY [%Y] %p\n' -a -quit 2&gt; /dev/null;
+                                                        </p>
+                                                        <p>
+                                                                for f in a b c d e f g h L k p r s S t u w x O G N;
+                                                        </p>
+                                                        <p>
+                                                                do
+                                                        </p>
+                                                        <p>
+                                                                test -$f "$dp" &amp;&amp; help test | sed "/-$f F/!d" | sed -e 's#^[\t ]*-\([a-zA-Z]\{1\}\) F[A-Z]*[\t ]* True if#-\1 "'$dp'" #g';
+                                                        </p>
+                                                        <p>
+                                                                done;
+                                                        </p>
+                                                        <p>
+                                                                shift;
+                                                        </p>
+                                                        <p>
+                                                                done
+                                                        </p>
+                                                        <p>
+                                                                }
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Very nice. I especially like the way you extracted the options from a string.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Thanks flatcap.. still it seems no matter what command I add I can't break 1 vote. This function is commandlinefu!
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Very nice. I especially like the way you extracted the options from a string.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Thanks flatcap.. still it seems no matter what command I add I can't break 1 vote. This function is commandlinefu!
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

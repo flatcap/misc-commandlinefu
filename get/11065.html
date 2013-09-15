@@ -1,71 +1,58 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Limit the transfer rate and size of data over a pipe
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        cat /dev/urandom | pv -L 3m | dd bs=1M count=100 iflag=fullblock &gt; /dev/null
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                cat /dev/urandom | pv -L 3m | dd bs=1M count=100 iflag=fullblock &gt; /dev/null
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Limit the transfer rate and size of data over a pipe
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Limit the transfer rate and size of data over a pipe
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        This example will close the pipe after transferring 100MB at a speed of 3MB per second.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                This example will close the pipe after transferring 100MB at a speed of 3MB per second.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                'pv' is the 'pipe viewer' written by Andrew Wood (<a href="http://www.ivarch.com/programs/pv.shtml)" rel="nofollow">http://www.ivarch.com/programs/pv.shtml)</a> and not the 'phase vocoder' fromt the WAON project included with older Debian and Fedora repositories.
-                                                        </p>
-              <p>
-                                                                For file transfers over TCP/IP, I prefer to use 'rsync' with '--bwlimit'
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                pv is more generic than rsync and easier to use.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        'pv' is the 'pipe viewer' written by Andrew Wood (<a href="http://www.ivarch.com/programs/pv.shtml)" rel="nofollow">http://www.ivarch.com/programs/pv.shtml)</a> and not the 'phase vocoder' fromt the WAON project included with older Debian and Fedora repositories.
+                                                </p>
+                                                <p>
+                                                        For file transfers over TCP/IP, I prefer to use 'rsync' with '--bwlimit'
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        pv is more generic than rsync and easier to use.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

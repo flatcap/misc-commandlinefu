@@ -1,88 +1,76 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Discover the process start time
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        ps -eo pid,lstart,cmd
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                ps -eo pid,lstart,cmd
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 [root@server ~]# ps -ef | grep [2]8144
 root     28144     1  0 Jun16 ?        00:00:00 /opt/omni/lbin/bsm -session_key 25 -owner root root server 28142 4294967295 -lang C -read SmOptions_28142_server_615
 [root@server ~]# ps -eo pid,lstart,cmd | grep [2]8144
 28144 Sun Jun 16 23:00:01 2013 /opt/omni/lbin/bsm -session_key 25 -owner root root server 28142 4294967295 -lang C -read SmOptions_28142_server_615
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Discover the process start time
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        That is useful to discover the start time of process older than 1 day.
-                                                                </p>
-                <p>
-                                                                        You can also run:
-                                                                </p>
-                <code>ls -ld /proc/PID</code>
-                <p>
-                                                                        That's returning the creation date of the proc files from the process. Some users reported that this way might show you a wrong date since any other process like cron, for example, could change this date.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Discover the process start time
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                That is useful to discover the start time of process older than 1 day.
+                                                        </p>
+                                                        <p>
+                                                                You can also run:
+                                                        </p><code>ls -ld /proc/PID</code>
+                                                        <p>
+                                                                That's returning the creation date of the proc files from the process. Some users reported that this way might show you a wrong date since any other process like cron, for example, could change this date.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        Wonderful.
-                                                </p>
-            <p>
-                                                        Share a website with you ,
-                                                </p>
-            <p>
-                                                        ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
-                                                </p>
-            <p>
-                                                        Believe you will love it.
-                                                </p>
-            <p>
-                                                        We accept any form of payment.
-                                                </p>
-            <p>
-              <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                Wonderful.
+                                        </p>
+                                        <p>
+                                                Share a website with you ,
+                                        </p>
+                                        <p>
+                                                ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
+                                        </p>
+                                        <p>
+                                                Believe you will love it.
+                                        </p>
+                                        <p>
+                                                We accept any form of payment.
+                                        </p>
+                                        <p>
+                                                <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

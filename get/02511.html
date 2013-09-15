@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Find removed files still in use via /proc
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        find -L /proc/*/fd -links 0 2&gt;/dev/null
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                find -L /proc/*/fd -links 0 2&gt;/dev/null
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 $ dd if=/dev/zero of=bigfile bs=1M count=3000
 $ ls -lh bigfile
 -rw-r--r-- 1 u4x6691 unixadm 3.0G Jun 26 14:39 bigfile
@@ -38,84 +36,68 @@ $ find -L /proc/*/fd -type f -links 0 2&gt;/dev/null
 $ ls -l /proc/2035/fd/3
 lr-x------ 1 u4x6691 unixadm 64 Jun 26 14:42 /proc/2035/fd/3 -&gt; /tmp/bigfile (deleted)
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Find removed files still in use via /proc
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Oracle DBA remove some logfiles which are still open by the database and he is complaining the space has not been reclaimed? Use the above command to find out what PID needs to be stopped. Or alternatively recover the file via:
-                                                                </p>
-                <code>cp /proc/pid/fd/filehandle /new/file.txt</code>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Find removed files still in use via /proc
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Oracle DBA remove some logfiles which are still open by the database and he is complaining the space has not been reclaimed? Use the above command to find out what PID needs to be stopped. Or alternatively recover the file via:
+                                                        </p><code>cp /proc/pid/fd/filehandle /new/file.txt</code>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
-                                                        ls -l /proc/*/fd/* | grep 'deleted'| grep "\/proc.*\file-name-part"
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                <div class="terminal-display one-liner">
+                                        <div class="line command">
+                                                ls -l /proc/*/fd/* | grep 'deleted'| grep "\/proc.*\file-name-part"
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 to@tolaptop:~$ ls -l /proc/*/fd/* | grep 'deleted'| grep "\/proc.*\.mp3"
 
 lr-x------ 1 totti root 64 2012-09-13 14:24 /proc/3275/fd/27 -&gt; /home/to/Downloads/07. AAA.mp3.part (deleted)
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11268/find-removed-files-still-in-use-via-proc">Find removed files still in use via /proc</a>
-              </div>
-              <div class="description">
-                <p>
-                                                                        Accidentally deleted some file while used by a program ? (Eg: a song)
-                                                                </p>
-                <p>
-                                                                        Use this command to find the file handle and recover using
-                                                                </p>
-                <code>cp /proc/pid/fd/filehandle /new/recoverd-file.ext</code>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        <a href="/commands/view/11268/find-removed-files-still-in-use-via-proc">Find removed files still in use via /proc</a>
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Accidentally deleted some file while used by a program ? (Eg: a song)
+                                                        </p>
+                                                        <p>
+                                                                Use this command to find the file handle and recover using
+                                                        </p><code>cp /proc/pid/fd/filehandle /new/recoverd-file.ext</code>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                This will also work with:
-                                                        </p>
-              <p>
-                                                                # lsof | grep deleted
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                lsof is more efficient for finding files open files.
-                                                        </p>
-              <p>
-                                                                But for quickly finding files that can be "undeleted", i.e. that are opened, so their content is recoverable, this command is great. Thumbs up.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        This will also work with:
+                                                </p>
+                                                <p>
+                                                        # lsof | grep deleted
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        lsof is more efficient for finding files open files.
+                                                </p>
+                                                <p>
+                                                        But for quickly finding files that can be "undeleted", i.e. that are opened, so their content is recoverable, this command is great. Thumbs up.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

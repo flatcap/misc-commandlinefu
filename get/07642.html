@@ -1,58 +1,49 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 View any already in progress copy command in detail
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        sudo lsof -p1234 | grep -E "(3r|4w).*REG"
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                sudo lsof -p1234 | grep -E "(3r|4w).*REG"
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        View any already in progress copy command in detail
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                View any already in progress copy command in detail
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        If you spot a dubious looking cp command running you can use this command to view what is being copied and to where.
-                                                                </p>
-                <p>
-                                                                        1234 is the PID of the cp command being passed to the lsof utility.
-                                                                </p>
-                <p>
-                                                                        3r.*REG will display the file/directory that is being read/copied.
-                                                                </p>
-                <p>
-                                                                        4w.*REG will display the destination it is being written to.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                If you spot a dubious looking cp command running you can use this command to view what is being copied and to where.
+                                                        </p>
+                                                        <p>
+                                                                1234 is the PID of the cp command being passed to the lsof utility.
+                                                        </p>
+                                                        <p>
+                                                                3r.*REG will display the file/directory that is being read/copied.
+                                                        </p>
+                                                        <p>
+                                                                4w.*REG will display the destination it is being written to.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

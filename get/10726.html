@@ -1,114 +1,99 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Get the date for the last Saturday of a given month
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        cal 04 2012 | awk '{ $7 &amp;&amp; X=$7 } END { print X }'
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                cal 04 2012 | awk '{ $7 &amp;&amp; X=$7 } END { print X }'
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 28
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Get the date for the last Saturday of a given month
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        If your locale has Monday as the first day of the week, like mine in the UK, change the two $7 into $6
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Get the date for the last Saturday of a given month
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                If your locale has Monday as the first day of the week, like mine in the UK, change the two $7 into $6
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         desiredDay=6; year=2012; month=5; n=0; while [ $(date -d "$year-$((month+1))-1 - $n day" "+%u") -ne $desiredDay ]; do n=$((n+1)); done; date -d "$year-$((month+1))-1 - $n day" "+%x"
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 05/26/2012
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10759/get-the-date-for-the-last-saturday-of-a-given-month">Get the date for the last Saturday of a given month</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10759/get-the-date-for-the-last-saturday-of-a-given-month">Get the date for the last Saturday of a given month</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Choosing your year and month. You only need the gnu date command and bash. desiredDay of the week is (1..7); 1 is Monday.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         If you want desiredDay of week (0..6); 0 is Sunday
-                                                                </p>
-                <code>desiredDay=6; year=2012; month=5; n=0; while [ $(date -d "$year-$((month+1))-1 - $n day" "+%w") -ne $desiredDay ]; do n=$((n+1)); done; date -d "$year-$((month+1))-1 - $n day" "+%x"</code>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                                </p><code>desiredDay=6; year=2012; month=5; n=0; while [ $(date -d "$year-$((month+1))-1 - $n day" "+%w") -ne $desiredDay ]; do n=$((n+1)); done; date -d "$year-$((month+1))-1 - $n day" "+%x"</code>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         cal 04 2012 | awk 'NF &lt;= 7 { print $7 }' | grep -v "^$" | tail -1
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 28
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10702/get-the-date-for-the-last-saturday-of-a-given-month">Get the date for the last Saturday of a given month</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10702/get-the-date-for-the-last-saturday-of-a-given-month">Get the date for the last Saturday of a given month</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         This is a little trickier than finding the last Sunday, because you know the last Sunday is in the first position of the last line. The trick is to use the NF less than or equal to 7 so it picks up all the lines then grep out any empty lines.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        I only get '31' from cal 04 2012 | awk '{ $7 &amp;&amp; X=$7 } END { print X }'
-                                                </p>
-            <p>
-                                                        last day of current month...
-                                                </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                I only get '31' from cal 04 2012 | awk '{ $7 &amp;&amp; X=$7 } END { print X }'
+                                        </p>
+                                        <p>
+                                                last day of current month...
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

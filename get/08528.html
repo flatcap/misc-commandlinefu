@@ -1,70 +1,58 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 join every five lines
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        seq 20 | awk 'ORS=NR%5?FS:RS'
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                seq 20 | awk 'ORS=NR%5?FS:RS'
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 1 2 3 4 5
 6 7 8 9 10
 11 12 13 14 15
 16 17 18 19 20
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                join every five lines
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        seq 20 | awk '{line=line sep $0; sep=" "} !(NR%5){print line; line=sep=""}'
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        join every five lines
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                seq 20 | awk '{line=line sep $0; sep=" "} !(NR%5){print line; line=sep=""}'
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        Alternatively,
-                                                </p>
-            <code>seq 20 | paste -s -d " \n"</code>
-            <p>
-                                                        (quoted: that's four spaces, newline)
-                                                </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                Alternatively,
+                                        </p><code>seq 20 | paste -s -d " \n"</code>
+                                        <p>
+                                                (quoted: that's four spaces, newline)
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

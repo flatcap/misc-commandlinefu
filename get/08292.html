@@ -1,183 +1,156 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Find out current working directory of a process
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        eval ls -l /proc/{$(pgrep -d, COMMAND)}/cwd
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                eval ls -l /proc/{$(pgrep -d, COMMAND)}/cwd
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 $ eval ls -l /proc/{$(pgrep -d, vim)}/cwd
 lrwxrwxrwx 1 splante 20000 0 Apr 14 09:25 /proc/11611/cwd -&gt; /home/splante/p
 lrwxrwxrwx 1 splante 20000 0 Apr 14 09:26 /proc/11680/cwd -&gt; /tmp
 $ sudo ls -l /proc/$(pgrep X)/cwd
 lrwxrwxrwx 1 root root 0 Apr 13 18:31 /proc/3945/cwd -&gt; /
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Find out current working directory of a process
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        This is an alternative to another command using two xargs. If it's a command you know there's only one of, you can just use:
-                                                                </p>
-                <code>ls -l /proc/$(pgrep COMMAND)/cwd</code>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Find out current working directory of a process
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                This is an alternative to another command using two xargs. If it's a command you know there's only one of, you can just use:
+                                                        </p><code>ls -l /proc/$(pgrep COMMAND)/cwd</code>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         echo "${0%/*}"
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8307/find-out-the-starting-directory-of-a-script">Find out the starting directory of a script</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8307/find-out-the-starting-directory-of-a-script">Find out the starting directory of a script</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Invoked from within a shell script, this will print the directory in which the script resides. Doesn't depend on external tools, /proc/self/*, etc.. (`echo` is a shell builtin.) To see the *current working* directory of a script, use `pwd`.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         echo COMMAND | xargs -ixxx ps -C xxx -o pid= | xargs -ixxx ls -l /proc/xxx/cwd
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/1193/find-out-current-working-directory-of-a-process">Find out current working directory of a process</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/1193/find-out-current-working-directory-of-a-process">Find out current working directory of a process</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         readlink /proc/self/cwd
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8301/find-out-current-working-directory-of-a-process">Find out current working directory of a process</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8301/find-out-current-working-directory-of-a-process">Find out current working directory of a process</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         mydir=$(cd $(dirname ${BASH_SOURCE:-$0});pwd)
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8358/find-out-the-starting-directory-of-a-script">Find out the starting directory of a script</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8358/find-out-the-starting-directory-of-a-script">Find out the starting directory of a script</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         I submitted a command like this without $0 if $BASH_SOURCE is unset. Therefor, it did only work when using ./script, not using 'sh script'. This version handles both, and will set $mydir in a script to the current working directory. It also works on linux, osx and probably bsd.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         pwdx $(pgrep command)
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
  $ pwdx $(pgrep bash)
 2716: /home/user
  $ pwdx $(pgrep Xorg)
 1414: Permission denied
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11833/find-out-current-working-directory-of-a-process">Find out current working directory of a process</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/11833/find-out-current-working-directory-of-a-process">Find out current working directory of a process</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         The pwdx command reports the current working directory of a process or processes.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                The above command didn't work for me. I need to add the double quotation to make it work
-                                                        </p>
-              <p>
-                                                                eval "ls -l /proc/{$(pgrep -d, bash)}/cwd"
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Interesting. It works for me without the quotes on CentOS 5.5, bash v3.2.25(1) and OpenSUSE 11.4 bash v 4.1.10(1). It also worked on zsh 4.3.10 without quotes. What shell and version didn't it work on?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                eval is not needed. Just type 'ls -l /proc/$(pgrep -d, X)/cwd'
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                chmurli, your version works if there is one process running for the command, in which case you don't need the "-d," either. If you notice, I had mentioned that in the comments. If there is more than one process, you need the curly braces and the comma, and you need the eval.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        The above command didn't work for me. I need to add the double quotation to make it work
+                                                </p>
+                                                <p>
+                                                        eval "ls -l /proc/{$(pgrep -d, bash)}/cwd"
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Interesting. It works for me without the quotes on CentOS 5.5, bash v3.2.25(1) and OpenSUSE 11.4 bash v 4.1.10(1). It also worked on zsh 4.3.10 without quotes. What shell and version didn't it work on?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        eval is not needed. Just type 'ls -l /proc/$(pgrep -d, X)/cwd'
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        chmurli, your version works if there is one process running for the command, in which case you don't need the "-d," either. If you notice, I had mentioned that in the comments. If there is more than one process, you need the curly braces and the comma, and you need the eval.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

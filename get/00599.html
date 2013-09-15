@@ -1,151 +1,123 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Runs previous command replacing foo by bar every time that foo appears
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        !!:gs/foo/bar
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                !!:gs/foo/bar
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Runs previous command replacing foo by bar every time that foo appears
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Runs previous command replacing foo by bar every time that foo appears
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Very useful for rerunning a long command changing some arguments globally.
-                                                                </p>
-                <p>
-                                                                        As opposed to ^foo^bar, which only replaces the first occurrence of foo, this one changes every occurrence.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Very useful for rerunning a long command changing some arguments globally.
+                                                        </p>
+                                                        <p>
+                                                                As opposed to ^foo^bar, which only replaces the first occurrence of foo, this one changes every occurrence.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ^foo^bar^:&amp;
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/12071/runs-previous-command-replacing-foo-by-bar-every-time-that-foo-appears">Runs previous command replacing foo by bar every time that foo appears</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/12071/runs-previous-command-replacing-foo-by-bar-every-time-that-foo-appears">Runs previous command replacing foo by bar every time that foo appears</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         To replace foo by bar, but not execute, do ^foo^bar^:p
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         To replace all foo by bar, but not execute, do ^foo^bar^:&amp;:p
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ^bar^foo^
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/12201/runs-previous-command-replacing-foo-by-bar-every-time-that-foo-appears">Runs previous command replacing foo by bar every time that foo appears</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/12201/runs-previous-command-replacing-foo-by-bar-every-time-that-foo-appears">Runs previous command replacing foo by bar every time that foo appears</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         this also can !
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                This is also very useful for debian aptitude commands:
-                                                        </p>
-              <code>aptitude search bzr</code>
-              <code>sudo !!:s/search/install</code>
-              <p>
-                                                                If you do a sudo ^search^install it won't work.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                how can we make this print instead of running it? I tried !!:pgs/foo/bar and didn't work ;)
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                @alperyilmaz Close! You're just missing another colon:
-                                                        </p>
-              <code>!!:p:gs/foo/bar</code>
-              <p>
-                                                                Modifiers ('gs' and 'p' here) are colon-separated. It seems as though there should be a colon between the 'g' and 's' too, but we leave it out because the 'g' only works in conjunction with 's'. If you used it on its own it would have no effect.
-                                                        </p>
-              <p>
-                <a href="http://www.gnu.org/software/bash/manual/html_node/Modifiers.html" rel="nofollow">http://www.gnu.org/software/bash/manual/html_node/Modifiers.html</a>
-              </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                @fletch: thanks, this will save me some typing..
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                why not just
-                                                        </p>
-              <code>^foo^bar</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                what about iterative operations where you replace foo with foo1, then foo1 with foo2, etc ?
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        This is also very useful for debian aptitude commands:
+                                                </p><code>aptitude search bzr</code> <code>sudo !!:s/search/install</code>
+                                                <p>
+                                                        If you do a sudo ^search^install it won't work.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        how can we make this print instead of running it? I tried !!:pgs/foo/bar and didn't work ;)
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        @alperyilmaz Close! You're just missing another colon:
+                                                </p><code>!!:p:gs/foo/bar</code>
+                                                <p>
+                                                        Modifiers ('gs' and 'p' here) are colon-separated. It seems as though there should be a colon between the 'g' and 's' too, but we leave it out because the 'g' only works in conjunction with 's'. If you used it on its own it would have no effect.
+                                                </p>
+                                                <p>
+                                                        <a href="http://www.gnu.org/software/bash/manual/html_node/Modifiers.html" rel="nofollow">http://www.gnu.org/software/bash/manual/html_node/Modifiers.html</a>
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        @fletch: thanks, this will save me some typing..
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        why not just
+                                                </p><code>^foo^bar</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        what about iterative operations where you replace foo with foo1, then foo1 with foo2, etc ?
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

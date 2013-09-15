@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Print all words in a file sorted by length
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        for w in $(tr 'A-Z ,."()?!;:' 'a-z\n' &lt; sample.txt); do echo ${#w} $w; done | sort -u | sort -n
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                for w in $(tr 'A-Z ,."()?!;:' 'a-z\n' &lt; sample.txt); do echo ${#w} $w; done | sort -u | sort -n
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 ...
 9 suggested
 9 unsightly
@@ -35,121 +33,103 @@
 13 self-assembly
 14 apologetically
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Print all words in a file sorted by length
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Take a file and ,."()?!;: give a list of all the words in order of increasing length.
-                                                                </p>
-                <p>
-                                                                        First of all use tr to map all alphabetic characters to lower case and also strip out any puntuation.
-                                                                </p>
-                <p>
-                                                                        A-Z become a-z
-                                                                </p>
-                <p>
-                                                                        ,."()?!;: all become \n (newline)
-                                                                </p>
-                <p>
-                                                                        I've ignored - (hyphen) and ' (apostrophe) because they occur in words.
-                                                                </p>
-                <p>
-                                                                        Next use bash to print the length ${#w} and the word
-                                                                </p>
-                <p>
-                                                                        Finally sort the list numerically (sort -n) and remove any duplicates (sort -u).
-                                                                </p>
-                <p>
-                                                                        Note: sort -nu performs strangely on this list. It outputs one word per length.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Print all words in a file sorted by length
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Take a file and ,."()?!;: give a list of all the words in order of increasing length.
+                                                        </p>
+                                                        <p>
+                                                                First of all use tr to map all alphabetic characters to lower case and also strip out any puntuation.
+                                                        </p>
+                                                        <p>
+                                                                A-Z become a-z
+                                                        </p>
+                                                        <p>
+                                                                ,."()?!;: all become \n (newline)
+                                                        </p>
+                                                        <p>
+                                                                I've ignored - (hyphen) and ' (apostrophe) because they occur in words.
+                                                        </p>
+                                                        <p>
+                                                                Next use bash to print the length ${#w} and the word
+                                                        </p>
+                                                        <p>
+                                                                Finally sort the list numerically (sort -n) and remove any duplicates (sort -u).
+                                                        </p>
+                                                        <p>
+                                                                Note: sort -nu performs strangely on this list. It outputs one word per length.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         for a in $(cat sample.txt); do echo "$(wc -m&lt;&lt;&lt;$a) $a";done|sort -n
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10435/print-all-words-in-a-file-sorted-by-length">Print all words in a file sorted by length</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10435/print-all-words-in-a-file-sorted-by-length">Print all words in a file sorted by length</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         optionally you can add
-                                                                </p>
-                <code>|cut -d' ' -f2|uniq</code>
-                <p>
+                                                                </p><code>|cut -d' ' -f2|uniq</code>
+                                                                <p>
                                                                         to the end of the command line.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         for a in $(cat sample.txt); do echo "${#a} $a";done|sort -n
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10438/print-all-words-in-a-file-sorted-by-length">Print all words in a file sorted by length</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10438/print-all-words-in-a-file-sorted-by-length">Print all words in a file sorted by length</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         for a in $(&lt; FILENAME); do echo "$(bc &lt;&lt;&lt; $(wc -m&lt;&lt;&lt;$a)-1) $a";done|sort -n
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10517/print-all-words-in-a-file-sorted-by-length">Print all words in a file sorted by length</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10517/print-all-words-in-a-file-sorted-by-length">Print all words in a file sorted by length</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                This yields the same:
-                                                        </p>
-              <code>egrep -Eo "[0-9a-Z\'\-]*" sample.txt|tr A-Z a-z|sort -u|awk '{ print length(), $0 | "sort -n" }'</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                you dont need 2 sorts you can just do sort -un
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        This yields the same:
+                                                </p><code>egrep -Eo "[0-9a-Z\'\-]*" sample.txt|tr A-Z a-z|sort -u|awk '{ print length(), $0 | "sort -n" }'</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        you dont need 2 sorts you can just do sort -un
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

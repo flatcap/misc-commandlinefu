@@ -1,164 +1,142 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 run command on a group of nodes in parallel
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        echo -n m{1..5}.cluster.net | xargs -d' ' -n1 -P5 -I{} ssh {} 'uptime'
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                echo -n m{1..5}.cluster.net | xargs -d' ' -n1 -P5 -I{} ssh {} 'uptime'
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        run command on a group of nodes in parallel
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                run command on a group of nodes in parallel
-                                                        </div>
-              <div class="description"></div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description"></div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         echo "uptime" | pee "ssh host1" "ssh host2" "ssh host3"
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/6383/run-command-on-a-group-of-nodes-in-parallel">run command on a group of nodes in parallel</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/6383/run-command-on-a-group-of-nodes-in-parallel">run command on a group of nodes in parallel</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         The pee command is in the moreutils package.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         echo "uptime" | tee &gt;(ssh host1) &gt;(ssh host2) &gt;(ssh host3)
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/6386/run-command-on-a-group-of-nodes-in-parallel">run command on a group of nodes in parallel</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/6386/run-command-on-a-group-of-nodes-in-parallel">run command on a group of nodes in parallel</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         mussh -h host1 host2 host3 -c uptime
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/6471/run-command-on-a-group-of-nodes">run command on a group of nodes</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/6471/run-command-on-a-group-of-nodes">run command on a group of nodes</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         xargs -n1 -P100 -I{} sh -c 'ssh {} uptime &gt;output/{} 2&gt;error/{}' &lt;hostlist
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/6379/run-command-on-a-group-of-nodes-in-parallel-redirecting-outputs">run command on a group of nodes in parallel redirecting outputs</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/6379/run-command-on-a-group-of-nodes-in-parallel-redirecting-outputs">run command on a group of nodes in parallel redirecting outputs</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Do the same as pssh, just in shell syntax.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Put your hosts in hostlist, one per line.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Command outputs are gathered in output and error directories.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         seq 1 5 | parallel ssh {}.cluster.net uptime
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/4695/run-command-on-a-group-of-nodes-in-parallel">run command on a group of nodes in parallel</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/4695/run-command-on-a-group-of-nodes-in-parallel">run command on a group of nodes in parallel</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Parallel is from https://savannah.nongnu.org/projects/parallel/
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Other examples would be:
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         (echo foss.org.my; echo <a href="http://www.debian.org;" rel="nofollow">www.debian.org;</a> echo <a href="http://www.freenetproject.org)" rel="nofollow">www.freenetproject.org)</a> | parallel traceroute
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         seq -f %04g 0 9999 | parallel -X rm pict{}.jpg
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                pdsh
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                It would be more readable using Parallel https://savannah.nongnu.org/projects/parallel/
-                                                        </p>
-              <p>
-                                                                seq 1 5 | parallel ssh {} uptime
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        pdsh
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        It would be more readable using Parallel https://savannah.nongnu.org/projects/parallel/
+                                                </p>
+                                                <p>
+                                                        seq 1 5 | parallel ssh {} uptime
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

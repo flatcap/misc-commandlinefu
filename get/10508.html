@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 move you up one directory quickly
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        shopt -s autocd
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                shopt -s autocd
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 $ ..
 cd ..
 $ ~
@@ -29,137 +27,121 @@ cd ~
 $ ../..
 cd ../..
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                move you up one directory quickly
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        In bash, this turns on auto cd. If a command is just a directory name, it cd's into that directory.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        move you up one directory quickly
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                In bash, this turns on auto cd. If a command is just a directory name, it cd's into that directory.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         alias ..='cd ..'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 ~/foo/ $ ..
 ~/ $
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/1546/quicker-move-to-parent-directory">Quicker move to parent directory</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/1546/quicker-move-to-parent-directory">Quicker move to parent directory</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Alias two dots to move to parent directory. Put it into your .bashrc or .profile file.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         alias b='cd ../'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 ~/foo $ b
 ~/ $
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10504/move-you-up-one-directory-quickly">move you up one directory quickly</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10504/move-you-up-one-directory-quickly">move you up one directory quickly</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Alias a single character 'b' to move to parent directory. Put it into your .bashrc or .profile file.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Using "cd .." is one of the most repetitive sequence of characters you'll in the command line. Bring it down to two keys 'b' and 'enter'.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         It stands for "back"
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Also useful to have multiple:
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         alias b='cd ../'
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         alias bb='cd ../../'
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         alias bbb='cd ../../../'
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         alias bbbb='cd ../../../../'
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         alias ..='cd ..'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9595/move-you-up-one-directory-quickly">move you up one directory quickly</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9595/move-you-up-one-directory-quickly">move you up one directory quickly</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         yum install zsh
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10522/move-you-up-one-directory-quickly">move you up one directory quickly</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10522/move-you-up-one-directory-quickly">move you up one directory quickly</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Use ZSH instead of bash, typing .. will move you up one directory, without the need to alias it.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body meta">
-                                                Comment by <a href="/commands/by/JohanH">JohanH</a> 75 weeks and 1 day ago
-                                        </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body meta" id="comments">
+                                        Comment by <a href="/commands/by/JohanH">JohanH</a> 75 weeks and 1 day ago
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

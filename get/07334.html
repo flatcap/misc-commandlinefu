@@ -1,74 +1,60 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 delete multiple files from git index that have already been deleted from disk
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        git status | grep deleted | awk '{print $3}' | xargs git rm
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                git status | grep deleted | awk '{print $3}' | xargs git rm
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        delete multiple files from git index that have already been deleted from disk
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                delete multiple files from git index that have already been deleted from disk
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        delete multiple files from git index that have already been deleted from disk. this is pretty terrible, I'm looking for a better way.
-                                                                </p>
-                <p>
-                                                                        (much better!! <a href="http://www.commandlinefu.com/commands/view/1246/git-remove-files-which-have-been-deleted)" rel="nofollow">http://www.commandlinefu.com/commands/view/1246/git-remove-files-which-have-been-deleted)</a>
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                delete multiple files from git index that have already been deleted from disk. this is pretty terrible, I'm looking for a better way.
+                                                        </p>
+                                                        <p>
+                                                                (much better!! <a href="http://www.commandlinefu.com/commands/view/1246/git-remove-files-which-have-been-deleted)" rel="nofollow">http://www.commandlinefu.com/commands/view/1246/git-remove-files-which-have-been-deleted)</a>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        I'll just comment it (no alternative version). Your solution is good enough.
-                                                </p>
-            <p>
-                                                        1. It's one of these 'awk which is basically "cut"' cases.
-                                                </p>
-            <code>git status |grep deleted | cut -d" " -f3 | xargs git rm</code>
-            <p>
-                                                        2. You can combine grep and awk jobs:
-                                                </p>
-            <code>git status | awk '/deleted/{print $3}' | xargs git rm</code>
-            <p>
-                                                        3. An equivalent version without xargs would look like this. (Just in case you're interested in commands you're gona to execute: replace 'sh' with 'less')
-                                                </p>
-            <code>git status | awk '/deleted/{print "git rm " $3}' | sh</code>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                I'll just comment it (no alternative version). Your solution is good enough.
+                                        </p>
+                                        <p>
+                                                1. It's one of these 'awk which is basically "cut"' cases.
+                                        </p><code>git status |grep deleted | cut -d" " -f3 | xargs git rm</code>
+                                        <p>
+                                                2. You can combine grep and awk jobs:
+                                        </p><code>git status | awk '/deleted/{print $3}' | xargs git rm</code>
+                                        <p>
+                                                3. An equivalent version without xargs would look like this. (Just in case you're interested in commands you're gona to execute: replace 'sh' with 'less')
+                                        </p><code>git status | awk '/deleted/{print "git rm " $3}' | sh</code>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

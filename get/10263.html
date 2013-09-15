@@ -1,173 +1,149 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Annotate tail -f with timestamps
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        tail -f file | while read; do echo "$(date +%T.%N) $REPLY"; done
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                tail -f file | while read; do echo "$(date +%T.%N) $REPLY"; done
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Annotate tail -f with timestamps
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Annotate tail -f with timestamps
-                                                        </div>
-              <div class="description"></div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description"></div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         tail -f file | ts '%H:%M:%.S'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10352/annotate-tail-f-with-timestamps">Annotate tail -f with timestamps</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10352/annotate-tail-f-with-timestamps">Annotate tail -f with timestamps</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Uses the command ts in order to add a timestamp on each line. This command is provided in the moreutils package on Debian, and you may need libtime-duration-perl to be able to format the date.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10534/dump-389ds-schema">Dump 389ds schema</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10534/dump-389ds-schema">Dump 389ds schema</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Dump 389ds schema, putting "\n " on one line with perl.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         You have to specify the objectclasses, attributetypes operational attributes too, otherwise they won't be dumped!
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10533/dump-389ds-schema">Dump 389ds schema</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10533/dump-389ds-schema">Dump 389ds schema</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Dump 389ds schema, putting "\n " on one line with perl.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         You have to specify the objectclasses, attributetypes operational attributes too, otherwise they won't be dumped!
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10536/dump-389ds-schema">Dump 389ds schema</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10536/dump-389ds-schema">Dump 389ds schema</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Dump 389ds schema, putting "\n " on one line with perl.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         You have to specify the objectclasses, attributetypes operational attributes too, otherwise they won't be dumped!
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10547/dump-389ds-schema">Dump 389ds schema</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/10547/dump-389ds-schema">Dump 389ds schema</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Dump 389ds schema, putting "\n " on one line with perl.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         You have to specify the objectclasses, attributetypes operational attributes too, otherwise they won't be dumped!
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Damn, that's useful!
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                I thought bash's 'read' tokenized on spaces; today I learned it can be used to read whole lines.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Read it today and it saved my life! Add "| tee dated_file.log" or "&gt; dated_file.log" if you want to move it around for analysis
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Damn, that's useful!
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        I thought bash's 'read' tokenized on spaces; today I learned it can be used to read whole lines.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Read it today and it saved my life! Add "| tee dated_file.log" or "&gt; dated_file.log" if you want to move it around for analysis
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

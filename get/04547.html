@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Grep by paragraph instead of by line.
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        grepp() { [ $# -eq 1 ] &amp;&amp; perl -00ne "print if /$1/i" || perl -00ne "print if /$1/i" &lt; "$2";}
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                grepp() { [ $# -eq 1 ] &amp;&amp; perl -00ne "print if /$1/i" || perl -00ne "print if /$1/i" &lt; "$2";}
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 man perl | grepp Pascal
        Perl combines (in the author's opinion, anyway) some of the best features of C, sed, awk, and sh, so people familiar with those languages should have little difficulty with it.
        (Language historians will also note some vestiges of csh, Pascal, and even BASIC-PLUS.)  Expression syntax corresponds closely to C expression syntax.  Unlike most Unix utilities,
@@ -31,78 +29,57 @@ man perl | grepp Pascal
        than C programs through a dataflow tracing mechanism that prevents many stupid security holes.
 
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Grep by paragraph instead of by line.
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        This is a command that I find myself using all the time. It works like regular grep, but returns the paragraph containing the search pattern instead of just the line. It operates on files or standard input.
-                                                                </p>
-                <code>grepp &lt;PATTERN&gt; &lt;FILE&gt;</code>
-                <p>
-                                                                        or
-                                                                </p>
-                <code>&lt;SOMECOMMAND&gt; | grepp &lt;PATTERN&gt;</code>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Grep by paragraph instead of by line.
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                This is a command that I find myself using all the time. It works like regular grep, but returns the paragraph containing the search pattern instead of just the line. It operates on files or standard input.
+                                                        </p><code>grepp &lt;PATTERN&gt; &lt;FILE&gt;</code>
+                                                        <p>
+                                                                or
+                                                        </p><code>&lt;SOMECOMMAND&gt; | grepp &lt;PATTERN&gt;</code>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Very nice, but can you think of a smart way to highlight the match, too?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Something like this should operate the similar to "grep --color=auto":
-                                                        </p>
-              <code>grepp() { [ $# -eq 1 ] &amp;&amp; perl -00ne 'if ( /'$1'/i ){my $s = $_;$s =~ s/'$1'/\033[1;31m$&amp;\033[0m/g; print $s}' || perl -00ne 'if ( /'$1'/i ){my $s = $_;$s =~ s/'$1'/\033[1;31m$&amp;\033[0m/g; print $s}' &lt; "$2";}</code>
-              <p>
-                                                                P.S. @Perl gurus: Suggestions or corrections are very welcome.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                I just discovered that it fails if there are spaces in the regex. Quoting the regex fixes it:
-                                                        </p>
-              <code>grepp() { [ $# -eq 1 ] &amp;&amp; perl -00ne 'if ( /'"$1"'/i ){$s = $_;$s =~ s/'"$1"'/\033[1;31m$&amp;\033[0m/g; print $s}' || perl -00ne 'if ( /'"$1"'/i ){$s = $_;$s =~ s/'"$1"'/\033[1;31m$&amp;\033[0m/g; print $s}' &lt; "$2";}</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Lovely.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <code>grepp() { x=$1; shift; perl -00ne ' print if /'"$x"'/i ' "$*" ; }</code>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Very nice, but can you think of a smart way to highlight the match, too?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Something like this should operate the similar to "grep --color=auto":
+                                                </p><code>grepp() { [ $# -eq 1 ] &amp;&amp; perl -00ne 'if ( /'$1'/i ){my $s = $_;$s =~ s/'$1'/\033[1;31m$&amp;\033[0m/g; print $s}' || perl -00ne 'if ( /'$1'/i ){my $s = $_;$s =~ s/'$1'/\033[1;31m$&amp;\033[0m/g; print $s}' &lt; "$2";}</code>
+                                                <p>
+                                                        P.S. @Perl gurus: Suggestions or corrections are very welcome.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        I just discovered that it fails if there are spaces in the regex. Quoting the regex fixes it:
+                                                </p><code>grepp() { [ $# -eq 1 ] &amp;&amp; perl -00ne 'if ( /'"$1"'/i ){$s = $_;$s =~ s/'"$1"'/\033[1;31m$&amp;\033[0m/g; print $s}' || perl -00ne 'if ( /'"$1"'/i ){$s = $_;$s =~ s/'"$1"'/\033[1;31m$&amp;\033[0m/g; print $s}' &lt; "$2";}</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Lovely.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <code>grepp() { x=$1; shift; perl -00ne ' print if /'"$x"'/i ' "$*" ; }</code>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

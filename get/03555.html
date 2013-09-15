@@ -1,87 +1,77 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Find Duplicate Files (based on size first, then MD5 hash)
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        find -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{} -n1 find -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                find -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{} -n1 find -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Find Duplicate Files (based on size first, then MD5 hash)
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Find Duplicate Files (based on size first, then MD5 hash)
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        This dup finder saves time by comparing size first, then md5sum, it doesn't delete anything, just lists them.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                This dup finder saves time by comparing size first, then md5sum, it doesn't delete anything, just lists them.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 33 | cut -c 35-
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/2863/find-duplicate-files-based-on-md5-hash">Find Duplicate Files (based on MD5 hash)</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/2863/find-duplicate-files-based-on-md5-hash">Find Duplicate Files (based on MD5 hash)</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Calculates md5 sum of files. sort (required for uniq to work). uniq based on only the hash. use cut ro remove the hash from the result.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         fdupes -r .
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/7930/find-duplicate-files-based-on-size-first-then-md5-hash">Find Duplicate Files (based on size first, then MD5 hash)</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/7930/find-duplicate-files-based-on-size-first-then-md5-hash">Find Duplicate Files (based on size first, then MD5 hash)</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         If you have the fdupes command, you'll save a lot of typing. It can do recursive searches (-r,-R) and it allows you to interactively select which of the duplicate files found you wish to keep or delete.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find -type d -name ".svn" -prune -o -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{} -n1 find -type d -name ".svn" -prune -o -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 [...]
 f2e6bb247f110dcab63b4d38ff7b2dee  ./themes/darkblue_orange/img/b_relations.png
 f2e6bb247f110dcab63b4d38ff7b2dee  ./themes/original/img/b_relations.png
@@ -102,249 +92,210 @@ f95d66c11bfed9198d13a278269c32b2  ./themes/darkblue_orange/img/s_loggoff.png
 f95d66c11bfed9198d13a278269c32b2  ./themes/original/img/s_loggoff.png
 [...]
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/4701/find-duplicate-files-excluding-.svn-directories-based-on-size-first-then-md5-hash">Find Duplicate Files, excluding .svn-directories (based on size first, then MD5 hash)</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/4701/find-duplicate-files-excluding-.svn-directories-based-on-size-first-then-md5-hash">Find Duplicate Files, excluding .svn-directories (based on size first, then MD5 hash)</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Improvement of the command "Find Duplicate Files (based on size first, then MD5 hash)" when searching for duplicate files in a directory containing a subversion working copy. This way the (multiple dupicates) in the meta-information directories are ignored.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Can easily be adopted for other VCS as well. For CVS i.e. change ".svn" into ".csv":
-                                                                </p>
-                <code>find -type d -name ".csv" -prune -o -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{} -n1 find -type d -name ".csv" -prune -o -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate</code>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                                </p><code>find -type d -name ".csv" -prune -o -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{} -n1 find -type d -name ".csv" -prune -o -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate</code>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find . -type f -size +0 -printf "%-25s%p\n" | sort -n | uniq -D -w 25 | sed 's/^\w* *\(.*\)/md5sum "\1"/' | sh | sort | uniq -w32 --all-repeated=separate
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11932/find-duplicate-files-based-on-size-first-then-md5-hash">Find Duplicate Files (based on size first, then MD5 hash)</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/11932/find-duplicate-files-based-on-size-first-then-md5-hash">Find Duplicate Files (based on size first, then MD5 hash)</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Avoids the nested 'find' commands but doesn't seem to run any faster than syssyphus's solution.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         find -not -empty -type f -printf "%s\n" | sort | uniq -d | parallel find -type f -size {}c | parallel md5sum | sort | uniq -w32 --all-repeated=separate
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/4697/find-duplicate-files-based-on-size-first-then-md5-hash">Find Duplicate Files (based on size first, then MD5 hash)</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/4697/find-duplicate-files-based-on-size-first-then-md5-hash">Find Duplicate Files (based on size first, then MD5 hash)</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         A bit shorter and parallelized. Depending on the speed of your cpu and your disk this may run faster.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Parallel is from https://savannah.nongnu.org/projects/parallel/
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                As an alternative, check out <a href="http://www.pixelbeat.org/fslint/" rel="nofollow">http://www.pixelbeat.org/fslint/</a> in case you don't mind using a GUI for this. It gives you the option of hard linking the duplicate files and doing other lint-y tasks. Available as package 'fslint' at least in debian/ubuntu.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Thanks for the FSlint reference. Note fslint uses much the same mechanism underneath and has a CLI mode.
-                                                        </p>
-              <p>
-                <a href="http://fslint.googlecode.com/svn/trunk/fslint/findup" rel="nofollow">http://fslint.googlecode.com/svn/trunk/fslint/findup</a>
-              </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                awsome, much faster then fdupes.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Isn't the -D redundant?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                yes it is... thanks for noticing, I fixed it.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                How can you mass delete these files once they're found? (I'd like to keep one of them)
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                you might want to look at fdupes or fslint in order to help with hardlinking / deleting, etc... my command is really just a quick hack to list them.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                There is also perfect match:
-                                                        </p>
-              <p>
-                <a href="http://pmatch.rubyforge.org/" rel="nofollow">http://pmatch.rubyforge.org/</a>
-              </p>
-              <p>
-                                                                That's especially if you are commandline fan.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Fantastic, man. this is truly great.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                There is also rmlint:
-                                                        </p>
-              <p>
-                                                                https://github.com/sahib/rmlint
-                                                        </p>
-              <p>
-                                                                Example:
-                                                        </p>
-              <p>
-                                                                rmlint [path] -GYX -v5
-                                                        </p>
-              <p>
-                                                                + Gives you similiar results
-                                                        </p>
-              <p>
-                                                                + you can pipe it directly to 'sh'
-                                                        </p>
-              <p>
-                                                                + it's lots faster as additionally fingerprints are done and a few other tricks.
-                                                        </p>
-              <p>
-                                                                + it has also other options ;-)
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                "find -type" doesn?t work on Mac OS X.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                can filename comparison be added as a first step to the first solution given?
-                                                        </p>
-              <p>
-                                                                find -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{} -n1 find -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate
-                                                        </p>
-              <p>
-                                                                seems to me checking filename first could speed things up. if two files lack the same filename then in many cases i would not consider them a dupe.
-                                                        </p>
-              <p>
-                                                                thanks
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                The code for findup by P&Atilde;&iexcl;draig Brady (<a href="http://fslint.googlecodesh.com/svn/trunk/fslint/findup)" rel="nofollow">http://fslint.googlecodesh.com/svn/trunk/fslint/findup)</a> is very OS (or user defined system) sensitive and is without comments that tell you what it is pointing to:
-                                                        </p>
-              <p>
-                                                                ---------
-                                                        </p>
-              <p>
-                                                                ./FindDups: line 62: /Programming/FSlint/supprt/fslver: No such file or directory
-                                                        </p>
-              <p>
-                                                                ./FindDups: line 135: shell_quote: command not found
-                                                        </p>
-              <p>
-                                                                ./FindDups: line 147: /Programming/FSlint/supprt/getfpf: No such file or directory
-                                                        </p>
-              <p>
-                                                                ./FindDups: line 149: check_uniq: command not found
-                                                        </p>
-              <p>
-                                                                ./FindDups: line 164: /Programming/FSlint/supprt/rmlint/merge_hardlinks: No such file or directory
-                                                        </p>
-              <p>
-                                                                ---------
-                                                        </p>
-              <p>
-                                                                /Programming is my partition for assorted programming I am doing. I use openSUSE 12.1. I would assume (with all that connotes) that uniq could be used rather than check_uniq, and that the . /supprt directory is unique to another distro (why is there so much illogical difference - that eliminates a lot of people who would like to switch from Windows). Either that or it is one of P&Atilde;&iexcl;draig Brady's personnal directories and that does not fly unless they are included.
-                                                        </p>
-              <p>
-                                                                Considering this came from Google code, you have to first assume it is incomplete. And this is no exception to that!
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Hi, I would like if it is any way of find duplicates of a given file (not all duplicates on the fs) maybe searching directly by md5.
-                                                        </p>
-              <p>
-                                                                It would be great for me.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Try this free tool to find similar files:
-                                                        </p>
-              <p>
-                <a href="http://www.mindgems.com/products/Fast-Duplicate-File-Finder/Fast-Duplicate-File-Finder-About.htm" rel="nofollow">http://www.mindgems.com/products/Fast-Duplicate-File-Finder/Fast-Duplicate-File-Finder-About.htm</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        As an alternative, check out <a href="http://www.pixelbeat.org/fslint/" rel="nofollow">http://www.pixelbeat.org/fslint/</a> in case you don't mind using a GUI for this. It gives you the option of hard linking the duplicate files and doing other lint-y tasks. Available as package 'fslint' at least in debian/ubuntu.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Thanks for the FSlint reference. Note fslint uses much the same mechanism underneath and has a CLI mode.
+                                                </p>
+                                                <p>
+                                                        <a href="http://fslint.googlecode.com/svn/trunk/fslint/findup" rel="nofollow">http://fslint.googlecode.com/svn/trunk/fslint/findup</a>
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        awsome, much faster then fdupes.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Isn't the -D redundant?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        yes it is... thanks for noticing, I fixed it.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        How can you mass delete these files once they're found? (I'd like to keep one of them)
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        you might want to look at fdupes or fslint in order to help with hardlinking / deleting, etc... my command is really just a quick hack to list them.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        There is also perfect match:
+                                                </p>
+                                                <p>
+                                                        <a href="http://pmatch.rubyforge.org/" rel="nofollow">http://pmatch.rubyforge.org/</a>
+                                                </p>
+                                                <p>
+                                                        That's especially if you are commandline fan.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Fantastic, man. this is truly great.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        There is also rmlint:
+                                                </p>
+                                                <p>
+                                                        https://github.com/sahib/rmlint
+                                                </p>
+                                                <p>
+                                                        Example:
+                                                </p>
+                                                <p>
+                                                        rmlint [path] -GYX -v5
+                                                </p>
+                                                <p>
+                                                        + Gives you similiar results
+                                                </p>
+                                                <p>
+                                                        + you can pipe it directly to 'sh'
+                                                </p>
+                                                <p>
+                                                        + it's lots faster as additionally fingerprints are done and a few other tricks.
+                                                </p>
+                                                <p>
+                                                        + it has also other options ;-)
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        "find -type" doesn?t work on Mac OS X.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        can filename comparison be added as a first step to the first solution given?
+                                                </p>
+                                                <p>
+                                                        find -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{} -n1 find -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate
+                                                </p>
+                                                <p>
+                                                        seems to me checking filename first could speed things up. if two files lack the same filename then in many cases i would not consider them a dupe.
+                                                </p>
+                                                <p>
+                                                        thanks
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        The code for findup by P&Atilde;&iexcl;draig Brady (<a href="http://fslint.googlecodesh.com/svn/trunk/fslint/findup)" rel="nofollow">http://fslint.googlecodesh.com/svn/trunk/fslint/findup)</a> is very OS (or user defined system) sensitive and is without comments that tell you what it is pointing to:
+                                                </p>
+                                                <p>
+                                                        ---------
+                                                </p>
+                                                <p>
+                                                        ./FindDups: line 62: /Programming/FSlint/supprt/fslver: No such file or directory
+                                                </p>
+                                                <p>
+                                                        ./FindDups: line 135: shell_quote: command not found
+                                                </p>
+                                                <p>
+                                                        ./FindDups: line 147: /Programming/FSlint/supprt/getfpf: No such file or directory
+                                                </p>
+                                                <p>
+                                                        ./FindDups: line 149: check_uniq: command not found
+                                                </p>
+                                                <p>
+                                                        ./FindDups: line 164: /Programming/FSlint/supprt/rmlint/merge_hardlinks: No such file or directory
+                                                </p>
+                                                <p>
+                                                        ---------
+                                                </p>
+                                                <p>
+                                                        /Programming is my partition for assorted programming I am doing. I use openSUSE 12.1. I would assume (with all that connotes) that uniq could be used rather than check_uniq, and that the . /supprt directory is unique to another distro (why is there so much illogical difference - that eliminates a lot of people who would like to switch from Windows). Either that or it is one of P&Atilde;&iexcl;draig Brady's personnal directories and that does not fly unless they are included.
+                                                </p>
+                                                <p>
+                                                        Considering this came from Google code, you have to first assume it is incomplete. And this is no exception to that!
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Hi, I would like if it is any way of find duplicates of a given file (not all duplicates on the fs) maybe searching directly by md5.
+                                                </p>
+                                                <p>
+                                                        It would be great for me.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Try this free tool to find similar files:
+                                                </p>
+                                                <p>
+                                                        <a href="http://www.mindgems.com/products/Fast-Duplicate-File-Finder/Fast-Duplicate-File-Finder-About.htm" rel="nofollow">http://www.mindgems.com/products/Fast-Duplicate-File-Finder/Fast-Duplicate-File-Finder-About.htm</a>
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

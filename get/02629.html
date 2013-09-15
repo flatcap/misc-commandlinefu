@@ -1,66 +1,51 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Outputs files with ascii art in the intended form.
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        iconv -f437 -tutf8 asciiart.nfo
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                iconv -f437 -tutf8 asciiart.nfo
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Outputs files with ascii art in the intended form.
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Outputs files with ascii art in the intended form.
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Files containing ascii art (e.g. with .nfo extension) are typically not correctly reproduced at the command line when using cat. With iconv one can easily write a wrapper to solve this:
-                                                                </p>
-                <code>#!/bin/bash</code>
-                <code>if [ -z "$@" ]; then echo "Usage: $(basename $0) file [file] ..."</code>
-                <code>else iconv -f437 -tutf8 "$@"; fi</code>
-                <code>exit 0</code>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Files containing ascii art (e.g. with .nfo extension) are typically not correctly reproduced at the command line when using cat. With iconv one can easily write a wrapper to solve this:
+                                                        </p><code>#!/bin/bash</code> <code>if [ -z "$@" ]; then echo "Usage: $(basename $0) file [file] ..."</code> <code>else iconv -f437 -tutf8 "$@"; fi</code> <code>exit 0</code>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        "437" is what may be otherwise called "Extended Ascii"
-                                                </p>
-            <p>
-              <a href="http://en.wikipedia.org/wiki/Code_page_437" rel="nofollow">http://en.wikipedia.org/wiki/Code_page_437</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                "437" is what may be otherwise called "Extended Ascii"
+                                        </p>
+                                        <p>
+                                                <a href="http://en.wikipedia.org/wiki/Code_page_437" rel="nofollow">http://en.wikipedia.org/wiki/Code_page_437</a>
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

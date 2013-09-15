@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 multiline data block parse and CSV data extraction with perl
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        cat z.log | perl -ne 'BEGIN{ print "DATE;RATE\n"; } /\[(\d.*)\]/ &amp;&amp; print $1; /CURRENT RATE: +(\S+) msg.*/ &amp;&amp; print ";" .$1 . "\n"; '
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                cat z.log | perl -ne 'BEGIN{ print "DATE;RATE\n"; } /\[(\d.*)\]/ &amp;&amp; print $1; /CURRENT RATE: +(\S+) msg.*/ &amp;&amp; print ";" .$1 . "\n"; '
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 from file:
 
 
@@ -71,30 +69,23 @@ DATE;RATE
 2012-04-02 21:24:59.268;42.417
 2012-04-02 21:25:59.269;42.833
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                multiline data block parse and CSV data extraction with perl
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        extract data in multiline blocks of data with perl pattern matching loop
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        multiline data block parse and CSV data extraction with perl
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                extract data in multiline blocks of data with perl pattern matching loop
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

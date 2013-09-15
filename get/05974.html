@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Delete the previous entry in your history
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        alias histdel='history -d $((HISTCMD-2)) &amp;&amp; history -d $((HISTCMD-1))'
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                alias histdel='history -d $((HISTCMD-2)) &amp;&amp; history -d $((HISTCMD-1))'
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 $ ssh root@www1.example.co m
 ssh: Could not resolve hostname www1.example.co: nodename nor servname provided, or not known
 $ hackm3!
@@ -38,76 +36,61 @@ $ histdel; histdel
   503  ssh root@www1.example.co m
   504  history |tail
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Delete the previous entry in your history
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        I rarely need this, but I have a hard time remembering the command when I need it.
-                                                                </p>
-                <p>
-                                                                        Admit it. This has happened to you. Yes this is bad, and you better clean up now.
-                                                                </p>
-                <p>
-                                                                        Borrowed from <a href="http://thoughtsbyclayg.blogspot.com/2008/02/how-to-delete-last-command-from-bash.html" rel="nofollow">http://thoughtsbyclayg.blogspot.com/2008/02/how-to-delete-last-command-from-bash.html</a>
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Delete the previous entry in your history
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                I rarely need this, but I have a hard time remembering the command when I need it.
+                                                        </p>
+                                                        <p>
+                                                                Admit it. This has happened to you. Yes this is bad, and you better clean up now.
+                                                        </p>
+                                                        <p>
+                                                                Borrowed from <a href="http://thoughtsbyclayg.blogspot.com/2008/02/how-to-delete-last-command-from-bash.html" rel="nofollow">http://thoughtsbyclayg.blogspot.com/2008/02/how-to-delete-last-command-from-bash.html</a>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Very interesting. There is a way to simplify it, though.
-                                                        </p>
-              <p>
-                                                                First alter the alias to only delete one entry:
-                                                        </p>
-              <code>alias histdel='history -d $((HISTCMD-1))'</code>
-              <p>
-                                                                Now the clever bit. Add 'histdel' the the list of commands that are ignored by the history:
-                                                        </p>
-              <code>export HISTIGNORE=$HISTIGNORE:hd</code>
-              <p>
-                                                                This means histdel doesn't need to delete itself from the history and you can still run it as many times as you like.
-                                                        </p>
-              <p>
-                                                                Note: I also have aliases to show my history, which don't add to the history.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                @flatcap: Very good. I think I like yours better. You should post that as an alternative.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                flatcap yours is better *thumbs up*
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Very interesting. There is a way to simplify it, though.
+                                                </p>
+                                                <p>
+                                                        First alter the alias to only delete one entry:
+                                                </p><code>alias histdel='history -d $((HISTCMD-1))'</code>
+                                                <p>
+                                                        Now the clever bit. Add 'histdel' the the list of commands that are ignored by the history:
+                                                </p><code>export HISTIGNORE=$HISTIGNORE:hd</code>
+                                                <p>
+                                                        This means histdel doesn't need to delete itself from the history and you can still run it as many times as you like.
+                                                </p>
+                                                <p>
+                                                        Note: I also have aliases to show my history, which don't add to the history.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        @flatcap: Very good. I think I like yours better. You should post that as an alternative.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        flatcap yours is better *thumbs up*
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 resolving basic authentication problem(401) with wget
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        wget --auth-no-challenge --server-response -O- $url 2&gt;&amp;1 | grep "Cookie" | sed "s/^ Set-//g" &gt; cookie.txt; wget --auth-no-challenge --server-response --http-user="user" --http-password="pw" --header="$(cat cookie.txt)" -O- $url
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                wget --auth-no-challenge --server-response -O- $url 2&gt;&amp;1 | grep "Cookie" | sed "s/^ Set-//g" &gt; cookie.txt; wget --auth-no-challenge --server-response --http-user="user" --http-password="pw" --header="$(cat cookie.txt)" -O- $url
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 --2010-12-01 09:18:49--  http://your.url/
 Connecting to ...:80... connected.
 HTTP request sent, awaiting response...
@@ -34,53 +32,44 @@ Saving to: `STDOUT'
 &lt;HTML&gt;
 ...
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                resolving basic authentication problem(401) with wget
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        I have a server with a php requiring basic authentication, like this:
-                                                                </p>
-                <p>
-                                                                        header('WWW-Authenticate: Basic realm="do auth"');
-                                                                </p>
-                <p>
-                                                                        header('HTTP/1.0 401 Unauthorized');
-                                                                </p>
-                <p>
-                                                                        ...?&gt;
-                                                                </p>
-                <p>
-                                                                        And the basic authentication in wget do not worked:
-                                                                </p>
-                <code>wget --auth-no-challenge --http-user="username" --http-password="password" -O- "http://url"</code>
-                <code>wget --keep-session-cookies --save-cookies=cookies.txt --load-cookies=cokies.txt --http-user="username" --http-password="password" -O- "http://url"</code>
-                <p>
-                                                                        I always received the 401 Authorization failed.
-                                                                </p>
-                <p>
-                                                                        The saved cookie is always empty.
-                                                                </p>
-                <p>
-                                                                        With my way, I received the header from the server and save the cookie, then resend the session cookie with authentication data
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        resolving basic authentication problem(401) with wget
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                I have a server with a php requiring basic authentication, like this:
+                                                        </p>
+                                                        <p>
+                                                                header('WWW-Authenticate: Basic realm="do auth"');
+                                                        </p>
+                                                        <p>
+                                                                header('HTTP/1.0 401 Unauthorized');
+                                                        </p>
+                                                        <p>
+                                                                ...?&gt;
+                                                        </p>
+                                                        <p>
+                                                                And the basic authentication in wget do not worked:
+                                                        </p><code>wget --auth-no-challenge --http-user="username" --http-password="password" -O- "http://url"</code> <code>wget --keep-session-cookies --save-cookies=cookies.txt --load-cookies=cokies.txt --http-user="username" --http-password="password" -O- "http://url"</code>
+                                                        <p>
+                                                                I always received the 401 Authorization failed.
+                                                        </p>
+                                                        <p>
+                                                                The saved cookie is always empty.
+                                                        </p>
+                                                        <p>
+                                                                With my way, I received the header from the server and save the cookie, then resend the session cookie with authentication data
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-      </div>
-    </div>
-  </body>
+                                <div class="terminal-display"></div>
+                        </div>
+                </div>
+        </body>
 </html>

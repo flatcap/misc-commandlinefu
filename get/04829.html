@@ -1,117 +1,94 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 convert a line to a space
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        cat file | tr '\n' ''
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                cat file | tr '\n' ''
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        convert a line to a space
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                convert a line to a space
-                                                        </div>
-              <div class="description"></div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description"></div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         echo $(cat file)
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/4833/convert-a-line-to-a-space">convert a line to a space</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/4833/convert-a-line-to-a-space">convert a line to a space</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         sed 's/.*/ /'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/4832/convert-a-line-to-a-space">convert a line to a space</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/4832/convert-a-line-to-a-space">convert a line to a space</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         The first version printed:
-                                                                </p>
-                <code>tr: empty string2</code>
-                <p>
+                                                                </p><code>tr: empty string2</code>
+                                                                <p>
                                                                         The second version printed:
-                                                                </p>
-                <code>sed: -i may not be used with stdin</code>
-                <p>
+                                                                </p><code>sed: -i may not be used with stdin</code>
+                                                                <p>
                                                                         Maybe I misunderstood the orginal problem.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                The "cat" isn't really necessary since you can use redirection like this:
-                                                        </p>
-              <code>&lt; file tr '\n' ' '</code>
-              <p>
-                                                                or this:
-                                                        </p>
-              <code>tr '\n' ' ' &lt; file</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                or
-                                                        </p>
-              <code>tr -d '\n'</code>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Sorry - ignore above: you wanted a space...
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        The "cat" isn't really necessary since you can use redirection like this:
+                                                </p><code>&lt; file tr '\n' ' '</code>
+                                                <p>
+                                                        or this:
+                                                </p><code>tr '\n' ' ' &lt; file</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        or
+                                                </p><code>tr -d '\n'</code>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Sorry - ignore above: you wanted a space...
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

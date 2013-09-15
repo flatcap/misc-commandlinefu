@@ -1,63 +1,52 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Go to the next sibling directory in alphabetical order, version 2
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        cd ../"$(ls -F ..|grep '/'|grep -A1 `basename $PWD`|tail -n 1)"
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                cd ../"$(ls -F ..|grep '/'|grep -A1 `basename $PWD`|tail -n 1)"
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Go to the next sibling directory in alphabetical order, version 2
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Go to the next sibling directory in alphabetical order, version 2
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Another version based on linkinpark342's contribution.
-                                                                </p>
-                <p>
-                                                                        Sometimes you have to browse your way through a lot of sub-directories. This command cd to the next sub-directory in alphabetical order. For example, if you have the directories "lectures/01-intro", "lectures/02-basic", "lectures/03-advanced" and so on, and your PWD is "02-basic", it jumps to "03-advanced".
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Another version based on linkinpark342's contribution.
+                                                        </p>
+                                                        <p>
+                                                                Sometimes you have to browse your way through a lot of sub-directories. This command cd to the next sub-directory in alphabetical order. For example, if you have the directories "lectures/01-intro", "lectures/02-basic", "lectures/03-advanced" and so on, and your PWD is "02-basic", it jumps to "03-advanced".
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <code>cd ../"$(ls -vF ..|grep '/'|grep -A1 `basename $PWD`|tail -n 1)"</code>
-            <p>
-              <a href="http://www.gnu.org/software/coreutils/manual/html_node/More-details-about-version-sort.html" rel="nofollow">http://www.gnu.org/software/coreutils/manual/html_node/More-details-about-version-sort.html</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <code>cd ../"$(ls -vF ..|grep '/'|grep -A1 `basename $PWD`|tail -n 1)"</code>
+                                        <p>
+                                                <a href="http://www.gnu.org/software/coreutils/manual/html_node/More-details-about-version-sort.html" rel="nofollow">http://www.gnu.org/software/coreutils/manual/html_node/More-details-about-version-sort.html</a>
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

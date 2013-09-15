@@ -1,97 +1,79 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 connect via ssh using mac address
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        sudo arp -s 192.168.1.200 00:35:cf:56:b2:2g temp &amp;&amp; ssh root@192.168.1.200
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                sudo arp -s 192.168.1.200 00:35:cf:56:b2:2g temp &amp;&amp; ssh root@192.168.1.200
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        connect via ssh using mac address
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                connect via ssh using mac address
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Instead of looking for the right ip address, just pick whatever address you like and set a static ip mapping.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Instead of looking for the right ip address, just pick whatever address you like and set a static ip mapping.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
-                                                        ssh root@`for ((i=100; i&lt;=110; i++));do arp -a 192.168.1.$i; done | grep 00:35:cf:56:b2:2g | awk '{print $2}' | sed -e 's/(//' -e 's/)//'`
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                <div class="terminal-display one-liner">
+                                        <div class="line command">
+                                                ssh root@`for ((i=100; i&lt;=110; i++));do arp -a 192.168.1.$i; done | grep 00:35:cf:56:b2:2g | awk '{print $2}' | sed -e 's/(//' -e 's/)//'`
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 ssh: connect to host 192.168.1.103 port 22: No route to host
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3398/connect-via-ssh-using-mac-address">connect via ssh using mac address</a>
-              </div>
-              <div class="description">
-                <p>
-                                                                        Connect to a machine running ssh using mac address by using the "arp" command
-                                                                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        <a href="/commands/view/3398/connect-via-ssh-using-mac-address">connect via ssh using mac address</a>
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Connect to a machine running ssh using mac address by using the "arp" command
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Does this require the chosen address to be on the same subnet as the computer from which you are ssh-ing?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                @clindseysmith yes, it does.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                @svg this doesn't work for me. My two devices are both connected to a CISCO 2960 switch. Maybe my switch is being too fancy? My issue is that I'm swapping devices on and off my test network as I test them before fielding them. Each device has its MAC printed on it but I don't know for sure what IP the last person to configure the device used... so I thought this command would be perfect but I can't seem to get it to work.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Does this require the chosen address to be on the same subnet as the computer from which you are ssh-ing?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        @clindseysmith yes, it does.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        @svg this doesn't work for me. My two devices are both connected to a CISCO 2960 switch. Maybe my switch is being too fancy? My issue is that I'm swapping devices on and off my test network as I test them before fielding them. Each device has its MAC printed on it but I don't know for sure what IP the last person to configure the device used... so I thought this command would be perfect but I can't seem to get it to work.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

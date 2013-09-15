@@ -1,261 +1,221 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Draw kernel module dependancy graph.
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        lsmod | perl -e 'print "digraph \"lsmod\" {";&lt;&gt;;while(&lt;&gt;){@_=split/\s+/; print "\"$_[0]\" -&gt; \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                lsmod | perl -e 'print "digraph \"lsmod\" {";&lt;&gt;;while(&lt;&gt;){@_=split/\s+/; print "\"$_[0]\" -&gt; \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Draw kernel module dependancy graph.
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Draw kernel module dependancy graph.
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        parse `lsmod' output and pass to `dot' drawing utility then finally pass it to an image viewer
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                parse `lsmod' output and pass to `dot' drawing utility then finally pass it to an image viewer
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
-                                                        lsmod | awk 'BEGIN{print "digraph{"}{split($4, a, ","); for (i in a) print $1, "-&gt;", a[i]}END{print "}"}'|display
+                                <div class="terminal-display one-liner">
+                                        <div class="line command">
+                                                lsmod | awk 'BEGIN{print "digraph{"}{split($4, a, ","); for (i in a) print $1, "-&gt;", a[i]}END{print "}"}'|display
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        <a href="/commands/view/9809/draw-kernel-module-dependancy-graph.">Draw kernel module dependancy graph.</a>
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9809/draw-kernel-module-dependancy-graph.">Draw kernel module dependancy graph.</a>
-              </div>
-              <div class="description">
-                <p>
-                                                                        parse "lsmod" output to "dot" format and pass it to "display". Without perl!
-                                                                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                parse "lsmod" output to "dot" format and pass it to "display". Without perl!
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Wonderful.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                "Imagemagick is smarter than you think. It can display dot files, so the dot command is unnecessary."
-                                                        </p>
-              <p>
-                                                                - Comment by dratini0 8 hours ago
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                So how would you do this with ImageMagick?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                If anyone's running into a missing helvetica error on debian or ubuntu, give this a try:
-                                                        </p>
-              <p>
-                                                                sudo apt-get install xfs xfstt t1-xfree86-nonfree ttf-xfree86-nonfree ttf-xfree86-nonfree-syriac xfonts-75dpi xfonts-100dpi
-                                                        </p>
-              <p>
-                                                                and reboot.
-                                                        </p>
-              <p>
-                                                                (from <a href="http://root.cern.ch/phpBB3/viewtopic.php?f=3&amp;t=12627#p54486)" rel="nofollow">http://root.cern.ch/phpBB3/viewtopic.php?f=3&amp;t=12627#p54486)</a>
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                SuperFly: lsmod | perl -e 'print "digraph \"lsmod\" {";;while(){@_=split/\s+/; print "\"$_[0]\" -&gt; \"$_\"\n" for split/,/,$_[3]}print "}"' | display -
-                                                        </p>
-              <p>
-                                                                you can also replace 'display - ' with 'gm display - ' if you have GraphicsMagick installed instead of ImageMagick (or just install graphicsmagick-imagemagick-compat to replace GraphicsMagick completely)
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                @SuperFly: with IM not the whole procedure, just the `dot | display' thing. `display' can interpret this format too and displays it on transparent (for me).
-                                                        </p>
-              <p>
-                                                                @psykotron: i think reboot unneccessary. Run `fc-cache -r' !
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                I have ImageMagick-6.2.8.0-4.el5_5.3.x86_64 installed and I get this:
-                                                        </p>
-              <code>lsmod | perl -e 'print "digraph \"lsmod\" {";&lt;&gt;;while(&lt;&gt;){@_=split/\s+/; print "\"$_[0]\" -&gt; \"$_\"\n" for split/,/,$_[3]}print "}"' | display -</code>
-              <p>
-                                                                display: no decode delegate for this image format `/tmp/magick-XX6QuBzg'.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                type `display -list format' to get supported formata.
-                                                        </p>
-              <code>display -list format | grep DOT</code>
-              <p>
-                                                                DOT DOT r-- Graphviz
-                                                        </p>
-              <p>
-                                                                I've:
-                                                        </p>
-              <code>display -list configure</code>
-              <p>
-                                                                Path: /usr/lib/ImageMagick-6.6.0/config/configure.xml
-                                                        </p>
-              <p>
-                                                                Name Value
-                                                        </p>
-              <p>
-                                                                -------------------------------------------------------------------------------
-                                                        </p>
-              <p>
-                                                                CC gcc -std=gnu99 -std=gnu99
-                                                        </p>
-              <p>
-                                                                CFLAGS -I/usr/include/lqr-1 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -fopenmp -g -O2 -Wall -W -pthread
-                                                        </p>
-              <p>
-                                                                CONFIGURE ./configure '--prefix=/usr' '--mandir=${prefix}/share/man' '--infodir=${prefix}/share/info' '--with-modules' '--with-gs-font-dir=/usr/share/fonts/type1/gsfonts' '--with-magick-plus-plus' '--with-djvu' '--enable-shared' '--without-dps' '--without-fpx' '--with-perl-options=INSTALLDIRS=vendor' '--x-includes=/usr/include/X11' '--x-libraries=/usr/lib/X11' 'CFLAGS=-g -O2' 'LDFLAGS=' 'CPPFLAGS=' 'CXXFLAGS=-g -O2'
-                                                        </p>
-              <p>
-                                                                COPYRIGHT Copyright (C) 1999-2010 ImageMagick Studio LLC
-                                                        </p>
-              <p>
-                                                                CPPFLAGS -I/usr/include/ImageMagick
-                                                        </p>
-              <p>
-                                                                CXX g++
-                                                        </p>
-              <p>
-                                                                CXXFLAGS -g -O2 -Wall -W -pthread
-                                                        </p>
-              <p>
-                                                                DEFS -DHAVE_CONFIG_H
-                                                        </p>
-              <p>
-                                                                DELEGATES bzlib djvu fontconfig freetype gvc jpeg jng jp2 lcms lqr openexr png rsvg tiff x11 xml wmf zlib
-                                                        </p>
-              <p>
-                                                                DISTCHECK_CONFIG_FLAGS 'CFLAGS=-g -O2' 'CPPFLAGS=' 'LDFLAGS=' --disable-deprecated --with-quantum-depth=16 --with-umem=no --with-autotrace=no --with-dps=no --with-fpx=no --with-gslib=no --with-fontpath= --with-gs-font-dir=/usr/share/fonts/type1/gsfonts
-                                                        </p>
-              <p>
-                                                                EXEC-PREFIX /usr
-                                                        </p>
-              <p>
-                                                                HOST i686-pc-linux-gnu
-                                                        </p>
-              <p>
-                                                                LDFLAGS -L/usr/lib -L/usr/lib/X11
-                                                        </p>
-              <p>
-                                                                LIB_VERSION 0x660
-                                                        </p>
-              <p>
-                                                                LIB_VERSION_NUMBER 6,6,0,4
-                                                        </p>
-              <p>
-                                                                LIBS -lMagickCore -llcms -ltiff -lfreetype -ljpeg -llqr-1 -lglib-2.0 -lfontconfig -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lgomp -lpthread -lltdl
-                                                        </p>
-              <p>
-                                                                NAME ImageMagick
-                                                        </p>
-              <p>
-                                                                PCFLAGS -fopenmp
-                                                        </p>
-              <p>
-                                                                PREFIX /usr
-                                                        </p>
-              <p>
-                                                                QuantumDepth 16
-                                                        </p>
-              <p>
-                                                                RELEASE_DATE 2010-11-16
-                                                        </p>
-              <p>
-                                                                VERSION 6.6.0
-                                                        </p>
-              <p>
-                                                                WEBSITE <a href="http://www.imagemagick.org" rel="nofollow">http://www.imagemagick.org</a>
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <code># `awk` is very good at parsing the output of `lsmod`</code>
-              <code>lsmod | awk 'BEGIN{print "digraph lsmod {"}; NR!=1&amp;&amp;NF==4{printf("\t%s -&gt; { %s };\n", $1, gensub(",", "", "g", $4))}; END{print "}"}' | dot -Tpng | display -</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <code># sorry, please change `gensub(",", "", "g", $4)` to `gensub(",", " ", "g", $4)`</code>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                @unixmonkey21861: it not really works... how modulenames in 4th field filled? printf doesnt accept gensub's array.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                brilliant..
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Wonderful.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        "Imagemagick is smarter than you think. It can display dot files, so the dot command is unnecessary."
+                                                </p>
+                                                <p>
+                                                        - Comment by dratini0 8 hours ago
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        So how would you do this with ImageMagick?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        If anyone's running into a missing helvetica error on debian or ubuntu, give this a try:
+                                                </p>
+                                                <p>
+                                                        sudo apt-get install xfs xfstt t1-xfree86-nonfree ttf-xfree86-nonfree ttf-xfree86-nonfree-syriac xfonts-75dpi xfonts-100dpi
+                                                </p>
+                                                <p>
+                                                        and reboot.
+                                                </p>
+                                                <p>
+                                                        (from <a href="http://root.cern.ch/phpBB3/viewtopic.php?f=3&amp;t=12627#p54486)" rel="nofollow">http://root.cern.ch/phpBB3/viewtopic.php?f=3&amp;t=12627#p54486)</a>
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        SuperFly: lsmod | perl -e 'print "digraph \"lsmod\" {";;while(){@_=split/\s+/; print "\"$_[0]\" -&gt; \"$_\"\n" for split/,/,$_[3]}print "}"' | display -
+                                                </p>
+                                                <p>
+                                                        you can also replace 'display - ' with 'gm display - ' if you have GraphicsMagick installed instead of ImageMagick (or just install graphicsmagick-imagemagick-compat to replace GraphicsMagick completely)
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        @SuperFly: with IM not the whole procedure, just the `dot | display' thing. `display' can interpret this format too and displays it on transparent (for me).
+                                                </p>
+                                                <p>
+                                                        @psykotron: i think reboot unneccessary. Run `fc-cache -r' !
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        I have ImageMagick-6.2.8.0-4.el5_5.3.x86_64 installed and I get this:
+                                                </p><code>lsmod | perl -e 'print "digraph \"lsmod\" {";&lt;&gt;;while(&lt;&gt;){@_=split/\s+/; print "\"$_[0]\" -&gt; \"$_\"\n" for split/,/,$_[3]}print "}"' | display -</code>
+                                                <p>
+                                                        display: no decode delegate for this image format `/tmp/magick-XX6QuBzg'.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        type `display -list format' to get supported formata.
+                                                </p><code>display -list format | grep DOT</code>
+                                                <p>
+                                                        DOT DOT r-- Graphviz
+                                                </p>
+                                                <p>
+                                                        I've:
+                                                </p><code>display -list configure</code>
+                                                <p>
+                                                        Path: /usr/lib/ImageMagick-6.6.0/config/configure.xml
+                                                </p>
+                                                <p>
+                                                        Name Value
+                                                </p>
+                                                <p>
+                                                        -------------------------------------------------------------------------------
+                                                </p>
+                                                <p>
+                                                        CC gcc -std=gnu99 -std=gnu99
+                                                </p>
+                                                <p>
+                                                        CFLAGS -I/usr/include/lqr-1 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -fopenmp -g -O2 -Wall -W -pthread
+                                                </p>
+                                                <p>
+                                                        CONFIGURE ./configure '--prefix=/usr' '--mandir=${prefix}/share/man' '--infodir=${prefix}/share/info' '--with-modules' '--with-gs-font-dir=/usr/share/fonts/type1/gsfonts' '--with-magick-plus-plus' '--with-djvu' '--enable-shared' '--without-dps' '--without-fpx' '--with-perl-options=INSTALLDIRS=vendor' '--x-includes=/usr/include/X11' '--x-libraries=/usr/lib/X11' 'CFLAGS=-g -O2' 'LDFLAGS=' 'CPPFLAGS=' 'CXXFLAGS=-g -O2'
+                                                </p>
+                                                <p>
+                                                        COPYRIGHT Copyright (C) 1999-2010 ImageMagick Studio LLC
+                                                </p>
+                                                <p>
+                                                        CPPFLAGS -I/usr/include/ImageMagick
+                                                </p>
+                                                <p>
+                                                        CXX g++
+                                                </p>
+                                                <p>
+                                                        CXXFLAGS -g -O2 -Wall -W -pthread
+                                                </p>
+                                                <p>
+                                                        DEFS -DHAVE_CONFIG_H
+                                                </p>
+                                                <p>
+                                                        DELEGATES bzlib djvu fontconfig freetype gvc jpeg jng jp2 lcms lqr openexr png rsvg tiff x11 xml wmf zlib
+                                                </p>
+                                                <p>
+                                                        DISTCHECK_CONFIG_FLAGS 'CFLAGS=-g -O2' 'CPPFLAGS=' 'LDFLAGS=' --disable-deprecated --with-quantum-depth=16 --with-umem=no --with-autotrace=no --with-dps=no --with-fpx=no --with-gslib=no --with-fontpath= --with-gs-font-dir=/usr/share/fonts/type1/gsfonts
+                                                </p>
+                                                <p>
+                                                        EXEC-PREFIX /usr
+                                                </p>
+                                                <p>
+                                                        HOST i686-pc-linux-gnu
+                                                </p>
+                                                <p>
+                                                        LDFLAGS -L/usr/lib -L/usr/lib/X11
+                                                </p>
+                                                <p>
+                                                        LIB_VERSION 0x660
+                                                </p>
+                                                <p>
+                                                        LIB_VERSION_NUMBER 6,6,0,4
+                                                </p>
+                                                <p>
+                                                        LIBS -lMagickCore -llcms -ltiff -lfreetype -ljpeg -llqr-1 -lglib-2.0 -lfontconfig -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lgomp -lpthread -lltdl
+                                                </p>
+                                                <p>
+                                                        NAME ImageMagick
+                                                </p>
+                                                <p>
+                                                        PCFLAGS -fopenmp
+                                                </p>
+                                                <p>
+                                                        PREFIX /usr
+                                                </p>
+                                                <p>
+                                                        QuantumDepth 16
+                                                </p>
+                                                <p>
+                                                        RELEASE_DATE 2010-11-16
+                                                </p>
+                                                <p>
+                                                        VERSION 6.6.0
+                                                </p>
+                                                <p>
+                                                        WEBSITE <a href="http://www.imagemagick.org" rel="nofollow">http://www.imagemagick.org</a>
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <code># `awk` is very good at parsing the output of `lsmod`</code> <code>lsmod | awk 'BEGIN{print "digraph lsmod {"}; NR!=1&amp;&amp;NF==4{printf("\t%s -&gt; { %s };\n", $1, gensub(",", "", "g", $4))}; END{print "}"}' | dot -Tpng | display -</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <code># sorry, please change `gensub(",", "", "g", $4)` to `gensub(",", " ", "g", $4)`</code>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        @unixmonkey21861: it not really works... how modulenames in 4th field filled? printf doesnt accept gensub's array.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        brilliant..
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

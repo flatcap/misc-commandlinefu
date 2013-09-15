@@ -1,115 +1,99 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Monitor a file with tail with timestamps added
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        tail -f file |xargs -IX printf "$(date -u)\t%s\n" X
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                tail -f file |xargs -IX printf "$(date -u)\t%s\n" X
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Monitor a file with tail with timestamps added
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Monitor a file with tail with timestamps added
-                                                        </div>
-              <div class="description"></div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description"></div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         tail -f file | awk '{now=strftime("%F %T%z\t");sub(/^/, now);print}'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/7151/monitor-a-file-with-tail-with-timestamps-added">Monitor a file with tail with timestamps added</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/7151/monitor-a-file-with-tail-with-timestamps-added">Monitor a file with tail with timestamps added</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         tail -f file | while read line; do echo -n $(date -u -Ins); echo -e "\t$line"; done
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/7110/monitor-a-file-with-tail-with-timestamps-added">Monitor a file with tail with timestamps added</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/7110/monitor-a-file-with-tail-with-timestamps-added">Monitor a file with tail with timestamps added</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         This is useful when watching a log file that does not contain timestamps itself.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         If the file already has content when starting the command, the first lines will have the "wrong" timestamp when the command was started and not when the lines were originally written.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         tail -f file | while read line; do printf "$(date -u '+%F %T%z')\t$line\n"; done
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 ....
 2010-11-24 05:46:58+0000        ##########
 2010-11-24 05:46:59+0000        #  EOF   #
 2010-11-24 05:46:59+0000        ##########
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/7140/monitor-a-file-with-tail-with-timestamps-added">Monitor a file with tail with timestamps added</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/7140/monitor-a-file-with-tail-with-timestamps-added">Monitor a file with tail with timestamps added</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Should be a bit more portable since echo -e/n and date's -Ins are not.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        This always prints the same timestamp on each line.
-                                                </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                This always prints the same timestamp on each line.
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

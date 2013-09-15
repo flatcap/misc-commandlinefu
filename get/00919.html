@@ -1,68 +1,55 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Copy stdin to your X11 buffer
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        ssh user@host cat /path/to/some/file | xclip
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                ssh user@host cat /path/to/some/file | xclip
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Copy stdin to your X11 buffer
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Copy stdin to your X11 buffer
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Have you ever had to scp a file to your work machine in order to copy its contents to a mail? xclip can help you with that. It copies its stdin to the X11 buffer, so all you have to do is middle-click to paste the content of that looong file :)
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Have you ever had to scp a file to your work machine in order to copy its contents to a mail? xclip can help you with that. It copies its stdin to the X11 buffer, so all you have to do is middle-click to paste the content of that looong file :)
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Thanks for this! Does anyone know of a way to paste into the kill buffer instead? Sometimes I am logged into a remote machine and there is no X functionality. (BTW, Mac has pbcopy and Windows has clip.exe for this capability)...
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Correction: I didn't mean "paste into kill buffer", I meant "copy arbitrary text into the kill buffer for later pasting"
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Thanks for this! Does anyone know of a way to paste into the kill buffer instead? Sometimes I am logged into a remote machine and there is no X functionality. (BTW, Mac has pbcopy and Windows has clip.exe for this capability)...
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Correction: I didn't mean "paste into kill buffer", I meant "copy arbitrary text into the kill buffer for later pasting"
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

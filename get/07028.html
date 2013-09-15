@@ -1,89 +1,70 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Convert first letter of string to uppercase
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        string="${string^}"
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                string="${string^}"
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 string="hello"
 string="${string^}"
 echo $string
 Hello
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Convert first letter of string to uppercase
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Let bash do the work by converting the initial of a string to an uppercase
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Convert first letter of string to uppercase
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Let bash do the work by converting the initial of a string to an uppercase
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                ^^ will do all characters, comma and double-comma will covert to lowercase. ~ toggles the first character of each word, ~~ toggles all characters. To title case a string:
-                                                        </p>
-              <code>string='mIXed uP CAse'</code>
-              <code>string=${string,,}</code>
-              <code>string=${string~}</code>
-              <code>echo "$string"</code>
-              <p>
-                                                                Mixed Up Case
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                By the way, all of this requires Bash 4.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Hey, neat info dennisw. Thanks.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        ^^ will do all characters, comma and double-comma will covert to lowercase. ~ toggles the first character of each word, ~~ toggles all characters. To title case a string:
+                                                </p><code>string='mIXed uP CAse'</code> <code>string=${string,,}</code> <code>string=${string~}</code> <code>echo "$string"</code>
+                                                <p>
+                                                        Mixed Up Case
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        By the way, all of this requires Bash 4.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Hey, neat info dennisw. Thanks.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

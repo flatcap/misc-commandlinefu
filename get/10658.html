@@ -1,111 +1,90 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Replace Space In Filenames With Underscore
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        for file in "* *"; do mv "${file}" "${file// /_}"; done
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                for file in "* *"; do mv "${file}" "${file// /_}"; done
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Replace Space In Filenames With Underscore
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Replace Space In Filenames With Underscore
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        @ <a href="http://sgowtham.net/blog/2007/10/18/bash-replace-space-in-filenames-with-underscore/" rel="nofollow">http://sgowtham.net/blog/2007/10/18/bash-replace-space-in-filenames-with-underscore/</a>
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                @ <a href="http://sgowtham.net/blog/2007/10/18/bash-replace-space-in-filenames-with-underscore/" rel="nofollow">http://sgowtham.net/blog/2007/10/18/bash-replace-space-in-filenames-with-underscore/</a>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
-                                                        rename 's/ /_/g' *
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                <div class="terminal-display one-liner">
+                                        <div class="line command">
+                                                rename 's/ /_/g' *
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 for file in *; do echo mv "${file}" "${file// /_}"; done
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/10659/replace-space-in-filenames-with-underscore">Replace Space In Filenames With Underscore</a>
-              </div>
-              <div class="description">
-                <p>
-                                                                        rename is often an alias to prename, bundled with perl.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        <a href="/commands/view/10659/replace-space-in-filenames-with-underscore">Replace Space In Filenames With Underscore</a>
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                rename is often an alias to prename, bundled with perl.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Erm... you forgot to edit out the "echo" after testing!
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Also, it complains about files with no spaces in them.
-                                                        </p>
-              <code>for file in "* *"; do mv "${file}" "${file// /_}"; done</code>
-              <p>
-                                                                is slightly better
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Use "detox": much better
-                                                        </p>
-              <p>
-                <a href="http://www.commandlinefu.com/commands/view/1498/iso-8859-1-to-utf-8-safe-recursive-rename" rel="nofollow">http://www.commandlinefu.com/commands/view/1498/iso-8859-1-to-utf-8-safe-recursive-rename</a>
-              </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                corrected
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Erm... you forgot to edit out the "echo" after testing!
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Also, it complains about files with no spaces in them.
+                                                </p><code>for file in "* *"; do mv "${file}" "${file// /_}"; done</code>
+                                                <p>
+                                                        is slightly better
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Use "detox": much better
+                                                </p>
+                                                <p>
+                                                        <a href="http://www.commandlinefu.com/commands/view/1498/iso-8859-1-to-utf-8-safe-recursive-rename" rel="nofollow">http://www.commandlinefu.com/commands/view/1498/iso-8859-1-to-utf-8-safe-recursive-rename</a>
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        corrected
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

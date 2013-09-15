@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 find all active IP addresses in a network
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command-dangerous">
-                                                        arp-scan -l
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command-dangerous">
+                                                arp-scan -l
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 Interface: eth0, datalink type: EN10MB (Ethernet)
 Starting arp-scan 1.6 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
 10.0.10.2       00:18:8b:f9:db:2b       Dell
@@ -29,84 +27,71 @@ Starting arp-scan 1.6 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/
 26 packets received by filter, 0 packets dropped by kernel
 Ending arp-scan 1.6: 256 hosts scanned in 1.459 seconds (175.46 hosts/sec).  26 responded
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                find all active IP addresses in a network
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Have to run as superuser... but easier and more informational if you are looking for actual devices. Need to install arp-scan.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        find all active IP addresses in a network
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Have to run as superuser... but easier and more informational if you are looking for actual devices. Need to install arp-scan.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         nmap -sP 192.168.1.0/24; arp -n | grep "192.168.1.[0-9]* *ether"
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 172.16.17.99             ether   00:0b:db:7f:c1:4c   C                     eth0
 172.16.17.203            ether   00:15:60:9a:76:71   C                     eth0
 172.16.17.80             ether   00:15:60:5a:6b:0c   C                     eth0
 172.16.17.142            ether   00:12:3f:27:a1:34   C                     eth0
 172.16.0.12              ether   00:1e:c9:b0:3a:96   C                     eth0
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/5340/find-all-active-ip-addresses-in-a-network">find all active IP addresses in a network</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/5340/find-all-active-ip-addresses-in-a-network">find all active IP addresses in a network</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         You send a unicast ICMP packet to each host. Many firewalls will drop that ICMP. However, in order to send the ICMP, you'll have first done an ARP request and the remote machine is unlikely to ignore that, so the computer will be in your ARP table.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         sudo watch arp-scan --interface=wlan0 --localnet
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9963/find-watch-active-ip-and-mac-addresses-in-a-wireless-network-in-real-time.-ipv4-only">Find &amp; watch active IP and MAC addresses in a wireless network in real time. (IPv4 only)</a>
-              </div>
-              <div class="description"></div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9963/find-watch-active-ip-and-mac-addresses-in-a-wireless-network-in-real-time.-ipv4-only">Find &amp; watch active IP and MAC addresses in a wireless network in real time. (IPv4 only)</a>
+                                                        </div>
+                                                        <div class="description"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        great and much faster than nmap ping scan.
-                                                </p>
-            <p>
-                                                        i had to specify the interface
-                                                </p>
-            <code>arp-scan -l -I wlan0</code>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                great and much faster than nmap ping scan.
+                                        </p>
+                                        <p>
+                                                i had to specify the interface
+                                        </p><code>arp-scan -l -I wlan0</code>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

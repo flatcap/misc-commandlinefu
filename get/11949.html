@@ -1,192 +1,171 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Limit the cpu usage of a process
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        prlimit --cpu=10 sort -u hugefile
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                prlimit --cpu=10 sort -u hugefile
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Limit the cpu usage of a process
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Limit the cpu usage of a process
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Similar to `cpulimit`, although `prlimit` can be found shipped with recent util-linux.
-                                                                </p>
-                <p>
-                                                                        Example: limit CPU consumption to 10% for a math problem which ordinarily takes up 100% CPU:
-                                                                </p>
-                <p>
-                                                                        Before:
-                                                                </p>
-                <code>bc -l &lt;(echo "1234123412341234^12341234")</code>
-                <p>
-                                                                        See the difference `prlimit` makes:
-                                                                </p>
-                <code>prlimit --cpu=10 bc -l &lt;(echo "1234123412341234^12341234")</code>
-                <p>
-                                                                        To actually monitor the CPU usage, use `top`, `sar`, etc.. or:
-                                                                </p>
-                <code>pidstat -C 'bc' -hur -p ALL 1</code>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                Similar to `cpulimit`, although `prlimit` can be found shipped with recent util-linux.
+                                                        </p>
+                                                        <p>
+                                                                Example: limit CPU consumption to 10% for a math problem which ordinarily takes up 100% CPU:
+                                                        </p>
+                                                        <p>
+                                                                Before:
+                                                        </p><code>bc -l &lt;(echo "1234123412341234^12341234")</code>
+                                                        <p>
+                                                                See the difference `prlimit` makes:
+                                                        </p><code>prlimit --cpu=10 bc -l &lt;(echo "1234123412341234^12341234")</code>
+                                                        <p>
+                                                                To actually monitor the CPU usage, use `top`, `sar`, etc.. or:
+                                                        </p><code>pidstat -C 'bc' -hur -p ALL 1</code>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         sudo cpulimit -p pid -l 50
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 sudo cpulimit -p 4799 -l 10
 Process 4799 detected
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9743/limit-the-cpu-usage-of-a-process">Limit the cpu usage of a process</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9743/limit-the-cpu-usage-of-a-process">Limit the cpu usage of a process</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         This will limit the average amount of CPU it consumes.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         sudo cpulimit -e Grooveshark -l 20
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 Process 2927 detected
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/7046/stop-grooveshark-destroying-your-cpu">Stop Grooveshark destroying your CPU</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/7046/stop-grooveshark-destroying-your-cpu">Stop Grooveshark destroying your CPU</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Will limit the amount of CPU time Grooveshark the greedy yet useful Adobe Air app will have.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Leaves the UI lagging a little, but crucially does not ruin the audio.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Welcome to my Taobao shop !
-                                                        </p>
-              <p>
-                                                                Daily update:
-                                                        </p>
-              <p>
-                                                                Discover amazing stuff, collect the things you love, buy it all in one place.
-                                                        </p>
-              <p>
-                                                                novel style, varieties, low price and good quality, and the low sale price
-                                                        </p>
-              <p>
-                                                                ==== ( <a href="http://www.fullmalls.com" rel="nofollow">http://www.fullmalls.com</a> ) =====
-                                                        </p>
-              <p>
-                                                                ==== ( <a href="http://www.fullmalls.com" rel="nofollow">http://www.fullmalls.com</a> ) =====
-                                                        </p>
-              <p>
-                                                                New to Hong Kong : Winter Dress
-                                                        </p>
-              <p>
-                                                                Best quality, Best reputation , Best services
-                                                        </p>
-              <p>
-                                                                ---**** NHL Jersey Woman $ 40 ---**** NFL Jersey $ 35
-                                                        </p>
-              <p>
-                                                                ---**** NBA Jersey $ 34 ---**** MLB Jersey $ 35
-                                                        </p>
-              <p>
-                                                                ---**** Jordan Six Ring_m $ 36 ---**** Air Yeezy_m $ 45
-                                                        </p>
-              <p>
-                                                                ---**** T-Shirt_m $ 25 ---**** Jacket_m $ 36
-                                                        </p>
-              <p>
-                                                                ---**** Hoody_m $ 50 ---**** Manicure Set $ 20
-                                                        </p>
-              <p>
-                                                                ---**** handbag $ 37 ---**** ugg boot $ 43 ---****
-                                                        </p>
-              <p>
-                                                                give you the unexpected harvest
-                                                        </p>
-              <p>
-                                                                ==== ( <a href="http://www.fullmalls.com" rel="nofollow">http://www.fullmalls.com</a> ) =====
-                                                        </p>
-              <p>
-                                                                ==== ( <a href="http://www.fullmalls.com" rel="nofollow">http://www.fullmalls.com</a> ) =====
-                                                        </p>
-              <p>
-                                                                ==== ( <a href="http://www.fullmalls.com" rel="nofollow">http://www.fullmalls.com</a> ) =====
-                                                        </p>
-              <p>
-                                                                ==== ( <a href="http://www.fullmalls.com" rel="nofollow">http://www.fullmalls.com</a> ) =====
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                And what does it mean to limit the cpu time to 10 seconds: That the process can only run for maximal 10 CPU seconds? Or that the process will get re-scheduled after 10 seconds?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Not seconds of time, but *CPU time* (as in "timesharing"). The CPU is a finite resource which has to be shared, and sometimes the greedy processes should be throttled; the other processes need their fair share of time on the CPU too.. So rather than allowing our greedy process to hog the CPU core for 100% of the time, we limit him to only 10% of the available time on that core.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Welcome to my Taobao shop !
+                                                </p>
+                                                <p>
+                                                        Daily update:
+                                                </p>
+                                                <p>
+                                                        Discover amazing stuff, collect the things you love, buy it all in one place.
+                                                </p>
+                                                <p>
+                                                        novel style, varieties, low price and good quality, and the low sale price
+                                                </p>
+                                                <p>
+                                                        ==== ( <a href="http://www.fullmalls.com" rel="nofollow">http://www.fullmalls.com</a> ) =====
+                                                </p>
+                                                <p>
+                                                        ==== ( <a href="http://www.fullmalls.com" rel="nofollow">http://www.fullmalls.com</a> ) =====
+                                                </p>
+                                                <p>
+                                                        New to Hong Kong : Winter Dress
+                                                </p>
+                                                <p>
+                                                        Best quality, Best reputation , Best services
+                                                </p>
+                                                <p>
+                                                        ---**** NHL Jersey Woman $ 40 ---**** NFL Jersey $ 35
+                                                </p>
+                                                <p>
+                                                        ---**** NBA Jersey $ 34 ---**** MLB Jersey $ 35
+                                                </p>
+                                                <p>
+                                                        ---**** Jordan Six Ring_m $ 36 ---**** Air Yeezy_m $ 45
+                                                </p>
+                                                <p>
+                                                        ---**** T-Shirt_m $ 25 ---**** Jacket_m $ 36
+                                                </p>
+                                                <p>
+                                                        ---**** Hoody_m $ 50 ---**** Manicure Set $ 20
+                                                </p>
+                                                <p>
+                                                        ---**** handbag $ 37 ---**** ugg boot $ 43 ---****
+                                                </p>
+                                                <p>
+                                                        give you the unexpected harvest
+                                                </p>
+                                                <p>
+                                                        ==== ( <a href="http://www.fullmalls.com" rel="nofollow">http://www.fullmalls.com</a> ) =====
+                                                </p>
+                                                <p>
+                                                        ==== ( <a href="http://www.fullmalls.com" rel="nofollow">http://www.fullmalls.com</a> ) =====
+                                                </p>
+                                                <p>
+                                                        ==== ( <a href="http://www.fullmalls.com" rel="nofollow">http://www.fullmalls.com</a> ) =====
+                                                </p>
+                                                <p>
+                                                        ==== ( <a href="http://www.fullmalls.com" rel="nofollow">http://www.fullmalls.com</a> ) =====
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        And what does it mean to limit the cpu time to 10 seconds: That the process can only run for maximal 10 CPU seconds? Or that the process will get re-scheduled after 10 seconds?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Not seconds of time, but *CPU time* (as in "timesharing"). The CPU is a finite resource which has to be shared, and sometimes the greedy processes should be throttled; the other processes need their fair share of time on the CPU too.. So rather than allowing our greedy process to hog the CPU core for 100% of the time, we limit him to only 10% of the available time on that core.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

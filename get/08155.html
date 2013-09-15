@@ -1,128 +1,110 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 function to edit your history file
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        eh () { history -a ; vi ~/.bash_history ; history -r ; }
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                eh () { history -a ; vi ~/.bash_history ; history -r ; }
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        function to edit your history file
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                function to edit your history file
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        eh stands for Edit History
-                                                                </p>
-                <p>
-                                                                        .
-                                                                </p>
-                <p>
-                                                                        Frequently, I'll mistype a command, and then step back through my history and correct the command. As a result, both the correct and incorrect commands are in my history file. I wanted a simple way to remove the incorrect command so I don't run it by mistake.
-                                                                </p>
-                <p>
-                                                                        .
-                                                                </p>
-                <p>
-                                                                        When running this function, first the ~/bash_history file is updated, then you edit the file in vi, and then the saved history file is loaded back into memory for current usage.
-                                                                </p>
-                <p>
-                                                                        .
-                                                                </p>
-                <p>
-                                                                        while in vi, remember that `Shift-G` sends you to the bottom of the file, and `dd` removes a line.
-                                                                </p>
-                <p>
-                                                                        .
-                                                                </p>
-                <p>
-                                                                        this command is different than bash built-in `fc` because it does not run the command after editing.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                eh stands for Edit History
+                                                        </p>
+                                                        <p>
+                                                                .
+                                                        </p>
+                                                        <p>
+                                                                Frequently, I'll mistype a command, and then step back through my history and correct the command. As a result, both the correct and incorrect commands are in my history file. I wanted a simple way to remove the incorrect command so I don't run it by mistake.
+                                                        </p>
+                                                        <p>
+                                                                .
+                                                        </p>
+                                                        <p>
+                                                                When running this function, first the ~/bash_history file is updated, then you edit the file in vi, and then the saved history file is loaded back into memory for current usage.
+                                                        </p>
+                                                        <p>
+                                                                .
+                                                        </p>
+                                                        <p>
+                                                                while in vi, remember that `Shift-G` sends you to the bottom of the file, and `dd` removes a line.
+                                                        </p>
+                                                        <p>
+                                                                .
+                                                        </p>
+                                                        <p>
+                                                                this command is different than bash built-in `fc` because it does not run the command after editing.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                I really like this one
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                Wouldn't history -d #, where # is the number of the mistyped command, have been faster more efficient?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                `history -d` will work if you know the exact offset and all you wish to do is delete a line. You could do a `history|tail` to be sure of that offset so to not accidentally blow away the wrong command
-                                                        </p>
-              <p>
-                                                                .
-                                                        </p>
-              <p>
-                                                                But this function lets you edit your history file too. So you could remove that password from the command line mysql querry. or you could append that successful command with a comment like thus :
-                                                        </p>
-              <p>
-                                                                .
-                                                        </p>
-              <code>ssh user@example.com #insert history keyword here</code>
-              <p>
-                                                                .
-                                                        </p>
-              <p>
-                                                                It's also faster if you wish to wipe the last ten commands
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                eh () { history -a ; vi + ~/.bash_history ; history -r ; }
-                                                        </p>
-              <p>
-                                                                .
-                                                        </p>
-              <p>
-                                                                adding the `+` when evoking `vi` causes the file to open at the very last line. Since you usually want to edit something within say 20 lines of the bottom, this is useful but optional upgrade
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        I really like this one
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        Wouldn't history -d #, where # is the number of the mistyped command, have been faster more efficient?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        `history -d` will work if you know the exact offset and all you wish to do is delete a line. You could do a `history|tail` to be sure of that offset so to not accidentally blow away the wrong command
+                                                </p>
+                                                <p>
+                                                        .
+                                                </p>
+                                                <p>
+                                                        But this function lets you edit your history file too. So you could remove that password from the command line mysql querry. or you could append that successful command with a comment like thus :
+                                                </p>
+                                                <p>
+                                                        .
+                                                </p><code>ssh user@example.com #insert history keyword here</code>
+                                                <p>
+                                                        .
+                                                </p>
+                                                <p>
+                                                        It's also faster if you wish to wipe the last ten commands
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        eh () { history -a ; vi + ~/.bash_history ; history -r ; }
+                                                </p>
+                                                <p>
+                                                        .
+                                                </p>
+                                                <p>
+                                                        adding the `+` when evoking `vi` causes the file to open at the very last line. Since you usually want to edit something within say 20 lines of the bottom, this is useful but optional upgrade
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 display an embeded help message from bash script header
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        [ "$1" == "--help" ] &amp;&amp; { sed -n -e '/^# Usage:/,/^$/ s/^# \?//p' &lt; $0; exit; }
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                [ "$1" == "--help" ] &amp;&amp; { sed -n -e '/^# Usage:/,/^$/ s/^# \?//p' &lt; $0; exit; }
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 #!/bin/bash
 #
 # Usage: do someting really funny
@@ -38,64 +36,53 @@
 
 echo really funny !
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                display an embeded help message from bash script header
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        With this one liner you can easily output a standard help message using the following convention:
-                                                                </p>
-                <p>
-                                                                        Usage: is the start marker
-                                                                </p>
-                <p>
-                                                                        Stop at the last #
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        display an embeded help message from bash script header
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                With this one liner you can easily output a standard help message using the following convention:
+                                                        </p>
+                                                        <p>
+                                                                Usage: is the start marker
+                                                        </p>
+                                                        <p>
+                                                                Stop at the last #
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Why didn't I think of that? Elegant.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                This is pickier, but shorter:
-                                                        </p>
-              <p>
-                                                                [ "$1" == "--help" ] &amp;&amp; \
-                                                        </p>
-              <p>
-                                                                awk '/^#: / { print $0 }' $0
-                                                        </p>
-              <p>
-                                                                Start your help message with "#:". Also convenient for embedding other messages in scripts.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Why didn't I think of that? Elegant.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        This is pickier, but shorter:
+                                                </p>
+                                                <p>
+                                                        [ "$1" == "--help" ] &amp;&amp; \
+                                                </p>
+                                                <p>
+                                                        awk '/^#: / { print $0 }' $0
+                                                </p>
+                                                <p>
+                                                        Start your help message with "#:". Also convenient for embedding other messages in scripts.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

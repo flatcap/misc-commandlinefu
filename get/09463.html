@@ -1,80 +1,69 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Echo a command, then execute it
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        v () { echo "$@"; "$@"; }
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                v () { echo "$@"; "$@"; }
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 $ v rm -v *~
 rm -v example~
 removed `example~'
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Echo a command, then execute it
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        You can use this in shell scripts to show which commands are actually run. Just prepend every "critical line" with "v&#x2FD;".
-                                                                </p>
-                <p>
-                                                                        $TMP=/tmp
-                                                                </p>
-                <p>
-                                                                        echo "Let me create a directory for you"
-                                                                </p>
-                <p>
-                                                                        v mkdir $TMP/new
-                                                                </p>
-                <p>
-                                                                        In scripts this can be more useful than "set -x", because that can be very verbose with variable assignments etc.
-                                                                </p>
-                <p>
-                                                                        Another nice use is if you prepend every "critical" command with "v", then you can test your script by commenting out the actual execution.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Echo a command, then execute it
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                You can use this in shell scripts to show which commands are actually run. Just prepend every "critical line" with "v&#765;".
+                                                        </p>
+                                                        <p>
+                                                                $TMP=/tmp
+                                                        </p>
+                                                        <p>
+                                                                echo "Let me create a directory for you"
+                                                        </p>
+                                                        <p>
+                                                                v mkdir $TMP/new
+                                                        </p>
+                                                        <p>
+                                                                In scripts this can be more useful than "set -x", because that can be very verbose with variable assignments etc.
+                                                        </p>
+                                                        <p>
+                                                                Another nice use is if you prepend every "critical" command with "v", then you can test your script by commenting out the actual execution.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div class="comment comment0" id="comments">
-          <div class="body">
-            <p>
-                                                        Hey, why all the downvotes? Does anyone care to comment?
-                                                </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div class="comment comment0 body" id="comments">
+                                        <p>
+                                                Hey, why all the downvotes? Does anyone care to comment?
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

@@ -1,27 +1,25 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Get full directory path of a script regardless of where it is run from
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        STARTING_DIR=$(cd $(dirname $0) &amp;&amp; pwd)
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                STARTING_DIR=$(cd $(dirname $0) &amp;&amp; pwd)
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 [bbbco@bbbco-dt scripts]$ vi startingdir.sh
 -----------------
 #!/bin/bash
@@ -39,60 +37,53 @@ echo $(cd $(dirname $0) &amp;&amp; pwd)
 /home/bbbco/scripts
 [bbbco@bbbco-dt Downloads]$
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Get full directory path of a script regardless of where it is run from
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Sometimes you need the full path to your script, regardless of how it was executed (which starting directory) in order to maintain other relative paths in the script.
-                                                                </p>
-                <p>
-                                                                        If you attempt to just use something simple like:
-                                                                </p>
-                <code>STARTING_DIR="${0%/*}"</code>
-                <p>
-                                                                        you will only get the relative path depending on where you first executed the script from.
-                                                                </p>
-                <p>
-                                                                        You can get the relative path to the script (from your starting point) by using dirname, but you actually have to change directories and print the working directory to get the absolute full path.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Get full directory path of a script regardless of where it is run from
+                                                </div>
+                                                <div class="description">
+                                                        <p>
+                                                                Sometimes you need the full path to your script, regardless of how it was executed (which starting directory) in order to maintain other relative paths in the script.
+                                                        </p>
+                                                        <p>
+                                                                If you attempt to just use something simple like:
+                                                        </p><code>STARTING_DIR="${0%/*}"</code>
+                                                        <p>
+                                                                you will only get the relative path depending on where you first executed the script from.
+                                                        </p>
+                                                        <p>
+                                                                You can get the relative path to the script (from your starting point) by using dirname, but you actually have to change directories and print the working directory to get the absolute full path.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         BASEDIR=$(dirname $(readlink -f $0))
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9798/get-full-directory-path-of-a-script-regardless-of-where-it-is-run-from">Get full directory path of a script regardless of where it is run from</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9798/get-full-directory-path-of-a-script-regardless-of-where-it-is-run-from">Get full directory path of a script regardless of where it is run from</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Also resolves symlinks, showing the full path of the link target
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         FULLPATH=$(perl -e "use Cwd 'abs_path';print abs_path('$0');")
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 ]$  ls -l test.sh
 -rwxr-xr-x    1 follier dev-user         78 Feb 01 14:05 test.sh
 
@@ -105,68 +96,57 @@ lrwxrwxrwx    1 follier dev-user         12 Feb 01 14:07 linktest.sh -&gt; /tmp/
 ]$ ./linktest.sh
 /tmp/test.sh
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/11839/get-full-directory-path-of-a-script-regardless-of-where-it-is-run-from">Get full directory path of a script regardless of where it is run from</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/11839/get-full-directory-path-of-a-script-regardless-of-where-it-is-run-from">Get full directory path of a script regardless of where it is run from</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Since none of the systems I work on have readlink, this works cross-platform (everywhere has perl, right?).
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Note: This will resolve links.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         dirname $(readlink -f ${BASH_SOURCE[0]})
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9805/get-full-directory-path-of-a-script-regardless-of-where-it-is-run-from">Get full directory path of a script regardless of where it is run from</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9805/get-full-directory-path-of-a-script-regardless-of-where-it-is-run-from">Get full directory path of a script regardless of where it is run from</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         work for execute file
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                consider perhaps:
-                                                        </p>
-              <code>dirname $(readlink -f $0)</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                If you add some quoting, you will get robust against spaces in directory names:
-                                                        </p>
-              <p>
-                                                                cd "$(dirname "$0")" &amp;&amp; pwd
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        consider perhaps:
+                                                </p><code>dirname $(readlink -f $0)</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        If you add some quoting, you will get robust against spaces in directory names:
+                                                </p>
+                                                <p>
+                                                        cd "$(dirname "$0")" &amp;&amp; pwd
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

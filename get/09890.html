@@ -1,86 +1,78 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Print all lines between two line numbers
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        sed -n '3,6p' /path/to/file
-                                                </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                sed -n '3,6p' /path/to/file
+                                        </div>
+                                        <div class="sample-output c5 output">
+                                                <pre>
 $ seq 10 | sed -n '3,6p'
 3
 4
 5
 6
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
+                                        </div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Print all lines between two line numbers
+                                                </div>
+                                                <div class="description">
+                                                        <p>
                                                                 Print all lines between two line numbers
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        Print all lines between two line numbers
-                                                                </p>
-                <p>
-                                                                        This command uses sed(1) to print all lines between two known line numbers in a file. Useful for seeing output in a log file, where the line numbers are known. The above command will print all lines between, and including, lines 3 and 6.
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                        </p>
+                                                        <p>
+                                                                This command uses sed(1) to print all lines between two known line numbers in a file. Useful for seeing output in a log file, where the line numbers are known. The above command will print all lines between, and including, lines 3 and 6.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-          <div class="one-liner">
-            <div class="line command">
+                                <div class="terminal-display">
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         sed -n '10,20p' <span>&lt;filename&gt;</span>
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/361/print-all-the-lines-between-10-and-20-of-a-file">Print all the lines between 10 and 20 of a file</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/361/print-all-the-lines-between-10-and-20-of-a-file">Print all the lines between 10 and 20 of a file</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Similarly, if you want to print from 10 to the end of line you can use: sed -n '10,$p' filename
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         This is especially useful if you are dealing with a large file. Sometimes you just want to extract a sample without opening the entire file.
                                                                 </p>
-                <p>
+                                                                <p>
                                                                         Credit goes to wbx &amp; robert at the comments section of <a href="http://www.commandlinefu.com/commands/view/348/get-line1000-from-text.#comment" rel="nofollow">http://www.commandlinefu.com/commands/view/348/get-line1000-from-text.#comment</a>
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         sed -n 5p <span>&lt;file&gt;</span>
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output">
-                <pre>
+                                                <div class="sample-output c5 output">
+                                                        <pre>
 jeju:[xxx] &gt; sed -n 5p test
 line 5
 jeju:[xxx] &gt; cat test
@@ -96,123 +88,102 @@ line 9
 line 10
 jeju:[xxx] &gt;
 </pre>
-              </div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/3802/to-print-a-specific-line-from-a-file">To print a specific line from a file</a>
-              </div>
-              <div class="description">
-                <p>
+                                                </div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/3802/to-print-a-specific-line-from-a-file">To print a specific line from a file</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         You can get one specific line during any procedure. Very interesting to be used when you know what line you want.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         awk 'NR &gt;= 3 &amp;&amp; NR &lt;= 6' /path/to/file
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9889/print-all-lines-between-two-line-numbers">Print all lines between two line numbers</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9889/print-all-lines-between-two-line-numbers">Print all lines between two line numbers</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         This command uses awk(1) to print all lines between two known line numbers in a file. Useful for seeing output in a log file, where the line numbers are known. The above command will print all lines between, and including, lines 3 and 6.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         awk 'NR &gt;= 3 &amp;&amp; NR &lt;= 6' /path/to/file
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/9889/print-all-lines-between-two-line-numbers">Print all lines between two line numbers</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/9889/print-all-lines-between-two-line-numbers">Print all lines between two line numbers</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         This command uses awk(1) to print all lines between two known line numbers in a file. Useful for seeing output in a log file, where the line numbers are known. The above command will print all lines between, and including, lines 3 and 6.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="one-liner">
-            <div class="line command">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="one-liner">
+                                                <div class="line command">
                                                         sed '10,20!d'
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                <a href="/commands/view/8196/print-all-the-lines-between-10-and-20-of-a-file">Print all the lines between 10 and 20 of a file</a>
-              </div>
-              <div class="description">
-                <p>
+                                                <div class="sample-output c5 output"></div>
+                                                <div class="details">
+                                                        <div class="summary">
+                                                                <a href="/commands/view/8196/print-all-the-lines-between-10-and-20-of-a-file">Print all the lines between 10 and 20 of a file</a>
+                                                        </div>
+                                                        <div class="description">
+                                                                <p>
                                                                         Subtly different to the -n+p method... and probably wrong in so many ways....... But it's shorter. Just.
                                                                 </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <h3>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                The big difference between your sed(1) command, and my awk(1) command, is of course, I can choose to not include lines 3 and 6 in the output:
-                                                        </p>
-              <code>awk 'NR &gt; 3 &amp;&amp; NR &lt; 6' /path/to/file</code>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                True, excluding the matching lines in sed is more of a pain involved.
-                                                        </p>
-              <code>sed '1,3d;6Q' /path/to/file</code>
-              <p>
-                                                                Delete up to line 3; leave 4 and 5 intact; quit on line 6.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                The simile command
-                                                        </p>
-              <code>sed -n '10,20p' &lt;filename&gt;</code>
-              <p>
-                                                                is issued on 2009-02-08 by ergut
-                                                        </p>
-              <p>
-                                                                and honoured with 38 credits
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                39 credits now
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        The big difference between your sed(1) command, and my awk(1) command, is of course, I can choose to not include lines 3 and 6 in the output:
+                                                </p><code>awk 'NR &gt; 3 &amp;&amp; NR &lt; 6' /path/to/file</code>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        True, excluding the matching lines in sed is more of a pain involved.
+                                                </p><code>sed '1,3d;6Q' /path/to/file</code>
+                                                <p>
+                                                        Delete up to line 3; leave 4 and 5 intact; quit on line 6.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        The simile command
+                                                </p><code>sed -n '10,20p' &lt;filename&gt;</code>
+                                                <p>
+                                                        is issued on 2009-02-08 by ergut
+                                                </p>
+                                                <p>
+                                                        and honoured with 38 credits
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        39 credits now
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>

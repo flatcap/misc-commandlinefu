@@ -1,176 +1,142 @@
 <?xml version="1.0"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="left-block">
-        <div id="terminal-header">
-          <h1>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+                <title></title>
+        </head>
+        <body>
+                <div id="wrapper">
+                        <div id="left-block">
+                                <div id="terminal-header">
+                                        <h1>
                                                 Easy and fast access to often executed commands that are very long and complex.
                                         </h1>
-        </div>
-        <div class="terminal-display" id="terminal-display-main">
-          <div class="one-liner">
-            <div class="line command">
-                                                        some_very_long_and_complex_command # label
+                                </div>
+                                <div class="terminal-display one-liner" id="terminal-display-main">
+                                        <div class="line command">
+                                                some_very_long_and_complex_command # label
+                                        </div>
+                                        <div class="sample-output c5 output"></div>
+                                        <div class="details">
+                                                <div class="summary">
+                                                        Easy and fast access to often executed commands that are very long and complex.
                                                 </div>
-            <div class="sample-output c5">
-              <div class="output"></div>
-            </div>
-            <div class="details">
-              <div class="summary">
-                                                                Easy and fast access to often executed commands that are very long and complex.
-                                                        </div>
-              <div class="description">
-                <p>
-                                                                        When using reverse-i-search you have to type some part of the command that you want to retrieve. However, if the command is very complex it might be difficult to recall the parts that will uniquely identify this command. Using the above trick it's possible to label your commands and access them easily by pressing ^R and typing the label (should be short and descriptive).
-                                                                </p>
-                <p>
-                                                                        UPDATE:
-                                                                </p>
-                <p>
-                                                                        One might suggest using aliases. But in that case it would be difficult to change some parts of the command (such as options, file/directory names, etc).
-                                                                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
+                                                <div class="description">
+                                                        <p>
+                                                                When using reverse-i-search you have to type some part of the command that you want to retrieve. However, if the command is very complex it might be difficult to recall the parts that will uniquely identify this command. Using the above trick it's possible to label your commands and access them easily by pressing ^R and typing the label (should be short and descriptive).
+                                                        </p>
+                                                        <p>
+                                                                UPDATE:
+                                                        </p>
+                                                        <p>
+                                                                One might suggest using aliases. But in that case it would be difficult to change some parts of the command (such as options, file/directory names, etc).
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <h3>
                                         Alternatives
                                 </h3>
-
-        <div class="terminal-display">
-
-        </div>
-
-
-        <h3>
+                                <div class="terminal-display"></div>
+                                <h3>
                                         What others think
                                 </h3>
-        <div id="comments">
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                I think it might be usefull but i don't understand it. Can you give a more specific example?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                The part after the '#' isn't executed since it's a comment for bash, while that part can be used when searching through the command string.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                coool idea!
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                simple tagging in bash history, cool!
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Very creative!! Will use this all the time well done!! :)
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                You could also make a function to do this, and save it in either your ~/.profile file or in another file sourced from that file. The second option is nice because you can create a set of libraries with functions for particular purposes, and rather than loading them all with .profile, include them on demand with eg
-                                                        </p>
-              <code>source "~/bin/database-functions.bash"</code>
-              <p>
-                                                                This helps to keep your shell environment lean, because otherwise you might end up including a ton of code that you almost never use.
-                                                        </p>
-              <p>
-                                                                Another option is to make each function a shell script in its own file and save them in ~/bin. You can add that directory to your $PATH variable, again in ~/.profile, with
-                                                        </p>
-              <code>echo 'PATH="${PATH}:$HOME/bin"' &gt;&gt;~/.profile</code>
-              <p>
-                                                                Once this is done and you've logged in again, scripts in your ~/bin directory that have been made executable with
-                                                        </p>
-              <code>chmod u+x ~/bin/"$script_name"</code>
-              <p>
-                                                                will be available to be used like other system commands.
-                                                        </p>
-              <p>
-                                                                This would let you use parameters in the same way as a shell script.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                great!
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                @intuited
-                                                        </p>
-              <p>
-                                                                &gt;You could also make a function to do this, and save it in
-                                                        </p>
-              <p>
-                                                                &gt;either your ~/.profile file
-                                                        </p>
-              <p>
-                                                                Did you read the UPDATE part in the description? That also applies to what you have suggested.
-                                                        </p>
-              <p>
-                                                                You might only do this when you need that functionality in your programs. Do you use the "gmail unread mails" commands here on <a href="http://www.commandlinefu.com?" rel="nofollow">www.commandlinefu.com?</a> Why bother create functions/libraries? Just add "#gmail" at the end and you're done.
-                                                        </p>
-              <p>
-                                                                &gt;because otherwise you might end up including a ton of
-                                                        </p>
-              <p>
-                                                                &gt;code that you almost never use.
-                                                        </p>
-              <p>
-                                                                That won't happen, simply because by default the number of commands in history is limited. So if you do not (re)use some commands they will be "pushed back" by new entered commands and eventually disappear.
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                very cool
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment1">
-            <div class="body">
-              <p>
-                                                                End.. how i change it? I use a label for a command, and now i want another label this is possible?
-                                                        </p>
-            </div>
-          </div>
-          <div class="comment comment0">
-            <div class="body">
-              <p>
-                                                                Bring up the command using Ctrl+R, press End key and change the label. You need to run the command so that it will be saved in .bash_history.
-                                                        </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                                <div id="comments">
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        I think it might be usefull but i don't understand it. Can you give a more specific example?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        The part after the '#' isn't executed since it's a comment for bash, while that part can be used when searching through the command string.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        coool idea!
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        simple tagging in bash history, cool!
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Very creative!! Will use this all the time well done!! :)
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        You could also make a function to do this, and save it in either your ~/.profile file or in another file sourced from that file. The second option is nice because you can create a set of libraries with functions for particular purposes, and rather than loading them all with .profile, include them on demand with eg
+                                                </p><code>source "~/bin/database-functions.bash"</code>
+                                                <p>
+                                                        This helps to keep your shell environment lean, because otherwise you might end up including a ton of code that you almost never use.
+                                                </p>
+                                                <p>
+                                                        Another option is to make each function a shell script in its own file and save them in ~/bin. You can add that directory to your $PATH variable, again in ~/.profile, with
+                                                </p><code>echo 'PATH="${PATH}:$HOME/bin"' &gt;&gt;~/.profile</code>
+                                                <p>
+                                                        Once this is done and you've logged in again, scripts in your ~/bin directory that have been made executable with
+                                                </p><code>chmod u+x ~/bin/"$script_name"</code>
+                                                <p>
+                                                        will be available to be used like other system commands.
+                                                </p>
+                                                <p>
+                                                        This would let you use parameters in the same way as a shell script.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        great!
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        @intuited
+                                                </p>
+                                                <p>
+                                                        &gt;You could also make a function to do this, and save it in
+                                                </p>
+                                                <p>
+                                                        &gt;either your ~/.profile file
+                                                </p>
+                                                <p>
+                                                        Did you read the UPDATE part in the description? That also applies to what you have suggested.
+                                                </p>
+                                                <p>
+                                                        You might only do this when you need that functionality in your programs. Do you use the "gmail unread mails" commands here on <a href="http://www.commandlinefu.com?" rel="nofollow">www.commandlinefu.com?</a> Why bother create functions/libraries? Just add "#gmail" at the end and you're done.
+                                                </p>
+                                                <p>
+                                                        &gt;because otherwise you might end up including a ton of
+                                                </p>
+                                                <p>
+                                                        &gt;code that you almost never use.
+                                                </p>
+                                                <p>
+                                                        That won't happen, simply because by default the number of commands in history is limited. So if you do not (re)use some commands they will be "pushed back" by new entered commands and eventually disappear.
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        very cool
+                                                </p>
+                                        </div>
+                                        <div class="comment comment1 body">
+                                                <p>
+                                                        End.. how i change it? I use a label for a command, and now i want another label this is possible?
+                                                </p>
+                                        </div>
+                                        <div class="comment comment0 body">
+                                                <p>
+                                                        Bring up the command using Ctrl+R, press End key and change the label. You need to run the command so that it will be saved in .bash_history.
+                                                </p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </body>
 </html>
