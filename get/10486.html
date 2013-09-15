@@ -21,9 +21,7 @@
                                         </div>
                                         <div class="sample-output c5 output"></div>
                                         <div class="details">
-                                                <div class="summary">
-                                                        Execute a command with a timeout
-                                                </div>
+
                                                 <div class="description">
                                                         <p>
                                                                 A timeout is great, but what if the command is taking longer than expected because it's hung up or ran into some other problem? That's where the -k option comes in. Run "some_command" and timeout after 30s. If the command is still running after 1 minute, it will receive a kill signal.
@@ -41,9 +39,7 @@
                                                 </div>
                                                 <div class="sample-output c5 output"></div>
                                                 <div class="details">
-                                                        <div class="summary">
-                                                                <a href="/commands/view/9721/start-command-and-kill-it-if-still-running-after-5-seconds">Start COMMAND, and kill it if still running after 5 seconds</a>
-                                                        </div>
+
                                                         <div class="description"></div>
                                                 </div>
                                         </div>
@@ -53,9 +49,7 @@
                                                 </div>
                                                 <div class="sample-output c5 output"></div>
                                                 <div class="details">
-                                                        <div class="summary">
-                                                                <a href="/commands/view/3592/execute-a-command-with-a-timeout">Execute a command with a timeout</a>
-                                                        </div>
+
                                                         <div class="description"></div>
                                                 </div>
                                         </div>
@@ -65,9 +59,7 @@
                                                 </div>
                                                 <div class="sample-output c5 output"></div>
                                                 <div class="details">
-                                                        <div class="summary">
-                                                                <a href="/commands/view/5488/run-a-command-for-a-given-time">Run a command for a given time</a>
-                                                        </div>
+
                                                         <div class="description">
                                                                 <p>
                                                                         or "Execute a command with a timeout"
@@ -97,9 +89,7 @@ Alarm clock
 </pre>
                                                 </div>
                                                 <div class="details">
-                                                        <div class="summary">
-                                                                <a href="/commands/view/3583/execute-a-command-with-a-timeout">Execute a command with a timeout</a>
-                                                        </div>
+
                                                         <div class="description">
                                                                 <p>
                                                                         In this example the command "somecommand" will be executed and sent a SIGALARM signal if it runs for more than 10 seconds. It uses the perl alarm function. It's not 100% accurate on timing, but close enough. I found this really useful when executing scripts and commands that I knew might hang E.g. ones that connect to services that might not be running. Importantly this can be used within a sequential script. The command will not release control until either the command completes or the timeout is hit.
@@ -113,9 +103,7 @@ Alarm clock
                                                 </div>
                                                 <div class="sample-output c5 output"></div>
                                                 <div class="details">
-                                                        <div class="summary">
-                                                                <a href="/commands/view/5686/execute-a-command-with-a-timeout">Execute a command with a timeout</a>
-                                                        </div>
+
                                                         <div class="description">
                                                                 <p>
                                                                         I like much more the perl solution, but without using perl. It launches a backgroup process that will kill the command if it lasts too much.

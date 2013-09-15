@@ -46,9 +46,7 @@ lsof    17475 askapache    4r   DIR   0,96     0 1078132745 /proc/17475/fd
 </pre>
                                         </div>
                                         <div class="details">
-                                                <div class="summary">
-                                                        Alias TAIL for automatic smart output
-                                                </div>
+
                                                 <div class="description">
                                                         <p>
                                                                 Run the alias command, then issue
@@ -86,9 +84,7 @@ lsof    17475 askapache    4r   DIR   0,96     0 1078132745 /proc/17475/fd
                                         </div>
                                         <div class="sample-output c5 output"></div>
                                         <div class="details">
-                                                <div class="summary">
-                                                        <a href="/commands/view/10474/a-tail-function-for-automatic-smart-output">a tail function for automatic smart output</a>
-                                                </div>
+
                                                 <div class="description">
                                                         <code>tail() { thbin="/usr/bin/tail"; if [ "${1:0:1}" != "-" ]; then fc=$(($#==0?1:$#)); lpf="$((($LINES - 3 - 2 * $fc) / $fc))"; lpf="$(($lpf&lt;1?2:$lpf))"; [ $fc -eq 1 ] &amp;&amp; $thbin -n $lpf "$@" | /usr/bin/fold -w $COLUMNS | $thbin -n $lpf || $thbin -n $lpf "$@"; else $thbin "$@"; fi; unset lpf fc thbin; }</code>
                                                         <p>

@@ -21,9 +21,7 @@
                                         </div>
                                         <div class="sample-output c5 output"></div>
                                         <div class="details">
-                                                <div class="summary">
-                                                        monitor a tail -f command with multiple processes
-                                                </div>
+
                                                 <div class="description">
                                                         <p>
                                                                 when using named pipes only one reader is given the output by default. Also, most commands piped to by grep use a buffer which save output until tail -f finishes, which is not convenient. Here, using a combination of tee, sub-processes and the --line-buffered switch in grep we can workaround the problem.

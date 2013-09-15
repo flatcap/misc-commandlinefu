@@ -28,9 +28,7 @@
 </pre>
                                         </div>
                                         <div class="details">
-                                                <div class="summary">
-                                                        join every five lines
-                                                </div>
+
                                                 <div class="description">
                                                         <p>
                                                                 seq 20 | awk '{line=line sep $0; sep=" "} !(NR%5){print line; line=sep=""}'

@@ -28,9 +28,7 @@ $ sort -S400M -u -i -f --parallel=4 files.nocombined.sorted | pv &gt; ~/files.no
 </pre>
                                         </div>
                                         <div class="details">
-                                                <div class="summary">
-                                                        Fastest Sort. Sort Faster, Max Speed
-                                                </div>
+
                                                 <div class="description">
                                                         <p>
                                                                 sort is way slow by default. This tells sort to use a buffer equal to half of the available free memory. It also will use multiple process for the sort equal to the number of cpus on your machine (if greater than 1). For me, it is magnitudes faster.

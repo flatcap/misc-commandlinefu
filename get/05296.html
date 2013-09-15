@@ -34,9 +34,7 @@ $ ./safe-cacheclean.sh
 </pre>
                                         </div>
                                         <div class="details">
-                                                <div class="summary">
-                                                        Robust expansion (i.e. crash) of bash variables with a typo
-                                                </div>
+
                                                 <div class="description">
                                                         <p>
                                                                 By default bash expands an unbound variable to an empty string. This can be dangerous, if a critical variable name (a path prefix for example) has a typo. The -u option causes bash to treat this as an error, and the -e option causes it to exit in case of an error. These two together will make your scripts a lot safer against typos.

@@ -21,9 +21,7 @@
                                         </div>
                                         <div class="sample-output c5 output"></div>
                                         <div class="details">
-                                                <div class="summary">
-                                                        Delimiter Hunting
-                                                </div>
+
                                                 <div class="description">
                                                         <p>
                                                                 Scan a file and print out a list of ASCII characters that are not used in the file which can then be safely used to delimit fields. Useful when needing to convert CSV files using "," to a single character delimiter. Piping it into less at the end (which could be redundant) stops the command characters being interpreted by the terminal.
@@ -41,9 +39,7 @@
                                                 </div>
                                                 <div class="sample-output c5 output"></div>
                                                 <div class="details">
-                                                        <div class="summary">
-                                                                <a href="/commands/view/10004/delimiter-hunting">Delimiter Hunting</a>
-                                                        </div>
+
                                                         <div class="description">
                                                                 <p>
                                                                         Here's a perl version that only considers printable characters. Change the regex /[[:print:]]/ to look for different sets of delimiter characters.
@@ -68,9 +64,7 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-                                                        <div class="summary">
-                                                                <a href="/commands/view/10023/delimiter-hunting">Delimiter Hunting</a>
-                                                        </div>
+
                                                         <div class="description">
                                                                 <p>
                                                                         Search in decimal rather than hex. od dumps the character list, cut to remove offsets, sort -u gives the used characters. seq gives the comparison list, but we need this sorted alphabetically for comm, which does the filtering. I drop to perl to convert back to characters (is there a better way?) and then use od to dump them in a print-safe format.

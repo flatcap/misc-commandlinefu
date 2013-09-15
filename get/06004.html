@@ -21,9 +21,7 @@
                                         </div>
                                         <div class="sample-output c5 output"></div>
                                         <div class="details">
-                                                <div class="summary">
-                                                        Print stack trace of a core file without needing to enter gdb interactively
-                                                </div>
+
                                                 <div class="description">
                                                         <p>
                                                                 This does almost the same thing as the original, but it runs the full backtrace for _all_ the threads, which is pretty important when reporting a crash for a multithreaded software, since more often than not, the signal handler is executed in a different thread than the crash happened.
@@ -45,9 +43,7 @@ Should be identical to what ${my_program} normally generates, unless ${my_progra
 </pre>
                                                 </div>
                                                 <div class="details">
-                                                        <div class="summary">
-                                                                <a href="/commands/view/7500/run-a-program-transparently-but-print-a-stack-trace-if-it-fails">Run a program transparently, but print a stack trace if it fails</a>
-                                                        </div>
+
                                                         <div class="description">
                                                                 <p>
                                                                         For automated unit tests I wanted my program to run normally, but if it crashed, to add a stack trace to the output log. I came up with this command so I wouldn't have to mess around with core files.
@@ -64,9 +60,7 @@ Should be identical to what ${my_program} normally generates, unless ${my_progra
                                                 </div>
                                                 <div class="sample-output c5 output"></div>
                                                 <div class="details">
-                                                        <div class="summary">
-                                                                <a href="/commands/view/4039/print-stack-trace-of-a-core-file-without-needing-to-enter-gdb-interactively">Print stack trace of a core file without needing to enter gdb interactively</a>
-                                                        </div>
+
                                                         <div class="description">
                                                                 <p>
                                                                         The pstack command prints a stack trace of running processes without needing to attach a debugger, but what about core files? The answer, of course, is to use this command. Usage: gdbbt program corefile
