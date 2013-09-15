@@ -1,0 +1,18 @@
+--2013-09-15 13:34:42--  http://www.commandlinefu.com/commands/view/08990
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/8990/generate-an-xkcd-936-style-4-word-password [following]
+--2013-09-15 13:34:42--  http://www.commandlinefu.com/commands/view/8990/generate-an-xkcd-936-style-4-word-password
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘08990.html’
+
+     0K .......... .......... .......... .......... ..........  178K
+    50K .......... .......... .......... .......... ..........  177K
+   100K .......... .......... .......... .......... ..........  355K
+   150K .......... .......... .......... .......... ......      167K=1.0s
+
+2013-09-15 13:34:43 (200 KB/s) - ‘08990.html’ saved [201425]
+

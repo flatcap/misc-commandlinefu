@@ -1,0 +1,18 @@
+--2013-09-15 13:34:17--  http://www.commandlinefu.com/commands/view/08697
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/8697/automatically-connect-to-a-host-with-ssh-once-it-is-online [following]
+--2013-09-15 13:34:17--  http://www.commandlinefu.com/commands/view/8697/automatically-connect-to-a-host-with-ssh-once-it-is-online
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘08697.html’
+
+     0K .......... .......... .......... .......... ..........  120K
+    50K .......... .......... .......... .......... ..........  358K
+   100K .......... .......... .......... .......... ..........  179K
+   150K .......... .......... ..                                162K=1.0s
+
+2013-09-15 13:34:18 (177 KB/s) - ‘08697.html’ saved [176657]
+

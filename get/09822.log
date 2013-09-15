@@ -1,0 +1,18 @@
+--2013-09-15 13:37:34--  http://www.commandlinefu.com/commands/view/09822
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/9822/convert-from-hexidecimal-or-octal-to-decimal [following]
+--2013-09-15 13:37:34--  http://www.commandlinefu.com/commands/view/9822/convert-from-hexidecimal-or-octal-to-decimal
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘09822.html’
+
+     0K .......... .......... .......... .......... ..........  179K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  278K
+   150K .......... .......... .......... ....                   250K=0.9s
+
+2013-09-15 13:37:36 (211 KB/s) - ‘09822.html’ saved [189264]
+

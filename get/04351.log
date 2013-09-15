@@ -1,0 +1,18 @@
+--2013-09-15 13:29:35--  http://www.commandlinefu.com/commands/view/04351
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/4351/show-ls-colors-with-demo [following]
+--2013-09-15 13:29:36--  http://www.commandlinefu.com/commands/view/4351/show-ls-colors-with-demo
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘04351.html’
+
+     0K .......... .......... .......... .......... ..........  120K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  357K
+   150K .......... .......... ..                                162K=1.0s
+
+2013-09-15 13:29:37 (177 KB/s) - ‘04351.html’ saved [176673]
+

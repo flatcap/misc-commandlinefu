@@ -1,0 +1,20 @@
+--2013-09-15 13:34:02--  http://www.commandlinefu.com/commands/view/08547
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/browse [following]
+--2013-09-15 13:34:02--  http://www.commandlinefu.com/commands/browse
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘08547.html’
+
+     0K .......... .......... .......... .......... ..........  119K
+    50K .......... .......... .......... .......... ..........  356K
+   100K .......... .......... .......... .......... ..........  179K
+   150K .......... .......... .......... .......... ..........  356K
+   200K .......... .......... .......... .......... ..........  356K
+   250K ....                                                   39.2M=1.1s
+
+2013-09-15 13:34:04 (227 KB/s) - ‘08547.html’ saved [260846]
+

@@ -1,0 +1,18 @@
+--2013-09-15 13:39:25--  http://www.commandlinefu.com/commands/view/10964
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/10964/show-crontabs-for-all-users [following]
+--2013-09-15 13:39:25--  http://www.commandlinefu.com/commands/view/10964/show-crontabs-for-all-users
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘10964.html’
+
+     0K .......... .......... .......... .......... ..........  178K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  356K
+   150K .......... .......... .......... ....                   244K=0.8s
+
+2013-09-15 13:39:26 (219 KB/s) - ‘10964.html’ saved [188609]
+

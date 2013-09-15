@@ -1,0 +1,18 @@
+--2013-09-15 13:31:44--  http://www.commandlinefu.com/commands/view/07200
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/7200/resolving-basic-authentication-problem401-with-wget [following]
+--2013-09-15 13:31:44--  http://www.commandlinefu.com/commands/view/7200/resolving-basic-authentication-problem401-with-wget
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘07200.html’
+
+     0K .......... .......... .......... .......... ..........  179K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  179K
+   150K .......... .......... ....                             46.9M=0.8s
+
+2013-09-15 13:31:46 (209 KB/s) - ‘07200.html’ saved [179112]
+

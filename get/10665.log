@@ -1,0 +1,18 @@
+--2013-09-15 13:39:09--  http://www.commandlinefu.com/commands/view/10665
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/10665/find-all-c-and-cpp-files-except-the-ones-in-the-unit-test-and-android-subdirectories [following]
+--2013-09-15 13:39:09--  http://www.commandlinefu.com/commands/view/10665/find-all-c-and-cpp-files-except-the-ones-in-the-unit-test-and-android-subdirectories
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘10665.html’
+
+     0K .......... .......... .......... .......... ..........  178K
+    50K .......... .......... .......... .......... ..........  174K
+   100K .......... .......... .......... .......... ..........  183K
+   150K .......... .......... ........                          202K=1.0s
+
+2013-09-15 13:39:10 (182 KB/s) - ‘10665.html’ saved [182535]
+

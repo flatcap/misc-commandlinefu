@@ -1,0 +1,18 @@
+--2013-09-15 13:31:33--  http://www.commandlinefu.com/commands/view/07076
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/7076/display-environment-vars-only-using-set [following]
+--2013-09-15 13:31:33--  http://www.commandlinefu.com/commands/view/7076/display-environment-vars-only-using-set
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘07076.html’
+
+     0K .......... .......... .......... .......... ..........  119K
+    50K .......... .......... .......... .......... ..........  178K
+   100K .......... .......... .......... .......... ..........  356K
+   150K .......... .......... ........                          200K=1.0s
+
+2013-09-15 13:31:34 (181 KB/s) - ‘07076.html’ saved [182293]
+

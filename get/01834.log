@@ -1,0 +1,18 @@
+--2013-09-15 13:26:47--  http://www.commandlinefu.com/commands/view/01834
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/1834/propagate-x-session-cookies-on-a-different-user-and-login-as-that-user [following]
+--2013-09-15 13:26:47--  http://www.commandlinefu.com/commands/view/1834/propagate-x-session-cookies-on-a-different-user-and-login-as-that-user
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘01834.html’
+
+     0K .......... .......... .......... .......... ..........  120K
+    50K .......... .......... .......... .......... ..........  358K
+   100K .......... .......... .......... .......... ..........  179K
+   150K .......... .......... ...                               172K=1.0s
+
+2013-09-15 13:26:48 (178 KB/s) - ‘01834.html’ saved [178147]
+

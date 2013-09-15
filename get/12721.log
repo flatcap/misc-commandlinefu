@@ -1,0 +1,18 @@
+--2013-09-15 13:41:20--  http://www.commandlinefu.com/commands/view/12721
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/12721/get-the-nth-argument-of-the-last-command-handling-spaces-correctly [following]
+--2013-09-15 13:41:21--  http://www.commandlinefu.com/commands/view/12721/get-the-nth-argument-of-the-last-command-handling-spaces-correctly
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘12721.html’
+
+     0K .......... .......... .......... .......... ..........  180K
+    50K .......... .......... .......... .......... ..........  120K
+   100K .......... .......... .......... .......... ..........  359K
+   150K .......... .......... ........                          205K=1.0s
+
+2013-09-15 13:41:22 (183 KB/s) - ‘12721.html’ saved [182706]
+

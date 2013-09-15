@@ -1,0 +1,18 @@
+--2013-09-15 13:40:58--  http://www.commandlinefu.com/commands/view/12298
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/12298/run-git-gc-in-all-git-repositories-bellow-. [following]
+--2013-09-15 13:40:59--  http://www.commandlinefu.com/commands/view/12298/run-git-gc-in-all-git-repositories-bellow-.
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘12298.html’
+
+     0K .......... .......... .......... .......... ..........  179K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  356K
+   150K .......... .......... ..                                594K=0.7s
+
+2013-09-15 13:41:00 (234 KB/s) - ‘12298.html’ saved [177094]
+

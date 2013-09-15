@@ -1,0 +1,18 @@
+--2013-09-15 13:27:34--  http://www.commandlinefu.com/commands/view/02475
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/2475/securely-erase-unused-blocks-in-a-partition [following]
+--2013-09-15 13:27:35--  http://www.commandlinefu.com/commands/view/2475/securely-erase-unused-blocks-in-a-partition
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘02475.html’
+
+     0K .......... .......... .......... .......... ..........  119K
+    50K .......... .......... .......... .......... ..........  178K
+   100K .......... .......... .......... .......... ..........  355K
+   150K .......... .......... .......... .                      227K=1.0s
+
+2013-09-15 13:27:36 (185 KB/s) - ‘02475.html’ saved [186204]
+

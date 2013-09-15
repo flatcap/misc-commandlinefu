@@ -1,0 +1,18 @@
+--2013-09-15 13:36:48--  http://www.commandlinefu.com/commands/view/09667
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/9667/target-a-specific-column-for-pattern-substitution [following]
+--2013-09-15 13:36:49--  http://www.commandlinefu.com/commands/view/9667/target-a-specific-column-for-pattern-substitution
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘09667.html’
+
+     0K .......... .......... .......... .......... ..........  119K
+    50K .......... .......... .......... .......... ..........  357K
+   100K .......... .......... .......... .......... ..........  178K
+   150K .......... .......... ..                                161K=1.0s
+
+2013-09-15 13:36:50 (176 KB/s) - ‘09667.html’ saved [176610]
+

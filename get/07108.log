@@ -1,0 +1,18 @@
+--2013-09-15 13:31:36--  http://www.commandlinefu.com/commands/view/07108
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/7108/undo [following]
+--2013-09-15 13:31:36--  http://www.commandlinefu.com/commands/view/7108/undo
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘07108.html’
+
+     0K .......... .......... .......... .......... ..........  179K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  179K
+   150K .......... .......... ....                             76.1M=0.8s
+
+2013-09-15 13:31:37 (207 KB/s) - ‘07108.html’ saved [178449]
+

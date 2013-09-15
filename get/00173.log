@@ -1,0 +1,18 @@
+--2013-09-15 13:25:42--  http://www.commandlinefu.com/commands/view/00173
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/173/watch-process-stack-sampled-at-1s-intervals [following]
+--2013-09-15 13:25:43--  http://www.commandlinefu.com/commands/view/173/watch-process-stack-sampled-at-1s-intervals
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘00173.html’
+
+     0K .......... .......... .......... .......... ..........  119K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  358K
+   150K .......... .......... .....                             186K=1.0s
+
+2013-09-15 13:25:44 (180 KB/s) - ‘00173.html’ saved [180110]
+

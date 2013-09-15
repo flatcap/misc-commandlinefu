@@ -1,0 +1,18 @@
+--2013-09-15 13:27:20--  http://www.commandlinefu.com/commands/view/02345
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/2345/show-git-branches-by-date-useful-for-showing-active-branches [following]
+--2013-09-15 13:27:20--  http://www.commandlinefu.com/commands/view/2345/show-git-branches-by-date-useful-for-showing-active-branches
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘02345.html’
+
+     0K .......... .......... .......... .......... ..........  178K
+    50K .......... .......... .......... .......... ..........  178K
+   100K .......... .......... .......... .......... ..........  178K
+   150K .......... .......... .......... .......... ...         308K=1.0s
+
+2013-09-15 13:27:21 (197 KB/s) - ‘02345.html’ saved [197835]
+

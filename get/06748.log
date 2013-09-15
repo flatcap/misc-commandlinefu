@@ -1,0 +1,18 @@
+--2013-09-15 13:31:17--  http://www.commandlinefu.com/commands/view/06748
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/6748/backup-archive-your-gmail-imap-folders. [following]
+--2013-09-15 13:31:17--  http://www.commandlinefu.com/commands/view/6748/backup-archive-your-gmail-imap-folders.
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘06748.html’
+
+     0K .......... .......... .......... .......... ..........  179K
+    50K .......... .......... .......... .......... ..........  156K
+   100K .......... .......... .......... .......... ..........  209K
+   150K .......... .......... ...                               569K=0.9s
+
+2013-09-15 13:31:18 (197 KB/s) - ‘06748.html’ saved [177272]
+

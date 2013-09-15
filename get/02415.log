@@ -1,0 +1,18 @@
+--2013-09-15 13:27:26--  http://www.commandlinefu.com/commands/view/02415
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/2415/count-to-65535-in-binary-for-no-apparent-reason [following]
+--2013-09-15 13:27:27--  http://www.commandlinefu.com/commands/view/2415/count-to-65535-in-binary-for-no-apparent-reason
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘02415.html’
+
+     0K .......... .......... .......... .......... ..........  181K
+    50K .......... .......... .......... .......... ..........  181K
+   100K .......... .......... .......... .......... ..........  181K
+   150K .......... .......... ...                               148M=0.8s
+
+2013-09-15 13:27:28 (209 KB/s) - ‘02415.html’ saved [177207]
+

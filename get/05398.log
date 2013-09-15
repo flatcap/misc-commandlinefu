@@ -1,0 +1,18 @@
+--2013-09-15 13:30:26--  http://www.commandlinefu.com/commands/view/05398
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/5398/find-all-files-currently-open-in-vim-andor-gvim [following]
+--2013-09-15 13:30:26--  http://www.commandlinefu.com/commands/view/5398/find-all-files-currently-open-in-vim-andor-gvim
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘05398.html’
+
+     0K .......... .......... .......... .......... ..........  119K
+    50K .......... .......... .......... .......... ..........  178K
+   100K .......... .......... .......... .......... ..........  356K
+   150K .......... .......... ....                              177K=1.0s
+
+2013-09-15 13:30:28 (178 KB/s) - ‘05398.html’ saved [178888]
+

@@ -1,0 +1,18 @@
+--2013-09-15 13:32:16--  http://www.commandlinefu.com/commands/view/07598
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/7598/convert-a-string-to-title-case [following]
+--2013-09-15 13:32:17--  http://www.commandlinefu.com/commands/view/7598/convert-a-string-to-title-case
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘07598.html’
+
+     0K .......... .......... .......... .......... ..........  120K
+    50K .......... .......... .......... .......... ..........  358K
+   100K .......... .......... .......... .......... ..........  179K
+   150K .......... .......... ........                          202K=1.0s
+
+2013-09-15 13:32:18 (183 KB/s) - ‘07598.html’ saved [182366]
+

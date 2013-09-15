@@ -1,0 +1,18 @@
+--2013-09-15 13:37:09--  http://www.commandlinefu.com/commands/view/09743
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/9743/limit-the-cpu-usage-of-a-process [following]
+--2013-09-15 13:37:10--  http://www.commandlinefu.com/commands/view/9743/limit-the-cpu-usage-of-a-process
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘09743.html’
+
+     0K .......... .......... .......... .......... ..........  178K
+    50K .......... .......... .......... .......... ..........  119K
+   100K .......... .......... .......... .......... ..........  355K
+   150K .......... .......... ..........                        215K=1.0s
+
+2013-09-15 13:37:11 (183 KB/s) - ‘09743.html’ saved [184485]
+

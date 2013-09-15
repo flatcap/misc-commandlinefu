@@ -1,0 +1,18 @@
+--2013-09-15 13:28:02--  http://www.commandlinefu.com/commands/view/02760
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/2760/change-to-home-zsh-bash4 [following]
+--2013-09-15 13:28:02--  http://www.commandlinefu.com/commands/view/2760/change-to-home-zsh-bash4
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘02760.html’
+
+     0K .......... .......... .......... .......... ..........  119K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  356K
+   150K .......... .......... ....                              175K=1.0s
+
+2013-09-15 13:28:04 (178 KB/s) - ‘02760.html’ saved [178663]
+

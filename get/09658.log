@@ -1,0 +1,18 @@
+--2013-09-15 13:36:45--  http://www.commandlinefu.com/commands/view/09658
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/9658/generate-sha1-md5-hash-using-echo [following]
+--2013-09-15 13:36:45--  http://www.commandlinefu.com/commands/view/9658/generate-sha1-md5-hash-using-echo
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘09658.html’
+
+     0K .......... .......... .......... .......... ..........  180K
+    50K .......... .......... .......... .......... ..........  120K
+   100K .......... .......... .......... .......... ..........  359K
+   150K .......... .......... ...                               173K=1.0s
+
+2013-09-15 13:36:46 (179 KB/s) - ‘09658.html’ saved [178060]
+

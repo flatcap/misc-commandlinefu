@@ -1,0 +1,18 @@
+--2013-09-15 13:40:36--  http://www.commandlinefu.com/commands/view/11991
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/11991/encrypt-and-password-protect-execution-of-any-bash-script-version-2 [following]
+--2013-09-15 13:40:36--  http://www.commandlinefu.com/commands/view/11991/encrypt-and-password-protect-execution-of-any-bash-script-version-2
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘11991.html’
+
+     0K .......... .......... .......... .......... ..........  178K
+    50K .......... .......... .......... .......... ..........  178K
+   100K .......... .......... .......... .......... ..........  178K
+   150K .......... .......... .......... ....                   245K=1.0s
+
+2013-09-15 13:40:37 (188 KB/s) - ‘11991.html’ saved [188686]
+

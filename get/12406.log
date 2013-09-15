@@ -1,0 +1,18 @@
+--2013-09-15 13:41:09--  http://www.commandlinefu.com/commands/view/12406
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/12406/check-if-a-string-is-into-a-variable [following]
+--2013-09-15 13:41:10--  http://www.commandlinefu.com/commands/view/12406/check-if-a-string-is-into-a-variable
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘12406.html’
+
+     0K .......... .......... .......... .......... ..........  179K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  179K
+   150K .......... .......... ....                              173K=1.0s
+
+2013-09-15 13:41:11 (178 KB/s) - ‘12406.html’ saved [178229]
+

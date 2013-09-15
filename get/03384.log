@@ -1,0 +1,18 @@
+--2013-09-15 13:28:43--  http://www.commandlinefu.com/commands/view/03384
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/3384/easy-and-fast-access-to-often-executed-commands-that-are-very-long-and-complex. [following]
+--2013-09-15 13:28:43--  http://www.commandlinefu.com/commands/view/3384/easy-and-fast-access-to-often-executed-commands-that-are-very-long-and-complex.
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘03384.html’
+
+     0K .......... .......... .......... .......... ..........  120K
+    50K .......... .......... .......... .......... ..........  359K
+   100K .......... .......... .......... .......... ..........  180K
+   150K .......... .......... ..........                        218K=1.0s
+
+2013-09-15 13:28:45 (185 KB/s) - ‘03384.html’ saved [184540]
+

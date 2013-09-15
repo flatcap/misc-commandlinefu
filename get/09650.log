@@ -1,0 +1,18 @@
+--2013-09-15 13:36:38--  http://www.commandlinefu.com/commands/view/09650
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/9650/find-systems-indianness [following]
+--2013-09-15 13:36:39--  http://www.commandlinefu.com/commands/view/9650/find-systems-indianness
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘09650.html’
+
+     0K .......... .......... .......... .......... ..........  119K
+    50K .......... .......... .......... .......... ..........  358K
+   100K .......... .......... .......... .......... ..........  179K
+   150K .......... .......... ...                               171K=1.0s
+
+2013-09-15 13:36:40 (178 KB/s) - ‘09650.html’ saved [177980]
+

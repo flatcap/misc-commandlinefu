@@ -1,0 +1,18 @@
+--2013-09-15 13:28:54--  http://www.commandlinefu.com/commands/view/03555
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/3555/find-duplicate-files-based-on-size-first-then-md5-hash [following]
+--2013-09-15 13:28:55--  http://www.commandlinefu.com/commands/view/3555/find-duplicate-files-based-on-size-first-then-md5-hash
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘03555.html’
+
+     0K .......... .......... .......... .......... ..........  178K
+    50K .......... .......... .......... .......... ..........  178K
+   100K .......... .......... .......... .......... ..........  178K
+   150K .......... .......... .......... .......... .........   355K=1.0s
+
+2013-09-15 13:28:56 (203 KB/s) - ‘03555.html’ saved [204699]
+

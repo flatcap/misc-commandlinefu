@@ -1,0 +1,18 @@
+--2013-09-15 13:38:18--  http://www.commandlinefu.com/commands/view/10156
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/10156/hide-the-name-of-a-process-listed-in-the-ps-output [following]
+--2013-09-15 13:38:18--  http://www.commandlinefu.com/commands/view/10156/hide-the-name-of-a-process-listed-in-the-ps-output
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘10156.html’
+
+     0K .......... .......... .......... .......... ..........  119K
+    50K .......... .......... .......... .......... ..........  356K
+   100K .......... .......... .......... .......... ..........  179K
+   150K .......... .......... ....                             84.7M=0.8s
+
+2013-09-15 13:38:20 (208 KB/s) - ‘10156.html’ saved [178751]
+

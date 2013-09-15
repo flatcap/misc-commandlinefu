@@ -1,0 +1,18 @@
+--2013-09-15 13:34:32--  http://www.commandlinefu.com/commands/view/08865
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/8865/find-duplicate-processes [following]
+--2013-09-15 13:34:32--  http://www.commandlinefu.com/commands/view/8865/find-duplicate-processes
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘08865.html’
+
+     0K .......... .......... .......... .......... ..........  119K
+    50K .......... .......... .......... .......... ..........  355K
+   100K .......... .......... .......... .......... ..........  179K
+   150K .......... .......... ...                               168K=1.0s
+
+2013-09-15 13:34:34 (177 KB/s) - ‘08865.html’ saved [177623]
+

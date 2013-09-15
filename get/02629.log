@@ -1,0 +1,18 @@
+--2013-09-15 13:27:51--  http://www.commandlinefu.com/commands/view/02629
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/2629/outputs-files-with-ascii-art-in-the-intended-form. [following]
+--2013-09-15 13:27:51--  http://www.commandlinefu.com/commands/view/2629/outputs-files-with-ascii-art-in-the-intended-form.
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘02629.html’
+
+     0K .......... .......... .......... .......... ..........  179K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  358K
+   150K .......... .......... ...                               593K=0.7s
+
+2013-09-15 13:27:52 (235 KB/s) - ‘02629.html’ saved [177864]
+

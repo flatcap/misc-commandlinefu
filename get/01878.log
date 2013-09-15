@@ -1,0 +1,18 @@
+--2013-09-15 13:26:53--  http://www.commandlinefu.com/commands/view/01878
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/1878/use-mtr-to-create-a-text-file-report [following]
+--2013-09-15 13:26:54--  http://www.commandlinefu.com/commands/view/1878/use-mtr-to-create-a-text-file-report
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘01878.html’
+
+     0K .......... .......... .......... .......... ..........  179K
+    50K .......... .......... .......... .......... ..........  119K
+   100K .......... .......... .......... .......... ..........  357K
+   150K .......... .......... ...                               166K=1.0s
+
+2013-09-15 13:26:55 (177 KB/s) - ‘01878.html’ saved [177391]
+

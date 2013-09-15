@@ -1,0 +1,18 @@
+--2013-09-15 13:41:13--  http://www.commandlinefu.com/commands/view/12417
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/12417/discover-the-process-start-time [following]
+--2013-09-15 13:41:13--  http://www.commandlinefu.com/commands/view/12417/discover-the-process-start-time
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘12417.html’
+
+     0K .......... .......... .......... .......... ..........  178K
+    50K .......... .......... .......... .......... ..........  178K
+   100K .......... .......... .......... .......... ..........  178K
+   150K .......... .......... ....                             83.4M=0.8s
+
+2013-09-15 13:41:14 (206 KB/s) - ‘12417.html’ saved [178343]
+

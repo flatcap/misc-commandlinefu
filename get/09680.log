@@ -1,0 +1,18 @@
+--2013-09-15 13:36:52--  http://www.commandlinefu.com/commands/view/09680
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/9680/get-memory-total-from-procmeminfo-in-gigs [following]
+--2013-09-15 13:36:52--  http://www.commandlinefu.com/commands/view/9680/get-memory-total-from-procmeminfo-in-gigs
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘09680.html’
+
+     0K .......... .......... .......... .......... ..........  178K
+    50K .......... .......... .......... .......... ..........  178K
+   100K .......... .......... .......... .......... ..........  178K
+   150K .......... .......... ..........                       70.0M=0.8s
+
+2013-09-15 13:36:53 (214 KB/s) - ‘09680.html’ saved [184334]
+

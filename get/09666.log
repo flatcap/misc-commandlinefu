@@ -1,0 +1,18 @@
+--2013-09-15 13:36:47--  http://www.commandlinefu.com/commands/view/09666
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/9666/list-current-ssh-clients [following]
+--2013-09-15 13:36:47--  http://www.commandlinefu.com/commands/view/9666/list-current-ssh-clients
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘09666.html’
+
+     0K .......... .......... .......... .......... ..........  119K
+    50K .......... .......... .......... .......... ..........  178K
+   100K .......... .......... .......... .......... ..........  179K
+   150K .......... .......... .....                            52.4M=1.0s
+
+2013-09-15 13:36:48 (179 KB/s) - ‘09666.html’ saved [180133]
+

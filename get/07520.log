@@ -1,0 +1,18 @@
+--2013-09-15 13:32:13--  http://www.commandlinefu.com/commands/view/07520
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/7520/make-vim-open-in-tabs-by-default-save-to-.profile [following]
+--2013-09-15 13:32:14--  http://www.commandlinefu.com/commands/view/7520/make-vim-open-in-tabs-by-default-save-to-.profile
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘07520.html’
+
+     0K .......... .......... .......... .......... ..........  178K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  357K
+   150K .......... .......... ....                              175K=0.8s
+
+2013-09-15 13:32:15 (208 KB/s) - ‘07520.html’ saved [178666]
+

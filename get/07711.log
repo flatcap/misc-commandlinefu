@@ -1,0 +1,18 @@
+--2013-09-15 13:32:29--  http://www.commandlinefu.com/commands/view/07711
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/7711/detect-your-computers-harddisk-read-speed-without-disk-cache-speed [following]
+--2013-09-15 13:32:30--  http://www.commandlinefu.com/commands/view/7711/detect-your-computers-harddisk-read-speed-without-disk-cache-speed
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘07711.html’
+
+     0K .......... .......... .......... .......... ..........  178K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  277K
+   150K .......... .......... ....                              240K=0.8s
+
+2013-09-15 13:32:31 (207 KB/s) - ‘07711.html’ saved [178203]
+

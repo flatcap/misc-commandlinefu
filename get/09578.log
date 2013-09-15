@@ -1,0 +1,18 @@
+--2013-09-15 13:36:27--  http://www.commandlinefu.com/commands/view/09578
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/9578/exclude-multiple-columns-using-awk [following]
+--2013-09-15 13:36:27--  http://www.commandlinefu.com/commands/view/9578/exclude-multiple-columns-using-awk
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘09578.html’
+
+     0K .......... .......... .......... .......... ..........  179K
+    50K .......... .......... .......... .......... ..........  179K
+   100K .......... .......... .......... .......... ..........  179K
+   150K .......... .......... ...                               114M=0.8s
+
+2013-09-15 13:36:28 (208 KB/s) - ‘09578.html’ saved [178000]
+

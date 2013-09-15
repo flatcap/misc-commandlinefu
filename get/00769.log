@@ -1,0 +1,18 @@
+--2013-09-15 13:26:08--  http://www.commandlinefu.com/commands/view/00769
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/769/copy-your-ssh-public-key-on-a-remote-machine-for-passwordless-login. [following]
+--2013-09-15 13:26:08--  http://www.commandlinefu.com/commands/view/769/copy-your-ssh-public-key-on-a-remote-machine-for-passwordless-login.
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘00769.html’
+
+     0K .......... .......... .......... .......... ..........  180K
+    50K .......... .......... .......... .......... ..........  180K
+   100K .......... .......... .......... .......... ..........  180K
+   150K .......... .......... ...                              32.8M=0.8s
+
+2013-09-15 13:26:09 (208 KB/s) - ‘00769.html’ saved [177757]
+

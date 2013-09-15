@@ -1,0 +1,18 @@
+--2013-09-15 13:33:55--  http://www.commandlinefu.com/commands/view/08463
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/8463/create-a-backup-copy-of-a-mysql-database-on-the-same-host [following]
+--2013-09-15 13:33:56--  http://www.commandlinefu.com/commands/view/8463/create-a-backup-copy-of-a-mysql-database-on-the-same-host
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘08463.html’
+
+     0K .......... .......... .......... .......... ..........  120K
+    50K .......... .......... .......... .......... ..........  280K
+   100K .......... .......... .......... .......... ..........  210K
+   150K .......... .......... ...                               595K=0.9s
+
+2013-09-15 13:33:57 (199 KB/s) - ‘08463.html’ saved [177722]
+

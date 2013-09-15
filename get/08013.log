@@ -1,0 +1,18 @@
+--2013-09-15 13:33:05--  http://www.commandlinefu.com/commands/view/08013
+Resolving www.commandlinefu.com (www.commandlinefu.com)... 96.126.98.110
+Connecting to www.commandlinefu.com (www.commandlinefu.com)|96.126.98.110|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://www.commandlinefu.com/commands/view/8013/rapidly-invoke-an-editor-to-write-a-long-complex-or-tricky-command [following]
+--2013-09-15 13:33:05--  http://www.commandlinefu.com/commands/view/8013/rapidly-invoke-an-editor-to-write-a-long-complex-or-tricky-command
+Reusing existing connection to www.commandlinefu.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘08013.html’
+
+     0K .......... .......... .......... .......... ..........  118K
+    50K .......... .......... .......... .......... ..........  356K
+   100K .......... .......... .......... .......... ..........  178K
+   150K .......... .......... .......... ...                    236K=1.0s
+
+2013-09-15 13:33:06 (186 KB/s) - ‘08013.html’ saved [187412]
+
