@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 mysqldump OLD_DB | cat &lt;(echo "CREATE DATABASE NEW_DB; USE NEW_DB;") - | mysql
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This should probably only be used for testing in a dev environment as it's not terribly efficient, but if you're doing something that might trash a DB and you still want the old data available, this works like a charm.
@@ -32,7 +30,6 @@
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                                 <h3>
                                         What others think
                                 </h3>

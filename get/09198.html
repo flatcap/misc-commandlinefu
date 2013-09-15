@@ -25,12 +25,10 @@
 $ dd if=/dev/zero bs=1M count=5 of=full-5m
 # copy with sparsity detection
 $ cp --sparse=always full-5m sparse-5m
-
 # they look the same...
 $ ls -lah full-5m sparse-5m
 -rw-r--r-- 1 h3xx users 5.0M Sep  7 03:05 full-5m
 -rw-r--r-- 1 h3xx users 5.0M Sep  7 03:04 sparse-5m
-
 # but they're different!
 $ du -h full-5m sparse-5m
 5.1M    full-5m
@@ -38,7 +36,6 @@ $ du -h full-5m sparse-5m
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This causes cp to detect and omit large blocks of nulls. Sparse files are useful for implying a lot of disk space without actually having to write it all out.
@@ -55,7 +52,6 @@ $ du -h full-5m sparse-5m
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                         </div>
                 </div>
         </body>

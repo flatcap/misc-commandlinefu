@@ -23,13 +23,11 @@
                                                 <pre>
 flatcap
         @daily /usr/bin/something
-
 root
         0 0 * * * /root/midnight_script.sh
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Show the crontabs of all the users.
@@ -45,9 +43,7 @@ root
                                                 <div class="line command">
                                                         for user in $(cut -f1 -d: /etc/passwd); do echo "### Crontabs for $user ####"; crontab -u $user -l; done
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         added echo "### Crontabs for $user ####"; to make clear whose crontab is listed.
@@ -59,9 +55,7 @@ root
                                                 <div class="line command">
                                                         for i in /var/spool/cron/tabs/*; do echo ${i##*/}; sed 's/^/\t/' $i; echo; done
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This is flatcaps tweaked command to make it work on SLES 11.2
@@ -73,9 +67,7 @@ root
                                                 <div class="line command">
                                                         for user in $(getent passwd|cut -f1 -d:); do echo "### Crontabs for $user ####"; crontab -u $user -l; done
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         added echo "### Crontabs for $user ####"; to make clear whose crontab is listed.

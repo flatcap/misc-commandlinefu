@@ -27,7 +27,6 @@ banana.example.com     6
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Count the number of active connections to a MySQL database.
@@ -49,10 +48,7 @@ banana.example.com     6
                                                 <div class="line command">
                                                         mysql -NBe 'show global status like "Threads_connected";' | cut -f2
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
@@ -68,7 +64,6 @@ banana.example.com     6
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This command will help you to find how many number of connection are made to given mysql and what are the different hosts connected to it with number of connection they are making.
@@ -80,10 +75,7 @@ banana.example.com     6
                                                 <div class="line command">
                                                         mysql -u root -p -N -e"show processlist\G;" | egrep "Host\:" | awk -F: '{ print $2 }' | sort | uniq -c
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

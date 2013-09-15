@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 dd if=/dev/zero bs=64K count=1 | tr "\0" "\377" &gt; all_ones
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 dd can be used with /dev/zero to easily create a file of all zero-bytes. Pipe that through tr and use octal conversions to change the byte values from zero to 0xff (octal 0377). You can replace 0377 with the byte of your choice. You can also use \\0 and \\377 instead of the quoted version.
@@ -32,7 +30,6 @@
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                         </div>
                 </div>
         </body>

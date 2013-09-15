@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 script -t /tmp/mylog.out 2&gt;/tmp/mylog.time; &lt;do your work&gt;; &lt;CTRL-D&gt;; scriptreplay /tmp/mylog.time /tmp/mylog.out
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 If you provide the option -t to the script command and redirect stderr into a file, the timing information on what is going on on the terminal, is also stored.
@@ -42,10 +40,7 @@
                                         <div class="line command">
                                                 script -t 2&gt; timing.txt -a session.txt ; Run some commands here; exit; scriptreplay timing.txt session.txt
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>

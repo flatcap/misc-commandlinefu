@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 files -type f | xargs -n100 | while read l; do mkdir $((++f)); cp $l $f; done
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Take a folder full of files and split it into smaller folders containing a maximum number of files. In this case, 100 files per directory.
@@ -49,9 +47,7 @@
                                                 <div class="line command">
                                                         find files/ -type f | while read line; do if [ $((i++%100)) -eq 0 ]; then mkdir $((++folder)); fi; cp $line $folder/; done
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Smaller Code
@@ -72,7 +68,6 @@ Nothing but files and folder
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         If you have a folder with thousand of files and want to have many folder with only 100 file per folder, run this.

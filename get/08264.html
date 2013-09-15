@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 find . -type f -name \*.php | while IFS="" read i; do expand -t4 "$i" &gt; "$i-"; mv "$i-" "$i"; done
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Recursively find php files and replace tab characters with spaces.
@@ -51,9 +49,7 @@
                                         <div class="line command">
                                                 find $DIR -name *.php -exec vim -u NONE -c 'set ft=php' -c 'set shiftwidth=4' -c 'set tabstop=4' -c 'set noexpandtab!' -c 'set noet' -c 'retab!' -c 'bufdo! "execute normal gg=G"' -c wq {} \;
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 The sample command searches for PHP files replacing tabs with spaces.

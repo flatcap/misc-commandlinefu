@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 echo 3 &gt; /proc/sys/vm/drop_caches
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -46,7 +43,6 @@ Swap:      2064376        128    2064248
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         The Linux kernel uses unused memory in caches. When you execute "free" you never get the "real" available memory.
@@ -61,20 +57,16 @@ Swap:      2064376        128    2064248
                                                 <div class="sample-output c5 output">
                                                         <pre>
 free -t
-
 before:
              total       used       free     shared    buffers     cached
 Mem:       4041140    3101232     939908          0     496196    1551896
-
 ...
-
 after:
              total       used       free     shared    buffers     cached
 Mem:       4041140    1078048    2963092          0        900      54600
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         run sync first to flush useful things out to disk!!!
@@ -110,7 +102,6 @@ Mem:       4041140    1078048    2963092          0        900      54600
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         where proc filesystem mounted under /proc
@@ -122,9 +113,7 @@ Mem:       4041140    1078048    2963092          0        900      54600
                                                 <div class="line command">
                                                         sync &amp;&amp; echo 3 | sudo tee /proc/sys/vm/drop_caches
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Found here: <a href="http://ubuntuforums.org/showthread.php?t=589975" rel="nofollow">http://ubuntuforums.org/showthread.php?t=589975</a>
@@ -136,9 +125,7 @@ Mem:       4041140    1078048    2963092          0        900      54600
                                                 <div class="line command">
                                                         /sbin/sysctl -w vm.drop_caches=3
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         =1 --&gt; to free pagecache

@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 for i in `seq 0 9` A B C D E F; do for j in `seq 0 9` A B C D E F; do HEX=\$\'\\x${i}${j}\'; if ! eval grep -qF "$HEX" file; then eval echo $HEX \\x${i}${j}; fi; done; done 2&gt; /dev/null | less
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Scan a file and print out a list of ASCII characters that are not used in the file which can then be safely used to delimit fields. Useful when needing to convert CSV files using "," to a single character delimiter. Piping it into less at the end (which could be redundant) stops the command characters being interpreted by the terminal.
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         perl -e '$f = join("", &lt;&gt;); for (0..127) {$_ = chr($_); if (/[[:print:]]/) {print if index($f, $_) &lt; 0}} print "\n"'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Here's a perl version that only considers printable characters. Change the regex /[[:print:]]/ to look for different sets of delimiter characters.
@@ -64,7 +60,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Search in decimal rather than hex. od dumps the character list, cut to remove offsets, sort -u gives the used characters. seq gives the comparison list, but we need this sorted alphabetically for comm, which does the filtering. I drop to perl to convert back to characters (is there a better way?) and then use od to dump them in a print-safe format.

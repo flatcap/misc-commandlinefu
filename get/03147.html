@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 pgrep -u `id -u` firefox-bin || find ~/.mozilla/firefox -name '*.sqlite'|(while read -e f; do echo 'vacuum;'|sqlite3 "$f" ; done)
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Sqlite database keeps collecting cruft as time passes, which can be cleaned by the 'vacuum;' command. This command cleans up the cruft in all sqlite files relating to the user you have logged in as. This command has to be run when firefox is not running, or it will exit displaying the pid of the firefox running.
@@ -37,19 +35,14 @@
                                                 <div class="line command">
                                                         find ~/.mozilla/firefox/ -type f -name "*.sqlite" -exec sqlite3 {} VACUUM \;
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         find ~/Library/Application\ Support/Firefox/ -type f -name "*.sqlite" -exec sqlite3 {} VACUUM \;
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         For Mac OS X users only

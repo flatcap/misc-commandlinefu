@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 find . ! -regex '.*/\(unit-test\|android\)/.*' \( -name '*.c' -o -name '*.cpp' \)
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Find files matching multiple descriptions (*.c and *.cpp) excluding multiple directories (unit-test and android).
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         ls **/*.c(|pp)~(unit-test|android)/*
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         works only in zsh, requires EXTENDED_GLOB to be set.
@@ -51,9 +47,7 @@
                                                 <div class="line command">
                                                         find . -name unit-test -o -name '*.c' -o -name '*.cpp' | egrep -v "unit-test|android"
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Very useful for finding all the source code that should be compiled.

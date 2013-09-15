@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 [ -t 0 ] || exit 1
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Exit with error if script is not run in a terminal
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         isatty(){ test -t $1; }
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Oddly, the isatty(3) glibc C call doesn't have a direct analogue as a command 'isatty(1)'. All is not lost as you can use test(1).
@@ -57,9 +53,7 @@
                                                 <div class="line command">
                                                         tty &gt; /dev/null 2&gt;&amp;1 || { aplay error.wav ; exit 1 ;}
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         If your script needs to be run in a terminal, this line at the top will stop it running if you absent-mindedly double-click the icon, perhaps intending to edit it. (Of course this won't help with scripts that run in the background.)

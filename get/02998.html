@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 find . -name "*.[ch]" -exec grep "TODO" {} +
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 -exec works better and faster then using a pipe
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         grep -r --include="*.[ch]" pattern .
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         doesn't do case-insensitive filenames like iname but otherwise likely to be faster
@@ -51,10 +47,7 @@
                                                 <div class="line command">
                                                         find . -name "*.[ch]" | xargs grep "TODO"
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

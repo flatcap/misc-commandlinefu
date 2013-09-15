@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 cut -f5 --complement
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Show all columns except 5th. This might help you save some typing if you are trying to exclude some columns from the output.
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         awk '{ $5=""; print }' file
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Here's an awk alternative, for those lacking the version of cut with the --complement argument.
@@ -51,10 +47,7 @@
                                                 <div class="line command">
                                                         awk '{$1=""; print}'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

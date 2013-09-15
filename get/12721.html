@@ -25,11 +25,9 @@
 $ cp /etc/passwd "This little piggy went to market"
 $ echo !:2
 This little piggy went to market
-
 # Note that redirection operators are numbered as arguments
 $ sort "This little piggy went to market" &gt;"Home again, home again, jiggity jig"
 $ mv !:3 !:1
-
 # Abbreviations for the first and last argument
 $ echo This little piggy went to market
 $ echo "First argument !^, last argument: !$"
@@ -37,7 +35,6 @@ First argument This, last argument: market
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Bash's history expansion character, "!", has many features, including "!:" for choosing a specific argument (or range of arguments) from the history. The gist is any number after !: is the number of the argument you want, with !:1 being the first argument and !:0 being the command. See the sample output for a few examples. For full details search for "^HISTORY EXPANSION" in the bash(1) man page.
@@ -67,7 +64,6 @@ went
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This gets the Nth argument in the last line of your history file. This is useful where history is being written after each command, and you want to use arguments from the previous command in the current command, such as when doing copies/moving directories etc.

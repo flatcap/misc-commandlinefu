@@ -45,7 +45,6 @@ the old GNU fileutils, sh-utils, and textutils packages.
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Find information about the rpm package which owns a certain file.
@@ -61,9 +60,7 @@ the old GNU fileutils, sh-utils, and textutils packages.
                                                 <div class="line command">
                                                         dpkg -S `which nm` | cut -d':' -f1 | (read PACKAGE; echo "[${PACKAGE}]"; dpkg -s "${PACKAGE}"; dpkg -L "${PACKAGE}") | less
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         In Debian based distros, this command will list 'binutils' package details which contains 'nm' command. You can replace 'nm' to any other command.
@@ -99,7 +96,6 @@ Original-Maintainer: Matthias Klose &lt;doko@debian.org&gt;
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This version builds on my command 8776 (Find the package a command belongs to on debian-based distros). So if you use that command to find package name then you could alternatively use following for

@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 function autoCompleteHostname() { local hosts; local cur; hosts=($(awk '{print $1}' ~/.ssh/known_hosts | cut -d, -f1)); cur=${COMP_WORDS[COMP_CWORD]}; COMPREPLY=($(compgen -W '${hosts[@]}' -- $cur )) } complete -F autoCompleteHostname ssh
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This is meant for the bash shell. Put this function in your .profile and you'll be able to use tab-completion for sshing any host which is in your known_hosts file. This assumes that your known_hosts file is located at ~/.ssh/known_hosts. The "complete" command should go on a separate line as such:
@@ -50,7 +48,6 @@
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                                 <h3>
                                         What others think
                                 </h3>

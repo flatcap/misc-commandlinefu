@@ -26,7 +26,6 @@ Location: https://wiki.ubuntu.com/UbuntuOpenWeek [following]
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This shell function uses wget(1) to show what site a shortened URL is pointing to, even if there are many nested shortened URLs. This is a great way to test whether or not the shortened URL is sending you to a malicious site, or somewhere nasty that you don't want to visit. The sample output is from:
@@ -49,7 +48,6 @@ Location: https://wiki.ubuntu.com/UbuntuOpenWeek [following]
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         curl(1) is more portable than wget(1) across Unices, so here is an alternative doing the same thing with greater portability. This shell function uses curl(1) to show what site a shortened URL is pointing to, even if there are many nested shortened URLs. This is a great way to test whether or not the shortened URL is sending you to a malicious site, or somewhere nasty that you don't want to visit. The sample output is from:
@@ -68,7 +66,6 @@ http://arstechnica.com/tech-policy/2013/01/all-backscatter-pornoscanners-to-be-r
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This relies on a public API from <a href="http://longurl.org." rel="nofollow">http://longurl.org.</a> So, this has the weakness that if the service disappears, the function will break. However, it has the advantage that the shortened URL service will not be tracking your IP address and other metrics, but instead will track longurl.org. Thus, you can remain anonymous from the shortened URL services (although not anonymous from longurl.org). It does no sanity checking that you have provided an argument. If you do not provide one, "message" is displayed to STDOUT.
@@ -86,7 +83,6 @@ https://wiki.ubuntu.com/UbuntuOpenWeek
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This shell function uses curl(1) as it is more portable than wget(1) across Unices, to show what site a shortened URL is pointing to, even if there are many nested shortened URLs. It is a refinement to <a href="http://www.commandlinefu.com/commands/view/9515/expand-shortened-urls" rel="nofollow">www.commandlinefu.com/commands/view/9515/expand-shortened-urls</a> to make it better for use in scripts. Only displays final result.

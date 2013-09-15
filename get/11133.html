@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 ps wwwwuax|awk '/command/ { printf("kill -9 %s\n",$2) }'|/bin/sh
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Okay, commands like this are a bit of a personal peeve. awk(1) operates on a /pattern/ {action} paradigm and yet I see people leave out the /pattern/ portion of an awk command all the time, opting to use grep or sed instead. You'll save yourself some typing and time if you include the /pattern/ with your {action}.
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         ps -ef | grep $USERNAME | awk {'print $2'} | xargs kill [-9]
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This is a 'killall' command equivalent where it is not available.
@@ -60,19 +56,14 @@
                                                 <div class="line command">
                                                         ps -fu $USER | awk {'print $2'} | xargs kill [-9]
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         fuser -kiu / name
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         kill processes by user . Remove "i" if you don't want to confirm.
@@ -84,9 +75,7 @@
                                                 <div class="line command">
                                                         sudo -u $USER kill -9 -1
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Kill all processes belonging to a user, with a minimum of resource usage. Great for the times when a user fork-bombs the system and it's difficult to login or run commands.

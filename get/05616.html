@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 grep -hIr :name ~/.mozilla/firefox/*.default/extensions | tr '&lt;&gt;=' '"""' | cut -f3 -d'"' | sort -u
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -36,7 +33,6 @@
                                                 <div class="sample-output c5 output">
                                                         <pre>
  grep -hIr -m 1 :name ~/.mozilla/firefox/*.$USER/extensions | tr '&lt;&gt;=' '"""' | cut -f3 -d'"' | sort -u
-
 Adblock Plus
 Firebug
 It's All Text!
@@ -48,7 +44,6 @@ User Agent Switcher
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         1.) my profile ends with $USER not with .default
@@ -74,7 +69,6 @@ Autocomplete Manager
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         with grep for em:name rather than name, you will get much better result.

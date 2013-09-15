@@ -26,7 +26,6 @@ One Two Three
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 I find it useless but definitely simpler than #9230
@@ -42,9 +41,7 @@ One Two Three
                                                 <div class="line command">
                                                         command &lt;&lt;&lt; word
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Don't do this:
@@ -65,7 +62,6 @@ Foo Bar
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Capitalize first letter of each word in a string.
@@ -77,9 +73,7 @@ Foo Bar
                                                 <div class="line command">
                                                         ruby -ne 'puts $_.split.collect(&amp;:capitalize).join(" ")' &lt;&lt;&lt; "pleAse cOuld YOu capiTalizE Me"
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         "-n" loops around ; "-e" executes the given quoted string ; "$_" is the current line ; "split" creates an array on white space; each item of the array is "collected" to be then "capitalized" ; the array is "joined" back into a string.
@@ -91,9 +85,7 @@ Foo Bar
                                                 <div class="line command">
                                                         echo 'fOo BaR' | ruby -e "p STDIN.gets.split.map(&amp;:capitalize).join(' ')"
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Ruby ftw

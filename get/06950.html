@@ -23,23 +23,18 @@
                                                 <pre>
 The command:
 cat file.txt | sed -e /^$/d -e /++-/G | sed -e '/./{H;$!d;}' -e 'x;/Lorem/!d;'
-
 Will print the message:
-
 ^$
 Lorem ipsum dolor sit amet,
 consectetur adipiscing elit.
 ++-
-
 But not:
-
 ^$
 Vestibulum fermentum molestie nunc a interdum.
 ++-
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Working with log files that contains variable length messages wrapped between open and close tags it may be useful to filter the messages upon a keyword.
@@ -69,7 +64,6 @@ four
 five
 six
 seven
-
 daveqb@localhost /tmp $
 sed '/'"four"'/,/'"six"'/{/'"six"'/d;p};d' "test"
 four
@@ -77,7 +71,6 @@ five
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This line does not include your closing tag in the output.

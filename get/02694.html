@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 mencoder dvd://<span>&lt;title&gt;</span> -dvd-device <span>&lt;device&gt;</span> -aid 128 -info srcform='ripped by mencoder' -oac mp3lame -lameopts abr:br=128 -ovc xvid -xvidencopts pass=1:chroma_opt:vhq=4:bvhq=1:quant_type=mpeg -vf pp=de,crop=0:0:0:0, -ofps 30000/1001 -o '/dev/null'
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This set of commands will rip a dvd title using a 2 pass mencoder xvid encode. It will provide a great quality rip. It will rip as close to 700MB as possible. (note the bitrate of -700000)
@@ -35,7 +33,6 @@
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                         </div>
                 </div>
         </body>

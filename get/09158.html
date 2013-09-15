@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 awk '{print $0/60;}' /proc/uptime
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Get info directly from /proc/uptime
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         bc &lt;&lt;&lt; `uptime | sed -e 's/^.*up //' -e 's/[^0-9:].*//' | sed 's/:/*60+/g'`
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Want to run scripts/programs in the system after starting X minute [ For letting the system to free ]? This will give uptime in minute.
@@ -51,10 +47,7 @@
                                                 <div class="line command">
                                                         uptime | awk -F ',' ' {print $1} ' | awk ' {print $3} ' | awk -F ':' ' {hrs=$1; min=$2; print hrs*60 + min} '
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
@@ -67,7 +60,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         find the uptime and convert in minutes, works with AIX and Linux too

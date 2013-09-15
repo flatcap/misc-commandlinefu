@@ -44,7 +44,6 @@
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Search for files and list the 20 largest.
@@ -74,9 +73,7 @@
                                         <div class="line command">
                                                 find . -mount -type f -printf "%k %p\n" | sort -rg | cut -d \ -f 2- | xargs -I {} du -sh {} | less
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 from my bashrc ;)

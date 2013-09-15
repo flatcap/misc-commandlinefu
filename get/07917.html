@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 s(){ sed 's/./\n\0/g'&lt;&lt;&lt;$1|sort;};cmp -s &lt;(s foobar) &lt;(s farboo)||echo -n "not ";echo anagram
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Are the two strings anagrams of one another?
@@ -52,9 +50,7 @@
                                                 <div class="line command">
                                                         (echo foobar; echo farboo) | perl -E 'say[sort&lt;&gt;=~/./g]~~[sort&lt;&gt;=~/./g]?"anagram":"not anagram"'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This works by reading in two lines of input, turning each into a list of one-character matches that are sorted and compared.
@@ -75,7 +71,6 @@ not anagram
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This is just a slight alternative that wraps all of #7917 in a function that can be executed

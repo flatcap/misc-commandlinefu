@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 echo <span>&lt;command&gt;</span>; !#:0-$
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 !# is the currennt line so far, by using !#:- you can go from the second arg (it's zero indexed) to the last ($)
@@ -49,7 +47,6 @@ robert
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         If script.sh contains only these two lines:
@@ -67,10 +64,7 @@ robert
                                                 <div class="line command">
                                                         set -x
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
@@ -80,14 +74,12 @@ robert
                                                 <div class="sample-output c5 output">
                                                         <pre>
 $ echo "ls"; `!#:0-$
-
 echo "ls"; `echo "ls" ; `
 ls
 Android.mk  ardrv  devmgr  egl  file1
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         since we're repeating the command there after the semicolon, we only need one backtick
@@ -99,9 +91,7 @@ Android.mk  ardrv  devmgr  egl  file1
                                                 <div class="line command">
                                                         <span>&lt;TBD&gt;</span>
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Is there a way to print the line BASH is executing without copy+paste the line inside an 'echo' command?

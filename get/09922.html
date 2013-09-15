@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 xmlstarlet sel -t -c "/path/to/element" file.xml
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -33,9 +30,7 @@
                                                 <div class="line command">
                                                         xml2 &lt; file.xml | grep ^/path/to/element | cut -f2- -d=
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         poor man's xml parser :)
@@ -47,9 +42,7 @@
                                                 <div class="line command">
                                                         xmlstarlet sel -t -v "/path/to/element" file.xml
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Prints the value of a XML node rather than the entire node.
@@ -61,9 +54,7 @@
                                                 <div class="line command">
                                                         xpath () { xmllint --format --shell "$2" &lt;&lt;&lt; "cat $1" | sed '/^\/ &gt;/d' }
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This function uses xmllint to evaluate xpaths.

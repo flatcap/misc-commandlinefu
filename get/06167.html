@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 echo "export DISPLAY=:0; export XAUTHORITY=~/.Xauthority; notify-send test" | at now+1minute
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 You can write a script that does this :
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         DISPLAY=:0.0 XAUTHORITY=~/.Xauthority notify-send test
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         we don't need to export variables to set a env to a command, we may do this before the command directly
@@ -51,9 +47,7 @@
                                                 <div class="line command">
                                                         echo notify-send test | at now+1minute
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         The simplest way to do it.

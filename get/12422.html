@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 find -printf "%C@ %p\n"|sort
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This uses the ability of find (at least the one from GNU findutils that is shiped with most linux distros) to display change time as part of its output. No xargs needed.
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         find -type f -print0 | xargs -r0 stat -c %y\ %n | sort
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Works with files containing spaces and for very large directories.
@@ -51,9 +47,7 @@
                                                 <div class="line command">
                                                         find . -type f -exec stat -f '%m %N' {} \; | sort -n
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         here's a version which works on OS X.
@@ -65,19 +59,14 @@
                                                 <div class="line command">
                                                         find -type f | xargs ls -1tr
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         find . -type f -exec ls -tr {} +
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         List all files from the current directory and subdirectories, sorted by modification time, oldest first.
@@ -102,7 +91,6 @@ $ find tmp/ -type f | xargs ls -ltrhg
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         find and normal files and list them sorting with modification time without group

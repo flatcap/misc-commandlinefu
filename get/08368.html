@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 ls * | sed -e 'p;s/foo/bar/' | xargs -n2 mv
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Renames all files in a directory named foo to bar.
@@ -55,7 +53,6 @@ Come on...
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         That is an alternative to command 8368.
@@ -92,15 +89,12 @@ Come on...
                                                         <pre>
 $ ls
 thisFileIsCalledDAVE
-
 $ rename 's/DAVE/PETE/g' ./*
-
 $ ls
 thisFileIsCalledPETE
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Would this command line achieve the desired function? My CLI knowledge is not great so this could certainly be wrong. It is merely a suggestion for more experienced uses to critique. Best wishes roly :-)
@@ -112,9 +106,7 @@ thisFileIsCalledPETE
                                                 <div class="line command">
                                                         for f in *; do mv "$f" "${f/foo/bar}"; done
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         without sed, but has no problems with files with spaces or other critical characters
@@ -126,10 +118,7 @@ thisFileIsCalledPETE
                                                 <div class="line command">
                                                         ls | sed 'p;s/foo/bar/' | xargs -n2 mv
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
@@ -148,7 +137,6 @@ $ ls -aF
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         rename command in my system -Fuduntu running 2.6.38 Linux Kernel- is an ELF 64-bit LSB executable, not a Perl script. man page for rename command shows syntax as "rename from to where" (or something like that), so I am doing just what I have been told...

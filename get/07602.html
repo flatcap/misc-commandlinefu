@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 bargs { while read i; do "$@" "$i"; done }
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -32,9 +29,7 @@
                                         <div class="line command">
                                                 xargsb() { while read -r cmd; do ${@//'{}'/$cmd}; done; }
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Similar to xargs -i, but works with builtin bash commands (rather than running "bash -c ..." through xargs)

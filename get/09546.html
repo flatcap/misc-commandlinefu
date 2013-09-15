@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i&lt;=NF;i++)printf("%dx%d=%d%s", i, NR, i*NR, i==NR?"\n":"\t")}'
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 seq -s ' ' 1 9 | sed -n ':a;p;s/ *\w$//;h;/^$/t;b a;q' | tac | awk '{for(i=1;i
@@ -59,7 +57,6 @@
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                                 <h3>
                                         What others think
                                 </h3>

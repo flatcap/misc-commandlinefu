@@ -25,7 +25,6 @@ Add this to your .BASHRC file and you can simply type up to cd back one director
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 I wrote this a long time ago, wondering why this wasn't floating around somewhere out there (at least not where I could find).. this seems much more simple than multiple aliases and can cd out of directories easier.
@@ -41,9 +40,7 @@ Add this to your .BASHRC file and you can simply type up to cd back one director
                                                 <div class="line command">
                                                         up() { [ $(( $1 + 0 )) -gt 0 ] &amp;&amp; cd $(eval "printf '../'%.0s {1..$1}"); }
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         `up 3` will climb the directory tree by three steps. `up asdf` will do nothing, and returns exit code 1 as an error should.
@@ -64,7 +61,6 @@ Add this to your .BASHRC file and you can simply type up to cd back one director
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Change n directories up, without parameters change one up

@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 perl -ane 'print unless $x{$F[0]}++' infile &gt; outfile
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <code>F[0] filters using first word. $F[1] - 2nd, and so on.</code>
                                                 </div>
@@ -34,9 +32,7 @@
                                         <div class="line command">
                                                 awk '{ if ($1 in stored_lines) x=1; else print; stored_lines[$1]=1 }' infile.txt &gt; outfile.txt
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 The command (above) will remove any duplicate rows based on the FIRST column of data in an un-sorted file.

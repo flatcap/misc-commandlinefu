@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 sed 's/\o0/\n/g' /proc/INSERT_PID_HERE/environ
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -33,9 +30,7 @@
                                                 <div class="line command">
                                                         cat /proc/PID/environ | tr '\0' '\n'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Same as previous but without fugly sed =x
@@ -47,9 +42,7 @@
                                                 <div class="line command">
                                                         ps ewwo command PID | tr ' ' '\n' | grep \=
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Same as previous but compatible with BSD/IPSO

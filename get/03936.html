@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 cd() { if [[ "$1" =~ ^\.\.+$ ]];then local a dir;a=${#1};while [ $a -ne 1 ];do dir=${dir}"../";((a--));done;builtin cd $dir;else builtin cd "$@";fi ;}
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This is a kind of wrapper around the shell builtin cd that allows a person to quickly go up several directories.
@@ -64,9 +62,7 @@
                                                 <div class="line command">
                                                         alias ..="cd .."; alias ...="cd ../.."; alias ....="cd ../../.."
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Change to your taste. Much quicker than having to add 'cd' every time. Add it to your .bashrc or .bash_profile.
@@ -78,10 +74,7 @@
                                                 <div class="line command">
                                                         alias ..="cd .." ...="cd ../.." ....="cd ../../.."
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

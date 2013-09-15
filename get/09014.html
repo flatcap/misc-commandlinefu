@@ -26,7 +26,6 @@ http://is.gd/IjoOpX
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Check the API. You shouldn't need sed. The print-newline at the end is to prevent zsh from inserting a % after the end-of-output.
@@ -44,9 +43,7 @@ http://is.gd/IjoOpX
                                         <div class="line command">
                                                 curl -s -d URL="$1" http://is.gd/create.php | sed '/Your new shortened/!d;s/.*value="\([^"]*\)".*/\1/'
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Just create a function in your .bashrc like this

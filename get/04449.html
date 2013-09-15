@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 command | sed '/regex/q'
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Slightly simpler version of previous sed command that does the same thing. In this case, the output will stop at the command, and the entire command will be terminated as well, instead of proceeding through the whole file.
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         command | sed -n '1,/regex/p'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         If BREs can be used, this sed version will also get the job done.
@@ -51,9 +47,7 @@
                                                 <div class="line command">
                                                         &lt;your command here&gt; | perl -n -e 'print "$_" if 1 ... /<span>&lt;regex&gt;</span>/;'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This command line will display the output of , from the first line of output, until the first time it sees a pattern matching .
@@ -71,9 +65,7 @@
                                                 <div class="line command">
                                                         <span>&lt;command&gt;</span> | perl -pe '/&lt;regex/ &amp;&amp; exit;'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Doesn't display the matching line. If you want that behaviour, you need to add "print &amp;&amp; " before the 'exit'.

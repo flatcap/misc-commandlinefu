@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 timeout 5s COMMAND
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -33,19 +30,14 @@
                                                 <div class="line command">
                                                         timeout 10 sleep 11
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         very_long_command&amp; sleep 10; kill $!
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         or "Execute a command with a timeout"
@@ -75,7 +67,6 @@ Alarm clock
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         In this example the command "somecommand" will be executed and sent a SIGALARM signal if it runs for more than 10 seconds. It uses the perl alarm function. It's not 100% accurate on timing, but close enough. I found this really useful when executing scripts and commands that I knew might hang E.g. ones that connect to services that might not be running. Importantly this can be used within a sequential script. The command will not release control until either the command completes or the timeout is hit.
@@ -87,9 +78,7 @@ Alarm clock
                                                 <div class="line command">
                                                         $COMMAND 2&gt;&amp;1 &gt;/dev/null &amp; WPID=$!; sleep $TIMEOUT &amp;&amp; kill $! &amp; KPID=$!; wait $WPID
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         I like much more the perl solution, but without using perl. It launches a backgroup process that will kill the command if it lasts too much.
@@ -179,9 +168,7 @@ Alarm clock
                                                 <div class="line command">
                                                         timeout -k 1m 30s some_command
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         A timeout is great, but what if the command is taking longer than expected because it's hung up or ran into some other problem? That's where the -k option comes in. Run "some_command" and timeout after 30s. If the command is still running after 1 minute, it will receive a kill signal.

@@ -23,14 +23,11 @@
                                                 <pre>
 read -a ARR &lt;&lt;&lt;'world domination now!'; echo ${ARR[2]};
 now!
-
 IFS=":" read -a ARR &lt;&lt;&lt;"$PATH"; echo ${ARR[2]};
 /usr/local/bin
 </pre>
                                         </div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -41,9 +38,7 @@ IFS=":" read -a ARR &lt;&lt;&lt;"$PATH"; echo ${ARR[2]};
                                                 <div class="line command">
                                                         command &lt;&lt;&lt; word
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Don't do this:
@@ -68,7 +63,6 @@ $ echo ${TEST[@]}
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         It works as a method applicated to a variable, converts the string variable into an array
@@ -80,10 +74,7 @@ $ echo ${TEST[@]}
                                                 <div class="line command">
                                                         Split() { SENT=${*} ; sentarry=( ${SENT} ) ; while [[ ${#sentarry[@]} -gt 0 ]] ; do printf "%s\n" "${sentarry[0]}" ; sentarry=( ${sentarry[@]:1} ) ; done ; }
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

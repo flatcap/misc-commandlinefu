@@ -29,7 +29,6 @@
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Shorter version.
@@ -59,7 +58,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This version uses Pipes, but is easier for the common user to grasp... instead of using sed or some other more complicated method, it uses the tr command
@@ -82,7 +80,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         The output of "echo $PATH" is hard to read, this is much easier. The parentheses ensure that the change to the input field separator (IFS) only happens the the sub shell and not affecting the current shell.
@@ -102,7 +99,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         quoteless
@@ -134,7 +130,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Removes trailing newline; colon becomes record separator and newline becomes field separator, only the first field is ever printed. Replaces empty entries with $PWD. Also prepend relative directories (like ".") with the current directory ($PWD). Can change PWD with env(1) to get tricky in (non-Bourne) scripts.
@@ -146,9 +141,7 @@
                                                 <div class="line command">
                                                         print -l $path
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This doesn't work in bash, but in zsh you can typeset -T to bind a scalar variable to an array. $PATH and $path behave this way by default.

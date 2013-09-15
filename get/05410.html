@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 strace -ff -e trace=write -e write=1,2 -p SOME_PID
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -33,9 +30,7 @@
                                                 <div class="line command">
                                                         strace -ff -e write=1,2 -s 1024 -p PID 2&gt;&amp;1 | grep "^ |" | cut -c11-60 | sed -e 's/ //g' | xxd -r -p
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         similar to the previous command, but with more friendly output (tested on linux)
@@ -53,7 +48,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Useful to recover a output(stdout and stderr) "disown"ed or "nohup"ep process of other instance of ssh.

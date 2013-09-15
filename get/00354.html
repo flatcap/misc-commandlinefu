@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 echo -n m{1..5}.cluster.net | xargs -d' ' -n1 -P5 -I{} ssh {} 'uptime'
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -33,9 +30,7 @@
                                                 <div class="line command">
                                                         echo "uptime" | pee "ssh host1" "ssh host2" "ssh host3"
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         The pee command is in the moreutils package.
@@ -47,29 +42,21 @@
                                                 <div class="line command">
                                                         echo "uptime" | tee &gt;(ssh host1) &gt;(ssh host2) &gt;(ssh host3)
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         mussh -h host1 host2 host3 -c uptime
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         xargs -n1 -P100 -I{} sh -c 'ssh {} uptime &gt;output/{} 2&gt;error/{}' &lt;hostlist
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Do the same as pssh, just in shell syntax.
@@ -87,9 +74,7 @@
                                                 <div class="line command">
                                                         seq 1 5 | parallel ssh {}.cluster.net uptime
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Parallel is from https://savannah.nongnu.org/projects/parallel/

@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 read day month year &lt; &lt;(date +'%d %m %y')
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 No command substitution but subshell redirection
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         read day month year &lt;&lt;&lt; $(date +'%d %m %y')
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This version uses read instead of eval.
@@ -59,7 +55,6 @@ $ echo $day/$month/$year
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         It's quite easy to capture the output of a command and assign it in a shell's variable:

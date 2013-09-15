@@ -36,7 +36,6 @@
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Take a file and ,."()?!;: give a list of all the words in order of increasing length.
@@ -73,9 +72,7 @@
                                                 <div class="line command">
                                                         for a in $(cat sample.txt); do echo "$(wc -m&lt;&lt;&lt;$a) $a";done|sort -n
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         optionally you can add
@@ -90,20 +87,14 @@
                                                 <div class="line command">
                                                         for a in $(cat sample.txt); do echo "${#a} $a";done|sort -n
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         for a in $(&lt; FILENAME); do echo "$(bc &lt;&lt;&lt; $(wc -m&lt;&lt;&lt;$a)-1) $a";done|sort -n
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

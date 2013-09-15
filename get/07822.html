@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 dpkg -S $( which ls )
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -36,13 +33,11 @@
                                                 <div class="sample-output c5 output">
                                                         <pre>
 $ function whichpkg(){ readlink -f "$(which $1)" | xargs --no-run-if-empty dpkg -S; }
-
 $whichpkg rlogin
 openssh-client: /usr/bin/ssh
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This revision to my command (command #8851) was called for when it failed to find the parent
@@ -60,10 +55,7 @@ openssh-client: /usr/bin/ssh
                                                 <div class="line command">
                                                         apt-file search iostat
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
@@ -74,16 +66,13 @@ openssh-client: /usr/bin/ssh
                                                         <pre>
 $ whichpkg write
 bsdmainutils: /usr/bin/bsd-write
-
 $ whichpkg telnet
 telnet: /usr/bin/telnet.netkit
-
 $ whichpkg ftp
 ftp: /usr/bin/netkit-ftp
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Advanced revision to the command 8776 . This revision follows symbolic links.
@@ -102,17 +91,13 @@ ftp: /usr/bin/netkit-ftp
                                                         <pre>
 $ whichpkg cron
 cron: /usr/sbin/cron
-
 $ whichpkg ls
 coreutils: /bin/ls
-
 $ whichpkg intentionally-non-existent
 dpkg: *intentionally-non-existent* not found.
-
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Similar to command 7822, but handles errors gracefully.
@@ -131,7 +116,6 @@ coreutils-8.10-2.fc15.x86_64
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Find the package a file belongs to on an rpm-based distro.

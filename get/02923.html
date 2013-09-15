@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 perl -ne 'split /,/ ; $a+= $_[3]; END {print $a."\n";}' -f ./file.csv
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -33,19 +30,14 @@
                                                 <div class="line command">
                                                         awk -F ',' '{ x = x + $4 } END { print x }' test.csv
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         perl -F',' -ane '$a += $F[3]; END { print $a }' test.csv
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         More of the same but with more elaborate perl-fu :-)

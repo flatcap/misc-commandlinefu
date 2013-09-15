@@ -22,7 +22,6 @@
                                         <div class="sample-output c5 output">
                                                 <pre>
 -macbook:~ root# cat /var/log/secure.log | awk '{print substr($0,0,12)}' | uniq -c | sort -nr | awk '{printf("\n%s ",$0) ; for (i = 0; i&lt;$1 ; i++) {printf("*")};}' | head
-
    9 Jul 21 20:21 *********
    9 Jul 20 19:46 *********
    9 Jul 20 14:46 *********
@@ -35,7 +34,6 @@
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Busiest seconds:
@@ -46,7 +44,6 @@
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                                 <h3>
                                         What others think
                                 </h3>

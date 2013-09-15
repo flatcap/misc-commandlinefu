@@ -22,7 +22,6 @@
                                         <div class="sample-output c5 output">
                                                 <pre>
 Every 1.0s: pstack 2558 | tac                      Thu Feb  5 12:04:57 2009
-
 #24 0x00000030fea1d8b4 in __libc_start_main () from /lib64/libc.so.6
 #23 0x0000000000412275 in Py_Main ()
 #22 0x00000000004a86e0 in PyRun_SimpleFileExFlags ()
@@ -36,7 +35,6 @@ Every 1.0s: pstack 2558 | tac                      Thu Feb  5 12:04:57 2009
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This command repeatedly gets the specified process' stack using pstack (which is an insanely clever and tiny wrapper for gdb) and displays it fullscreen. Since it updates every second, you rapidly get an idea of where your program is stuck or spending time.
@@ -53,7 +51,6 @@ Every 1.0s: pstack 2558 | tac                      Thu Feb  5 12:04:57 2009
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                                 <h3>
                                         What others think
                                 </h3>

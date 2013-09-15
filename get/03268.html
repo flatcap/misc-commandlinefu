@@ -30,7 +30,6 @@ Ending arp-scan 1.6: 256 hosts scanned in 1.459 seconds (175.46 hosts/sec).  26 
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Have to run as superuser... but easier and more informational if you are looking for actual devices. Need to install arp-scan.
@@ -56,7 +55,6 @@ Ending arp-scan 1.6: 256 hosts scanned in 1.459 seconds (175.46 hosts/sec).  26 
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         You send a unicast ICMP packet to each host. Many firewalls will drop that ICMP. However, in order to send the ICMP, you'll have first done an ARP request and the remote machine is unlikely to ignore that, so the computer will be in your ARP table.
@@ -68,10 +66,7 @@ Ending arp-scan 1.6: 256 hosts scanned in 1.459 seconds (175.46 hosts/sec).  26 
                                                 <div class="line command">
                                                         sudo watch arp-scan --interface=wlan0 --localnet
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 script -qf | tee &gt;(nc -l -p 5000)
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 solution that works for me
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         script -qf | tee &gt;(nc -kl 5000) &gt;(nc -kl 5001) &gt;(nc -kl 5002)
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         run 'nc yourip 5000', 'nc yourip 5001' or 'nc yourip 5002' elsewhere will produce an exact same mirror of your shell. This is handy when you want to show someone else some amazing stuff in your shell without giving them control over it.
@@ -51,9 +47,7 @@
                                                 <div class="line command">
                                                         bash -i 2&gt;&amp;1 | tee /dev/stderr | nc -l 5000
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Doesn't work so well if you connect from windows. Linux only sends LF where windows wants CRLF. The alternative command works better with windows, however it uses script and a named pipe.
@@ -72,7 +66,6 @@ nc -lu -s 192.168.1.255 -p 5000
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Better solution in case of many clients, imo.

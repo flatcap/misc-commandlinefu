@@ -25,7 +25,6 @@
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 one of the solutions from this stackexchange: <a href="http://unix.stackexchange.com/questions/71585/convert-ls-l-output-format-to-chmod-format" rel="nofollow">http://unix.stackexchange.com/questions/71585/convert-ls-l-output-format-to-chmod-format</a>
@@ -41,9 +40,7 @@
                                                 <div class="line command">
                                                         lso(){ jot -w '%04d' 7778 0000 7777 |sed '/[89]/d;s,.*,printf '"'"'&amp; '"'"';chmod &amp; '"$1"';ls -l '"$1"'|sed s/-/./,' \ |sh \ |{ echo "lso(){";echo "ls \$@ \\";echo " |sed '";sed 's, ,@,2;s,@.*,,;s,\(.* \)\(.*\),s/\2/\1/,;s, ,,';echo \';echo };};}
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         this requires the use of a throwaway file.
@@ -178,10 +175,7 @@
                                                 <div class="line command">
                                                         ls -l | sed -e 's/--x/1/g' -e 's/-w-/2/g' -e 's/-wx/3/g' -e 's/r--/4/g' -e 's/r-x/5/g' -e 's/rw-/6/g' -e 's/rwx/7/g' -e 's/---/0/g'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

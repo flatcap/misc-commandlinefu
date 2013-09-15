@@ -19,16 +19,12 @@
                                         <div class="line command">
                                                 mysql --database=information_schema -u <span>&lt;user&gt;</span> -p -e "SELECT TABLE_NAME, TABLE_SCHEMA, SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024 mb FROM TABLES GROUP BY TABLE_NAME ORDER BY mb DESC LIMIT 10"
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                         </div>
                 </div>
         </body>

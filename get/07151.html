@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 tail -f file | awk '{now=strftime("%F %T%z\t");sub(/^/, now);print}'
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -33,9 +30,7 @@
                                                 <div class="line command">
                                                         tail -f file | while read line; do echo -n $(date -u -Ins); echo -e "\t$line"; done
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This is useful when watching a log file that does not contain timestamps itself.
@@ -59,7 +54,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Should be a bit more portable since echo -e/n and date's -Ins are not.
@@ -71,10 +65,7 @@
                                                 <div class="line command">
                                                         tail -f file |xargs -IX printf "$(date -u)\t%s\n" X
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

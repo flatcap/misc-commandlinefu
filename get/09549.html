@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 while inotifywait -e modify /tmp/myfile; do firefox; done
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -32,10 +29,7 @@
                                         <div class="line command">
                                                 while :; do n=$(md5 myfile); if [ "$h" != "$n" ]; then h=$n; scp myfile myserver:mydir/myfile; fi; sleep 1; done
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>

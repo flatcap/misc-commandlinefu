@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 find . -type f -exec sed -i s/oldstring/newstring/g {} +
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This command find all files in the current dir and subdirs, and replace all occurances of "oldstring" in every file with "newstring".
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         $ grep -rl oldstring . |xargs sed -i -e 's/oldstring/newstring/'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         recursively traverse the directory structure from . down, look for string "oldstring" in all files, and replace it with "newstring", wherever found
@@ -54,9 +50,7 @@
                                                 <div class="line command">
                                                         grep -rl oldstring . | parallel sed -i -e 's/oldstring/newstring/'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         xargs deals badly with special characters (such as space, ' and "). To see the problem try this:
@@ -80,9 +74,7 @@
                                                 <div class="line command">
                                                         grep -rlZ oldstring . | xargs -0 sed -i -e 's/oldstring/newstring/'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Using -Z with grep and -0 with xargs handles file names with spaces and special characters.
@@ -94,9 +86,7 @@
                                                 <div class="line command">
                                                         replace old new -- `find -type f`
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Search and replace recursively. :-) Shorter and simpler than the others. And allows more terms:

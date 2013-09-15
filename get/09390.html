@@ -26,7 +26,6 @@ hostname User$ _
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Suppresses all output to /dev/null. This could be expanded to check for a -l command line option to log the stderr to a file maybe -l file or -l to log to default quietly.log. I'm finding that I use it more often than one would think.
@@ -42,10 +41,7 @@ hostname User$ _
                                                 <div class="line command">
                                                         quietly() { "$@" |&amp;:; }
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
@@ -58,7 +54,6 @@ quietly "/path that may contain spaces/command" "arg 1" "arg 2"
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This works even if there are spaces in any word in the command line.

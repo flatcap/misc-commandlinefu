@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 mgc() { grep --exclude=cscope* --color=always -rni $1 . |perl -pi -e 's/:/ +/' |perl -pi -e 's/^(.+)$/vi $1/g' |perl -pi -e 's/:/ /'; }
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This is a big time saver for me. I often grep source code and need to edit the findings. A single highlight of the mouse and middle mouse click (in gnome terminal) and I'm editing the exact line I just found. The color highlighting helps interpret the data.
@@ -32,7 +30,6 @@
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                         </div>
                 </div>
         </body>

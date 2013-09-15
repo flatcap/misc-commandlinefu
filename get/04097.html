@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 pidof -x -o $$ ${0##*/} &amp;&amp; exit
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -32,9 +29,7 @@
                                         <div class="line command">
                                                 if [ `fuser $0|wc -w` -gt "1" ];then exit; fi
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 runs only one instance.

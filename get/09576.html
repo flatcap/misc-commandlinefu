@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 geoip() { wget -qO - http://freegeoip.net/xml/$1 | sed '3,12!d;s/&lt;//g;s/&gt;/: /g;s/\/.*//g' ; }
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -45,7 +42,6 @@ user@foo $&gt; geoip 208.67.222.222
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Shows you the geolocation of an IP address.

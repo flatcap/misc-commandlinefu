@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 function xzv() { THREADS=`grep processor /proc/cpuinfo | wc -l`; for file in $*; do pv -s `stat -c%s $file` &lt; $file | pxz -q -T $THREADS &gt; $file.xz ; done; }
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 You need: pxz for the actual work (<a href="http://jnovy.fedorapeople.org/pxz/)." rel="nofollow">http://jnovy.fedorapeople.org/pxz/).</a> The function could be better with better multifile and stdin/out support.
@@ -32,7 +30,6 @@
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                                 <h3>
                                         What others think
                                 </h3>

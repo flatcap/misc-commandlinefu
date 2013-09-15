@@ -22,29 +22,21 @@
                                         <div class="sample-output c5 output">
                                                 <pre>
 $ cat script.bash
-
 #!/bin/bash
 echo "hello, world"
-
 $ read -p 'Script: ' S &amp;&amp; C=$S.crypt H='eval "$(dd if=$0 bs=1 skip=// 2&gt;/dev/null|gpg -d 2&gt;/dev/null)"; exit;' &amp;&amp; gpg -c&lt;$S|cat &gt;$C &lt;(echo $H|sed s://:$(echo "$H"|wc -c):) - &lt;(chmod +x $C)
-
 Script: script.bash
 Enter passphrase:
 Repeat passphrase:
-
 $ cat script.bash.crypt
-
 eval "$(dd if=$0 bs=1 skip=70 2&gt;/dev/null|gpg -d 2&gt;/dev/null)"; exit;
 %3@5%7%f$2&amp;s*ty7%8@j$j!8)(&amp;@@@
-
 $ ./script.bash.crypt
 Enter passphrase:
-
 hello, world
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 (Please see sample output for usage)
@@ -83,26 +75,20 @@ hello, world
                                         <div class="sample-output c5 output">
                                                 <pre>
 $ cat script.bash
-
 #!/bin/bash
 echo "Hello, world"
-
 $ echo "eval \"\$(dd if=\$0 bs=1 skip=XX 2&gt;/dev/null|gpg -d 2&gt;/dev/null)\"; exit" &gt; script.secure; sed -i s:XX:$(stat -c%s script.secure): script.secure; gpg -c &lt; script.bash &gt;&gt; script.secure; chmod +x script.secure
 Enter passphrase:
 Repeat passphrase:
-
 $ ./script.secure
 Enter passphrase:
-
 Hello, world
-
 $ cat script.secure
 eval "$(dd if=$0 bs=1 skip=69 2&gt;/dev/null|gpg -d 2&gt;/dev/null)"; exit
 %6&amp;A2%&amp;F%&amp;B%&amp;%4&amp;%
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 (Please see sample output for usage)

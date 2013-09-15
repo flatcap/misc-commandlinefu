@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 find -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{} -n1 find -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This dup finder saves time by comparing size first, then md5sum, it doesn't delete anything, just lists them.
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         find -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 33 | cut -c 35-
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Calculates md5 sum of files. sort (required for uniq to work). uniq based on only the hash. use cut ro remove the hash from the result.
@@ -51,9 +47,7 @@
                                                 <div class="line command">
                                                         fdupes -r .
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         If you have the fdupes command, you'll save a lot of typing. It can do recursive searches (-r,-R) and it allows you to interactively select which of the duplicate files found you wish to keep or delete.
@@ -70,26 +64,20 @@
 [...]
 f2e6bb247f110dcab63b4d38ff7b2dee  ./themes/darkblue_orange/img/b_relations.png
 f2e6bb247f110dcab63b4d38ff7b2dee  ./themes/original/img/b_relations.png
-
 f5309bd2a2fc5e512a0cc38ac6f10c09  ./themes/darkblue_orange/img/b_deltbl.png
 f5309bd2a2fc5e512a0cc38ac6f10c09  ./themes/original/img/b_deltbl.png
-
 f60bfbb7ce218a55650c1abbbbee06ae  ./themes/darkblue_orange/img/s_lang.png
 f60bfbb7ce218a55650c1abbbbee06ae  ./themes/original/img/s_lang.png
-
 f63a5ad833147eeb94adb4496ddbec41  ./themes/darkblue_orange/img/s_theme.png
 f63a5ad833147eeb94adb4496ddbec41  ./themes/original/img/s_theme.png
-
 f6ae61146ce3de8fa11b9e84e086bd04  ./themes/darkblue_orange/img/bd_drop.png
 f6ae61146ce3de8fa11b9e84e086bd04  ./themes/original/img/bd_drop.png
-
 f95d66c11bfed9198d13a278269c32b2  ./themes/darkblue_orange/img/s_loggoff.png
 f95d66c11bfed9198d13a278269c32b2  ./themes/original/img/s_loggoff.png
 [...]
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Improvement of the command "Find Duplicate Files (based on size first, then MD5 hash)" when searching for duplicate files in a directory containing a subversion working copy. This way the (multiple dupicates) in the meta-information directories are ignored.
@@ -104,9 +92,7 @@ f95d66c11bfed9198d13a278269c32b2  ./themes/original/img/s_loggoff.png
                                                 <div class="line command">
                                                         find . -type f -size +0 -printf "%-25s%p\n" | sort -n | uniq -D -w 25 | sed 's/^\w* *\(.*\)/md5sum "\1"/' | sh | sort | uniq -w32 --all-repeated=separate
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Avoids the nested 'find' commands but doesn't seem to run any faster than syssyphus's solution.
@@ -118,9 +104,7 @@ f95d66c11bfed9198d13a278269c32b2  ./themes/original/img/s_loggoff.png
                                                 <div class="line command">
                                                         find -not -empty -type f -printf "%s\n" | sort | uniq -d | parallel find -type f -size {}c | parallel md5sum | sort | uniq -w32 --all-repeated=separate
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         A bit shorter and parallelized. Depending on the speed of your cpu and your disk this may run faster.

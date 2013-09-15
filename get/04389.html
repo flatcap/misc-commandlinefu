@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 awk '!x[$0]++' <span>&lt;file&gt;</span>
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Using awk, find duplicates in a file without sorting, which reorders the contents. awk will not reorder them, and still find and remove duplicates which you can then redirect into another file.
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         perl -ne 'print if !$a{$_}++'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Reads stdin, and outputs each line only once - without sorting ahead of time. This does use more memory than your system's sort utility.
@@ -51,9 +47,7 @@
                                                 <div class="line command">
                                                         glu() { (local IFS="$1"; shift &amp;&amp; echo "$*") }; repath() { ( _E=`echo "${PATH//:/$'\n'}" | awk '!x[$0]++'`; glu ":" $_E ) ; } ; PATH=`repath` ; export PATH
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Thanks to the authors of:
@@ -89,10 +83,7 @@
                                                 <div class="line command">
                                                         export PATH=`echo -n $PATH | awk -v RS=":" '{ if (!x[$0]++) {printf s $0; s=":"} }'`
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

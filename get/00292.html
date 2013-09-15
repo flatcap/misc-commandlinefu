@@ -19,9 +19,7 @@
                                         <div class="line command-dangerous">
                                                 $ssh-copy-id user@host
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 To generate the keys use the command ssh-keygen
@@ -37,19 +35,14 @@
                                                 <div class="line command">
                                                         ssh-copy-id username@hostname
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         cat ~/.ssh/id_rsa.pub | ssh user@machine "mkdir ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys"
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         If you use Mac OS X or some other *nix variant that doesn't come with ssh-copy-id, this one-liner will allow you to add your public key to a remote machine so you can subsequently ssh to that machine without a password.
@@ -61,19 +54,14 @@
                                                 <div class="line command">
                                                         ssh-copy-id -i .ssh/id_rsa.pub user@server
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         ssh-copy-id user@host
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Same as original just no $ at start
@@ -85,9 +73,7 @@
                                                 <div class="line command">
                                                         cat ~/.ssh/id_rsa.pub | ssh user@host 'cat &gt;&gt; ~/.ssh/authorized_keys'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Alternative for machines without ssh-copy-id

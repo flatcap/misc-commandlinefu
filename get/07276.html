@@ -26,7 +26,6 @@ asdf&lt;SOMETEXT&gt;qwerty&lt;SOMETEXT&gt;asdf&lt;SOMETEXT&gt;
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 awk version of 7210. Slightly longer, but expanding it to catch blank lines is easier:
@@ -42,9 +41,7 @@ asdf&lt;SOMETEXT&gt;qwerty&lt;SOMETEXT&gt;asdf&lt;SOMETEXT&gt;
                                                 <div class="line command">
                                                         cat file | tr "\n" " "
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         It's works only when you replace '\n' to ONE character.
@@ -56,9 +53,7 @@ asdf&lt;SOMETEXT&gt;qwerty&lt;SOMETEXT&gt;asdf&lt;SOMETEXT&gt;
                                                 <div class="line command">
                                                         tr "\n" " " &lt; file
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Even shorter. Stolen from comment posted by eightmillion.
@@ -83,7 +78,6 @@ line one, line two, line three, line four, line five
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This command turns a multi-line file into a single line joined with &lt;SOMETEXT&gt;. To skip blank lines, use:
@@ -95,9 +89,7 @@ line one, line two, line three, line four, line five
                                                 <div class="line command">
                                                         cat file | tr -d "\n"
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This command deletes the "newline" chars, so its output maybe unusable :)
@@ -109,10 +101,7 @@ line one, line two, line three, line four, line five
                                                 <div class="line command">
                                                         echo -e "aa\nbb\ncc\ndd\n123" | sed -e :a -e "/$/N; s/\n/;/; ta"
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

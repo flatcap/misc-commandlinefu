@@ -35,7 +35,6 @@ securityfs  on  /sys/kernel/security      type  securityfs  (rw)
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Particularly useful if you're mounting different drives, using the following command will allow you to see all the filesystems currently mounted on your computer and their respective specs with the added benefit of nice formatting.
@@ -50,9 +49,7 @@ securityfs  on  /sys/kernel/security      type  securityfs  (rw)
                                         <div class="line command">
                                                 column -t /proc/mounts
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 since fuse mounts do not appear in /etc/mtab (fuse can't write there, dunno if it would if it could) this is propably a better way.

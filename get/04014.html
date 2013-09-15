@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 chmod -R -x+X *
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 With GNU chmod at least it is that simple.
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         find . ! -type d -exec chmod -x {}\;
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Useful if you have copied files from an OS without a permission structure (for example, DOS) and you need to disable all executable files but want to be able to descend into your directories.
@@ -60,7 +56,6 @@ drwxr-x---   5 www-data www-data    4096 Oct 21  2009 Wizard_New_Concept
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         forces user to rw, group to r, and other to no access.
@@ -78,29 +73,21 @@ drwxr-x---   5 www-data www-data    4096 Oct 21  2009 Wizard_New_Concept
                                                 <div class="line command">
                                                         find . -type f -exec chmod 640 {} ';'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         find . -type f -exec chmod a-x {} \;
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         find . -type f | while read f; do chmod -x "$f"; done
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         I hate -exec with find, and this pattern quickly expands to other tasks.

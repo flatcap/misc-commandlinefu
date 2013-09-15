@@ -23,20 +23,15 @@
                                                 <pre>
 # Backup all MySQL Databases to individual files
 for I in $(mysql -e 'show databases' -s --skip-column-names); do mysqldump $I | gzip &gt; "$I.sql.gz"; done
-
 # backup local MySQL database into a folder and removes older then 5 days backups
 mysqldump -uUSERNAME -pPASSWORD database | gzip &gt; /path/to/db/files/db-backup-`date +%Y-%m-%d`.sql.gz ;find /path/to/db/files/* -mtime +5 -exec rm {} \;
-
 # geoip information
 curl -s "http://www.geody.com/geoip.php?ip=$(curl -s icanhazip.com)" | sed '/^IP:/!d;s/&lt;[^&gt;][^&gt;]*&gt;//g'
-
 # List files contained within a zip archive
 unzip -l &lt;filename&gt;
-
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Sorts blank line delimited paragraphs. '-i' -- case insensitivity option -- removes redundant paragraphs in a case insensitive way, and then sorts in a case insensitive way.
@@ -50,7 +45,6 @@ unzip -l &lt;filename&gt;
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                         </div>
                 </div>
         </body>

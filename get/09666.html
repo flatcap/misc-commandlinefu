@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 netstat -atn | grep :22 | grep ESTABLISHED | awk '{print $4}' | sed 's/:22//'
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -32,10 +29,7 @@
                                         <div class="line command">
                                                 netstat -tn | awk '($4 ~ /:22\s*/) &amp;&amp; ($6 ~ /^EST/) {print substr($5, 0, index($5,":"))}'
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>

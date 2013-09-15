@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 awk '{array[$1]++}END{ for (ip in array) print array[ip] " " ip}' &lt;path/to/apache/*.log&gt; | sort -n
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 creates associative array from apache logs, assumes "combined" log format or similar. replace awk column to suit needs. bandwidth per ip is also useful. have fun. I haven't found a more efficient way to do this as yet. sorry, FIXED TYPO: log file should obviously go after awk, which then pipes into sort.
@@ -32,7 +30,6 @@
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                                 <h3>
                                         What others think
                                 </h3>

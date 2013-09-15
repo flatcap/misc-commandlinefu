@@ -26,7 +26,6 @@
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Fetches the IPs and ONLY the IPs from ifconfig. Simplest, shortest, cleanest.
@@ -55,7 +54,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         works on Linux and Solaris. I think it will work on nearly all *nix-es
@@ -67,9 +65,7 @@
                                                 <div class="line command">
                                                         ifconfig | awk -F':| +' '/ddr:/{print $4}'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         and, a lot uglier, with sed:
@@ -95,7 +91,6 @@ ifconfig | awk '/ddr:[0-9]/ {sub(/addr:/, ""); print $2}'
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         The initial version of this command also outputted extra empty lines, so it went like this:
@@ -116,20 +111,14 @@ ifconfig | awk '/ddr:[0-9]/ {sub(/addr:/, ""); print $2}'
                                                 <div class="line command">
                                                         ifconfig | awk '/inet / {sub(/addr:/, "", $2); print $2}'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         ipconfig getpacket en0 | grep yi| sed s."yiaddr = "."en0: ". ipconfig getpacket en1 | grep yi| sed s."yiaddr = "."en1: ".
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

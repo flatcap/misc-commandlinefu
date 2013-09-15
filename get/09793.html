@@ -25,9 +25,7 @@
 -----------------
 #!/bin/bash
 echo $(cd $(dirname $0) &amp;&amp; pwd)
-
 -----------------
-
 [bbbco@bbbco-dt scripts]$ ./startingdir.sh
 /home/bbbco/scripts
 [bbbco@bbbco-dt scripts]$ cd ..
@@ -40,7 +38,6 @@ echo $(cd $(dirname $0) &amp;&amp; pwd)
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Sometimes you need the full path to your script, regardless of how it was executed (which starting directory) in order to maintain other relative paths in the script.
@@ -65,9 +62,7 @@ echo $(cd $(dirname $0) &amp;&amp; pwd)
                                                 <div class="line command">
                                                         BASEDIR=$(dirname $(readlink -f $0))
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Also resolves symlinks, showing the full path of the link target
@@ -83,19 +78,15 @@ echo $(cd $(dirname $0) &amp;&amp; pwd)
                                                         <pre>
 ]$  ls -l test.sh
 -rwxr-xr-x    1 follier dev-user         78 Feb 01 14:05 test.sh
-
 ]$  ./test.sh
 /home/follier/test.sh
-
 ]$  ls -l linktest.sh
 lrwxrwxrwx    1 follier dev-user         12 Feb 01 14:07 linktest.sh -&gt; /tmp/test.sh
-
 ]$ ./linktest.sh
 /tmp/test.sh
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Since none of the systems I work on have readlink, this works cross-platform (everywhere has perl, right?).
@@ -110,9 +101,7 @@ lrwxrwxrwx    1 follier dev-user         12 Feb 01 14:07 linktest.sh -&gt; /tmp/
                                                 <div class="line command">
                                                         dirname $(readlink -f ${BASH_SOURCE[0]})
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         work for execute file

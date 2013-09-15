@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 while true; do inotifywait -r -e MODIFY dir/ &amp;&amp; make; done;
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Uses inotifywait from inotify-tools ( <a href="http://wiki.github.com/rvoicilas/inotify-tools/" rel="nofollow">http://wiki.github.com/rvoicilas/inotify-tools/</a> ), that is compatible only with linux.
@@ -40,9 +38,7 @@
                                                 <div class="line command">
                                                         ontouchdo(){ while :; do a=$(stat -c%Y "$1"); [ "$b" != "$a" ] &amp;&amp; b="$a" &amp;&amp; sh -c "$2"; sleep 1; done }
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This is useful if you'd like to see the output of a script while you edit it. Each time you save the file the command is executed. I thought for sure something like this already exists - and it probably does. I'm on an older system and tend to be missing some useful things.
@@ -66,9 +62,7 @@
                                                 <div class="line command">
                                                         inotifywait -mrq -e CREATE --format %w%f /path/to/dir | while read FILE; do chmod g=u "$FILE"; done
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Listens for events in the directory. Each created file is displayed on stdout. Then each fileline is read by the loop and a command is run.
@@ -89,10 +83,7 @@
                                                 <div class="line command">
                                                         while inotifywait -r -e MODIFY dir/; do make; done;
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

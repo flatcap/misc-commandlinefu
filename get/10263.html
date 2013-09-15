@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 tail -f file | while read; do echo "$(date +%T.%N) $REPLY"; done
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -33,9 +30,7 @@
                                                 <div class="line command">
                                                         tail -f file | ts '%H:%M:%.S'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Uses the command ts in order to add a timestamp on each line. This command is provided in the moreutils package on Debian, and you may need libtime-duration-perl to be able to format the date.
@@ -47,9 +42,7 @@
                                                 <div class="line command">
                                                         ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Dump 389ds schema, putting "\n " on one line with perl.
@@ -64,9 +57,7 @@
                                                 <div class="line command">
                                                         ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Dump 389ds schema, putting "\n " on one line with perl.
@@ -81,9 +72,7 @@
                                                 <div class="line command">
                                                         ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Dump 389ds schema, putting "\n " on one line with perl.
@@ -98,9 +87,7 @@
                                                 <div class="line command">
                                                         ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Dump 389ds schema, putting "\n " on one line with perl.

@@ -30,7 +30,6 @@ dd count=$((24*1024*2)) &gt; /dev/null  0.01s user 0.03s system 76% cpu 0.052 to
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 the speed is about 500MB/s on my machine.
@@ -54,9 +53,7 @@ dd count=$((24*1024*2)) &gt; /dev/null  0.01s user 0.03s system 76% cpu 0.052 to
                                         <div class="line command">
                                                 ghc -e "mapM_ (\_-&gt;Data.ByteString.Char8.putStr (Data.ByteString.Char8.replicate (1024*1024) '\\255')) [1..24]"
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 I'm both a one-liner fan and a haskell learner

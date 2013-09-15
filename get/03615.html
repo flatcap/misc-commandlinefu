@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 find [path] [expression] -exec du -ab {} \; | awk '{total+=$0}END{print total}'
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -32,9 +29,7 @@
                                         <div class="line command">
                                                 (echo 0; find [args...] -printf '%s +\n'; echo p) | dc
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Just an alternative. Here the output of the subshell statement is a complete script for dc so you can save it, manipulate it with some other tool or just debug it with less.

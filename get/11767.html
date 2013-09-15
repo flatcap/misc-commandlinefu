@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 pmi action suspend
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -33,19 +30,14 @@
                                                 <div class="line command">
                                                         sudo pm-suspend
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         dbus-send --system --print-reply --dest=org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.Suspend
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         No need to be root to do that. Relies on UPower (previously known as DeviceKit-Power).
@@ -57,9 +49,7 @@
                                                 <div class="line command">
                                                         echo mem|sudo tee /sys/power/state
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Using sys
@@ -71,9 +61,7 @@
                                                 <div class="line command">
                                                         sudo /etc/acpi/sleep.sh sleep
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         It suspends to RAM: you always need your batteries for the RAM but it saves time as there is no need to slowly archive everything on your hard disk.

@@ -26,7 +26,6 @@
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 standard image viewers do not seem to be able to open a FIFO file. xloadimage was the first one i've stumbled upon that can handle this.
@@ -41,9 +40,7 @@
                                         <div class="line command">
                                                 ssh user@host "ffmpeg -f x11grab -s 1920x1080 -i :0 -r 1 -t 1 -f mjpeg -" | display
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 More stealthy ffmpeg method. The imagemagick 'import' method causes a system beep.

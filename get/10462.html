@@ -27,7 +27,6 @@ bash     7995 askapache    0u   CHR  136,0                2 /dev/pts/0
 bash     7995 askapache    1u   CHR  136,0                2 /dev/pts/0
 bash     7995 askapache    2u   CHR  136,0                2 /dev/pts/0
 [7995:7993 - 0:2497] [askapache@n1-backbone5:pts/0 +1] ~ $
-
 [7995:7993 - 0:2497] [askapache@n1-backbone5:pts/0 +1] ~ $ lsof -a -d 1 -d 0-4 -w|tail
 COMMAND   PID USER   FD   TYPE DEVICE  SIZE       NODE NAME
 bash     7995 askapache    0u   CHR  136,0                2 /dev/pts/0
@@ -42,11 +41,9 @@ lsof    17475 askapache    2u   CHR  136,0                2 /dev/pts/0
 lsof    17475 askapache    3r   DIR   0,96     0          1 /proc
 lsof    17475 askapache    4r   DIR   0,96     0 1078132745 /proc/17475/fd
 [7995:7993 - 0:2497] [askapache@n1-backbone5:pts/0 +1] ~ $
-
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Run the alias command, then issue
@@ -82,9 +79,7 @@ lsof    17475 askapache    4r   DIR   0,96     0 1078132745 /proc/17475/fd
                                         <div class="line command">
                                                 tail() { thbin="/usr/bin/tail"; if [ "${1:0:1}" != "-" ]; then fc=$(($#==0?1:$#)); lpf="$((($LINES - 3 - 2 * $fc) / $fc))"; lpf="$(($lpf&lt;1?2:$lpf))"; [ $fc -eq 1 ] &amp;&amp; $thbin -n $lpf "$@" | /usr/bin/fold -w $COLUMNS | $thbin -n $lpf || $thbin -n $lpf...
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <code>tail() { thbin="/usr/bin/tail"; if [ "${1:0:1}" != "-" ]; then fc=$(($#==0?1:$#)); lpf="$((($LINES - 3 - 2 * $fc) / $fc))"; lpf="$(($lpf&lt;1?2:$lpf))"; [ $fc -eq 1 ] &amp;&amp; $thbin -n $lpf "$@" | /usr/bin/fold -w $COLUMNS | $thbin -n $lpf || $thbin -n $lpf "$@"; else $thbin "$@"; fi; unset lpf fc thbin; }</code>
                                                         <p>

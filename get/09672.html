@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 seq 1 3 20 | sed -n '1{h;d};H;x;s/\n/\t/p' | awk '{printf("%d - %d = %d\n", $2, $1, $2-$1)}'
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -32,9 +29,7 @@
                                         <div class="line command">
                                                 seq 1 3 20 | awk '{ T[NR]=$1} END {for (i=1;i&lt;=(NR-1);i++) print T[i+1],"-",T[i],"=" , T[i+1]-T[i]}'
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 It's allways strange for me to see sed and awk in the same command line if you can avoid it

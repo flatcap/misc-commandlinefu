@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 xset dpms force standby
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -32,9 +29,7 @@
                                         <div class="line command">
                                                 switchMonitor () { LF=/tmp/screen-lock; if [ -f $LF ]; then rm $LF; else touch $LF; sleep .5; while [ -f $LF ]; do xset dpms force off; sleep 2; done; fi };
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Use the command to create a script and bind it to a key using keyboard shortcut.

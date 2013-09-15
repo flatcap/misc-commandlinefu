@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 echo ${SSH_CLIENT%% *}
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Even faster without the need for cut... :)
@@ -36,9 +34,7 @@
                                         <div class="line command">
                                                 echo $SSH_CLIENT | cut -f 1 -d ' '
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <code>host -i `echo $SSH_CLIENT | cut -f 1 -d \ ` | sed 's/.* domain name pointer \(.*\)\./\1/'</code>
                                                         <p>

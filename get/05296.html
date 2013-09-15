@@ -23,18 +23,15 @@
                                                 <pre>
 $ cat safe-cacheclean.sh
 #!/bin/bash
-
 set -eu
 CACHEDIR=mycache
 # a dangerous-looking typo, is /bin going to disappear:
 rm -rf "$CACHEDI/bin"
-
 $ ./safe-cacheclean.sh
 ./safe-cacheclean.sh: line 7: CACHEDI: unbound variable
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 By default bash expands an unbound variable to an empty string. This can be dangerous, if a critical variable name (a path prefix for example) has a typo. The -u option causes bash to treat this as an error, and the -e option causes it to exit in case of an error. These two together will make your scripts a lot safer against typos.
@@ -51,7 +48,6 @@ $ ./safe-cacheclean.sh
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                                 <h3>
                                         What others think
                                 </h3>

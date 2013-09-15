@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 sed 's/$/uniqueString/' file.old | sed 's/,/\n/g' | sed ':loop;/^\"[^\"]*$/N;s/\n/,/;/[^\"]$/t loop' | sed ':loop;N;s/\n/@/g;/uniqueString$/!b loop;s/uniqueString$//' &gt; file.new
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Useful for CSV files. In the command, the file in question is comma delimited but contains double quoted fields containing commas and contains no @ symbols (as confirmed with <a href="http://www.commandlinefu.com/commands/view/9998/delimiter-hunting)." rel="nofollow">http://www.commandlinefu.com/commands/view/9998/delimiter-hunting).</a> This command converts the delimiting commas to @s while preserving the commas in the fields using the "uniqueString" to mark the ends of lines.
@@ -32,7 +30,6 @@
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                         </div>
                 </div>
         </body>

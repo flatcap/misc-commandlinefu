@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 perl -C -e 'print for sort { length $a &lt;=&gt; length $b or $a cmp $b } &lt;&gt;' &lt; /usr/share/dict/words | tail
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 making it "sound" more "natural" language like -- additionally sorting the longest words alphabetically:
@@ -52,9 +50,7 @@
                                                 <div class="line command">
                                                         awk 'length&gt;72' file
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This command displays a list of lines that are longer than 72 characters. I use this command to identify those lines in my scripts and cut them short the way I like it.
@@ -66,20 +62,14 @@
                                                 <div class="line command">
                                                         perl -lne '$l{$_}=length;END{for(sort{$l{$a}&lt;=&gt;$l{$b}}keys %l){print}}' &lt; /usr/share/dict/words | tail
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         awk '{print length, $0;}' | sort -nr
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

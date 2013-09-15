@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 multitail -l 'ssh machine1 "tail -f /var/log/apache2/error.log"' -l 'ssh machine2 "tail -f /var/log/apache2/error.log"'
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 this way you have the multitail with all its options running on your own machine with the tails of the two remote machines inside :)
@@ -36,9 +34,7 @@
                                         <div class="line command">
                                                 multitail /var/log/messages /var/log/apache2/access.log /var/log/mail.info
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 It works like a "tail -f" on several files.

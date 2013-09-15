@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 lsmod | perl -e 'print "digraph \"lsmod\" {";&lt;&gt;;while(&lt;&gt;){@_=split/\s+/; print "\"$_[0]\" -&gt; \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 parse `lsmod' output and pass to `dot' drawing utility then finally pass it to an image viewer
@@ -36,9 +34,7 @@
                                         <div class="line command">
                                                 lsmod | awk 'BEGIN{print "digraph{"}{split($4, a, ","); for (i in a) print $1, "-&gt;", a[i]}END{print "}"}'|display
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 parse "lsmod" output to "dot" format and pass it to "display". Without perl!

@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 complete -W "$(echo $(grep '^ssh ' .bash_history | sort -u | sed 's/^ssh //'))" ssh
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Stop tormenting the poor animal cat. See <a href="http://sial.org/howto/shell/useless-cat/." rel="nofollow">http://sial.org/howto/shell/useless-cat/.</a>
@@ -53,7 +51,6 @@ $ssh myserver.insanelylongcompanynamethatishardtospell.com
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Add to your bash profile to minimize carpal tunnel syndrome.
@@ -74,9 +71,7 @@ $ssh myserver.insanelylongcompanynamethatishardtospell.com
                                                 <div class="line command">
                                                         perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         I use this in my bashrc to expand hosts defined in ~/.ssh/config:
@@ -106,9 +101,7 @@ $ssh myserver.insanelylongcompanynamethatishardtospell.com
                                                 <div class="line command">
                                                         complete -W "$(sed 's/;.*//;' /etc/hosts | awk ' /^[[:digit:]]/ {$1 = "";print tolower($0)}')" ssh
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         If you have a lot of hosts in /etc/hosts this would be very useful. Anyone have any more concise examples?
@@ -120,9 +113,7 @@ $ssh myserver.insanelylongcompanynamethatishardtospell.com
                                                 <div class="line command">
                                                         complete -W "$(while IFS=' ,' read host t; do echo $host; done &lt; ~/.ssh/known_hosts)" ssh
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Simple and fast variant, not using external programs. Another variation:
@@ -137,10 +128,7 @@ $ssh myserver.insanelylongcompanynamethatishardtospell.com
                                                 <div class="line command">
                                                         complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

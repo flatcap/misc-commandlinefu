@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 memnum=$(awk '{ print $2 }' /proc/meminfo |head -n1); echo "$memnum / 1024 / 1024" | bc -l
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Probably more trouble than its worth, but worked for the obscure need.
@@ -37,20 +35,14 @@
                                                 <div class="line command">
                                                         awk '( $1 == "MemTotal:" ) { print $2/1048576 }' /proc/meminfo
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         free -g
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
@@ -63,7 +55,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         when you can do it , avoid pipe

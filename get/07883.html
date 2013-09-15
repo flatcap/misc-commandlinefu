@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 $ right(){ l="$(cat -)"; s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})));echo "$(while ((j--&gt;0)); do printf " ";done;)$l";done;}; ls --color=none / | right
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>

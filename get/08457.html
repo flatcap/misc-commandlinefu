@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 cat /sys/class/net/eth0/address
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -33,20 +30,14 @@
                                                 <div class="line command">
                                                         lsmac() { ifconfig -a | sed '/eth\|wl/!d;s/ Link.*HWaddr//' ; }
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         ifconfig eth0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
@@ -61,7 +52,6 @@ wlan0   00:22:fb:xx:xx:xx
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Requires sysfs mounted on /sys - may only be useful for Linux systems.
@@ -83,7 +73,6 @@ wlan0   00:22:fb:xx:xx:xx
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         No need for the ls -r and a sort is also not really needed.
@@ -95,9 +84,7 @@ wlan0   00:22:fb:xx:xx:xx
                                                 <div class="line command">
                                                         ip link | awk '/link/ {print $2}'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         The output of ifconfig is localized, using it will fail in non-English environment. "ip" command in iproute2 provides a consistent output and thus is more robust

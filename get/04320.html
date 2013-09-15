@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 sudo lsof -P -i -n -sTCP:LISTEN
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -45,7 +42,6 @@ tcp6       0      0 :::22                   :::*                    LISTEN      
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         While `lsof` will work, why not use the tool designed explicitly for this job?
@@ -60,19 +56,14 @@ tcp6       0      0 :::22                   :::*                    LISTEN      
                                                 <div class="line command">
                                                         nmap -p 1-65535 --open localhost
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         netstat -nptl
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Alternative of OJM snippet :
@@ -112,14 +103,12 @@ port 34482 opened
 port 39447 opened
 port 48030 opened
 port 51687 opened
-
 real    4m33.201s
 user    1m16.657s
 sys     2m42.194s
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         in loop, until the last port (65535), list all opened ports on host.

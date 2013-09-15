@@ -25,7 +25,6 @@
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 No junk, no pipe, one command, no subcommand - KISS
@@ -41,10 +40,7 @@
                                                 <div class="line command">
                                                         /sbin/ifconfig -a | awk '/(cast)/ { print $2 }' | cut -d':' -f2 | head -1
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
@@ -58,7 +54,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Why use many different utilities all piped together, when you only need two?
@@ -70,20 +65,14 @@
                                                 <div class="line command">
                                                         ifconfig -a | awk '/Bcast/{print $2}' | cut -c 5-19
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         ifconfig -a | awk '/Bcast/{print $2}' | cut -c 5-19
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

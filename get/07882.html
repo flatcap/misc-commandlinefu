@@ -22,9 +22,7 @@
                                         <div class="sample-output c5 output">
                                                 <pre>
 center(){ l="$(cat -)"; s=$(echo -e "$l"| wc -L); echo "$l" | while read l;do j=$(((s-${#l})/2));echo "$(while ((--j&gt;0)); do printf " ";done;)$l";done;};
-
 $ls --color=none / | center
-
             bin
             boot
             dbg
@@ -54,7 +52,6 @@ session_mm_apache2handler0.sem
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Center the output text in max line length of buffered output pipe;

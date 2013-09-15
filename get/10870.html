@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 top $(pgrep foo | sed 's|^|-p |g')
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <code>pgrep foo</code>
                                                         <p>
@@ -50,9 +48,7 @@
                                                 <div class="line command">
                                                         top -p $(pgrep -d , foo)
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         top accecpts a comma separated list of PIDs.
@@ -64,9 +60,7 @@
                                                 <div class="line command">
                                                         top '-p' $(pgrep -d ' -p ' foo)
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Like command 10870, but no need for sed

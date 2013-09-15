@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 echo 'hardstatus alwayslastline " %d-%m-%y %c:%s | %w"' &gt;&gt; $HOME/.screenrc; screen
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Configures screen to always display the clock in the last line (has to be configured only once).
@@ -46,7 +44,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Shows a simple clock in the console
@@ -64,10 +61,7 @@
                                                 <div class="line command">
                                                         yes "echo -ne '\r'\`date\`;sleep 1" | sh
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
@@ -77,12 +71,10 @@
                                                 <div class="sample-output c5 output">
                                                         <pre>
 Every 1.0s: date "+%T"
-
 11:33:02
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         A console clock with the current time.
@@ -94,9 +86,7 @@ Every 1.0s: date "+%T"
                                                 <div class="line command">
                                                         yes 'clear;printf "\n\n\n\n\t\t\t`date`\n";sleep 1' | sh
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This command will automatically clear the old clock time, and show the new clock time.
@@ -111,9 +101,7 @@ Every 1.0s: date "+%T"
                                                 <div class="line command">
                                                         while sleep 1; do echo -n "\r`date`"; done
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Does the same but without a pipe and a new shell.

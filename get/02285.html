@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 sed -e's/%\([0-9A-F][0-9A-F]\)/\\\\\x\1/g' | xargs echo -e
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <code>echo "http%3A%2F%2Fwww.google.com" | sed -e's/%\([0-9A-F][0-9A-F]\)/\\\\\x\1/g' | xargs echo -e</code>
                                                         <p>
@@ -41,10 +39,7 @@
                                                 <div class="line command">
                                                         perl -pe 's/%([0-9a-f]{2})/sprintf("%s", pack("H2",$1))/eig'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
@@ -57,7 +52,6 @@
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         You can use ordinary printf to convert "%23%21%2fbin%2fbash" into "#!/bin/bash" with no external utilities, by using a little known printf feature -- the "%b" specifier converts shell escapes. Replace % with \x and printf will understand the urlencoded string.
@@ -77,14 +71,12 @@
 Hello%20World
 gives
 Hello World
-
 \unescaped!
 gives
 \unescaped!
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         My version uses printf and command substitution ($()) instead of echo -e and xargs, this is a few less chars, but not real substantive difference.
@@ -99,9 +91,7 @@ gives
                                                 <div class="line command">
                                                         ls * | while read fin;do fout=$(echo -n $fin | sed -e's/%\([0-9A-F][0-9A-F]\)/\\\\\x\1/g' | xargs echo -e);if [ "$fout" != "$fin" ];then echo "mv '$fin' '$fout'";fi;done | bash -x
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         urldecode files in current directrory
@@ -119,7 +109,6 @@ q werty=/;
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Using PHP shell to URL decode a string.

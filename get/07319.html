@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 rm !(file_to_keep_undeleted)
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Go to tmp :
@@ -58,7 +56,6 @@ Example: rm !(*.tex|*.pdf) deletes all except the tex and pdf files.
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Deletes all files in a folder that are NOT *.foo, *.bar or *.baz files. Edit the pattern inside the brackets as you like.
@@ -70,19 +67,14 @@ Example: rm !(*.tex|*.pdf) deletes all except the tex and pdf files.
                                                 <div class="line command">
                                                         rm -f !(survivior.txt)
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         find . ! -name <span>&lt;FILENAME&gt;</span> -delete
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         it will remove everything except the file names matching you can use also use wildcards
@@ -94,9 +86,7 @@ Example: rm !(*.tex|*.pdf) deletes all except the tex and pdf files.
                                                 <div class="line command">
                                                         ( shopt -s extglob; rm !(<span>&lt;PATTERN&gt;</span>) )
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Remove everything except that file with shell tricks inside a subshell to avoid changes in the environment.
@@ -115,7 +105,6 @@ enki 13:12:23 /tmp/foo/bar $
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         This command is recursive and will delete in all directories in ".". It will find and delete all files not specified with ! -name "pattern". In this case it's file extensions. -type f means it will only find files and not directories. Finally the -delete flag ask find to delete what it matches. You can test the command by running it first without delete and it will list the files it will delete when you run it.

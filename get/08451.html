@@ -19,10 +19,7 @@
                                         <div class="line command">
                                                 echo $(( $( date +%s ) - $( stat -c %Y * | sort -nr | head -n 1 ) ))
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
-                                                <div class="description"></div>
                                         </div>
                                 </div>
                                 <h3>
@@ -33,20 +30,14 @@
                                                 <div class="line command">
                                                         FILE=`ls -ltr /var/lib/pgsql/backups/daily/ | tail -n1 | awk '{print $NF}'`; TIME=`stat -c %Y /var/lib/pgsql/backups/daily/$FILE`; NOW=`date +%s`; echo $((NOW-TIME))
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                         <div class="one-liner">
                                                 <div class="line command">
                                                         ls -atr /home/reports/*.csv -o --time-sty=+%s | tail -1 | awk '{print systime()-$5}'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
-                                                        <div class="description"></div>
                                                 </div>
                                         </div>
                                 </div>

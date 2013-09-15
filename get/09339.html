@@ -24,83 +24,64 @@
 script 1
 __________________
 #!/bin/bash
-
 var="nullll"
 echo "var=$var"
 echo
 str="aa
 bb
 cc"
-
 echo "$str" | while read line
 do
 echo "line=$line"
 echo "var=$var"
 var="whillleeee"
-
 done
-
 echo
 echo "line=$line"
 echo "var=$var"
-
-
-
 ------------------------------
 Output
 ----------------------------
 var=nullll
-
 line=aa
 var=nullll
 line=bb
 var=whillleeee
 line=cc
 var=whillleeee
-
 var=nullll
 ___________________________________________________________
 script 2---------------------------------------------------
 ___________________________________________________________
-
 #!/bin/bash
-
 var="nullll"
 echo "var=$var"
 echo
 str="aa
 bb
 cc"
-
 while read line
 do
 echo "line=$line"
 echo "var=$var"
 var="whillleeee"
-
 done &lt;&lt;&lt; "$str"
-
 echo
 echo "var=$var"
-
 ----------------------------------
 Output
 ------------------------------------
-
 var=nullll
-
 line=aa
 var=nullll
 line=bb
 var=whillleeee
 line=cc
 var=whillleeee
-
 var=whillleeee
 </pre>
                                         </div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 Consider the following simple situation [ reading something using while and read ]
@@ -135,7 +116,6 @@ var=whillleeee
                                 <h3>
                                         Alternatives
                                 </h3>
-                                <div class="terminal-display"></div>
                         </div>
                 </div>
         </body>

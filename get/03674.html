@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 trap 'echo -e "\e]0;$BASH_COMMAND\007"' DEBUG
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 You can set the previous bash command as the terminal title by this command.
@@ -58,9 +56,7 @@
                                                 <div class="line command">
                                                         if [ "$SHELL" = '/bin/zsh' ]; then case $TERM in rxvt|*term|linux) preexec () { print -Pn "\e]0;$1\a" };; esac; fi
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Found the same command for zsh in <a href="http://www.davidpashley.com/articles/xterm-titles-with-bash.html" rel="nofollow">http://www.davidpashley.com/articles/xterm-titles-with-bash.html</a> - changed it a bit so that the behaviour is the same
@@ -72,9 +68,7 @@
                                                 <div class="line command">
                                                         [[ "x$TERM" == "xrxvt" || "x$XTERM_VERSION" == xXTerm* || "x$COLORTERM" == 'gnome-terminal' &amp;&amp; "x$SHELL" == */bin/zsh ]] &amp;&amp; preexec () { print -Pn "\e]0;$1\a" }
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Found another way, more compatible. Tested with xterm, aterm, gnome-terminal and rxvt (where it sets the window title) and guake (where it doesn't - after all, guake does not show the window title).

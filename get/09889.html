@@ -19,9 +19,7 @@
                                         <div class="line command">
                                                 awk 'NR &gt;= 3 &amp;&amp; NR &lt;= 6' /path/to/file
                                         </div>
-                                        <div class="sample-output c5 output"></div>
                                         <div class="details">
-
                                                 <div class="description">
                                                         <p>
                                                                 This command uses awk(1) to print all lines between two known line numbers in a file. Useful for seeing output in a log file, where the line numbers are known. The above command will print all lines between, and including, lines 3 and 6.
@@ -37,9 +35,7 @@
                                                 <div class="line command">
                                                         sed -n '10,20p' <span>&lt;filename&gt;</span>
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Similarly, if you want to print from 10 to the end of line you can use: sed -n '10,$p' filename
@@ -76,7 +72,6 @@ jeju:[xxx] &gt;
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         You can get one specific line during any procedure. Very interesting to be used when you know what line you want.
@@ -98,7 +93,6 @@ $ seq 10 | sed -n '3,6p'
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Print all lines between two line numbers
@@ -123,7 +117,6 @@ $ seq 10 | sed -n '3,6p'
 </pre>
                                                 </div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Print all lines between two line numbers
@@ -138,9 +131,7 @@ $ seq 10 | sed -n '3,6p'
                                                 <div class="line command">
                                                         sed '10,20!d'
                                                 </div>
-                                                <div class="sample-output c5 output"></div>
                                                 <div class="details">
-
                                                         <div class="description">
                                                                 <p>
                                                                         Subtly different to the -n+p method... and probably wrong in so many ways....... But it's shorter. Just.
