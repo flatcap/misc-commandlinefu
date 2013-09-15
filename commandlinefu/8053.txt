@@ -1,7 +1,0 @@
-Replace all in last command
-
-!!:gs/data/index/
-
-What others think
-
-Nice. I never remember the syntax when I need it.

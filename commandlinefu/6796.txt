@@ -1,3 +1,0 @@
-Execute a file in vim with the #!/bin/interpreter in the first line
-
-:exe getline(1)[1:] @%

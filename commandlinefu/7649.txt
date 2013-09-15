@@ -1,3 +1,0 @@
-remove newlines from specific lines in a file using sed
-
-sed -i '/pattern/N; s/\n//' filename

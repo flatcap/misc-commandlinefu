@@ -1,9 +1,0 @@
-Recursively grep for string and format output for vi(m)
-
-mgc() { grep --exclude=cscope* --color=always -rni $1 . |perl -pi -e 's/:/
-+/' |perl -pi -e 's/^(.+)$/vi $1/g' |perl -pi -e 's/:/ /'; }
-
-This is a big time saver for me. I often grep source code and need to edit
-the findings. A single highlight of the mouse and middle mouse click (in
-gnome terminal) and I'm editing the exact line I just found. The color
-highlighting helps interpret the data.

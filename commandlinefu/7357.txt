@@ -1,3 +1,0 @@
-check spell in c source code
-
-grep -o -h -rE '".*"' * | ispell -l -p ~/mydict | sort -u

@@ -1,8 +1,0 @@
-Given process ID print its environment variables
-
-Terminal - Given process ID print its environment variables
-sed 's/\o0/\n/g' /proc/INSERT_PID_HERE/environ
-
-User: unixmonkey3402
-Given process ID print its environment variables
-

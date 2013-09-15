@@ -1,9 +1,0 @@
-remote-pbzip2 and transfer a directory to local file
-
-Terminal - remote-pbzip2 and transfer a directory to local file
-ssh user@host 'tar -c --use-compress-prog=pbzip2 /<dir>/<subdir>' >
-<localfile>.tar.bz2
-
-User: maarten
-remote-pbzip2 and transfer a directory to local file
-

@@ -1,9 +1,0 @@
-Find the package a command belongs to on Debian
-
-dpkg -S $( which ls )
-
-What others think
-
-This is very handy. Thanks
-
-Tried dlocate?
