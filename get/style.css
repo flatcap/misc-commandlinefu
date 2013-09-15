@@ -1,0 +1,49 @@
+div.command {
+	border: 1px solid red;
+	background: #fdd;
+	padding: 1em;
+}
+
+div#terminal-header {
+	border: 1px solid green;
+	background: #dfd;
+	padding: 1em;
+}
+
+h1 {
+	font-size: 120%;
+	font-weight: bold;
+}
+
+div.description {
+	border: 1px solid blue;
+	background: #cff;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+div.sample-output {
+	border: 1px solid blue;
+	background: #ddf;
+	padding: 1em;
+}
+
+div.author {
+	font-weight: bold;
+}
+
+div.comment {
+	margin-top: 1em;
+	border: 1px solid black;
+	background: #ffd;
+	padding: 1em;
+}
+
+code, pre {
+	background: black;
+	color: #3f3;
+	padding: 0.5em;
+	margin: 0.5em;
+	font-weight: bold;
+	display: block;
+}
