@@ -1,32 +1,32 @@
 <html>
-        <head>
-                <title>
-                        bin file of a pid
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                bin file of a pid
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                readlink -f /proc/$pid/exe
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Should be noted that this will only work on Linux. Other unixoid systems won't have this.
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			bin file of a pid
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				bin file of a pid
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				readlink -f /proc/$pid/exe
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Should be noted that this will only work on Linux. Other unixoid systems won't have this.
+			</p>
+		</div>
+	</body>
 </html>

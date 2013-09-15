@@ -1,30 +1,30 @@
 <html>
-        <head>
-                <title>
-                        A file's rpm-package details
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                A file's rpm-package details
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                summpkg() { rpm -qfi "$@"; }
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			A file's rpm-package details
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				A file's rpm-package details
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				summpkg() { rpm -qfi "$@"; }
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 ~$ summpkg /bin/sort
-Name        : coreutils
+Name	: coreutils
 Version     : 8.10
 Release     : 2.fc15
 Architecture: x86_64
 Install Date: Fri 13 May 2011 12:03:43 BST
 Group       : System Environment/Base
-Size        : 13612880
+Size	: 13612880
 License     : GPLv3+
 Signature   : RSA/SHA256, Wed 09 Feb 2011 11:48:28 GMT, Key ID b4ebf579069c8460
 Source RPM  : coreutils-8.10-2.fc15.src.rpm
@@ -33,39 +33,39 @@ Build Host  : x86-19.phx2.fedoraproject.org
 Relocations : (not relocatable)
 Packager    : Fedora Project
 Vendor      : Fedora Project
-URL         : http://www.gnu.org/software/coreutils/
+URL	 : http://www.gnu.org/software/coreutils/
 Summary     : A set of basic GNU tools commonly used in shell scripts
 Description :
 These are the GNU core utilities.  This package is the combination of
 the old GNU fileutils, sh-utils, and textutils packages.
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Find information about the rpm package which owns a certain file.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        dpkg -S `which nm` | cut -d':' -f1 | (read PACKAGE; echo "[${PACKAGE}]"; dpkg -s "${PACKAGE}"; dpkg -L "${PACKAGE}") | less
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                In Debian based distros, this command will list 'binutils' package details which contains 'nm' command. You can replace 'nm' to any other command.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        function summpkg { dpkg -s $(dpkg -S $1 | egrep -w $(which $1)$ | awk -F: '{print $1}') ; }
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					Find information about the rpm package which owns a certain file.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					dpkg -S `which nm` | cut -d':' -f1 | (read PACKAGE; echo "[${PACKAGE}]"; dpkg -s "${PACKAGE}"; dpkg -L "${PACKAGE}") | less
+				</div>
+				<div class="details description">
+					<p>
+						In Debian based distros, this command will list 'binutils' package details which contains 'nm' command. You can replace 'nm' to any other command.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					function summpkg { dpkg -s $(dpkg -S $1 | egrep -w $(which $1)$ | awk -F: '{print $1}') ; }
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 $ summpkg nm
 Package: binutils
 Status: install ok installed
@@ -86,34 +86,34 @@ Description: The GNU assembler, linker and binary utilities
  and various libraries to build programs.
 Original-Maintainer: Matthias Klose &lt;doko@debian.org&gt;
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This version builds on my command 8776 (Find the package a command belongs to on debian-based distros). So if you use that command to find package name then you could alternatively use following for
-                                        </p>
-                                        <p>
-                                                package summary:
-                                        </p><code>function summpkg { dpkg -s $(whichpkg $1 | awk -F: '{print $1}'); }</code>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        on this site you can vote for the most interesting commands. someone has made a habit always to vote in a negative way my commands. I want to make a habit of positive or negative vote and declare it openly.
-                                </p>
-                                <p>
-                                        +1 for this command
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Unfairly voted down. Not everyone is on Ubuntu/Debian. +1
-                                </p>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						This version builds on my command 8776 (Find the package a command belongs to on debian-based distros). So if you use that command to find package name then you could alternatively use following for
+					</p>
+					<p>
+						package summary:
+					</p><code>function summpkg { dpkg -s $(whichpkg $1 | awk -F: '{print $1}'); }</code>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					on this site you can vote for the most interesting commands. someone has made a habit always to vote in a negative way my commands. I want to make a habit of positive or negative vote and declare it openly.
+				</p>
+				<p>
+					+1 for this command
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Unfairly voted down. Not everyone is on Ubuntu/Debian. +1
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,31 +1,31 @@
 <html>
-        <head>
-                <title>
-                        Backup (archive) your Gmail IMAP folders.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Backup (archive) your Gmail IMAP folders.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                mailutil transfer {imap.gmail.com/ssl/user=john@gmail.com} Gmail/
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Copies an entire hierarchy of mailboxes from the named POP3/IMAP/etc. source to the named destination. Mailboxes are created on the destination as needed. NOTE: The 'mailutil' is Washington's University 'mailutil' (apt-get install uw-mailutils). More examples
-                                </p><code>mailutil transfer {imap.gmail.com/ssl/user=you@gmail.com}INBOX Gmail/ ; mailutil check imap.gmail.com/ssl/user=you@gmail.com}\[Gmail\]/Spam</code>
-                                <p>
-                                        If you use the utility in the first, append -v|-d flag(s) to the end the commands above (man mailutil).
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Backup (archive) your Gmail IMAP folders.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Backup (archive) your Gmail IMAP folders.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				mailutil transfer {imap.gmail.com/ssl/user=john@gmail.com} Gmail/
+			</div>
+			<div class="details description">
+				<p>
+					Copies an entire hierarchy of mailboxes from the named POP3/IMAP/etc. source to the named destination. Mailboxes are created on the destination as needed. NOTE: The 'mailutil' is Washington's University 'mailutil' (apt-get install uw-mailutils). More examples
+				</p><code>mailutil transfer {imap.gmail.com/ssl/user=you@gmail.com}INBOX Gmail/ ; mailutil check imap.gmail.com/ssl/user=you@gmail.com}\[Gmail\]/Spam</code>
+				<p>
+					If you use the utility in the first, append -v|-d flag(s) to the end the commands above (man mailutil).
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

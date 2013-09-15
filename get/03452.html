@@ -1,86 +1,86 @@
 <html>
-        <head>
-                <title>
-                        no more line wrapping in your terminal
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                no more line wrapping in your terminal
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                function nowrap { export COLS=`tput cols` ; cut -c-$COLS ; unset COLS ; }
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			no more line wrapping in your terminal
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				no more line wrapping in your terminal
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				function nowrap { export COLS=`tput cols` ; cut -c-$COLS ; unset COLS ; }
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 ps auxwww |nowrap
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        works on all unices.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        function is bash specific. Also you don't need to set COLS, just:
-                                </p><code>nowrap() { cut -c-$(tput cols); }</code>
-                                <p>
-                                        Note however that will mess up if terminal escape codes are in your data. It may also mess up with non displaying multibyte characters like combining chars for example.
-                                </p>
-                                <p>
-                                        Hmm are there any terminals that support a nowrap setting?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        function works in ksh, it's not bash specific.
-                                </p>
-                                <p>
-                                        thanks to have reduced this function, don't know why i did it like this ^_^
-                                </p>
-                                <p>
-                                        this function is for a quickview, no matters multibyte characters i think.
-                                </p>
-                                <p>
-                                        thanks for your comments.
-                                </p>
-                                <p>
-                                        Mobidyc
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Try this
-                                </p><code>function nowrap { export COLS=`tput cols` ; cut -c-$COLS ; unset COLS ; echo -ne "\e[0m" ; }</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Here a example
-                                </p><code>#!/bin/bash</code> <code>function nowrap { export COLS=`tput cols` ; cut -c-$COLS ; unset COLS ; echo -ne "\e[0m" ; }</code> <code>echo -ne "\e[1;31mNote however that will mess up if terminal escape codes are in your data. It may also mess up with non displaying multibyte characters like combining chars for example.\nHmm are there any terminals that support a nowrap setting?\e[0m" | nowrap</code>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Here a example
-                                </p><code>#!/bin/bash</code> <code>function nowrap { export COLS=`tput cols` ; cut -c-$COLS ; unset COLS ; echo -ne "\e[0m" ; }</code> <code>echo -ne "\e[1;31mNote however that will mess up if terminal escape codes are in your data. It may also mess up with non displaying multibyte characters like combining chars for example.\nHmm are there any terminals that support a nowrap setting?\e[0m" | nowrap</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        sorry for the gold shovel
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					works on all unices.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					function is bash specific. Also you don't need to set COLS, just:
+				</p><code>nowrap() { cut -c-$(tput cols); }</code>
+				<p>
+					Note however that will mess up if terminal escape codes are in your data. It may also mess up with non displaying multibyte characters like combining chars for example.
+				</p>
+				<p>
+					Hmm are there any terminals that support a nowrap setting?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					function works in ksh, it's not bash specific.
+				</p>
+				<p>
+					thanks to have reduced this function, don't know why i did it like this ^_^
+				</p>
+				<p>
+					this function is for a quickview, no matters multibyte characters i think.
+				</p>
+				<p>
+					thanks for your comments.
+				</p>
+				<p>
+					Mobidyc
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Try this
+				</p><code>function nowrap { export COLS=`tput cols` ; cut -c-$COLS ; unset COLS ; echo -ne "\e[0m" ; }</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Here a example
+				</p><code>#!/bin/bash</code> <code>function nowrap { export COLS=`tput cols` ; cut -c-$COLS ; unset COLS ; echo -ne "\e[0m" ; }</code> <code>echo -ne "\e[1;31mNote however that will mess up if terminal escape codes are in your data. It may also mess up with non displaying multibyte characters like combining chars for example.\nHmm are there any terminals that support a nowrap setting?\e[0m" | nowrap</code>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Here a example
+				</p><code>#!/bin/bash</code> <code>function nowrap { export COLS=`tput cols` ; cut -c-$COLS ; unset COLS ; echo -ne "\e[0m" ; }</code> <code>echo -ne "\e[1;31mNote however that will mess up if terminal escape codes are in your data. It may also mess up with non displaying multibyte characters like combining chars for example.\nHmm are there any terminals that support a nowrap setting?\e[0m" | nowrap</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					sorry for the gold shovel
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

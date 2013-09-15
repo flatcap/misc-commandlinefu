@@ -1,39 +1,39 @@
 <html>
-        <head>
-                <title>
-                        Who invoked me? / Get parent command
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Who invoked me? / Get parent command
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ps -o comm= -p $(ps -o ppid= -p $$)
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Get the name of the parent command. This might be helpful, if you need to react on that information. E. g. a script called directly via ssh has got sshd as parent, manually invoked the parent process will probably be bash
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                in linux
-                        </p><code>cat /proc/$$/cmdline</code>
-                        <p>
-                                works as well.
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			Who invoked me? / Get parent command
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Who invoked me? / Get parent command
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ps -o comm= -p $(ps -o ppid= -p $$)
+			</div>
+			<div class="details description">
+				<p>
+					Get the name of the parent command. This might be helpful, if you need to react on that information. E. g. a script called directly via ssh has got sshd as parent, manually invoked the parent process will probably be bash
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				in linux
+			</p><code>cat /proc/$$/cmdline</code>
+			<p>
+				works as well.
+			</p>
+		</div>
+	</body>
 </html>

@@ -1,58 +1,58 @@
 <html>
-        <head>
-                <title>
-                        Remove superfluous from conf file
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Remove superfluous from conf file
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                sed -re '/^#/d ; s/#.*$// ; /^\s*$/d'
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Use it with cat and '|' for know what is used in a conf file.
-                                </p>
-                                <p>
-                                        For example cat /etc/squid/squid.conf | sed -re '/^#/d ; s/#.*$// ; /^\s$/d' :
-                                </p>
-                                <p>
-                                        Show you what you use in your file conf.
-                                </p>
-                                <p>
-                                        It removes all comments and empty lines.
-                                </p>
-                                <p>
-                                        Empty lines are lines with nothing, a tab, or a space.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                grep -Ev '^( *$|#)' &lt; conf.file
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Removes comments and blank lines from configuration files, leaving only settings
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                I use this:
-                        </p><code>grep -Ev '^( *$|#)' &lt; conf.file</code>
-                </div>
-        </body>
+	<head>
+		<title>
+			Remove superfluous from conf file
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Remove superfluous from conf file
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				sed -re '/^#/d ; s/#.*$// ; /^\s*$/d'
+			</div>
+			<div class="details description">
+				<p>
+					Use it with cat and '|' for know what is used in a conf file.
+				</p>
+				<p>
+					For example cat /etc/squid/squid.conf | sed -re '/^#/d ; s/#.*$// ; /^\s$/d' :
+				</p>
+				<p>
+					Show you what you use in your file conf.
+				</p>
+				<p>
+					It removes all comments and empty lines.
+				</p>
+				<p>
+					Empty lines are lines with nothing, a tab, or a space.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				grep -Ev '^( *$|#)' &lt; conf.file
+			</div>
+			<div class="details description">
+				<p>
+					Removes comments and blank lines from configuration files, leaving only settings
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				I use this:
+			</p><code>grep -Ev '^( *$|#)' &lt; conf.file</code>
+		</div>
+	</body>
 </html>

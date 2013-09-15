@@ -1,59 +1,59 @@
 <html>
-        <head>
-                <title>
-                        Convert first letter of string to uppercase
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Convert first letter of string to uppercase
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                string="${string^}"
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Convert first letter of string to uppercase
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Convert first letter of string to uppercase
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				string="${string^}"
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 string="hello"
 string="${string^}"
 echo $string
 Hello
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Let bash do the work by converting the initial of a string to an uppercase
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        ^^ will do all characters, comma and double-comma will covert to lowercase. ~ toggles the first character of each word, ~~ toggles all characters. To title case a string:
-                                </p><code>string='mIXed uP CAse'</code> <code>string=${string,,}</code> <code>string=${string~}</code> <code>echo "$string"</code>
-                                <p>
-                                        Mixed Up Case
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        By the way, all of this requires Bash 4.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Hey, neat info dennisw. Thanks.
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Let bash do the work by converting the initial of a string to an uppercase
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					^^ will do all characters, comma and double-comma will covert to lowercase. ~ toggles the first character of each word, ~~ toggles all characters. To title case a string:
+				</p><code>string='mIXed uP CAse'</code> <code>string=${string,,}</code> <code>string=${string~}</code> <code>echo "$string"</code>
+				<p>
+					Mixed Up Case
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					By the way, all of this requires Bash 4.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Hey, neat info dennisw. Thanks.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

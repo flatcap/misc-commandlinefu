@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        git remove files which have been deleted
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                git remove files which have been deleted
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                git rm $(git ls-files --deleted)
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			git remove files which have been deleted
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				git remove files which have been deleted
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				git rm $(git ls-files --deleted)
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 rm 'stylesheets/blueprint/.svn/all-wcprops'
 rm 'stylesheets/blueprint/.svn/entries'
 rm 'stylesheets/blueprint/.svn/format'
@@ -26,33 +26,33 @@ rm 'stylesheets/blueprint/.svn/text-base/print.css.svn-base'
 rm 'stylesheets/blueprint/.svn/text-base/screen.css.svn-base'
 rm 'stylesheets/blueprint/ie.css'
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command handles git rm'ing files that you've deleted.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        git add -u
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                It deletes all removed files, updates what was modified, and adds new files.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        git ls-files -z --deleted | xargs -0 git rm
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					This command handles git rm'ing files that you've deleted.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					git add -u
+				</div>
+				<div class="details description">
+					<p>
+						It deletes all removed files, updates what was modified, and adds new files.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					git ls-files -z --deleted | xargs -0 git rm
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 $ git status
 # On branch master
 # Changed but not updated:
@@ -68,13 +68,13 @@ rm 'some file'
 rm 'some_file'
 rm 'somefile'
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                I've used technicalpickles command a lot, but this one handles whitespaces in filenames. I'm sure you want to create an alias for it :)
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						I've used technicalpickles command a lot, but this one handles whitespaces in filenames. I'm sure you want to create an alias for it :)
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

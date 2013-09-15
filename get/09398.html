@@ -1,71 +1,71 @@
 <html>
-        <head>
-                <title>
-                        Suppress output of loud commands you don't want to hear from
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Suppress output of loud commands you don't want to hear from
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                quietly() { "$@" &gt; /dev/null 2&gt;&amp;1; }
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Suppress output of loud commands you don't want to hear from
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Suppress output of loud commands you don't want to hear from
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				quietly() { "$@" &gt; /dev/null 2&gt;&amp;1; }
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 quietly "/path that may contain spaces/command" "arg 1" "arg 2"
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This works even if there are spaces in any word in the command line.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        quietly() { "$@" |&amp;:; }
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        function quietly () { $* 2&gt; /dev/null &gt; /dev/null; };
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					This works even if there are spaces in any word in the command line.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					quietly() { "$@" |&amp;:; }
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					function quietly () { $* 2&gt; /dev/null &gt; /dev/null; };
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 hostname User$ quietly wget www.website.com/
 hostname User$ _
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Suppresses all output to /dev/null. This could be expanded to check for a -l command line option to log the stderr to a file maybe -l file or -l to log to default quietly.log. I'm finding that I use it more often than one would think.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                if you want to get error output:
-                        </p><code>quietly() { "$@" 2&gt;&amp;1 &gt;/dev/null; }</code>
-                        <p>
-                                to make it completely silent:
-                        </p><code>quietly() { "$@" &amp;&gt;/dev/null; }</code>
-                        <p>
-                                But it's so simple that i don't see the need to use a function
-                        </p>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						Suppresses all output to /dev/null. This could be expanded to check for a -l command line option to log the stderr to a file maybe -l file or -l to log to default quietly.log. I'm finding that I use it more often than one would think.
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				if you want to get error output:
+			</p><code>quietly() { "$@" 2&gt;&amp;1 &gt;/dev/null; }</code>
+			<p>
+				to make it completely silent:
+			</p><code>quietly() { "$@" &amp;&gt;/dev/null; }</code>
+			<p>
+				But it's so simple that i don't see the need to use a function
+			</p>
+		</div>
+	</body>
 </html>

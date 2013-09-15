@@ -1,52 +1,52 @@
 <html>
-        <head>
-                <title>
-                        Parallel XZ with progress bar
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Parallel XZ with progress bar
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                function xzv() { THREADS=`grep processor /proc/cpuinfo | wc -l`; for file in $*; do pv -s `stat -c%s $file` &lt; $file | pxz -q -T $THREADS &gt; $file.xz ; done; }
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        You need: pxz for the actual work (<a href="http://jnovy.fedorapeople.org/pxz/)." rel="nofollow">http://jnovy.fedorapeople.org/pxz/).</a> The function could be better with better multifile and stdin/out support.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Hmm... pv is a wonderful tool, but I'm not sure about the rest.
-                                </p>
-                                <p>
-                                        First of all, pxz works out, for itself, how many processors/threads it can use.
-                                </p>
-                                <p>
-                                        Even if you did need to tell it, you don't need "wc -l"; grep has a count option.
-                                </p><code>THREADS=$(grep -c processor /proc/cpuinfo)</code>
-                                <p>
-                                        Finally, quote your arguments to allow whitespace in filenames. "$@" does the right thing.
-                                </p><code>for file in "$@"; do pxz "$file"; done</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I prefer to use: <a href="http://www.gnu.org/s/parallel/" rel="nofollow">http://www.gnu.org/s/parallel/</a>
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Parallel XZ with progress bar
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Parallel XZ with progress bar
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				function xzv() { THREADS=`grep processor /proc/cpuinfo | wc -l`; for file in $*; do pv -s `stat -c%s $file` &lt; $file | pxz -q -T $THREADS &gt; $file.xz ; done; }
+			</div>
+			<div class="details description">
+				<p>
+					You need: pxz for the actual work (<a href="http://jnovy.fedorapeople.org/pxz/)." rel="nofollow">http://jnovy.fedorapeople.org/pxz/).</a> The function could be better with better multifile and stdin/out support.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Hmm... pv is a wonderful tool, but I'm not sure about the rest.
+				</p>
+				<p>
+					First of all, pxz works out, for itself, how many processors/threads it can use.
+				</p>
+				<p>
+					Even if you did need to tell it, you don't need "wc -l"; grep has a count option.
+				</p><code>THREADS=$(grep -c processor /proc/cpuinfo)</code>
+				<p>
+					Finally, quote your arguments to allow whitespace in filenames. "$@" does the right thing.
+				</p><code>for file in "$@"; do pxz "$file"; done</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I prefer to use: <a href="http://www.gnu.org/s/parallel/" rel="nofollow">http://www.gnu.org/s/parallel/</a>
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,58 +1,58 @@
 <html>
-        <head>
-                <title>
-                        Echo a command, then execute it
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Echo a command, then execute it
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                v () { echo "$@"; "$@"; }
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Echo a command, then execute it
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Echo a command, then execute it
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				v () { echo "$@"; "$@"; }
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ v rm -v *~
 rm -v example~
 removed `example~'
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        You can use this in shell scripts to show which commands are actually run. Just prepend every "critical line" with "v&#765;".
-                                </p>
-                                <p>
-                                        $TMP=/tmp
-                                </p>
-                                <p>
-                                        echo "Let me create a directory for you"
-                                </p>
-                                <p>
-                                        v mkdir $TMP/new
-                                </p>
-                                <p>
-                                        In scripts this can be more useful than "set -x", because that can be very verbose with variable assignments etc.
-                                </p>
-                                <p>
-                                        Another nice use is if you prepend every "critical" command with "v", then you can test your script by commenting out the actual execution.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Hey, why all the downvotes? Does anyone care to comment?
-                        </p>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					You can use this in shell scripts to show which commands are actually run. Just prepend every "critical line" with "v&#765;".
+				</p>
+				<p>
+					$TMP=/tmp
+				</p>
+				<p>
+					echo "Let me create a directory for you"
+				</p>
+				<p>
+					v mkdir $TMP/new
+				</p>
+				<p>
+					In scripts this can be more useful than "set -x", because that can be very verbose with variable assignments etc.
+				</p>
+				<p>
+					Another nice use is if you prepend every "critical" command with "v", then you can test your script by commenting out the actual execution.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Hey, why all the downvotes? Does anyone care to comment?
+			</p>
+		</div>
+	</body>
 </html>

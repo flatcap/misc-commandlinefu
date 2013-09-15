@@ -1,71 +1,71 @@
 <html>
-        <head>
-                <title>
-                        Hide the name of a process listed in the `ps` output
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Hide the name of a process listed in the `ps` output
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                exec -a "/sbin/getty 38400 tty7" your_cmd -erase_all_files
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Hide the name of a process listed in the `ps` output
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Hide the name of a process listed in the `ps` output
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				exec -a "/sbin/getty 38400 tty7" your_cmd -erase_all_files
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ exec -a "/sbin/getty 38400 tty7" your_cmd -erase_all_files
 $ ps -ef
 [...]
 user1       8765  2655  0 18:39 pts/7    00:00:00 /sbin/getty 38400 tty7
 [...]
 </pre>
-                        </div>
-                        <div class="details description">
-                                <code>exec -a $NAME $COMMAND $ARGS</code>
-                                <p>
-                                        `your_cmd -erase_all_files` is the real process, but harmless-looking getty appears in the process table.
-                                </p>
-                                <p>
-                                        Never actually had a need to do this, but interesting nonetheless... Tested in bash, dash.
-                                </p><code>-a $NAME</code>
-                                <p>
-                                        "pass NAME as the zeroth argument to COMMAND", i.e. customise the name of the process (as commonly seen with `ps`)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        +1 Very naughty ;-)
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Does not seem to conceal the command argument in the ps output.
-                                </p>
-                                <p>
-                                        The "r1" in the following case:
-                                </p>
-                                <p>
-                                        # command
-                                </p><code>exec -a "/sbin/getty 38400 tty7" /usr/sbin/lsof -r1</code>
-                                <p>
-                                        # ps output
-                                </p>
-                                <p>
-                                        00:00:01 /sbin/getty 38400 tty7 -r1
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<code>exec -a $NAME $COMMAND $ARGS</code>
+				<p>
+					`your_cmd -erase_all_files` is the real process, but harmless-looking getty appears in the process table.
+				</p>
+				<p>
+					Never actually had a need to do this, but interesting nonetheless... Tested in bash, dash.
+				</p><code>-a $NAME</code>
+				<p>
+					"pass NAME as the zeroth argument to COMMAND", i.e. customise the name of the process (as commonly seen with `ps`)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					+1 Very naughty ;-)
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Does not seem to conceal the command argument in the ps output.
+				</p>
+				<p>
+					The "r1" in the following case:
+				</p>
+				<p>
+					# command
+				</p><code>exec -a "/sbin/getty 38400 tty7" /usr/sbin/lsof -r1</code>
+				<p>
+					# ps output
+				</p>
+				<p>
+					00:00:01 /sbin/getty 38400 tty7 -r1
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

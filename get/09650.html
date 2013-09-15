@@ -1,51 +1,51 @@
 <html>
-        <head>
-                <title>
-                        find system's indianness
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                find system's indianness
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                python -c "import sys;print (sys.byteorder) + ' endian'"
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			find system's indianness
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				find system's indianness
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				python -c "import sys;print (sys.byteorder) + ' endian'"
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 big endian
 (or)
 little endian
 </pre>
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        I think you mean "endianness".
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Indeed, probably just use 'endian' in the description to make it easier to find
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        A better way to check a machine's Indian-ness would be
-                                </p><code>locale |grep -i IN</code>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					I think you mean "endianness".
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Indeed, probably just use 'endian' in the description to make it easier to find
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					A better way to check a machine's Indian-ness would be
+				</p><code>locale |grep -i IN</code>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,94 +1,94 @@
 <html>
-        <head>
-                <title>
-                        using `!#$' to referance backward-word
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                using `!#$' to referance backward-word
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cp /work/host/phone/ui/main.cpp !#$:s/host/target
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        expand to:
-                                </p>
-                                <p>
-                                        cp /work/host/phone/ui/main.cpp /work/target/phone/ui/main.cpp
-                                </p>
-                                <p>
-                                        !#
-                                </p>
-                                <p>
-                                        The entire command line typed so far.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Wow, that's amazing.
-                                </p>
-                                <p>
-                                        I'd suggest changing your description, though, from "entire command line" to "all the command line arguments" (because it doesn't include "cp").
-                                </p>
-                                <p>
-                                        Your example could also be represented as:
-                                </p><code>cp /work/{host,target}/phone/ui/main.cpp</code>
-                                <p>
-                                        ... but the search and replace makes it very interesting, very versatile.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        it does include "cp"
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        That's... wow.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Ah, sorry. My mistake.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        I didn't get this to work in ksh, but I did get it to work in bash.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Yes! I just wondered if something like this exists while doing "mkdir -p long/path &amp;&amp; cd long/path"
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Btw, this trick is somewhat ruined by the fact that bash saves the command expanded in history. Is there any flag to store it as such?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        to avoid "mkdir -p long/path &amp;&amp; cd long/path" you can do:
-                                </p><code>mkdir -p long/path</code>
-                                <p>
-                                        and then do
-                                </p><code>cd [ALT]+. (that means pressing the 'alt' key and the '.' simultaneously, it expands to the last parameter used :D)</code>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			using `!#$' to referance backward-word
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				using `!#$' to referance backward-word
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cp /work/host/phone/ui/main.cpp !#$:s/host/target
+			</div>
+			<div class="details description">
+				<p>
+					expand to:
+				</p>
+				<p>
+					cp /work/host/phone/ui/main.cpp /work/target/phone/ui/main.cpp
+				</p>
+				<p>
+					!#
+				</p>
+				<p>
+					The entire command line typed so far.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Wow, that's amazing.
+				</p>
+				<p>
+					I'd suggest changing your description, though, from "entire command line" to "all the command line arguments" (because it doesn't include "cp").
+				</p>
+				<p>
+					Your example could also be represented as:
+				</p><code>cp /work/{host,target}/phone/ui/main.cpp</code>
+				<p>
+					... but the search and replace makes it very interesting, very versatile.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					it does include "cp"
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					That's... wow.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Ah, sorry. My mistake.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					I didn't get this to work in ksh, but I did get it to work in bash.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Yes! I just wondered if something like this exists while doing "mkdir -p long/path &amp;&amp; cd long/path"
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Btw, this trick is somewhat ruined by the fact that bash saves the command expanded in history. Is there any flag to store it as such?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					to avoid "mkdir -p long/path &amp;&amp; cd long/path" you can do:
+				</p><code>mkdir -p long/path</code>
+				<p>
+					and then do
+				</p><code>cd [ALT]+. (that means pressing the 'alt' key and the '.' simultaneously, it expands to the last parameter used :D)</code>
+			</div>
+		</div>
+	</body>
 </html>

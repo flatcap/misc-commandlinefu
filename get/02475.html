@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        securely erase unused blocks in a partition
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                securely erase unused blocks in a partition
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                # cd $partition; dd if=/dev/zero of=ShredUnusedBlocks bs=512M; shred -vzu ShredUnusedBlocks
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			securely erase unused blocks in a partition
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				securely erase unused blocks in a partition
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				# cd $partition; dd if=/dev/zero of=ShredUnusedBlocks bs=512M; shred -vzu ShredUnusedBlocks
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 # Example showing the /boot partition. Note command is run as root.
 # cd /boot; dd if=/dev/zero of=ShredUnusedBlocks bs=512M; shred -vzu ShredUnusedBlocks
 dd: writing `ShredUnusedBlocks': No space left on device
@@ -83,95 +83,95 @@ shred: 000: renamed to 00
 shred: 00: renamed to 0
 shred: ShredUnusedBlocks: removed
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command securely erases all the unused blocks on a partition.
-                                </p>
-                                <p>
-                                        The unused blocks are the "free space" on the partition.
-                                </p>
-                                <p>
-                                        Some of these blocks will contain data from previously deleted files.
-                                </p>
-                                <p>
-                                        You might want to use this if you are given access to an old computer and you do not know its provenance.
-                                </p>
-                                <p>
-                                        The command could be used while booted from a LiveCD to clear freespace space on old HD.
-                                </p>
-                                <p>
-                                        On modern Linux LiveCDs, the "ntfs-3g" system provides ReadWrite access to NTFS partitions thus enabling this method to also be used on Wind'ohs drives.
-                                </p>
-                                <p>
-                                        NB depending on the size of the partition, this command could take a while to complete.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        It looks like you forgot to specify the 'dd' part before if=/dev/zero. Also, be careful when running this on the partition where /home or /tmp is mounted because it can cause weird hangups when applications can no longer create temporary files, like when starting an X session.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        @bwoodacre
-                                </p>
-                                <p>
-                                        Thanks for pointing out the missing "dd". Fixed now.
-                                </p>
-                                <p>
-                                        You are also right about needing to be careful about filling /tmp. Hence the mention of LiveCD.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Doesn't handle slack in the last block of a file. Also other space is probably not overwritten on journalling filesystems.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        fwiw dban linux is supposed to be the ultimate shredder...
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Good point pixelbeat. In more words: in some filesystems, a 10 byte file still takes up (say, for instance) 4069 bytes (4K) of physical disk space. If you want to leave the existing files on the filesystem untouched, then this slack space is unwritable at the filesystem level. Something like ext2 would behave this way, but reiser3 packs many small files into the same block. So expanding a giant file and shredding it is a great start if you want/need to do things in place, but you aren't guaranteed to shred 100% of the unused disk bytes unless you use something at the block-device level like dban.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        @pixelbeat
-                                </p>
-                                <p>
-                                        Where is the slack?
-                                </p>
-                                <p>
-                                        The "dd" creates a single file from all the unused blocks in the partition in a file called "ShredUnusedBlocks".
-                                </p>
-                                <p>
-                                        So the end of this file is the end of the last unused block.
-                                </p>
-                                <p>
-                                        You can use the "df" command after the "dd" to verify 100% of the space in the partition is used up when the "ShredUnusedBlocks" file is created.
-                                </p>
-                                <p>
-                                        Regarding the journal, what do you think the journal will be full of? I think it will be mostly full of writes of random data from the shred command. If the default number of overwrites from shred is not considered enough, it can be increased with the "-n" (or "--iterations=n") option.
-                                </p>
-                                <p>
-                                        Example: specifying "-n16" for 16 iterations:
-                                </p>
-                                <p>
-                                        cd /boot; dd if=/dev/zero of=ShredUnusedBlocks bs=512M; shred -vzu -n16 ShredUnusedBlocks
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					This command securely erases all the unused blocks on a partition.
+				</p>
+				<p>
+					The unused blocks are the "free space" on the partition.
+				</p>
+				<p>
+					Some of these blocks will contain data from previously deleted files.
+				</p>
+				<p>
+					You might want to use this if you are given access to an old computer and you do not know its provenance.
+				</p>
+				<p>
+					The command could be used while booted from a LiveCD to clear freespace space on old HD.
+				</p>
+				<p>
+					On modern Linux LiveCDs, the "ntfs-3g" system provides ReadWrite access to NTFS partitions thus enabling this method to also be used on Wind'ohs drives.
+				</p>
+				<p>
+					NB depending on the size of the partition, this command could take a while to complete.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					It looks like you forgot to specify the 'dd' part before if=/dev/zero. Also, be careful when running this on the partition where /home or /tmp is mounted because it can cause weird hangups when applications can no longer create temporary files, like when starting an X session.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					@bwoodacre
+				</p>
+				<p>
+					Thanks for pointing out the missing "dd". Fixed now.
+				</p>
+				<p>
+					You are also right about needing to be careful about filling /tmp. Hence the mention of LiveCD.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Doesn't handle slack in the last block of a file. Also other space is probably not overwritten on journalling filesystems.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					fwiw dban linux is supposed to be the ultimate shredder...
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Good point pixelbeat. In more words: in some filesystems, a 10 byte file still takes up (say, for instance) 4069 bytes (4K) of physical disk space. If you want to leave the existing files on the filesystem untouched, then this slack space is unwritable at the filesystem level. Something like ext2 would behave this way, but reiser3 packs many small files into the same block. So expanding a giant file and shredding it is a great start if you want/need to do things in place, but you aren't guaranteed to shred 100% of the unused disk bytes unless you use something at the block-device level like dban.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					@pixelbeat
+				</p>
+				<p>
+					Where is the slack?
+				</p>
+				<p>
+					The "dd" creates a single file from all the unused blocks in the partition in a file called "ShredUnusedBlocks".
+				</p>
+				<p>
+					So the end of this file is the end of the last unused block.
+				</p>
+				<p>
+					You can use the "df" command after the "dd" to verify 100% of the space in the partition is used up when the "ShredUnusedBlocks" file is created.
+				</p>
+				<p>
+					Regarding the journal, what do you think the journal will be full of? I think it will be mostly full of writes of random data from the shred command. If the default number of overwrites from shred is not considered enough, it can be increased with the "-n" (or "--iterations=n") option.
+				</p>
+				<p>
+					Example: specifying "-n16" for 16 iterations:
+				</p>
+				<p>
+					cd /boot; dd if=/dev/zero of=ShredUnusedBlocks bs=512M; shred -vzu -n16 ShredUnusedBlocks
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

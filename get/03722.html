@@ -1,58 +1,58 @@
 <html>
-        <head>
-                <title>
-                        More precise BASH debugging
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                More precise BASH debugging
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                env PS4=' ${BASH_SOURCE}:${LINENO}(${FUNCNAME[0]}) ' sh -x /etc/profile
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Hot stuff !
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I've put it in my profile.
-                                </p>
-                                <p>
-                                        export PS4=' ${BASH_SOURCE}:${LINENO}(${FUNCNAME[0]}) '
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Really nice. You could put this into a function within your profile.
-                                </p>
-                                <p>
-                                        shdebug() {env PS4=' ${BASH_SOURCE}:${LINENO}(${FUNCNAME[0]}) ' sh -x $1; }
-                                </p>
-                                <p>
-                                        This would mean you could debug a shell script nice and easy:
-                                </p><code>shdebug /path/to/myscript.sh</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Works great if you don't forget the space between { and env. That's to say :
-                                </p><code>shdebug() { env PS4=' ${BASH_SOURCE}:${LINENO}(${FUNCNAME[0]}) ' sh -x $1; }</code>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			More precise BASH debugging
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				More precise BASH debugging
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				env PS4=' ${BASH_SOURCE}:${LINENO}(${FUNCNAME[0]}) ' sh -x /etc/profile
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Hot stuff !
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I've put it in my profile.
+				</p>
+				<p>
+					export PS4=' ${BASH_SOURCE}:${LINENO}(${FUNCNAME[0]}) '
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Really nice. You could put this into a function within your profile.
+				</p>
+				<p>
+					shdebug() {env PS4=' ${BASH_SOURCE}:${LINENO}(${FUNCNAME[0]}) ' sh -x $1; }
+				</p>
+				<p>
+					This would mean you could debug a shell script nice and easy:
+				</p><code>shdebug /path/to/myscript.sh</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Works great if you don't forget the space between { and env. That's to say :
+				</p><code>shdebug() { env PS4=' ${BASH_SOURCE}:${LINENO}(${FUNCNAME[0]}) ' sh -x $1; }</code>
+			</div>
+		</div>
+	</body>
 </html>

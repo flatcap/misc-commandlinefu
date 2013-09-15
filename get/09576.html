@@ -1,46 +1,46 @@
 <html>
-        <head>
-                <title>
-                        geoip information
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                geoip information
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                geoip() { wget -qO - http://freegeoip.net/xml/$1 | sed '3,12!d;s/&lt;//g;s/&gt;/: /g;s/\/.*//g' ; }
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                geoip() { lynx -dump "http://www.geoiptool.com/en/?IP=$1" | sed -n '/Host Name/,/Postal code/p' ; }
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			geoip information
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				geoip information
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				geoip() { wget -qO - http://freegeoip.net/xml/$1 | sed '3,12!d;s/&lt;//g;s/&gt;/: /g;s/\/.*//g' ; }
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				geoip() { lynx -dump "http://www.geoiptool.com/en/?IP=$1" | sed -n '/Host Name/,/Postal code/p' ; }
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 user@foo $&gt; geoip 208.67.222.222
       Host Name: resolver1.opendns.com
      IP Address: 208.67.222.222
-        Country: [14]United States united states
+	Country: [14]United States united states
    Country code: US (USA)
-         Region: [15]California
-           City: San Francisco
+	 Region: [15]California
+	   City: San Francisco
     Postal code: 94105
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Shows you the geolocation of an IP address.
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Shows you the geolocation of an IP address.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

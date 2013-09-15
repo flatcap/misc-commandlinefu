@@ -1,95 +1,95 @@
 <html>
-        <head>
-                <title>
-                        Place the NUM-th argument of the most recent command on the shell
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Place the NUM-th argument of the most recent command on the shell
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                <span>&lt;ALT&gt;</span>+&lt;.&gt; or <span>&lt;ALT&gt;</span>+<span>&lt;NUM&gt;</span>+&lt;.&gt; or <span>&lt;ALT&gt;</span>+<span>&lt;NUM&gt;</span>,<span>&lt;ALT&gt;</span>+&lt;.&gt;
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        After executing a command with multiple arguments like
-                                </p>
-                                <p>
-                                        cp ./temp/test.sh ~/prog/ifdown.sh
-                                </p>
-                                <p>
-                                        you can paste any argument of the previous command to the console, like
-                                </p>
-                                <p>
-                                        ls -l ALT+1+.
-                                </p>
-                                <p>
-                                        is equivalent to
-                                </p>
-                                <p>
-                                        ls -l ./temp/test.sh
-                                </p>
-                                <p>
-                                        ALT+0+. stands for command itself ('ls' in this case)
-                                </p>
-                                <p>
-                                        Simple ALT+. cycles through last arguments of previous commands.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        'ALT+.' or '<span>&lt;ESC&gt;</span> .'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                When typing out long arguments, such as:
-                                        </p><code>cp file.txt /var/www/wp-content/uploads/2009/03/</code>
-                                        <p>
-                                                You can put that argument on your command line by holding down the ALT key and pressing the period '.' or by pressing &lt;ESC&gt; then the period '.'. For example:
-                                        </p><code>cd 'ALT+.'</code>
-                                        <p>
-                                                would put '/var/www/wp-content/uploads/2009/03/ as my argument. Keeping pressing 'ALT+.' to cycle through arguments of your commands starting from most recent to oldest. This can save a ton of typing.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        <span>&lt;ESC&gt;</span> .
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        <span>&lt;ALT&gt;</span> .
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        &lt;alt+.&gt;
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        <span>&lt;Esc&gt;</span> _
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This works if your terminal is in Vi mode
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Place the NUM-th argument of the most recent command on the shell
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Place the NUM-th argument of the most recent command on the shell
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				<span>&lt;ALT&gt;</span>+&lt;.&gt; or <span>&lt;ALT&gt;</span>+<span>&lt;NUM&gt;</span>+&lt;.&gt; or <span>&lt;ALT&gt;</span>+<span>&lt;NUM&gt;</span>,<span>&lt;ALT&gt;</span>+&lt;.&gt;
+			</div>
+			<div class="details description">
+				<p>
+					After executing a command with multiple arguments like
+				</p>
+				<p>
+					cp ./temp/test.sh ~/prog/ifdown.sh
+				</p>
+				<p>
+					you can paste any argument of the previous command to the console, like
+				</p>
+				<p>
+					ls -l ALT+1+.
+				</p>
+				<p>
+					is equivalent to
+				</p>
+				<p>
+					ls -l ./temp/test.sh
+				</p>
+				<p>
+					ALT+0+. stands for command itself ('ls' in this case)
+				</p>
+				<p>
+					Simple ALT+. cycles through last arguments of previous commands.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					'ALT+.' or '<span>&lt;ESC&gt;</span> .'
+				</div>
+				<div class="details description">
+					<p>
+						When typing out long arguments, such as:
+					</p><code>cp file.txt /var/www/wp-content/uploads/2009/03/</code>
+					<p>
+						You can put that argument on your command line by holding down the ALT key and pressing the period '.' or by pressing &lt;ESC&gt; then the period '.'. For example:
+					</p><code>cd 'ALT+.'</code>
+					<p>
+						would put '/var/www/wp-content/uploads/2009/03/ as my argument. Keeping pressing 'ALT+.' to cycle through arguments of your commands starting from most recent to oldest. This can save a ton of typing.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					<span>&lt;ESC&gt;</span> .
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					<span>&lt;ALT&gt;</span> .
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					&lt;alt+.&gt;
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					<span>&lt;Esc&gt;</span> _
+				</div>
+				<div class="details description">
+					<p>
+						This works if your terminal is in Vi mode
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

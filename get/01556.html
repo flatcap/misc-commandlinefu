@@ -1,88 +1,88 @@
 <html>
-        <head>
-                <title>
-                        currently mounted filesystems in nice layout
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                currently mounted filesystems in nice layout
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                mount | column -t
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
-/dev/sda1   on  /                         type  ext3        (rw,relatime,errors=remount-ro)
-tmpfs       on  /lib/init/rw              type  tmpfs       (rw,nosuid,mode=0755)
-/proc       on  /proc                     type  proc        (rw,noexec,nosuid,nodev)
-sysfs       on  /sys                      type  sysfs       (rw,noexec,nosuid,nodev)
-varrun      on  /var/run                  type  tmpfs       (rw,nosuid,mode=0755)
-varlock     on  /var/lock                 type  tmpfs       (rw,noexec,nosuid,nodev,mode=1777)
-udev        on  /dev                      type  tmpfs       (rw,mode=0755)
-tmpfs       on  /dev/shm                  type  tmpfs       (rw,nosuid,nodev)
-devpts      on  /dev/pts                  type  devpts      (rw,noexec,nosuid,gid=5,mode=620)
+	<head>
+		<title>
+			currently mounted filesystems in nice layout
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				currently mounted filesystems in nice layout
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				mount | column -t
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
+/dev/sda1   on  /			 type  ext3	(rw,relatime,errors=remount-ro)
+tmpfs       on  /lib/init/rw	      type  tmpfs       (rw,nosuid,mode=0755)
+/proc       on  /proc		     type  proc	(rw,noexec,nosuid,nodev)
+sysfs       on  /sys		      type  sysfs       (rw,noexec,nosuid,nodev)
+varrun      on  /var/run		  type  tmpfs       (rw,nosuid,mode=0755)
+varlock     on  /var/lock		 type  tmpfs       (rw,noexec,nosuid,nodev,mode=1777)
+udev	on  /dev		      type  tmpfs       (rw,mode=0755)
+tmpfs       on  /dev/shm		  type  tmpfs       (rw,nosuid,nodev)
+devpts      on  /dev/pts		  type  devpts      (rw,noexec,nosuid,gid=5,mode=620)
 fusectl     on  /sys/fs/fuse/connections  type  fusectl     (rw)
 securityfs  on  /sys/kernel/security      type  securityfs  (rw)
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Particularly useful if you're mounting different drives, using the following command will allow you to see all the filesystems currently mounted on your computer and their respective specs with the added benefit of nice formatting.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                column -t /proc/mounts
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        since fuse mounts do not appear in /etc/mtab (fuse can't write there, dunno if it would if it could) this is propably a better way.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Nice indeed. But some issues when there is whitespaces in mount point.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Ye flipping gods! How did I go twenty years in *nix without finding out about column?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        That's what I'm talking about. These sort of commands are what make this site shine. Very nice.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        to TheMightyBuzzard : I've found "cd -" and this "columnt -t" today - 18 years of *nix :-)
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        So Coooooooooooooool !!!
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        findmnt is now superior.
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Particularly useful if you're mounting different drives, using the following command will allow you to see all the filesystems currently mounted on your computer and their respective specs with the added benefit of nice formatting.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				column -t /proc/mounts
+			</div>
+			<div class="details description">
+				<p>
+					since fuse mounts do not appear in /etc/mtab (fuse can't write there, dunno if it would if it could) this is propably a better way.
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Nice indeed. But some issues when there is whitespaces in mount point.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Ye flipping gods! How did I go twenty years in *nix without finding out about column?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					That's what I'm talking about. These sort of commands are what make this site shine. Very nice.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					to TheMightyBuzzard : I've found "cd -" and this "columnt -t" today - 18 years of *nix :-)
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					So Coooooooooooooool !!!
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					findmnt is now superior.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

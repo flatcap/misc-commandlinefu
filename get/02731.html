@@ -1,84 +1,84 @@
 <html>
-        <head>
-                <title>
-                        Attach screen over ssh
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Attach screen over ssh
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ssh -t remote_host screen -r
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Directly attach a remote screen session (saves a useless parent bash process)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                ssh -t user@some.domain.com /usr/bin/screen -xRR
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Long before tabbed terminals existed, people have been using Gnu screen to open many shells in a single text terminal. Combined with ssh, it gives you the ability to have many open shells with a single remote connection using the above options. If you detach with "Ctrl-a d" or if the ssh session is accidentally terminated, all processes running in your remote shells remain undisturbed, ready for you to reconnect. Other useful screen commands are "Ctrl-a c" (open new shell) and "Ctrl-a a" (alternate between shells). Read this quick reference for more screen commands: <a href="http://aperiodic.net/screen/quick_reference" rel="nofollow">http://aperiodic.net/screen/quick_reference</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Two things, the first, I would suggest -R instead of -r (so that if it cannot find an old session it just creates a new one.
-                                </p><code>ssh -t remote_host screen -R</code>
-                                <p>
-                                        And the second thing:
-                                </p>
-                                <p>
-                                        Why do we need the -t option?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        -t forces a terminal to be allocated, otherwise ssh will assume you don't want one since you are only running a command and not opening a shell. Screen needs that terminal or else it won't find anything to attach to and exits.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Thank you for this explanation.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        This can also be used with Byobu this way:
-                                </p><code>ssh -t remote_host byobu -R</code>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        For that matter, use screen -RR if you figure to expect multiple screen sessions.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I prefere use RD reattach if possible with detach
-                                </p><code>ssh -t remote_host screen -RD</code>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Can someone explain how to create multiple sessions and run split screen for each session?
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Attach screen over ssh
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Attach screen over ssh
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ssh -t remote_host screen -r
+			</div>
+			<div class="details description">
+				<p>
+					Directly attach a remote screen session (saves a useless parent bash process)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				ssh -t user@some.domain.com /usr/bin/screen -xRR
+			</div>
+			<div class="details description">
+				<p>
+					Long before tabbed terminals existed, people have been using Gnu screen to open many shells in a single text terminal. Combined with ssh, it gives you the ability to have many open shells with a single remote connection using the above options. If you detach with "Ctrl-a d" or if the ssh session is accidentally terminated, all processes running in your remote shells remain undisturbed, ready for you to reconnect. Other useful screen commands are "Ctrl-a c" (open new shell) and "Ctrl-a a" (alternate between shells). Read this quick reference for more screen commands: <a href="http://aperiodic.net/screen/quick_reference" rel="nofollow">http://aperiodic.net/screen/quick_reference</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Two things, the first, I would suggest -R instead of -r (so that if it cannot find an old session it just creates a new one.
+				</p><code>ssh -t remote_host screen -R</code>
+				<p>
+					And the second thing:
+				</p>
+				<p>
+					Why do we need the -t option?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					-t forces a terminal to be allocated, otherwise ssh will assume you don't want one since you are only running a command and not opening a shell. Screen needs that terminal or else it won't find anything to attach to and exits.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Thank you for this explanation.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					This can also be used with Byobu this way:
+				</p><code>ssh -t remote_host byobu -R</code>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					For that matter, use screen -RR if you figure to expect multiple screen sessions.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I prefere use RD reattach if possible with detach
+				</p><code>ssh -t remote_host screen -RD</code>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Can someone explain how to create multiple sessions and run split screen for each session?
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

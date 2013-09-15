@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        move you up one directory quickly
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                move you up one directory quickly
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                shopt -s autocd
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			move you up one directory quickly
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				move you up one directory quickly
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				shopt -s autocd
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ ..
 cd ..
 $ ~
@@ -24,92 +24,92 @@ cd ~
 $ ../..
 cd ../..
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        In bash, this turns on auto cd. If a command is just a directory name, it cd's into that directory.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        alias ..='cd ..'
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					In bash, this turns on auto cd. If a command is just a directory name, it cd's into that directory.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					alias ..='cd ..'
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 ~/foo/ $ ..
 ~/ $
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Alias two dots to move to parent directory. Put it into your .bashrc or .profile file.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        alias b='cd ../'
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						Alias two dots to move to parent directory. Put it into your .bashrc or .profile file.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					alias b='cd ../'
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 ~/foo $ b
 ~/ $
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Alias a single character 'b' to move to parent directory. Put it into your .bashrc or .profile file.
-                                        </p>
-                                        <p>
-                                                Using "cd .." is one of the most repetitive sequence of characters you'll in the command line. Bring it down to two keys 'b' and 'enter'.
-                                        </p>
-                                        <p>
-                                                It stands for "back"
-                                        </p>
-                                        <p>
-                                                Also useful to have multiple:
-                                        </p>
-                                        <p>
-                                                alias b='cd ../'
-                                        </p>
-                                        <p>
-                                                alias bb='cd ../../'
-                                        </p>
-                                        <p>
-                                                alias bbb='cd ../../../'
-                                        </p>
-                                        <p>
-                                                alias bbbb='cd ../../../../'
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        alias ..='cd ..'
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        yum install zsh
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Use ZSH instead of bash, typing .. will move you up one directory, without the need to alias it.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body meta" id="comments">
-                        Comment by <a href="/commands/by/JohanH">JohanH</a> 75 weeks and 1 day ago
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						Alias a single character 'b' to move to parent directory. Put it into your .bashrc or .profile file.
+					</p>
+					<p>
+						Using "cd .." is one of the most repetitive sequence of characters you'll in the command line. Bring it down to two keys 'b' and 'enter'.
+					</p>
+					<p>
+						It stands for "back"
+					</p>
+					<p>
+						Also useful to have multiple:
+					</p>
+					<p>
+						alias b='cd ../'
+					</p>
+					<p>
+						alias bb='cd ../../'
+					</p>
+					<p>
+						alias bbb='cd ../../../'
+					</p>
+					<p>
+						alias bbbb='cd ../../../../'
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					alias ..='cd ..'
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					yum install zsh
+				</div>
+				<div class="details description">
+					<p>
+						Use ZSH instead of bash, typing .. will move you up one directory, without the need to alias it.
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body meta" id="comments">
+			Comment by <a href="/commands/by/JohanH">JohanH</a> 75 weeks and 1 day ago
+		</div>
+	</body>
 </html>

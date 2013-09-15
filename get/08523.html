@@ -1,24 +1,24 @@
 <html>
-        <head>
-                <title>
-                        Sets performance CPU governer of all cores of a 4-core CPU.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Sets performance CPU governer of all cores of a 4-core CPU.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                for i in {0..3}; do cpufreq-set -c $i -g performance; done
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Sets performance CPU governer of all cores of a 4-core CPU.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Sets performance CPU governer of all cores of a 4-core CPU.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				for i in {0..3}; do cpufreq-set -c $i -g performance; done
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

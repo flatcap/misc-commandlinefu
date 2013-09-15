@@ -1,60 +1,60 @@
 <html>
-        <head>
-                <title>
-                        The end of time
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                The end of time
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                date -ud @$[2**31-1]
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			The end of time
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				The end of time
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				date -ud @$[2**31-1]
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 Tue Jan 19 03:14:07 UTC 2038
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        The end of unix time and the 32bit era will be Tue Jan 19 03:14:07 UTC 2038
-                                </p>
-                                <p>
-                                        .
-                                </p><code>date -ud @$[2**31]</code>
-                                <p>
-                                        date: invalid date `@2147483648'
-                                </p>
-                                <p>
-                                        .
-                                </p>
-                                <p>
-                                        In 64bit you have much longer, at least to:
-                                </p><code>date -ud @$[2**55]</code> <code>Sun Jun 13 06:26:08 UTC 1141709097</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        At -151 without even a single comment? What the fsck? Clearly this shows a flaw in the commandlinefu rating system!
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Probably rolled over. 32bit, dontchaknow.
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					The end of unix time and the 32bit era will be Tue Jan 19 03:14:07 UTC 2038
+				</p>
+				<p>
+					.
+				</p><code>date -ud @$[2**31]</code>
+				<p>
+					date: invalid date `@2147483648'
+				</p>
+				<p>
+					.
+				</p>
+				<p>
+					In 64bit you have much longer, at least to:
+				</p><code>date -ud @$[2**55]</code> <code>Sun Jun 13 06:26:08 UTC 1141709097</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					At -151 without even a single comment? What the fsck? Clearly this shows a flaw in the commandlinefu rating system!
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Probably rolled over. 32bit, dontchaknow.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

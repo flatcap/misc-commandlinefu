@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        take execution time of several commands
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                take execution time of several commands
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                time { <span>&lt;command1&gt;</span> ; <span>&lt;command2&gt;</span> ; &lt;command...&gt; ; }
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			take execution time of several commands
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				take execution time of several commands
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				time { <span>&lt;command1&gt;</span> ; <span>&lt;command2&gt;</span> ; &lt;command...&gt; ; }
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 /tmp$ time { du -sh * ; }
 4.0K    atievntX.MKIj8U
 0       AtiXUEvent00001424_0807cb30
@@ -30,36 +30,36 @@ real    0m0.004s
 user    0m0.004s
 sys     0m0.000s
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        The last ; is important. example:
-                                </p>
-                                <p>
-                                        time { rm -rf /folder/bar &amp;&amp; mkdir -p /folder/bar ; echo "done" ; }
-                                </p>
-                                <p>
-                                        command is a bash builtin
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        I find /bin/time to give more useful (i.e. less verbose) output.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        send the output of the command to /dev/null , to print only the time command output.
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					The last ; is important. example:
+				</p>
+				<p>
+					time { rm -rf /folder/bar &amp;&amp; mkdir -p /folder/bar ; echo "done" ; }
+				</p>
+				<p>
+					command is a bash builtin
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					I find /bin/time to give more useful (i.e. less verbose) output.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					send the output of the command to /dev/null , to print only the time command output.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

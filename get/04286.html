@@ -1,60 +1,60 @@
 <html>
-        <head>
-                <title>
-                        recursive search and replace old with new string, inside files
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                recursive search and replace old with new string, inside files
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                $rpl -R oldstring newstring folder
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			recursive search and replace old with new string, inside files
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				recursive search and replace old with new string, inside files
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				$rpl -R oldstring newstring folder
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 john@raffles2:~/Desktop$rpl -R LOCALE LOC**E copy\ of\ ies4linux-2.99.0.1/
 Replacing "LOCALE" with "LOC**E" (case sensitive) (partial words matched)
 ..............................................................
 A Total of 189 matches replaced in 62 files searched.
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        If you can install rpl it's simpler to use and faster than combinations of find, grep and sed.
-                                </p>
-                                <p>
-                                        See man rpl for various options.
-                                </p>
-                                <p>
-                                        time on above operation: real 0m0.862s, user 0m0.548s, sys 0m0.180s
-                                </p>
-                                <p>
-                                        using find + sed: real 0m3.546s, user 0m1.752s, sys 0m1.580s
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Available in debian/ubuntu, unsurprisingly as package 'rpl' .
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Thanks for the hint, very nice tool!
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					If you can install rpl it's simpler to use and faster than combinations of find, grep and sed.
+				</p>
+				<p>
+					See man rpl for various options.
+				</p>
+				<p>
+					time on above operation: real 0m0.862s, user 0m0.548s, sys 0m0.180s
+				</p>
+				<p>
+					using find + sed: real 0m3.546s, user 0m1.752s, sys 0m1.580s
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Available in debian/ubuntu, unsurprisingly as package 'rpl' .
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Thanks for the hint, very nice tool!
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

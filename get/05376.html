@@ -1,38 +1,38 @@
 <html>
-        <head>
-                <title>
-                        See multiple progress bars at once for multiple pipes with pv
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                See multiple progress bars at once for multiple pipes with pv
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                pv -cN orig &lt; foo.tar.bz2 | bzcat | pv -cN bzcat | gzip -9 | pv -cN gzip &gt; foo.tar.gz
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
-bzcat: 11.4MB 0:00:03 [2.95MB/s] [     &lt;=&gt;                                          ]
- gzip: 4.03MB 0:00:03 [1.05MB/s] [       &lt;=&gt;                                        ]
- orig: 3.12MB 0:00:03 [ 924kB/s] [================&gt;                 ] 45% ETA 0:00:03
+	<head>
+		<title>
+			See multiple progress bars at once for multiple pipes with pv
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				See multiple progress bars at once for multiple pipes with pv
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				pv -cN orig &lt; foo.tar.bz2 | bzcat | pv -cN bzcat | gzip -9 | pv -cN gzip &gt; foo.tar.gz
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
+bzcat: 11.4MB 0:00:03 [2.95MB/s] [     &lt;=&gt;					  ]
+ gzip: 4.03MB 0:00:03 [1.05MB/s] [       &lt;=&gt;					]
+ orig: 3.12MB 0:00:03 [ 924kB/s] [================&gt;		 ] 45% ETA 0:00:03
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        In this example we convert a .tar.bz2 file to a .tar.gz file.
-                                </p>
-                                <p>
-                                        If you don't have Pipe Viewer, you'll have to download it via apt-get install pv, etc.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					In this example we convert a .tar.bz2 file to a .tar.gz file.
+				</p>
+				<p>
+					If you don't have Pipe Viewer, you'll have to download it via apt-get install pv, etc.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

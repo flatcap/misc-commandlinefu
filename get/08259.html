@@ -1,48 +1,48 @@
 <html>
-        <head>
-                <title>
-                        check the filesystem and use a progress bar
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                check the filesystem and use a progress bar
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                e2fsck -C -v /dev/device
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        if you happen to start with out the -C switch then you a killall -USR1 e2fsck
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Invalid non-numeric argument to -C ("-v")
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        e2fsck -f -C 0 /dev/mapper/THRACE--SHARES-movies
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        yeah i just figured that out it depends on the version
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			check the filesystem and use a progress bar
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				check the filesystem and use a progress bar
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				e2fsck -C -v /dev/device
+			</div>
+			<div class="details description">
+				<p>
+					if you happen to start with out the -C switch then you a killall -USR1 e2fsck
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Invalid non-numeric argument to -C ("-v")
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					e2fsck -f -C 0 /dev/mapper/THRACE--SHARES-movies
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					yeah i just figured that out it depends on the version
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

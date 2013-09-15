@@ -1,37 +1,37 @@
 <html>
-        <head>
-                <title>
-                        Display the definition of a shell function
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Display the definition of a shell function
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                typeset -f &lt;function-name&gt;
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Display the definition of a shell function
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Display the definition of a shell function
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				typeset -f &lt;function-name&gt;
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ myfun () {echo "test"};
 $ typeset -f myfun
 myfun () {
-        echo "test"
+	echo "test"
 }
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Display the code of a previously defined shell function.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Display the code of a previously defined shell function.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

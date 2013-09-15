@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        Split tsv file by fifth column ... or any column
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Split tsv file by fifth column ... or any column
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk -F'\t' '{print $0 &gt;&gt;$5.tsv}'
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Will split the std input lines into files grouped by the 5th column content.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Split tsv file by fifth column ... or any column
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Split tsv file by fifth column ... or any column
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk -F'\t' '{print $0 &gt;&gt;$5.tsv}'
+			</div>
+			<div class="details description">
+				<p>
+					Will split the std input lines into files grouped by the 5th column content.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

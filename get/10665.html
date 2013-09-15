@@ -1,50 +1,50 @@
 <html>
-        <head>
-                <title>
-                        find all c and cpp files except the ones in the unit-test and android subdirectories
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                find all c and cpp files except the ones in the unit-test and android subdirectories
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find . ! -regex '.*/\(unit-test\|android\)/.*' \( -name '*.c' -o -name '*.cpp' \)
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Find files matching multiple descriptions (*.c and *.cpp) excluding multiple directories (unit-test and android).
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ls **/*.c(|pp)~(unit-test|android)/*
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                works only in zsh, requires EXTENDED_GLOB to be set.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        find . -name unit-test -o -name '*.c' -o -name '*.cpp' | egrep -v "unit-test|android"
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Very useful for finding all the source code that should be compiled.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			find all c and cpp files except the ones in the unit-test and android subdirectories
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				find all c and cpp files except the ones in the unit-test and android subdirectories
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find . ! -regex '.*/\(unit-test\|android\)/.*' \( -name '*.c' -o -name '*.cpp' \)
+			</div>
+			<div class="details description">
+				<p>
+					Find files matching multiple descriptions (*.c and *.cpp) excluding multiple directories (unit-test and android).
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					ls **/*.c(|pp)~(unit-test|android)/*
+				</div>
+				<div class="details description">
+					<p>
+						works only in zsh, requires EXTENDED_GLOB to be set.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					find . -name unit-test -o -name '*.c' -o -name '*.cpp' | egrep -v "unit-test|android"
+				</div>
+				<div class="details description">
+					<p>
+						Very useful for finding all the source code that should be compiled.
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

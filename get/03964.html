@@ -1,46 +1,46 @@
 <html>
-        <head>
-                <title>
-                        Use the arguments used in the last command
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Use the arguments used in the last command
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                mkdir !*
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Use the arguments used in the last command
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Use the arguments used in the last command
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				mkdir !*
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 ~$ cd Desktop/Notes
 Error: No such file or directory.
 ~$ mkdir -v !*
 mkdir: The directory ?Desktop/Notes? has been created.
 ~$ !-2
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Very basic, but who knows..
-                                </p>
-                                <p>
-                                        mkdir !$ should work too, only uses 'the last' argument.
-                                </p>
-                                <p>
-                                        !-2 executes cd Desktop/Notes again.
-                                </p>
-                                <p>
-                                        More tips in 'man history'
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Very basic, but who knows..
+				</p>
+				<p>
+					mkdir !$ should work too, only uses 'the last' argument.
+				</p>
+				<p>
+					!-2 executes cd Desktop/Notes again.
+				</p>
+				<p>
+					More tips in 'man history'
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

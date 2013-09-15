@@ -1,39 +1,39 @@
 <html>
-        <head>
-                <title>
-                        Count to 65535 in binary (for no apparent reason)
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Count to 65535 in binary (for no apparent reason)
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                a=`printf "%*s" 16`;b=${a//?/{0..1\}}; echo `eval "echo $b"`
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Yes, it's useless.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                But it can be done more simply, look:
-                        </p><code>(echo obase=2; seq 65536) | bc</code>
-                        <p>
-                                In fact, by changing the "obase=n" you can have any number base output you like.
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			Count to 65535 in binary (for no apparent reason)
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Count to 65535 in binary (for no apparent reason)
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				a=`printf "%*s" 16`;b=${a//?/{0..1\}}; echo `eval "echo $b"`
+			</div>
+			<div class="details description">
+				<p>
+					Yes, it's useless.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				But it can be done more simply, look:
+			</p><code>(echo obase=2; seq 65536) | bc</code>
+			<p>
+				In fact, by changing the "obase=n" you can have any number base output you like.
+			</p>
+		</div>
+	</body>
 </html>

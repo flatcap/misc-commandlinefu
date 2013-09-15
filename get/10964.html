@@ -1,104 +1,104 @@
 <html>
-        <head>
-                <title>
-                        Show crontabs for all users
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Show crontabs for all users
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                for i in /var/spool/cron/*; do echo ${i##*/}; sed 's/^/\t/' $i; echo; done
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Show crontabs for all users
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Show crontabs for all users
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				for i in /var/spool/cron/*; do echo ${i##*/}; sed 's/^/\t/' $i; echo; done
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 flatcap
-        @daily /usr/bin/something
+	@daily /usr/bin/something
 root
-        0 0 * * * /root/midnight_script.sh
+	0 0 * * * /root/midnight_script.sh
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Show the crontabs of all the users.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        for user in $(cut -f1 -d: /etc/passwd); do echo "### Crontabs for $user ####"; crontab -u $user -l; done
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                added echo "### Crontabs for $user ####"; to make clear whose crontab is listed.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        for i in /var/spool/cron/tabs/*; do echo ${i##*/}; sed 's/^/\t/' $i; echo; done
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This is flatcaps tweaked command to make it work on SLES 11.2
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        for user in $(getent passwd|cut -f1 -d:); do echo "### Crontabs for $user ####"; crontab -u $user -l; done
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                added echo "### Crontabs for $user ####"; to make clear whose crontab is listed.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        maybe we need sudo to perform that command..
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        My command and harpo's all need root privileges.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        for i in /var/spool/cron/*....doesn't work for me on SLES 11.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Hmm... Sorry. I don't have a copy of Suse handy to find out where they're hiding.
-                                </p>
-                                <p>
-                                        The Filesystem Hierarchy Standard says that's where cron jobs should live:
-                                </p>
-                                <p>
-                                        <a href="http://www.pathname.com/fhs/pub/fhs-2.3.html#VARSPOOLCRONCRONANDATJOBS" rel="nofollow">http://www.pathname.com/fhs/pub/fhs-2.3.html#VARSPOOLCRONCRONANDATJOBS</a>
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        On SLES one has to type:
-                                </p><code>for i in /var/spool/cron/tabs/*;</code>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Show the crontabs of all the users.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					for user in $(cut -f1 -d: /etc/passwd); do echo "### Crontabs for $user ####"; crontab -u $user -l; done
+				</div>
+				<div class="details description">
+					<p>
+						added echo "### Crontabs for $user ####"; to make clear whose crontab is listed.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					for i in /var/spool/cron/tabs/*; do echo ${i##*/}; sed 's/^/\t/' $i; echo; done
+				</div>
+				<div class="details description">
+					<p>
+						This is flatcaps tweaked command to make it work on SLES 11.2
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					for user in $(getent passwd|cut -f1 -d:); do echo "### Crontabs for $user ####"; crontab -u $user -l; done
+				</div>
+				<div class="details description">
+					<p>
+						added echo "### Crontabs for $user ####"; to make clear whose crontab is listed.
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					maybe we need sudo to perform that command..
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					My command and harpo's all need root privileges.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					for i in /var/spool/cron/*....doesn't work for me on SLES 11.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Hmm... Sorry. I don't have a copy of Suse handy to find out where they're hiding.
+				</p>
+				<p>
+					The Filesystem Hierarchy Standard says that's where cron jobs should live:
+				</p>
+				<p>
+					<a href="http://www.pathname.com/fhs/pub/fhs-2.3.html#VARSPOOLCRONCRONANDATJOBS" rel="nofollow">http://www.pathname.com/fhs/pub/fhs-2.3.html#VARSPOOLCRONCRONANDATJOBS</a>
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					On SLES one has to type:
+				</p><code>for i in /var/spool/cron/tabs/*;</code>
+			</div>
+		</div>
+	</body>
 </html>

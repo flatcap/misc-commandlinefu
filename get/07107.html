@@ -1,82 +1,82 @@
 <html>
-        <head>
-                <title>
-                        Bind a key with a command
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Bind a key with a command
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                bind '"\C-l":"ls -l\n"'
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Now type Ctrl-l and it will list all files
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                bind -x '"\C-l":ls -l'
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        the -x option is for binding to a shell command
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <code>bind -x '"\C-l":"ll"'</code>
-                                <p>
-                                        will do the listing without changing anything entered on the current line. Then you can use it in the middle of typing a command.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Nice ! Thank you
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Stick these keybindings into .inputrc and they'll automatically get sourced. Here's a couple useful snippets from mine:
-                                </p>
-                                <p>
-                                        "\e[B": history-search-forward
-                                </p>
-                                <p>
-                                        "\e[A": history-search-backward
-                                </p>
-                                <p>
-                                        "\el": "ls\n"
-                                </p>
-                                <p>
-                                        "\eL": "ls -lh\n"
-                                </p>
-                                <p>
-                                        "\ex": "screen -x\n"
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        The ll assumes that you have an alias such as:
-                                </p><code>alias ll='ls -l'</code>
-                                <p>
-                                        otherwise, you can just do:
-                                </p><code>bind '"\C-l":"ls -l\n"'</code>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Bind a key with a command
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Bind a key with a command
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				bind '"\C-l":"ls -l\n"'
+			</div>
+			<div class="details description">
+				<p>
+					Now type Ctrl-l and it will list all files
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				bind -x '"\C-l":ls -l'
+			</div>
+			<div class="details description">
+				<p>
+					the -x option is for binding to a shell command
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<code>bind -x '"\C-l":"ll"'</code>
+				<p>
+					will do the listing without changing anything entered on the current line. Then you can use it in the middle of typing a command.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Nice ! Thank you
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Stick these keybindings into .inputrc and they'll automatically get sourced. Here's a couple useful snippets from mine:
+				</p>
+				<p>
+					"\e[B": history-search-forward
+				</p>
+				<p>
+					"\e[A": history-search-backward
+				</p>
+				<p>
+					"\el": "ls\n"
+				</p>
+				<p>
+					"\eL": "ls -lh\n"
+				</p>
+				<p>
+					"\ex": "screen -x\n"
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					The ll assumes that you have an alias such as:
+				</p><code>alias ll='ls -l'</code>
+				<p>
+					otherwise, you can just do:
+				</p><code>bind '"\C-l":"ls -l\n"'</code>
+			</div>
+		</div>
+	</body>
 </html>

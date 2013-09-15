@@ -1,197 +1,197 @@
 <html>
-        <head>
-                <title>
-                        ls output with mode in octal
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                ls output with mode in octal
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                perl -e 'printf "%o\n", (stat shift)[2]&amp;07777' file
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			ls output with mode in octal
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				ls output with mode in octal
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				perl -e 'printf "%o\n", (stat shift)[2]&amp;07777' file
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 777
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        one of the solutions from this stackexchange: <a href="http://unix.stackexchange.com/questions/71585/convert-ls-l-output-format-to-chmod-format" rel="nofollow">http://unix.stackexchange.com/questions/71585/convert-ls-l-output-format-to-chmod-format</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        lso(){ jot -w '%04d' 7778 0000 7777 |sed '/[89]/d;s,.*,printf '"'"'&amp; '"'"';chmod &amp; '"$1"';ls -l '"$1"'|sed s/-/./,' \ |sh \ |{ echo "lso(){";echo "ls \$@ \\";echo " |sed '";sed 's, ,@,2;s,@.*,,;s,\(.* \)\(.*\),s/\2/\1/,;s, ,,';echo \';echo };};}
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                this requires the use of a throwaway file.
-                                        </p>
-                                        <p>
-                                                it outputs a shell function.
-                                        </p>
-                                        <p>
-                                                assuming the throwaway file is f.tmp
-                                        </p>
-                                        <p>
-                                                usage: &gt;f.tmp;lso f.tmp &gt; f.tmp; . f.tmp;rm f.tmp;lso -l ...
-                                        </p>
-                                        <p>
-                                                notes:
-                                        </p>
-                                        <p>
-                                                credit epons.org for the idea. however his version did not account for the sticky bit and other special cases.
-                                        </p>
-                                        <p>
-                                                many of the 4096 permutations of file permissions make no practical sense. but chmod will still create them.
-                                        </p>
-                                        <p>
-                                                one can achieve the same sort of octal output with stat(1), if that utility is available.
-                                        </p>
-                                        <p>
-                                                here's another version to account for systems with seq(1) instead of jot(1):
-                                        </p>
-                                        <p>
-                                                lso(){
-                                        </p>
-                                        <p>
-                                                case $# in
-                                        </p>
-                                        <p>
-                                                1)
-                                        </p>
-                                        <p>
-                                                { case $(uname) in
-                                        </p>
-                                        <p>
-                                                FreeBSD)
-                                        </p>
-                                        <p>
-                                                jot -w '%04d' 7778 0000 7777 ;;
-                                        </p>
-                                        <p>
-                                                *)
-                                        </p>
-                                        <p>
-                                                seq -w 0000 7777 ;;
-                                        </p>
-                                        <p>
-                                                esac; } \
-                                        </p>
-                                        <p>
-                                                |sed '
-                                        </p>
-                                        <p>
-                                                /[89]/d
-                                        </p>
-                                        <p>
-                                                s,.*,printf '"'"'&amp; '"'"';chmod &amp; '"$1"';ls -l '"$1"'|sed s/-/./,' \
-                                        </p>
-                                        <p>
-                                                |sh \
-                                        </p>
-                                        <p>
-                                                |{
-                                        </p>
-                                        <p>
-                                                echo "lso(){";
-                                        </p>
-                                        <p>
-                                                echo "ls \$@ \\";
-                                        </p>
-                                        <p>
-                                                echo " |sed '";
-                                        </p>
-                                        <p>
-                                                sed '
-                                        </p>
-                                        <p>
-                                                s, ,@,2;
-                                        </p>
-                                        <p>
-                                                s,@.*,,;
-                                        </p>
-                                        <p>
-                                                s,\(.* \)\(.*\),s/\2/\1/,;
-                                        </p>
-                                        <p>
-                                                s, ,,';
-                                        </p>
-                                        <p>
-                                                echo \';
-                                        </p>
-                                        <p>
-                                                echo };
-                                        </p>
-                                        <p>
-                                                };
-                                        </p>
-                                        <p>
-                                                ;;
-                                        </p>
-                                        <p>
-                                                *)
-                                        </p>
-                                        <p>
-                                                echo "usage: lso tmp-file";
-                                        </p>
-                                        <p>
-                                                ;;
-                                        </p>
-                                        <p>
-                                                esac;
-                                        </p>
-                                        <p>
-                                                }
-                                        </p>
-                                        <p>
-                                                this won't print out types[1]. but its purpose is not to examine types. its focus is on mode and its purpose is to make mode easier to read (assuming one finds octal easier to read).
-                                        </p>
-                                        <p>
-                                                1. one could of course argue "everything is a file", but not always a "regular" one. e.g., a "directory" is really just a file comprising a list.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ls -l | sed -e 's/--x/1/g' -e 's/-w-/2/g' -e 's/-wx/3/g' -e 's/r--/4/g' -e 's/r-x/5/g' -e 's/rw-/6/g' -e 's/rwx/7/g' -e 's/---/0/g'
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Wonderful.
-                        </p>
-                        <p>
-                                Share a website with you ,
-                        </p>
-                        <p>
-                                ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
-                        </p>
-                        <p>
-                                Believe you will love it.
-                        </p>
-                        <p>
-                                We accept any form of payment.
-                        </p>
-                        <p>
-                                <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
-                        </p>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					one of the solutions from this stackexchange: <a href="http://unix.stackexchange.com/questions/71585/convert-ls-l-output-format-to-chmod-format" rel="nofollow">http://unix.stackexchange.com/questions/71585/convert-ls-l-output-format-to-chmod-format</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					lso(){ jot -w '%04d' 7778 0000 7777 |sed '/[89]/d;s,.*,printf '"'"'&amp; '"'"';chmod &amp; '"$1"';ls -l '"$1"'|sed s/-/./,' \ |sh \ |{ echo "lso(){";echo "ls \$@ \\";echo " |sed '";sed 's, ,@,2;s,@.*,,;s,\(.* \)\(.*\),s/\2/\1/,;s, ,,';echo \';echo };};}
+				</div>
+				<div class="details description">
+					<p>
+						this requires the use of a throwaway file.
+					</p>
+					<p>
+						it outputs a shell function.
+					</p>
+					<p>
+						assuming the throwaway file is f.tmp
+					</p>
+					<p>
+						usage: &gt;f.tmp;lso f.tmp &gt; f.tmp; . f.tmp;rm f.tmp;lso -l ...
+					</p>
+					<p>
+						notes:
+					</p>
+					<p>
+						credit epons.org for the idea. however his version did not account for the sticky bit and other special cases.
+					</p>
+					<p>
+						many of the 4096 permutations of file permissions make no practical sense. but chmod will still create them.
+					</p>
+					<p>
+						one can achieve the same sort of octal output with stat(1), if that utility is available.
+					</p>
+					<p>
+						here's another version to account for systems with seq(1) instead of jot(1):
+					</p>
+					<p>
+						lso(){
+					</p>
+					<p>
+						case $# in
+					</p>
+					<p>
+						1)
+					</p>
+					<p>
+						{ case $(uname) in
+					</p>
+					<p>
+						FreeBSD)
+					</p>
+					<p>
+						jot -w '%04d' 7778 0000 7777 ;;
+					</p>
+					<p>
+						*)
+					</p>
+					<p>
+						seq -w 0000 7777 ;;
+					</p>
+					<p>
+						esac; } \
+					</p>
+					<p>
+						|sed '
+					</p>
+					<p>
+						/[89]/d
+					</p>
+					<p>
+						s,.*,printf '"'"'&amp; '"'"';chmod &amp; '"$1"';ls -l '"$1"'|sed s/-/./,' \
+					</p>
+					<p>
+						|sh \
+					</p>
+					<p>
+						|{
+					</p>
+					<p>
+						echo "lso(){";
+					</p>
+					<p>
+						echo "ls \$@ \\";
+					</p>
+					<p>
+						echo " |sed '";
+					</p>
+					<p>
+						sed '
+					</p>
+					<p>
+						s, ,@,2;
+					</p>
+					<p>
+						s,@.*,,;
+					</p>
+					<p>
+						s,\(.* \)\(.*\),s/\2/\1/,;
+					</p>
+					<p>
+						s, ,,';
+					</p>
+					<p>
+						echo \';
+					</p>
+					<p>
+						echo };
+					</p>
+					<p>
+						};
+					</p>
+					<p>
+						;;
+					</p>
+					<p>
+						*)
+					</p>
+					<p>
+						echo "usage: lso tmp-file";
+					</p>
+					<p>
+						;;
+					</p>
+					<p>
+						esac;
+					</p>
+					<p>
+						}
+					</p>
+					<p>
+						this won't print out types[1]. but its purpose is not to examine types. its focus is on mode and its purpose is to make mode easier to read (assuming one finds octal easier to read).
+					</p>
+					<p>
+						1. one could of course argue "everything is a file", but not always a "regular" one. e.g., a "directory" is really just a file comprising a list.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ls -l | sed -e 's/--x/1/g' -e 's/-w-/2/g' -e 's/-wx/3/g' -e 's/r--/4/g' -e 's/r-x/5/g' -e 's/rw-/6/g' -e 's/rwx/7/g' -e 's/---/0/g'
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Wonderful.
+			</p>
+			<p>
+				Share a website with you ,
+			</p>
+			<p>
+				( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
+			</p>
+			<p>
+				Believe you will love it.
+			</p>
+			<p>
+				We accept any form of payment.
+			</p>
+			<p>
+				<a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
+			</p>
+		</div>
+	</body>
 </html>

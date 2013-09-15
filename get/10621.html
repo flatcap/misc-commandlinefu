@@ -1,54 +1,54 @@
 <html>
-        <head>
-                <title>
-                        Rename files with unique, randomly generated file names
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Rename files with unique, randomly generated file names
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                for i in *.txt; do j=`mktemp | awk -F. '{print $2".txt"}'`; mv "$i" "$j"; done
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Rename files with unique, randomly generated file names
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Rename files with unique, randomly generated file names
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				for i in *.txt; do j=`mktemp | awk -F. '{print $2".txt"}'`; mv "$i" "$j"; done
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 hosts1.txt PjbKxiUXXM.txt
 hosts2.txt q7qf8z15fx.txt
 hosts3.txt qsIazSCGHm.txt
 hosts4.txt GCWoo6oqMJ.txt
 hosts5.txt 9CHc4MfCYM.txt
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        A simple way to rename a set of files to a unique, randomized file name.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Hmm... It works, but it's a bit messy.
-                        </p>
-                        <p>
-                                First of all, stop mktemp creating files that we don't use:
-                        </p><code>mktemp -u</code>
-                        <p>
-                                Then use bash to replace awk (strip out everything (*) until dot):
-                        </p><code>${filename##*.}.txt</code>
-                        <p>
-                                That leaves us with:
-                        </p><code>for i in *.txt; do F=$(mktemp -u); mv "$i" ${F##*.}.txt; done</code>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					A simple way to rename a set of files to a unique, randomized file name.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Hmm... It works, but it's a bit messy.
+			</p>
+			<p>
+				First of all, stop mktemp creating files that we don't use:
+			</p><code>mktemp -u</code>
+			<p>
+				Then use bash to replace awk (strip out everything (*) until dot):
+			</p><code>${filename##*.}.txt</code>
+			<p>
+				That leaves us with:
+			</p><code>for i in *.txt; do F=$(mktemp -u); mv "$i" ${F##*.}.txt; done</code>
+		</div>
+	</body>
 </html>

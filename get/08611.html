@@ -1,37 +1,37 @@
 <html>
-        <head>
-                <title>
-                        have tar decide compression based on filename
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                have tar decide compression based on filename
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                tar -caf some_dir.tar.xz some_dir
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        the -a flag causes tar to automatically pick the right compressor to filter the archive through, based on the file extension. e.g.
-                                </p>
-                                <p>
-                                        "tar -xaf archive.tar.xz" is equivalent to "tar -xJf archive.tar.xz"
-                                </p>
-                                <p>
-                                        "tar -xaf archive.tar.gz" is equivalent to "tar -xzf archive.tar.gz"
-                                </p>
-                                <p>
-                                        No need to remember -z is gzip, -j is bzip2, -Z is .Z, -J is xz, and so on :)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			have tar decide compression based on filename
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				have tar decide compression based on filename
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				tar -caf some_dir.tar.xz some_dir
+			</div>
+			<div class="details description">
+				<p>
+					the -a flag causes tar to automatically pick the right compressor to filter the archive through, based on the file extension. e.g.
+				</p>
+				<p>
+					"tar -xaf archive.tar.xz" is equivalent to "tar -xJf archive.tar.xz"
+				</p>
+				<p>
+					"tar -xaf archive.tar.gz" is equivalent to "tar -xzf archive.tar.gz"
+				</p>
+				<p>
+					No need to remember -z is gzip, -j is bzip2, -Z is .Z, -J is xz, and so on :)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

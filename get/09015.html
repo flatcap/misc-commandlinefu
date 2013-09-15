@@ -1,62 +1,62 @@
 <html>
-        <head>
-                <title>
-                        Find the most recently changed files (recursively)
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Find the most recently changed files (recursively)
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find . -type f -printf '%TY-%Tm-%Td %TT %p\n' | sort
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        What's wrong with
-                                </p><code>ls -lR |sort -r -k6</code>
-                                <p>
-                                        ... or are there some implementations of /bin/ls that don't use metric YYYY-MM-DD HH:mm for the date format?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        @Mozai: that command spits out a lot of extra stuff in my evaluation (on OS X 10.6.8):
-                                </p>
-                                <p>
-                                        total 96
-                                </p>
-                                <p>
-                                        total 88
-                                </p>
-                                <p>
-                                        total 8
-                                </p>
-                                <p>
-                                        total 8
-                                </p>
-                                <p>
-                                        ? etc ?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        why not just use the -mtime flag ?
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Find the most recently changed files (recursively)
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Find the most recently changed files (recursively)
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find . -type f -printf '%TY-%Tm-%Td %TT %p\n' | sort
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					What's wrong with
+				</p><code>ls -lR |sort -r -k6</code>
+				<p>
+					... or are there some implementations of /bin/ls that don't use metric YYYY-MM-DD HH:mm for the date format?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					@Mozai: that command spits out a lot of extra stuff in my evaluation (on OS X 10.6.8):
+				</p>
+				<p>
+					total 96
+				</p>
+				<p>
+					total 88
+				</p>
+				<p>
+					total 8
+				</p>
+				<p>
+					total 8
+				</p>
+				<p>
+					? etc ?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					why not just use the -mtime flag ?
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

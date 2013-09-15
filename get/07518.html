@@ -1,90 +1,90 @@
 <html>
-        <head>
-                <title>
-                        stderr in color
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                stderr in color
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                mycommand 2&gt; &gt;(while read line; do echo -e "\e[01;31m$line\e[0m"; done)
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        in case you run some command in CLI and would like to take read strerr little bit better, you can use the following command. It's also possible to grep it if necessary....
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Can this be applied to the shell as well so that you set it once and it works for all subsequent commands?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        This can be made into a function like so:
-                                </p><code>function red_error {</code> <code>"$@" 2&gt; &gt;(while read line; do echo -e "\e[01;31m$line\e[0m"; done)</code> <code>}</code>
-                                <p>
-                                        Then for example:
-                                </p><code>red_error tar tvf some_file.tgz</code>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Enter the function and the following into your .bashrc.
-                                </p><code>bind 'RETURN: "\e[1~error \e[4~\n"'</code>
-                                <p>
-                                        See <a href="http://superuser.com/questions/117227/a-command-before-every-bash-command" rel="nofollow">http://superuser.com/questions/117227/a-command-before-every-bash-command</a> for more info
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        replace 'error' with the name of the function, in 'dstahlke''s case 'red_error'
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Hmm, it seems to interfere with 'read'
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        It won't die when you hit Ctrl-C. You have to kill a bash process which is a child of the command being run...
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Another odd option:
-                                </p><code>exec 3&gt; &gt;(while read line; do echo -e "\e[01;31m$line\e[0m"; done)</code> <code>some_command 2&gt;&amp;3</code>
-                                <p>
-                                        stderr from some_command will be displayed in red. This opens file handle #3 and pipes it to the subshell until that file handle is closed with exec 3&gt;&amp;-
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Note that doing:
-                                </p><code>exec 2&gt; &gt;(while read line; do echo -e "\e[01;31m$line\e[0m"; done)</code>
-                                <p>
-                                        Will make the shell do exectly what is wanted. all stderr displays in red and stdout displays normally for the shell and commands executed in the shell. Unfortunately is also has the effect of not displaying the prompt and any input until input is completed. Anyone know how to get around this?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Faster to color with command: grep --color=auto '.*'
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			stderr in color
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				stderr in color
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				mycommand 2&gt; &gt;(while read line; do echo -e "\e[01;31m$line\e[0m"; done)
+			</div>
+			<div class="details description">
+				<p>
+					in case you run some command in CLI and would like to take read strerr little bit better, you can use the following command. It's also possible to grep it if necessary....
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Can this be applied to the shell as well so that you set it once and it works for all subsequent commands?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					This can be made into a function like so:
+				</p><code>function red_error {</code> <code>"$@" 2&gt; &gt;(while read line; do echo -e "\e[01;31m$line\e[0m"; done)</code> <code>}</code>
+				<p>
+					Then for example:
+				</p><code>red_error tar tvf some_file.tgz</code>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Enter the function and the following into your .bashrc.
+				</p><code>bind 'RETURN: "\e[1~error \e[4~\n"'</code>
+				<p>
+					See <a href="http://superuser.com/questions/117227/a-command-before-every-bash-command" rel="nofollow">http://superuser.com/questions/117227/a-command-before-every-bash-command</a> for more info
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					replace 'error' with the name of the function, in 'dstahlke''s case 'red_error'
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Hmm, it seems to interfere with 'read'
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					It won't die when you hit Ctrl-C. You have to kill a bash process which is a child of the command being run...
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Another odd option:
+				</p><code>exec 3&gt; &gt;(while read line; do echo -e "\e[01;31m$line\e[0m"; done)</code> <code>some_command 2&gt;&amp;3</code>
+				<p>
+					stderr from some_command will be displayed in red. This opens file handle #3 and pipes it to the subshell until that file handle is closed with exec 3&gt;&amp;-
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Note that doing:
+				</p><code>exec 2&gt; &gt;(while read line; do echo -e "\e[01;31m$line\e[0m"; done)</code>
+				<p>
+					Will make the shell do exectly what is wanted. all stderr displays in red and stdout displays normally for the shell and commands executed in the shell. Unfortunately is also has the effect of not displaying the prompt and any input until input is completed. Anyone know how to get around this?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Faster to color with command: grep --color=auto '.*'
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

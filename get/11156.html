@@ -1,46 +1,46 @@
 <html>
-        <head>
-                <title>
-                        Better git diff, word delimited and colorized
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Better git diff, word delimited and colorized
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                git config alias.dcolor "diff --color-words"
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Define a git alias then git dcolor
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        git diff -U10 |wdiff --diff-input -a -n -w $'\e[1;91m' -x $'\e[0m' -y $'\e[1;94m' -z $'\e[0m' |less -R
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                I've been using colordiff for years. wdiff is the new fav, except its colors. Word delimited diffs are more interleaved, easing the chore of associating big blocks of changes.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        git diff -U10|dwdiff --diff-input -c|less -R
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Better git diff, word delimited and colorized
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Better git diff, word delimited and colorized
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				git config alias.dcolor "diff --color-words"
+			</div>
+			<div class="details description">
+				<p>
+					Define a git alias then git dcolor
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					git diff -U10 |wdiff --diff-input -a -n -w $'\e[1;91m' -x $'\e[0m' -y $'\e[1;94m' -z $'\e[0m' |less -R
+				</div>
+				<div class="details description">
+					<p>
+						I've been using colordiff for years. wdiff is the new fav, except its colors. Word delimited diffs are more interleaved, easing the chore of associating big blocks of changes.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					git diff -U10|dwdiff --diff-input -c|less -R
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+	</body>
 </html>

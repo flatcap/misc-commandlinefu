@@ -1,41 +1,41 @@
 <html>
-        <head>
-                <title>
-                        Prettify an XML file
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Prettify an XML file
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                xmllint --format --xmlout --nsclean <span>&lt;file&gt;</span>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Like `tidy`, `xmllint` can be used to prettify XML files.
-                                </p>
-                                <p>
-                                        The --nsclean option is also useful to remove redundant namespaces.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                tidy -xml -i -m [file]
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Generated XML files often are poorly formatted. Use this command to properly indent and normalize the file in-place.
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Prettify an XML file
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Prettify an XML file
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				xmllint --format --xmlout --nsclean <span>&lt;file&gt;</span>
+			</div>
+			<div class="details description">
+				<p>
+					Like `tidy`, `xmllint` can be used to prettify XML files.
+				</p>
+				<p>
+					The --nsclean option is also useful to remove redundant namespaces.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				tidy -xml -i -m [file]
+			</div>
+			<div class="details description">
+				<p>
+					Generated XML files often are poorly formatted. Use this command to properly indent and normalize the file in-place.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

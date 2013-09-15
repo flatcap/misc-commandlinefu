@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Display $PATH with one line per entry
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Display $PATH with one line per entry
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo -e ${PATH//:/\\n} | less
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Display $PATH with one line per entry
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Display $PATH with one line per entry
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo -e ${PATH//:/\\n} | less
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 /home/nicoulaj/bin
 /usr/local/sbin
 /usr/local/bin
@@ -27,44 +27,44 @@
 /usr/games
 (END)
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Display the $PATH with one line per entry, in a pager.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        printf "%s\n" ${PATH//:/\/* }
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        in bash hit "tab" twice and answer y
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <code>echo -e ${PATH//:/\\n} | less</code>
-                        <p>
-                                The -e option is not standard. Use printf:
-                        </p>
-                        <p>
-                                printf "%b\n" ${PATH//:/\\n}
-                        </p>
-                        <p>
-                                OK, the // replacement is not standard, either, but it works on ksh93 where the -e option to echo doesn't.
-                        </p>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Display the $PATH with one line per entry, in a pager.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					printf "%s\n" ${PATH//:/\/* }
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					in bash hit "tab" twice and answer y
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<code>echo -e ${PATH//:/\\n} | less</code>
+			<p>
+				The -e option is not standard. Use printf:
+			</p>
+			<p>
+				printf "%b\n" ${PATH//:/\\n}
+			</p>
+			<p>
+				OK, the // replacement is not standard, either, but it works on ksh93 where the -e option to echo doesn't.
+			</p>
+		</div>
+	</body>
 </html>

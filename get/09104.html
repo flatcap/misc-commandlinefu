@@ -1,68 +1,68 @@
 <html>
-        <head>
-                <title>
-                        save command output to image
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                save command output to image
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ifconfig | convert label:@- ip.png
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			save command output to image
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				save command output to image
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ifconfig | convert label:@- ip.png
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 ifconfig | convert -background none label:@- miff:- | composite -tile pattern:checkerboard - -compose Dst_Over ip.png
 </pre>
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Cool
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Or if you're using the newer, GraphicsMagick:
-                                </p><code>ifconfig | gm convert label:@- ip.png</code>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Not sure how to determine the default font, but you can use other typefaces.
-                                </p><code>convert -list font |grep Font:</code>
-                                <p>
-                                        will give you the list of names you can use with "-font"
-                                </p>
-                                <p>
-                                        I strongly recommend using a monospaced font, like FreeMono-Medium or Liberation-Mono-Regular for command output.
-                                </p>
-                                <p>
-                                        Can be useful for making a "screenshot" of what a website looks like in text-only mode:
-                                </p><code>/usr/bin/lynx -dump -nolist http://www.commandlinefu.com/ | /usr/bin/convert -font "FreeMono-Medium" label:@- output.png</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Awesome
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Great command :)
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Cool
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Or if you're using the newer, GraphicsMagick:
+				</p><code>ifconfig | gm convert label:@- ip.png</code>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Not sure how to determine the default font, but you can use other typefaces.
+				</p><code>convert -list font |grep Font:</code>
+				<p>
+					will give you the list of names you can use with "-font"
+				</p>
+				<p>
+					I strongly recommend using a monospaced font, like FreeMono-Medium or Liberation-Mono-Regular for command output.
+				</p>
+				<p>
+					Can be useful for making a "screenshot" of what a website looks like in text-only mode:
+				</p><code>/usr/bin/lynx -dump -nolist http://www.commandlinefu.com/ | /usr/bin/convert -font "FreeMono-Medium" label:@- output.png</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Awesome
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Great command :)
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

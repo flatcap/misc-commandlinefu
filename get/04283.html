@@ -1,124 +1,124 @@
 <html>
-        <head>
-                <title>
-                        recursive search and replace old with new string, inside files
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                recursive search and replace old with new string, inside files
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find . -type f -exec sed -i s/oldstring/newstring/g {} +
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command find all files in the current dir and subdirs, and replace all occurances of "oldstring" in every file with "newstring".
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        $ grep -rl oldstring . |xargs sed -i -e 's/oldstring/newstring/'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                recursively traverse the directory structure from . down, look for string "oldstring" in all files, and replace it with "newstring", wherever found
-                                        </p>
-                                        <p>
-                                                also:
-                                        </p><code>grep -rl oldstring . |xargs perl -pi~ -e 's/oldstring/newstring'</code>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        grep -rl oldstring . | parallel sed -i -e 's/oldstring/newstring/'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                xargs deals badly with special characters (such as space, ' and "). To see the problem try this:
-                                        </p>
-                                        <p>
-                                                touch important_file
-                                        </p>
-                                        <p>
-                                                touch 'not important_file'
-                                        </p>
-                                        <p>
-                                                ls not* | xargs rm
-                                        </p>
-                                        <p>
-                                                Parallel https://savannah.nongnu.org/projects/parallel/ does not have this problem.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        grep -rlZ oldstring . | xargs -0 sed -i -e 's/oldstring/newstring/'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Using -Z with grep and -0 with xargs handles file names with spaces and special characters.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        replace old new -- `find -type f`
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Search and replace recursively. :-) Shorter and simpler than the others. And allows more terms:
-                                        </p>
-                                        <p>
-                                                replace old new [old new ...] -- `find -type f`
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Using sed you can use the 'g' option in case there is more than one occurance of the "oldstring" in the matching sentence.
-                                </p>
-                                <p>
-                                        Also find has the '+' sign to behave like using xargs.
-                                </p><code>find . -type f -exec sed -i "s/oldstring/newstring/g" {} +;</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Without the "/g" sed will replace the first occurrence of oldstring in each line, not the first in each file.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Thanks for the tip, using + is much faster, guess it's because + doesn't start sed more than once, I've changed the command accordingly.
-                                </p>
-                                <p>
-                                        Using "g" with sed is already explained in the comment of the command
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Thanks for the knowlege johnraff, didn't see your comment before I posted, changed the command and description accordingly.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Don't you need a semicolon (;) at the end?
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			recursive search and replace old with new string, inside files
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				recursive search and replace old with new string, inside files
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find . -type f -exec sed -i s/oldstring/newstring/g {} +
+			</div>
+			<div class="details description">
+				<p>
+					This command find all files in the current dir and subdirs, and replace all occurances of "oldstring" in every file with "newstring".
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					$ grep -rl oldstring . |xargs sed -i -e 's/oldstring/newstring/'
+				</div>
+				<div class="details description">
+					<p>
+						recursively traverse the directory structure from . down, look for string "oldstring" in all files, and replace it with "newstring", wherever found
+					</p>
+					<p>
+						also:
+					</p><code>grep -rl oldstring . |xargs perl -pi~ -e 's/oldstring/newstring'</code>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					grep -rl oldstring . | parallel sed -i -e 's/oldstring/newstring/'
+				</div>
+				<div class="details description">
+					<p>
+						xargs deals badly with special characters (such as space, ' and "). To see the problem try this:
+					</p>
+					<p>
+						touch important_file
+					</p>
+					<p>
+						touch 'not important_file'
+					</p>
+					<p>
+						ls not* | xargs rm
+					</p>
+					<p>
+						Parallel https://savannah.nongnu.org/projects/parallel/ does not have this problem.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					grep -rlZ oldstring . | xargs -0 sed -i -e 's/oldstring/newstring/'
+				</div>
+				<div class="details description">
+					<p>
+						Using -Z with grep and -0 with xargs handles file names with spaces and special characters.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					replace old new -- `find -type f`
+				</div>
+				<div class="details description">
+					<p>
+						Search and replace recursively. :-) Shorter and simpler than the others. And allows more terms:
+					</p>
+					<p>
+						replace old new [old new ...] -- `find -type f`
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Using sed you can use the 'g' option in case there is more than one occurance of the "oldstring" in the matching sentence.
+				</p>
+				<p>
+					Also find has the '+' sign to behave like using xargs.
+				</p><code>find . -type f -exec sed -i "s/oldstring/newstring/g" {} +;</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Without the "/g" sed will replace the first occurrence of oldstring in each line, not the first in each file.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Thanks for the tip, using + is much faster, guess it's because + doesn't start sed more than once, I've changed the command accordingly.
+				</p>
+				<p>
+					Using "g" with sed is already explained in the comment of the command
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Thanks for the knowlege johnraff, didn't see your comment before I posted, changed the command and description accordingly.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Don't you need a semicolon (;) at the end?
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

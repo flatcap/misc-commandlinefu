@@ -1,171 +1,171 @@
 <html>
-        <head>
-                <title>
-                        Copy ssh keys to user@host to enable password-less ssh logins.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Copy ssh keys to user@host to enable password-less ssh logins.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command-dangerous">
-                                $ssh-copy-id user@host
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        To generate the keys use the command ssh-keygen
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ssh-copy-id username@hostname
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        cat ~/.ssh/id_rsa.pub | ssh user@machine "mkdir ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys"
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                If you use Mac OS X or some other *nix variant that doesn't come with ssh-copy-id, this one-liner will allow you to add your public key to a remote machine so you can subsequently ssh to that machine without a password.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ssh-copy-id -i .ssh/id_rsa.pub user@server
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ssh-copy-id user@host
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Same as original just no $ at start
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        cat ~/.ssh/id_rsa.pub | ssh user@host 'cat &gt;&gt; ~/.ssh/authorized_keys'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Alternative for machines without ssh-copy-id
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        If you need change default port ssh, you can use:
-                                </p>
-                                <p>
-                                        ssh-copy-id 'user@host -p2233'
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I think this isn't normally found outside Ubuntu or Debian systems.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Alternativly you can use ?cat ~/.ssh/*.pub | ssh user@remote-system 'umask 077; cat &gt;&gt;.ssh/authorized_keys'? on such systems.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        ... without the question marks (?) of course.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Beware : without arguments it copies your identity.pub file, which is by default a RSA1 pub key (obsolete), unless you have already executed ssh-agent, added your keys, so that ssh-add -L returns something.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Works on RedHat-like systems
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Also works on Gentoo, it's contained in openssh package.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        doesn't work across all unix OS. Or is there some installation needed?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <code>cat ~/.ssh/id_dsa.pub | ssh user@remotehost 'cat &gt;&gt; ~/.ssh/authorized_keys</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        ssh-copy-id is just a script. If you don't have it you can google it easily ehough. Using the above cat is easier though. OS X doesn't bundle ssh-copy-id so I always use the cat version.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        This does not work on CentOS 5.3:
-                                </p><code>ssh-add -L</code>
-                                <p>
-                                        The agent has no identities.
-                                </p>
-                                <p>
-                                        So, this tip requires at least some readme on setting up said ssh-copy-id
-                                </p>
-                                <p>
-                                        Quick reading of man ssh-agent did not result in much enlightenment for me.
-                                </p>
-                                <p>
-                                        On the other hand the
-                                </p>
-                                <p>
-                                        cat ~/.ssh/*.pub | ssh user@remote-system 'umask 077; cat &gt;&gt;.ssh/authorized_keys'
-                                </p>
-                                <p>
-                                        is easy to understand and certainly works....
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        vleolml, ssh-copy-id does exist on both Ubuntu 8.x and CentOS 5.x.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        As always, read the man page carefully before using this command. It does a bit more than just copying your public key. It also modifies the permissions of ~ and ~/.ssh, which may not be what you want if for example the recipient of your key is user postgres on the remote box.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        For OSX using Homebrew: there is a Formula for this: <a href="http://mxcl.github.com/homebrew/" rel="nofollow">http://mxcl.github.com/homebrew/</a>
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        thanks man this will help me :)
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Copy ssh keys to user@host to enable password-less ssh logins.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Copy ssh keys to user@host to enable password-less ssh logins.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command-dangerous">
+				$ssh-copy-id user@host
+			</div>
+			<div class="details description">
+				<p>
+					To generate the keys use the command ssh-keygen
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					ssh-copy-id username@hostname
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					cat ~/.ssh/id_rsa.pub | ssh user@machine "mkdir ~/.ssh; cat &gt;&gt; ~/.ssh/authorized_keys"
+				</div>
+				<div class="details description">
+					<p>
+						If you use Mac OS X or some other *nix variant that doesn't come with ssh-copy-id, this one-liner will allow you to add your public key to a remote machine so you can subsequently ssh to that machine without a password.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ssh-copy-id -i .ssh/id_rsa.pub user@server
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ssh-copy-id user@host
+				</div>
+				<div class="details description">
+					<p>
+						Same as original just no $ at start
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					cat ~/.ssh/id_rsa.pub | ssh user@host 'cat &gt;&gt; ~/.ssh/authorized_keys'
+				</div>
+				<div class="details description">
+					<p>
+						Alternative for machines without ssh-copy-id
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					If you need change default port ssh, you can use:
+				</p>
+				<p>
+					ssh-copy-id 'user@host -p2233'
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I think this isn't normally found outside Ubuntu or Debian systems.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Alternativly you can use ?cat ~/.ssh/*.pub | ssh user@remote-system 'umask 077; cat &gt;&gt;.ssh/authorized_keys'? on such systems.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					... without the question marks (?) of course.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Beware : without arguments it copies your identity.pub file, which is by default a RSA1 pub key (obsolete), unless you have already executed ssh-agent, added your keys, so that ssh-add -L returns something.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Works on RedHat-like systems
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Also works on Gentoo, it's contained in openssh package.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					doesn't work across all unix OS. Or is there some installation needed?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<code>cat ~/.ssh/id_dsa.pub | ssh user@remotehost 'cat &gt;&gt; ~/.ssh/authorized_keys</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					ssh-copy-id is just a script. If you don't have it you can google it easily ehough. Using the above cat is easier though. OS X doesn't bundle ssh-copy-id so I always use the cat version.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					This does not work on CentOS 5.3:
+				</p><code>ssh-add -L</code>
+				<p>
+					The agent has no identities.
+				</p>
+				<p>
+					So, this tip requires at least some readme on setting up said ssh-copy-id
+				</p>
+				<p>
+					Quick reading of man ssh-agent did not result in much enlightenment for me.
+				</p>
+				<p>
+					On the other hand the
+				</p>
+				<p>
+					cat ~/.ssh/*.pub | ssh user@remote-system 'umask 077; cat &gt;&gt;.ssh/authorized_keys'
+				</p>
+				<p>
+					is easy to understand and certainly works....
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					vleolml, ssh-copy-id does exist on both Ubuntu 8.x and CentOS 5.x.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					As always, read the man page carefully before using this command. It does a bit more than just copying your public key. It also modifies the permissions of ~ and ~/.ssh, which may not be what you want if for example the recipient of your key is user postgres on the remote box.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					For OSX using Homebrew: there is a Formula for this: <a href="http://mxcl.github.com/homebrew/" rel="nofollow">http://mxcl.github.com/homebrew/</a>
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					thanks man this will help me :)
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,80 +1,80 @@
 <html>
-        <head>
-                <title>
-                        make, or run a script, everytime a file in a directory is modified
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                make, or run a script, everytime a file in a directory is modified
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                while true; do inotifywait -r -e MODIFY dir/ &amp;&amp; make; done;
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Uses inotifywait from inotify-tools ( <a href="http://wiki.github.com/rvoicilas/inotify-tools/" rel="nofollow">http://wiki.github.com/rvoicilas/inotify-tools/</a> ), that is compatible only with linux.
-                                </p>
-                                <p>
-                                        Usefull when you work with files that have to be compiled.. latex, haml, c..
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ontouchdo(){ while :; do a=$(stat -c%Y "$1"); [ "$b" != "$a" ] &amp;&amp; b="$a" &amp;&amp; sh -c "$2"; sleep 1; done }
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This is useful if you'd like to see the output of a script while you edit it. Each time you save the file the command is executed. I thought for sure something like this already exists - and it probably does. I'm on an older system and tend to be missing some useful things.
-                                        </p>
-                                        <p>
-                                                Examples:
-                                        </p><code>ontouchdo yourscript 'clear; yourscript somefiletoparse'</code>
-                                        <p>
-                                                Edit yourscript in a separate window and see new results each time you save.
-                                        </p><code>ontouchdo crufty.html 'clear; xmllint --noout crufty.html 2&gt;&amp;1 | head'</code>
-                                        <p>
-                                                Keep editing krufty.html until the xmllint window is empty.
-                                        </p>
-                                        <p>
-                                                Note: Mac/bsd users should use stat -f%m. If you don't have stat, you can use perl -e '$f=shift; @s=stat($f); print "$s[9]\n";' $1
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        inotifywait -mrq -e CREATE --format %w%f /path/to/dir | while read FILE; do chmod g=u "$FILE"; done
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Listens for events in the directory. Each created file is displayed on stdout. Then each fileline is read by the loop and a command is run.
-                                        </p>
-                                        <p>
-                                                This can be used to force permissions in a directory, as an alternative for umask.
-                                        </p>
-                                        <p>
-                                                More details:
-                                        </p>
-                                        <p>
-                                                <a href="http://en.positon.org/post/A-solution-to-the-umask-problem%3A-inotify-to-force-permissions" rel="nofollow">http://en.positon.org/post/A-solution-to-the-umask-problem%3A-inotify-to-force-permissions</a>
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        while inotifywait -r -e MODIFY dir/; do make; done;
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			make, or run a script, everytime a file in a directory is modified
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				make, or run a script, everytime a file in a directory is modified
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				while true; do inotifywait -r -e MODIFY dir/ &amp;&amp; make; done;
+			</div>
+			<div class="details description">
+				<p>
+					Uses inotifywait from inotify-tools ( <a href="http://wiki.github.com/rvoicilas/inotify-tools/" rel="nofollow">http://wiki.github.com/rvoicilas/inotify-tools/</a> ), that is compatible only with linux.
+				</p>
+				<p>
+					Usefull when you work with files that have to be compiled.. latex, haml, c..
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					ontouchdo(){ while :; do a=$(stat -c%Y "$1"); [ "$b" != "$a" ] &amp;&amp; b="$a" &amp;&amp; sh -c "$2"; sleep 1; done }
+				</div>
+				<div class="details description">
+					<p>
+						This is useful if you'd like to see the output of a script while you edit it. Each time you save the file the command is executed. I thought for sure something like this already exists - and it probably does. I'm on an older system and tend to be missing some useful things.
+					</p>
+					<p>
+						Examples:
+					</p><code>ontouchdo yourscript 'clear; yourscript somefiletoparse'</code>
+					<p>
+						Edit yourscript in a separate window and see new results each time you save.
+					</p><code>ontouchdo crufty.html 'clear; xmllint --noout crufty.html 2&gt;&amp;1 | head'</code>
+					<p>
+						Keep editing krufty.html until the xmllint window is empty.
+					</p>
+					<p>
+						Note: Mac/bsd users should use stat -f%m. If you don't have stat, you can use perl -e '$f=shift; @s=stat($f); print "$s[9]\n";' $1
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					inotifywait -mrq -e CREATE --format %w%f /path/to/dir | while read FILE; do chmod g=u "$FILE"; done
+				</div>
+				<div class="details description">
+					<p>
+						Listens for events in the directory. Each created file is displayed on stdout. Then each fileline is read by the loop and a command is run.
+					</p>
+					<p>
+						This can be used to force permissions in a directory, as an alternative for umask.
+					</p>
+					<p>
+						More details:
+					</p>
+					<p>
+						<a href="http://en.positon.org/post/A-solution-to-the-umask-problem%3A-inotify-to-force-permissions" rel="nofollow">http://en.positon.org/post/A-solution-to-the-umask-problem%3A-inotify-to-force-permissions</a>
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					while inotifywait -r -e MODIFY dir/; do make; done;
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+	</body>
 </html>

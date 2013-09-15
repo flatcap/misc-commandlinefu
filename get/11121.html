@@ -1,77 +1,77 @@
 <html>
-        <head>
-                <title>
-                        Convert HH:MM:SS into seconds
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Convert HH:MM:SS into seconds
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo 00:29:36 | sed s/:/*60+/g | bc
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Convert HH:MM:SS into seconds
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Convert HH:MM:SS into seconds
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo 00:29:36 | sed s/:/*60+/g | bc
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 1776
 </pre>
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        echo 00:29:36 | nawk -F: '{seconds=($1*60)*60; seconds=seconds+($2*60); seconds=seconds+$3; print seconds}'
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        TZ=GMT date -d "1970/01/01 00:29:36" +%s
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        date -ud "1970/01/01 00:29:36" +%s
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                uses the -u switch for UTC
-                                        </p>
-                                        <p>
-                                                Another way could be
-                                        </p><code>echo $(($(date -ud "00:29:36" +%s)%86400))</code>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        &gt;echo 1:00:00 | sed s/:/*60+/g | bc
-                                </p>
-                                <p>
-                                        60
-                                </p>
-                                <p>
-                                        1 hour isn't 60 seconds.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        This handles the hours properly:
-                                </p><code>echo 01:29:36 | sed 's/^/((/; s/:/)*60+/g' | bc</code>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					echo 00:29:36 | nawk -F: '{seconds=($1*60)*60; seconds=seconds+($2*60); seconds=seconds+$3; print seconds}'
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					TZ=GMT date -d "1970/01/01 00:29:36" +%s
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					date -ud "1970/01/01 00:29:36" +%s
+				</div>
+				<div class="details description">
+					<p>
+						uses the -u switch for UTC
+					</p>
+					<p>
+						Another way could be
+					</p><code>echo $(($(date -ud "00:29:36" +%s)%86400))</code>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					&gt;echo 1:00:00 | sed s/:/*60+/g | bc
+				</p>
+				<p>
+					60
+				</p>
+				<p>
+					1 hour isn't 60 seconds.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					This handles the hours properly:
+				</p><code>echo 01:29:36 | sed 's/^/((/; s/:/)*60+/g' | bc</code>
+			</div>
+		</div>
+	</body>
 </html>

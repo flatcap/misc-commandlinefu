@@ -1,74 +1,74 @@
 <html>
-        <head>
-                <title>
-                        Replace Space In Filenames With Underscore
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Replace Space In Filenames With Underscore
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                for file in "* *"; do mv "${file}" "${file// /_}"; done
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        @ <a href="http://sgowtham.net/blog/2007/10/18/bash-replace-space-in-filenames-with-underscore/" rel="nofollow">http://sgowtham.net/blog/2007/10/18/bash-replace-space-in-filenames-with-underscore/</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                rename 's/ /_/g' *
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Replace Space In Filenames With Underscore
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Replace Space In Filenames With Underscore
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				for file in "* *"; do mv "${file}" "${file// /_}"; done
+			</div>
+			<div class="details description">
+				<p>
+					@ <a href="http://sgowtham.net/blog/2007/10/18/bash-replace-space-in-filenames-with-underscore/" rel="nofollow">http://sgowtham.net/blog/2007/10/18/bash-replace-space-in-filenames-with-underscore/</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				rename 's/ /_/g' *
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 for file in *; do echo mv "${file}" "${file// /_}"; done
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        rename is often an alias to prename, bundled with perl.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Erm... you forgot to edit out the "echo" after testing!
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Also, it complains about files with no spaces in them.
-                                </p><code>for file in "* *"; do mv "${file}" "${file// /_}"; done</code>
-                                <p>
-                                        is slightly better
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Use "detox": much better
-                                </p>
-                                <p>
-                                        <a href="http://www.commandlinefu.com/commands/view/1498/iso-8859-1-to-utf-8-safe-recursive-rename" rel="nofollow">http://www.commandlinefu.com/commands/view/1498/iso-8859-1-to-utf-8-safe-recursive-rename</a>
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        corrected
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					rename is often an alias to prename, bundled with perl.
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Erm... you forgot to edit out the "echo" after testing!
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Also, it complains about files with no spaces in them.
+				</p><code>for file in "* *"; do mv "${file}" "${file// /_}"; done</code>
+				<p>
+					is slightly better
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Use "detox": much better
+				</p>
+				<p>
+					<a href="http://www.commandlinefu.com/commands/view/1498/iso-8859-1-to-utf-8-safe-recursive-rename" rel="nofollow">http://www.commandlinefu.com/commands/view/1498/iso-8859-1-to-utf-8-safe-recursive-rename</a>
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					corrected
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

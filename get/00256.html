@@ -1,127 +1,127 @@
 <html>
-        <head>
-                <title>
-                        uniq for unsorted data
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                uniq for unsorted data
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk '!_[$0]++{print}'
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Maybe I'm missing something, but:
-                                </p>
-                                <p>
-                                        a - I can't see how this works
-                                </p>
-                                <p>
-                                        b - it doesn't seem to work
-                                </p>
-                                <p>
-                                        ...Create 3 line file test.txt:
-                                </p>
-                                <p>
-                                        '$ cat test.txt:
-                                </p>
-                                <p>
-                                        1
-                                </p>
-                                <p>
-                                        3
-                                </p>
-                                <p>
-                                        2
-                                </p>
-                                <p>
-                                        '$ awk '!_[$0]++{print}' test.txt
-                                </p>
-                                <p>
-                                        1
-                                </p>
-                                <p>
-                                        3
-                                </p>
-                                <p>
-                                        2
-                                </p>
-                                <p>
-                                        Am I being thick?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        How about:
-                                </p><code>sort -u</code>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        g__j: it does 'uniq' but without requiring (or doing) sorting;
-                                </p><code>cat &gt;test</code>
-                                <p>
-                                        1
-                                </p>
-                                <p>
-                                        3
-                                </p>
-                                <p>
-                                        2
-                                </p>
-                                <p>
-                                        3
-                                </p>
-                                <p>
-                                        1
-                                </p><code>awk '!_[$0]++{print}' &lt; test</code>
-                                <p>
-                                        1
-                                </p>
-                                <p>
-                                        3
-                                </p>
-                                <p>
-                                        2
-                                </p>
-                                <p>
-                                        You can actually shorten it to:
-                                </p><code>awk '!_[$0]++'</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        &gt;&gt;How about:
-                                </p>
-                                <p>
-                                        &gt;&gt;sort -u
-                                </p>
-                                <p>
-                                        I think this has several advantages:
-                                </p>
-                                <p>
-                                        * No need for the overhead of a sort
-                                </p>
-                                <p>
-                                        * Can be embedded in an awk conditional statement. for example:
-                                </p><code>printf "a\nb\na\nc\na\nc\n" | awk '{if(!_[$0]++){print}}'</code>
-                                <p>
-                                        * Can be inverted. To show only values that have been seen before. For example:
-                                </p><code>printf "a\nb\na\nc\na\nc\n" | awk '{if(_[$0]++){print}}'</code>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			uniq for unsorted data
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				uniq for unsorted data
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk '!_[$0]++{print}'
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Maybe I'm missing something, but:
+				</p>
+				<p>
+					a - I can't see how this works
+				</p>
+				<p>
+					b - it doesn't seem to work
+				</p>
+				<p>
+					...Create 3 line file test.txt:
+				</p>
+				<p>
+					'$ cat test.txt:
+				</p>
+				<p>
+					1
+				</p>
+				<p>
+					3
+				</p>
+				<p>
+					2
+				</p>
+				<p>
+					'$ awk '!_[$0]++{print}' test.txt
+				</p>
+				<p>
+					1
+				</p>
+				<p>
+					3
+				</p>
+				<p>
+					2
+				</p>
+				<p>
+					Am I being thick?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					How about:
+				</p><code>sort -u</code>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					g__j: it does 'uniq' but without requiring (or doing) sorting;
+				</p><code>cat &gt;test</code>
+				<p>
+					1
+				</p>
+				<p>
+					3
+				</p>
+				<p>
+					2
+				</p>
+				<p>
+					3
+				</p>
+				<p>
+					1
+				</p><code>awk '!_[$0]++{print}' &lt; test</code>
+				<p>
+					1
+				</p>
+				<p>
+					3
+				</p>
+				<p>
+					2
+				</p>
+				<p>
+					You can actually shorten it to:
+				</p><code>awk '!_[$0]++'</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					&gt;&gt;How about:
+				</p>
+				<p>
+					&gt;&gt;sort -u
+				</p>
+				<p>
+					I think this has several advantages:
+				</p>
+				<p>
+					* No need for the overhead of a sort
+				</p>
+				<p>
+					* Can be embedded in an awk conditional statement. for example:
+				</p><code>printf "a\nb\na\nc\na\nc\n" | awk '{if(!_[$0]++){print}}'</code>
+				<p>
+					* Can be inverted. To show only values that have been seen before. For example:
+				</p><code>printf "a\nb\na\nc\na\nc\n" | awk '{if(_[$0]++){print}}'</code>
+			</div>
+		</div>
+	</body>
 </html>

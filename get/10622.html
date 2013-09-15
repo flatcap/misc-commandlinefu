@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        Create a file of repeated, non-zero
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Create a file of repeated, non-zero
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                dd if=/dev/zero bs=64K count=1 | tr "\0" "\377" &gt; all_ones
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        dd can be used with /dev/zero to easily create a file of all zero-bytes. Pipe that through tr and use octal conversions to change the byte values from zero to 0xff (octal 0377). You can replace 0377 with the byte of your choice. You can also use \\0 and \\377 instead of the quoted version.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Create a file of repeated, non-zero
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Create a file of repeated, non-zero
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				dd if=/dev/zero bs=64K count=1 | tr "\0" "\377" &gt; all_ones
+			</div>
+			<div class="details description">
+				<p>
+					dd can be used with /dev/zero to easily create a file of all zero-bytes. Pipe that through tr and use octal conversions to change the byte values from zero to 0xff (octal 0377). You can replace 0377 with the byte of your choice. You can also use \\0 and \\377 instead of the quoted version.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

@@ -1,57 +1,57 @@
 <html>
-        <head>
-                <title>
-                        Get memory total from /proc/meminfo in Gigs
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Get memory total from /proc/meminfo in Gigs
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk '{ printf "%.2f", $2/1024/1024 ; exit}' /proc/meminfo
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Get memory total from /proc/meminfo in Gigs
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Get memory total from /proc/meminfo in Gigs
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk '{ printf "%.2f", $2/1024/1024 ; exit}' /proc/meminfo
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 1.72
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        when you can do it , avoid pipe
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        awk '( $1 == "MemTotal:" ) { print $2/1048576 }' /proc/meminfo
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        free -g
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        memnum=$(awk '{ print $2 }' /proc/meminfo |head -n1); echo "$memnum / 1024 / 1024" | bc -l
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Probably more trouble than its worth, but worked for the obscure need.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					when you can do it , avoid pipe
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					awk '( $1 == "MemTotal:" ) { print $2/1048576 }' /proc/meminfo
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					free -g
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					memnum=$(awk '{ print $2 }' /proc/meminfo |head -n1); echo "$memnum / 1024 / 1024" | bc -l
+				</div>
+				<div class="details description">
+					<p>
+						Probably more trouble than its worth, but worked for the obscure need.
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

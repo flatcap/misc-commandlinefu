@@ -1,36 +1,36 @@
 <html>
-        <head>
-                <title>
-                        Turns red the stderr output
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Turns red the stderr output
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                color()(set -o pipefail;"$@" 2&gt;&amp;1&gt;&amp;3|sed $'s,.*,\e[31m&amp;\e[m,'&gt;&amp;2)3&gt;&amp;1
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Turns red the stderr output
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Turns red the stderr output
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				color()(set -o pipefail;"$@" 2&gt;&amp;1&gt;&amp;3|sed $'s,.*,\e[31m&amp;\e[m,'&gt;&amp;2)3&gt;&amp;1
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 color ls &lt;non existent path&gt;
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Reference:
-                                </p>
-                                <p>
-                                        <a href="http://stackoverflow.com/a/4455706" rel="nofollow">http://stackoverflow.com/a/4455706</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Reference:
+				</p>
+				<p>
+					<a href="http://stackoverflow.com/a/4455706" rel="nofollow">http://stackoverflow.com/a/4455706</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

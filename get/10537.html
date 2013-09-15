@@ -1,58 +1,58 @@
 <html>
-        <head>
-                <title>
-                        multiline data block parse and CSV data extraction with perl
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                multiline data block parse and CSV data extraction with perl
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cat z.log | perl -ne 'BEGIN{ print "DATE;RATE\n"; } /\[(\d.*)\]/ &amp;&amp; print $1; /CURRENT RATE: +(\S+) msg.*/ &amp;&amp; print ";" .$1 . "\n"; '
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			multiline data block parse and CSV data extraction with perl
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				multiline data block parse and CSV data extraction with perl
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cat z.log | perl -ne 'BEGIN{ print "DATE;RATE\n"; } /\[(\d.*)\]/ &amp;&amp; print $1; /CURRENT RATE: +(\S+) msg.*/ &amp;&amp; print ";" .$1 . "\n"; '
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 from file:
 @SG: --------------------------------------------------------------------
 @SG: [pmphost6] [2012-04-02 21:23:59.268]
 @SG: --------------------------------------------------------------------
 @SG: [SAFEGUARD STATUS]
-@SG:   &gt; RATE THRESHOLD:           30 msg/sec
-@SG:   &gt; TIME TO LIVE:           1800 sec
-@SG:   &gt; CURRENT RATE:         43.017 msg/sec  2581.000 msg/min
-@SG:   &gt; ELAPSED TIME:             60 sec
-@SG:   &gt; TIME COUNT:                0 sec
+@SG:   &gt; RATE THRESHOLD:	   30 msg/sec
+@SG:   &gt; TIME TO LIVE:	   1800 sec
+@SG:   &gt; CURRENT RATE:	 43.017 msg/sec  2581.000 msg/min
+@SG:   &gt; ELAPSED TIME:	     60 sec
+@SG:   &gt; TIME COUNT:		0 sec
 @SG:   &gt; TIME TO LIVE COUNT:      360 sec
-@SG:   &gt; SAFEGUARD STATUS:         ON
+@SG:   &gt; SAFEGUARD STATUS:	 ON
 @SG: --------------------------------------------------------------------
 @SG: --------------------------------------------------------------------
 @SG: [pmphost6] [2012-04-02 21:24:59.268]
 @SG: --------------------------------------------------------------------
 @SG: [SAFEGUARD STATUS]
-@SG:   &gt; RATE THRESHOLD:           30 msg/sec
-@SG:   &gt; TIME TO LIVE:           1800 sec
-@SG:   &gt; CURRENT RATE:         42.417 msg/sec  2545.000 msg/min
-@SG:   &gt; ELAPSED TIME:             60 sec
-@SG:   &gt; TIME COUNT:                0 sec
+@SG:   &gt; RATE THRESHOLD:	   30 msg/sec
+@SG:   &gt; TIME TO LIVE:	   1800 sec
+@SG:   &gt; CURRENT RATE:	 42.417 msg/sec  2545.000 msg/min
+@SG:   &gt; ELAPSED TIME:	     60 sec
+@SG:   &gt; TIME COUNT:		0 sec
 @SG:   &gt; TIME TO LIVE COUNT:      420 sec
-@SG:   &gt; SAFEGUARD STATUS:         ON
+@SG:   &gt; SAFEGUARD STATUS:	 ON
 @SG: --------------------------------------------------------------------
 @SG: --------------------------------------------------------------------
 @SG: [pmphost6] [2012-04-02 21:25:59.269]
 @SG: --------------------------------------------------------------------
 @SG: [SAFEGUARD STATUS]
-@SG:   &gt; RATE THRESHOLD:           30 msg/sec
-@SG:   &gt; TIME TO LIVE:           1800 sec
-@SG:   &gt; CURRENT RATE:         42.833 msg/sec  2570.000 msg/min
-@SG:   &gt; ELAPSED TIME:             60 sec
-@SG:   &gt; TIME COUNT:                0 sec
+@SG:   &gt; RATE THRESHOLD:	   30 msg/sec
+@SG:   &gt; TIME TO LIVE:	   1800 sec
+@SG:   &gt; CURRENT RATE:	 42.833 msg/sec  2570.000 msg/min
+@SG:   &gt; ELAPSED TIME:	     60 sec
+@SG:   &gt; TIME COUNT:		0 sec
 @SG:   &gt; TIME TO LIVE COUNT:      480 sec
-@SG:   &gt; SAFEGUARD STATUS:         ON
+@SG:   &gt; SAFEGUARD STATUS:	 ON
 @SG: --------------------------------------------------------------------
 estract csv
 DATE;RATE
@@ -60,15 +60,15 @@ DATE;RATE
 2012-04-02 21:24:59.268;42.417
 2012-04-02 21:25:59.269;42.833
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        extract data in multiline blocks of data with perl pattern matching loop
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					extract data in multiline blocks of data with perl pattern matching loop
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

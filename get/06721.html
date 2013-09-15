@@ -1,69 +1,69 @@
 <html>
-        <head>
-                <title>
-                        Sort on multiple dis-contiguous keys/fields (can even specify key number/field from the end)
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Sort on multiple dis-contiguous keys/fields (can even specify key number/field from the end)
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                file /bin/* | msort -j -l -n-1 -n2 2&gt; /dev/null
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Sort on multiple dis-contiguous keys/fields (can even specify key number/field from the end)
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Sort on multiple dis-contiguous keys/fields (can even specify key number/field from the end)
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				file /bin/* | msort -j -l -n-1 -n2 2&gt; /dev/null
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 .
 .
-/bin/zgrep:                Bourne-Again shell script text executable
-/bin/zless:                Bourne-Again shell script text executable
-/bin/setupcon:             POSIX shell script text executable
-/bin/bzmore:               POSIX shell script text executable
-/bin/unicode_start:        POSIX shell script text executable
-/bin/which:                POSIX shell script text executable
+/bin/zgrep:		Bourne-Again shell script text executable
+/bin/zless:		Bourne-Again shell script text executable
+/bin/setupcon:	     POSIX shell script text executable
+/bin/bzmore:	       POSIX shell script text executable
+/bin/unicode_start:	POSIX shell script text executable
+/bin/which:		POSIX shell script text executable
 .
 .
-/bin/more:                 ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), for GNU/Linux 2.6.8, dynamically linked (uses shared libs), stripped
-/bin/false:                ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), for GNU/Linux 2.6.8, dynamically linked (uses shared libs), stripped
+/bin/more:		 ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), for GNU/Linux 2.6.8, dynamically linked (uses shared libs), stripped
+/bin/false:		ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), for GNU/Linux 2.6.8, dynamically linked (uses shared libs), stripped
 .
 .
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Notes:
-                                </p>
-                                <p>
-                                        1) -n-1 means sort key is the last field
-                                </p>
-                                <p>
-                                        2) -l is important if each separate record is on a new line (usually so for text files)
-                                </p>
-                                <p>
-                                        3) -j tells msort not to create log file (msort.log) in the working directory
-                                </p>
-                                <p>
-                                        4) may need to install msort package.
-                                </p>
-                                <p>
-                                        5) msort does lot more. Check man msort
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                It's in aptitude, for those of you who don't have it:
-                        </p><code>aptitude install msort</code>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Notes:
+				</p>
+				<p>
+					1) -n-1 means sort key is the last field
+				</p>
+				<p>
+					2) -l is important if each separate record is on a new line (usually so for text files)
+				</p>
+				<p>
+					3) -j tells msort not to create log file (msort.log) in the working directory
+				</p>
+				<p>
+					4) may need to install msort package.
+				</p>
+				<p>
+					5) msort does lot more. Check man msort
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				It's in aptitude, for those of you who don't have it:
+			</p><code>aptitude install msort</code>
+		</div>
+	</body>
 </html>

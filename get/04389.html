@@ -1,143 +1,143 @@
 <html>
-        <head>
-                <title>
-                        Remove duplicate entries in a file without sorting.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Remove duplicate entries in a file without sorting.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk '!x[$0]++' <span>&lt;file&gt;</span>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Using awk, find duplicates in a file without sorting, which reorders the contents. awk will not reorder them, and still find and remove duplicates which you can then redirect into another file.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        perl -ne 'print if !$a{$_}++'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Reads stdin, and outputs each line only once - without sorting ahead of time. This does use more memory than your system's sort utility.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        glu() { (local IFS="$1"; shift &amp;&amp; echo "$*") }; repath() { ( _E=`echo "${PATH//:/$'\n'}" | awk '!x[$0]++'`; glu ":" $_E ) ; } ; PATH=`repath` ; export PATH
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Thanks to the authors of:
-                                        </p><code>awk '!x[$0]++' &lt;file&gt;</code>
-                                        <p>
-                                                and the author of:
-                                        </p><code>joinargs() { (local IFS="$1"; shift &amp;&amp; echo "$*") }</code>
-                                        <p>
-                                                and others, we can have a fast Linux or android.
-                                        </p>
-                                        <p>
-                                                IMPORTANT if you find a priority order problem in PATH you can push a path directory to the front without duplication as follows:
-                                        </p><code>PATH=/bin:$PATH</code>
-                                        <p>
-                                                then ...
-                                        </p>
-                                        <p>
-                                                Check duplication with:
-                                        </p><code>echo $PATH|tr : '\n'|sort|uniq -d</code>
-                                        <p>
-                                                Finally do a very neat line by line list of $PATH:
-                                        </p><code>echo "${PATH//:/$'\n'}</code>
-                                        <p>
-                                                The speed up is very noticeable for android, and builds on Linux Ubantu are much faster with make and scripts.
-                                        </p>
-                                        <p>
-                                                I will update the command on request. Timothy from SONY
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        export PATH=`echo -n $PATH | awk -v RS=":" '{ if (!x[$0]++) {printf s $0; s=":"} }'`
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        sort | uniq
-                                </p>
-                                <p>
-                                        OR
-                                </p>
-                                <p>
-                                        sort -u
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Yes, but that sorts all the rest of the data in as well. awk will leave the rest of the data alone.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        It's very clever, din7, but you need to describe it better. It doesn't FIND the duplicates in a file, it REMOVES them.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I generally pass stdout to this command then redirect into another file so I can just see duplicates. The command above is in its original context. Even so, having used this several times in its original context I haven't seen where it actually removes duplicates without further modification. It seems to me that it just prints the duplicates.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        It prints the lines that aren't duplicated, too. That's why what it's doing is removing the duplicates.
-                                </p><code>echo -e "aaa\nbbb\naaa"|awk \!'x[$0]++'</code>
-                                <p>
-                                        outputs
-                                </p>
-                                <p>
-                                        aaa
-                                </p>
-                                <p>
-                                        bbb
-                                </p>
-                                <p>
-                                        not just "aaa"
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I see what you mean now.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        I thought flatcap was saying that it modifies the file when the command is executed.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Both solutions are very elegant and easily replicated in unix. thanks.
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Remove duplicate entries in a file without sorting.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Remove duplicate entries in a file without sorting.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk '!x[$0]++' <span>&lt;file&gt;</span>
+			</div>
+			<div class="details description">
+				<p>
+					Using awk, find duplicates in a file without sorting, which reorders the contents. awk will not reorder them, and still find and remove duplicates which you can then redirect into another file.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					perl -ne 'print if !$a{$_}++'
+				</div>
+				<div class="details description">
+					<p>
+						Reads stdin, and outputs each line only once - without sorting ahead of time. This does use more memory than your system's sort utility.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					glu() { (local IFS="$1"; shift &amp;&amp; echo "$*") }; repath() { ( _E=`echo "${PATH//:/$'\n'}" | awk '!x[$0]++'`; glu ":" $_E ) ; } ; PATH=`repath` ; export PATH
+				</div>
+				<div class="details description">
+					<p>
+						Thanks to the authors of:
+					</p><code>awk '!x[$0]++' &lt;file&gt;</code>
+					<p>
+						and the author of:
+					</p><code>joinargs() { (local IFS="$1"; shift &amp;&amp; echo "$*") }</code>
+					<p>
+						and others, we can have a fast Linux or android.
+					</p>
+					<p>
+						IMPORTANT if you find a priority order problem in PATH you can push a path directory to the front without duplication as follows:
+					</p><code>PATH=/bin:$PATH</code>
+					<p>
+						then ...
+					</p>
+					<p>
+						Check duplication with:
+					</p><code>echo $PATH|tr : '\n'|sort|uniq -d</code>
+					<p>
+						Finally do a very neat line by line list of $PATH:
+					</p><code>echo "${PATH//:/$'\n'}</code>
+					<p>
+						The speed up is very noticeable for android, and builds on Linux Ubantu are much faster with make and scripts.
+					</p>
+					<p>
+						I will update the command on request. Timothy from SONY
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					export PATH=`echo -n $PATH | awk -v RS=":" '{ if (!x[$0]++) {printf s $0; s=":"} }'`
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					sort | uniq
+				</p>
+				<p>
+					OR
+				</p>
+				<p>
+					sort -u
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Yes, but that sorts all the rest of the data in as well. awk will leave the rest of the data alone.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					It's very clever, din7, but you need to describe it better. It doesn't FIND the duplicates in a file, it REMOVES them.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I generally pass stdout to this command then redirect into another file so I can just see duplicates. The command above is in its original context. Even so, having used this several times in its original context I haven't seen where it actually removes duplicates without further modification. It seems to me that it just prints the duplicates.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					It prints the lines that aren't duplicated, too. That's why what it's doing is removing the duplicates.
+				</p><code>echo -e "aaa\nbbb\naaa"|awk \!'x[$0]++'</code>
+				<p>
+					outputs
+				</p>
+				<p>
+					aaa
+				</p>
+				<p>
+					bbb
+				</p>
+				<p>
+					not just "aaa"
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I see what you mean now.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					I thought flatcap was saying that it modifies the file when the command is executed.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Both solutions are very elegant and easily replicated in unix. thanks.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

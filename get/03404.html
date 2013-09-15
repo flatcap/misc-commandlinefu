@@ -1,71 +1,71 @@
 <html>
-        <head>
-                <title>
-                        Share your terminal session (remotely or whatever)
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Share your terminal session (remotely or whatever)
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                screen -x
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Force the user you want to watch doing things into doing his things in a screen session. Then simply attach yourself to that session with the command shown above.
-                                </p>
-                                <p>
-                                        Works only if you are on the same machine, of course
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        That only connects to existing screen processes in the current session. Not remotely, you need telnet or ssh access to the user account for that,
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        i DID write that into the description, which mystically got lost during posting the command.
-                                </p>
-                                <p>
-                                        Added it again
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        things needed for this to work: (1) they tell me the screen binary must be setuid, (2) multiuser mode must be enabled via the -x option or 'multiuser on' command inside screen, and (3) users must be added via 'acladd username' command. At least that does it on debian/ubuntu systems.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        For Windows:
-                                </p>
-                                <p>
-                                        I have written Windows Desktop Workspace manager with automated terminal for CYGWIN.
-                                </p>
-                                <p>
-                                        Each terminal window has built-in TELNET or TELNET-TLS server that allows to share terminal session with remote users via TELNET protocol. Check it out.
-                                </p>
-                                <p>
-                                        <a href="http://sergeybelous.com/terminal-session-sharing/" rel="nofollow">http://sergeybelous.com/terminal-session-sharing/</a>
-                                </p>
-                                <p>
-                                        Shared session is persistent and can be accessed from anywhere by TELNET or TELNET-TLS client.
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Share your terminal session (remotely or whatever)
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Share your terminal session (remotely or whatever)
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				screen -x
+			</div>
+			<div class="details description">
+				<p>
+					Force the user you want to watch doing things into doing his things in a screen session. Then simply attach yourself to that session with the command shown above.
+				</p>
+				<p>
+					Works only if you are on the same machine, of course
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					That only connects to existing screen processes in the current session. Not remotely, you need telnet or ssh access to the user account for that,
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					i DID write that into the description, which mystically got lost during posting the command.
+				</p>
+				<p>
+					Added it again
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					things needed for this to work: (1) they tell me the screen binary must be setuid, (2) multiuser mode must be enabled via the -x option or 'multiuser on' command inside screen, and (3) users must be added via 'acladd username' command. At least that does it on debian/ubuntu systems.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					For Windows:
+				</p>
+				<p>
+					I have written Windows Desktop Workspace manager with automated terminal for CYGWIN.
+				</p>
+				<p>
+					Each terminal window has built-in TELNET or TELNET-TLS server that allows to share terminal session with remote users via TELNET protocol. Check it out.
+				</p>
+				<p>
+					<a href="http://sergeybelous.com/terminal-session-sharing/" rel="nofollow">http://sergeybelous.com/terminal-session-sharing/</a>
+				</p>
+				<p>
+					Shared session is persistent and can be accessed from anywhere by TELNET or TELNET-TLS client.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,53 +1,53 @@
 <html>
-        <head>
-                <title>
-                        convert png into jpg using imagemagick
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                convert png into jpg using imagemagick
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                for img in *.png; do convert "$img" "$img.jpg" ; done
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        That's a bit ugly. You end up with lots of files called picture.png.jpg
-                                </p>
-                                <p>
-                                        How about this:
-                                </p><code>for img in *.png; do convert "$img" "${img%png}jpg" ; done</code>
-                                <p>
-                                        It strips off the suffix (png), then adds a new one (jpg).
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        or you could use sed, but flatcaps is a better way
-                                </p>
-                                <p>
-                                        for img in *.png; do convert "$img" "$img.jpg" | sed 's/\.png$/\.jpg/'
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Why so complicated? Try
-                                </p><code>mogrify -format jpg *.png</code>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			convert png into jpg using imagemagick
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				convert png into jpg using imagemagick
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				for img in *.png; do convert "$img" "$img.jpg" ; done
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					That's a bit ugly. You end up with lots of files called picture.png.jpg
+				</p>
+				<p>
+					How about this:
+				</p><code>for img in *.png; do convert "$img" "${img%png}jpg" ; done</code>
+				<p>
+					It strips off the suffix (png), then adds a new one (jpg).
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					or you could use sed, but flatcaps is a better way
+				</p>
+				<p>
+					for img in *.png; do convert "$img" "$img.jpg" | sed 's/\.png$/\.jpg/'
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Why so complicated? Try
+				</p><code>mogrify -format jpg *.png</code>
+			</div>
+		</div>
+	</body>
 </html>

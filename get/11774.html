@@ -1,105 +1,105 @@
 <html>
-        <head>
-                <title>
-                        Press enter and take a WebCam picture.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Press enter and take a WebCam picture.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                read &amp;&amp; ffmpeg -y -r 1 -t 3 -f video4linux2 -vframes 1 -s sxga -i /dev/video0 ~/webcam-$(date +%m_%d_%Y_%H_%M).jpeg
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command takes a 1280x1024 p picture from the webcam.
-                                </p>
-                                <p>
-                                        If prefer it smaller, try changing the -s parameter: qqvga is the tiniest, vga is 640x480, svga is 800x600 and so on.
-                                </p>
-                                <p>
-                                        Get your smile on and press enter! :)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                -y -r 1 -t 3 -f video4linux2 -vframes 1 -s sxga -i /dev/video0 ~/webcam-$(date +%m_%d_%Y_%H_%M).jpeg
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Take a picture from your webcam and save it to a jpeg.
-                                </p>
-                                <p>
-                                        A very slightly modified version of MarxBro's command.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        heh, that's good fu!
-                                </p>
-                                <p>
-                                        I tried a variation which speaks to you and reminds you to say "cheese" and after taking the shot displays it with "eog" (eye of Gnome)
-                                </p><code>pic=~/webcam-$(date +%m_%d_%Y_%H_%M).jpeg; espeak "say cheese"; ffmpeg -y -r 1 -t 3 -f video4linux2 -vframes 1 -s vga -i /dev/video0 ${pic}; eog ${pic}</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Is the "tead &amp;&amp;" really needed? You have to press enter to run the command so why have the read which requires you hit the enter key a second time?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Hmm, curiously, my attempt to use this results in a split picture. Not sure why?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Glad you liked it!
-                                </p>
-                                <p>
-                                        No, `read &amp;&amp;` is just for launch it with some action.
-                                </p>
-                                <p>
-                                        Can you upload the pic somewhere? Curious about it...
-                                </p>
-                                <p>
-                                        Does it works with sxvga instaead of vga?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Apparently the "ffmpeg" command is deprecated:
-                                </p><code>ffmpeg version 0.8.5-6:0.8.5-1, Copyright (c) 2000-2012 the Libav developers</code>
-                                <p>
-                                        built on Jan 13 2013 12:05:48 with gcc 4.7.2
-                                </p><code>*** THIS PROGRAM IS DEPRECATED ***</code> <code>This program is only provided for compatibility and will be removed in a future release. Please use avconv instead.</code>
-                                <p>
-                                        Does anybody know the equivalent using aconv (or perhaps gstreamer)?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I just did it with avconv in place of ffmpeg and it worked fine.
-                                </p><code>avconv -y -r 1 -t 3 -f video4linux2 -vframes 1 -s sxga -i /dev/video0 ~/webcam-$(date +%m_%d_%Y_%H_%M).jpeg</code>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Actually, it isnt deprecated, just avconv is a more active and "new" fork of the project and Ubuntu/Debian builds have that msg (I dont have it on my ffmpeg, "slack-builded" from scratch).
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Press enter and take a WebCam picture.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Press enter and take a WebCam picture.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				read &amp;&amp; ffmpeg -y -r 1 -t 3 -f video4linux2 -vframes 1 -s sxga -i /dev/video0 ~/webcam-$(date +%m_%d_%Y_%H_%M).jpeg
+			</div>
+			<div class="details description">
+				<p>
+					This command takes a 1280x1024 p picture from the webcam.
+				</p>
+				<p>
+					If prefer it smaller, try changing the -s parameter: qqvga is the tiniest, vga is 640x480, svga is 800x600 and so on.
+				</p>
+				<p>
+					Get your smile on and press enter! :)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				-y -r 1 -t 3 -f video4linux2 -vframes 1 -s sxga -i /dev/video0 ~/webcam-$(date +%m_%d_%Y_%H_%M).jpeg
+			</div>
+			<div class="details description">
+				<p>
+					Take a picture from your webcam and save it to a jpeg.
+				</p>
+				<p>
+					A very slightly modified version of MarxBro's command.
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					heh, that's good fu!
+				</p>
+				<p>
+					I tried a variation which speaks to you and reminds you to say "cheese" and after taking the shot displays it with "eog" (eye of Gnome)
+				</p><code>pic=~/webcam-$(date +%m_%d_%Y_%H_%M).jpeg; espeak "say cheese"; ffmpeg -y -r 1 -t 3 -f video4linux2 -vframes 1 -s vga -i /dev/video0 ${pic}; eog ${pic}</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Is the "tead &amp;&amp;" really needed? You have to press enter to run the command so why have the read which requires you hit the enter key a second time?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Hmm, curiously, my attempt to use this results in a split picture. Not sure why?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Glad you liked it!
+				</p>
+				<p>
+					No, `read &amp;&amp;` is just for launch it with some action.
+				</p>
+				<p>
+					Can you upload the pic somewhere? Curious about it...
+				</p>
+				<p>
+					Does it works with sxvga instaead of vga?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Apparently the "ffmpeg" command is deprecated:
+				</p><code>ffmpeg version 0.8.5-6:0.8.5-1, Copyright (c) 2000-2012 the Libav developers</code>
+				<p>
+					built on Jan 13 2013 12:05:48 with gcc 4.7.2
+				</p><code>*** THIS PROGRAM IS DEPRECATED ***</code> <code>This program is only provided for compatibility and will be removed in a future release. Please use avconv instead.</code>
+				<p>
+					Does anybody know the equivalent using aconv (or perhaps gstreamer)?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I just did it with avconv in place of ffmpeg and it worked fine.
+				</p><code>avconv -y -r 1 -t 3 -f video4linux2 -vframes 1 -s sxga -i /dev/video0 ~/webcam-$(date +%m_%d_%Y_%H_%M).jpeg</code>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Actually, it isnt deprecated, just avconv is a more active and "new" fork of the project and Ubuntu/Debian builds have that msg (I dont have it on my ffmpeg, "slack-builded" from scratch).
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

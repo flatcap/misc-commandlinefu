@@ -1,108 +1,108 @@
 <html>
-        <head>
-                <title>
-                        Annotate tail -f with timestamps
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Annotate tail -f with timestamps
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                tail -f file | while read; do echo "$(date +%T.%N) $REPLY"; done
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        tail -f file | ts '%H:%M:%.S'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Uses the command ts in order to add a timestamp on each line. This command is provided in the moreutils package on Debian, and you may need libtime-duration-perl to be able to format the date.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Dump 389ds schema, putting "\n " on one line with perl.
-                                        </p>
-                                        <p>
-                                                You have to specify the objectclasses, attributetypes operational attributes too, otherwise they won't be dumped!
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Dump 389ds schema, putting "\n " on one line with perl.
-                                        </p>
-                                        <p>
-                                                You have to specify the objectclasses, attributetypes operational attributes too, otherwise they won't be dumped!
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Dump 389ds schema, putting "\n " on one line with perl.
-                                        </p>
-                                        <p>
-                                                You have to specify the objectclasses, attributetypes operational attributes too, otherwise they won't be dumped!
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Dump 389ds schema, putting "\n " on one line with perl.
-                                        </p>
-                                        <p>
-                                                You have to specify the objectclasses, attributetypes operational attributes too, otherwise they won't be dumped!
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Damn, that's useful!
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I thought bash's 'read' tokenized on spaces; today I learned it can be used to read whole lines.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Read it today and it saved my life! Add "| tee dated_file.log" or "&gt; dated_file.log" if you want to move it around for analysis
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Annotate tail -f with timestamps
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Annotate tail -f with timestamps
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				tail -f file | while read; do echo "$(date +%T.%N) $REPLY"; done
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					tail -f file | ts '%H:%M:%.S'
+				</div>
+				<div class="details description">
+					<p>
+						Uses the command ts in order to add a timestamp on each line. This command is provided in the moreutils package on Debian, and you may need libtime-duration-perl to be able to format the date.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
+				</div>
+				<div class="details description">
+					<p>
+						Dump 389ds schema, putting "\n " on one line with perl.
+					</p>
+					<p>
+						You have to specify the objectclasses, attributetypes operational attributes too, otherwise they won't be dumped!
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
+				</div>
+				<div class="details description">
+					<p>
+						Dump 389ds schema, putting "\n " on one line with perl.
+					</p>
+					<p>
+						You have to specify the objectclasses, attributetypes operational attributes too, otherwise they won't be dumped!
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
+				</div>
+				<div class="details description">
+					<p>
+						Dump 389ds schema, putting "\n " on one line with perl.
+					</p>
+					<p>
+						You have to specify the objectclasses, attributetypes operational attributes too, otherwise they won't be dumped!
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ldapsearch -xLLL -b "cn=schema" "(objectclass=*)" \ \* objectclasses attributetypes | perl -p0e 's/\n //g'
+				</div>
+				<div class="details description">
+					<p>
+						Dump 389ds schema, putting "\n " on one line with perl.
+					</p>
+					<p>
+						You have to specify the objectclasses, attributetypes operational attributes too, otherwise they won't be dumped!
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Damn, that's useful!
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I thought bash's 'read' tokenized on spaces; today I learned it can be used to read whole lines.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Read it today and it saved my life! Add "| tee dated_file.log" or "&gt; dated_file.log" if you want to move it around for analysis
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

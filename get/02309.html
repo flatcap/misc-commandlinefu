@@ -1,24 +1,24 @@
 <html>
-        <head>
-                <title>
-                        List of directories sorted by number of files they contain.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                List of directories sorted by number of files they contain.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                sort -n &lt;( for i in $(find . -maxdepth 1 -mindepth 1 -type d); do echo $(find $i | wc -l) ": $i"; done;)
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			List of directories sorted by number of files they contain.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				List of directories sorted by number of files they contain.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				sort -n &lt;( for i in $(find . -maxdepth 1 -mindepth 1 -type d); do echo $(find $i | wc -l) ": $i"; done;)
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

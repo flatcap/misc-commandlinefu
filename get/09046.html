@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Grep Recursively Through Single File Extension
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Grep Recursively Through Single File Extension
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                grep --include=*.py -lir "delete" .
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Grep Recursively Through Single File Extension
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Grep Recursively Through Single File Extension
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				grep --include=*.py -lir "delete" .
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 ./attachment.py
 ./tests/functional/testcases.py
 ./tests/functional/better_twill.py
@@ -54,23 +54,23 @@
 ./web/auth.py
 ./test.py
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Trac 0.12.2-stable
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                the -i isn't necessary -- that's for case-insensitive string matching, has nothing to do with recursion nor filenames.
-                        </p>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Trac 0.12.2-stable
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				the -i isn't necessary -- that's for case-insensitive string matching, has nothing to do with recursion nor filenames.
+			</p>
+		</div>
+	</body>
 </html>

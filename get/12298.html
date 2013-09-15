@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        Run git gc in all git repositories bellow .
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Run git gc in all git repositories bellow .
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find . -name .git -print0 | while read -d $'\0' g; do echo "$g"; cd "$g"; git gc --aggressive; cd -; done
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        git gc should be run on all git repositories every 100 commits. This will help do do so if you have many git repositories ;-)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Run git gc in all git repositories bellow .
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Run git gc in all git repositories bellow .
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find . -name .git -print0 | while read -d $'\0' g; do echo "$g"; cd "$g"; git gc --aggressive; cd -; done
+			</div>
+			<div class="details description">
+				<p>
+					git gc should be run on all git repositories every 100 commits. This will help do do so if you have many git repositories ;-)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

@@ -1,55 +1,55 @@
 <html>
-        <head>
-                <title>
-                        sorting file contents into individual files with awk
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                sorting file contents into individual files with awk
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk '{print &gt; $3".txt"}' FILENAME
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command will sort the contents of FILENAME by redirecting the output to individual .txt files in which 3rd column will be used for sorting. If FILENAME contents are as follows:
-                                </p>
-                                <p>
-                                        foo foo A foo
-                                </p>
-                                <p>
-                                        bar bar B bar
-                                </p>
-                                <p>
-                                        lorem ipsum A lorem
-                                </p>
-                                <p>
-                                        Then two files called A.txt and B.txt will be created and their contents will be:
-                                </p>
-                                <p>
-                                        A.txt
-                                </p>
-                                <p>
-                                        foo foo A foo
-                                </p>
-                                <p>
-                                        lorem ipsum A lorem
-                                </p>
-                                <p>
-                                        and B.txt will be
-                                </p>
-                                <p>
-                                        bar bar B bar
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			sorting file contents into individual files with awk
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				sorting file contents into individual files with awk
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk '{print &gt; $3".txt"}' FILENAME
+			</div>
+			<div class="details description">
+				<p>
+					This command will sort the contents of FILENAME by redirecting the output to individual .txt files in which 3rd column will be used for sorting. If FILENAME contents are as follows:
+				</p>
+				<p>
+					foo foo A foo
+				</p>
+				<p>
+					bar bar B bar
+				</p>
+				<p>
+					lorem ipsum A lorem
+				</p>
+				<p>
+					Then two files called A.txt and B.txt will be created and their contents will be:
+				</p>
+				<p>
+					A.txt
+				</p>
+				<p>
+					foo foo A foo
+				</p>
+				<p>
+					lorem ipsum A lorem
+				</p>
+				<p>
+					and B.txt will be
+				</p>
+				<p>
+					bar bar B bar
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

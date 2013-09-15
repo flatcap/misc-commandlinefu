@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Sorted, recursive long file listing
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Sorted, recursive long file listing
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                lsr() { find "${@:-.}" -print0 |sort -z |xargs -0 ls $LS_OPTIONS -dla; }
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Sorted, recursive long file listing
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Sorted, recursive long file listing
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				lsr() { find "${@:-.}" -print0 |sort -z |xargs -0 ls $LS_OPTIONS -dla; }
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 =[9 h3xx@necronomicon ~ ]= $ lsr ~/.cron
 drwx------ 10 h3xx users  304 Aug 13 01:45 /home/h3xx/.cron/
 drwx------  2 h3xx users  264 Aug 14 03:09 /home/h3xx/.cron/cron.01d/
@@ -51,24 +51,24 @@ lrwxrwxrwx  1 h3xx users   26 Aug 18  2008 /home/h3xx/.cron/cron.30m/process-spa
 -rwx--x--x  1 h3xx users 4122 Aug 13 01:34 /home/h3xx/.cron/install-crontab~*
 =[9 h3xx@necronomicon ~ ]= $
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Tells you everything you could ever want to know about all files and subdirectories. Great for package creators. Totally secure too.
-                                </p>
-                                <p>
-                                        On my Slackware box, this gets set upon login:
-                                </p><code>LS_OPTIONS='-F -b -T 0 --color=auto'</code>
-                                <p>
-                                        and
-                                </p><code>alias ls='/bin/ls $LS_OPTIONS'</code>
-                                <p>
-                                        which works great.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Tells you everything you could ever want to know about all files and subdirectories. Great for package creators. Totally secure too.
+				</p>
+				<p>
+					On my Slackware box, this gets set upon login:
+				</p><code>LS_OPTIONS='-F -b -T 0 --color=auto'</code>
+				<p>
+					and
+				</p><code>alias ls='/bin/ls $LS_OPTIONS'</code>
+				<p>
+					which works great.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

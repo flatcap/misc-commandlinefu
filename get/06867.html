@@ -1,46 +1,46 @@
 <html>
-        <head>
-                <title>
-                        exclude a column with cut
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                exclude a column with cut
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cut -f5 --complement
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Show all columns except 5th. This might help you save some typing if you are trying to exclude some columns from the output.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        awk '{ $5=""; print }' file
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Here's an awk alternative, for those lacking the version of cut with the --complement argument.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        awk '{$1=""; print}'
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			exclude a column with cut
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				exclude a column with cut
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cut -f5 --complement
+			</div>
+			<div class="details description">
+				<p>
+					Show all columns except 5th. This might help you save some typing if you are trying to exclude some columns from the output.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					awk '{ $5=""; print }' file
+				</div>
+				<div class="details description">
+					<p>
+						Here's an awk alternative, for those lacking the version of cut with the --complement argument.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					awk '{$1=""; print}'
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+	</body>
 </html>

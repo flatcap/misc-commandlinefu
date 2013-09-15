@@ -1,77 +1,77 @@
 <html>
-        <head>
-                <title>
-                        Get the IP address of a machine
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Get the IP address of a machine
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ifdata -pN eth0
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Get the IP address of a machine
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Get the IP address of a machine
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ifdata -pN eth0
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 192.168.1.0
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        No junk, no pipe, one command, no subcommand - KISS
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        /sbin/ifconfig -a | awk '/(cast)/ { print $2 }' | cut -d':' -f2 | head -1
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ip -o -4 addr show | awk -F '[ /]+' '/global/ {print $4}'
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					No junk, no pipe, one command, no subcommand - KISS
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					/sbin/ifconfig -a | awk '/(cast)/ { print $2 }' | cut -d':' -f2 | head -1
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ip -o -4 addr show | awk -F '[ /]+' '/global/ {print $4}'
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 127.0.0.1
 10.80.86.3
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Why use many different utilities all piped together, when you only need two?
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ifconfig -a | awk '/Bcast/{print $2}' | cut -c 5-19
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ifconfig -a | awk '/Bcast/{print $2}' | cut -c 5-19
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                That is incorrect, -pN will print out the network address, which is not the equivelent of the host's IP, for that you need ifdata -pa. Also, moreutils (from which ifdata belongs) isn't particulary common, and certainly less common than iproute2 .. or (I dread to mention) net-tools.
-                        </p>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						Why use many different utilities all piped together, when you only need two?
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ifconfig -a | awk '/Bcast/{print $2}' | cut -c 5-19
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ifconfig -a | awk '/Bcast/{print $2}' | cut -c 5-19
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				That is incorrect, -pN will print out the network address, which is not the equivelent of the host's IP, for that you need ifdata -pa. Also, moreutils (from which ifdata belongs) isn't particulary common, and certainly less common than iproute2 .. or (I dread to mention) net-tools.
+			</p>
+		</div>
+	</body>
 </html>

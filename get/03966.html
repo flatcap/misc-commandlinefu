@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Execute most recent command containing search string.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Execute most recent command containing search string.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                !?<span>&lt;string&gt;</span>?
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Execute most recent command containing search string.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Execute most recent command containing search string.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				!?<span>&lt;string&gt;</span>?
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 # !?sdb1?
 cryptsetup luksOpen /dev/sdb1 fs_backup
 Enter luks passphrase:
@@ -25,26 +25,26 @@ Example:
 # !?sdb1?:p
 cryptsetup luksOpen /dev/sdb1 fs_backup
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Execute the most recent command containing search string.
-                                </p>
-                                <p>
-                                        This differs from !string as that only refers to the most recent command starting with search string.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Only valid for Bash shell
-                        </p>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Execute the most recent command containing search string.
+				</p>
+				<p>
+					This differs from !string as that only refers to the most recent command starting with search string.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Only valid for Bash shell
+			</p>
+		</div>
+	</body>
 </html>

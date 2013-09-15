@@ -1,95 +1,95 @@
 <html>
-        <head>
-                <title>
-                        Kill all processes belonging to a user
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Kill all processes belonging to a user
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ps wwwwuax|awk '/command/ { printf("kill -9 %s\n",$2) }'|/bin/sh
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Okay, commands like this are a bit of a personal peeve. awk(1) operates on a /pattern/ {action} paradigm and yet I see people leave out the /pattern/ portion of an awk command all the time, opting to use grep or sed instead. You'll save yourself some typing and time if you include the /pattern/ with your {action}.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ps -ef | grep $USERNAME | awk {'print $2'} | xargs kill [-9]
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This is a 'killall' command equivalent where it is not available.
-                                        </p>
-                                        <p>
-                                                Prior to executing it, set the environment variable USERNAME to the username, whose processes you want to kill or replace the username with the $USERNAME on the command above.
-                                        </p>
-                                        <p>
-                                                Side effect: If any processes from other users, are running with a parameter of $USERNAME, they will be killed as well (assuming you are running this as root user)
-                                        </p>
-                                        <p>
-                                                [-9] in square brackets at the end of the command is optional and strongly suggested to be your last resort. I do not like to use it as the killed process leaves a lot of mess behind.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ps -fu $USER | awk {'print $2'} | xargs kill [-9]
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        fuser -kiu / name
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                kill processes by user . Remove "i" if you don't want to confirm.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        sudo -u $USER kill -9 -1
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Kill all processes belonging to a user, with a minimum of resource usage. Great for the times when a user fork-bombs the system and it's difficult to login or run commands.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Not bad, but you can save a few characters by changing printf to print:
-                        </p><code>ps wwwwuax|awk '/command/ { print "kill -9 "$2 }'|/bin/sh</code>
-                        <p>
-                                Then another few by using a subshell execution rather than the pipe:
-                        </p><code>kill -9 $(ps wwwwuax|awk '/command/ { print $2 }')</code>
-                        <p>
-                                This works, but it exposes a bug in the original command.
-                        </p>
-                        <p>
-                                Awk's pattern matches awk itself.
-                        </p>
-                        <p>
-                                In the original command the error message is lost.
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			Kill all processes belonging to a user
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Kill all processes belonging to a user
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ps wwwwuax|awk '/command/ { printf("kill -9 %s\n",$2) }'|/bin/sh
+			</div>
+			<div class="details description">
+				<p>
+					Okay, commands like this are a bit of a personal peeve. awk(1) operates on a /pattern/ {action} paradigm and yet I see people leave out the /pattern/ portion of an awk command all the time, opting to use grep or sed instead. You'll save yourself some typing and time if you include the /pattern/ with your {action}.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					ps -ef | grep $USERNAME | awk {'print $2'} | xargs kill [-9]
+				</div>
+				<div class="details description">
+					<p>
+						This is a 'killall' command equivalent where it is not available.
+					</p>
+					<p>
+						Prior to executing it, set the environment variable USERNAME to the username, whose processes you want to kill or replace the username with the $USERNAME on the command above.
+					</p>
+					<p>
+						Side effect: If any processes from other users, are running with a parameter of $USERNAME, they will be killed as well (assuming you are running this as root user)
+					</p>
+					<p>
+						[-9] in square brackets at the end of the command is optional and strongly suggested to be your last resort. I do not like to use it as the killed process leaves a lot of mess behind.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ps -fu $USER | awk {'print $2'} | xargs kill [-9]
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					fuser -kiu / name
+				</div>
+				<div class="details description">
+					<p>
+						kill processes by user . Remove "i" if you don't want to confirm.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					sudo -u $USER kill -9 -1
+				</div>
+				<div class="details description">
+					<p>
+						Kill all processes belonging to a user, with a minimum of resource usage. Great for the times when a user fork-bombs the system and it's difficult to login or run commands.
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Not bad, but you can save a few characters by changing printf to print:
+			</p><code>ps wwwwuax|awk '/command/ { print "kill -9 "$2 }'|/bin/sh</code>
+			<p>
+				Then another few by using a subshell execution rather than the pipe:
+			</p><code>kill -9 $(ps wwwwuax|awk '/command/ { print $2 }')</code>
+			<p>
+				This works, but it exposes a bug in the original command.
+			</p>
+			<p>
+				Awk's pattern matches awk itself.
+			</p>
+			<p>
+				In the original command the error message is lost.
+			</p>
+		</div>
+	</body>
 </html>

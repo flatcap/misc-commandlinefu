@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Access variables inside a - piped while - loop
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Access variables inside a - piped while - loop
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                while read line; do echo $line; done &lt;&lt;&lt; "$var"
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Access variables inside a - piped while - loop
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Access variables inside a - piped while - loop
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				while read line; do echo $line; done &lt;&lt;&lt; "$var"
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 script 1
 __________________
 #!/bin/bash
@@ -76,39 +76,39 @@ line=cc
 var=whillleeee
 var=whillleeee
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Consider the following simple situation [ reading something using while and read ]
-                                </p>
-                                <p>
-                                        [See script 1 in sample output]
-                                </p>
-                                <p>
-                                        ---------------------------------------------------
-                                </p>
-                                <p>
-                                        The variable var is assigned with "nullll" at first. Inside the while loop [piped while] it is assigned with "whillleeee". [Onlly 2 assignments stmts]. Outside the loop the last assigned value for "var" [and no variable] inside the while can't be accessed [Due to pipe, var is executed in a sub shell].
-                                </p>
-                                <p>
-                                        In these type of situation variables can be accessed by modifying as follows.
-                                </p>
-                                <p>
-                                        [See script 2 in sample output]
-                                </p>
-                                <p>
-                                        ___________________________
-                                </p>
-                                <p>
-                                        Vary helpful when reading a set of items, say file names, stored on a file [or variable] to an array an use it later.
-                                </p>
-                                <p>
-                                        Is there any other way 2 access variables inside and outside the loop ??
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Consider the following simple situation [ reading something using while and read ]
+				</p>
+				<p>
+					[See script 1 in sample output]
+				</p>
+				<p>
+					---------------------------------------------------
+				</p>
+				<p>
+					The variable var is assigned with "nullll" at first. Inside the while loop [piped while] it is assigned with "whillleeee". [Onlly 2 assignments stmts]. Outside the loop the last assigned value for "var" [and no variable] inside the while can't be accessed [Due to pipe, var is executed in a sub shell].
+				</p>
+				<p>
+					In these type of situation variables can be accessed by modifying as follows.
+				</p>
+				<p>
+					[See script 2 in sample output]
+				</p>
+				<p>
+					___________________________
+				</p>
+				<p>
+					Vary helpful when reading a set of items, say file names, stored on a file [or variable] to an array an use it later.
+				</p>
+				<p>
+					Is there any other way 2 access variables inside and outside the loop ??
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

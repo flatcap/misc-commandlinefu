@@ -1,36 +1,36 @@
 <html>
-        <head>
-                <title>
-                        Print a cron formatted time for 2 minutes in the future (for crontab testing)
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Print a cron formatted time for 2 minutes in the future (for crontab testing)
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                crontest () { date '-d +2 minutes' +'%M %k %d %m *'; }
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Print a cron formatted time for 2 minutes in the future (for crontab testing)
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Print a cron formatted time for 2 minutes in the future (for crontab testing)
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				crontest () { date '-d +2 minutes' +'%M %k %d %m *'; }
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 40 20 15 09 *
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Another function to stick into your .bashrc
-                                </p>
-                                <p>
-                                        This spits out the time two minutes in the future, but already formatted for pasting into your crontab file for testing without any thought required on your part. Frequently things don't work the way you expect inside a crontab job, and you probably want to find out now that your $PATH is completely different inside of cron or other global variables aren't defined. So this will generate a date you can use for testing now, and then later you can change it to run at 5:37 am on a Sunday evening.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Another function to stick into your .bashrc
+				</p>
+				<p>
+					This spits out the time two minutes in the future, but already formatted for pasting into your crontab file for testing without any thought required on your part. Frequently things don't work the way you expect inside a crontab job, and you probably want to find out now that your $PATH is completely different inside of cron or other global variables aren't defined. So this will generate a date you can use for testing now, and then later you can change it to run at 5:37 am on a Sunday evening.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

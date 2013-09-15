@@ -1,39 +1,39 @@
 <html>
-        <head>
-                <title>
-                        Diff XML files
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Diff XML files
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                diffxml() { diff -wb &lt;(xmllint --format "$1") &lt;(xmllint --format "$2"); }
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Diffs two xml files by formatting them first using xmllint and then invoking diff.
-                                </p>
-                                <p>
-                                        Usage: diffxml XMLFile1 XMLFile2
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                This is useful, cheers.
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			Diff XML files
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Diff XML files
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				diffxml() { diff -wb &lt;(xmllint --format "$1") &lt;(xmllint --format "$2"); }
+			</div>
+			<div class="details description">
+				<p>
+					Diffs two xml files by formatting them first using xmllint and then invoking diff.
+				</p>
+				<p>
+					Usage: diffxml XMLFile1 XMLFile2
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				This is useful, cheers.
+			</p>
+		</div>
+	</body>
 </html>

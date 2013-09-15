@@ -1,42 +1,42 @@
 <html>
-        <head>
-                <title>
-                        convert uppercase to lowercase
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                convert uppercase to lowercase
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                tr '[:upper:]' '[:lower:]' &lt; input.txt &gt; output.txt
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        awk '{print toupper($0)}' &lt; input.txt &gt; output.txt
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        ooops ... that should be:
-                                </p>
-                                <p>
-                                        awk '{print tolower($0)}' &lt; input.txt &gt; output.txt
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			convert uppercase to lowercase
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				convert uppercase to lowercase
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				tr '[:upper:]' '[:lower:]' &lt; input.txt &gt; output.txt
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					awk '{print toupper($0)}' &lt; input.txt &gt; output.txt
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					ooops ... that should be:
+				</p>
+				<p>
+					awk '{print tolower($0)}' &lt; input.txt &gt; output.txt
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

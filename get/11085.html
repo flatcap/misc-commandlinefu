@@ -1,129 +1,129 @@
 <html>
-        <head>
-                <title>
-                        Release memory used by the Linux kernel on caches
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Release memory used by the Linux kernel on caches
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                /sbin/sysctl -w vm.drop_caches=3
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        =1 --&gt; to free pagecache
-                                </p>
-                                <p>
-                                        =2 --&gt; to free dentries and inodes
-                                </p>
-                                <p>
-                                        =3 --&gt; to free pagecache, dentries and inodes
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        free &amp;&amp; sync &amp;&amp; echo 3 &gt; /proc/sys/vm/drop_caches &amp;&amp; free
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
-             total       used       free     shared    buffers     cached
-Mem:       1018916     980832      38084          0      46924     355764
+	<head>
+		<title>
+			Release memory used by the Linux kernel on caches
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Release memory used by the Linux kernel on caches
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				/sbin/sysctl -w vm.drop_caches=3
+			</div>
+			<div class="details description">
+				<p>
+					=1 --&gt; to free pagecache
+				</p>
+				<p>
+					=2 --&gt; to free dentries and inodes
+				</p>
+				<p>
+					=3 --&gt; to free pagecache, dentries and inodes
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					free &amp;&amp; sync &amp;&amp; echo 3 &gt; /proc/sys/vm/drop_caches &amp;&amp; free
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
+	     total       used       free     shared    buffers     cached
+Mem:       1018916     980832      38084	  0      46924     355764
 -/+ buffers/cache:     578144     440772
-Swap:      2064376        128    2064248
-             total       used       free     shared    buffers     cached
-Mem:       1018916     685008     333908          0        224     108252
+Swap:      2064376	128    2064248
+	     total       used       free     shared    buffers     cached
+Mem:       1018916     685008     333908	  0	224     108252
 -/+ buffers/cache:     576532     442384
-Swap:      2064376        128    2064248
+Swap:      2064376	128    2064248
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                The Linux kernel uses unused memory in caches. When you execute "free" you never get the "real" available memory.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        sync &amp;&amp; echo 1 &gt; /proc/sys/vm/drop_caches
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						The Linux kernel uses unused memory in caches. When you execute "free" you never get the "real" available memory.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					sync &amp;&amp; echo 1 &gt; /proc/sys/vm/drop_caches
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 free -t
 before:
-             total       used       free     shared    buffers     cached
-Mem:       4041140    3101232     939908          0     496196    1551896
+	     total       used       free     shared    buffers     cached
+Mem:       4041140    3101232     939908	  0     496196    1551896
 ...
 after:
-             total       used       free     shared    buffers     cached
-Mem:       4041140    1078048    2963092          0        900      54600
+	     total       used       free     shared    buffers     cached
+Mem:       4041140    1078048    2963092	  0	900      54600
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                run sync first to flush useful things out to disk!!!
-                                        </p>
-                                        <p>
-                                                To free pagecache:
-                                        </p>
-                                        <p>
-                                                echo 1 &gt; /proc/sys/vm/drop_caches
-                                        </p>
-                                        <p>
-                                                To free dentries and inodes:
-                                        </p>
-                                        <p>
-                                                echo 2 &gt; /proc/sys/vm/drop_caches
-                                        </p>
-                                        <p>
-                                                To free pagecache, dentries and inodes:
-                                        </p>
-                                        <p>
-                                                echo 3 &gt; /proc/sys/vm/drop_caches
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        sync; echo 3 | sudo tee /proc/sys/vm/drop_caches
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						run sync first to flush useful things out to disk!!!
+					</p>
+					<p>
+						To free pagecache:
+					</p>
+					<p>
+						echo 1 &gt; /proc/sys/vm/drop_caches
+					</p>
+					<p>
+						To free dentries and inodes:
+					</p>
+					<p>
+						echo 2 &gt; /proc/sys/vm/drop_caches
+					</p>
+					<p>
+						To free pagecache, dentries and inodes:
+					</p>
+					<p>
+						echo 3 &gt; /proc/sys/vm/drop_caches
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					sync; echo 3 | sudo tee /proc/sys/vm/drop_caches
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 3
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                where proc filesystem mounted under /proc
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        sync &amp;&amp; echo 3 | sudo tee /proc/sys/vm/drop_caches
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Found here: <a href="http://ubuntuforums.org/showthread.php?t=589975" rel="nofollow">http://ubuntuforums.org/showthread.php?t=589975</a>
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        sync &amp;&amp; echo 3 &gt; /proc/sys/vm/drop_caches
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						where proc filesystem mounted under /proc
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					sync &amp;&amp; echo 3 | sudo tee /proc/sys/vm/drop_caches
+				</div>
+				<div class="details description">
+					<p>
+						Found here: <a href="http://ubuntuforums.org/showthread.php?t=589975" rel="nofollow">http://ubuntuforums.org/showthread.php?t=589975</a>
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					sync &amp;&amp; echo 3 &gt; /proc/sys/vm/drop_caches
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+	</body>
 </html>

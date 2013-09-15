@@ -1,56 +1,56 @@
 <html>
-        <head>
-                <title>
-                        Generate a shortened URL with is.gd
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Generate a shortened URL with is.gd
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                isgd () { curl 'http://is.gd/create.php?format=simple&amp;url='"$1" ; printf "\n" }
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Generate a shortened URL with is.gd
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Generate a shortened URL with is.gd
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				isgd () { curl 'http://is.gd/create.php?format=simple&amp;url='"$1" ; printf "\n" }
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 % isgd 'commandlinefu.com'
 http://is.gd/IjoOpX
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Check the API. You shouldn't need sed. The print-newline at the end is to prevent zsh from inserting a % after the end-of-output.
-                                </p>
-                                <p>
-                                        Also works with <a href="http://v.gd" rel="nofollow">http://v.gd</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                curl -s -d URL="$1" http://is.gd/create.php | sed '/Your new shortened/!d;s/.*value="\([^"]*\)".*/\1/'
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Just create a function in your .bashrc like this
-                                </p>
-                                <p>
-                                        shorturl() {
-                                </p>
-                                <p>
-                                        curl -s -d URL="$1" <a href="http://is.gd/create.php" rel="nofollow">http://is.gd/create.php</a> | sed '/Your new shortened/!d;s/.*value="\([^"]*\)".*/\1/'
-                                </p>
-                                <p>
-                                        }
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Check the API. You shouldn't need sed. The print-newline at the end is to prevent zsh from inserting a % after the end-of-output.
+				</p>
+				<p>
+					Also works with <a href="http://v.gd" rel="nofollow">http://v.gd</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				curl -s -d URL="$1" http://is.gd/create.php | sed '/Your new shortened/!d;s/.*value="\([^"]*\)".*/\1/'
+			</div>
+			<div class="details description">
+				<p>
+					Just create a function in your .bashrc like this
+				</p>
+				<p>
+					shorturl() {
+				</p>
+				<p>
+					curl -s -d URL="$1" <a href="http://is.gd/create.php" rel="nofollow">http://is.gd/create.php</a> | sed '/Your new shortened/!d;s/.*value="\([^"]*\)".*/\1/'
+				</p>
+				<p>
+					}
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

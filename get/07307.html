@@ -1,41 +1,41 @@
 <html>
-        <head>
-                <title>
-                        Bash alias for creating screen session containing IRSSI, named irssi, while checking if existing session is created
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Bash alias for creating screen session containing IRSSI, named irssi, while checking if existing session is created
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                alias irssi="screen -wipe; screen -A -U -x -R -S irssi irssi"
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Bash alias for easy irssi within screen, attempts to attach to existing irssi session, if one exists, otherwise creates one - Including wipe for when system reboots and leaves "dead" session.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                alias irc="screen -D -R -S chatclient irssi"
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command attempts to attach to existing irssi session, if one exists, otherwise creates one.
-                                </p>
-                                <p>
-                                        I use "irc" because I use different irc clients depending on what system I am working on. Consistency is queen.
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Bash alias for creating screen session containing IRSSI, named irssi, while checking if existing session is created
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Bash alias for creating screen session containing IRSSI, named irssi, while checking if existing session is created
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				alias irssi="screen -wipe; screen -A -U -x -R -S irssi irssi"
+			</div>
+			<div class="details description">
+				<p>
+					Bash alias for easy irssi within screen, attempts to attach to existing irssi session, if one exists, otherwise creates one - Including wipe for when system reboots and leaves "dead" session.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				alias irc="screen -D -R -S chatclient irssi"
+			</div>
+			<div class="details description">
+				<p>
+					This command attempts to attach to existing irssi session, if one exists, otherwise creates one.
+				</p>
+				<p>
+					I use "irc" because I use different irc clients depending on what system I am working on. Consistency is queen.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

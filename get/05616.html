@@ -1,32 +1,32 @@
 <html>
-        <head>
-                <title>
-                        List your installed Firefox extensions
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                List your installed Firefox extensions
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                grep -hIr :name ~/.mozilla/firefox/*.default/extensions | tr '&lt;&gt;=' '"""' | cut -f3 -d'"' | sort -u
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        grep -hIr -m 1 :name ~/.mozilla/firefox/*.$USER/extensions | tr '&lt;&gt;=' '"""' | cut -f3 -d'"' | sort -u
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			List your installed Firefox extensions
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				List your installed Firefox extensions
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				grep -hIr :name ~/.mozilla/firefox/*.default/extensions | tr '&lt;&gt;=' '"""' | cut -f3 -d'"' | sort -u
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					grep -hIr -m 1 :name ~/.mozilla/firefox/*.$USER/extensions | tr '&lt;&gt;=' '"""' | cut -f3 -d'"' | sort -u
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
  grep -hIr -m 1 :name ~/.mozilla/firefox/*.$USER/extensions | tr '&lt;&gt;=' '"""' | cut -f3 -d'"' | sort -u
 Adblock Plus
 Firebug
@@ -37,22 +37,22 @@ Secure Login
 Session Manager
 User Agent Switcher
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                1.) my profile ends with $USER not with .default
-                                        </p>
-                                        <p>
-                                                2.) only grep for the first occurrence because some extensions have the translated name also inside the install.rdf
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        $grep -hIr -m 1 em:name ~/.mozilla/firefox/*.default/extensions|sed 's#\s*##'|tr '&lt;&gt;=' '"""'|cut -f3 -d'"'|sort -u
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						1.) my profile ends with $USER not with .default
+					</p>
+					<p>
+						2.) only grep for the first occurrence because some extensions have the translated name also inside the install.rdf
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					$grep -hIr -m 1 em:name ~/.mozilla/firefox/*.default/extensions|sed 's#\s*##'|tr '&lt;&gt;=' '"""'|cut -f3 -d'"'|sort -u
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 Abduction!
 Adblock Plus
 Add N Edit Cookies
@@ -60,13 +60,13 @@ Add to Search Bar
 All-in-One Sidebar
 Autocomplete Manager
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                with grep for em:name rather than name, you will get much better result.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						with grep for em:name rather than name, you will get much better result.
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

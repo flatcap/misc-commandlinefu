@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Check if a string is into a variable
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Check if a string is into a variable
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                [[ ${var##*yourstring*} != ${var} ]]
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Check if a string is into a variable
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Check if a string is into a variable
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				[[ ${var##*yourstring*} != ${var} ]]
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ var=foobar
 $ [[ ${var##*foo*} != ${var} ]]
 $ echo $?
@@ -25,53 +25,53 @@ $ [[ ${var##*notfoo*} != ${var} ]]
 $ echo $?
 1
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Returns true (0) if the string is into $var, or false (1) if not.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Wonderful.
-                                </p>
-                                <p>
-                                        Share a website with you ,
-                                </p>
-                                <p>
-                                        ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
-                                </p>
-                                <p>
-                                        Believe you will love it.
-                                </p>
-                                <p>
-                                        We accept any form of payment.
-                                </p>
-                                <p>
-                                        <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        bash has is own matching test. Better is:
-                                </p>
-                                <p>
-                                        [[ $var =~ "yourstring" ]]
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Thanks jld!!
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Returns true (0) if the string is into $var, or false (1) if not.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Wonderful.
+				</p>
+				<p>
+					Share a website with you ,
+				</p>
+				<p>
+					( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
+				</p>
+				<p>
+					Believe you will love it.
+				</p>
+				<p>
+					We accept any form of payment.
+				</p>
+				<p>
+					<a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					bash has is own matching test. Better is:
+				</p>
+				<p>
+					[[ $var =~ "yourstring" ]]
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Thanks jld!!
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

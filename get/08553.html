@@ -1,42 +1,42 @@
 <html>
-        <head>
-                <title>
-                        Find out which process uses an old lib and needs a restart after a system update
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Find out which process uses an old lib and needs a restart after a system update
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                sudo lsof | grep 'DEL.*lib' | cut -f 1 -d ' ' | sort -u
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        lsof | grep 'DEL.*lib' | sort -k1,1 -u
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Shows the full output of lsof.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        lsof | grep 'DEL.*lib' | cut -f 1 -d ' ' | sort -u
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			Find out which process uses an old lib and needs a restart after a system update
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Find out which process uses an old lib and needs a restart after a system update
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				sudo lsof | grep 'DEL.*lib' | cut -f 1 -d ' ' | sort -u
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					lsof | grep 'DEL.*lib' | sort -k1,1 -u
+				</div>
+				<div class="details description">
+					<p>
+						Shows the full output of lsof.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					lsof | grep 'DEL.*lib' | cut -f 1 -d ' ' | sort -u
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 # lsof | grep 'DEL.*lib' | cut -f 1 -d ' ' | sort -u
 crond
 mpd
@@ -44,13 +44,13 @@ nginx
 parcellite
 X
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Useful after a complete system update (without a new kernel) when you want to know, which processes need to be restarted
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						Useful after a complete system update (without a new kernel) when you want to know, which processes need to be restarted
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

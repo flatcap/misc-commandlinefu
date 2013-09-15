@@ -1,37 +1,37 @@
 <html>
-        <head>
-                <title>
-                        Launch command in backgroup or not
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Launch command in backgroup or not
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                eval <span>&lt;command&gt;</span> ${INBACK:-&amp;}
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        If $INBACK is set, command will launch in foreground and inverse.
-                                </p>
-                                <p>
-                                        Very useful in script !
-                                </p>
-                                <p>
-                                        We could apply the inverse comportement like that :
-                                </p>
-                                <p>
-                                        eval command ${INBACK:+&amp;}
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Launch command in backgroup or not
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Launch command in backgroup or not
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				eval <span>&lt;command&gt;</span> ${INBACK:-&amp;}
+			</div>
+			<div class="details description">
+				<p>
+					If $INBACK is set, command will launch in foreground and inverse.
+				</p>
+				<p>
+					Very useful in script !
+				</p>
+				<p>
+					We could apply the inverse comportement like that :
+				</p>
+				<p>
+					eval command ${INBACK:+&amp;}
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

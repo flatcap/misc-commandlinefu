@@ -1,49 +1,49 @@
 <html>
-        <head>
-                <title>
-                        Indent a one-liner.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Indent a one-liner.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                declare -f &lt;function name&gt;
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Indent a one-liner.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Indent a one-liner.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				declare -f &lt;function name&gt;
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 rany:~/Desktop$ command_8239() { M=50;if read mb _ &lt; &lt;(du -sm 2&gt;/dev/null) &amp;&amp; (( mb &gt; M )); then echo "Size of ${PWD##*/} &gt; $M";fi; }
 rany:~/Desktop$ declare -f command_8239
 command_8239()
 {
     M=50;
     if read mb _ &lt; &lt;(du -sm 2&gt;/dev/null) &amp;&amp; (( mb &gt; M )); then
-        echo "Size of ${PWD##*/} &gt; $M";
+	echo "Size of ${PWD##*/} &gt; $M";
     fi
 }
 rany:~/Desktop$
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        I often write a one-liner which I want to use later in a script.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                type &lt;function name&gt;
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+			</div>
+			<div class="details description">
+				<p>
+					I often write a one-liner which I want to use later in a script.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				type &lt;function name&gt;
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ command1 () { for m in 2010-{01..12} ; do m=$( echo $m | sed 's/-\([0-9]\)$/-0\1/' ) ; echo $m ; done }
 $ type command1
 command1 is a function
@@ -51,32 +51,32 @@ command1 ()
 {
     for m in 2010-{01..12};
     do
-        m=$( echo $m | sed 's/-\([0-9]\)$/-0\1/' );
-        echo $m;
+	m=$( echo $m | sed 's/-\([0-9]\)$/-0\1/' );
+	echo $m;
     done
 }
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Bash builtin type also indents the function.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Nice, and it tab completes the function name too.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Indeed a nice tool.
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Bash builtin type also indents the function.
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Nice, and it tab completes the function name too.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Indeed a nice tool.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

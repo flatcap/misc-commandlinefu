@@ -1,36 +1,36 @@
 <html>
-        <head>
-                <title>
-                        Create key/value pairs in bash
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Create key/value pairs in bash
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                $ hash="foo:bar"; key=${hash%:*}; value=${hash#*:}; echo "Key: $key Value: $value"
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Create key/value pairs in bash
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Create key/value pairs in bash
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				$ hash="foo:bar"; key=${hash%:*}; value=${hash#*:}; echo "Key: $key Value: $value"
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 Key: foo Value: bar
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This is a quick and dirty way of creating key/value pairs in bash. Not as flexible as an associative array, but often powerful enough to be useful. For example, if I want to rename sets of files in a way that I can't do with wildcards, I'll create something like 'rename-me.txt'
-                                </p><code>filename_with_no_pattern:aa.txt\n</code> <code>AnotherPieceOfText:ab.txt\n</code> <code>/deeply/nested/file/with/no/pattern.txt:ac.txt\n</code>
-                                <p>
-                                        Then I'll traverse rename-me.txt with a read loop
-                                </p><code>cat rename-me.txt | while read line;</code> <code>do</code> <code>old=${line%:*};</code> <code>new=${line#*:};</code> <code>mv $old $new;</code> <code>done</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					This is a quick and dirty way of creating key/value pairs in bash. Not as flexible as an associative array, but often powerful enough to be useful. For example, if I want to rename sets of files in a way that I can't do with wildcards, I'll create something like 'rename-me.txt'
+				</p><code>filename_with_no_pattern:aa.txt\n</code> <code>AnotherPieceOfText:ab.txt\n</code> <code>/deeply/nested/file/with/no/pattern.txt:ac.txt\n</code>
+				<p>
+					Then I'll traverse rename-me.txt with a read loop
+				</p><code>cat rename-me.txt | while read line;</code> <code>do</code> <code>old=${line%:*};</code> <code>new=${line#*:};</code> <code>mv $old $new;</code> <code>done</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

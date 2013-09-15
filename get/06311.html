@@ -1,114 +1,114 @@
 <html>
-        <head>
-                <title>
-                        Converts uppercase chars in a string to lowercase
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Converts uppercase chars in a string to lowercase
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                s="StrinG"; echo ${s,,}
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Converts uppercase chars in a string to lowercase
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Converts uppercase chars in a string to lowercase
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				s="StrinG"; echo ${s,,}
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 string
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Another alternative is to define a function:
-                                </p>
-                                <p>
-                                        lower() {
-                                </p>
-                                <p>
-                                        echo ${@,,}
-                                </p>
-                                <p>
-                                        }
-                                </p>
-                                <p>
-                                        lower StrinG
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        echo StrinG | tr '[:upper:]' '[:lower:]'
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        echo StrinG | tr 'A-Z' 'a-z'
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					Another alternative is to define a function:
+				</p>
+				<p>
+					lower() {
+				</p>
+				<p>
+					echo ${@,,}
+				</p>
+				<p>
+					}
+				</p>
+				<p>
+					lower StrinG
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					echo StrinG | tr '[:upper:]' '[:lower:]'
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					echo StrinG | tr 'A-Z' 'a-z'
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 string
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Another way to do it with slightly fewer characters. It doesn't work on Russian characters; please don't vote down because of that. :p It's very handy for those of us working in ascii :)
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        I'm getting:
-                                </p>
-                                <p>
-                                        -bash: ${s,,}: bad substitution
-                                </p>
-                                <p>
-                                        What is that trick? That syntax is foreign to me.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I don't know why you get that "bad substitution". Are you running the bash shell or is it another one? I'm running bash v4.1.5.
-                                </p>
-                                <p>
-                                        This is a case of paremeter expansion of the form ${parameter,,pattern}. The , operator converts each matching uppercase letters to lowercase. When the pattern is omitted, it is treated like a ?, which matches every character.
-                                </p>
-                                <p>
-                                        More info in the section of "Parameter expansion" in the bash man page.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        GNU bash, version 3.2.49(23)-release
-                                </p>
-                                <p>
-                                        Doesn't look like it supports the , operator. I tried to figure out another way to do it with parameter expansion in 3.2 but I couldn't see a way. Parameter expansion looks cool though, thanks for the help!
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        its bash 4 syntax.
-                                </p>
-                                <p>
-                                        to uppercase conversion:
-                                </p>
-                                <p>
-                                        s="Test" ; echo ${s^^}
-                                </p>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						Another way to do it with slightly fewer characters. It doesn't work on Russian characters; please don't vote down because of that. :p It's very handy for those of us working in ascii :)
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					I'm getting:
+				</p>
+				<p>
+					-bash: ${s,,}: bad substitution
+				</p>
+				<p>
+					What is that trick? That syntax is foreign to me.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I don't know why you get that "bad substitution". Are you running the bash shell or is it another one? I'm running bash v4.1.5.
+				</p>
+				<p>
+					This is a case of paremeter expansion of the form ${parameter,,pattern}. The , operator converts each matching uppercase letters to lowercase. When the pattern is omitted, it is treated like a ?, which matches every character.
+				</p>
+				<p>
+					More info in the section of "Parameter expansion" in the bash man page.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					GNU bash, version 3.2.49(23)-release
+				</p>
+				<p>
+					Doesn't look like it supports the , operator. I tried to figure out another way to do it with parameter expansion in 3.2 but I couldn't see a way. Parameter expansion looks cool though, thanks for the help!
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					its bash 4 syntax.
+				</p>
+				<p>
+					to uppercase conversion:
+				</p>
+				<p>
+					s="Test" ; echo ${s^^}
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

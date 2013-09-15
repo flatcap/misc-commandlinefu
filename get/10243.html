@@ -1,47 +1,47 @@
 <html>
-        <head>
-                <title>
-                        Compare two directories
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Compare two directories
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                diff --suppress-common-lines -y &lt;(cd path_to_dir1; find .|sort) &lt;(cd path_to_dir2; find .|sort)
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
-./.htaccess                                   | ./DEADJOE
-                                              &gt; ./about.php
-                                              &gt; ./ad-aware.php
-                                              &gt; ./config.php
+	<head>
+		<title>
+			Compare two directories
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Compare two directories
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				diff --suppress-common-lines -y &lt;(cd path_to_dir1; find .|sort) &lt;(cd path_to_dir2; find .|sort)
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
+./.htaccess				   | ./DEADJOE
+					      &gt; ./about.php
+					      &gt; ./ad-aware.php
+					      &gt; ./config.php
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Output of this command is the difference of recursive file lists in two directories (very quick!).
-                                </p>
-                                <p>
-                                        To view differences in content of files too, use the command submitted by mariusbutuc (very slow!):
-                                </p><code>diff -rq path_to_dir1 path_to_dir2</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Thanks, its' useful
-                        </p>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Output of this command is the difference of recursive file lists in two directories (very quick!).
+				</p>
+				<p>
+					To view differences in content of files too, use the command submitted by mariusbutuc (very slow!):
+				</p><code>diff -rq path_to_dir1 path_to_dir2</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Thanks, its' useful
+			</p>
+		</div>
+	</body>
 </html>

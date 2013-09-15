@@ -1,126 +1,126 @@
 <html>
-        <head>
-                <title>
-                        Like top, but for files
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Like top, but for files
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command-dangerous">
-                                watch -d -n 2 'df; ls -FlAt;'
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Great one. I would change it a bit by adding a -S switch and refreshing a bit more often, like :
-                                </p>
-                                <p>
-                                        watch --differences -n 3 'df; ls -FlAtS;'
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        watch: illegal option -- -
-                                </p>
-                                <p>
-                                        usage: watch [-ciotnW] [tty name]
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Mac OSX: Can be hand compiled or installed using ports.
-                                </p>
-                                <p>
-                                        1. Install MacPorts (macports.org)
-                                </p>
-                                <p>
-                                        [2]. sudo port -d sync
-                                </p>
-                                <p>
-                                        [3]. sudo port -d selfupdate
-                                </p>
-                                <p>
-                                        4. sudo port install watch
-                                </p>
-                                <p>
-                                        Love watch!
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        would change the 'df' part to 'df -h', easier to read ;-)
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        s/--differences/-d/
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Wow, this is exactly what I was looking for. I'm copying data from one hard drive to another, and wanted to monitor the activity. I modified this slightly to see the subdirectories:
-                                </p>
-                                <p>
-                                        watch -d -n 5 'df -h | grep media; ls ./* -FlAt;'
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        "-S" and "-t" don't really work together (sorting by time and by size?)
-                                </p>
-                                <p>
-                                        "df -h" is certainly an option, but then you won't see smaller changes in free space.
-                                </p>
-                                <p>
-                                        "-d" included. Thanks. :)
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I love it. FreeBSD does not...thoughts?
-                                </p>
-                                <p>
-                                        [aleida@CERN ~]$ watch -d -n 2 'df; ls -FlAt;'
-                                </p>
-                                <p>
-                                        watch: illegal option -- d
-                                </p>
-                                <p>
-                                        --
-                                </p>
-                                <p>
-                                        Brie
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Dunno. "$man watch" in BSD and look for a flag like "--differences" or something like that.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Why is this marked malicious?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Huh. No idea. Wish there was a way to escalate that and get that marking removed. *shrug*
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Like top, but for files
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Like top, but for files
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command-dangerous">
+				watch -d -n 2 'df; ls -FlAt;'
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Great one. I would change it a bit by adding a -S switch and refreshing a bit more often, like :
+				</p>
+				<p>
+					watch --differences -n 3 'df; ls -FlAtS;'
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					watch: illegal option -- -
+				</p>
+				<p>
+					usage: watch [-ciotnW] [tty name]
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Mac OSX: Can be hand compiled or installed using ports.
+				</p>
+				<p>
+					1. Install MacPorts (macports.org)
+				</p>
+				<p>
+					[2]. sudo port -d sync
+				</p>
+				<p>
+					[3]. sudo port -d selfupdate
+				</p>
+				<p>
+					4. sudo port install watch
+				</p>
+				<p>
+					Love watch!
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					would change the 'df' part to 'df -h', easier to read ;-)
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					s/--differences/-d/
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Wow, this is exactly what I was looking for. I'm copying data from one hard drive to another, and wanted to monitor the activity. I modified this slightly to see the subdirectories:
+				</p>
+				<p>
+					watch -d -n 5 'df -h | grep media; ls ./* -FlAt;'
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					"-S" and "-t" don't really work together (sorting by time and by size?)
+				</p>
+				<p>
+					"df -h" is certainly an option, but then you won't see smaller changes in free space.
+				</p>
+				<p>
+					"-d" included. Thanks. :)
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I love it. FreeBSD does not...thoughts?
+				</p>
+				<p>
+					[aleida@CERN ~]$ watch -d -n 2 'df; ls -FlAt;'
+				</p>
+				<p>
+					watch: illegal option -- d
+				</p>
+				<p>
+					--
+				</p>
+				<p>
+					Brie
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Dunno. "$man watch" in BSD and look for a flag like "--differences" or something like that.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Why is this marked malicious?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Huh. No idea. Wish there was a way to escalate that and get that marking removed. *shrug*
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

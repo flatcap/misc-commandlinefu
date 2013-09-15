@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Debug how files are being accessed by a process
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Debug how files are being accessed by a process
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                inotifywait -m -r .
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Debug how files are being accessed by a process
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Debug how files are being accessed by a process
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				inotifywait -m -r .
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 x220:/tmp/foo$ inotifywait -m -r .
 Setting up watches.  Beware: since -r was given, this may take a while!
 Watches established.
@@ -25,15 +25,15 @@ Watches established.
 ./ ATTRIB bar
 ./ CLOSE_WRITE,CLOSE bar
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Instead of looking through `lsof` results, use inotifywait!
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Instead of looking through `lsof` results, use inotifywait!
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

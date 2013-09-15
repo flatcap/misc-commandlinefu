@@ -1,97 +1,97 @@
 <html>
-        <head>
-                <title>
-                        Draw a Sierpinski triangle
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Draw a Sierpinski triangle
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                perl -e 'print "P1\n256 256\n", map {$_&amp;($_&gt;&gt;8)?1:0} (0..0xffff)' | display
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        OK, not the most useful but a good way to impress friends. Requires the "display" command from ImageMagick.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                perl -le '$l=80;$l2="!" x $l;substr+($l2^=$l2),$l/2,1,"\xFF";{local $_=$l2;y/\0\xFF/ ^/;print;($lf,$rt)=map{substr $l2 x 2,$_%$l,$l;}1,-1;$l2=$lf^$rt;select undef,undef,undef,.1;redo}'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
-                                        ^
-                                       ^ ^
-                                      ^   ^
-                                     ^ ^ ^ ^
-                                    ^       ^
-                                   ^ ^     ^ ^
-                                  ^   ^   ^   ^
-                                 ^ ^ ^ ^ ^ ^ ^ ^
-                                ^               ^
-                               ^ ^             ^ ^
-                              ^   ^           ^   ^
-                             ^ ^ ^ ^         ^ ^ ^ ^
+	<head>
+		<title>
+			Draw a Sierpinski triangle
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Draw a Sierpinski triangle
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				perl -e 'print "P1\n256 256\n", map {$_&amp;($_&gt;&gt;8)?1:0} (0..0xffff)' | display
+			</div>
+			<div class="details description">
+				<p>
+					OK, not the most useful but a good way to impress friends. Requires the "display" command from ImageMagick.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				perl -le '$l=80;$l2="!" x $l;substr+($l2^=$l2),$l/2,1,"\xFF";{local $_=$l2;y/\0\xFF/ ^/;print;($lf,$rt)=map{substr $l2 x 2,$_%$l,$l;}1,-1;$l2=$lf^$rt;select undef,undef,undef,.1;redo}'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
+					^
+				       ^ ^
+				      ^   ^
+				     ^ ^ ^ ^
+				    ^       ^
+				   ^ ^     ^ ^
+				  ^   ^   ^   ^
+				 ^ ^ ^ ^ ^ ^ ^ ^
+				^	       ^
+			       ^ ^	     ^ ^
+			      ^   ^	   ^   ^
+			     ^ ^ ^ ^	 ^ ^ ^ ^
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        xmas lights for your terminal - switching the $l value to something like 1200 and zooming out on your terminal gives a great view ...
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Fun! I like it.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        ftw! dude. r0x0rz
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Fun !
-                                </p>
-                                <p>
-                                        Nice plotting approach ...
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        nice, i'd have voted twice because of the extra geek factor if i could ;)
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Commandlinefu isn't always about practicality, it is often about coolness. And this command certainly qualifies.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        waouuuu
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        go fractals!
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					xmas lights for your terminal - switching the $l value to something like 1200 and zooming out on your terminal gives a great view ...
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Fun! I like it.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					ftw! dude. r0x0rz
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Fun !
+				</p>
+				<p>
+					Nice plotting approach ...
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					nice, i'd have voted twice because of the extra geek factor if i could ;)
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Commandlinefu isn't always about practicality, it is often about coolness. And this command certainly qualifies.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					waouuuu
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					go fractals!
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

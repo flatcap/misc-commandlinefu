@@ -1,62 +1,62 @@
 <html>
-        <head>
-                <title>
-                        find files in a date range
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                find files in a date range
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                touch -t 201001010000 begin; touch -t 201012312359.59 end; find . -newer begin -a ! -newer end
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Example above will recursively find files in current directory created/modified in 2010.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        find . -type f -newermt "2010-01-01" ! -newermt "2010-06-01"
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Find files in a specific date range - in this case, the first half of last year.
-                                        </p>
-                                        <p>
-                                                -newermt = modification time of the file is more recent than this date
-                                        </p>
-                                        <p>
-                                                GNU find allows any date specfication that GNU date would accept, e.g.
-                                        </p><code>find . -type f -newermt "3 years ago" ! -newermt "2 years ago"</code>
-                                        <p>
-                                                or
-                                        </p><code>find . -type f -newermt "last monday"</code>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        find . -cnewer &lt;file a&gt; -and ! -cnewer &lt;file b&gt;
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This command finds all the files whose status has changed between the ctime of the older and newer .
-                                        </p>
-                                        <p>
-                                                Very useful if you can see from an ls listing a block of consecutive files you want to move or delete, but can't figure out exactly the time range by date.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			find files in a date range
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				find files in a date range
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				touch -t 201001010000 begin; touch -t 201012312359.59 end; find . -newer begin -a ! -newer end
+			</div>
+			<div class="details description">
+				<p>
+					Example above will recursively find files in current directory created/modified in 2010.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					find . -type f -newermt "2010-01-01" ! -newermt "2010-06-01"
+				</div>
+				<div class="details description">
+					<p>
+						Find files in a specific date range - in this case, the first half of last year.
+					</p>
+					<p>
+						-newermt = modification time of the file is more recent than this date
+					</p>
+					<p>
+						GNU find allows any date specfication that GNU date would accept, e.g.
+					</p><code>find . -type f -newermt "3 years ago" ! -newermt "2 years ago"</code>
+					<p>
+						or
+					</p><code>find . -type f -newermt "last monday"</code>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					find . -cnewer &lt;file a&gt; -and ! -cnewer &lt;file b&gt;
+				</div>
+				<div class="details description">
+					<p>
+						This command finds all the files whose status has changed between the ctime of the older and newer .
+					</p>
+					<p>
+						Very useful if you can see from an ls listing a block of consecutive files you want to move or delete, but can't figure out exactly the time range by date.
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

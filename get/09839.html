@@ -1,24 +1,24 @@
 <html>
-        <head>
-                <title>
-                        Get a list of the top 10 heaviest tables in your mysql database - useful for performance diagnostics
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Get a list of the top 10 heaviest tables in your mysql database - useful for performance diagnostics
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                mysql --database=information_schema -u <span>&lt;user&gt;</span> -p -e "SELECT TABLE_NAME, TABLE_SCHEMA, SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024 mb FROM TABLES GROUP BY TABLE_NAME ORDER BY mb DESC LIMIT 10"
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Get a list of the top 10 heaviest tables in your mysql database - useful for performance diagnostics
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Get a list of the top 10 heaviest tables in your mysql database - useful for performance diagnostics
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				mysql --database=information_schema -u <span>&lt;user&gt;</span> -p -e "SELECT TABLE_NAME, TABLE_SCHEMA, SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024 mb FROM TABLES GROUP BY TABLE_NAME ORDER BY mb DESC LIMIT 10"
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

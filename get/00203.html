@@ -1,59 +1,59 @@
 <html>
-        <head>
-                <title>
-                        Prettify an XML file
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Prettify an XML file
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                tidy -xml -i -m [file]
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Generated XML files often are poorly formatted. Use this command to properly indent and normalize the file in-place.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                xmllint --format --xmlout --nsclean <span>&lt;file&gt;</span>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Like `tidy`, `xmllint` can be used to prettify XML files.
-                                </p>
-                                <p>
-                                        The --nsclean option is also useful to remove redundant namespaces.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        I often find myself adding '-w 9999' (line width) so that lines are not wrapped at 80 chars. Just a personal taste...
-                                </p>
-                                <p>
-                                        Apart from that, I use this command nearly everyday.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I'll try that. I often do:
-                                </p><code>xmllint --format</code>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Prettify an XML file
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Prettify an XML file
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				tidy -xml -i -m [file]
+			</div>
+			<div class="details description">
+				<p>
+					Generated XML files often are poorly formatted. Use this command to properly indent and normalize the file in-place.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				xmllint --format --xmlout --nsclean <span>&lt;file&gt;</span>
+			</div>
+			<div class="details description">
+				<p>
+					Like `tidy`, `xmllint` can be used to prettify XML files.
+				</p>
+				<p>
+					The --nsclean option is also useful to remove redundant namespaces.
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					I often find myself adding '-w 9999' (line width) so that lines are not wrapped at 80 chars. Just a personal taste...
+				</p>
+				<p>
+					Apart from that, I use this command nearly everyday.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I'll try that. I often do:
+				</p><code>xmllint --format</code>
+			</div>
+		</div>
+	</body>
 </html>

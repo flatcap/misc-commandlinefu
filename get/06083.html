@@ -1,70 +1,70 @@
 <html>
-        <head>
-                <title>
-                        List open files that have no links to them on the filesystem
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                List open files that have no links to them on the filesystem
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                lsof +L1
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			List open files that have no links to them on the filesystem
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				List open files that have no links to them on the filesystem
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				lsof +L1
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 COMMAND     PID   USER   FD   TYPE DEVICE    SIZE NLINK   NODE NAME
 a-proc    23521   root    3u   REG    8,1 5595979     0 353398 /some/logfile (deleted)
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        I have come across a situation in the past where someone has unlinked a file by running an 'rm' command against it while it was still being written to by a running process.
-                                </p>
-                                <p>
-                                        The problem manifested itself when a 'df' command showed a filesystem at 100%, but this did not match the total value of a 'du -sk *'.
-                                </p>
-                                <p>
-                                        When this happens, the process continues to write to the file but you can no longer see the file on the filesystem. Stopping and starting the process will, more often than not, get rid of the unlinked file, however this is not always possible on a live server.
-                                </p>
-                                <p>
-                                        When you are in this situation you can use the 'lsof' command above to get the PID of the process that owns the file (in the sample output this is 23521).
-                                </p>
-                                <p>
-                                        Run the following command to see a sym-link to the file (marked as deleted):
-                                </p><code>cd /proc/23521/fd &amp;&amp; ls -l</code>
-                                <p>
-                                        Truncate the sym-link to regain your disk space:
-                                </p><code>&gt; /proc/23521/fd/3</code>
-                                <p>
-                                        I should point out that this is pretty brutal and *could* potentially destabilise your system depending on what process the file belongs to that you are truncating.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        I normally use "lsof | grep deleted" for this then restart the process with the file open to resolve these types of issues.
-                                </p>
-                                <p>
-                                        Files with a link count less than 1 can also mean someone is trying to hide something...
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        You can restrict the output to a certain file system, e.g. /var, like this:
-                                </p><code>lsof +aL1 /var</code>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					I have come across a situation in the past where someone has unlinked a file by running an 'rm' command against it while it was still being written to by a running process.
+				</p>
+				<p>
+					The problem manifested itself when a 'df' command showed a filesystem at 100%, but this did not match the total value of a 'du -sk *'.
+				</p>
+				<p>
+					When this happens, the process continues to write to the file but you can no longer see the file on the filesystem. Stopping and starting the process will, more often than not, get rid of the unlinked file, however this is not always possible on a live server.
+				</p>
+				<p>
+					When you are in this situation you can use the 'lsof' command above to get the PID of the process that owns the file (in the sample output this is 23521).
+				</p>
+				<p>
+					Run the following command to see a sym-link to the file (marked as deleted):
+				</p><code>cd /proc/23521/fd &amp;&amp; ls -l</code>
+				<p>
+					Truncate the sym-link to regain your disk space:
+				</p><code>&gt; /proc/23521/fd/3</code>
+				<p>
+					I should point out that this is pretty brutal and *could* potentially destabilise your system depending on what process the file belongs to that you are truncating.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					I normally use "lsof | grep deleted" for this then restart the process with the file open to resolve these types of issues.
+				</p>
+				<p>
+					Files with a link count less than 1 can also mean someone is trying to hide something...
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					You can restrict the output to a certain file system, e.g. /var, like this:
+				</p><code>lsof +aL1 /var</code>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,42 +1,42 @@
 <html>
-        <head>
-                <title>
-                        find builtin in bash v4+
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                find builtin in bash v4+
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ls -l /etc/**/*killall
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			find builtin in bash v4+
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				find builtin in bash v4+
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ls -l /etc/**/*killall
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 [root@localhost ~]# ls -l /etc/**/*killall
 -rwxr-xr-x. 1 root root 652 Apr 19 15:47 /etc/init.d/killall
 lrwxrwxrwx. 1 root root  17 May 31 06:00 /etc/rc0.d/S00killall -&gt; ../init.d/killall
 lrwxrwxrwx. 1 root root  17 May 31 06:00 /etc/rc6.d/S00killall -&gt; ../init.d/killall
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command will give you the same list of files as "find /etc/ -name '*killall' | xargs ls -l".
-                                </p>
-                                <p>
-                                        In a simpler format just do 'ls /etc/**/file'.
-                                </p>
-                                <p>
-                                        It uses shell globbing, so it will also work with other commands, like "cp /etc/**/sshd sshd_backup".
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					This command will give you the same list of files as "find /etc/ -name '*killall' | xargs ls -l".
+				</p>
+				<p>
+					In a simpler format just do 'ls /etc/**/file'.
+				</p>
+				<p>
+					It uses shell globbing, so it will also work with other commands, like "cp /etc/**/sshd sshd_backup".
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

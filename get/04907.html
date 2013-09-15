@@ -1,37 +1,37 @@
 <html>
-        <head>
-                <title>
-                        Split a file one piece at a time, when using the split command isn't an option (not enough disk space)
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Split a file one piece at a time, when using the split command isn't an option (not enough disk space)
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                dd if=inputfile of=split3 bs=16m count=32 skip=64
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        bs = buffer size (basically defined the size of a "unit" used by count and skip)
-                                </p>
-                                <p>
-                                        count = the number of buffers to copy (16m * 32 = 1/2 gig)
-                                </p>
-                                <p>
-                                        skip = (32 * 2) we are grabbing piece 3...which means 2 have already been written so skip (2 * count)
-                                </p>
-                                <p>
-                                        i will edit this later if i can to make this all more understandable
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Split a file one piece at a time, when using the split command isn't an option (not enough disk space)
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Split a file one piece at a time, when using the split command isn't an option (not enough disk space)
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				dd if=inputfile of=split3 bs=16m count=32 skip=64
+			</div>
+			<div class="details description">
+				<p>
+					bs = buffer size (basically defined the size of a "unit" used by count and skip)
+				</p>
+				<p>
+					count = the number of buffers to copy (16m * 32 = 1/2 gig)
+				</p>
+				<p>
+					skip = (32 * 2) we are grabbing piece 3...which means 2 have already been written so skip (2 * count)
+				</p>
+				<p>
+					i will edit this later if i can to make this all more understandable
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

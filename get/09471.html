@@ -1,34 +1,34 @@
 <html>
-        <head>
-                <title>
-                        return a titlecased version of the string
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                return a titlecased version of the string
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                title() { string=( $@ ); echo ${string[@]^} }
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Needs Bash4. Found at <a href="http://stackoverflow.com/questions/2264428/converting-string-to-lower-case-in-bash-shell-scripting" rel="nofollow">http://stackoverflow.com/questions/2264428/converting-string-to-lower-case-in-bash-shell-scripting</a> alongside a few other tricks.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                title() { sed 's/\&lt;\w*/\u&amp;/g' &lt;&lt;&lt;$@; }
-                        </div>
-                        <div class="details"></div>
-                </div>
-        </body>
+	<head>
+		<title>
+			return a titlecased version of the string
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				return a titlecased version of the string
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				title() { string=( $@ ); echo ${string[@]^} }
+			</div>
+			<div class="details description">
+				<p>
+					Needs Bash4. Found at <a href="http://stackoverflow.com/questions/2264428/converting-string-to-lower-case-in-bash-shell-scripting" rel="nofollow">http://stackoverflow.com/questions/2264428/converting-string-to-lower-case-in-bash-shell-scripting</a> alongside a few other tricks.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				title() { sed 's/\&lt;\w*/\u&amp;/g' &lt;&lt;&lt;$@; }
+			</div>
+			<div class="details"></div>
+		</div>
+	</body>
 </html>

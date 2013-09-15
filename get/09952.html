@@ -1,49 +1,49 @@
 <html>
-        <head>
-                <title>
-                        Open any file and suppress error warnings message
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Open any file and suppress error warnings message
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                alias o='xdg-open "$@" 2&gt;/dev/null'
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        use xdg-open without looking at error messages
-                                </p>
-                                <p>
-                                        examples msg:
-                                </p>
-                                <p>
-                                        (nautilus:3955): Gtk-WARNING **: Theme parsing error: Notebook.css:21:15: Junk at end of value
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        What is this "xdg-open" command you reference?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        xdg-open is to open any file from the command line, so instead of doing gedit [file], nautilus [path], eog [png] ...etc, u just use xdg-open instead of trying to remember each program
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Open any file and suppress error warnings message
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Open any file and suppress error warnings message
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				alias o='xdg-open "$@" 2&gt;/dev/null'
+			</div>
+			<div class="details description">
+				<p>
+					use xdg-open without looking at error messages
+				</p>
+				<p>
+					examples msg:
+				</p>
+				<p>
+					(nautilus:3955): Gtk-WARNING **: Theme parsing error: Notebook.css:21:15: Junk at end of value
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					What is this "xdg-open" command you reference?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					xdg-open is to open any file from the command line, so instead of doing gedit [file], nautilus [path], eog [png] ...etc, u just use xdg-open instead of trying to remember each program
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

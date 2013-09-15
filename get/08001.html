@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        cd to (or operate on) a file across parallel directories
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                cd to (or operate on) a file across parallel directories
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cd ${PWD/a/b}
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			cd to (or operate on) a file across parallel directories
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				cd to (or operate on) a file across parallel directories
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cd ${PWD/a/b}
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 [root@centos manifests]# pwd
 /etc/puppet/modules/nfs/manifests
 [root@centos manifests]# cd ${PWD/nfs/packages}
@@ -26,67 +26,67 @@
 [root@centos manifests]# vi ${PWD/packages/nfs}/init.pp
 [root@centos manifests]# cp -a ${PWD/packages/nfs}/init.pp .
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This is useful for quickly jumping around branches in a file system, or operating on a parellel file.
-                                </p>
-                                <p>
-                                        This is tested in bash. cd to (substitute in PWD, a for b) where PWD is the bash environmental variable for the "working directory"
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Thanks for posting this command. I'm sorry, but I can't understand what it does. Could you share some use cases?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I updated the comment for this.
-                                </p>
-                                <p>
-                                        in bash - PWD is the working directory.
-                                </p>
-                                <p>
-                                        To test -
-                                </p>
-                                <p>
-                                        mkdir -p /tmp/a/b/cow/d
-                                </p>
-                                <p>
-                                        mkdir -p /tmp/a/b/fish/d
-                                </p>
-                                <p>
-                                        cd /tmp/a/b/cow/d; pwd
-                                </p>
-                                <p>
-                                        where are you?
-                                </p>
-                                <p>
-                                        cd ${PWD/cow/fish}; pwd
-                                </p>
-                                <p>
-                                        where are you now?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Thanks! I didn't know about the ${PWD/cow/fish} substitution.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Thanks. One of the things I missed way back in the day when I switched from ksh to bash was the ksh "cd a b" which basically does what you show here. I wrote a function so bash does the same thing but this is handy.
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					This is useful for quickly jumping around branches in a file system, or operating on a parellel file.
+				</p>
+				<p>
+					This is tested in bash. cd to (substitute in PWD, a for b) where PWD is the bash environmental variable for the "working directory"
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Thanks for posting this command. I'm sorry, but I can't understand what it does. Could you share some use cases?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I updated the comment for this.
+				</p>
+				<p>
+					in bash - PWD is the working directory.
+				</p>
+				<p>
+					To test -
+				</p>
+				<p>
+					mkdir -p /tmp/a/b/cow/d
+				</p>
+				<p>
+					mkdir -p /tmp/a/b/fish/d
+				</p>
+				<p>
+					cd /tmp/a/b/cow/d; pwd
+				</p>
+				<p>
+					where are you?
+				</p>
+				<p>
+					cd ${PWD/cow/fish}; pwd
+				</p>
+				<p>
+					where are you now?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Thanks! I didn't know about the ${PWD/cow/fish} substitution.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Thanks. One of the things I missed way back in the day when I switched from ksh to bash was the ksh "cd a b" which basically does what you show here. I wrote a function so bash does the same thing but this is handy.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

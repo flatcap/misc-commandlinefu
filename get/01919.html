@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Add a line from 1 file after every line of another (shuffle files together)
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Add a line from 1 file after every line of another (shuffle files together)
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                sed '/^/R addfile' targetfile &gt; savefile
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Add a line from 1 file after every line of another (shuffle files together)
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Add a line from 1 file after every line of another (shuffle files together)
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				sed '/^/R addfile' targetfile &gt; savefile
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 target file line 1
 add file line 1
 target file line 2
@@ -25,21 +25,21 @@ add file line2
 target file final line
 add file line x
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        After every line in targetfile (empty lines included) insert in a line from addfile. "Save" results to savefile. Addfile should be longer than targetfile since this doesn't loop back to the top of addfile.
-                                </p>
-                                <p>
-                                        /^/R addfile -- says for every line that matches "has a start of line" output a line from the file addfile.
-                                </p>
-                                <p>
-                                        &gt; savefile (optional) -- redirect output to savefile file.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					After every line in targetfile (empty lines included) insert in a line from addfile. "Save" results to savefile. Addfile should be longer than targetfile since this doesn't loop back to the top of addfile.
+				</p>
+				<p>
+					/^/R addfile -- says for every line that matches "has a start of line" output a line from the file addfile.
+				</p>
+				<p>
+					&gt; savefile (optional) -- redirect output to savefile file.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

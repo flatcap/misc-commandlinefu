@@ -1,52 +1,52 @@
 <html>
-        <head>
-                <title>
-                        Rename a file with a random name
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Rename a file with a random name
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                rf() { for i in "$@"; do mv "$i" "$(pwgen 8 1).${i##*.}"; done }
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Rename a file with a random name
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Rename a file with a random name
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				rf() { for i in "$@"; do mv "$i" "$(pwgen 8 1).${i##*.}"; done }
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 ~$ ls
 apple.png  banana.jpg  cherry.gif
 ~/p$ rf *
 ~/p$ ls
 necuzora.png  seeheoye.gif  veefeiwa.jpg
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Give files a random name (don't ask why :-)
-                                </p>
-                                <p>
-                                        The function will rename files but maintain their extensions.
-                                </p>
-                                <p>
-                                        BUG: If a file doesn't have an extension it will end up with a dot at the end of the name.
-                                </p>
-                                <p>
-                                        The parameter '8' for pwgen controls the length of filenames - eight random characters.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                mv file.png $( mktemp -u | cut -d'.' -f2 ).png
-                        </div>
-                        <div class="details"></div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Give files a random name (don't ask why :-)
+				</p>
+				<p>
+					The function will rename files but maintain their extensions.
+				</p>
+				<p>
+					BUG: If a file doesn't have an extension it will end up with a dot at the end of the name.
+				</p>
+				<p>
+					The parameter '8' for pwgen controls the length of filenames - eight random characters.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				mv file.png $( mktemp -u | cut -d'.' -f2 ).png
+			</div>
+			<div class="details"></div>
+		</div>
+	</body>
 </html>

@@ -1,24 +1,24 @@
 <html>
-        <head>
-                <title>
-                        See all the commits for which searchstring appear in the git diff
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                See all the commits for which searchstring appear in the git diff
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                git log -p -z | perl -ln0e 'print if /[+-].*searchedstring/'
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			See all the commits for which searchstring appear in the git diff
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				See all the commits for which searchstring appear in the git diff
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				git log -p -z | perl -ln0e 'print if /[+-].*searchedstring/'
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

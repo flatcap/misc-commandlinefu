@@ -1,34 +1,34 @@
 <html>
-        <head>
-                <title>
-                        Determine MAC address of remote host when you know its IP address
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Determine MAC address of remote host when you know its IP address
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                arping 192.168.1.2
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Determine MAC address of remote host when you know its IP address
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Determine MAC address of remote host when you know its IP address
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				arping 192.168.1.2
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 ARPING 192.168.1.2 from 192.168.1.3 eth0
 Unicast reply from 192.168.1.2 [0B:DE:36:AF:C1:C8]  0.968ms
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        arping sends ARP requests to a neighboring host. This won't work if there is an ARP subnet gateway in the middle. If there is, you'll just get the gateway's MAC address not the host's address you are really trying to get to.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					arping sends ARP requests to a neighboring host. This won't work if there is an ARP subnet gateway in the middle. If there is, you'll just get the gateway's MAC address not the host's address you are really trying to get to.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

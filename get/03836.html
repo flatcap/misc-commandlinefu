@@ -1,41 +1,41 @@
 <html>
-        <head>
-                <title>
-                        Extract a bash function
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Extract a bash function
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                sed -n '/^function h\(\)/,/^}/p' script.sh
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Extract a bash function
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Extract a bash function
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				sed -n '/^function h\(\)/,/^}/p' script.sh
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ sed -n '/^function h\(\)/,/^}/p' .bash_profile
 function h() {
     if [ -z "$1" ]
     then
-        history
+	history
     else
-        history | grep "$@"
+	history | grep "$@"
     fi
 }
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        I often need to extract a function from a bash script and this command will do it.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					I often need to extract a function from a bash script and this command will do it.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

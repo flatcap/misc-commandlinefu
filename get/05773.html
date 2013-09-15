@@ -1,52 +1,52 @@
 <html>
-        <head>
-                <title>
-                        find out how many days since given date
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                find out how many days since given date
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo $((($(date +%s)-$(date +%s -d "march 1"))/86400))
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			find out how many days since given date
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				find out how many days since given date
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo $((($(date +%s)-$(date +%s -d "march 1"))/86400))
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ echo $((($(date +%s)-$(date +%s -d "march 1"))/86400))
 95
 $ echo $((($(date +%s)-$(date +%s -d "sep 9 1986"))/86400))
 8669
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        You can also do this for seconds, minutes, hours, etc... Can't use dates before the epoch, though.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                echo "($(date +%s)-$(date +%s -d "march 1"))/86400"|bc
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+			</div>
+			<div class="details description">
+				<p>
+					You can also do this for seconds, minutes, hours, etc... Can't use dates before the epoch, though.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				echo "($(date +%s)-$(date +%s -d "march 1"))/86400"|bc
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ echo "($(date +%s)-$(date +%s -d "march 1"))/86400"|bc
 143
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Exactly the same number of characters, exactly the same results, but with bc
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Exactly the same number of characters, exactly the same results, but with bc
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

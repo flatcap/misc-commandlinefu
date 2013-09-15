@@ -1,88 +1,88 @@
 <html>
-        <head>
-                <title>
-                        Typing the current date ( or any string ) via a shortcut as if the keys had been actually typed with the hardware keyboard in any application.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Typing the current date ( or any string ) via a shortcut as if the keys had been actually typed with the hardware keyboard in any application.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                xvkbd -xsendevent -text $(date +%Y%m%d)
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Typing the current date ( or any string ) via a shortcut as if the keys had been actually typed with the hardware keyboard in any application.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Typing the current date ( or any string ) via a shortcut as if the keys had been actually typed with the hardware keyboard in any application.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				xvkbd -xsendevent -text $(date +%Y%m%d)
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 20091225
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        That works in all softs, CLI or GUI... I don't want to waste time to all the time typing the same stuff . So, I have that command in my window manager shortcuts ( meta+l ). All the window managers have editable shortcuts AFAIK. If not, or you don't want to use it that way, you can easily use the xbindkeys soft.
-                                </p>
-                                <p>
-                                        I you're using kde4, you can run :
-                                </p><code>systemsettings</code>
-                                <p>
-                                        then open "inputs actions" and create a new shortcut.
-                                </p>
-                                <p>
-                                        For Gnome take a look there : <a href="http://www.cyberciti.biz/faq/howto-create-keyboard-shortcuts-in-gnome/" rel="nofollow">http://www.cyberciti.biz/faq/howto-create-keyboard-shortcuts-in-gnome/</a>
-                                </p>
-                                <p>
-                                        A more advanced one, with strings and newlines :
-                                </p><code>xvkbd -xsendevent -text "---8&lt;-----\nToday date is: $(date +%Y%m%d)\n---8&lt;-----"</code>
-                                <p>
-                                        For complicated or long paste, you can feed xvkbd with a file :
-                                </p><code>xvkbd -xsendevent -file &lt;file&gt;</code>
-                                <p>
-                                        You can simulate ^C ( control+c ) too or others combinations of keys :
-                                </p><code>xvkbd -text "\C\Ac"</code>
-                                <p>
-                                        There's no man page nor help ( On my Archlinux distro ), but you can see online doc there : <a href="http://homepage3.nifty.com/tsato/xvkbd/" rel="nofollow">http://homepage3.nifty.com/tsato/xvkbd/</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        This may very well be my favorite commandlinefu of all time.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Is there anything xvkbd can't do? The most amazing commandlinefus I've ever seen all involve this little slice of magic.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        @kaedenn : I don't know any kind of limitations.
-                                </p>
-                                <p>
-                                        @matthewbauer : thanks :)
-                                </p>
-                                <p>
-                                        @all folks : the tip was edited to change description to something more relevant and an advanced exemple is added to play with strings, date and newlines.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        For xfce4, you should use :
-                                </p><code>bash -c 'xvkbd -xsendevent -text $(date +%Y%m%d)'</code>
-                                <p>
-                                        in Xmenu/parameters/keyboard/
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					That works in all softs, CLI or GUI... I don't want to waste time to all the time typing the same stuff . So, I have that command in my window manager shortcuts ( meta+l ). All the window managers have editable shortcuts AFAIK. If not, or you don't want to use it that way, you can easily use the xbindkeys soft.
+				</p>
+				<p>
+					I you're using kde4, you can run :
+				</p><code>systemsettings</code>
+				<p>
+					then open "inputs actions" and create a new shortcut.
+				</p>
+				<p>
+					For Gnome take a look there : <a href="http://www.cyberciti.biz/faq/howto-create-keyboard-shortcuts-in-gnome/" rel="nofollow">http://www.cyberciti.biz/faq/howto-create-keyboard-shortcuts-in-gnome/</a>
+				</p>
+				<p>
+					A more advanced one, with strings and newlines :
+				</p><code>xvkbd -xsendevent -text "---8&lt;-----\nToday date is: $(date +%Y%m%d)\n---8&lt;-----"</code>
+				<p>
+					For complicated or long paste, you can feed xvkbd with a file :
+				</p><code>xvkbd -xsendevent -file &lt;file&gt;</code>
+				<p>
+					You can simulate ^C ( control+c ) too or others combinations of keys :
+				</p><code>xvkbd -text "\C\Ac"</code>
+				<p>
+					There's no man page nor help ( On my Archlinux distro ), but you can see online doc there : <a href="http://homepage3.nifty.com/tsato/xvkbd/" rel="nofollow">http://homepage3.nifty.com/tsato/xvkbd/</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					This may very well be my favorite commandlinefu of all time.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Is there anything xvkbd can't do? The most amazing commandlinefus I've ever seen all involve this little slice of magic.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					@kaedenn : I don't know any kind of limitations.
+				</p>
+				<p>
+					@matthewbauer : thanks :)
+				</p>
+				<p>
+					@all folks : the tip was edited to change description to something more relevant and an advanced exemple is added to play with strings, date and newlines.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					For xfce4, you should use :
+				</p><code>bash -c 'xvkbd -xsendevent -text $(date +%Y%m%d)'</code>
+				<p>
+					in Xmenu/parameters/keyboard/
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,37 +1,37 @@
 <html>
-        <head>
-                <title>
-                        display date of last time a process was started in `date` format
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                display date of last time a process was started in `date` format
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ps -o lstart <span>&lt;pid&gt;</span>
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			display date of last time a process was started in `date` format
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				display date of last time a process was started in `date` format
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ps -o lstart <span>&lt;pid&gt;</span>
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 STARTED
 Mon Oct 18 04:02:01 2010
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        STARTED
-                                </p>
-                                <p>
-                                        Mon Oct 18 04:02:01 2010
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					STARTED
+				</p>
+				<p>
+					Mon Oct 18 04:02:01 2010
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

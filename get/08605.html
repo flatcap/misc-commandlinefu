@@ -1,36 +1,36 @@
 <html>
-        <head>
-                <title>
-                        show the working directories of running processes
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                show the working directories of running processes
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                lsof -bw -d cwd -a -c java
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        this shows the CWD of every running `java' command. YMMV but we often switch to a working directory for each service to start and run from there -- therefore this quicly shows what is running by a more meaningful name than command alone (the -bw prevents using blocking system calls which speeds this up quite a bit in the presence of remote mounted filesystems)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                useful, thanks!
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			show the working directories of running processes
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				show the working directories of running processes
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				lsof -bw -d cwd -a -c java
+			</div>
+			<div class="details description">
+				<p>
+					this shows the CWD of every running `java' command. YMMV but we often switch to a working directory for each service to start and run from there -- therefore this quicly shows what is running by a more meaningful name than command alone (the -bw prevents using blocking system calls which speeds this up quite a bit in the presence of remote mounted filesystems)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				useful, thanks!
+			</p>
+		</div>
+	</body>
 </html>

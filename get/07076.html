@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Display environment vars only, using set
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Display environment vars only, using set
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                alias sete='set|sed -n "/^`declare -F|sed -n "s/^declare -f \(.*\)/\1 ()/p;q"`/q;p"'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Display environment vars only, using set
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Display environment vars only, using set
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				alias sete='set|sed -n "/^`declare -F|sed -n "s/^declare -f \(.*\)/\1 ()/p;q"`/q;p"'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 BASH=/bin/bash
 BASH_ARGC=()
 BASH_ARGV=()
@@ -37,80 +37,80 @@ GREP_OPTIONS='-D skip --binary-files=without-match'
 GROUPNAME=askapache
 GROUPS=()
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Normally the bash builtin command 'set' displays all vars and functions. This just shows the vars. Useful if you want to see different output then env or declare or export.
-                                </p>
-                                <p>
-                                        Alias 'sete' shows sets variables
-                                </p><code>alias sete='set|sed -n "/^`declare -F|sed -n "s/^declare -f \(.*\)/\1 ()/p;q"`/q;p"'</code>
-                                <p>
-                                        Alias setf shows the functions.
-                                </p><code>alias setf='set|sed -n "/^`declare -F|sed -n "s/^declare -f \(.*\)/\1 ()/p;q"`/,\$p"'</code>
-                                <p>
-                                        Also see: <a href="http://www.commandlinefu.com/commands/view/6899/print-all-environment-variables-including-hidden-ones" rel="nofollow">http://www.commandlinefu.com/commands/view/6899/print-all-environment-variables-including-hidden-ones</a>
-                                </p>
-                                <p>
-                                        At the very least, some cool sed commands!
-                                </p>
-                                <p>
-                                        From my .bash_profile <a href="http://www.askapache.com/linux-unix/bash_profile-functions-advanced-shell.html" rel="nofollow">http://www.askapache.com/linux-unix/bash_profile-functions-advanced-shell.html</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Just thinking how is this different from:
-                                </p><code>env</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        OK, did not notice your work on 'setf' before.
-                                </p>
-                                <p>
-                                        There seems no built-in alternative to 'setf' though.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        It's much different than env, thats odd if sete and env are displaying the exact same environment.
-                                </p>
-                                <p>
-                                        Thats because env is a command, usually in /bin/env or /usr/bin/env so it is executed like any other executable, by calling execve with the current environment, but not the bash environment, whereas set is a shell builtin which shows all the bash internal variables and the current executing environment of bash.
-                                </p>
-                                <p>
-                                        For example, do a
-                                </p><code>cat /proc/$$/environ</code>
-                                <p>
-                                        On my machine, env does not show the following vars that sete shows:
-                                </p>
-                                <p>
-                                        BASH BASH_ARGC BASH_ARGV BASH_LINENO BASH_SOURCE BASH_VERSINFO BASH_VERSION COLUMNS DIRSTACK EUID GROUPS HOSTTYPE IGNOREEOF INTERACTIVE LINES LOGIN_SHELL MACHTYPE MAILCHECK OPTERR OPTIND OSTYPE PPID PS2 PS3 PS4 SECONDS SHELLOPTS SOURCED UID
-                                </p>
-                                <p>
-                                        But if you want to see ALL the hidden variables within bash, check out: <a href="http://www.commandlinefu.com/commands/view/6899/print-all-environment-variables-including-hidden-ones" rel="nofollow">http://www.commandlinefu.com/commands/view/6899/print-all-environment-variables-including-hidden-ones</a>
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <code>cat /proc/$$/environ</code>
-                                <p>
-                                        vs:
-                                </p><code>cat /proc/$PPID/environ</code>
-                                <p>
-                                        or with strace you can compare:
-                                </p><code>strace -v -f -e trace=execve /bin/env</code>
-                                <p>
-                                        and stracing bash is harder, but:
-                                </p><code>strace -v -f -e trace=execve /bin/bash -i -l -c 'set'</code>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Normally the bash builtin command 'set' displays all vars and functions. This just shows the vars. Useful if you want to see different output then env or declare or export.
+				</p>
+				<p>
+					Alias 'sete' shows sets variables
+				</p><code>alias sete='set|sed -n "/^`declare -F|sed -n "s/^declare -f \(.*\)/\1 ()/p;q"`/q;p"'</code>
+				<p>
+					Alias setf shows the functions.
+				</p><code>alias setf='set|sed -n "/^`declare -F|sed -n "s/^declare -f \(.*\)/\1 ()/p;q"`/,\$p"'</code>
+				<p>
+					Also see: <a href="http://www.commandlinefu.com/commands/view/6899/print-all-environment-variables-including-hidden-ones" rel="nofollow">http://www.commandlinefu.com/commands/view/6899/print-all-environment-variables-including-hidden-ones</a>
+				</p>
+				<p>
+					At the very least, some cool sed commands!
+				</p>
+				<p>
+					From my .bash_profile <a href="http://www.askapache.com/linux-unix/bash_profile-functions-advanced-shell.html" rel="nofollow">http://www.askapache.com/linux-unix/bash_profile-functions-advanced-shell.html</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Just thinking how is this different from:
+				</p><code>env</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					OK, did not notice your work on 'setf' before.
+				</p>
+				<p>
+					There seems no built-in alternative to 'setf' though.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					It's much different than env, thats odd if sete and env are displaying the exact same environment.
+				</p>
+				<p>
+					Thats because env is a command, usually in /bin/env or /usr/bin/env so it is executed like any other executable, by calling execve with the current environment, but not the bash environment, whereas set is a shell builtin which shows all the bash internal variables and the current executing environment of bash.
+				</p>
+				<p>
+					For example, do a
+				</p><code>cat /proc/$$/environ</code>
+				<p>
+					On my machine, env does not show the following vars that sete shows:
+				</p>
+				<p>
+					BASH BASH_ARGC BASH_ARGV BASH_LINENO BASH_SOURCE BASH_VERSINFO BASH_VERSION COLUMNS DIRSTACK EUID GROUPS HOSTTYPE IGNOREEOF INTERACTIVE LINES LOGIN_SHELL MACHTYPE MAILCHECK OPTERR OPTIND OSTYPE PPID PS2 PS3 PS4 SECONDS SHELLOPTS SOURCED UID
+				</p>
+				<p>
+					But if you want to see ALL the hidden variables within bash, check out: <a href="http://www.commandlinefu.com/commands/view/6899/print-all-environment-variables-including-hidden-ones" rel="nofollow">http://www.commandlinefu.com/commands/view/6899/print-all-environment-variables-including-hidden-ones</a>
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<code>cat /proc/$$/environ</code>
+				<p>
+					vs:
+				</p><code>cat /proc/$PPID/environ</code>
+				<p>
+					or with strace you can compare:
+				</p><code>strace -v -f -e trace=execve /bin/env</code>
+				<p>
+					and stracing bash is harder, but:
+				</p><code>strace -v -f -e trace=execve /bin/bash -i -l -c 'set'</code>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,105 +1,105 @@
 <html>
-        <head>
-                <title>
-                        print line and execute it in BASH
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                print line and execute it in BASH
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo <span>&lt;command&gt;</span>; !#:0-$
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        !# is the currennt line so far, by using !#:- you can go from the second arg (it's zero indexed) to the last ($)
-                                </p>
-                                <p>
-                                        (did I understand the problem correctly?)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        bash -x script.sh
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			print line and execute it in BASH
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				print line and execute it in BASH
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo <span>&lt;command&gt;</span>; !#:0-$
+			</div>
+			<div class="details description">
+				<p>
+					!# is the currennt line so far, by using !#:- you can go from the second arg (it's zero indexed) to the last ($)
+				</p>
+				<p>
+					(did I understand the problem correctly?)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					bash -x script.sh
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 + uname -a
 Linux torgerde 2.6.35-22-generic #35-Ubuntu SMP Sat Oct 16 20:45:36 UTC 2010 x86_64 GNU/Linux
 + whoami
 robert
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                If script.sh contains only these two lines:
-                                        </p>
-                                        <p>
-                                                $ uname -a
-                                        </p>
-                                        <p>
-                                                $ whoami
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        set -x
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        $ echo "command"; `!#:0-$
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						If script.sh contains only these two lines:
+					</p>
+					<p>
+						$ uname -a
+					</p>
+					<p>
+						$ whoami
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					set -x
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					$ echo "command"; `!#:0-$
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 $ echo "ls"; `!#:0-$
 echo "ls"; `echo "ls" ; `
 ls
 Android.mk  ardrv  devmgr  egl  file1
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                since we're repeating the command there after the semicolon, we only need one backtick
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        <span>&lt;TBD&gt;</span>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Is there a way to print the line BASH is executing without copy+paste the line inside an 'echo' command?
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                This cmdline prints twice for me.
-                        </p>
-                        <p>
-                                If I do:
-                        </p><code>echo "&lt;command&gt;"; `!#:0-$`</code>
-                        <p>
-                                This works for me..
-                        </p>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						since we're repeating the command there after the semicolon, we only need one backtick
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					<span>&lt;TBD&gt;</span>
+				</div>
+				<div class="details description">
+					<p>
+						Is there a way to print the line BASH is executing without copy+paste the line inside an 'echo' command?
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				This cmdline prints twice for me.
+			</p>
+			<p>
+				If I do:
+			</p><code>echo "&lt;command&gt;"; `!#:0-$`</code>
+			<p>
+				This works for me..
+			</p>
+		</div>
+	</body>
 </html>

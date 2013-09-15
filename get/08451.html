@@ -1,38 +1,38 @@
 <html>
-        <head>
-                <title>
-                        Show seconds since modified of newest modified file in directory
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Show seconds since modified of newest modified file in directory
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo $(( $( date +%s ) - $( stat -c %Y * | sort -nr | head -n 1 ) ))
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        FILE=`ls -ltr /var/lib/pgsql/backups/daily/ | tail -n1 | awk '{print $NF}'`; TIME=`stat -c %Y /var/lib/pgsql/backups/daily/$FILE`; NOW=`date +%s`; echo $((NOW-TIME))
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ls -atr /home/reports/*.csv -o --time-sty=+%s | tail -1 | awk '{print systime()-$5}'
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Show seconds since modified of newest modified file in directory
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Show seconds since modified of newest modified file in directory
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo $(( $( date +%s ) - $( stat -c %Y * | sort -nr | head -n 1 ) ))
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					FILE=`ls -ltr /var/lib/pgsql/backups/daily/ | tail -n1 | awk '{print $NF}'`; TIME=`stat -c %Y /var/lib/pgsql/backups/daily/$FILE`; NOW=`date +%s`; echo $((NOW-TIME))
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ls -atr /home/reports/*.csv -o --time-sty=+%s | tail -1 | awk '{print systime()-$5}'
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+	</body>
 </html>

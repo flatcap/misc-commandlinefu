@@ -1,46 +1,46 @@
 <html>
-        <head>
-                <title>
-                        Given process ID print its environment variables
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Given process ID print its environment variables
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                sed 's/\o0/\n/g' /proc/INSERT_PID_HERE/environ
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        cat /proc/PID/environ | tr '\0' '\n'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Same as previous but without fugly sed =x
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ps ewwo command PID | tr ' ' '\n' | grep \=
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Same as previous but compatible with BSD/IPSO
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Given process ID print its environment variables
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Given process ID print its environment variables
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				sed 's/\o0/\n/g' /proc/INSERT_PID_HERE/environ
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					cat /proc/PID/environ | tr '\0' '\n'
+				</div>
+				<div class="details description">
+					<p>
+						Same as previous but without fugly sed =x
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ps ewwo command PID | tr ' ' '\n' | grep \=
+				</div>
+				<div class="details description">
+					<p>
+						Same as previous but compatible with BSD/IPSO
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,36 +1,36 @@
 <html>
-        <head>
-                <title>
-                        Print diagram of user/groups
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Print diagram of user/groups
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk 'BEGIN{FS=":"; print "digraph{"}{split($4, a, ","); for (i in a) printf "\"%s\" [shape=box]\n\"%s\" -&gt; \"%s\"\n", $1, a[i], $1}END{print "}"}' /etc/group|display
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Parses /etc/group to "dot" format and pases it to "display" (imagemagick) to show a usefull diagram of users and groups (don't show empty groups).
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Nice, but as flatcap pointed out on another command, you may need "|dot -Tpng" before the "|display". I have ImageMagick 6.6.5-8 and it didn't recognize the .dot image format directly.
-                        </p><code>awk 'BEGIN{FS=":"; print "digraph{"}{split($4, a, ","); for (i in a) printf "\"%s\" [shape=box]\n\"%s\" -&gt; \"%s\"\n", $1, a[i], $1}END{print "}"}' /etc/group|dot -Tpng|display</code>
-                </div>
-        </body>
+	<head>
+		<title>
+			Print diagram of user/groups
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Print diagram of user/groups
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk 'BEGIN{FS=":"; print "digraph{"}{split($4, a, ","); for (i in a) printf "\"%s\" [shape=box]\n\"%s\" -&gt; \"%s\"\n", $1, a[i], $1}END{print "}"}' /etc/group|display
+			</div>
+			<div class="details description">
+				<p>
+					Parses /etc/group to "dot" format and pases it to "display" (imagemagick) to show a usefull diagram of users and groups (don't show empty groups).
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Nice, but as flatcap pointed out on another command, you may need "|dot -Tpng" before the "|display". I have ImageMagick 6.6.5-8 and it didn't recognize the .dot image format directly.
+			</p><code>awk 'BEGIN{FS=":"; print "digraph{"}{split($4, a, ","); for (i in a) printf "\"%s\" [shape=box]\n\"%s\" -&gt; \"%s\"\n", $1, a[i], $1}END{print "}"}' /etc/group|dot -Tpng|display</code>
+		</div>
+	</body>
 </html>

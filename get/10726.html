@@ -1,79 +1,79 @@
 <html>
-        <head>
-                <title>
-                        Get the date for the last Saturday of a given month
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Get the date for the last Saturday of a given month
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cal 04 2012 | awk '{ $7 &amp;&amp; X=$7 } END { print X }'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Get the date for the last Saturday of a given month
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Get the date for the last Saturday of a given month
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cal 04 2012 | awk '{ $7 &amp;&amp; X=$7 } END { print X }'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 28
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        If your locale has Monday as the first day of the week, like mine in the UK, change the two $7 into $6
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        desiredDay=6; year=2012; month=5; n=0; while [ $(date -d "$year-$((month+1))-1 - $n day" "+%u") -ne $desiredDay ]; do n=$((n+1)); done; date -d "$year-$((month+1))-1 - $n day" "+%x"
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					If your locale has Monday as the first day of the week, like mine in the UK, change the two $7 into $6
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					desiredDay=6; year=2012; month=5; n=0; while [ $(date -d "$year-$((month+1))-1 - $n day" "+%u") -ne $desiredDay ]; do n=$((n+1)); done; date -d "$year-$((month+1))-1 - $n day" "+%x"
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 05/26/2012
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Choosing your year and month. You only need the gnu date command and bash. desiredDay of the week is (1..7); 1 is Monday.
-                                        </p>
-                                        <p>
-                                                If you want desiredDay of week (0..6); 0 is Sunday
-                                        </p><code>desiredDay=6; year=2012; month=5; n=0; while [ $(date -d "$year-$((month+1))-1 - $n day" "+%w") -ne $desiredDay ]; do n=$((n+1)); done; date -d "$year-$((month+1))-1 - $n day" "+%x"</code>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        cal 04 2012 | awk 'NF &lt;= 7 { print $7 }' | grep -v "^$" | tail -1
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						Choosing your year and month. You only need the gnu date command and bash. desiredDay of the week is (1..7); 1 is Monday.
+					</p>
+					<p>
+						If you want desiredDay of week (0..6); 0 is Sunday
+					</p><code>desiredDay=6; year=2012; month=5; n=0; while [ $(date -d "$year-$((month+1))-1 - $n day" "+%w") -ne $desiredDay ]; do n=$((n+1)); done; date -d "$year-$((month+1))-1 - $n day" "+%x"</code>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					cal 04 2012 | awk 'NF &lt;= 7 { print $7 }' | grep -v "^$" | tail -1
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 28
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This is a little trickier than finding the last Sunday, because you know the last Sunday is in the first position of the last line. The trick is to use the NF less than or equal to 7 so it picks up all the lines then grep out any empty lines.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                I only get '31' from cal 04 2012 | awk '{ $7 &amp;&amp; X=$7 } END { print X }'
-                        </p>
-                        <p>
-                                last day of current month...
-                        </p>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						This is a little trickier than finding the last Sunday, because you know the last Sunday is in the first position of the last line. The trick is to use the NF less than or equal to 7 so it picks up all the lines then grep out any empty lines.
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				I only get '31' from cal 04 2012 | awk '{ $7 &amp;&amp; X=$7 } END { print X }'
+			</p>
+			<p>
+				last day of current month...
+			</p>
+		</div>
+	</body>
 </html>

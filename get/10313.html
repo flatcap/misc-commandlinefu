@@ -1,86 +1,86 @@
 <html>
-        <head>
-                <title>
-                        Fastest Sort. Sort Faster, Max Speed
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Fastest Sort. Sort Faster, Max Speed
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                alias sortfast='sort -S$(($(sed '\''/MemF/!d;s/[^0-9]*//g'\'' /proc/meminfo)/2048)) $([ `nproc` -gt 1 ]&amp;&amp;echo -n --parallel=`nproc`)'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
-89/490MB        4.22 2.03 1.01 2/85 7081
+	<head>
+		<title>
+			Fastest Sort. Sort Faster, Max Speed
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Fastest Sort. Sort Faster, Max Speed
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				alias sortfast='sort -S$(($(sed '\''/MemF/!d;s/[^0-9]*//g'\'' /proc/meminfo)/2048)) $([ `nproc` -gt 1 ]&amp;&amp;echo -n --parallel=`nproc`)'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
+89/490MB	4.22 2.03 1.01 2/85 7081
 [24309:24308 0:4220] 08:01:28 Mon Feb 27 [root@galileo:pts/2 +1] ~
 $ sort -S400M -u -i -f --parallel=4 files.nocombined.sorted | pv &gt; ~/files.nocombined.reallysorted
 9.95MB 0:01:39 [ 103kB/s] [     &lt;=&gt;
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        sort is way slow by default. This tells sort to use a buffer equal to half of the available free memory. It also will use multiple process for the sort equal to the number of cpus on your machine (if greater than 1). For me, it is magnitudes faster.
-                                </p>
-                                <p>
-                                        If you put this in your bash_profile or startup file, it will be set correctly when bash is started.
-                                </p><code>sort -S1 --parallel=2 &lt;(echo) &amp;&gt;/dev/null &amp;&amp; alias sortfast='sort -S$(($(sed '\''/MemF/!d;s/[^0-9]*//g'\'' /proc/meminfo)/2048)) $([ `nproc` -gt 1 ]&amp;&amp;echo -n --parallel=`nproc`)'</code>
-                                <p>
-                                        Alternative
-                                </p><code>echo|sort -S10M --parallel=2 &amp;&gt;/dev/null &amp;&amp; alias sortfast="command sort -S$(($(sed '/MemT/!d;s/[^0-9]*//g' /proc/meminfo)/1024-200)) --parallel=$(($(command grep -c ^proc /proc/cpuinfo)*2))"</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Using so much mem is dangerous.
-                                </p>
-                                <p>
-                                        Also using more processes than CPUs suggests you're waiting on disk. It would help if you mentioned your input source medium, TMPDIR medium and output medium.
-                                </p>
-                                <p>
-                                        Note also the recent nproc command which might be handier than grepping cpuinfo
-                                </p>
-                                <p>
-                                        Note also this might be a safer mem usage estimate:
-                                </p>
-                                <p>
-                                        free -m | awk '$4 &amp;&amp; $7 {print $4+$7-200}'
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Thanks for that nproc command and I like the way your command includes the cache... Also good mention of the TMPDIR medium and output medium since these are heavily used. My tmpdir is either tmpfs (memory) or on a high-performance 6-disk raid 0 array.. both max out at 5GB size-wise. I use a custom TMPDIR so didn't include that, but really will make a huge difference if setup correctly.
-                                </p>
-                                <p>
-                                        This has 8 subprocesses and 302 calls
-                                </p><code>strace -c sh -c "free -m | awk '\$4 &amp;&amp; \$7 {print \$4+\$7-200}'"</code>
-                                <p>
-                                        This has 297 calls and 8 subproccesses
-                                </p><code>strace -c sh -c "free -m|sed '1d;s/^.*: *[0-9]* *[0-9]* *//;s/ [ 0-9]*$//;q'"</code>
-                                <p>
-                                        This has no subprocesses and only 192 calls
-                                </p><code>strace -c sh -c 'sed -n "/mF/s/^.*: *\([0-9]\+\) kB$/\1/p" /proc/meminfo'</code>
-                                <p>
-                                        I will update the above with the changes made per your suggestions.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Ok there you go.. what do you think of that? Any other ideas?
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					sort is way slow by default. This tells sort to use a buffer equal to half of the available free memory. It also will use multiple process for the sort equal to the number of cpus on your machine (if greater than 1). For me, it is magnitudes faster.
+				</p>
+				<p>
+					If you put this in your bash_profile or startup file, it will be set correctly when bash is started.
+				</p><code>sort -S1 --parallel=2 &lt;(echo) &amp;&gt;/dev/null &amp;&amp; alias sortfast='sort -S$(($(sed '\''/MemF/!d;s/[^0-9]*//g'\'' /proc/meminfo)/2048)) $([ `nproc` -gt 1 ]&amp;&amp;echo -n --parallel=`nproc`)'</code>
+				<p>
+					Alternative
+				</p><code>echo|sort -S10M --parallel=2 &amp;&gt;/dev/null &amp;&amp; alias sortfast="command sort -S$(($(sed '/MemT/!d;s/[^0-9]*//g' /proc/meminfo)/1024-200)) --parallel=$(($(command grep -c ^proc /proc/cpuinfo)*2))"</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Using so much mem is dangerous.
+				</p>
+				<p>
+					Also using more processes than CPUs suggests you're waiting on disk. It would help if you mentioned your input source medium, TMPDIR medium and output medium.
+				</p>
+				<p>
+					Note also the recent nproc command which might be handier than grepping cpuinfo
+				</p>
+				<p>
+					Note also this might be a safer mem usage estimate:
+				</p>
+				<p>
+					free -m | awk '$4 &amp;&amp; $7 {print $4+$7-200}'
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Thanks for that nproc command and I like the way your command includes the cache... Also good mention of the TMPDIR medium and output medium since these are heavily used. My tmpdir is either tmpfs (memory) or on a high-performance 6-disk raid 0 array.. both max out at 5GB size-wise. I use a custom TMPDIR so didn't include that, but really will make a huge difference if setup correctly.
+				</p>
+				<p>
+					This has 8 subprocesses and 302 calls
+				</p><code>strace -c sh -c "free -m | awk '\$4 &amp;&amp; \$7 {print \$4+\$7-200}'"</code>
+				<p>
+					This has 297 calls and 8 subproccesses
+				</p><code>strace -c sh -c "free -m|sed '1d;s/^.*: *[0-9]* *[0-9]* *//;s/ [ 0-9]*$//;q'"</code>
+				<p>
+					This has no subprocesses and only 192 calls
+				</p><code>strace -c sh -c 'sed -n "/mF/s/^.*: *\([0-9]\+\) kB$/\1/p" /proc/meminfo'</code>
+				<p>
+					I will update the above with the changes made per your suggestions.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Ok there you go.. what do you think of that? Any other ideas?
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

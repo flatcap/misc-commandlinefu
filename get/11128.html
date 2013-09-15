@@ -1,40 +1,40 @@
 <html>
-        <head>
-                <title>
-                        from within vi, sort a block of IP addresses (ascending, removing duplicates)
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                from within vi, sort a block of IP addresses (ascending, removing duplicates)
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                !}sort -nut. -k 1,1 -k 2,2 -k 3,3 -k 4,4
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        The vi key sequence "!}" will feed the block of lines from the current position to the next blank line to the command provided: in this case "sort -nut. -k 1,1 -k 2,2 -k 3,3 -k 4,4".
-                                </p>
-                                <p>
-                                        The sort is ascending, numeric (-n), removing duplicates (-u), using "." as key delimiter (-t .").
-                                </p>
-                                <p>
-                                        The "-nut." is a memorable mnemonic :-).
-                                </p>
-                                <p>
-                                        The same command (less the "!}") can, of course, be used from command line to sort a file of IP addresses in a text file.
-                                </p>
-                                <p>
-                                        In the command line version, I found it also useful to remove blank lines and comment lines thusly:
-                                </p><code>&lt; IPaddresses.txt sed -e "/^#/d" -e "/^$/d" | sort -nut. -k 1,1 -k 2,2 -k 3,3 -k 4,4 # sort IP addresses</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			from within vi, sort a block of IP addresses (ascending, removing duplicates)
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				from within vi, sort a block of IP addresses (ascending, removing duplicates)
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				!}sort -nut. -k 1,1 -k 2,2 -k 3,3 -k 4,4
+			</div>
+			<div class="details description">
+				<p>
+					The vi key sequence "!}" will feed the block of lines from the current position to the next blank line to the command provided: in this case "sort -nut. -k 1,1 -k 2,2 -k 3,3 -k 4,4".
+				</p>
+				<p>
+					The sort is ascending, numeric (-n), removing duplicates (-u), using "." as key delimiter (-t .").
+				</p>
+				<p>
+					The "-nut." is a memorable mnemonic :-).
+				</p>
+				<p>
+					The same command (less the "!}") can, of course, be used from command line to sort a file of IP addresses in a text file.
+				</p>
+				<p>
+					In the command line version, I found it also useful to remove blank lines and comment lines thusly:
+				</p><code>&lt; IPaddresses.txt sed -e "/^#/d" -e "/^$/d" | sort -nut. -k 1,1 -k 2,2 -k 3,3 -k 4,4 # sort IP addresses</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

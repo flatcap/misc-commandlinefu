@@ -1,43 +1,43 @@
 <html>
-        <head>
-                <title>
-                        sort ip by count quickly with awk from apache logs
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                sort ip by count quickly with awk from apache logs
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk '{array[$1]++}END{ for (ip in array) print array[ip] " " ip}' &lt;path/to/apache/*.log&gt; | sort -n
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        creates associative array from apache logs, assumes "combined" log format or similar. replace awk column to suit needs. bandwidth per ip is also useful. have fun. I haven't found a more efficient way to do this as yet. sorry, FIXED TYPO: log file should obviously go after awk, which then pipes into sort.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        typo?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        fixed typo
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			sort ip by count quickly with awk from apache logs
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				sort ip by count quickly with awk from apache logs
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk '{array[$1]++}END{ for (ip in array) print array[ip] " " ip}' &lt;path/to/apache/*.log&gt; | sort -n
+			</div>
+			<div class="details description">
+				<p>
+					creates associative array from apache logs, assumes "combined" log format or similar. replace awk column to suit needs. bandwidth per ip is also useful. have fun. I haven't found a more efficient way to do this as yet. sorry, FIXED TYPO: log file should obviously go after awk, which then pipes into sort.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					typo?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					fixed typo
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,25 +1,25 @@
 <html>
-        <head>
-                <title>
-                        Verify/edit bash history command before executing it
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Verify/edit bash history command before executing it
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                shopt -s histverify
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Verify/edit bash history command before executing it
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Verify/edit bash history command before executing it
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				shopt -s histverify
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ date
 Thu Oct 27 11:25:51 EST 2011
-$ !!                          #COMMAND EXECUTED INSTANTLY
+$ !!			  #COMMAND EXECUTED INSTANTLY
 date
 Thu Oct 27 11:25:54 EST 2011
 $ shopt -s histverify
@@ -28,33 +28,33 @@ Thu Oct 27 11:26:05 EST 2011
 $ !!
 $ date   #COMMAND WAITING TO BE VERIFIED/EDITED. PRESS ENTER WHEN DONE.
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Bash history commands are those that begin with the character !
-                                </p>
-                                <p>
-                                        (eg. the most popular 'sudo !!' Explained here =&gt; <a href="http://www.commandlinefu.com/commands/view/13)." rel="nofollow">http://www.commandlinefu.com/commands/view/13).</a>
-                                </p>
-                                <p>
-                                        By default bash immediately executes the history command.
-                                </p>
-                                <p>
-                                        Setting this shell option will make bash first allow you to verify/edit an
-                                </p>
-                                <p>
-                                        history command before executing it.
-                                </p>
-                                <p>
-                                        To set this option permanently, put this command in ~/.profile or ~/.bashrc file.
-                                </p>
-                                <p>
-                                        To unset this option issue following command.
-                                </p><code>shopt -u histverify</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Bash history commands are those that begin with the character !
+				</p>
+				<p>
+					(eg. the most popular 'sudo !!' Explained here =&gt; <a href="http://www.commandlinefu.com/commands/view/13)." rel="nofollow">http://www.commandlinefu.com/commands/view/13).</a>
+				</p>
+				<p>
+					By default bash immediately executes the history command.
+				</p>
+				<p>
+					Setting this shell option will make bash first allow you to verify/edit an
+				</p>
+				<p>
+					history command before executing it.
+				</p>
+				<p>
+					To set this option permanently, put this command in ~/.profile or ~/.bashrc file.
+				</p>
+				<p>
+					To unset this option issue following command.
+				</p><code>shopt -u histverify</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

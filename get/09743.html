@@ -1,105 +1,105 @@
 <html>
-        <head>
-                <title>
-                        Limit the cpu usage of a process
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Limit the cpu usage of a process
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                sudo cpulimit -p pid -l 50
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Limit the cpu usage of a process
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Limit the cpu usage of a process
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				sudo cpulimit -p pid -l 50
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 sudo cpulimit -p 4799 -l 10
 Process 4799 detected
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This will limit the average amount of CPU it consumes.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        prlimit --cpu=10 sort -u hugefile
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Similar to `cpulimit`, although `prlimit` can be found shipped with recent util-linux.
-                                        </p>
-                                        <p>
-                                                Example: limit CPU consumption to 10% for a math problem which ordinarily takes up 100% CPU:
-                                        </p>
-                                        <p>
-                                                Before:
-                                        </p><code>bc -l &lt;(echo "1234123412341234^12341234")</code>
-                                        <p>
-                                                See the difference `prlimit` makes:
-                                        </p><code>prlimit --cpu=10 bc -l &lt;(echo "1234123412341234^12341234")</code>
-                                        <p>
-                                                To actually monitor the CPU usage, use `top`, `sar`, etc.. or:
-                                        </p><code>pidstat -C 'bc' -hur -p ALL 1</code>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        sudo cpulimit -e Grooveshark -l 20
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					This will limit the average amount of CPU it consumes.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					prlimit --cpu=10 sort -u hugefile
+				</div>
+				<div class="details description">
+					<p>
+						Similar to `cpulimit`, although `prlimit` can be found shipped with recent util-linux.
+					</p>
+					<p>
+						Example: limit CPU consumption to 10% for a math problem which ordinarily takes up 100% CPU:
+					</p>
+					<p>
+						Before:
+					</p><code>bc -l &lt;(echo "1234123412341234^12341234")</code>
+					<p>
+						See the difference `prlimit` makes:
+					</p><code>prlimit --cpu=10 bc -l &lt;(echo "1234123412341234^12341234")</code>
+					<p>
+						To actually monitor the CPU usage, use `top`, `sar`, etc.. or:
+					</p><code>pidstat -C 'bc' -hur -p ALL 1</code>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					sudo cpulimit -e Grooveshark -l 20
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 Process 2927 detected
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Will limit the amount of CPU time Grooveshark the greedy yet useful Adobe Air app will have.
-                                        </p>
-                                        <p>
-                                                Leaves the UI lagging a little, but crucially does not ruin the audio.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        CentOS 5.5 doesn't have it. What package can provide it?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        neither on fedora 16
-                                </p>
-                                <p>
-                                        # yum provides '*/cpulimit'
-                                </p>
-                                <p>
-                                        returns nothing
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        available on github:
-                                </p>
-                                <p>
-                                        https://github.com/opsengine/cpulimit
-                                </p>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						Will limit the amount of CPU time Grooveshark the greedy yet useful Adobe Air app will have.
+					</p>
+					<p>
+						Leaves the UI lagging a little, but crucially does not ruin the audio.
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					CentOS 5.5 doesn't have it. What package can provide it?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					neither on fedora 16
+				</p>
+				<p>
+					# yum provides '*/cpulimit'
+				</p>
+				<p>
+					returns nothing
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					available on github:
+				</p>
+				<p>
+					https://github.com/opsengine/cpulimit
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

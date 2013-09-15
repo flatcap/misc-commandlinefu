@@ -1,66 +1,66 @@
 <html>
-        <head>
-                <title>
-                        Redefine the cd command's behavior
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Redefine the cd command's behavior
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cd() { builtin cd "${@:-$HOME}" &amp;&amp; ls; }
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Often, the very next command after the cd command is 'ls', so why not combine them?. Tested on a Red Hat derivative and Mac OS X Leopard
-                                </p>
-                                <p>
-                                        Update: changed ${1:-$HOME} to "${@:-$HOME}" to accomodate directories with spaces in the names
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Nice! Works in Ubuntu Gutsy (7.10)
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Nice! Works in SuSE (SLES 10.2)
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Works on Debian 5.0
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        works with cygwin and Xpee
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Nice! Works in Ubuntu Hardy Heron (8.04 LTS)
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        ... and added to my personal ".bashrc" - that's quite an accomplishment
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Redefine the cd command's behavior
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Redefine the cd command's behavior
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cd() { builtin cd "${@:-$HOME}" &amp;&amp; ls; }
+			</div>
+			<div class="details description">
+				<p>
+					Often, the very next command after the cd command is 'ls', so why not combine them?. Tested on a Red Hat derivative and Mac OS X Leopard
+				</p>
+				<p>
+					Update: changed ${1:-$HOME} to "${@:-$HOME}" to accomodate directories with spaces in the names
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Nice! Works in Ubuntu Gutsy (7.10)
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Nice! Works in SuSE (SLES 10.2)
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Works on Debian 5.0
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					works with cygwin and Xpee
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Nice! Works in Ubuntu Hardy Heron (8.04 LTS)
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					... and added to my personal ".bashrc" - that's quite an accomplishment
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

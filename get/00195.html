@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Ride another SSH agent
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Ride another SSH agent
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                export SSH_AUTH_SOCK=`find /tmp/ssh* -type s -user [user] -mtime -1 | head -1`
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Ride another SSH agent
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Ride another SSH agent
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				export SSH_AUTH_SOCK=`find /tmp/ssh* -type s -user [user] -mtime -1 | head -1`
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 # export SSH_AUTH_SOCK=`find /tmp/ssh* -type s -user joeuser -mtime -1 | head -1`
 linux:/tmp/ssh-WjKuI4788 # ssh-add -l
 2048 00:11:22:33:44:55:66:77:88:99:AA:BB:CC:DD:EE:FF /home/joeuser/.ssh/id_rsa (RSA)
@@ -24,15 +24,15 @@ linux:/tmp/ssh-WjKuI4788 # ssh-add -l
 ...
 joeuser@remote&gt;
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Must be done as root - will cause subsequent ssh connections to use the identities available via the [user]'s agent socket.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Must be done as root - will cause subsequent ssh connections to use the identities available via the [user]'s agent socket.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

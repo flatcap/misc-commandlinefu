@@ -1,48 +1,48 @@
 <html>
-        <head>
-                <title>
-                        Get connections from a SSH tunnel
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Get connections from a SSH tunnel
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                netstat -t -p --extend | grep USERNAME
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This obtains a list of open connections that a user is connected to if he/she is using a SSH tunnel
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        The -T option seems to be unavailable over here.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Yeah, the -t needs to be lowercase.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Fixed.
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Get connections from a SSH tunnel
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Get connections from a SSH tunnel
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				netstat -t -p --extend | grep USERNAME
+			</div>
+			<div class="details description">
+				<p>
+					This obtains a list of open connections that a user is connected to if he/she is using a SSH tunnel
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					The -T option seems to be unavailable over here.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Yeah, the -t needs to be lowercase.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Fixed.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

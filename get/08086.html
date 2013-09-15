@@ -1,105 +1,105 @@
 <html>
-        <head>
-                <title>
-                        Selecting a random file/folder of a folder
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Selecting a random file/folder of a folder
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ls -1 | sort -R | sed -n 's/^/Selected /;1p'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Selecting a random file/folder of a folder
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Selecting a random file/folder of a folder
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ls -1 | sort -R | sed -n 's/^/Selected /;1p'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 /tmp$ ls -1 | sort -R | sed -n 's/^/Selected /;1p'
 Selected keyring-dn8fNC
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Select a file/folder at random.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        shuf -n1 -e *
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					Select a file/folder at random.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					shuf -n1 -e *
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 Music
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                I used only shuf command.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ls -1 | shuf -n 1
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                random file from files in directory
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        find . | shuf -n1
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Also looks in subfolders
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        a=(*); echo ${a[$((RANDOM % ${#a[@]}))]}
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Here's a bash version using an array.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        for i in *; do echo "$i"; done | shuf -n1
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Choose random file from current folder. Avoids using ls.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Note that -1 is assumed on ls if output is not the terminal. Try these:
-                        </p><code>ls</code>
-                        <p>
-                                output is in columns
-                        </p><code>ls|cat</code>
-                        <p>
-                                output is same as ls -1
-                        </p>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						I used only shuf command.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ls -1 | shuf -n 1
+				</div>
+				<div class="details description">
+					<p>
+						random file from files in directory
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					find . | shuf -n1
+				</div>
+				<div class="details description">
+					<p>
+						Also looks in subfolders
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					a=(*); echo ${a[$((RANDOM % ${#a[@]}))]}
+				</div>
+				<div class="details description">
+					<p>
+						Here's a bash version using an array.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					for i in *; do echo "$i"; done | shuf -n1
+				</div>
+				<div class="details description">
+					<p>
+						Choose random file from current folder. Avoids using ls.
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Note that -1 is assumed on ls if output is not the terminal. Try these:
+			</p><code>ls</code>
+			<p>
+				output is in columns
+			</p><code>ls|cat</code>
+			<p>
+				output is same as ls -1
+			</p>
+		</div>
+	</body>
 </html>

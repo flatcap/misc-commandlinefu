@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        Recursively grep for string and format output for vi(m)
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Recursively grep for string and format output for vi(m)
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                mgc() { grep --exclude=cscope* --color=always -rni $1 . |perl -pi -e 's/:/ +/' |perl -pi -e 's/^(.+)$/vi $1/g' |perl -pi -e 's/:/ /'; }
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This is a big time saver for me. I often grep source code and need to edit the findings. A single highlight of the mouse and middle mouse click (in gnome terminal) and I'm editing the exact line I just found. The color highlighting helps interpret the data.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Recursively grep for string and format output for vi(m)
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Recursively grep for string and format output for vi(m)
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				mgc() { grep --exclude=cscope* --color=always -rni $1 . |perl -pi -e 's/:/ +/' |perl -pi -e 's/^(.+)$/vi $1/g' |perl -pi -e 's/:/ /'; }
+			</div>
+			<div class="details description">
+				<p>
+					This is a big time saver for me. I often grep source code and need to edit the findings. A single highlight of the mouse and middle mouse click (in gnome terminal) and I'm editing the exact line I just found. The color highlighting helps interpret the data.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

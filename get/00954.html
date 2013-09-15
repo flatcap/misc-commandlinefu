@@ -1,42 +1,42 @@
 <html>
-        <head>
-                <title>
-                        Find broken symlinks
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Find broken symlinks
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find . -type l ! -exec test -e {} \; -print
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Locate broken symlinks in the current directory. Also useful, to remove broken links:
-                                </p><code>find . -type l ! -exec test -e {} \; -print0 | xargs -0 rm</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                There is also a utility called "symlinks" on some Linux systems which is much easier to type out.
-                        </p>
-                        <p>
-                                'symlinks -r . | grep dangling' would be the same as the first use.
-                        </p>
-                        <p>
-                                'symlinks -rd .' will recursively delete dangling links.
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			Find broken symlinks
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Find broken symlinks
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find . -type l ! -exec test -e {} \; -print
+			</div>
+			<div class="details description">
+				<p>
+					Locate broken symlinks in the current directory. Also useful, to remove broken links:
+				</p><code>find . -type l ! -exec test -e {} \; -print0 | xargs -0 rm</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				There is also a utility called "symlinks" on some Linux systems which is much easier to type out.
+			</p>
+			<p>
+				'symlinks -r . | grep dangling' would be the same as the first use.
+			</p>
+			<p>
+				'symlinks -rd .' will recursively delete dangling links.
+			</p>
+		</div>
+	</body>
 </html>

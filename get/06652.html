@@ -1,170 +1,170 @@
 <html>
-        <head>
-                <title>
-                        Remove all but one specific file
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Remove all but one specific file
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                rm -f !(survivior.txt)
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        rm !(*.foo|*.bar|*.baz)
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			Remove all but one specific file
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Remove all but one specific file
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				rm -f !(survivior.txt)
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					rm !(*.foo|*.bar|*.baz)
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 Example: rm !(*.tex|*.pdf) deletes all except the tex and pdf files.
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Deletes all files in a folder that are NOT *.foo, *.bar or *.baz files. Edit the pattern inside the brackets as you like.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        find . ! -name <span>&lt;FILENAME&gt;</span> -delete
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                it will remove everything except the file names matching you can use also use wildcards
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ( shopt -s extglob; rm !(<span>&lt;PATTERN&gt;</span>) )
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Remove everything except that file with shell tricks inside a subshell to avoid changes in the environment.
-                                        </p><code>help shopt</code>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        rm !(file_to_keep_undeleted)
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Go to tmp :
-                                        </p>
-                                        <p>
-                                                cd /tmp; mkdir retmp; cd retmp
-                                        </p>
-                                        <p>
-                                                Create 10 files :
-                                        </p>
-                                        <p>
-                                                for i in {1..10}; do touch test$i; done
-                                        </p>
-                                        <p>
-                                                Remove all files except test10 :
-                                        </p>
-                                        <p>
-                                                rm !(test10)
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        find . -type f ! -name "*.foo" -name "*.bar" -delete
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						Deletes all files in a folder that are NOT *.foo, *.bar or *.baz files. Edit the pattern inside the brackets as you like.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					find . ! -name <span>&lt;FILENAME&gt;</span> -delete
+				</div>
+				<div class="details description">
+					<p>
+						it will remove everything except the file names matching you can use also use wildcards
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					( shopt -s extglob; rm !(<span>&lt;PATTERN&gt;</span>) )
+				</div>
+				<div class="details description">
+					<p>
+						Remove everything except that file with shell tricks inside a subshell to avoid changes in the environment.
+					</p><code>help shopt</code>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					rm !(file_to_keep_undeleted)
+				</div>
+				<div class="details description">
+					<p>
+						Go to tmp :
+					</p>
+					<p>
+						cd /tmp; mkdir retmp; cd retmp
+					</p>
+					<p>
+						Create 10 files :
+					</p>
+					<p>
+						for i in {1..10}; do touch test$i; done
+					</p>
+					<p>
+						Remove all files except test10 :
+					</p>
+					<p>
+						rm !(test10)
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					find . -type f ! -name "*.foo" -name "*.bar" -delete
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 enki 13:09:08 /tmp/foo/bar $ find . ! -name "*.xml" ! -name "*.js" -type f -delete
 enki 13:12:23 /tmp/foo/bar $
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This command is recursive and will delete in all directories in ".". It will find and delete all files not specified with ! -name "pattern". In this case it's file extensions. -type f means it will only find files and not directories. Finally the -delete flag ask find to delete what it matches. You can test the command by running it first without delete and it will list the files it will delete when you run it.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Thx! Usual I done it with
-                                </p><code>find . ! -name ...</code>
-                                <p>
-                                        Nice tip.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Humph? It does not work in Z-Shell neither in BASH. Am I doing something wrong?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Got it working in BASH. It's all about 'extglob' option???set it:
-                                </p><code>shopt -s extglob</code>
-                                <p>
-                                        and command would work.
-                                </p>
-                                <p>
-                                        Still looking for solution for ZSH.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        For zsh rm -f ^survivior.txt will do but it requires extended_glob
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Thanks, RanyAlbeg. That really works!
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        You welcome ;)
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        I never feel comfortable specifying the file I want to keep in an rm command.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Use backups a few times and then you'll get used to it.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        As has been noted zsh uses "^" as the 'not' and while the use of 'not' for a none interactive rm may be potencially dangerious, the 'not' is not :)
-                                </p>
-                                <p>
-                                        Some examples:
-                                </p>
-                                <p>
-                                        ls *^.jpg
-                                </p>
-                                <p>
-                                        ls *[^$(date +%F)].*
-                                </p>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						This command is recursive and will delete in all directories in ".". It will find and delete all files not specified with ! -name "pattern". In this case it's file extensions. -type f means it will only find files and not directories. Finally the -delete flag ask find to delete what it matches. You can test the command by running it first without delete and it will list the files it will delete when you run it.
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Thx! Usual I done it with
+				</p><code>find . ! -name ...</code>
+				<p>
+					Nice tip.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Humph? It does not work in Z-Shell neither in BASH. Am I doing something wrong?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Got it working in BASH. It's all about 'extglob' option???set it:
+				</p><code>shopt -s extglob</code>
+				<p>
+					and command would work.
+				</p>
+				<p>
+					Still looking for solution for ZSH.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					For zsh rm -f ^survivior.txt will do but it requires extended_glob
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Thanks, RanyAlbeg. That really works!
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					You welcome ;)
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					I never feel comfortable specifying the file I want to keep in an rm command.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Use backups a few times and then you'll get used to it.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					As has been noted zsh uses "^" as the 'not' and while the use of 'not' for a none interactive rm may be potencially dangerious, the 'not' is not :)
+				</p>
+				<p>
+					Some examples:
+				</p>
+				<p>
+					ls *^.jpg
+				</p>
+				<p>
+					ls *[^$(date +%F)].*
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

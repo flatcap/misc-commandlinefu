@@ -1,44 +1,44 @@
 <html>
-        <head>
-                <title>
-                        Show permissions of current directory and all directories upwards to /
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Show permissions of current directory and all directories upwards to /
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                namei -m $(pwd)
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Show permissions of current directory and all directories upwards to /
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Show permissions of current directory and all directories upwards to /
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				namei -m $(pwd)
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 f: /home/foo/bar
  drwxr-xr-x /
  drwxr-xr-x home
  drwxr-xr-x foo
  drwxr-xr-x bar
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        NB not 'namei -m .', as it slices the path you give it.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                dir=$(pwd); while [ ! -z "$dir" ]; do ls -ld "$dir"; dir=${dir%/*}; done; ls -ld /
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+			</div>
+			<div class="details description">
+				<p>
+					NB not 'namei -m .', as it slices the path you give it.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				dir=$(pwd); while [ ! -z "$dir" ]; do ls -ld "$dir"; dir=${dir%/*}; done; ls -ld /
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 drwxr-xr-x 3 hudson nogroup 4096 2009-12-14 14:48 /var/lib/hudson/jobs/Product/workspace/foo-trunk/projects/Product/build/foo/db
 drwxr-xr-x 5 hudson nogroup 4096 2009-12-14 14:48 /var/lib/hudson/jobs/Product/workspace/foo-trunk/projects/Product/build/foo
 drwxr-xr-x 3 hudson nogroup 4096 2009-12-14 14:48 /var/lib/hudson/jobs/Product/workspace/foo-trunk/projects/Product/build
@@ -53,12 +53,12 @@ drwxr-xr-x 35 root root 4096 2009-12-07 14:38 /var/lib
 drwxr-xr-x 14 root root 4096 2009-11-03 12:11 /var
 drwxr-xr-x 21 root root 4096 2009-12-10 07:27 /
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Useful if a different user cannot access some directory and you want to know which directory on the way misses the x bit.
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Useful if a different user cannot access some directory and you want to know which directory on the way misses the x bit.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

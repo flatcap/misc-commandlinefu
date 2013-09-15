@@ -1,71 +1,71 @@
 <html>
-        <head>
-                <title>
-                        convert a line to a space
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                convert a line to a space
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cat file | tr '\n' ''
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        echo $(cat file)
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        sed 's/.*/ /'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                The first version printed:
-                                        </p><code>tr: empty string2</code>
-                                        <p>
-                                                The second version printed:
-                                        </p><code>sed: -i may not be used with stdin</code>
-                                        <p>
-                                                Maybe I misunderstood the orginal problem.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        The "cat" isn't really necessary since you can use redirection like this:
-                                </p><code>&lt; file tr '\n' ' '</code>
-                                <p>
-                                        or this:
-                                </p><code>tr '\n' ' ' &lt; file</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        or
-                                </p><code>tr -d '\n'</code>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Sorry - ignore above: you wanted a space...
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			convert a line to a space
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				convert a line to a space
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cat file | tr '\n' ''
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					echo $(cat file)
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					sed 's/.*/ /'
+				</div>
+				<div class="details description">
+					<p>
+						The first version printed:
+					</p><code>tr: empty string2</code>
+					<p>
+						The second version printed:
+					</p><code>sed: -i may not be used with stdin</code>
+					<p>
+						Maybe I misunderstood the orginal problem.
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					The "cat" isn't really necessary since you can use redirection like this:
+				</p><code>&lt; file tr '\n' ' '</code>
+				<p>
+					or this:
+				</p><code>tr '\n' ' ' &lt; file</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					or
+				</p><code>tr -d '\n'</code>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Sorry - ignore above: you wanted a space...
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

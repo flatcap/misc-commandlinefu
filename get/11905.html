@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        display the hover text of the most recent xkcd
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                display the hover text of the most recent xkcd
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                curl -s 'http://xkcd.com/rss.xml' | xpath '//item[1]/description/text()' 2&gt;&amp;1 | sed -n 's/.*]*\)".*/\1/p' | fold -s
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        I look at xkcd in my news reader, but it displays the image's title attribute only for a few seconds which makes reading the longer ones more challenging. So I use this to display it in my console.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			display the hover text of the most recent xkcd
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				display the hover text of the most recent xkcd
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				curl -s 'http://xkcd.com/rss.xml' | xpath '//item[1]/description/text()' 2&gt;&amp;1 | sed -n 's/.*]*\)".*/\1/p' | fold -s
+			</div>
+			<div class="details description">
+				<p>
+					I look at xkcd in my news reader, but it displays the image's title attribute only for a few seconds which makes reading the longer ones more challenging. So I use this to display it in my console.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

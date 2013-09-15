@@ -1,49 +1,49 @@
 <html>
-        <head>
-                <title>
-                        exit if another instance is running
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                exit if another instance is running
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                pidof -x -o $$ ${0##*/} &amp;&amp; exit
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                if [ `fuser $0|wc -w` -gt "1" ];then exit; fi
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        runs only one instance.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        For a strong implementation of a real lock, see there : <a href="http://bash-hackers.org/wiki/doku.php?id=howto:mutex" rel="nofollow">http://bash-hackers.org/wiki/doku.php?id=howto:mutex</a>
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I'm voting this one up, cause it's slick, not because it's a good idea. I learned long ago that the "one in a million" chance of a race condition being triggered (two processes checking pidof at the same time and not seeing each other) is actually a sure bet when you're on a machine that performs millions of ops per seconds.
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			exit if another instance is running
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				exit if another instance is running
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				pidof -x -o $$ ${0##*/} &amp;&amp; exit
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				if [ `fuser $0|wc -w` -gt "1" ];then exit; fi
+			</div>
+			<div class="details description">
+				<p>
+					runs only one instance.
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					For a strong implementation of a real lock, see there : <a href="http://bash-hackers.org/wiki/doku.php?id=howto:mutex" rel="nofollow">http://bash-hackers.org/wiki/doku.php?id=howto:mutex</a>
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I'm voting this one up, cause it's slick, not because it's a good idea. I learned long ago that the "one in a million" chance of a race condition being triggered (two processes checking pidof at the same time and not seeing each other) is actually a sure bet when you're on a machine that performs millions of ops per seconds.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

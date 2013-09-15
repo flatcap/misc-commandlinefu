@@ -1,31 +1,31 @@
 <html>
-        <head>
-                <title>
-                        Open virtual machine in ubuntu.qcow image
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Open virtual machine in ubuntu.qcow image
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                qemu -cdrom /dev/cdrom -hda ubuntu.qcow -boot d -net nic -net user -m 196 -localtime
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Boot without CD-Rom:
-                                </p>
-                                <p>
-                                        qemu fedora.qcow -boot c -net nic -net user -m 196 -localtime
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Open virtual machine in ubuntu.qcow image
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Open virtual machine in ubuntu.qcow image
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				qemu -cdrom /dev/cdrom -hda ubuntu.qcow -boot d -net nic -net user -m 196 -localtime
+			</div>
+			<div class="details description">
+				<p>
+					Boot without CD-Rom:
+				</p>
+				<p>
+					qemu fedora.qcow -boot c -net nic -net user -m 196 -localtime
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

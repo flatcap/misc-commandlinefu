@@ -1,110 +1,110 @@
 <html>
-        <head>
-                <title>
-                        mkgo - Create a Directory and immediate go into it
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                mkgo - Create a Directory and immediate go into it
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                mkgo newdir
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			mkgo - Create a Directory and immediate go into it
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				mkgo - Create a Directory and immediate go into it
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				mkgo newdir
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 ~$ mkgo cool
 cool$
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        # put this in your .bashrc
-                                </p>
-                                <p>
-                                        mkgo (){
-                                </p>
-                                <p>
-                                        mkdir $1 &amp;&amp; cd $1
-                                </p>
-                                <p>
-                                        }
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        mkdir /home/foo/doc/bar &amp;&amp; cd $_
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                The biggest advantage of this over the functions is that it is portable.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        md () { mkdir -p "$@" &amp;&amp; cd "$@"; }
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					# put this in your .bashrc
+				</p>
+				<p>
+					mkgo (){
+				</p>
+				<p>
+					mkdir $1 &amp;&amp; cd $1
+				</p>
+				<p>
+					}
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					mkdir /home/foo/doc/bar &amp;&amp; cd $_
+				</div>
+				<div class="details description">
+					<p>
+						The biggest advantage of this over the functions is that it is portable.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					md () { mkdir -p "$@" &amp;&amp; cd "$@"; }
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 abd-pb-2:bin md test
 abd-pb-2:test md a/b/c/d/e
 abd-pb-2:e
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                How often do you make a directory (or series of directories) and then change into it to do whatever? 99% of the time that is what I do.
-                                        </p>
-                                        <p>
-                                                This BASH function 'md' will make the directory path then immediately change to the new directory. By using the 'mkdir -p' switch, the intermediate directories are created as well if they do not exist.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        function mcd() { [ -n "$1" ] &amp;&amp; mkdir -p "$@" &amp;&amp; cd "$1"; }
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						How often do you make a directory (or series of directories) and then change into it to do whatever? 99% of the time that is what I do.
+					</p>
+					<p>
+						This BASH function 'md' will make the directory path then immediately change to the new directory. By using the 'mkdir -p' switch, the intermediate directories are created as well if they do not exist.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					function mcd() { [ -n "$1" ] &amp;&amp; mkdir -p "$@" &amp;&amp; cd "$1"; }
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 user@home:~$ mcd newdirectory
 user@home:newdirectory $
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                I find that I create a directory and then cd into that directory quite often. I found this little function on the internets somewhere and thought I'd share it. Just copy-paste it into you ~/.bash_profile and then `source ~/.bash_profile`.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        echo 'mkcd() { mkdir -p "$@" &amp;&amp; cd "$_"; }' &gt;&gt; ~/.bashrc
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						I find that I create a directory and then cd into that directory quite often. I found this little function on the internets somewhere and thought I'd share it. Just copy-paste it into you ~/.bash_profile and then `source ~/.bash_profile`.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					echo 'mkcd() { mkdir -p "$@" &amp;&amp; cd "$_"; }' &gt;&gt; ~/.bashrc
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 ~/#$ mkcd /path/to/new/folder
 /path/to/new/folder#$_
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                combines mkdir and cd
-                                        </p>
-                                        <p>
-                                                added quotes around $_, thanx to flatcap!
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						combines mkdir and cd
+					</p>
+					<p>
+						added quotes around $_, thanx to flatcap!
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

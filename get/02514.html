@@ -1,21 +1,21 @@
 <html>
-        <head>
-                <title>
-                        VIM: Replace a string with an incrementing number between marks 'a and 'b (eg, convert string ZZZZ to 1, 2, 3, ...)
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                VIM: Replace a string with an incrementing number between marks 'a and 'b (eg, convert string ZZZZ to 1, 2, 3, ...)
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                :let i=0 | 'a,'bg/ZZZZ/s/ZZZZ/\=i/ | let i=i+1
-                        </div>
-                        <div class="details"></div>
-                </div>
-        </body>
+	<head>
+		<title>
+			VIM: Replace a string with an incrementing number between marks 'a and 'b (eg, convert string ZZZZ to 1, 2, 3, ...)
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				VIM: Replace a string with an incrementing number between marks 'a and 'b (eg, convert string ZZZZ to 1, 2, 3, ...)
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				:let i=0 | 'a,'bg/ZZZZ/s/ZZZZ/\=i/ | let i=i+1
+			</div>
+			<div class="details"></div>
+		</div>
+	</body>
 </html>

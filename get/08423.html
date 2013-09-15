@@ -1,41 +1,41 @@
 <html>
-        <head>
-                <title>
-                        Bulk renames with find, sed and a little escaping
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Bulk renames with find, sed and a little escaping
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find . -exec bash -c "mv '{}' '\`echo {} |sed -e 's/foo/bar/g'\`"' \;
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Bulk renames with find, sed and a little escaping
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Bulk renames with find, sed and a little escaping
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find . -exec bash -c "mv '{}' '\`echo {} |sed -e 's/foo/bar/g'\`"' \;
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 foobar1 gets renamed to barbar1
 barfoo2 gets renamed to barbar2
 fooobarfoo gets renamed to barobarfoo
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command is a more flexible than my previous submission.
-                                </p>
-                                <p>
-                                        It will work with spaces however suuuuper hacky and ugly.
-                                </p>
-                                <p>
-                                        Source: <a href="http://www.unix.com/shell-programming-scripting/146173-find-rename-files-using-find-mv-sed.html" rel="nofollow">http://www.unix.com/shell-programming-scripting/146173-find-rename-files-using-find-mv-sed.html</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					This command is a more flexible than my previous submission.
+				</p>
+				<p>
+					It will work with spaces however suuuuper hacky and ugly.
+				</p>
+				<p>
+					Source: <a href="http://www.unix.com/shell-programming-scripting/146173-find-rename-files-using-find-mv-sed.html" rel="nofollow">http://www.unix.com/shell-programming-scripting/146173-find-rename-files-using-find-mv-sed.html</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

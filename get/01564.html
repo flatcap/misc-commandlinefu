@@ -1,72 +1,72 @@
 <html>
-        <head>
-                <title>
-                        Send keypresses to an X application
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Send keypresses to an X application
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                xvkbd -xsendevent -text "Hello world"
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This is a (last resort) way to automate applications that provide no other ways for automation, it would send 'Hello world' to the currently active window. See the manpage (and the -text and -window entries) for how to send special characters and target specific windows.
-                                </p>
-                                <p>
-                                        An example:
-                                </p>
-                                <p>
-                                        Using xwininfo, I get the id of my XPlanet background window:
-                                </p>
-                                <p>
-                                        alanceil@kvirasim:19:51:0:~&gt; xwininfo
-                                </p>
-                                <p>
-                                        xwininfo: Please select the window about which you
-                                </p>
-                                <p>
-                                        would like information by clicking the
-                                </p>
-                                <p>
-                                        mouse in that window.
-                                </p>
-                                <p>
-                                        xwininfo: Window id: 0x3600001 "Xplanet 1.2.0"
-                                </p>
-                                <p>
-                                        Absolute upper-left X: 0
-                                </p>
-                                <p>
-                                        (..etc..)
-                                </p>
-                                <p>
-                                        Now I use xvkbd to tell it to close itself:
-                                </p>
-                                <p>
-                                        xvkbd -xsendevent -window 0x3600001 -text "Q"
-                                </p>
-                                <p>
-                                        Obviously, the best way is to put these commands in a shellscript - just make sure to include a short sleep (sleep .1 should suffice) after each xvkbd call, or some programs will become confused.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                thanks a lot! i was looking for this command. now i can use a hotkey to send customized messages to an app window i was troubled with. thanks again! :)
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			Send keypresses to an X application
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Send keypresses to an X application
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				xvkbd -xsendevent -text "Hello world"
+			</div>
+			<div class="details description">
+				<p>
+					This is a (last resort) way to automate applications that provide no other ways for automation, it would send 'Hello world' to the currently active window. See the manpage (and the -text and -window entries) for how to send special characters and target specific windows.
+				</p>
+				<p>
+					An example:
+				</p>
+				<p>
+					Using xwininfo, I get the id of my XPlanet background window:
+				</p>
+				<p>
+					alanceil@kvirasim:19:51:0:~&gt; xwininfo
+				</p>
+				<p>
+					xwininfo: Please select the window about which you
+				</p>
+				<p>
+					would like information by clicking the
+				</p>
+				<p>
+					mouse in that window.
+				</p>
+				<p>
+					xwininfo: Window id: 0x3600001 "Xplanet 1.2.0"
+				</p>
+				<p>
+					Absolute upper-left X: 0
+				</p>
+				<p>
+					(..etc..)
+				</p>
+				<p>
+					Now I use xvkbd to tell it to close itself:
+				</p>
+				<p>
+					xvkbd -xsendevent -window 0x3600001 -text "Q"
+				</p>
+				<p>
+					Obviously, the best way is to put these commands in a shellscript - just make sure to include a short sleep (sleep .1 should suffice) after each xvkbd call, or some programs will become confused.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				thanks a lot! i was looking for this command. now i can use a hotkey to send customized messages to an app window i was troubled with. thanks again! :)
+			</p>
+		</div>
+	</body>
 </html>

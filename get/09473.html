@@ -1,45 +1,45 @@
 <html>
-        <head>
-                <title>
-                        Find all plain text files that do not contain STRING
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Find all plain text files that do not contain STRING
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find . -type f ! -exec grep -q 'STRING' {} \; -print
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Hmm, that's a very clever use of find.
-                                </p>
-                                <p>
-                                        However GNU grep allows your example to be better expressed as:
-                                </p><code>grep -rL 'STRING' .</code>
-                                <p>
-                                        or
-                                </p><code>grep --recursive --files-without-match 'STRING' .</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        You need to escape the "!"
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Find all plain text files that do not contain STRING
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Find all plain text files that do not contain STRING
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find . -type f ! -exec grep -q 'STRING' {} \; -print
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Hmm, that's a very clever use of find.
+				</p>
+				<p>
+					However GNU grep allows your example to be better expressed as:
+				</p><code>grep -rL 'STRING' .</code>
+				<p>
+					or
+				</p><code>grep --recursive --files-without-match 'STRING' .</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					You need to escape the "!"
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

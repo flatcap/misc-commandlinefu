@@ -1,48 +1,48 @@
 <html>
-        <head>
-                <title>
-                        Display or use a random file from current directory via a small bash one-liner
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Display or use a random file from current directory via a small bash one-liner
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                $ i=(*);echo ${i[RANDOM%(${#i[@]}+1)]]}
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        An other way to run it ( playing a random file ending with avi, flv or mpeg ) from a specified dir and a specified type of extension :
-                                </p>
-                                <p>
-                                        making MOVIE array with a glob :
-                                </p><code>MOVIE=( /PATH/TO/MY/FAVORITE/MOVIES/*.{avi,flv,mpeg} )</code>
-                                <p>
-                                        playing the random file from a random key from the array
-                                </p><code>mplayer ${MOVIE[ RANDOM % ( ${#i[@]} + 1 ) ]]}</code>
-                                <p>
-                                        I use only globs and a bash array.
-                                </p>
-                                <p>
-                                        I use GNU bash, version 3.2.48
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Requires 'shuf' from coreutils but is much easier to remember:
-                        </p><code>ls -1 | shuf -n1</code>
-                </div>
-        </body>
+	<head>
+		<title>
+			Display or use a random file from current directory via a small bash one-liner
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Display or use a random file from current directory via a small bash one-liner
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				$ i=(*);echo ${i[RANDOM%(${#i[@]}+1)]]}
+			</div>
+			<div class="details description">
+				<p>
+					An other way to run it ( playing a random file ending with avi, flv or mpeg ) from a specified dir and a specified type of extension :
+				</p>
+				<p>
+					making MOVIE array with a glob :
+				</p><code>MOVIE=( /PATH/TO/MY/FAVORITE/MOVIES/*.{avi,flv,mpeg} )</code>
+				<p>
+					playing the random file from a random key from the array
+				</p><code>mplayer ${MOVIE[ RANDOM % ( ${#i[@]} + 1 ) ]]}</code>
+				<p>
+					I use only globs and a bash array.
+				</p>
+				<p>
+					I use GNU bash, version 3.2.48
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Requires 'shuf' from coreutils but is much easier to remember:
+			</p><code>ls -1 | shuf -n1</code>
+		</div>
+	</body>
 </html>

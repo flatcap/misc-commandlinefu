@@ -1,36 +1,36 @@
 <html>
-        <head>
-                <title>
-                        Display current time in requested time zones.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Display current time in requested time zones.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                zdump Japan America/New_York
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Display current time in requested time zones.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Display current time in requested time zones.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				zdump Japan America/New_York
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ zdump Japan America/New_York
-Japan             Sat Nov 17 06:17:33 2012 JST
+Japan	     Sat Nov 17 06:17:33 2012 JST
 America/New_York  Fri Nov 16 16:17:33 2012 EST
 $
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        The time zone names come from the tz database which is usually found at /usr/share/zoneinfo.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					The time zone names come from the tz database which is usually found at /usr/share/zoneinfo.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

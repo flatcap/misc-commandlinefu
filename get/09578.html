@@ -1,51 +1,51 @@
 <html>
-        <head>
-                <title>
-                        Exclude multiple columns using AWK
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Exclude multiple columns using AWK
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk '{$1=$3=""}1' file
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Print all columns except the 1st and 3rd.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        "1" at the end is for printing, but what is that mean, in long?
-                                </p>
-                                <p>
-                                        How does it correspond to:
-                                </p><code>awk '{$1=$3="";print}' file</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Awk views "1" as true and so performs its default action which is to print. Whereas "print" is a defined action.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Very usefull little awk-hack for parsing log : )
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Exclude multiple columns using AWK
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Exclude multiple columns using AWK
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk '{$1=$3=""}1' file
+			</div>
+			<div class="details description">
+				<p>
+					Print all columns except the 1st and 3rd.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					"1" at the end is for printing, but what is that mean, in long?
+				</p>
+				<p>
+					How does it correspond to:
+				</p><code>awk '{$1=$3="";print}' file</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Awk views "1" as true and so performs its default action which is to print. Whereas "print" is a defined action.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Very usefull little awk-hack for parsing log : )
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

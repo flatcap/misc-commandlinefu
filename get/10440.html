@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Print all words in a file sorted by length
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Print all words in a file sorted by length
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                for w in $(tr 'A-Z ,."()?!;:' 'a-z\n' &lt; sample.txt); do echo ${#w} $w; done | sort -u | sort -n
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Print all words in a file sorted by length
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Print all words in a file sorted by length
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				for w in $(tr 'A-Z ,."()?!;:' 'a-z\n' &lt; sample.txt); do echo ${#w} $w; done | sort -u | sort -n
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 ...
 9 suggested
 9 unsightly
@@ -30,78 +30,78 @@
 13 self-assembly
 14 apologetically
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Take a file and ,."()?!;: give a list of all the words in order of increasing length.
-                                </p>
-                                <p>
-                                        First of all use tr to map all alphabetic characters to lower case and also strip out any puntuation.
-                                </p>
-                                <p>
-                                        A-Z become a-z
-                                </p>
-                                <p>
-                                        ,."()?!;: all become \n (newline)
-                                </p>
-                                <p>
-                                        I've ignored - (hyphen) and ' (apostrophe) because they occur in words.
-                                </p>
-                                <p>
-                                        Next use bash to print the length ${#w} and the word
-                                </p>
-                                <p>
-                                        Finally sort the list numerically (sort -n) and remove any duplicates (sort -u).
-                                </p>
-                                <p>
-                                        Note: sort -nu performs strangely on this list. It outputs one word per length.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        for a in $(cat sample.txt); do echo "$(wc -m&lt;&lt;&lt;$a) $a";done|sort -n
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                optionally you can add
-                                        </p><code>|cut -d' ' -f2|uniq</code>
-                                        <p>
-                                                to the end of the command line.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        for a in $(cat sample.txt); do echo "${#a} $a";done|sort -n
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        for a in $(&lt; FILENAME); do echo "$(bc &lt;&lt;&lt; $(wc -m&lt;&lt;&lt;$a)-1) $a";done|sort -n
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        This yields the same:
-                                </p><code>egrep -Eo "[0-9a-Z\'\-]*" sample.txt|tr A-Z a-z|sort -u|awk '{ print length(), $0 | "sort -n" }'</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        you dont need 2 sorts you can just do sort -un
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Take a file and ,."()?!;: give a list of all the words in order of increasing length.
+				</p>
+				<p>
+					First of all use tr to map all alphabetic characters to lower case and also strip out any puntuation.
+				</p>
+				<p>
+					A-Z become a-z
+				</p>
+				<p>
+					,."()?!;: all become \n (newline)
+				</p>
+				<p>
+					I've ignored - (hyphen) and ' (apostrophe) because they occur in words.
+				</p>
+				<p>
+					Next use bash to print the length ${#w} and the word
+				</p>
+				<p>
+					Finally sort the list numerically (sort -n) and remove any duplicates (sort -u).
+				</p>
+				<p>
+					Note: sort -nu performs strangely on this list. It outputs one word per length.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					for a in $(cat sample.txt); do echo "$(wc -m&lt;&lt;&lt;$a) $a";done|sort -n
+				</div>
+				<div class="details description">
+					<p>
+						optionally you can add
+					</p><code>|cut -d' ' -f2|uniq</code>
+					<p>
+						to the end of the command line.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					for a in $(cat sample.txt); do echo "${#a} $a";done|sort -n
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					for a in $(&lt; FILENAME); do echo "$(bc &lt;&lt;&lt; $(wc -m&lt;&lt;&lt;$a)-1) $a";done|sort -n
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					This yields the same:
+				</p><code>egrep -Eo "[0-9a-Z\'\-]*" sample.txt|tr A-Z a-z|sort -u|awk '{ print length(), $0 | "sort -n" }'</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					you dont need 2 sorts you can just do sort -un
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

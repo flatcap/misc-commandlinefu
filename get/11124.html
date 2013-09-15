@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Hide files in ls, by adding support for .hidden files!
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Hide files in ls, by adding support for .hidden files!
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                alias ls='if [[ -f .hidden ]]; then while read l; do opts+=(--hide="$l"); done &lt; .hidden; fi; ls --color=auto "${opts[@]}"'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Hide files in ls, by adding support for .hidden files!
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Hide files in ls, by adding support for .hidden files!
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				alias ls='if [[ -f .hidden ]]; then while read l; do opts+=(--hide="$l"); done &lt; .hidden; fi; ls --color=auto "${opts[@]}"'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 ant@dev(/ntfs)# \ls -F
 $RECYCLE.BIN/  System Volume Information/  Shared/
 ant@dev(/ntfs)# cat .hidden
@@ -25,15 +25,15 @@ System Volume Information
 ant@dev(/ntfs)# ls -F
 Shared/
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Sometimes I would like to see hidden files, prefix with a period, but some files or folders I never want to see (and really wish I could just remove all together).
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Sometimes I would like to see hidden files, prefix with a period, but some files or folders I never want to see (and really wish I could just remove all together).
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

@@ -1,60 +1,60 @@
 <html>
-        <head>
-                <title>
-                        Save the list of all available commands in your box to a file
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Save the list of all available commands in your box to a file
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                compgen -c | sort -u &gt; commands
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        When you press TAB twice in your prompt, bash tells you something like
-                                </p>
-                                <p>
-                                        "Display all 4567 possibilities? (y or n)"
-                                </p>
-                                <p>
-                                        But when you press "y" you only get the list in the terminal output and, if you want to save it to a file, you have to copy it by hand from the vterm screen. With this utility you save the list to a file or pipe it to another command at will
-                                </p>
-                                <p>
-                                        You can use the file saved list to grep for a particular pattern, useful if you are searching for a command but you only remember a few letters
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Oh wow. I had totally forgotten about compgen. Thanks!!
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        why not just use Ctrl + R (if you are using bash) instead of saving to a file and looking up? Is there much difference?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        To you use Ctrl+r, the command you are looking for have to be in the bash-history, if you haven't typed in yet in the box you are working at or you just used long time ago (and it was dropped from the bash-history), this could be a good way to find it out
-                                </p>
-                                <p>
-                                        Also, with the file you can look an overview of the programs available in your system
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Save the list of all available commands in your box to a file
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Save the list of all available commands in your box to a file
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				compgen -c | sort -u &gt; commands
+			</div>
+			<div class="details description">
+				<p>
+					When you press TAB twice in your prompt, bash tells you something like
+				</p>
+				<p>
+					"Display all 4567 possibilities? (y or n)"
+				</p>
+				<p>
+					But when you press "y" you only get the list in the terminal output and, if you want to save it to a file, you have to copy it by hand from the vterm screen. With this utility you save the list to a file or pipe it to another command at will
+				</p>
+				<p>
+					You can use the file saved list to grep for a particular pattern, useful if you are searching for a command but you only remember a few letters
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Oh wow. I had totally forgotten about compgen. Thanks!!
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					why not just use Ctrl + R (if you are using bash) instead of saving to a file and looking up? Is there much difference?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					To you use Ctrl+r, the command you are looking for have to be in the bash-history, if you haven't typed in yet in the box you are working at or you just used long time ago (and it was dropped from the bash-history), this could be a good way to find it out
+				</p>
+				<p>
+					Also, with the file you can look an overview of the programs available in your system
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

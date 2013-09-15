@@ -1,24 +1,24 @@
 <html>
-        <head>
-                <title>
-                        Show exit status of all portions of a piped command eg. ls |this_doesn't_exist |wc
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Show exit status of all portions of a piped command eg. ls |this_doesn't_exist |wc
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo ${PIPESTATUS[@]}
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Show exit status of all portions of a piped command eg. ls |this_doesn't_exist |wc
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Show exit status of all portions of a piped command eg. ls |this_doesn't_exist |wc
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo ${PIPESTATUS[@]}
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

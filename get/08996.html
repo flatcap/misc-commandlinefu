@@ -1,34 +1,34 @@
 <html>
-        <head>
-                <title>
-                        output length of longest line
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                output length of longest line
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                wc -L
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                awk '(length &gt; n) {n = length} END {print n}'
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        If your wc does not have the -L option, you can use awk.
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			output length of longest line
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				output length of longest line
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				wc -L
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				awk '(length &gt; n) {n = length} END {print n}'
+			</div>
+			<div class="details description">
+				<p>
+					If your wc does not have the -L option, you can use awk.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

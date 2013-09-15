@@ -1,93 +1,93 @@
 <html>
-        <head>
-                <title>
-                        Uptime in minute
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Uptime in minute
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk '{print $0/60;}' /proc/uptime
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Get info directly from /proc/uptime
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        bc &lt;&lt;&lt; `uptime | sed -e 's/^.*up //' -e 's/[^0-9:].*//' | sed 's/:/*60+/g'`
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Want to run scripts/programs in the system after starting X minute [ For letting the system to free ]? This will give uptime in minute.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        uptime | awk -F ',' ' {print $1} ' | awk ' {print $3} ' | awk -F ':' ' {hrs=$1; min=$2; print hrs*60 + min} '
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        uptime | awk -F ',' ' {print $1" "$2}'|awk ' {print $3" "$4" "$5}' | sed '1,$s/:/ /' | awk ' {if ($4 =="user") print $1*60 + $2;else if ($2=="mins") print $1;else print $1*24*60 + $2*60 + $3}'
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			Uptime in minute
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Uptime in minute
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk '{print $0/60;}' /proc/uptime
+			</div>
+			<div class="details description">
+				<p>
+					Get info directly from /proc/uptime
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					bc &lt;&lt;&lt; `uptime | sed -e 's/^.*up //' -e 's/[^0-9:].*//' | sed 's/:/*60+/g'`
+				</div>
+				<div class="details description">
+					<p>
+						Want to run scripts/programs in the system after starting X minute [ For letting the system to free ]? This will give uptime in minute.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					uptime | awk -F ',' ' {print $1} ' | awk ' {print $3} ' | awk -F ':' ' {hrs=$1; min=$2; print hrs*60 + min} '
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					uptime | awk -F ',' ' {print $1" "$2}'|awk ' {print $3" "$4" "$5}' | sed '1,$s/:/ /' | awk ' {if ($4 =="user") print $1*60 + $2;else if ($2=="mins") print $1;else print $1*24*60 + $2*60 + $3}'
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 44384
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                find the uptime and convert in minutes, works with AIX and Linux too
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        This works quite well, as far as I can tell. It's shorter and simpler than alternatives that parse the uptime command output. I'm curious why it's voted down.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Thanks for the cmd. [My + vote 4 u ]
-                                </p>
-                                <p>
-                                        Your's is uptime in second.
-                                </p>
-                                <p>
-                                        Can u Pls explain {print $0/60;}
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        People voted down because they simply liked to play #w.
-                                </p>
-                                <p>
-                                        Afair, uptime is in seconds. Dividing it for 60 gives it in minutes ;)
-                                </p>
-                                <p>
-                                        Is it ok?
-                                </p>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						find the uptime and convert in minutes, works with AIX and Linux too
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					This works quite well, as far as I can tell. It's shorter and simpler than alternatives that parse the uptime command output. I'm curious why it's voted down.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Thanks for the cmd. [My + vote 4 u ]
+				</p>
+				<p>
+					Your's is uptime in second.
+				</p>
+				<p>
+					Can u Pls explain {print $0/60;}
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					People voted down because they simply liked to play #w.
+				</p>
+				<p>
+					Afair, uptime is in seconds. Dividing it for 60 gives it in minutes ;)
+				</p>
+				<p>
+					Is it ok?
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,96 +1,96 @@
 <html>
-        <head>
-                <title>
-                        Backup all MySQL Databases to individual files
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Backup all MySQL Databases to individual files
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                for I in $(mysql -e 'show databases' -s --skip-column-names); do mysqldump $I | gzip &gt; "$I.sql.gz"; done
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        for db in $(mysql -e 'show databases' -s --skip-column-names); do mysqldump $db | gzip &gt; "/backups/mysqldump-$(hostname)-$db-$(date +%Y-%m-%d-%H.%M.%S).gz"; done
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        for I in `echo "show databases;" | mysql | grep -v Database`; do mysqldump $I &gt; "$I.sql"; done
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Backups all MySQL databases to individual files. Can be put into a script that grabs current date so you have per day backups.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        mysql -e 'show databases' | sed -n '2,$p' | xargs -I DB 'mysqldump DB &gt; DB.sql'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                No need to loop when we have `xargs`. The sed command filters out the first line of `show databases` output, which is always "Database".
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        while read; do mysqldump $REPLY | gzip &gt; "/backup/mysql/$REPLY.sql.gz"; done &lt; &lt;( mysql -e 'show databases' -s --skip-column-names )
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                just better bash
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        mysql -e 'show databases' -s --skip-column-names | egrep -v "^(test|mysql|performance_schema|information_schema)$" | parallel --gnu "mysqldump --routines {} &gt; {}_daily.sql"
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Backs up all databases, excluding test, mysql, performance_schema, information_schema.
-                                        </p>
-                                        <p>
-                                                Requires parallel to work, install parallel on Ubuntu by running: sudo aptitude install parallel
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Typo: for I in $(mysql -e 'show databases' -s --skip-column-names); do mysqldump $I | gzip &gt; $I.sql.gz"; done
-                                </p>
-                                <p>
-                                        quote marks not opened. should read:
-                                </p>
-                                <p>
-                                        for I in $(mysql -e 'show databases' -s --skip-column-names); do mysqldump $I | gzip &gt; "$I.sql.gz"; done
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Just out of curiosity, why skip-column-names?
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Backup all MySQL Databases to individual files
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Backup all MySQL Databases to individual files
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				for I in $(mysql -e 'show databases' -s --skip-column-names); do mysqldump $I | gzip &gt; "$I.sql.gz"; done
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					for db in $(mysql -e 'show databases' -s --skip-column-names); do mysqldump $db | gzip &gt; "/backups/mysqldump-$(hostname)-$db-$(date +%Y-%m-%d-%H.%M.%S).gz"; done
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					for I in `echo "show databases;" | mysql | grep -v Database`; do mysqldump $I &gt; "$I.sql"; done
+				</div>
+				<div class="details description">
+					<p>
+						Backups all MySQL databases to individual files. Can be put into a script that grabs current date so you have per day backups.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					mysql -e 'show databases' | sed -n '2,$p' | xargs -I DB 'mysqldump DB &gt; DB.sql'
+				</div>
+				<div class="details description">
+					<p>
+						No need to loop when we have `xargs`. The sed command filters out the first line of `show databases` output, which is always "Database".
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					while read; do mysqldump $REPLY | gzip &gt; "/backup/mysql/$REPLY.sql.gz"; done &lt; &lt;( mysql -e 'show databases' -s --skip-column-names )
+				</div>
+				<div class="details description">
+					<p>
+						just better bash
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					mysql -e 'show databases' -s --skip-column-names | egrep -v "^(test|mysql|performance_schema|information_schema)$" | parallel --gnu "mysqldump --routines {} &gt; {}_daily.sql"
+				</div>
+				<div class="details description">
+					<p>
+						Backs up all databases, excluding test, mysql, performance_schema, information_schema.
+					</p>
+					<p>
+						Requires parallel to work, install parallel on Ubuntu by running: sudo aptitude install parallel
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Typo: for I in $(mysql -e 'show databases' -s --skip-column-names); do mysqldump $I | gzip &gt; $I.sql.gz"; done
+				</p>
+				<p>
+					quote marks not opened. should read:
+				</p>
+				<p>
+					for I in $(mysql -e 'show databases' -s --skip-column-names); do mysqldump $I | gzip &gt; "$I.sql.gz"; done
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Just out of curiosity, why skip-column-names?
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

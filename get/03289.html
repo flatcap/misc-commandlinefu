@@ -1,74 +1,74 @@
 <html>
-        <head>
-                <title>
-                        Sort a character string
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Sort a character string
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo sortmeplease | grep -o . | sort | tr -d '\n'; echo
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Sort a character string
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Sort a character string
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo sortmeplease | grep -o . | sort | tr -d '\n'; echo
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ echo sortmeplease | grep -o . | sort | tr -d '\n'; echo
 aeeelmoprsst
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Sorts a character string, using common shell commands.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        echo sortmeplease | perl -pe 'chomp; $_ = join "", sort split //'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                using perl
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        echo sortmeplease|sed 's/./&amp;\n/g'|sort|tr -d '\n'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                another possibility
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        echo sortmeplease | awk '{l=split($1,a,"");asort(a);while(x&lt;=l){printf "%s",a[x];x++ }print "";}'
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					Sorts a character string, using common shell commands.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					echo sortmeplease | perl -pe 'chomp; $_ = join "", sort split //'
+				</div>
+				<div class="details description">
+					<p>
+						using perl
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					echo sortmeplease|sed 's/./&amp;\n/g'|sort|tr -d '\n'
+				</div>
+				<div class="details description">
+					<p>
+						another possibility
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					echo sortmeplease | awk '{l=split($1,a,"");asort(a);while(x&lt;=l){printf "%s",a[x];x++ }print "";}'
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 aeeelmoprsst
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                using awk
-                                        </p>
-                                        <p>
-                                                missed the last char thanks @Josay
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						using awk
+					</p>
+					<p>
+						missed the last char thanks @Josay
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

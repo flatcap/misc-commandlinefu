@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        Remove BOM (Byte Order Mark) from text file
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Remove BOM (Byte Order Mark) from text file
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk '{if(NR==1)sub(/^\xef\xbb\xbf/,"");print}' text.txt &gt; newFile.txt
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Takes file (text.txt), removes BOM from it, and outputs the result to a new file (newFile.txt). BOM is "Byte Order Mark" ([<a href="http://en.wikipedia.org/wiki/Byte_order_mark])," rel="nofollow">http://en.wikipedia.org/wiki/Byte_order_mark]),</a> an invisible, non-breaking, zero-length character. In other words, if you see a DIFF with "" at the beginning, you've got a byte order mark, which can't be removed without this command or a hex editor. It can appear for a number of reasons, such as getting copied to/from a UNIX filesystem...
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Remove BOM (Byte Order Mark) from text file
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Remove BOM (Byte Order Mark) from text file
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk '{if(NR==1)sub(/^\xef\xbb\xbf/,"");print}' text.txt &gt; newFile.txt
+			</div>
+			<div class="details description">
+				<p>
+					Takes file (text.txt), removes BOM from it, and outputs the result to a new file (newFile.txt). BOM is "Byte Order Mark" ([<a href="http://en.wikipedia.org/wiki/Byte_order_mark])," rel="nofollow">http://en.wikipedia.org/wiki/Byte_order_mark]),</a> an invisible, non-breaking, zero-length character. In other words, if you see a DIFF with "" at the beginning, you've got a byte order mark, which can't be removed without this command or a hex editor. It can appear for a number of reasons, such as getting copied to/from a UNIX filesystem...
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

@@ -1,60 +1,60 @@
 <html>
-        <head>
-                <title>
-                        Get the IP of the host your coming from when logged in remotely
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Get the IP of the host your coming from when logged in remotely
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo ${SSH_CLIENT%% *}
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Even faster without the need for cut... :)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                echo $SSH_CLIENT | cut -f 1 -d ' '
-                        </div>
-                        <div class="details description">
-                                <code>host -i `echo $SSH_CLIENT | cut -f 1 -d \ ` | sed 's/.* domain name pointer \(.*\)\./\1/'</code>
-                                <p>
-                                        to reverse lookup and get the hostname.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        What is going on here with the
-                                </p><code>%% *</code>
-                                <p>
-                                        ?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        It's a bash string operation that removes a suffix. In this case everything (*) following the first space in the variable $SSH_CLIENT - which looks like: "192.168.178.1 45721 22". So what is left is the ip.
-                                </p>
-                                <p>
-                                        From "man bash":
-                                </p><code>{parameter%%word} Remove matching suffix pattern.</code>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Get the IP of the host your coming from when logged in remotely
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Get the IP of the host your coming from when logged in remotely
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo ${SSH_CLIENT%% *}
+			</div>
+			<div class="details description">
+				<p>
+					Even faster without the need for cut... :)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				echo $SSH_CLIENT | cut -f 1 -d ' '
+			</div>
+			<div class="details description">
+				<code>host -i `echo $SSH_CLIENT | cut -f 1 -d \ ` | sed 's/.* domain name pointer \(.*\)\./\1/'</code>
+				<p>
+					to reverse lookup and get the hostname.
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					What is going on here with the
+				</p><code>%% *</code>
+				<p>
+					?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					It's a bash string operation that removes a suffix. In this case everything (*) following the first space in the variable $SSH_CLIENT - which looks like: "192.168.178.1 45721 22". So what is left is the ip.
+				</p>
+				<p>
+					From "man bash":
+				</p><code>{parameter%%word} Remove matching suffix pattern.</code>
+			</div>
+		</div>
+	</body>
 </html>

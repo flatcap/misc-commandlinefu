@@ -1,56 +1,56 @@
 <html>
-        <head>
-                <title>
-                        Count the number of deleted files
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Count the number of deleted files
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find /path/folder -type f -name "*.*" -print -exec rm -v {} + | wc -l;
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        It does not work without the verbose mode (-v is important)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        What is the point of -name "*.*" ?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Just my pattern ;)
-                                </p>
-                                <p>
-                                        it works just with "*" only
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        I think he meant it should work without using -name at all.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Yea, that was the point.
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Count the number of deleted files
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Count the number of deleted files
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find /path/folder -type f -name "*.*" -print -exec rm -v {} + | wc -l;
+			</div>
+			<div class="details description">
+				<p>
+					It does not work without the verbose mode (-v is important)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					What is the point of -name "*.*" ?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Just my pattern ;)
+				</p>
+				<p>
+					it works just with "*" only
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					I think he meant it should work without using -name at all.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Yea, that was the point.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

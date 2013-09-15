@@ -1,24 +1,24 @@
 <html>
-        <head>
-                <title>
-                        Automatically connect to a host with ssh once it is online
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Automatically connect to a host with ssh once it is online
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                var=host ;while ! nc -zw 1 $var 22;do sleep 1; done ; ssh user@$var
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Automatically connect to a host with ssh once it is online
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Automatically connect to a host with ssh once it is online
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				var=host ;while ! nc -zw 1 $var 22;do sleep 1; done ; ssh user@$var
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

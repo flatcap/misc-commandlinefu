@@ -1,53 +1,53 @@
 <html>
-        <head>
-                <title>
-                        Draw kernel module dependancy graph.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Draw kernel module dependancy graph.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                lsmod | awk 'BEGIN{print "digraph{"}{split($4, a, ","); for (i in a) print $1, "-&gt;", a[i]}END{print "}"}'|display
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        parse "lsmod" output to "dot" format and pass it to "display". Without perl!
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                lsmod | perl -e 'print "digraph \"lsmod\" {";&lt;&gt;;while(&lt;&gt;){@_=split/\s+/; print "\"$_[0]\" -&gt; \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        parse `lsmod' output and pass to `dot' drawing utility then finally pass it to an image viewer
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Nice, however, my display needs this before it:
-                                </p><code>dot -Tpng |</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Brilliant!
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Draw kernel module dependancy graph.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Draw kernel module dependancy graph.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				lsmod | awk 'BEGIN{print "digraph{"}{split($4, a, ","); for (i in a) print $1, "-&gt;", a[i]}END{print "}"}'|display
+			</div>
+			<div class="details description">
+				<p>
+					parse "lsmod" output to "dot" format and pass it to "display". Without perl!
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				lsmod | perl -e 'print "digraph \"lsmod\" {";&lt;&gt;;while(&lt;&gt;){@_=split/\s+/; print "\"$_[0]\" -&gt; \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -
+			</div>
+			<div class="details description">
+				<p>
+					parse `lsmod' output and pass to `dot' drawing utility then finally pass it to an image viewer
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Nice, however, my display needs this before it:
+				</p><code>dot -Tpng |</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Brilliant!
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

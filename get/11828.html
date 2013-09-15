@@ -1,37 +1,37 @@
 <html>
-        <head>
-                <title>
-                        Output as many input
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Output as many input
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo 'foo' | tee &gt;(wc -c) &gt;(grep o) &gt;(grep f)
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Output as many input
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Output as many input
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo 'foo' | tee &gt;(wc -c) &gt;(grep o) &gt;(grep f)
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 totti@totti-lap:~/tmp$ echo 'foo' | tee &gt;(wc -c) &gt;(grep o) &gt;(grep f)
 foo
 foo
 foo
 4
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Output of a command as input to many
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Output of a command as input to many
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

@@ -1,52 +1,52 @@
 <html>
-        <head>
-                <title>
-                        Watch and keep history of a command
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Watch and keep history of a command
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                CMD="who";SEC=1;N=0;OLD="";NEW=""; while `sleep $SEC`; do OLD="$NEW"; NEW="$(eval $CMD)"; DIFF=`diff &lt;( echo "$OLD" ) &lt;( echo "$NEW" )`; if [ -n "$DIFF" ]; then date; echo "Diff #$N (${SEC}s): $CMD"; echo "$DIFF"; fi; N=$[$N+1]; done | tee /tmp/keepr
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Watch and keep history of a command
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Watch and keep history of a command
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				CMD="who";SEC=1;N=0;OLD="";NEW=""; while `sleep $SEC`; do OLD="$NEW"; NEW="$(eval $CMD)"; DIFF=`diff &lt;( echo "$OLD" ) &lt;( echo "$NEW" )`; if [ -n "$DIFF" ]; then date; echo "Diff #$N (${SEC}s): $CMD"; echo "$DIFF"; fi; N=$[$N+1]; done | tee /tmp/keepr
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 Mon Dec 25 14:15:30 EST 2099
 Diff #0 (1s): who
 1c1
 &lt;
 ---
-&gt; [me]     pts/1        2099-12-25 09:50 ([i.forget])
+&gt; [me]     pts/1	2099-12-25 09:50 ([i.forget])
 Mon Dec 25 14:15:32 EST 2099
 Diff #4 (1s): who
 1a2
-&gt; [notme]  pts/2        2099-12-25 14:15 ([i.forget])
+&gt; [notme]  pts/2	2099-12-25 14:15 ([i.forget])
 Mon Dec 25 14:20:37 EST 2099
 Diff #11 (1s): who
 1a2
-&lt; [notme]  pts/2        2099-12-25 14:15 ([i.forget])
+&lt; [notme]  pts/2	2099-12-25 14:15 ([i.forget])
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Watch any command (pipes ok, quotes be careful) and keep history in a file. Good for watching and recording any kind of status or error condition, file creations, etc. The choice of "who" as CMD was just to show an obvious usage.
-                                </p>
-                                <p>
-                                        Uses plenty of shell tricks that can be disassembled for simpler stuff. It's deliberately not perfect, but it is generic, and can be customized for your own uses. Had to shorten a little to meet 255 chars.
-                                </p>
-                                <p>
-                                        Better than "watch" how? It keeps a date log of what is going on, and tee'd output is plain-text.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Watch any command (pipes ok, quotes be careful) and keep history in a file. Good for watching and recording any kind of status or error condition, file creations, etc. The choice of "who" as CMD was just to show an obvious usage.
+				</p>
+				<p>
+					Uses plenty of shell tricks that can be disassembled for simpler stuff. It's deliberately not perfect, but it is generic, and can be customized for your own uses. Had to shorten a little to meet 255 chars.
+				</p>
+				<p>
+					Better than "watch" how? It keeps a date log of what is going on, and tee'd output is plain-text.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

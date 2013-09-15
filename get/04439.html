@@ -1,36 +1,36 @@
 <html>
-        <head>
-                <title>
-                        command! -nargs=1 Vs vs &amp;lt;args&amp;gt;
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                command! -nargs=1 Vs vs &amp;lt;args&amp;gt;
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                Create aliases for common vim minibuffer/cmd typos
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			command! -nargs=1 Vs vs &amp;lt;args&amp;gt;
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				command! -nargs=1 Vs vs &amp;lt;args&amp;gt;
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				Create aliases for common vim minibuffer/cmd typos
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 In .vimrc:
 command! W w
 command! -nargs=1 Vs vs &lt;args&gt;
 command! -nargs=1 VS vs &lt;args&gt;
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Because entering ':' requires that you press shift, sometimes common command-line / mini-buffer commands will be capitalized by accident.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Because entering ':' requires that you press shift, sometimes common command-line / mini-buffer commands will be capitalized by accident.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

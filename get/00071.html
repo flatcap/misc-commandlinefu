@@ -1,299 +1,299 @@
 <html>
-        <head>
-                <title>
-                        Serve current directory tree at http://$HOSTNAME:8000/
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Serve current directory tree at http://$HOSTNAME:8000/
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                python -m SimpleHTTPServer
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        python -m http.server
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			Serve current directory tree at http://$HOSTNAME:8000/
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Serve current directory tree at http://$HOSTNAME:8000/
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				python -m SimpleHTTPServer
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					python -m http.server
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 $ python3.1 -m http.server
 Serving HTTP on 0.0.0.0 port 8000 ...
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                In Python version 3, the module was merged into http.server. Gentlemen, change your aliases.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        twistd -n web --path .
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        python -m SimpleHTTPServer
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						In Python version 3, the module was merged into http.server. Gentlemen, change your aliases.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					twistd -n web --path .
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					python -m SimpleHTTPServer
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 Serving HTTP on 0.0.0.0 port 8000 ...
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This works on all versions of python 2.X.
-                                        </p>
-                                        <p>
-                                                Tested on Linux and bundled python versions on Mac OSX and Solaris / UNIX
-                                        </p>
-                                        <p>
-                                                Note: Serves globally on port 8000.
-                                        </p>
-                                        <p>
-                                                Ctrl+c to stop.
-                                        </p>
-                                        <p>
-                                                Don't start the server and leave it on a internet connected machine. :)
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        python3 -m http.server
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        python -m SimpleHTTPServer
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                "this command line isn't mine but i find it very useful" ^^
-                                        </p>
-                                        <p>
-                                                This one-liner starts a dedicated server hosting (web server) on port 8000 with the contents of current directory on all the interfaces (address 0.0.0.0), not just localhost. If you have "index.html" or "index.htm" files, it will serve those, otherwise it will list the contents of the currently working directory.
-                                        </p>
-                                        <p>
-                                                It works because python comes with a standard module called SimpleHTTPServer. The -m argument makes python to search for a module named SimpleHTTPServer.py in all the possible system locations (listed in sys.path and $PYTHONPATH shell variable). Once found, it executes it as a script. If you look at the source code of this module, you'll find that this module tests if it's run as a script if __name__ == '__main__', and if it is, it runs the test() method that makes it run a web server in the current directory.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        To use a different port:
-                                </p><code>python -m SimpleHTTPServer 8080</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Many thx to the both of you and python developers :)
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <code>python -m SimpleHTTPServer</code>
-                                <p>
-                                        +Serving HTTP on 0.0.0.0 port 8000 ...
-                                </p>
-                                <p>
-                                        ....
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Cool. I'd been using webfs for this.
-                                </p>
-                                <p>
-                                        <a href="http://linux.bytesex.org/misc/webfs.html" rel="nofollow">http://linux.bytesex.org/misc/webfs.html</a>
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        This is great way to get something to open without configuring webserver.
-                                </p>
-                                <p>
-                                        I love it.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        See also CGIHTTPServer
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Awesome!!
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        How to kill the servers? :P
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        I changed this up a bit and added it to my .bashrc. My function also logs into my web server via ssh and forwards a port back to me. It also copies the URL to my primary selection.
-                                </p><code>webshare () {</code> <code>local SSHHOST=hostname.of.server</code> <code>python -m SimpleHTTPServer &amp;</code> <code>echo http://$SSHHOST:8000 | xclip</code> <code>echo Press enter to stop sharing, http://$SSHHOST:8000 copied to primary selection</code>
-                                <p>
-                                        /usr/bin/ssh -R 8000:127.0.0.1:8000 $SSHHOST 'read'
-                                </p><code>kill `jobs -p | head`</code> <code>}</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Neat. I've been using a more complicated system:
-                                </p>
-                                <p>
-                                        # Create an index.html, trying to preserve names with whitespace
-                                </p>
-                                <p>
-                                        du -a | awk ?{ print $2,$3,$4,$5}? | \ until [[ -z $L ]];
-                                </p>
-                                <p>
-                                        do
-                                </p>
-                                <p>
-                                        read L;
-                                </p>
-                                <p>
-                                        echo ?<a href="?">?$L?</a>?;
-                                </p>
-                                <p>
-                                        done &gt; ./index.html;
-                                </p>
-                                <p>
-                                        #Instantiate an SSL web server on port 8080
-                                </p>
-                                <p>
-                                        openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout \
-                                </p>
-                                <p>
-                                        server.pem -out server.pem -subj ?/C=XX/O=XX/OU=XX/CN=XX?;
-                                </p>
-                                <p>
-                                        openssl s_server -accept 8080 -WWW
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Wow, quoting went horribly wrong there.
-                                </p>
-                                <p>
-                                        # Create an index.html, trying to preserve names with whitespace
-                                </p>
-                                <p>
-                                        du -a | awk '{ print $2,$3,$4,$5}' | until [[ -z $L ]];
-                                </p>
-                                <p>
-                                        do
-                                </p>
-                                <p>
-                                        read L;
-                                </p>
-                                <p>
-                                        echo '<a href="?'$L'?">'$L'</a>';
-                                </p>
-                                <p>
-                                        done &gt; ./index.html;
-                                </p>
-                                <p>
-                                        #Instantiate an SSL web server on port 8080
-                                </p>
-                                <p>
-                                        openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout \
-                                </p>
-                                <p>
-                                        server.pem -out server.pem -subj ?/C=XX/O=XX/OU=XX/CN=XX?;
-                                </p>
-                                <p>
-                                        openssl s_server -accept 8080 -WWW
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        nice ! tfs
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        all of the hacking around detracts from the beautiful simplicity of this command. I'm totally in love with this. I'd up-vote it a 100 times if I could. Nice work.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        nice
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        awesome
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        This is a great trick!
-                                </p>
-                                <p>
-                                        Does anyone know similar trick that invoke simple FTP server?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        If you don't know how to kill the server (^c doesn't work) try the following
-                                </p><code>kill `ps | grep SimpleHTTP | grep -v grep | awk '{print $1}'`</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        In order to kill the server you can try:
-                                </p><code>killall python</code>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        killall python is too brutal. It may kill some useful python process accidently .
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Just run to view
-                                </p><code>firefox http://$HOSTNAME:8000/</code>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        This is awesome. Does anyone know how to do this with Python 2.3 or earlier?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        <a href="http://ubuntuguide.net/http-server-support-uploading-files-from-windows-in-ubuntu" rel="nofollow">http://ubuntuguide.net/http-server-support-uploading-files-from-windows-in-ubuntu</a>
-                                </p>
-                                <p>
-                                        I found a python script that support uploading files. It's useful.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        If the default port 8000 already in use, you can specify port on commandline:
-                                </p>
-                                <p>
-                                        python -m SimpleHTTPServer 9000
-                                </p>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						This works on all versions of python 2.X.
+					</p>
+					<p>
+						Tested on Linux and bundled python versions on Mac OSX and Solaris / UNIX
+					</p>
+					<p>
+						Note: Serves globally on port 8000.
+					</p>
+					<p>
+						Ctrl+c to stop.
+					</p>
+					<p>
+						Don't start the server and leave it on a internet connected machine. :)
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					python3 -m http.server
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					python -m SimpleHTTPServer
+				</div>
+				<div class="details description">
+					<p>
+						"this command line isn't mine but i find it very useful" ^^
+					</p>
+					<p>
+						This one-liner starts a dedicated server hosting (web server) on port 8000 with the contents of current directory on all the interfaces (address 0.0.0.0), not just localhost. If you have "index.html" or "index.htm" files, it will serve those, otherwise it will list the contents of the currently working directory.
+					</p>
+					<p>
+						It works because python comes with a standard module called SimpleHTTPServer. The -m argument makes python to search for a module named SimpleHTTPServer.py in all the possible system locations (listed in sys.path and $PYTHONPATH shell variable). Once found, it executes it as a script. If you look at the source code of this module, you'll find that this module tests if it's run as a script if __name__ == '__main__', and if it is, it runs the test() method that makes it run a web server in the current directory.
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					To use a different port:
+				</p><code>python -m SimpleHTTPServer 8080</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Many thx to the both of you and python developers :)
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<code>python -m SimpleHTTPServer</code>
+				<p>
+					+Serving HTTP on 0.0.0.0 port 8000 ...
+				</p>
+				<p>
+					....
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Cool. I'd been using webfs for this.
+				</p>
+				<p>
+					<a href="http://linux.bytesex.org/misc/webfs.html" rel="nofollow">http://linux.bytesex.org/misc/webfs.html</a>
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					This is great way to get something to open without configuring webserver.
+				</p>
+				<p>
+					I love it.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					See also CGIHTTPServer
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Awesome!!
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					How to kill the servers? :P
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					I changed this up a bit and added it to my .bashrc. My function also logs into my web server via ssh and forwards a port back to me. It also copies the URL to my primary selection.
+				</p><code>webshare () {</code> <code>local SSHHOST=hostname.of.server</code> <code>python -m SimpleHTTPServer &amp;</code> <code>echo http://$SSHHOST:8000 | xclip</code> <code>echo Press enter to stop sharing, http://$SSHHOST:8000 copied to primary selection</code>
+				<p>
+					/usr/bin/ssh -R 8000:127.0.0.1:8000 $SSHHOST 'read'
+				</p><code>kill `jobs -p | head`</code> <code>}</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Neat. I've been using a more complicated system:
+				</p>
+				<p>
+					# Create an index.html, trying to preserve names with whitespace
+				</p>
+				<p>
+					du -a | awk ?{ print $2,$3,$4,$5}? | \ until [[ -z $L ]];
+				</p>
+				<p>
+					do
+				</p>
+				<p>
+					read L;
+				</p>
+				<p>
+					echo ?<a href="?">?$L?</a>?;
+				</p>
+				<p>
+					done &gt; ./index.html;
+				</p>
+				<p>
+					#Instantiate an SSL web server on port 8080
+				</p>
+				<p>
+					openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout \
+				</p>
+				<p>
+					server.pem -out server.pem -subj ?/C=XX/O=XX/OU=XX/CN=XX?;
+				</p>
+				<p>
+					openssl s_server -accept 8080 -WWW
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Wow, quoting went horribly wrong there.
+				</p>
+				<p>
+					# Create an index.html, trying to preserve names with whitespace
+				</p>
+				<p>
+					du -a | awk '{ print $2,$3,$4,$5}' | until [[ -z $L ]];
+				</p>
+				<p>
+					do
+				</p>
+				<p>
+					read L;
+				</p>
+				<p>
+					echo '<a href="?'$L'?">'$L'</a>';
+				</p>
+				<p>
+					done &gt; ./index.html;
+				</p>
+				<p>
+					#Instantiate an SSL web server on port 8080
+				</p>
+				<p>
+					openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout \
+				</p>
+				<p>
+					server.pem -out server.pem -subj ?/C=XX/O=XX/OU=XX/CN=XX?;
+				</p>
+				<p>
+					openssl s_server -accept 8080 -WWW
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					nice ! tfs
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					all of the hacking around detracts from the beautiful simplicity of this command. I'm totally in love with this. I'd up-vote it a 100 times if I could. Nice work.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					nice
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					awesome
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					This is a great trick!
+				</p>
+				<p>
+					Does anyone know similar trick that invoke simple FTP server?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					If you don't know how to kill the server (^c doesn't work) try the following
+				</p><code>kill `ps | grep SimpleHTTP | grep -v grep | awk '{print $1}'`</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					In order to kill the server you can try:
+				</p><code>killall python</code>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					killall python is too brutal. It may kill some useful python process accidently .
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Just run to view
+				</p><code>firefox http://$HOSTNAME:8000/</code>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					This is awesome. Does anyone know how to do this with Python 2.3 or earlier?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					<a href="http://ubuntuguide.net/http-server-support-uploading-files-from-windows-in-ubuntu" rel="nofollow">http://ubuntuguide.net/http-server-support-uploading-files-from-windows-in-ubuntu</a>
+				</p>
+				<p>
+					I found a python script that support uploading files. It's useful.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					If the default port 8000 already in use, you can specify port on commandline:
+				</p>
+				<p>
+					python -m SimpleHTTPServer 9000
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

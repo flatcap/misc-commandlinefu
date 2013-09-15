@@ -1,31 +1,31 @@
 <html>
-        <head>
-                <title>
-                        Mouse Tracking
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Mouse Tracking
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                while true; do xdotool getmouselocation | sed 's/x:\(.*\) y:\(.*\) screen:.*/\1, \2/' &gt;&gt; ./mouse-tracking; sleep 10; done
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Will track your mouse and save it to a file.
-                                </p>
-                                <p>
-                                        You can use gnuplot to graph it:
-                                </p><code>gnuplot -persist &lt;(echo "unset key;unset border;unset yzeroaxis;unset xtics;unset ytics;unset ztics;plot './mouse-tracking' with points lt 1 pt 6 ps variable")</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Mouse Tracking
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Mouse Tracking
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				while true; do xdotool getmouselocation | sed 's/x:\(.*\) y:\(.*\) screen:.*/\1, \2/' &gt;&gt; ./mouse-tracking; sleep 10; done
+			</div>
+			<div class="details description">
+				<p>
+					Will track your mouse and save it to a file.
+				</p>
+				<p>
+					You can use gnuplot to graph it:
+				</p><code>gnuplot -persist &lt;(echo "unset key;unset border;unset yzeroaxis;unset xtics;unset ytics;unset ztics;plot './mouse-tracking' with points lt 1 pt 6 ps variable")</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

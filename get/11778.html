@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        notify brightness level [custom]
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                notify brightness level [custom]
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                notify-send " " -i notification-display-brightness-low -h int:value:50 -h string:x-canonical-private-synchronous:brightness
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Brightness indicator to be used in scripts that adjust brightness [especially sys that doesn't support automatically]
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			notify brightness level [custom]
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				notify brightness level [custom]
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				notify-send " " -i notification-display-brightness-low -h int:value:50 -h string:x-canonical-private-synchronous:brightness
+			</div>
+			<div class="details description">
+				<p>
+					Brightness indicator to be used in scripts that adjust brightness [especially sys that doesn't support automatically]
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

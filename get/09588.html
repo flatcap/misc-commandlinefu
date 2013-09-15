@@ -1,36 +1,36 @@
 <html>
-        <head>
-                <title>
-                        create missing md5 for all files in directory
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                create missing md5 for all files in directory
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find . ! -name \*.md5 -exec 'md5sum "{}" &gt; "{}".md5' \;
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Just use find. No need to test file existence. On gnu find you can limit directory depth. Use "{}" to manage correctly files with spaces
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                much simpler than mine. +1
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			create missing md5 for all files in directory
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				create missing md5 for all files in directory
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find . ! -name \*.md5 -exec 'md5sum "{}" &gt; "{}".md5' \;
+			</div>
+			<div class="details description">
+				<p>
+					Just use find. No need to test file existence. On gnu find you can limit directory depth. Use "{}" to manage correctly files with spaces
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				much simpler than mine. +1
+			</p>
+		</div>
+	</body>
 </html>

@@ -1,94 +1,94 @@
 <html>
-        <head>
-                <title>
-                        Are the two lines anagrams?
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Are the two lines anagrams?
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                s(){ sed 's/./\n\0/g'&lt;&lt;&lt;$1|sort;};cmp -s &lt;(s foobar) &lt;(s farboo)||echo -n "not ";echo anagram
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Are the two strings anagrams of one another?
-                                </p>
-                                <p>
-                                        sed splits up the strings into one character per line
-                                </p>
-                                <p>
-                                        the result is sorted
-                                </p>
-                                <p>
-                                        cmp compares the results
-                                </p>
-                                <p>
-                                        Note: This is not pretty. I just wanted to see if I could do it in bash.
-                                </p>
-                                <p>
-                                        Note: It uses fewer characters than the perl version :-)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        (echo foobar; echo farboo) | perl -E 'say[sort&lt;&gt;=~/./g]~~[sort&lt;&gt;=~/./g]?"anagram":"not anagram"'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This works by reading in two lines of input, turning each into a list of one-character matches that are sorted and compared.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        anagram(){ s(){ sed 's/./\n\0/g'&lt;&lt;&lt;$1|sort;};cmp -s &lt;(s $1) &lt;(s $2)||echo -n "not ";echo anagram; }; anagram foobar farboo;
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			Are the two lines anagrams?
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Are the two lines anagrams?
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				s(){ sed 's/./\n\0/g'&lt;&lt;&lt;$1|sort;};cmp -s &lt;(s foobar) &lt;(s farboo)||echo -n "not ";echo anagram
+			</div>
+			<div class="details description">
+				<p>
+					Are the two strings anagrams of one another?
+				</p>
+				<p>
+					sed splits up the strings into one character per line
+				</p>
+				<p>
+					the result is sorted
+				</p>
+				<p>
+					cmp compares the results
+				</p>
+				<p>
+					Note: This is not pretty. I just wanted to see if I could do it in bash.
+				</p>
+				<p>
+					Note: It uses fewer characters than the perl version :-)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					(echo foobar; echo farboo) | perl -E 'say[sort&lt;&gt;=~/./g]~~[sort&lt;&gt;=~/./g]?"anagram":"not anagram"'
+				</div>
+				<div class="details description">
+					<p>
+						This works by reading in two lines of input, turning each into a list of one-character matches that are sorted and compared.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					anagram(){ s(){ sed 's/./\n\0/g'&lt;&lt;&lt;$1|sort;};cmp -s &lt;(s $1) &lt;(s $2)||echo -n "not ";echo anagram; }; anagram foobar farboo;
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 $ anagram night thing
 anagram
 $ anagram swamp thing
 not anagram
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This is just a slight alternative that wraps all of #7917 in a function that can be executed
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        You are using sed, two forks and two named pipes.
-                                </p>
-                                <p>
-                                        That's a waste. You can just iterate from the beginning of str1 and from the end of str2 and compare values.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Yes, but I was going for concise, not pretty -- just aiming to undercut the perl version.
-                                </p>
-                                <p>
-                                        Give us an example and show us what you mean :-)
-                                </p>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						This is just a slight alternative that wraps all of #7917 in a function that can be executed
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					You are using sed, two forks and two named pipes.
+				</p>
+				<p>
+					That's a waste. You can just iterate from the beginning of str1 and from the end of str2 and compare values.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Yes, but I was going for concise, not pretty -- just aiming to undercut the perl version.
+				</p>
+				<p>
+					Give us an example and show us what you mean :-)
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

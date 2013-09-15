@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        fork performance test
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                fork performance test
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                while (true); do date --utc; done | uniq -c
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			fork performance test
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				fork performance test
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				while (true); do date --utc; done | uniq -c
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ while (true); do date --utc; done | uniq -c
       5 Wed Apr 21 12:38:10 UTC 2010
       6 Wed Apr 21 12:38:11 UTC 2010
@@ -28,32 +28,32 @@ $ while (true); do date --utc; done | uniq -c
       1 Wed Apr 21 12:38:18 UTC 2010
       9 Wed Apr 21 12:38:19 UTC 2010
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        grabbed from Andrew Aylett post:
-                                </p>
-                                <p>
-                                        <a href="http://superuser.com/questions/133313/can-i-speed-up-cygwins-fork" rel="nofollow">http://superuser.com/questions/133313/can-i-speed-up-cygwins-fork</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                kewl...
-                        </p>
-                        <p>
-                                BASH: ~400/s
-                        </p>
-                        <p>
-                                DASH: ~600/s
-                        </p>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					grabbed from Andrew Aylett post:
+				</p>
+				<p>
+					<a href="http://superuser.com/questions/133313/can-i-speed-up-cygwins-fork" rel="nofollow">http://superuser.com/questions/133313/can-i-speed-up-cygwins-fork</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				kewl...
+			</p>
+			<p>
+				BASH: ~400/s
+			</p>
+			<p>
+				DASH: ~600/s
+			</p>
+		</div>
+	</body>
 </html>

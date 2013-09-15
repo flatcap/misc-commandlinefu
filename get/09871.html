@@ -1,25 +1,25 @@
 <html>
-        <head>
-                <title>
-                        Get rid of multiple spaces/tabs in a text file
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Get rid of multiple spaces/tabs in a text file
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                sed -i "s/\(\x09\{1,\}\)\|\( \{1,\}\)/ /g;s/\(\x09\{1,\}$\)\|\( \{1,\}$\)//g" brisati.txt
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Get rid of multiple spaces/tabs in a text file
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Get rid of multiple spaces/tabs in a text file
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				sed -i "s/\(\x09\{1,\}\)\|\( \{1,\}\)/ /g;s/\(\x09\{1,\}$\)\|\( \{1,\}$\)//g" brisati.txt
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ cat brisati.txt
 [       ]&lt;--one tab
-[                       ]&lt;--three tabs
+[		       ]&lt;--three tabs
 [ ]&lt;--one space
 [   ]&lt;--three spaces
 $ sed -i "s/\(\x09\{1,\}\)\|\( \{1,\}\)/ /g;s/\(\x09\{1,\}$\)\|\( \{1,\}$\)//g" brisati.txt;cat brisati.txt
@@ -28,75 +28,75 @@ $ sed -i "s/\(\x09\{1,\}\)\|\( \{1,\}\)/ /g;s/\(\x09\{1,\}$\)\|\( \{1,\}$\)//g" 
 [ ]&lt;--one space
 [ ]&lt;--three spaces
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command does the following:
-                                </p>
-                                <p>
-                                        - converts any sequence of multiple spaces/tabs to one space only
-                                </p>
-                                <p>
-                                        - completely removes any space(s)/tab(s) at the end of each line
-                                </p>
-                                <p>
-                                        (If spaces and tabs are mixed in a sequence i.e. [tab][tab][space][tab], you have to execute this command twice!)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                sed -i "s/\s*/ /g;s/\s*$//" input_file
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        A much shorter version of this command.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Hmm. The shortest I can make that is:
-                                </p><code>sed -i 's/\s\+/ /g;s/\s*$//' file.txt</code>
-                                <p>
-                                        (and it only needs to be run once!
-                                </p>
-                                <p>
-                                        There are two sed clauses:
-                                </p>
-                                <p>
-                                        "s/\s\+/ /g" : find one or many whitespace characters '\s' and replace them with a single space, g = globally (as many times as needed).
-                                </p>
-                                <p>
-                                        "s/\s*$//" : find one or many whitespace characters '\s' at the end of the line '$' and replace them with nothing '//'.
-                                </p>
-                                <p>
-                                        Optionally, if you want to clear the leading whitespace, try:
-                                </p><code>sed -i 's/\s\+/ /g;s/^\s*//;s/\s*$//' file.txt</code>
-                                <p>
-                                        "s/^\s*//" : find one or many whitespace characters '\s' at the beginning of the line '^' and replace them with nothing '//'.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Wow, mighty! Thank you!
-                                </p>
-                                <p>
-                                        One may want append "delete empty lines" ( ;/^$/d ) to this command too)
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        a bit overkill, when a shorterway to do it is just as good
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					This command does the following:
+				</p>
+				<p>
+					- converts any sequence of multiple spaces/tabs to one space only
+				</p>
+				<p>
+					- completely removes any space(s)/tab(s) at the end of each line
+				</p>
+				<p>
+					(If spaces and tabs are mixed in a sequence i.e. [tab][tab][space][tab], you have to execute this command twice!)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				sed -i "s/\s*/ /g;s/\s*$//" input_file
+			</div>
+			<div class="details description">
+				<p>
+					A much shorter version of this command.
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Hmm. The shortest I can make that is:
+				</p><code>sed -i 's/\s\+/ /g;s/\s*$//' file.txt</code>
+				<p>
+					(and it only needs to be run once!
+				</p>
+				<p>
+					There are two sed clauses:
+				</p>
+				<p>
+					"s/\s\+/ /g" : find one or many whitespace characters '\s' and replace them with a single space, g = globally (as many times as needed).
+				</p>
+				<p>
+					"s/\s*$//" : find one or many whitespace characters '\s' at the end of the line '$' and replace them with nothing '//'.
+				</p>
+				<p>
+					Optionally, if you want to clear the leading whitespace, try:
+				</p><code>sed -i 's/\s\+/ /g;s/^\s*//;s/\s*$//' file.txt</code>
+				<p>
+					"s/^\s*//" : find one or many whitespace characters '\s' at the beginning of the line '^' and replace them with nothing '//'.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Wow, mighty! Thank you!
+				</p>
+				<p>
+					One may want append "delete empty lines" ( ;/^$/d ) to this command too)
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					a bit overkill, when a shorterway to do it is just as good
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

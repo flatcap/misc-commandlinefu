@@ -1,65 +1,65 @@
 <html>
-        <head>
-                <title>
-                        Select and Edit a File in the Current Directory
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Select and Edit a File in the Current Directory
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                PS3="Enter a number: "; select f in *;do $EDITOR $f; break; done
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Select and Edit a File in the Current Directory
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Select and Edit a File in the Current Directory
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				PS3="Enter a number: "; select f in *;do $EDITOR $f; break; done
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ select f in *;do vim $f; break; done
-1) arguments              5) getopt_homemade.sh    9) remove_from_path.sh
-2) data                   6) getopt_tryout        10) scriptname.sh
-3) for_example            7) getopts_tryout       11) var_substitution.sh
+1) arguments	      5) getopt_homemade.sh    9) remove_from_path.sh
+2) data		   6) getopt_tryout	10) scriptname.sh
+3) for_example	    7) getopts_tryout       11) var_substitution.sh
 4) getopt_function.sh     8) parameter_expansion
 #? 4
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command displays a simple menu of file names in the current directory. After the user made a choice, the command invokes the default editor to edit that file.
-                                </p>
-                                <p>
-                                        * Without the break statement, the select command will loop forever
-                                </p>
-                                <p>
-                                        * Setting the PS3 prompt is optional
-                                </p>
-                                <p>
-                                        * If the user types an invalid choice (such as the letter q), then the variable $f will become an empty string.
-                                </p>
-                                <p>
-                                        * For more information, look up the bash's select command
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Interesting. However, need to exclude directories and include hidden files in the listing.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        If you want to exclude dir and include hidden file, try this:
-                                </p><code>PS3="Enter a number: "; select f in $(find . -type f -maxdepth 1);do $EDITOR $f; break; done</code>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					This command displays a simple menu of file names in the current directory. After the user made a choice, the command invokes the default editor to edit that file.
+				</p>
+				<p>
+					* Without the break statement, the select command will loop forever
+				</p>
+				<p>
+					* Setting the PS3 prompt is optional
+				</p>
+				<p>
+					* If the user types an invalid choice (such as the letter q), then the variable $f will become an empty string.
+				</p>
+				<p>
+					* For more information, look up the bash's select command
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Interesting. However, need to exclude directories and include hidden files in the listing.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					If you want to exclude dir and include hidden file, try this:
+				</p><code>PS3="Enter a number: "; select f in $(find . -type f -maxdepth 1);do $EDITOR $f; break; done</code>
+			</div>
+		</div>
+	</body>
 </html>

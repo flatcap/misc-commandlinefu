@@ -1,38 +1,38 @@
 <html>
-        <head>
-                <title>
-                        list current ssh clients
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                list current ssh clients
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                netstat -atn | grep :22 | grep ESTABLISHED | awk '{print $4}' | sed 's/:22//'
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                netstat -tn | awk '($4 ~ /:22\s*/) &amp;&amp; ($6 ~ /^EST/) {print substr($5, 0, index($5,":"))}'
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Would also match clients connected to a service running on :2222 or :22333 or any other port beginning with "22"
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			list current ssh clients
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				list current ssh clients
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				netstat -atn | grep :22 | grep ESTABLISHED | awk '{print $4}' | sed 's/:22//'
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				netstat -tn | awk '($4 ~ /:22\s*/) &amp;&amp; ($6 ~ /^EST/) {print substr($5, 0, index($5,":"))}'
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Would also match clients connected to a service running on :2222 or :22333 or any other port beginning with "22"
+			</p>
+		</div>
+	</body>
 </html>

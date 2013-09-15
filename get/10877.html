@@ -1,39 +1,39 @@
 <html>
-        <head>
-                <title>
-                        Use the builtin ':' bash command to increment variables
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Use the builtin ':' bash command to increment variables
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                [ $V ] || : $((V++)) &amp;&amp; echo $V
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Use the builtin ':' bash command to increment variables
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Use the builtin ':' bash command to increment variables
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				[ $V ] || : $((V++)) &amp;&amp; echo $V
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 1
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        I just found another use for the builtin ':' bash command. It increments counters for me in a loop if a certain condition is met...
-                                </p>
-                                <p>
-                                        : [arguments]
-                                </p>
-                                <p>
-                                        No effect; the command does nothing beyond expanding arguments and performing any specified redirections. A zero exit code is returned.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					I just found another use for the builtin ':' bash command. It increments counters for me in a loop if a certain condition is met...
+				</p>
+				<p>
+					: [arguments]
+				</p>
+				<p>
+					No effect; the command does nothing beyond expanding arguments and performing any specified redirections. A zero exit code is returned.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

@@ -1,220 +1,220 @@
 <html>
-        <head>
-                <title>
-                        Generate an XKCD #936 style 4 word password
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Generate an XKCD #936 style 4 word password
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                shuf -n4 /usr/share/dict/words | tr -d '\n'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Generate an XKCD #936 style 4 word password
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Generate an XKCD #936 style 4 word password
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				shuf -n4 /usr/share/dict/words | tr -d '\n'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 DolbycuspidspromulgatedAmundsen
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        4 random words are better than one obfuscated word
-                                </p>
-                                <p>
-                                        <a href="http://xkcd.com/936/" rel="nofollow">http://xkcd.com/936/</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        shuf -n4 /usr/share/dict/words | sed -e ':a;N;$!ba;s/\n/ /g;s/'\''//g;s/\b\(.\)/\u\1/g;s/ //g'
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					4 random words are better than one obfuscated word
+				</p>
+				<p>
+					<a href="http://xkcd.com/936/" rel="nofollow">http://xkcd.com/936/</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					shuf -n4 /usr/share/dict/words | sed -e ':a;N;$!ba;s/\n/ /g;s/'\''//g;s/\b\(.\)/\u\1/g;s/ //g'
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 EyestrainOctogenariansCatechisingDepression
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This is what I came up to generate XKCD #936 style four-word password.
-                                        </p>
-                                        <p>
-                                                Since first letter of every word is capitalized it looks a bit more readable to my eyes.
-                                        </p>
-                                        <p>
-                                                Also strips single quotes.
-                                        </p>
-                                        <p>
-                                                And yes - regex is a bit of a kludge, but that's the bes i could think of.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        echo $(grep "^[^']\{3,5\}$" /usr/share/dict/words|shuf -n4)
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						This is what I came up to generate XKCD #936 style four-word password.
+					</p>
+					<p>
+						Since first letter of every word is capitalized it looks a bit more readable to my eyes.
+					</p>
+					<p>
+						Also strips single quotes.
+					</p>
+					<p>
+						And yes - regex is a bit of a kludge, but that's the bes i could think of.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					echo $(grep "^[^']\{3,5\}$" /usr/share/dict/words|shuf -n4)
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 potty Aspen seedy curt
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                The improvement of this command over Strawp's original alternative is that you can specify the size of the words, in this particular case words between 3 and 5 character's long. It also excludes words that contain apostrophes, if you'd rather keep those words simply substitue [^'] for .
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        jot 4 | awk '{ print "wc -l /usr/share/dict/words | awk '"'"'{ print \"echo $[ $RANDOM * $RANDOM % \" $1 \"]\" }'"'"' | bash | awk '"'"'{ print \"sed -n \" $1 \"p /usr/share/dict/words\" }'"'"' | bash" }' | bash | tr -d '\n' | sed 's/$/\n/'
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						The improvement of this command over Strawp's original alternative is that you can specify the size of the words, in this particular case words between 3 and 5 character's long. It also excludes words that contain apostrophes, if you'd rather keep those words simply substitue [^'] for .
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					jot 4 | awk '{ print "wc -l /usr/share/dict/words | awk '"'"'{ print \"echo $[ $RANDOM * $RANDOM % \" $1 \"]\" }'"'"' | bash | awk '"'"'{ print \"sed -n \" $1 \"p /usr/share/dict/words\" }'"'"' | bash" }' | bash | tr -d '\n' | sed 's/$/\n/'
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 rackettwiseheartedgellytutoressn
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                So I use OSX and don't have the shuf command. This is what I could come up with.
-                                        </p>
-                                        <p>
-                                                This command assumes /usr/share/dict/words does not surpass 137,817,948 lines and line selection is NOT uniformly random.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        shuf /usr/share/dict/words |grep "^[^']\{3,5\}$" |head -n4
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						So I use OSX and don't have the shuf command. This is what I could come up with.
+					</p>
+					<p>
+						This command assumes /usr/share/dict/words does not surpass 137,817,948 lines and line selection is NOT uniformly random.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					shuf /usr/share/dict/words |grep "^[^']\{3,5\}$" |head -n4
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 nukes
 waken
 Liszt
 vain
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This does the same thing that the command 'j_melis' submitted, but does it a lot quicker.
-                                        </p>
-                                        <p>
-                                                That command takes 43 seconds to complete on my system, while the command I submitted takes 6 seconds.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        perl -F'\s+' -anE 'push @w,$F[1];END{$r.=splice @w,rand @w,1 for(1..4);say $r}' diceware.wordlist.asc
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						This does the same thing that the command 'j_melis' submitted, but does it a lot quicker.
+					</p>
+					<p>
+						That command takes 43 seconds to complete on my system, while the command I submitted takes 6 seconds.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					perl -F'\s+' -anE 'push @w,$F[1];END{$r.=splice @w,rand @w,1 for(1..4);say $r}' diceware.wordlist.asc
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 snapcodonmarshstink
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Before running, do:
-                                        </p>
-                                        <p>
-                                                curl -sO <a href="http://world.std.com/%7Ereinhold/diceware.wordlist.asc" rel="nofollow">http://world.std.com/%7Ereinhold/diceware.wordlist.asc</a>
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Unfortunately, Randall Munroe doesn't understand entropy from information theory. The definition is clearly defined as H=L*log_2(N), where H is the amount of entropy in binary bits, L is the length of the message, log_2() is the log base 2, and N is the total possible characters available given the set of characters in the password.
-                                </p>
-                                <p>
-                                        Thus, "Tr0ub4d0r&amp;3" has 78-bits of entropy, and "correcthorsebatterystable" has 117-bits of entropy.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Sadly, his reasoning is flawed as well, as discussed in great detail here... <a href="http://www.troyhunt.com/2011/04/bad-passwords-are-not-fun-and-good.html" rel="nofollow">http://www.troyhunt.com/2011/04/bad-passwords-are-not-fun-and-good.html</a>
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        If you're going to downvote this, don't do it because the idea that inspired it is flawed. For what it's supposed to do, it does it well, and could be used for a non-flawed idea.
-                                </p>
-                                <p>
-                                        Sadly, 'shuf' is not installed on every machine. It should be. Some later editions of GNU sort have a '-R option, so you could use 'sort -R /usr/share/dict/words |head -4 |' instead... but not every distro has up-to-date version of GNU sort, either. For example, I can see both are missing from RHEL / CentOS 5.6
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Thus, the reason it was downvoted by me. shuf(1) isn't portable across all Unices. However, last I checked, I didn't need to explain why I voted one way or the other.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Ah, I see. I've always aimed for brevity in commands whereas I see here we're aiming for universally supported, core function based commands. I did wonder about some of my previous submissions...
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        @atoponce: I'ts *generally* a good practice to comment and explain whenever you vote down.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Man that troy hunt guy is super verbose... but after skimming the article I don't see where he says Munroe's idea is flawed. The closest thing would be that Munroe doesn't specify that the total number of characters is important, not using the 4 words. The 4 words are just a convenient way to get a decent number of characters that are easy to remember. All lower case alpha is perfectly fine as long as its long enough. Do the math.
-                                </p>
-                                <p>
-                                        The biggest flaw I see is that if an attacker knows you use 4 words like this it will make your password easy to brute force.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I think some of you missed the point Randall was making.
-                                </p>
-                                <p>
-                                        @atoponce: your equation for entropy is only true for a string which doesn't exhibit "inter-symbol memory" (each character is random and unrelated to adjacent characters). A password based on a word does have inter-symbol memory, so you have to consider the entire word as a single symbol, and N becomes the list of words it was drawn from. Randall apparently came up with a list of 64 thousand words (16 bits). The additional bits show the likely ways those 64k base words are typically obfuscated, so you effectively have a single symbol drawn from 256 million possible values (28 bits).
-                                </p>
-                                <p>
-                                        For the 'secure' password, my dictionary file has 98,569 words, so using your equation: H = L*log_2(N) = 4*log_2(98569) = 66 bits.
-                                </p>
-                                <p>
-                                        @eikenberry: It's more conservative to consider each word as a 'symbol', so instead of a 25-symbol string with 4.7 bits each (26 different letters), you have a string of 4 symbols with 16.5 bits each. So, it doesn't matter if you tell the attacker that you used this command to generate the password, because he still has 2^66 combinations to try which would take 2.3 billion years to try based on the rates Randall is using (he might get lucky and find the answer in ~1 billion years).
-                                </p>
-                                <p>
-                                        An important point (the Troy mentions also), is that these rates only apply to brute force attacks via a web interface. I wouldn't use any of these for a Truecrypt volume or any other local or offline system that doesn't inherently limit the attempt rate.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Randall himself has discussed this a little:
-                                </p>
-                                <p>
-                                        .
-                                </p>
-                                <p>
-                                        https://plus.google.com/111588569124648292310/posts/6yrDxQcyjuW
-                                </p>
-                                <p>
-                                        .
-                                </p>
-                                <p>
-                                        <a href="http://ask.metafilter.com/193052/Oh-Randall-you-do-confound-me-so#2779020" rel="nofollow">http://ask.metafilter.com/193052/Oh-Randall-you-do-confound-me-so#2779020</a>
-                                </p>
-                                <p>
-                                        .
-                                </p>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						Before running, do:
+					</p>
+					<p>
+						curl -sO <a href="http://world.std.com/%7Ereinhold/diceware.wordlist.asc" rel="nofollow">http://world.std.com/%7Ereinhold/diceware.wordlist.asc</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Unfortunately, Randall Munroe doesn't understand entropy from information theory. The definition is clearly defined as H=L*log_2(N), where H is the amount of entropy in binary bits, L is the length of the message, log_2() is the log base 2, and N is the total possible characters available given the set of characters in the password.
+				</p>
+				<p>
+					Thus, "Tr0ub4d0r&amp;3" has 78-bits of entropy, and "correcthorsebatterystable" has 117-bits of entropy.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Sadly, his reasoning is flawed as well, as discussed in great detail here... <a href="http://www.troyhunt.com/2011/04/bad-passwords-are-not-fun-and-good.html" rel="nofollow">http://www.troyhunt.com/2011/04/bad-passwords-are-not-fun-and-good.html</a>
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					If you're going to downvote this, don't do it because the idea that inspired it is flawed. For what it's supposed to do, it does it well, and could be used for a non-flawed idea.
+				</p>
+				<p>
+					Sadly, 'shuf' is not installed on every machine. It should be. Some later editions of GNU sort have a '-R option, so you could use 'sort -R /usr/share/dict/words |head -4 |' instead... but not every distro has up-to-date version of GNU sort, either. For example, I can see both are missing from RHEL / CentOS 5.6
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Thus, the reason it was downvoted by me. shuf(1) isn't portable across all Unices. However, last I checked, I didn't need to explain why I voted one way or the other.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Ah, I see. I've always aimed for brevity in commands whereas I see here we're aiming for universally supported, core function based commands. I did wonder about some of my previous submissions...
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					@atoponce: I'ts *generally* a good practice to comment and explain whenever you vote down.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Man that troy hunt guy is super verbose... but after skimming the article I don't see where he says Munroe's idea is flawed. The closest thing would be that Munroe doesn't specify that the total number of characters is important, not using the 4 words. The 4 words are just a convenient way to get a decent number of characters that are easy to remember. All lower case alpha is perfectly fine as long as its long enough. Do the math.
+				</p>
+				<p>
+					The biggest flaw I see is that if an attacker knows you use 4 words like this it will make your password easy to brute force.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I think some of you missed the point Randall was making.
+				</p>
+				<p>
+					@atoponce: your equation for entropy is only true for a string which doesn't exhibit "inter-symbol memory" (each character is random and unrelated to adjacent characters). A password based on a word does have inter-symbol memory, so you have to consider the entire word as a single symbol, and N becomes the list of words it was drawn from. Randall apparently came up with a list of 64 thousand words (16 bits). The additional bits show the likely ways those 64k base words are typically obfuscated, so you effectively have a single symbol drawn from 256 million possible values (28 bits).
+				</p>
+				<p>
+					For the 'secure' password, my dictionary file has 98,569 words, so using your equation: H = L*log_2(N) = 4*log_2(98569) = 66 bits.
+				</p>
+				<p>
+					@eikenberry: It's more conservative to consider each word as a 'symbol', so instead of a 25-symbol string with 4.7 bits each (26 different letters), you have a string of 4 symbols with 16.5 bits each. So, it doesn't matter if you tell the attacker that you used this command to generate the password, because he still has 2^66 combinations to try which would take 2.3 billion years to try based on the rates Randall is using (he might get lucky and find the answer in ~1 billion years).
+				</p>
+				<p>
+					An important point (the Troy mentions also), is that these rates only apply to brute force attacks via a web interface. I wouldn't use any of these for a Truecrypt volume or any other local or offline system that doesn't inherently limit the attempt rate.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Randall himself has discussed this a little:
+				</p>
+				<p>
+					.
+				</p>
+				<p>
+					https://plus.google.com/111588569124648292310/posts/6yrDxQcyjuW
+				</p>
+				<p>
+					.
+				</p>
+				<p>
+					<a href="http://ask.metafilter.com/193052/Oh-Randall-you-do-confound-me-so#2779020" rel="nofollow">http://ask.metafilter.com/193052/Oh-Randall-you-do-confound-me-so#2779020</a>
+				</p>
+				<p>
+					.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

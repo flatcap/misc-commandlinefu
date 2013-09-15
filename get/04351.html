@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        show ls colors with demo
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                show ls colors with demo
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo $LS_COLORS | sed 's/:/\n/g' | awk -F= '!/^$/{printf("%s \x1b[%smdemo\x1b[0m\n",$0,$2)}'
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This can show all ls colors, with a demo.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			show ls colors with demo
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				show ls colors with demo
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo $LS_COLORS | sed 's/:/\n/g' | awk -F= '!/^$/{printf("%s \x1b[%smdemo\x1b[0m\n",$0,$2)}'
+			</div>
+			<div class="details description">
+				<p>
+					This can show all ls colors, with a demo.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

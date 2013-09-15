@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Show database sql schema from Remote or Local database
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Show database sql schema from Remote or Local database
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                mysqldump -u<span>&lt;dbusername&gt;</span> -p<span>&lt;dbpassword&gt;</span> <span>&lt;databasename&gt;</span> --no-data --tables
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Show database sql schema from Remote or Local database
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Show database sql schema from Remote or Local database
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				mysqldump -u<span>&lt;dbusername&gt;</span> -p<span>&lt;dbpassword&gt;</span> <span>&lt;databasename&gt;</span> --no-data --tables
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 CREATE TABLE `contacts` (
   `id` int(10) NOT NULL auto_increment,
   `firstname` text NOT NULL,
@@ -32,15 +32,15 @@ CREATE TABLE `contacts` (
   PRIMARY KEY  (`id`),
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        After ssh into server, run this command to show all the table structure and schema.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					After ssh into server, run this command to show all the table structure and schema.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        View ~/.ssh/known_hosts key information
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                View ~/.ssh/known_hosts key information
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ssh-keygen -l -f ~/.ssh/known_hosts
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			View ~/.ssh/known_hosts key information
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				View ~/.ssh/known_hosts key information
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ssh-keygen -l -f ~/.ssh/known_hosts
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 2048 33:3c:db:04:96:f8:c0:dc:3b:c5:eb:8a:29:32:90:74 10.5.20.213 (RSA)
 2048 1f:5c:f1:0f:6a:77:b8:ab:22:13:6f:9f:4e:16:1f:b9 10.5.20.214 (RSA)
 2048 3a:01:a8:a1:23:cd:73:0d:7e:1e:bf:70:da:a0:e9:ab 10.5.20.212 (RSA)
@@ -26,23 +26,23 @@
 2048 d9:fc:1d:46:63:57:f7:07:54:23:bf:88:af:3a:4a:71 10.5.20.215 (RSA)
 2048 7b:81:21:60:27:63:a4:38:34:42:08:22:70:16:19:70 10.5.20.218 (RSA)
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Will return the SSH server key information for each host you have in your ~/.ssh/known_hosts file, including key size, key fingerprint, key IP address or domain name, and key type.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Add "|sort -k 2" at the end. That way it groups the information per server. I have two entries for most servers. One only IP adress and one also the domain name.
-                        </p>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Will return the SSH server key information for each host you have in your ~/.ssh/known_hosts file, including key size, key fingerprint, key IP address or domain name, and key type.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Add "|sort -k 2" at the end. That way it groups the information per server. I have two entries for most servers. One only IP adress and one also the domain name.
+			</p>
+		</div>
+	</body>
 </html>

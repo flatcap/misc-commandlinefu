@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Apply substitution only on the line following a marker
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Apply substitution only on the line following a marker
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                sed '/MARKER/{N;s/THIS/THAT/}'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Apply substitution only on the line following a marker
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Apply substitution only on the line following a marker
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				sed '/MARKER/{N;s/THIS/THAT/}'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ cat test.plt
 # set up gnuplot with some undetermined number of commands
 #MARKER
@@ -30,18 +30,18 @@ plot "file1.dat" using 1:2
 replot "file2.dat" using 1:2
 replot "file3.dat" using 1:2
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        I've been auto-generating some complex GnuPlots; with multiplots the first plot of each group needs to be a 'plot' whereas the others need to be 'replots' to allow overplotting/autoscaling/etc to work properly.
-                                </p>
-                                <p>
-                                        This is used to replace only the first instance of 'replot'.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					I've been auto-generating some complex GnuPlots; with multiplots the first plot of each group needs to be a 'plot' whereas the others need to be 'replots' to allow overplotting/autoscaling/etc to work properly.
+				</p>
+				<p>
+					This is used to replace only the first instance of 'replot'.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

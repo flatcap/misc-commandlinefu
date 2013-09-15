@@ -1,58 +1,58 @@
 <html>
-        <head>
-                <title>
-                        Print stack trace of a core file without needing to enter gdb interactively
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Print stack trace of a core file without needing to enter gdb interactively
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                gdb --batch --quiet -ex "thread apply all bt full" -ex "quit" ${exe} ${corefile}
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This does almost the same thing as the original, but it runs the full backtrace for _all_ the threads, which is pretty important when reporting a crash for a multithreaded software, since more often than not, the signal handler is executed in a different thread than the crash happened.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        gdb -batch -ex "run" -ex "bt" ${my_program} 2&gt;&amp;1 | grep -v ^"No stack."$
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			Print stack trace of a core file without needing to enter gdb interactively
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Print stack trace of a core file without needing to enter gdb interactively
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				gdb --batch --quiet -ex "thread apply all bt full" -ex "quit" ${exe} ${corefile}
+			</div>
+			<div class="details description">
+				<p>
+					This does almost the same thing as the original, but it runs the full backtrace for _all_ the threads, which is pretty important when reporting a crash for a multithreaded software, since more often than not, the signal handler is executed in a different thread than the crash happened.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					gdb -batch -ex "run" -ex "bt" ${my_program} 2&gt;&amp;1 | grep -v ^"No stack."$
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 Should be identical to what ${my_program} normally generates, unless ${my_program} crashes, in which case it ends with a stack trace.
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                For automated unit tests I wanted my program to run normally, but if it crashed, to add a stack trace to the output log. I came up with this command so I wouldn't have to mess around with core files.
-                                        </p>
-                                        <p>
-                                                The one downside is that it does smoosh your program's stderr and stdout together.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        alias gdbbt="gdb -q -n -ex bt -batch"
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                The pstack command prints a stack trace of running processes without needing to attach a debugger, but what about core files? The answer, of course, is to use this command. Usage: gdbbt program corefile
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						For automated unit tests I wanted my program to run normally, but if it crashed, to add a stack trace to the output log. I came up with this command so I wouldn't have to mess around with core files.
+					</p>
+					<p>
+						The one downside is that it does smoosh your program's stderr and stdout together.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					alias gdbbt="gdb -q -n -ex bt -batch"
+				</div>
+				<div class="details description">
+					<p>
+						The pstack command prints a stack trace of running processes without needing to attach a debugger, but what about core files? The answer, of course, is to use this command. Usage: gdbbt program corefile
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

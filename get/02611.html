@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        IFS - use entire lines in your for cycles
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                IFS - use entire lines in your for cycles
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                export IFS=$(echo -e "\n")
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			IFS - use entire lines in your for cycles
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				IFS - use entire lines in your for cycles
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				export IFS=$(echo -e "\n")
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ cat file
 line one
 line two
@@ -30,56 +30,56 @@ $ for i in `cat file`; do echo $i; done
 line one
 line two
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        When you use a "for" construct, it cycles on every word. If you want to cycle on a line-by-line basis (and, well, you can't use xargs -n1 :D), you can set the IFS variable to .
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Not bad. Here's an alternative using read (this doesn't require you to change IFS)
-                                </p><code>while read i; do echo "$i"; done &lt; file</code>
-                                <p>
-                                        (You can cat the file into the while, if you prefer)
-                                </p>
-                                <p>
-                                        If you *do* want to alter IFS, you can do it more simply (in bash at least) like this:
-                                </p>
-                                <p>
-                                        export IFS=$'\n'
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        A good idea is also to start with a OLDIFS=$IFS
-                                </p>
-                                <p>
-                                        Then your loop
-                                </p>
-                                <p>
-                                        Then back to real life with IFS=$OLDIFS
-                                </p>
-                                <p>
-                                        You can avoid problems by doing this
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        IFS is a shell-local variable, so there's no need to export it.
-                                </p>
-                                <p>
-                                        Also,
-                                </p><code>IFS=$'\n'</code>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					When you use a "for" construct, it cycles on every word. If you want to cycle on a line-by-line basis (and, well, you can't use xargs -n1 :D), you can set the IFS variable to .
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Not bad. Here's an alternative using read (this doesn't require you to change IFS)
+				</p><code>while read i; do echo "$i"; done &lt; file</code>
+				<p>
+					(You can cat the file into the while, if you prefer)
+				</p>
+				<p>
+					If you *do* want to alter IFS, you can do it more simply (in bash at least) like this:
+				</p>
+				<p>
+					export IFS=$'\n'
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					A good idea is also to start with a OLDIFS=$IFS
+				</p>
+				<p>
+					Then your loop
+				</p>
+				<p>
+					Then back to real life with IFS=$OLDIFS
+				</p>
+				<p>
+					You can avoid problems by doing this
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					IFS is a shell-local variable, so there's no need to export it.
+				</p>
+				<p>
+					Also,
+				</p><code>IFS=$'\n'</code>
+			</div>
+		</div>
+	</body>
 </html>

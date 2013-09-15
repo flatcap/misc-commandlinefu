@@ -1,62 +1,62 @@
 <html>
-        <head>
-                <title>
-                        Go to parent directory of filename edited in last command
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Go to parent directory of filename edited in last command
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cd !$:h
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Go to parent directory of filename edited in last command
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Go to parent directory of filename edited in last command
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cd !$:h
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 user@host:/home$ vim /path/to/file.txt
 user@host:/home$ cd !$:h
 user@host:/path/to$
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Uses the last argument of the last executed command, and gets the directory name from it.
-                                </p>
-                                <p>
-                                        Use $!:t for the filename alone, without the dirname.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                cd `dirname $_`
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        No idea what I'd use it for offhand but it's short and ugly so what's not to love.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        @TheMightyBuzzard I mostly use it to avoid typing a long path twice in succession:
-                                </p><code>cp foo /some/new/long/path/for/foo</code> <code>cd !$:h</code>
-                                <p>
-                                        (do more stuff to foo)
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Uses the last argument of the last executed command, and gets the directory name from it.
+				</p>
+				<p>
+					Use $!:t for the filename alone, without the dirname.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				cd `dirname $_`
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					No idea what I'd use it for offhand but it's short and ugly so what's not to love.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					@TheMightyBuzzard I mostly use it to avoid typing a long path twice in succession:
+				</p><code>cp foo /some/new/long/path/for/foo</code> <code>cd !$:h</code>
+				<p>
+					(do more stuff to foo)
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

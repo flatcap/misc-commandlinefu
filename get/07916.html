@@ -1,148 +1,148 @@
 <html>
-        <head>
-                <title>
-                        Put a console clock in top right corner
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Put a console clock in top right corner
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &amp;
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
-                                                         Qui Fev 17 08:27:29 BRST 2011
+	<head>
+		<title>
+			Put a console clock in top right corner
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Put a console clock in top right corner
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &amp;
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
+							 Qui Fev 17 08:27:29 BRST 2011
  #
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        A nice way to use the console in full screen without forget the current time.
-                                </p>
-                                <p>
-                                        you can too add other infos like cpu and mem use.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        while true; do echo -ne "\e[s\e[0;$((COLUMNS-27))H$(date)\e[u"; sleep 1; done &amp;
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This puts a clock in the top right of the terminal. This version doesn't use tput, but uses escape codes
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        while true; do tput sc; tput cup 0 $(($(tput cols)-74)); w | grep load; tput rc; sleep 10; done &amp;
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					A nice way to use the console in full screen without forget the current time.
+				</p>
+				<p>
+					you can too add other infos like cpu and mem use.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					while true; do echo -ne "\e[s\e[0;$((COLUMNS-27))H$(date)\e[u"; sleep 1; done &amp;
+				</div>
+				<div class="details description">
+					<p>
+						This puts a clock in the top right of the terminal. This version doesn't use tput, but uses escape codes
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					while true; do tput sc; tput cup 0 $(($(tput cols)-74)); w | grep load; tput rc; sleep 10; done &amp;
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 11:27:27 up 23:41,  1 user,  load average: 0.29, 2.34, 3.72
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Gives not only date but also some interesting status about the System
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Wow, that's very cute.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        tnks to @flatcap, I learn:
-                                </p><code>man 1 tput</code> <code>man 5 terminfo</code>
-                                <p>
-                                        there's so much options to play.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        that is really awesome.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Clocks have been done to DEATH lately, but this one is the one I like.
-                                </p>
-                                <p>
-                                        Props!
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Really cool
-                                </p>
-                                <p>
-                                        &gt;&gt; .bashrc :)
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Really cool!
-                                </p>
-                                <p>
-                                        &gt;&gt; .bashrc :)
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        For real life use with text-packed consoles, a space in front may enhance readability a lot, like in
-                                </p><code>while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));echo -n " $(date)";tput rc;done &amp;</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        This one just for the time beeing :
-                                </p><code>while sleep 1; do tput sc;tput cup 0 $(($(tput cols)-$(date|wc -m)));date;tput rc;done &amp;</code>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        This one works fine too :
-                                </p><code>while sleep 1;DATE=$(date);do tput sc;tput cup 0 $(($(tput cols)-${#DATE}));printf "$DATE";tput rc;done &amp;</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        while sleep 1;do tput sc;tput rev;tput cup 0 $(($(tput cols)-45));echo -ne "$(hostname -i) ";echo -ne "Load: $(uptime | awk '{print $10}') "; echo "$(date +%D\ %T)";tput rc;done &amp;
-                                </p>
-                                <p>
-                                        or this for a splash of color:
-                                </p>
-                                <p>
-                                        while sleep 1;do tput sc;tput setaf 5;tput setab 3;tput cup 0 $(($(tput cols)-45));echo -ne "$(hostname -i) ";echo -ne "Load: $(uptime | awk '{print $10}') "; echo "$(date +%D\ %T)";tput rc;done &amp;
-                                </p>
-                                <p>
-                                        2 extra spaces to account for XXX.XXX.XXX.XXX
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        don't use with putty!
-                                </p>
-                                <p>
-                                        killall bash saved my life when this commands started jamming the display
-                                </p>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						Gives not only date but also some interesting status about the System
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Wow, that's very cute.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					tnks to @flatcap, I learn:
+				</p><code>man 1 tput</code> <code>man 5 terminfo</code>
+				<p>
+					there's so much options to play.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					that is really awesome.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Clocks have been done to DEATH lately, but this one is the one I like.
+				</p>
+				<p>
+					Props!
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Really cool
+				</p>
+				<p>
+					&gt;&gt; .bashrc :)
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Really cool!
+				</p>
+				<p>
+					&gt;&gt; .bashrc :)
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					For real life use with text-packed consoles, a space in front may enhance readability a lot, like in
+				</p><code>while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));echo -n " $(date)";tput rc;done &amp;</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					This one just for the time beeing :
+				</p><code>while sleep 1; do tput sc;tput cup 0 $(($(tput cols)-$(date|wc -m)));date;tput rc;done &amp;</code>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					This one works fine too :
+				</p><code>while sleep 1;DATE=$(date);do tput sc;tput cup 0 $(($(tput cols)-${#DATE}));printf "$DATE";tput rc;done &amp;</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					while sleep 1;do tput sc;tput rev;tput cup 0 $(($(tput cols)-45));echo -ne "$(hostname -i) ";echo -ne "Load: $(uptime | awk '{print $10}') "; echo "$(date +%D\ %T)";tput rc;done &amp;
+				</p>
+				<p>
+					or this for a splash of color:
+				</p>
+				<p>
+					while sleep 1;do tput sc;tput setaf 5;tput setab 3;tput cup 0 $(($(tput cols)-45));echo -ne "$(hostname -i) ";echo -ne "Load: $(uptime | awk '{print $10}') "; echo "$(date +%D\ %T)";tput rc;done &amp;
+				</p>
+				<p>
+					2 extra spaces to account for XXX.XXX.XXX.XXX
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					don't use with putty!
+				</p>
+				<p>
+					killall bash saved my life when this commands started jamming the display
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

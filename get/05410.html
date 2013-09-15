@@ -1,65 +1,65 @@
 <html>
-        <head>
-                <title>
-                        intercept stdout/stderr of another process
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                intercept stdout/stderr of another process
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                strace -ff -e trace=write -e write=1,2 -p SOME_PID
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        strace -ff -e write=1,2 -s 1024 -p PID 2&gt;&amp;1 | grep "^ |" | cut -c11-60 | sed -e 's/ //g' | xxd -r -p
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                similar to the previous command, but with more friendly output (tested on linux)
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        strace -e write=1,2 -p $PID 2&gt;&amp;1 | sed -un "/^ |/p" | sed -ue "s/^.\{9\}\(.\{50\}\).\+/\1/g" -e 's/ //g' | xxd -r -p
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			intercept stdout/stderr of another process
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				intercept stdout/stderr of another process
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				strace -ff -e trace=write -e write=1,2 -p SOME_PID
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					strace -ff -e write=1,2 -s 1024 -p PID 2&gt;&amp;1 | grep "^ |" | cut -c11-60 | sed -e 's/ //g' | xxd -r -p
+				</div>
+				<div class="details description">
+					<p>
+						similar to the previous command, but with more friendly output (tested on linux)
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					strace -e write=1,2 -p $PID 2&gt;&amp;1 | sed -un "/^ |/p" | sed -ue "s/^.\{9\}\(.\{50\}\).\+/\1/g" -e 's/ //g' | xxd -r -p
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 { i=0; while sleep 1; do echo -e "writing a long line to stdout 1 [AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA] 2 [BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB] 3 [CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC] \nline2 == var i=$((i++))";done; } &gt; /dev/null &amp; PID=$!
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Useful to recover a output(stdout and stderr) "disown"ed or "nohup"ep process of other instance of ssh.
-                                        </p>
-                                        <p>
-                                                With the others options the stdout / stderr is intercepted, but only the first n chars.
-                                        </p>
-                                        <p>
-                                                This way we can recover ALL text of stdout or stderr
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Brilliant. Works like a charm on RHEL 4.
-                        </p>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						Useful to recover a output(stdout and stderr) "disown"ed or "nohup"ep process of other instance of ssh.
+					</p>
+					<p>
+						With the others options the stdout / stderr is intercepted, but only the first n chars.
+					</p>
+					<p>
+						This way we can recover ALL text of stdout or stderr
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Brilliant. Works like a charm on RHEL 4.
+			</p>
+		</div>
+	</body>
 </html>

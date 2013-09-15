@@ -1,46 +1,46 @@
 <html>
-        <head>
-                <title>
-                        Delimiter Hunting
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Delimiter Hunting
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                for i in `seq 0 9` A B C D E F; do for j in `seq 0 9` A B C D E F; do HEX=\$\'\\x${i}${j}\'; if ! eval grep -qF "$HEX" file; then eval echo $HEX \\x${i}${j}; fi; done; done 2&gt; /dev/null | less
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Scan a file and print out a list of ASCII characters that are not used in the file which can then be safely used to delimit fields. Useful when needing to convert CSV files using "," to a single character delimiter. Piping it into less at the end (which could be redundant) stops the command characters being interpreted by the terminal.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        perl -e '$f = join("", &lt;&gt;); for (0..127) {$_ = chr($_); if (/[[:print:]]/) {print if index($f, $_) &lt; 0}} print "\n"'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Here's a perl version that only considers printable characters. Change the regex /[[:print:]]/ to look for different sets of delimiter characters.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        comm -13 &lt;(od -vw1 -tu1 dummy.txt|cut -c9-|sort -u) &lt;(seq 0 127|sort)|perl -pe '$_=chr($_)'|od -c
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			Delimiter Hunting
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Delimiter Hunting
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				for i in `seq 0 9` A B C D E F; do for j in `seq 0 9` A B C D E F; do HEX=\$\'\\x${i}${j}\'; if ! eval grep -qF "$HEX" file; then eval echo $HEX \\x${i}${j}; fi; done; done 2&gt; /dev/null | less
+			</div>
+			<div class="details description">
+				<p>
+					Scan a file and print out a list of ASCII characters that are not used in the file which can then be safely used to delimit fields. Useful when needing to convert CSV files using "," to a single character delimiter. Piping it into less at the end (which could be redundant) stops the command characters being interpreted by the terminal.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					perl -e '$f = join("", &lt;&gt;); for (0..127) {$_ = chr($_); if (/[[:print:]]/) {print if index($f, $_) &lt; 0}} print "\n"'
+				</div>
+				<div class="details description">
+					<p>
+						Here's a perl version that only considers printable characters. Change the regex /[[:print:]]/ to look for different sets of delimiter characters.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					comm -13 &lt;(od -vw1 -tu1 dummy.txt|cut -c9-|sort -u) &lt;(seq 0 127|sort)|perl -pe '$_=chr($_)'|od -c
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 0000000  \0 001  \n   j   k  \v  \f   z   {   |   }   ~ 177  \r 016 017
 0000020 020 021 022 023 002 024 025 026 027 030 031 032 033 034 035 003
 0000040 036 037       !   "   #   $   %   &amp;   ' 004   (   )   *   +   ,
@@ -50,13 +50,13 @@
 0000140   Y  \t   Z   [   \   ]   ^   _   `   a   b   c
 0000154
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Search in decimal rather than hex. od dumps the character list, cut to remove offsets, sort -u gives the used characters. seq gives the comparison list, but we need this sorted alphabetically for comm, which does the filtering. I drop to perl to convert back to characters (is there a better way?) and then use od to dump them in a print-safe format.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						Search in decimal rather than hex. od dumps the character list, cut to remove offsets, sort -u gives the used characters. seq gives the comparison list, but we need this sorted alphabetically for comm, which does the filtering. I drop to perl to convert back to characters (is there a better way?) and then use od to dump them in a print-safe format.
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

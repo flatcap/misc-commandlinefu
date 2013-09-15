@@ -1,43 +1,43 @@
 <html>
-        <head>
-                <title>
-                        Copy your SSH public key on a remote machine for passwordless login.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Copy your SSH public key on a remote machine for passwordless login.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cat ~/.ssh/*.pub | ssh user@remote-system 'umask 077; cat &gt;&gt;.ssh/authorized_keys'
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Should run on any system with ssh installed.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        ssh-copy-id is much simpler.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        ssh-copy-id isn't available on all systems, i.e. Mac OS X
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Copy your SSH public key on a remote machine for passwordless login.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Copy your SSH public key on a remote machine for passwordless login.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cat ~/.ssh/*.pub | ssh user@remote-system 'umask 077; cat &gt;&gt;.ssh/authorized_keys'
+			</div>
+			<div class="details description">
+				<p>
+					Should run on any system with ssh installed.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					ssh-copy-id is much simpler.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					ssh-copy-id isn't available on all systems, i.e. Mac OS X
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

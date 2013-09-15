@@ -1,64 +1,64 @@
 <html>
-        <head>
-                <title>
-                        Recursively add directories to $PATH
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Recursively add directories to $PATH
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                PATH="${PATH}:$(find ${HOME}/bin -type d | tr '\n' ':' | sed 's/:$//')"
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Many users have a personal ~/bin folder for user scripts and other miscellaneous applications they can't or don't want to add to /usr/bin. But this folder can get large and unwieldy. The above command adds ~/bin and all its subdirectories to the PATH environment variable so the scripts can be organized without changing .bashrc.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        You can simplify the tr and sed by using paste instead:
-                                </p><code>... | paste -s -d:</code>
-                                <p>
-                                        Join the lines serially (-s) and use a colon delimiter (-d:)
-                                </p><code>PATH="${PATH}:$(find ${HOME}/bin -type d | paste -s -d:)"</code>
-                                <p>
-                                        You don't *need* the {}s around the env vars, either.
-                                </p><code>PATH="$PATH:$(find $HOME/bin -type d | paste -s -d:)"</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Wonderful.
-                                </p>
-                                <p>
-                                        Share a website with you ,
-                                </p>
-                                <p>
-                                        ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
-                                </p>
-                                <p>
-                                        Believe you will love it.
-                                </p>
-                                <p>
-                                        We accept any form of payment.
-                                </p>
-                                <p>
-                                        <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Recursively add directories to $PATH
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Recursively add directories to $PATH
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				PATH="${PATH}:$(find ${HOME}/bin -type d | tr '\n' ':' | sed 's/:$//')"
+			</div>
+			<div class="details description">
+				<p>
+					Many users have a personal ~/bin folder for user scripts and other miscellaneous applications they can't or don't want to add to /usr/bin. But this folder can get large and unwieldy. The above command adds ~/bin and all its subdirectories to the PATH environment variable so the scripts can be organized without changing .bashrc.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					You can simplify the tr and sed by using paste instead:
+				</p><code>... | paste -s -d:</code>
+				<p>
+					Join the lines serially (-s) and use a colon delimiter (-d:)
+				</p><code>PATH="${PATH}:$(find ${HOME}/bin -type d | paste -s -d:)"</code>
+				<p>
+					You don't *need* the {}s around the env vars, either.
+				</p><code>PATH="$PATH:$(find $HOME/bin -type d | paste -s -d:)"</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Wonderful.
+				</p>
+				<p>
+					Share a website with you ,
+				</p>
+				<p>
+					( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
+				</p>
+				<p>
+					Believe you will love it.
+				</p>
+				<p>
+					We accept any form of payment.
+				</p>
+				<p>
+					<a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

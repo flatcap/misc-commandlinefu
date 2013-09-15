@@ -1,71 +1,71 @@
 <html>
-        <head>
-                <title>
-                        I finally found out how to use notify-send with at or cron
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                I finally found out how to use notify-send with at or cron
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo "export DISPLAY=:0; export XAUTHORITY=~/.Xauthority; notify-send test" | at now+1minute
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        You can write a script that does this :
-                                </p><code>remind &lt;minutes&gt; [&lt;message&gt;]</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        DISPLAY=:0.0 XAUTHORITY=~/.Xauthority notify-send test
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                we don't need to export variables to set a env to a command, we may do this before the command directly
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        echo notify-send test | at now+1minute
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                The simplest way to do it.
-                                        </p>
-                                        <p>
-                                                Works for me, at least. (Why are the variables being set?)
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Aha. That makes sense.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        with more explanation here:
-                                </p>
-                                <p>
-                                        <a href="http://cweiske.de/tagebuch/DBus%20notify-send%20over%20network.htm" rel="nofollow">http://cweiske.de/tagebuch/DBus%20notify-send%20over%20network.htm</a>
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			I finally found out how to use notify-send with at or cron
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				I finally found out how to use notify-send with at or cron
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo "export DISPLAY=:0; export XAUTHORITY=~/.Xauthority; notify-send test" | at now+1minute
+			</div>
+			<div class="details description">
+				<p>
+					You can write a script that does this :
+				</p><code>remind &lt;minutes&gt; [&lt;message&gt;]</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					DISPLAY=:0.0 XAUTHORITY=~/.Xauthority notify-send test
+				</div>
+				<div class="details description">
+					<p>
+						we don't need to export variables to set a env to a command, we may do this before the command directly
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					echo notify-send test | at now+1minute
+				</div>
+				<div class="details description">
+					<p>
+						The simplest way to do it.
+					</p>
+					<p>
+						Works for me, at least. (Why are the variables being set?)
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Aha. That makes sense.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					with more explanation here:
+				</p>
+				<p>
+					<a href="http://cweiske.de/tagebuch/DBus%20notify-send%20over%20network.htm" rel="nofollow">http://cweiske.de/tagebuch/DBus%20notify-send%20over%20network.htm</a>
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,46 +1,46 @@
 <html>
-        <head>
-                <title>
-                        ZSH prompt. ':)' after program execution with no error, ':(' after failure.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                ZSH prompt. ':)' after program execution with no error, ':(' after failure.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                PROMPT=$'%{\e[0;32m%}%B[%b%{\e[0m%}%n%{\e[0;32m%}@%{\e[0m%}%(4c,./%1~,%~)%{\e[0;32m%}%B]%b% %(?,%{\e[0;32m%}:%)%{\e[0m%},%{\e[0;31m%}:(%{\e[0m%}) %# '
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        sorry for my english
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        similar command for bash shell:
-                                </p><code>PROMPT_COMMAND='[ $? == 0 ]&amp;&amp; PS1="\u@\h:\w:)" || PS1="\u@\h:\w:("'</code>
-                                <p>
-                                        sorry not sure about what the zsh version's prompt actually looked like.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        either i got that from you or you got it from me, not sure which :)
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			ZSH prompt. ':)' after program execution with no error, ':(' after failure.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				ZSH prompt. ':)' after program execution with no error, ':(' after failure.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				PROMPT=$'%{\e[0;32m%}%B[%b%{\e[0m%}%n%{\e[0;32m%}@%{\e[0m%}%(4c,./%1~,%~)%{\e[0;32m%}%B]%b% %(?,%{\e[0;32m%}:%)%{\e[0m%},%{\e[0;31m%}:(%{\e[0m%}) %# '
+			</div>
+			<div class="details description">
+				<p>
+					sorry for my english
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					similar command for bash shell:
+				</p><code>PROMPT_COMMAND='[ $? == 0 ]&amp;&amp; PS1="\u@\h:\w:)" || PS1="\u@\h:\w:("'</code>
+				<p>
+					sorry not sure about what the zsh version's prompt actually looked like.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					either i got that from you or you got it from me, not sure which :)
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

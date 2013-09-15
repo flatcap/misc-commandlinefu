@@ -1,40 +1,40 @@
 <html>
-        <head>
-                <title>
-                        Use the last command's output as input to a command without piping and bind to it to a key sequence in bash.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Use the last command's output as input to a command without piping and bind to it to a key sequence in bash.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                bind '"\C-h": "\`fc\ \-s\`"'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Use the last command's output as input to a command without piping and bind to it to a key sequence in bash.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Use the last command's output as input to a command without piping and bind to it to a key sequence in bash.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				bind '"\C-h": "\`fc\ \-s\`"'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 ~: which tcptraceroute
 /usr/bin/tcptraceroute
 ~: ls -al `fc -s`
 which tcptraceroute
 -rwxr-xr-x. 1 root root 38320 2009-07-28 19:10 /usr/bin/tcptraceroute
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This is similar to using `!!` or
-                                </p>
-                                <p>
-                                        In bash 4.1 it seems you can bind directly to a shell command, but I'm not running that version.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					This is similar to using `!!` or
+				</p>
+				<p>
+					In bash 4.1 it seems you can bind directly to a shell command, but I'm not running that version.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

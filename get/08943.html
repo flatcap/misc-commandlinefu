@@ -1,71 +1,71 @@
 <html>
-        <head>
-                <title>
-                        Multiple variable assignments from command output in BASH
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Multiple variable assignments from command output in BASH
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                read day month year &lt; &lt;(date +'%d %m %y')
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        No command substitution but subshell redirection
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        read day month year &lt;&lt;&lt; $(date +'%d %m %y')
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This version uses read instead of eval.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        eval $(date +"day=%d; month=%m; year=%y")
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			Multiple variable assignments from command output in BASH
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Multiple variable assignments from command output in BASH
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				read day month year &lt; &lt;(date +'%d %m %y')
+			</div>
+			<div class="details description">
+				<p>
+					No command substitution but subshell redirection
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					read day month year &lt;&lt;&lt; $(date +'%d %m %y')
+				</div>
+				<div class="details description">
+					<p>
+						This version uses read instead of eval.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					eval $(date +"day=%d; month=%m; year=%y")
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 $ eval $(date +"day=%d; month=%m; year=%y")
 $ echo $day/$month/$year
 29/07/11
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                It's quite easy to capture the output of a command and assign it in a shell's variable:
-                                        </p><code>day=$(date +%d)</code> <code>month=$(date +%m)</code>
-                                        <p>
-                                                But, what if we want to perform the same task with just one program invocation? Here comes the power of eval! date(1) outputs a string like "day=29; month=07; year=11" (notice the semicolons I added on purpose at date's custom output) which is a legal shell line. This like is then parsed and executed by the shell once again with the help of eval. Just setting 3 variables!
-                                        </p>
-                                        <p>
-                                                Inspired by LinuxJournal's column "Dave Taylor's Work the Shell".
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Very cute. I love it.
-                        </p>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						It's quite easy to capture the output of a command and assign it in a shell's variable:
+					</p><code>day=$(date +%d)</code> <code>month=$(date +%m)</code>
+					<p>
+						But, what if we want to perform the same task with just one program invocation? Here comes the power of eval! date(1) outputs a string like "day=29; month=07; year=11" (notice the semicolons I added on purpose at date's custom output) which is a legal shell line. This like is then parsed and executed by the shell once again with the help of eval. Just setting 3 variables!
+					</p>
+					<p>
+						Inspired by LinuxJournal's column "Dave Taylor's Work the Shell".
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Very cute. I love it.
+			</p>
+		</div>
+	</body>
 </html>

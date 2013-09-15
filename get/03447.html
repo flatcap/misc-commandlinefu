@@ -1,63 +1,63 @@
 <html>
-        <head>
-                <title>
-                        connect via ssh using mac address
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                connect via ssh using mac address
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                sudo arp -s 192.168.1.200 00:35:cf:56:b2:2g temp &amp;&amp; ssh root@192.168.1.200
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Instead of looking for the right ip address, just pick whatever address you like and set a static ip mapping.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                ssh root@`for ((i=100; i&lt;=110; i++));do arp -a 192.168.1.$i; done | grep 00:35:cf:56:b2:2g | awk '{print $2}' | sed -e 's/(//' -e 's/)//'`
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			connect via ssh using mac address
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				connect via ssh using mac address
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				sudo arp -s 192.168.1.200 00:35:cf:56:b2:2g temp &amp;&amp; ssh root@192.168.1.200
+			</div>
+			<div class="details description">
+				<p>
+					Instead of looking for the right ip address, just pick whatever address you like and set a static ip mapping.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				ssh root@`for ((i=100; i&lt;=110; i++));do arp -a 192.168.1.$i; done | grep 00:35:cf:56:b2:2g | awk '{print $2}' | sed -e 's/(//' -e 's/)//'`
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 ssh: connect to host 192.168.1.103 port 22: No route to host
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Connect to a machine running ssh using mac address by using the "arp" command
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Does this require the chosen address to be on the same subnet as the computer from which you are ssh-ing?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        @clindseysmith yes, it does.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        @svg this doesn't work for me. My two devices are both connected to a CISCO 2960 switch. Maybe my switch is being too fancy? My issue is that I'm swapping devices on and off my test network as I test them before fielding them. Each device has its MAC printed on it but I don't know for sure what IP the last person to configure the device used... so I thought this command would be perfect but I can't seem to get it to work.
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Connect to a machine running ssh using mac address by using the "arp" command
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Does this require the chosen address to be on the same subnet as the computer from which you are ssh-ing?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					@clindseysmith yes, it does.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					@svg this doesn't work for me. My two devices are both connected to a CISCO 2960 switch. Maybe my switch is being too fancy? My issue is that I'm swapping devices on and off my test network as I test them before fielding them. Each device has its MAC printed on it but I don't know for sure what IP the last person to configure the device used... so I thought this command would be perfect but I can't seem to get it to work.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

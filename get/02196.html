@@ -1,78 +1,78 @@
 <html>
-        <head>
-                <title>
-                        Hostname tab-completion for ssh
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Hostname tab-completion for ssh
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                function autoCompleteHostname() { local hosts; local cur; hosts=($(awk '{print $1}' ~/.ssh/known_hosts | cut -d, -f1)); cur=${COMP_WORDS[COMP_CWORD]}; COMPREPLY=($(compgen -W '${hosts[@]}' -- $cur )) } complete -F autoCompleteHostname ssh
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This is meant for the bash shell. Put this function in your .profile and you'll be able to use tab-completion for sshing any host which is in your known_hosts file. This assumes that your known_hosts file is located at ~/.ssh/known_hosts. The "complete" command should go on a separate line as such:
-                                </p>
-                                <p>
-                                        function autoCompleteHostname() {
-                                </p>
-                                <p>
-                                        local hosts=($(awk '{print $1}' ~/.ssh/known_hosts | cut -d, -f1));
-                                </p>
-                                <p>
-                                        local cur=${COMP_WORDS[COMP_CWORD]};
-                                </p>
-                                <p>
-                                        COMPREPLY=($(compgen -W '${hosts[@]}' -- $cur ))
-                                </p>
-                                <p>
-                                        }
-                                </p>
-                                <p>
-                                        complete -F autoCompleteHostname ssh
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Ain't great if you have your known hosts hashed...
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Just install bash-completion
-                                </p>
-                                <p>
-                                        apt-get install bash-completion or
-                                </p>
-                                <p>
-                                        yum install bash-completion
-                                </p>
-                                <p>
-                                        or whatever your package manager is or if not, just install from the site:
-                                </p>
-                                <p>
-                                        <a href="http://www.caliban.org/bash/#completion_download" rel="nofollow">http://www.caliban.org/bash/#completion_download</a>
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        How can I get this to work for hosts that're hashed?
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Hostname tab-completion for ssh
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Hostname tab-completion for ssh
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				function autoCompleteHostname() { local hosts; local cur; hosts=($(awk '{print $1}' ~/.ssh/known_hosts | cut -d, -f1)); cur=${COMP_WORDS[COMP_CWORD]}; COMPREPLY=($(compgen -W '${hosts[@]}' -- $cur )) } complete -F autoCompleteHostname ssh
+			</div>
+			<div class="details description">
+				<p>
+					This is meant for the bash shell. Put this function in your .profile and you'll be able to use tab-completion for sshing any host which is in your known_hosts file. This assumes that your known_hosts file is located at ~/.ssh/known_hosts. The "complete" command should go on a separate line as such:
+				</p>
+				<p>
+					function autoCompleteHostname() {
+				</p>
+				<p>
+					local hosts=($(awk '{print $1}' ~/.ssh/known_hosts | cut -d, -f1));
+				</p>
+				<p>
+					local cur=${COMP_WORDS[COMP_CWORD]};
+				</p>
+				<p>
+					COMPREPLY=($(compgen -W '${hosts[@]}' -- $cur ))
+				</p>
+				<p>
+					}
+				</p>
+				<p>
+					complete -F autoCompleteHostname ssh
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Ain't great if you have your known hosts hashed...
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Just install bash-completion
+				</p>
+				<p>
+					apt-get install bash-completion or
+				</p>
+				<p>
+					yum install bash-completion
+				</p>
+				<p>
+					or whatever your package manager is or if not, just install from the site:
+				</p>
+				<p>
+					<a href="http://www.caliban.org/bash/#completion_download" rel="nofollow">http://www.caliban.org/bash/#completion_download</a>
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					How can I get this to work for hosts that're hashed?
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

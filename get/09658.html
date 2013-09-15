@@ -1,52 +1,52 @@
 <html>
-        <head>
-                <title>
-                        Generate Sha1, MD5 hash using echo
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Generate Sha1, MD5 hash using echo
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo -n "password"|md5sum|awk '{print $1}'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Generate Sha1, MD5 hash using echo
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Generate Sha1, MD5 hash using echo
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo -n "password"|md5sum|awk '{print $1}'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 echo -n "password"|md5sum|awk '{print $1}'
 5f4dcc3b5aa765d61d8327deb882cf99
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This is mostly for my own notes but this command will compute a md5 message digest from the command line.
-                                </p>
-                                <p>
-                                        You can also replace md5sum with other checksum commands (e.g., sha1sum)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Useless Use of Awk - use cut instead
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        md5 output contains only 16 different symbols - pass will not be very strong
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					This is mostly for my own notes but this command will compute a md5 message digest from the command line.
+				</p>
+				<p>
+					You can also replace md5sum with other checksum commands (e.g., sha1sum)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Useless Use of Awk - use cut instead
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					md5 output contains only 16 different symbols - pass will not be very strong
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,84 +1,84 @@
 <html>
-        <head>
-                <title>
-                        List your MACs address
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                List your MACs address
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cat /sys/class/net/eth0/address
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        lsmac() { ifconfig -a | sed '/eth\|wl/!d;s/ Link.*HWaddr//' ; }
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ifconfig eth0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        for f in /sys/class/net/*; do echo -e "$(basename $f)\t$(cat $f/address)"; done
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			List your MACs address
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				List your MACs address
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cat /sys/class/net/eth0/address
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					lsmac() { ifconfig -a | sed '/eth\|wl/!d;s/ Link.*HWaddr//' ; }
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ifconfig eth0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					for f in /sys/class/net/*; do echo -e "$(basename $f)\t$(cat $f/address)"; done
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 eth0   00:1d:09:xx:xx:xx
 lo      00:00:00:00:00:00
 wlan0   00:22:fb:xx:xx:xx
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Requires sysfs mounted on /sys - may only be useful for Linux systems.
-                                        </p>
-                                        <p>
-                                                Could also use "printf '%-8s %s\n' $(basename $f) $(cat $f/address)" instead of echo.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        cat /sys/class/net/*/address
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						Requires sysfs mounted on /sys - may only be useful for Linux systems.
+					</p>
+					<p>
+						Could also use "printf '%-8s %s\n' $(basename $f) $(cat $f/address)" instead of echo.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					cat /sys/class/net/*/address
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 00:23:54:19:c8:bc
 0a:00:27:00:00:00
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                No need for the ls -r and a sort is also not really needed.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ip link | awk '/link/ {print $2}'
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                The output of ifconfig is localized, using it will fail in non-English environment. "ip" command in iproute2 provides a consistent output and thus is more robust
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						No need for the ls -r and a sort is also not really needed.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					ip link | awk '/link/ {print $2}'
+				</div>
+				<div class="details description">
+					<p>
+						The output of ifconfig is localized, using it will fail in non-English environment. "ip" command in iproute2 provides a consistent output and thus is more robust
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

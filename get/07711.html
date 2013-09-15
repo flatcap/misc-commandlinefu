@@ -1,60 +1,60 @@
 <html>
-        <head>
-                <title>
-                        Detect your computer's harddisk read speed without disk cache speed
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Detect your computer's harddisk read speed without disk cache speed
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cat /dev/sda | pv -r &gt; /dev/null
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Detect your computer's harddisk read speed without disk cache speed
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Detect your computer's harddisk read speed without disk cache speed
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cat /dev/sda | pv -r &gt; /dev/null
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 [55.6MB/s]
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Change your drive letter as you wish.
-                                </p>
-                                <p>
-                                        Using pv command for speed detect.First of all you must install pv command for usage.
-                                </p>
-                                <p>
-                                        <a href="http://www.bayner.com/" rel="nofollow">http://www.bayner.com/</a>
-                                </p>
-                                <p>
-                                        kerim@bayner.com
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        I would have just went with hdparm -t but whatever blows your skirt up.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        pv - could be useful.
-                                </p>
-                                <p>
-                                        What about good old
-                                </p><code>hdparm -t /dev/sda</code>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Change your drive letter as you wish.
+				</p>
+				<p>
+					Using pv command for speed detect.First of all you must install pv command for usage.
+				</p>
+				<p>
+					<a href="http://www.bayner.com/" rel="nofollow">http://www.bayner.com/</a>
+				</p>
+				<p>
+					kerim@bayner.com
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					I would have just went with hdparm -t but whatever blows your skirt up.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					pv - could be useful.
+				</p>
+				<p>
+					What about good old
+				</p><code>hdparm -t /dev/sda</code>
+			</div>
+		</div>
+	</body>
 </html>

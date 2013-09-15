@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        strip non-constant number of directories from tar archive while decompressing
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                strip non-constant number of directories from tar archive while decompressing
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                tar --transform 's#.*/\([^/]*\)$#\1#' -xzvf test-archive.tar.gz
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			strip non-constant number of directories from tar archive while decompressing
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				strip non-constant number of directories from tar archive while decompressing
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				tar --transform 's#.*/\([^/]*\)$#\1#' -xzvf test-archive.tar.gz
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ tar tzvf test-archive.tar.gz
 ./path/to/first/file/a.txt
 ./another/path/to/files/to/be/archived/b.txt
@@ -28,26 +28,26 @@ b.txt
 c.txt
 test-archive.tar.gz
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        If you want to decompress the files from an archive to current directory by stripping all directory paths, use --transform option to strip path information. Unfortunately, --strip-components option is good if the target files have same and constant depth of folders.
-                                </p>
-                                <p>
-                                        The idea was taken from <a href="http://www.unix.com/solaris/145941-how-extract-files-tar-file-without-creating-directories.html" rel="nofollow">http://www.unix.com/solaris/145941-how-extract-files-tar-file-without-creating-directories.html</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Instant tarbomb!
-                        </p>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					If you want to decompress the files from an archive to current directory by stripping all directory paths, use --transform option to strip path information. Unfortunately, --strip-components option is good if the target files have same and constant depth of folders.
+				</p>
+				<p>
+					The idea was taken from <a href="http://www.unix.com/solaris/145941-how-extract-files-tar-file-without-creating-directories.html" rel="nofollow">http://www.unix.com/solaris/145941-how-extract-files-tar-file-without-creating-directories.html</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Instant tarbomb!
+			</p>
+		</div>
+	</body>
 </html>

@@ -1,62 +1,62 @@
 <html>
-        <head>
-                <title>
-                        Convert a string to "Title Case"
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Convert a string to "Title Case"
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo "this is a test" | sed 's/.*/\L&amp;/; s/[a-z]*/\u&amp;/g'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Convert a string to "Title Case"
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Convert a string to "Title Case"
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo "this is a test" | sed 's/.*/\L&amp;/; s/[a-z]*/\u&amp;/g'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ echo "this is a test" | sed 's/.*/\L&amp;/; s/[a-z]*/\u&amp;/g'
 This Is A Test
 $
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Converts the first letter of each word to upper case
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        echo 'This is a TEST' | sed 's/[^ ]\+/\L\u&amp;/g'
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					Converts the first letter of each word to upper case
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					echo 'This is a TEST' | sed 's/[^ ]\+/\L\u&amp;/g'
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 This Is A Test
 </pre>
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        python -c "print 'this is a test'.title()"
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Aw man, only works on Linux, not on BSD/Mac OS X.
-                        </p>
-                </div>
-        </body>
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					python -c "print 'this is a test'.title()"
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Aw man, only works on Linux, not on BSD/Mac OS X.
+			</p>
+		</div>
+	</body>
 </html>

@@ -1,59 +1,59 @@
 <html>
-        <head>
-                <title>
-                        Redirecting bash output into any X Window
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Redirecting bash output into any X Window
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                alias 2edit='xsel -b;n=pipe$RANDOM;xdotool exec --terminator -- mousepad $n -- search --sync --onlyvisible --name $n key --window %1 ctrl+v'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Redirecting bash output into any X Window
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Redirecting bash output into any X Window
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				alias 2edit='xsel -b;n=pipe$RANDOM;xdotool exec --terminator -- mousepad $n -- search --sync --onlyvisible --name $n key --window %1 ctrl+v'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 dpkg -l | 2edit
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        bash output is inserted into the clipboard, then mousepad is started and the clipboard content is pasted. xsel and xdotool needs to be installed. Instead of the mousepad any other editor can be used. I've successfully tested the Sublime Text Editor and it opens a new tab for each new paste. Check Sample output for a usage example. This command is originated from here - <a href="http://goo.gl/0q9UT4" rel="nofollow">http://goo.gl/0q9UT4</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                input this URL:
-                        </p>
-                        <p>
-                                ( <a href="http://www.mkmalls.com/" rel="nofollow">http://www.mkmalls.com/</a> )
-                        </p>
-                        <p>
-                                you can find many cheap and high stuff
-                        </p>
-                        <p>
-                                Believe you will love it.
-                        </p>
-                        <p>
-                                WE ACCEPT CREDIT CARD /WESTERN UNION PAYMENT
-                        </p>
-                        <p>
-                                YOU MUST NOT MISS IT!!!
-                        </p>
-                        <p>
-                                <a href="http://www.mkmalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.mkmalls.com/Michael-Kors-Handbags-n2447/</a>
-                        </p>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					bash output is inserted into the clipboard, then mousepad is started and the clipboard content is pasted. xsel and xdotool needs to be installed. Instead of the mousepad any other editor can be used. I've successfully tested the Sublime Text Editor and it opens a new tab for each new paste. Check Sample output for a usage example. This command is originated from here - <a href="http://goo.gl/0q9UT4" rel="nofollow">http://goo.gl/0q9UT4</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				input this URL:
+			</p>
+			<p>
+				( <a href="http://www.mkmalls.com/" rel="nofollow">http://www.mkmalls.com/</a> )
+			</p>
+			<p>
+				you can find many cheap and high stuff
+			</p>
+			<p>
+				Believe you will love it.
+			</p>
+			<p>
+				WE ACCEPT CREDIT CARD /WESTERN UNION PAYMENT
+			</p>
+			<p>
+				YOU MUST NOT MISS IT!!!
+			</p>
+			<p>
+				<a href="http://www.mkmalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.mkmalls.com/Michael-Kors-Handbags-n2447/</a>
+			</p>
+		</div>
+	</body>
 </html>

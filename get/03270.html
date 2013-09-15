@@ -1,26 +1,26 @@
 <html>
-        <head>
-                <title>
-                        Find files that were modified by a given command
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Find files that were modified by a given command
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                touch /tmp/file ; $EXECUTECOMMAND ; find /path -newer /tmp/file
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Find files that were modified by a given command
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Find files that were modified by a given command
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				touch /tmp/file ; $EXECUTECOMMAND ; find /path -newer /tmp/file
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 [root@localhost ~]# touch /tmp/service
 [root@localhost ~]# service cups restart
-Stopping cups:                                             [  OK  ]
-Starting cups:                                             [  OK  ]
+Stopping cups:					     [  OK  ]
+Starting cups:					     [  OK  ]
 [root@localhost ~]# find /var -newer /tmp/service
 /var/cache/cups/job.cache
 /var/lock/subsys
@@ -34,52 +34,52 @@ Starting cups:                                             [  OK  ]
 /var/run/cups/certs/0
 [root@localhost ~]#
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This has helped me numerous times trying to find either log files or tmp files that get created after execution of a command. And really eye opening as to how active a given process really is. Play around with -anewer, -cnewer &amp; -newerXY
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                strace &lt;name of the program&gt;
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Traces the system calls of a program. See <a href="http://linuxhelp.blogspot.com/2006/05/strace-very-powerful-troubleshooting.html" rel="nofollow">http://linuxhelp.blogspot.com/2006/05/strace-very-powerful-troubleshooting.html</a> for more information.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Great command!
-                                </p>
-                                <p>
-                                        Another way could also use strace. strace records all system calls made, and you can even attach it to running processes:
-                                </p><code>strace -o straceoutput.txt $COMMAND</code>
-                                <p>
-                                        also use -p $PID to attach to an already-running program. Also, use ltrace to trace library calls.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Prefer to use lsof -p, see command:
-                                </p>
-                                <p>
-                                        diff
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <code>diff &lt;(lsof -p 1234) &lt;(sleep 10; lsof -p 1234)</code>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					This has helped me numerous times trying to find either log files or tmp files that get created after execution of a command. And really eye opening as to how active a given process really is. Play around with -anewer, -cnewer &amp; -newerXY
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				strace &lt;name of the program&gt;
+			</div>
+			<div class="details description">
+				<p>
+					Traces the system calls of a program. See <a href="http://linuxhelp.blogspot.com/2006/05/strace-very-powerful-troubleshooting.html" rel="nofollow">http://linuxhelp.blogspot.com/2006/05/strace-very-powerful-troubleshooting.html</a> for more information.
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Great command!
+				</p>
+				<p>
+					Another way could also use strace. strace records all system calls made, and you can even attach it to running processes:
+				</p><code>strace -o straceoutput.txt $COMMAND</code>
+				<p>
+					also use -p $PID to attach to an already-running program. Also, use ltrace to trace library calls.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Prefer to use lsof -p, see command:
+				</p>
+				<p>
+					diff
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<code>diff &lt;(lsof -p 1234) &lt;(sleep 10; lsof -p 1234)</code>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,37 +1,37 @@
 <html>
-        <head>
-                <title>
-                        Quick network status of machine
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Quick network status of machine
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                netstat -tn | awk 'NR&gt;2 {print $6}' | sort | uniq -c | sort -rn
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Quick network status of machine
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Quick network status of machine
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				netstat -tn | awk 'NR&gt;2 {print $6}' | sort | uniq -c | sort -rn
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
  1618 ESTABLISHED
  4 LAST_ACK
  2 SYN_RECV
  1 TIME_WAIT
  1 CLOSE_WAIT
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        credit to tumblr engineering blog @ <a href="http://engineering.tumblr.com/" rel="nofollow">http://engineering.tumblr.com/</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					credit to tumblr engineering blog @ <a href="http://engineering.tumblr.com/" rel="nofollow">http://engineering.tumblr.com/</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

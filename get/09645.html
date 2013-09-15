@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        Mark a directory as one where something failed
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Mark a directory as one where something failed
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                fail () { ln -s /nonexistent 0_FAIL_${1}; }
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        If you use colored ls(1), the broken symbolic links significantly differ from regular files and directories in the ls listing. In my case it is bright red. 0 is for getting the first place in the list.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Mark a directory as one where something failed
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Mark a directory as one where something failed
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				fail () { ln -s /nonexistent 0_FAIL_${1}; }
+			</div>
+			<div class="details description">
+				<p>
+					If you use colored ls(1), the broken symbolic links significantly differ from regular files and directories in the ls listing. In my case it is bright red. 0 is for getting the first place in the list.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

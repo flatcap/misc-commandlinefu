@@ -1,100 +1,100 @@
 <html>
-        <head>
-                <title>
-                        Runs previous command replacing foo by bar every time that foo appears
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Runs previous command replacing foo by bar every time that foo appears
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                !!:gs/foo/bar
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Very useful for rerunning a long command changing some arguments globally.
-                                </p>
-                                <p>
-                                        As opposed to ^foo^bar, which only replaces the first occurrence of foo, this one changes every occurrence.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ^foo^bar^:&amp;
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                To replace foo by bar, but not execute, do ^foo^bar^:p
-                                        </p>
-                                        <p>
-                                                To replace all foo by bar, but not execute, do ^foo^bar^:&amp;:p
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        ^bar^foo^
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                this also can !
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        This is also very useful for debian aptitude commands:
-                                </p><code>aptitude search bzr</code> <code>sudo !!:s/search/install</code>
-                                <p>
-                                        If you do a sudo ^search^install it won't work.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        how can we make this print instead of running it? I tried !!:pgs/foo/bar and didn't work ;)
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        @alperyilmaz Close! You're just missing another colon:
-                                </p><code>!!:p:gs/foo/bar</code>
-                                <p>
-                                        Modifiers ('gs' and 'p' here) are colon-separated. It seems as though there should be a colon between the 'g' and 's' too, but we leave it out because the 'g' only works in conjunction with 's'. If you used it on its own it would have no effect.
-                                </p>
-                                <p>
-                                        <a href="http://www.gnu.org/software/bash/manual/html_node/Modifiers.html" rel="nofollow">http://www.gnu.org/software/bash/manual/html_node/Modifiers.html</a>
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        @fletch: thanks, this will save me some typing..
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        why not just
-                                </p><code>^foo^bar</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        what about iterative operations where you replace foo with foo1, then foo1 with foo2, etc ?
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Runs previous command replacing foo by bar every time that foo appears
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Runs previous command replacing foo by bar every time that foo appears
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				!!:gs/foo/bar
+			</div>
+			<div class="details description">
+				<p>
+					Very useful for rerunning a long command changing some arguments globally.
+				</p>
+				<p>
+					As opposed to ^foo^bar, which only replaces the first occurrence of foo, this one changes every occurrence.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					^foo^bar^:&amp;
+				</div>
+				<div class="details description">
+					<p>
+						To replace foo by bar, but not execute, do ^foo^bar^:p
+					</p>
+					<p>
+						To replace all foo by bar, but not execute, do ^foo^bar^:&amp;:p
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					^bar^foo^
+				</div>
+				<div class="details description">
+					<p>
+						this also can !
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					This is also very useful for debian aptitude commands:
+				</p><code>aptitude search bzr</code> <code>sudo !!:s/search/install</code>
+				<p>
+					If you do a sudo ^search^install it won't work.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					how can we make this print instead of running it? I tried !!:pgs/foo/bar and didn't work ;)
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					@alperyilmaz Close! You're just missing another colon:
+				</p><code>!!:p:gs/foo/bar</code>
+				<p>
+					Modifiers ('gs' and 'p' here) are colon-separated. It seems as though there should be a colon between the 'g' and 's' too, but we leave it out because the 'g' only works in conjunction with 's'. If you used it on its own it would have no effect.
+				</p>
+				<p>
+					<a href="http://www.gnu.org/software/bash/manual/html_node/Modifiers.html" rel="nofollow">http://www.gnu.org/software/bash/manual/html_node/Modifiers.html</a>
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					@fletch: thanks, this will save me some typing..
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					why not just
+				</p><code>^foo^bar</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					what about iterative operations where you replace foo with foo1, then foo1 with foo2, etc ?
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Numeric zero padding file rename
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Numeric zero padding file rename
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ls *.jpg | awk -F'.' '{ printf "%s %04d.%s\n", $0, $1, $2; }' | xargs -n2 mv
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Numeric zero padding file rename
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Numeric zero padding file rename
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ls *.jpg | awk -F'.' '{ printf "%s %04d.%s\n", $0, $1, $2; }' | xargs -n2 mv
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 mv 10.jpg 0010.jpg
 mv 11.jpg 0011.jpg
 mv 12.jpg 0012.jpg
@@ -43,57 +43,57 @@ mv 7.jpg 0007.jpg
 mv 8.jpg 0008.jpg
 mv 9.jpg 0009.jpg
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        rename file name with fixed length nomeric format pattern
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        rename 's/\d+/sprintf("%04d",$&amp;)/e' *.jpg
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This uses Perl's rename utility (you may have to call it as prename on your box) and won't choke on spaces or other characters in filenames. It will also zero pad a number even in filenames like "vacation-4.jpg".
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        for i in $(seq -w 0 100) ; do mv prefix$(( 10#$i )).jpg prefix${i}.jpg ; done
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Using 'ls' output for manipulating your data is WRONG and dangerous.
-                                </p>
-                                <p>
-                                        See this
-                                </p>
-                                <p>
-                                        <a href="http://mywiki.wooledge.org/ParsingLs" rel="nofollow">http://mywiki.wooledge.org/ParsingLs</a>
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        using xargs without cleansing the input is also wrong. Look what happens when you try this test data
-                                </p><code>cd $(mktemp -d); touch "alpha.jpg" "beta beta.jpg"</code>
-                                <p>
-                                        Run the above command, and you get "mv: no such file 'beta' "
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					rename file name with fixed length nomeric format pattern
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					rename 's/\d+/sprintf("%04d",$&amp;)/e' *.jpg
+				</div>
+				<div class="details description">
+					<p>
+						This uses Perl's rename utility (you may have to call it as prename on your box) and won't choke on spaces or other characters in filenames. It will also zero pad a number even in filenames like "vacation-4.jpg".
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					for i in $(seq -w 0 100) ; do mv prefix$(( 10#$i )).jpg prefix${i}.jpg ; done
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Using 'ls' output for manipulating your data is WRONG and dangerous.
+				</p>
+				<p>
+					See this
+				</p>
+				<p>
+					<a href="http://mywiki.wooledge.org/ParsingLs" rel="nofollow">http://mywiki.wooledge.org/ParsingLs</a>
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					using xargs without cleansing the input is also wrong. Look what happens when you try this test data
+				</p><code>cd $(mktemp -d); touch "alpha.jpg" "beta beta.jpg"</code>
+				<p>
+					Run the above command, and you get "mv: no such file 'beta' "
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

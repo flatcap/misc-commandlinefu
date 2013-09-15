@@ -1,31 +1,31 @@
 <html>
-        <head>
-                <title>
-                        Go to the previous sibling directory in alphabetical order
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Go to the previous sibling directory in alphabetical order
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cd ../"$(ls -F ..|grep '/'|grep -B1 `basename $PWD`|head -n 1)"
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Based on linkinpark342 suggestion.
-                                </p>
-                                <p>
-                                        Sometimes you have to browse your way through a lot of sub-directories. This command cd to the previous sub-directory in alphabetical order. For example, if you have the directories "lectures/01-intro", "lectures/02-basic", "lectures/03-advanced" and so on, and your PWD is "02-basic", it jumps to "01-intro".
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Go to the previous sibling directory in alphabetical order
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Go to the previous sibling directory in alphabetical order
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cd ../"$(ls -F ..|grep '/'|grep -B1 `basename $PWD`|head -n 1)"
+			</div>
+			<div class="details description">
+				<p>
+					Based on linkinpark342 suggestion.
+				</p>
+				<p>
+					Sometimes you have to browse your way through a lot of sub-directories. This command cd to the previous sub-directory in alphabetical order. For example, if you have the directories "lectures/01-intro", "lectures/02-basic", "lectures/03-advanced" and so on, and your PWD is "02-basic", it jumps to "01-intro".
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

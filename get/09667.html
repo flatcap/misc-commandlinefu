@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        Target a specific column for pattern substitution
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Target a specific column for pattern substitution
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk '{gsub("foo","bar",$5)}1' file
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Awk replaces every instance of foo with bar in the 5th column only.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Target a specific column for pattern substitution
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Target a specific column for pattern substitution
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk '{gsub("foo","bar",$5)}1' file
+			</div>
+			<div class="details description">
+				<p>
+					Awk replaces every instance of foo with bar in the 5th column only.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

@@ -1,60 +1,60 @@
 <html>
-        <head>
-                <title>
-                        Use tee + process substitution to split STDOUT to multiple commands
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Use tee + process substitution to split STDOUT to multiple commands
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                some_command | tee &gt;(command1) &gt;(command2) &gt;(command3) ... | command4
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Use tee + process substitution to split STDOUT to multiple commands
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Use tee + process substitution to split STDOUT to multiple commands
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				some_command | tee &gt;(command1) &gt;(command2) &gt;(command3) ... | command4
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ echo foo | tee &gt;(cat) &gt;(cat) &gt;(cat) | cat
 foo
 foo
 foo
 foo
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Using process substitution, we can 'trick' tee into sending a command's STDOUT to an arbitrary number of commands. The last command (command4) in this example will get its input from the pipe.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Thanks for this one.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Yet another confirmation that tee is awesome. This one in my favourites.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        That one doesn't work for me, it is not portable:
-                                </p>
-                                <p>
-                                        /bin/mksh: syntax error: '(' unexpected
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Using process substitution, we can 'trick' tee into sending a command's STDOUT to an arbitrary number of commands. The last command (command4) in this example will get its input from the pipe.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Thanks for this one.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Yet another confirmation that tee is awesome. This one in my favourites.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					That one doesn't work for me, it is not portable:
+				</p>
+				<p>
+					/bin/mksh: syntax error: '(' unexpected
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

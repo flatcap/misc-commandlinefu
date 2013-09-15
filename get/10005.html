@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        Rebuild a Delimited File with a Unique Delimiter
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Rebuild a Delimited File with a Unique Delimiter
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                sed 's/$/uniqueString/' file.old | sed 's/,/\n/g' | sed ':loop;/^\"[^\"]*$/N;s/\n/,/;/[^\"]$/t loop' | sed ':loop;N;s/\n/@/g;/uniqueString$/!b loop;s/uniqueString$//' &gt; file.new
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Useful for CSV files. In the command, the file in question is comma delimited but contains double quoted fields containing commas and contains no @ symbols (as confirmed with <a href="http://www.commandlinefu.com/commands/view/9998/delimiter-hunting)." rel="nofollow">http://www.commandlinefu.com/commands/view/9998/delimiter-hunting).</a> This command converts the delimiting commas to @s while preserving the commas in the fields using the "uniqueString" to mark the ends of lines.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Rebuild a Delimited File with a Unique Delimiter
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Rebuild a Delimited File with a Unique Delimiter
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				sed 's/$/uniqueString/' file.old | sed 's/,/\n/g' | sed ':loop;/^\"[^\"]*$/N;s/\n/,/;/[^\"]$/t loop' | sed ':loop;N;s/\n/@/g;/uniqueString$/!b loop;s/uniqueString$//' &gt; file.new
+			</div>
+			<div class="details description">
+				<p>
+					Useful for CSV files. In the command, the file in question is comma delimited but contains double quoted fields containing commas and contains no @ symbols (as confirmed with <a href="http://www.commandlinefu.com/commands/view/9998/delimiter-hunting)." rel="nofollow">http://www.commandlinefu.com/commands/view/9998/delimiter-hunting).</a> This command converts the delimiting commas to @s while preserving the commas in the fields using the "uniqueString" to mark the ends of lines.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

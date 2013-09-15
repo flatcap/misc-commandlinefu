@@ -1,38 +1,38 @@
 <html>
-        <head>
-                <title>
-                        Prefix file contents with filename
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Prefix file contents with filename
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                for i in *; do sed -i "s/^/$i: /" $i; done
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        strings -f sample.txt
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        for i in $(seq 1 20); do while read line; do echo "$i: $line"; done&lt;$i.py; done
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Prefix file contents with filename
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Prefix file contents with filename
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				for i in *; do sed -i "s/^/$i: /" $i; done
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					strings -f sample.txt
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					for i in $(seq 1 20); do while read line; do echo "$i: $line"; done&lt;$i.py; done
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,61 +1,61 @@
 <html>
-        <head>
-                <title>
-                        Find the package a command belongs to on Debian
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Find the package a command belongs to on Debian
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                dpkg -S $( which ls )
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        function whichpkg() { readlink -f "$(which $1)" | xargs --no-run-if-empty dpkg -S; }
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			Find the package a command belongs to on Debian
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Find the package a command belongs to on Debian
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				dpkg -S $( which ls )
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					function whichpkg() { readlink -f "$(which $1)" | xargs --no-run-if-empty dpkg -S; }
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 $ function whichpkg(){ readlink -f "$(which $1)" | xargs --no-run-if-empty dpkg -S; }
 $whichpkg rlogin
 openssh-client: /usr/bin/ssh
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This revision to my command (command #8851) was called for when it failed to find the parent
-                                        </p>
-                                        <p>
-                                                package of 'rlogin', which is really a deep symbolic link to /usr/bin/ssh.
-                                        </p>
-                                        <p>
-                                                This revision fixes this newfound issue, while ensuring fixes of other older issues work too.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        apt-file search iostat
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        whichpkg () { dpkg -S $1 | egrep -w $(readlink -f "$(which $1)")$; }
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						This revision to my command (command #8851) was called for when it failed to find the parent
+					</p>
+					<p>
+						package of 'rlogin', which is really a deep symbolic link to /usr/bin/ssh.
+					</p>
+					<p>
+						This revision fixes this newfound issue, while ensuring fixes of other older issues work too.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					apt-file search iostat
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					whichpkg () { dpkg -S $1 | egrep -w $(readlink -f "$(which $1)")$; }
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 $ whichpkg write
 bsdmainutils: /usr/bin/bsd-write
 $ whichpkg telnet
@@ -63,22 +63,22 @@ telnet: /usr/bin/telnet.netkit
 $ whichpkg ftp
 ftp: /usr/bin/netkit-ftp
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Advanced revision to the command 8776 . This revision follows symbolic links.
-                                        </p>
-                                        <p>
-                                                The quotation-marks surrounding $(which $1) allows for graceful handling of errors ( ie. readlink does not complain incase 'which' command generates (null) output)
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        function whichpkg { dpkg -S $1 | egrep -w $(which $1)$; }
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						Advanced revision to the command 8776 . This revision follows symbolic links.
+					</p>
+					<p>
+						The quotation-marks surrounding $(which $1) allows for graceful handling of errors ( ie. readlink does not complain incase 'which' command generates (null) output)
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					function whichpkg { dpkg -S $1 | egrep -w $(which $1)$; }
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 $ whichpkg cron
 cron: /usr/sbin/cron
 $ whichpkg ls
@@ -86,44 +86,44 @@ coreutils: /bin/ls
 $ whichpkg intentionally-non-existent
 dpkg: *intentionally-non-existent* not found.
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Similar to command 7822, but handles errors gracefully.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        whichpkg() { rpm -qf "$@"; }
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						Similar to command 7822, but handles errors gracefully.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					whichpkg() { rpm -qf "$@"; }
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 ~$ whichpkg /bin/sort
 coreutils-8.10-2.fc15.x86_64
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Find the package a file belongs to on an rpm-based distro.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        This is very handy. Thanks
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Tried dlocate?
-                                </p>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						Find the package a file belongs to on an rpm-based distro.
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					This is very handy. Thanks
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Tried dlocate?
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        Pipe stdout and stderr, etc., to separate commands
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Pipe stdout and stderr, etc., to separate commands
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                some_command &gt; &gt;(/bin/cmd_for_stdout) 2&gt; &gt;(/bin/cmd_for_stderr)
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        You can use [n]&gt; combined with &gt;(cmd) to attach the various output file descriptors to be the input of different commands.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Pipe stdout and stderr, etc., to separate commands
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Pipe stdout and stderr, etc., to separate commands
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				some_command &gt; &gt;(/bin/cmd_for_stdout) 2&gt; &gt;(/bin/cmd_for_stderr)
+			</div>
+			<div class="details description">
+				<p>
+					You can use [n]&gt; combined with &gt;(cmd) to attach the various output file descriptors to be the input of different commands.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

@@ -1,23 +1,23 @@
 <html>
-        <head>
-                <title>
-                        Recursively find top 20 largest files (&gt; 1MB) sort human readable format
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Recursively find top 20 largest files (&gt; 1MB) sort human readable format
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find . -type f -print0 | xargs -0 du -h | sort -hr | head -20
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
-64M        ./icons/gnome/icon-theme.cache
+	<head>
+		<title>
+			Recursively find top 20 largest files (&gt; 1MB) sort human readable format
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Recursively find top 20 largest files (&gt; 1MB) sort human readable format
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find . -type f -print0 | xargs -0 du -h | sort -hr | head -20
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
+64M	./icons/gnome/icon-theme.cache
 23M     ./fonts/extra-fonts/arialuni.ttf
 22M     ./libpinyin/data/bigram.db
 21M     ./fonts/cjkuni-uming/uming.ttc
@@ -38,64 +38,64 @@
 3.9M    ./opencc/simp_to_trad_phrases.ocd
 3.8M    ./tor/geoip
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Search for files and list the 20 largest.
-                                </p><code>find . -type f</code>
-                                <p>
-                                        gives us a list of file, recursively, starting from here (.)
-                                </p><code>-print0 | xargs -0 du -h</code>
-                                <p>
-                                        separate the names of files with NULL characters, so we're not confused by spaces
-                                </p>
-                                <p>
-                                        then xargs run the du command to find their size (in human-readable form -- 64M not 64123456)
-                                </p><code>| sort -hr</code>
-                                <p>
-                                        use sort to arrange the list in size order. sort -h knows that 1M is bigger than 9K
-                                </p><code>| head -20</code>
-                                <p>
-                                        finally only select the top twenty out of the list
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                find . -mount -type f -printf "%k %p\n" | sort -rg | cut -d \ -f 2- | xargs -I {} du -sh {} | less
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        from my bashrc ;)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Too new for my system :o
-                                </p>
-                                <p>
-                                        sort -hr
-                                </p>
-                                <p>
-                                        sort: invalid option -- 'h'
-                                </p>
-                                <p>
-                                        Try `sort --help' for more information.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        @bashrc: Really? Sorry, it's been in Gnu sort since 2009 (v7.5).
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Search for files and list the 20 largest.
+				</p><code>find . -type f</code>
+				<p>
+					gives us a list of file, recursively, starting from here (.)
+				</p><code>-print0 | xargs -0 du -h</code>
+				<p>
+					separate the names of files with NULL characters, so we're not confused by spaces
+				</p>
+				<p>
+					then xargs run the du command to find their size (in human-readable form -- 64M not 64123456)
+				</p><code>| sort -hr</code>
+				<p>
+					use sort to arrange the list in size order. sort -h knows that 1M is bigger than 9K
+				</p><code>| head -20</code>
+				<p>
+					finally only select the top twenty out of the list
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				find . -mount -type f -printf "%k %p\n" | sort -rg | cut -d \ -f 2- | xargs -I {} du -sh {} | less
+			</div>
+			<div class="details description">
+				<p>
+					from my bashrc ;)
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Too new for my system :o
+				</p>
+				<p>
+					sort -hr
+				</p>
+				<p>
+					sort: invalid option -- 'h'
+				</p>
+				<p>
+					Try `sort --help' for more information.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					@bashrc: Really? Sorry, it's been in Gnu sort since 2009 (v7.5).
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,39 +1,39 @@
 <html>
-        <head>
-                <title>
-                        Getting the ip address of eth0
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Getting the ip address of eth0
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ifconfig eth0 | awk '/inet addr/ {split ($2,A,":"); print A[2]}'
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        While this is helpful, ifconfig usually never works without /sbin/ preceding it, as sbin is in root's path, not standard users.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Depends on the distro you are in.
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Getting the ip address of eth0
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Getting the ip address of eth0
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ifconfig eth0 | awk '/inet addr/ {split ($2,A,":"); print A[2]}'
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					While this is helpful, ifconfig usually never works without /sbin/ preceding it, as sbin is in root's path, not standard users.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Depends on the distro you are in.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

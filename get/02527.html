@@ -1,56 +1,56 @@
 <html>
-        <head>
-                <title>
-                        quickly backup or copy a file with bash
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                quickly backup or copy a file with bash
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cp -bfS.bak filename filename
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        less symbols, tab completion.
-                                </p>
-                                <p>
-                                        including # export SIMPLE_BACKUP_SUFFIX="_`date +%F`" in your .bashrc provides you to easily timestamp your files
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                cp httpd.conf{,.bk}
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Remember to backup everything before changing it so you can restore all to normal.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <code>$ cp -bfS.bak filename filename</code>
-                        <p>
-                                could be shortened to
-                        </p><code>$ cp -bfS.bak filename{,}</code>
-                        <p>
-                                ...and if you don't mind the default backup suffix (~), it could be even shorter:
-                        </p><code>$ cp -bf filename{,}</code>
-                        <p>
-                                Personally, when doing backups, I prefer to throw in the -a flag, so:
-                        </p><code>$ cp -abf filename{,}</code>
-                </div>
-        </body>
+	<head>
+		<title>
+			quickly backup or copy a file with bash
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				quickly backup or copy a file with bash
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cp -bfS.bak filename filename
+			</div>
+			<div class="details description">
+				<p>
+					less symbols, tab completion.
+				</p>
+				<p>
+					including # export SIMPLE_BACKUP_SUFFIX="_`date +%F`" in your .bashrc provides you to easily timestamp your files
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				cp httpd.conf{,.bk}
+			</div>
+			<div class="details description">
+				<p>
+					Remember to backup everything before changing it so you can restore all to normal.
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<code>$ cp -bfS.bak filename filename</code>
+			<p>
+				could be shortened to
+			</p><code>$ cp -bfS.bak filename{,}</code>
+			<p>
+				...and if you don't mind the default backup suffix (~), it could be even shorter:
+			</p><code>$ cp -bf filename{,}</code>
+			<p>
+				Personally, when doing backups, I prefer to throw in the -a flag, so:
+			</p><code>$ cp -abf filename{,}</code>
+		</div>
+	</body>
 </html>

@@ -1,54 +1,54 @@
 <html>
-        <head>
-                <title>
-                        grep certain file types recursively
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                grep certain file types recursively
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find . -name "*.[ch]" -exec grep "TODO" {} +
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        -exec works better and faster then using a pipe
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        grep -r --include="*.[ch]" pattern .
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                doesn't do case-insensitive filenames like iname but otherwise likely to be faster
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        find . -name "*.[ch]" | xargs grep "TODO"
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                it would seem so yes, but it's really much closer to a tie here. In -exec {} + mode find invokes as many grep instances as xargs does, and the pipe has little overhead. What you really want is a recursive grep as originally posted by sitaram:
-                        </p><code>grep -r --include="*.[ch]" TODO .</code>
-                </div>
-        </body>
+	<head>
+		<title>
+			grep certain file types recursively
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				grep certain file types recursively
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find . -name "*.[ch]" -exec grep "TODO" {} +
+			</div>
+			<div class="details description">
+				<p>
+					-exec works better and faster then using a pipe
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					grep -r --include="*.[ch]" pattern .
+				</div>
+				<div class="details description">
+					<p>
+						doesn't do case-insensitive filenames like iname but otherwise likely to be faster
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					find . -name "*.[ch]" | xargs grep "TODO"
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				it would seem so yes, but it's really much closer to a tie here. In -exec {} + mode find invokes as many grep instances as xargs does, and the pipe has little overhead. What you really want is a recursive grep as originally posted by sitaram:
+			</p><code>grep -r --include="*.[ch]" TODO .</code>
+		</div>
+	</body>
 </html>

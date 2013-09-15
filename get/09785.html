@@ -1,40 +1,40 @@
 <html>
-        <head>
-                <title>
-                        generate random ascii shape(no x11 needed!)
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                generate random ascii shape(no x11 needed!)
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo 'set term dumb; unset border; unset xtics; unset ytics; p "&lt; seq 10 | shuf" u 1:(rand(0)) w l notitle' | gnuplot
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			generate random ascii shape(no x11 needed!)
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				generate random ascii shape(no x11 needed!)
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo 'set term dumb; unset border; unset xtics; unset ytics; p "&lt; seq 10 | shuf" u 1:(rand(0)) w l notitle' | gnuplot
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
   A*************************************************************************
-          A***                  ******      *            *                 *A
-            ****                      ****** *           *               **
-                ****                        *****       *               *
-                    ***                       *  ****** *              *
-                       ****                    *       *****         **
-                           ****                 *      *    ******
-                               ***               *    *           **A
-                           A***********           *   *
-                                      *****       *  *
-                                          *A       * *
-                                                   A
+	  A***		  ******      *	    *		 *A
+	    ****		      ****** *	   *	       **
+		****			*****       *	       *
+		    ***		       *  ****** *	      *
+		       ****		    *       *****	 **
+			   ****		 *      *    ******
+			       ***	       *    *	   **A
+			   A***********	   *   *
+				      *****       *  *
+					  *A       * *
+						   A
 </pre>
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

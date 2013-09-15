@@ -1,31 +1,31 @@
 <html>
-        <head>
-                <title>
-                        Restore deleted file from GIT repository
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Restore deleted file from GIT repository
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                git checkout $(git rev-list -n 1 HEAD -- "$file")^ -- "$file"
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command will automatically find the latest version of the file that was deleted and restore it to it's previous location. If, of course, your file was kept in a git repository...
-                                </p>
-                                <p>
-                                        I found this command on <a href="http://stackoverflow.com/a/1113140" rel="nofollow">http://stackoverflow.com/a/1113140</a>
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Restore deleted file from GIT repository
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Restore deleted file from GIT repository
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				git checkout $(git rev-list -n 1 HEAD -- "$file")^ -- "$file"
+			</div>
+			<div class="details description">
+				<p>
+					This command will automatically find the latest version of the file that was deleted and restore it to it's previous location. If, of course, your file was kept in a git repository...
+				</p>
+				<p>
+					I found this command on <a href="http://stackoverflow.com/a/1113140" rel="nofollow">http://stackoverflow.com/a/1113140</a>
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

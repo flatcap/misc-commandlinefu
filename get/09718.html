@@ -1,95 +1,95 @@
 <html>
-        <head>
-                <title>
-                        Remove the first and the latest caracter of a string
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Remove the first and the latest caracter of a string
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                var=:foobar:; echo ${var:1:-1}
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                echo foobar | sed -r 's/(^.|.$)//g'
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Just an other solution :)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Not working on Centos! I got
-                                </p>
-                                <p>
-                                        #var=:foobar:; echo ${var:1:-1}
-                                </p>
-                                <p>
-                                        -bash: -1: substring expression &lt; 0
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        @dynaguy, what is your shell ? You can know it by sending in your shell
-                                </p><code>cat /proc/$$/cmdline</code>
-                                <p>
-                                        And the version :
-                                </p><code>echo $SHELL -version</code>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        oops, typo :
-                                </p><code>$SHELL -version</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        [root@atom ~]# $SHELL -version
-                                </p>
-                                <p>
-                                        GNU bash, version 3.2.25(1)-release (i686-redhat-linux-gnu)
-                                </p>
-                                <p>
-                                        Copyright (C) 2005 Free Software Foundation, Inc.
-                                </p>
-                                <p>
-                                        I tested on Ubuntu and it works. But not work on CentOS 6.0 32bit. Here is the CentOS:
-                                </p>
-                                <p>
-                                        [root@atom ~]# $SHELL -version
-                                </p>
-                                <p>
-                                        GNU bash, version 3.2.25(1)-release (i686-redhat-linux-gnu)
-                                </p>
-                                <p>
-                                        Copyright (C) 2005 Free Software Foundation, Inc.
-                                </p>
-                                <p>
-                                        [root@atom ~]# $SHELL -version
-                                </p>
-                                <p>
-                                        GNU bash, version 3.2.25(1)-release (i686-redhat-linux-gnu)
-                                </p>
-                                <p>
-                                        Copyright (C) 2005 Free Software Foundation, Inc.
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Remove the first and the latest caracter of a string
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Remove the first and the latest caracter of a string
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				var=:foobar:; echo ${var:1:-1}
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				echo foobar | sed -r 's/(^.|.$)//g'
+			</div>
+			<div class="details description">
+				<p>
+					Just an other solution :)
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Not working on Centos! I got
+				</p>
+				<p>
+					#var=:foobar:; echo ${var:1:-1}
+				</p>
+				<p>
+					-bash: -1: substring expression &lt; 0
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					@dynaguy, what is your shell ? You can know it by sending in your shell
+				</p><code>cat /proc/$$/cmdline</code>
+				<p>
+					And the version :
+				</p><code>echo $SHELL -version</code>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					oops, typo :
+				</p><code>$SHELL -version</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					[root@atom ~]# $SHELL -version
+				</p>
+				<p>
+					GNU bash, version 3.2.25(1)-release (i686-redhat-linux-gnu)
+				</p>
+				<p>
+					Copyright (C) 2005 Free Software Foundation, Inc.
+				</p>
+				<p>
+					I tested on Ubuntu and it works. But not work on CentOS 6.0 32bit. Here is the CentOS:
+				</p>
+				<p>
+					[root@atom ~]# $SHELL -version
+				</p>
+				<p>
+					GNU bash, version 3.2.25(1)-release (i686-redhat-linux-gnu)
+				</p>
+				<p>
+					Copyright (C) 2005 Free Software Foundation, Inc.
+				</p>
+				<p>
+					[root@atom ~]# $SHELL -version
+				</p>
+				<p>
+					GNU bash, version 3.2.25(1)-release (i686-redhat-linux-gnu)
+				</p>
+				<p>
+					Copyright (C) 2005 Free Software Foundation, Inc.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

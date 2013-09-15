@@ -1,58 +1,58 @@
 <html>
-        <head>
-                <title>
-                        Remove annotation- (or other own-lined) tags from an XML document
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Remove annotation- (or other own-lined) tags from an XML document
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk "/&lt;xsd:annotation&gt;/{h=1};!h;/&lt;\/xsd:annotation&gt;/{h=0}" annotatedSchema.xsd
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Remove annotation- (or other own-lined) tags from an XML document
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Remove annotation- (or other own-lined) tags from an XML document
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk "/&lt;xsd:annotation&gt;/{h=1};!h;/&lt;\/xsd:annotation&gt;/{h=0}" annotatedSchema.xsd
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 transforms:
 &lt;xsd:attribute name="version" type="xsd:string" use="required" fixed="1.0"&gt;
     &lt;xsd:annotation&gt;
-        &lt;xsd:documentation&gt;This attribute denotes the version number ot the utilized XML-schema.&lt;/xsd:documentation&gt;
+	&lt;xsd:documentation&gt;This attribute denotes the version number ot the utilized XML-schema.&lt;/xsd:documentation&gt;
     &lt;/xsd:annotation&gt;
 &lt;/xsd:attribute&gt;
 into:
 &lt;xsd:attribute name="version" type="xsd:string" use="required" fixed="1.0"&gt;
 &lt;/xsd:attribute&gt;
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Removes all lines between the lines containing "" and "", including these lines itself
-                                </p>
-                                <p>
-                                        Backdrop:
-                                </p>
-                                <p>
-                                        Sometimes when working with XML files without an graphical editor, large comment-/annotation-blocks taper the readability to walk through the file. I like to create a copy of such documents without these annotations. As the documentation itself is in documentation tags inside the annotation tags an therefore graphical editors tend to put the annotation tags in their own lines, this command removes all documentations within annotation-tags.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Very nice.
-                        </p>
-                        <p>
-                                Unfortunately, your description got a bit mangled by the site (it doesn't cope well with less-than and greater-than).
-                        </p>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Removes all lines between the lines containing "" and "", including these lines itself
+				</p>
+				<p>
+					Backdrop:
+				</p>
+				<p>
+					Sometimes when working with XML files without an graphical editor, large comment-/annotation-blocks taper the readability to walk through the file. I like to create a copy of such documents without these annotations. As the documentation itself is in documentation tags inside the annotation tags an therefore graphical editors tend to put the annotation tags in their own lines, this command removes all documentations within annotation-tags.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Very nice.
+			</p>
+			<p>
+				Unfortunately, your description got a bit mangled by the site (it doesn't cope well with less-than and greater-than).
+			</p>
+		</div>
+	</body>
 </html>

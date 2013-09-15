@@ -1,42 +1,42 @@
 <html>
-        <head>
-                <title>
-                        xargs for builtin bash commands
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                xargs for builtin bash commands
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                bargs { while read i; do "$@" "$i"; done }
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                xargsb() { while read -r cmd; do ${@//'{}'/$cmd}; done; }
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Similar to xargs -i, but works with builtin bash commands (rather than running "bash -c ..." through xargs)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Not nearly as powerful or featureful as xargs, but it does the job. +1
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			xargs for builtin bash commands
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				xargs for builtin bash commands
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				bargs { while read i; do "$@" "$i"; done }
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				xargsb() { while read -r cmd; do ${@//'{}'/$cmd}; done; }
+			</div>
+			<div class="details description">
+				<p>
+					Similar to xargs -i, but works with builtin bash commands (rather than running "bash -c ..." through xargs)
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Not nearly as powerful or featureful as xargs, but it does the job. +1
+			</p>
+		</div>
+	</body>
 </html>

@@ -1,38 +1,38 @@
 <html>
-        <head>
-                <title>
-                        download a list of urls
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                download a list of urls
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                cat urls.txt | xargs -n1 curl -O --max-time 10 --retry 3 --retry-delay 1
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                cat urls.txt | wget -i- -T 10 -t 3 --waitretry 1
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Or use xargs --arg-file (-a) option:
-                        </p><code>xargs -a urls.txt -n1 curl -O --max-time 10 --retry 3 --retry-delay 1</code>
-                </div>
-        </body>
+	<head>
+		<title>
+			download a list of urls
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				download a list of urls
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				cat urls.txt | xargs -n1 curl -O --max-time 10 --retry 3 --retry-delay 1
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				cat urls.txt | wget -i- -T 10 -t 3 --waitretry 1
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Or use xargs --arg-file (-a) option:
+			</p><code>xargs -a urls.txt -n1 curl -O --max-time 10 --retry 3 --retry-delay 1</code>
+		</div>
+	</body>
 </html>

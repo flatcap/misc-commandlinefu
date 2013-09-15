@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        List all the files that have been deleted while they were still open.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                List all the files that have been deleted while they were still open.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                lsof | egrep "^COMMAND|deleted"
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        If your customer deletes a file that is still in use by a process, that space does not get freed up (will not show up in df) until that process either closes the file on its own, or is killed.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			List all the files that have been deleted while they were still open.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				List all the files that have been deleted while they were still open.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				lsof | egrep "^COMMAND|deleted"
+			</div>
+			<div class="details description">
+				<p>
+					If your customer deletes a file that is still in use by a process, that space does not get freed up (will not show up in df) until that process either closes the file on its own, or is killed.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

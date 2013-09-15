@@ -1,86 +1,86 @@
 <html>
-        <head>
-                <title>
-                        convert from hexidecimal or octal to decimal
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                convert from hexidecimal or octal to decimal
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                echo $((0x1fe)) $((033))
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			convert from hexidecimal or octal to decimal
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				convert from hexidecimal or octal to decimal
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				echo $((0x1fe)) $((033))
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 510 27
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Bash can accept '0x' and '0' notation for hexidecimal and octal numbers, so you just have to output the values.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        hex() { printf "%X\n" $1; }
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        hex() { bc &lt;&lt;&lt; "obase=16; $1"; }
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					Bash can accept '0x' and '0' notation for hexidecimal and octal numbers, so you just have to output the values.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					hex() { printf "%X\n" $1; }
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					hex() { bc &lt;&lt;&lt; "obase=16; $1"; }
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 $ hex 65535
 FFFF
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Use the standard calculator bc to convert decimals to hex
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        python -c 'print hex(1337)'
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+				</div>
+				<div class="details description">
+					<p>
+						Use the standard calculator bc to convert decimals to hex
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					python -c 'print hex(1337)'
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 0x539
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Python is always such much more readable than most shell scripting.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        hex() { echo $1 16op | dc; }
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                awesome! a quick converter on terminal! :) much needed
-                        </p>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						Python is always such much more readable than most shell scripting.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					hex() { echo $1 16op | dc; }
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				awesome! a quick converter on terminal! :) much needed
+			</p>
+		</div>
+	</body>
 </html>

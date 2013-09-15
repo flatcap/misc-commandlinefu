@@ -1,60 +1,60 @@
 <html>
-        <head>
-                <title>
-                        Search and Replace across multiple files
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Search and Replace across multiple files
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                grep -lr -e '<span>&lt;oldword&gt;</span>' * | xargs sed -i 's/<span>&lt;oldword&gt;</span>/<span>&lt;newword&gt;</span>/g'
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        - grep for the word in a files, use recursion (to find files in sub directories), and list only file matches
-                                </p>
-                                <p>
-                                        -| xargs passes the results from the grep command to sed
-                                </p>
-                                <p>
-                                        -sed -i uses a regular expression (regex) to evaluate the change: s (search) / search word / target word / g (global replace)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        If you are using grep's -r switch, thus running a recursive search, you can specify the present working directory name instead of the glob * in order to search for all files. That will also search for dot files and will be more efficient.
-                                </p>
-                                <p>
-                                        i.e.
-                                </p><code>grep -lr -e '&lt;oldword&gt;' .</code>
-                                <p>
-                                        instead of
-                                </p><code>grep -lr -e '&lt;oldword&gt;' *</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        Also I'd recommend -s -I grep options to skip read access errors and binary files
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Thanks for your input folks :)
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Search and Replace across multiple files
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Search and Replace across multiple files
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				grep -lr -e '<span>&lt;oldword&gt;</span>' * | xargs sed -i 's/<span>&lt;oldword&gt;</span>/<span>&lt;newword&gt;</span>/g'
+			</div>
+			<div class="details description">
+				<p>
+					- grep for the word in a files, use recursion (to find files in sub directories), and list only file matches
+				</p>
+				<p>
+					-| xargs passes the results from the grep command to sed
+				</p>
+				<p>
+					-sed -i uses a regular expression (regex) to evaluate the change: s (search) / search word / target word / g (global replace)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					If you are using grep's -r switch, thus running a recursive search, you can specify the present working directory name instead of the glob * in order to search for all files. That will also search for dot files and will be more efficient.
+				</p>
+				<p>
+					i.e.
+				</p><code>grep -lr -e '&lt;oldword&gt;' .</code>
+				<p>
+					instead of
+				</p><code>grep -lr -e '&lt;oldword&gt;' *</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					Also I'd recommend -s -I grep options to skip read access errors and binary files
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Thanks for your input folks :)
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

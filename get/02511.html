@@ -1,87 +1,87 @@
 <html>
-        <head>
-                <title>
-                        Find removed files still in use via /proc
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Find removed files still in use via /proc
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find -L /proc/*/fd -links 0 2&gt;/dev/null
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Find removed files still in use via /proc
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Find removed files still in use via /proc
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find -L /proc/*/fd -links 0 2&gt;/dev/null
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ dd if=/dev/zero of=bigfile bs=1M count=3000
 $ ls -lh bigfile
 -rw-r--r-- 1 u4x6691 unixadm 3.0G Jun 26 14:39 bigfile
 $ df -h .
-Filesystem            Size  Used Avail Use% Mounted on
-/dev/sda1              36G   24G   10G  71% /
+Filesystem	    Size  Used Avail Use% Mounted on
+/dev/sda1	      36G   24G   10G  71% /
 $ tail -f bigfile &amp;
 $ rm bigfile
 $ df -h .
-Filesystem            Size  Used Avail Use% Mounted on
-/dev/sda1              36G   24G   10G  71% /
+Filesystem	    Size  Used Avail Use% Mounted on
+/dev/sda1	      36G   24G   10G  71% /
 $ find -L /proc/*/fd -type f -links 0 2&gt;/dev/null
 /proc/2035/fd/3
 $ ls -l /proc/2035/fd/3
 lr-x------ 1 u4x6691 unixadm 64 Jun 26 14:42 /proc/2035/fd/3 -&gt; /tmp/bigfile (deleted)
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Oracle DBA remove some logfiles which are still open by the database and he is complaining the space has not been reclaimed? Use the above command to find out what PID needs to be stopped. Or alternatively recover the file via:
-                                </p><code>cp /proc/pid/fd/filehandle /new/file.txt</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                ls -l /proc/*/fd/* | grep 'deleted'| grep "\/proc.*\file-name-part"
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+			</div>
+			<div class="details description">
+				<p>
+					Oracle DBA remove some logfiles which are still open by the database and he is complaining the space has not been reclaimed? Use the above command to find out what PID needs to be stopped. Or alternatively recover the file via:
+				</p><code>cp /proc/pid/fd/filehandle /new/file.txt</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				ls -l /proc/*/fd/* | grep 'deleted'| grep "\/proc.*\file-name-part"
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 to@tolaptop:~$ ls -l /proc/*/fd/* | grep 'deleted'| grep "\/proc.*\.mp3"
 lr-x------ 1 totti root 64 2012-09-13 14:24 /proc/3275/fd/27 -&gt; /home/to/Downloads/07. AAA.mp3.part (deleted)
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Accidentally deleted some file while used by a program ? (Eg: a song)
-                                </p>
-                                <p>
-                                        Use this command to find the file handle and recover using
-                                </p><code>cp /proc/pid/fd/filehandle /new/recoverd-file.ext</code>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        This will also work with:
-                                </p>
-                                <p>
-                                        # lsof | grep deleted
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        lsof is more efficient for finding files open files.
-                                </p>
-                                <p>
-                                        But for quickly finding files that can be "undeleted", i.e. that are opened, so their content is recoverable, this command is great. Thumbs up.
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Accidentally deleted some file while used by a program ? (Eg: a song)
+				</p>
+				<p>
+					Use this command to find the file handle and recover using
+				</p><code>cp /proc/pid/fd/filehandle /new/recoverd-file.ext</code>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					This will also work with:
+				</p>
+				<p>
+					# lsof | grep deleted
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					lsof is more efficient for finding files open files.
+				</p>
+				<p>
+					But for quickly finding files that can be "undeleted", i.e. that are opened, so their content is recoverable, this command is great. Thumbs up.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

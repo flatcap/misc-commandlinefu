@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Print RPM dependencies
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Print RPM dependencies
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ruby -e 'puts `rpmdep glibc`.split(",")[2..-1]'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Print RPM dependencies
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Print RPM dependencies
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ruby -e 'puts `rpmdep glibc`.split(",")[2..-1]'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 filesystem
 glibc
 glibc-common
@@ -27,15 +27,15 @@ nss-softokn-freebl
 setup
 tzdata
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Needs rpmorphan installed
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Needs rpmorphan installed
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

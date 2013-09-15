@@ -1,62 +1,62 @@
 <html>
-        <head>
-                <title>
-                        Join lines
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Join lines
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                awk 'BEGIN{RS="\0"}{gsub(/\n/,"<span>&lt;SOMETEXT&gt;</span>");print}' file.txt
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Join lines
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Join lines
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				awk 'BEGIN{RS="\0"}{gsub(/\n/,"<span>&lt;SOMETEXT&gt;</span>");print}' file.txt
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 $ echo -e "asdf\n\n\nqwerty\nasdf\n" | awk 'BEGIN{RS="\0"}{gsub(/\n/,"&lt;SOMETEXT&gt;");print}'
 asdf&lt;SOMETEXT&gt;qwerty&lt;SOMETEXT&gt;asdf&lt;SOMETEXT&gt;
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        awk version of 7210. Slightly longer, but expanding it to catch blank lines is easier:
-                                </p><code>awk 'BEGIN{RS="\0"}{gsub(/\n+/,"&lt;SOMETEXT&gt;");print}' file.txt</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        cat file | tr "\n" " "
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                It's works only when you replace '\n' to ONE character.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        tr "\n" " " &lt; file
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Even shorter. Stolen from comment posted by eightmillion.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        perl -pe 'eof()||s/\n/<span>&lt;SOMETEXT&gt;</span>/g' file.txt
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+			</div>
+			<div class="details description">
+				<p>
+					awk version of 7210. Slightly longer, but expanding it to catch blank lines is easier:
+				</p><code>awk 'BEGIN{RS="\0"}{gsub(/\n+/,"&lt;SOMETEXT&gt;");print}' file.txt</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					cat file | tr "\n" " "
+				</div>
+				<div class="details description">
+					<p>
+						It's works only when you replace '\n' to ONE character.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					tr "\n" " " &lt; file
+				</div>
+				<div class="details description">
+					<p>
+						Even shorter. Stolen from comment posted by eightmillion.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					perl -pe 'eof()||s/\n/<span>&lt;SOMETEXT&gt;</span>/g' file.txt
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 $ cat file.txt
 line one
 line two
@@ -66,29 +66,29 @@ line five
 $  perl -pe 'eof()||s/\n/, /g' file.txt
 line one, line two, line three, line four, line five
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This command turns a multi-line file into a single line joined with &lt;SOMETEXT&gt;. To skip blank lines, use:
-                                        </p><code>perl -pe '(eof()||s/^\s*$//)||s/\n/&lt;SOMETEXT&gt;/g' file.txt</code>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        cat file | tr -d "\n"
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                This command deletes the "newline" chars, so its output maybe unusable :)
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        echo -e "aa\nbb\ncc\ndd\n123" | sed -e :a -e "/$/N; s/\n/;/; ta"
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						This command turns a multi-line file into a single line joined with &lt;SOMETEXT&gt;. To skip blank lines, use:
+					</p><code>perl -pe '(eof()||s/^\s*$//)||s/\n/&lt;SOMETEXT&gt;/g' file.txt</code>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					cat file | tr -d "\n"
+				</div>
+				<div class="details description">
+					<p>
+						This command deletes the "newline" chars, so its output maybe unusable :)
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					echo -e "aa\nbb\ncc\ndd\n123" | sed -e :a -e "/$/N; s/\n/;/; ta"
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+	</body>
 </html>

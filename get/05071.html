@@ -1,49 +1,49 @@
 <html>
-        <head>
-                <title>
-                        Search $PATH for a command or something similar
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Search $PATH for a command or something similar
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find ${PATH//:/ } -name \*bash\*
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Search $PATH for a command or something similar
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Search $PATH for a command or something similar
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find ${PATH//:/ } -name \*bash\*
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 /bin/bash
 /usr/bin/rbash
 /usr/bin/bashbug
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Searches your $PATH for whatever you substitute for bash, though not sure if this will work if you substitute a different shell for bash!
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                It works as is in ksh-93 (don't know about others) and if you do
-                        </p><code>setopt shwordsplit</code>
-                        <p>
-                                it will work in zsh.
-                        </p>
-                        <p>
-                                For csh:
-                        </p><code>find `echo $PATH | sed 's/:/ /g'` -name \*bash\*</code>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Searches your $PATH for whatever you substitute for bash, though not sure if this will work if you substitute a different shell for bash!
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				It works as is in ksh-93 (don't know about others) and if you do
+			</p><code>setopt shwordsplit</code>
+			<p>
+				it will work in zsh.
+			</p>
+			<p>
+				For csh:
+			</p><code>find `echo $PATH | sed 's/:/ /g'` -name \*bash\*</code>
+		</div>
+	</body>
 </html>

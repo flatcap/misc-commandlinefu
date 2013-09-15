@@ -1,65 +1,65 @@
 <html>
-        <head>
-                <title>
-                        Second pass dvd rip... The set of commands was too long, so I had to separate them into two.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Second pass dvd rip... The set of commands was too long, so I had to separate them into two.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                mencoder dvd://<span>&lt;title&gt;</span> -dvd-device <span>&lt;device&gt;</span> -aid 128 -info srcform='ripped by mencoder' -oac mp3lame -lameopts abr:br=128 -ovc xvid -xvidencopts pass=2:bitrate=-700000 -ofps 30000/1001 -o '&lt;outputfile.avi&gt;'
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This set of commands will rip a dvd title using a 2 pass mencoder xvid encode. It will provide a great quality rip. It will rip as close to 700MB as possible. (note the bitrate of -700000)
-                                </p>
-                                <p>
-                                        Enjoy!
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        How do i find out what to put in and ?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        well... let me try this again.
-                                </p>
-                                <p>
-                                        How do i find out what to put in
-                                </p><code>&lt;title&gt;</code>
-                                <p>
-                                        and
-                                </p><code>&lt;device&gt;</code>
-                                <p>
-                                        ?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        You can use lsdvd to list the contents of the dvd, and device should be something along the lines of /dev/dvd, or /dev/cdrom, or even /dev/sr0.
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        also you can use -dvd-device /path/to/iso or alhocol mdf
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Second pass dvd rip... The set of commands was too long, so I had to separate them into two.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Second pass dvd rip... The set of commands was too long, so I had to separate them into two.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				mencoder dvd://<span>&lt;title&gt;</span> -dvd-device <span>&lt;device&gt;</span> -aid 128 -info srcform='ripped by mencoder' -oac mp3lame -lameopts abr:br=128 -ovc xvid -xvidencopts pass=2:bitrate=-700000 -ofps 30000/1001 -o '&lt;outputfile.avi&gt;'
+			</div>
+			<div class="details description">
+				<p>
+					This set of commands will rip a dvd title using a 2 pass mencoder xvid encode. It will provide a great quality rip. It will rip as close to 700MB as possible. (note the bitrate of -700000)
+				</p>
+				<p>
+					Enjoy!
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					How do i find out what to put in and ?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					well... let me try this again.
+				</p>
+				<p>
+					How do i find out what to put in
+				</p><code>&lt;title&gt;</code>
+				<p>
+					and
+				</p><code>&lt;device&gt;</code>
+				<p>
+					?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					You can use lsdvd to list the contents of the dvd, and device should be something along the lines of /dev/dvd, or /dev/cdrom, or even /dev/sr0.
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					also you can use -dvd-device /path/to/iso or alhocol mdf
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,65 +1,65 @@
 <html>
-        <head>
-                <title>
-                        vim read stdin
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                vim read stdin
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ls | vim +'set bt=nowrite' -
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                ls | view -
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			vim read stdin
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				vim read stdin
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ls | vim +'set bt=nowrite' -
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				ls | view -
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 vim read stdin
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        view does not enable the buffer because it opens in read-only, so it does the same
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Why set bt=nowrite?
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        @Fudo It just means the buffer won't be written to disk, and it's not strictly necessary. The dash is the main thing. This works too:
-                                </p><code>ls | vim -</code>
-                                <p>
-                                        If it were in an alias or something the nowrite is handy, but I don't know if it'd be worth typing out to save the disk access. Or is there a more important reason to use it, Unixmonkey?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        Or:
-                                </p><code>ls | view -</code>
-                                <p>
-                                        Which will give you a RO view (and you can write the buffer at your leisure)
-                                </p>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					view does not enable the buffer because it opens in read-only, so it does the same
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Why set bt=nowrite?
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					@Fudo It just means the buffer won't be written to disk, and it's not strictly necessary. The dash is the main thing. This works too:
+				</p><code>ls | vim -</code>
+				<p>
+					If it were in an alias or something the nowrite is handy, but I don't know if it'd be worth typing out to save the disk access. Or is there a more important reason to use it, Unixmonkey?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					Or:
+				</p><code>ls | view -</code>
+				<p>
+					Which will give you a RO view (and you can write the buffer at your leisure)
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

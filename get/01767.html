@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Number of open connections per ip.
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Number of open connections per ip.
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Number of open connections per ip.
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Number of open connections per ip.
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 20 81.49.60.x
 21 116.212.111.x
 26 65.184.224.x
@@ -24,61 +24,61 @@
 84 89.180.3.x
 212 127.0.0.1
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Here is a command line to run on your server if you think your server is under attack. It prints our a list of open connections to your server and sorts them by amount.
-                                </p>
-                                <p>
-                                        BSD Version:
-                                </p><code>netstat -na |awk '{print $5}' |cut -d "." -f1,2,3,4 |sort |uniq -c |sort -nr</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display one-liner">
-                        <div class="line command">
-                                netstat -an | grep 80 | wc -l
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+			</div>
+			<div class="details description">
+				<p>
+					Here is a command line to run on your server if you think your server is under attack. It prints our a list of open connections to your server and sorts them by amount.
+				</p>
+				<p>
+					BSD Version:
+				</p><code>netstat -na |awk '{print $5}' |cut -d "." -f1,2,3,4 |sort |uniq -c |sort -nr</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display one-liner">
+			<div class="line command">
+				netstat -an | grep 80 | wc -l
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
  25
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Count on a specific port (80) - FreeBSD friendly.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Header lines from netstat are mixed in. tail -n +3 fixes that:
-                                </p><code>netstat -ntu | tail -n +3 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        can you output the connected port too?
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        This command will output how many connections per port
-                                </p>
-                                <p>
-                                        netstat -tuna | awk -F':+| +' 'NR&gt;2{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        No need for tail or cut
-                                </p><code>netstat -ntu | awk -F"[ :]+" 'NR&gt;2{print $6}'|sort|uniq -c|sort -nr</code>
-                        </div>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Count on a specific port (80) - FreeBSD friendly.
+				</p>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Header lines from netstat are mixed in. tail -n +3 fixes that:
+				</p><code>netstat -ntu | tail -n +3 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					can you output the connected port too?
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					This command will output how many connections per port
+				</p>
+				<p>
+					netstat -tuna | awk -F':+| +' 'NR&gt;2{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					No need for tail or cut
+				</p><code>netstat -ntu | awk -F"[ :]+" 'NR&gt;2{print $6}'|sort|uniq -c|sort -nr</code>
+			</div>
+		</div>
+	</body>
 </html>

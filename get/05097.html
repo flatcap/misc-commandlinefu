@@ -1,39 +1,39 @@
 <html>
-        <head>
-                <title>
-                        Delete C style comments using vim
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Delete C style comments using vim
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                vim suite.js -c '%s!/\*\_.\{-}\*/!!g'
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        Or using perl:
-                                </p><code>perl -i -pe 'BEGIN{undef $/}; s!/\*.*?\*/!!sg'</code>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        eww Perl :)
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Delete C style comments using vim
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Delete C style comments using vim
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				vim suite.js -c '%s!/\*\_.\{-}\*/!!g'
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					Or using perl:
+				</p><code>perl -i -pe 'BEGIN{undef $/}; s!/\*.*?\*/!!sg'</code>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					eww Perl :)
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

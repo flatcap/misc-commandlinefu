@@ -1,42 +1,42 @@
 <html>
-        <head>
-                <title>
-                        Sum columns from CSV column $COL
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Sum columns from CSV column $COL
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                perl -ne 'split /,/ ; $a+= $_[3]; END {print $a."\n";}' -f ./file.csv
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        awk -F ',' '{ x = x + $4 } END { print x }' test.csv
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        perl -F',' -ane '$a += $F[3]; END { print $a }' test.csv
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                More of the same but with more elaborate perl-fu :-)
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Sum columns from CSV column $COL
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Sum columns from CSV column $COL
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				perl -ne 'split /,/ ; $a+= $_[3]; END {print $a."\n";}' -f ./file.csv
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					awk -F ',' '{ x = x + $4 } END { print x }' test.csv
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					perl -F',' -ane '$a += $F[3]; END { print $a }' test.csv
+				</div>
+				<div class="details description">
+					<p>
+						More of the same but with more elaborate perl-fu :-)
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

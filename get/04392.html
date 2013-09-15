@@ -1,41 +1,41 @@
 <html>
-        <head>
-                <title>
-                        Sum using awk
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Sum using awk
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                ps -ylC httpd --sort:rss | awk '{ SUM += $8 } END { print SUM/1024 }'
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Sum using awk
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Sum using awk
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				ps -ylC httpd --sort:rss | awk '{ SUM += $8 } END { print SUM/1024 }'
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 190.285
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command will show you amount of memory used by apache
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Not bad, but there's no point in sorting if you're going to sum all the values.
-                        </p>
-                </div>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					This command will show you amount of memory used by apache
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Not bad, but there's no point in sorting if you're going to sum all the values.
+			</p>
+		</div>
+	</body>
 </html>

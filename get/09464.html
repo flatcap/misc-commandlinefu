@@ -1,35 +1,35 @@
 <html>
-        <head>
-                <title>
-                        Copy files from multiple directories into one directory
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Copy files from multiple directories into one directory
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find &lt;start directory&gt; -iname "&lt;all my files type&gt;" -exec cp {} <span>&lt;target_dir&gt;</span> \;
-                        </div>
-                        <div class="details"></div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Hmm, we've all done this before and only afterwards realised that there's some duplicate names :-)
-                        </p>
-                        <p>
-                                Duplicates will get trampled. You can add an option to cp to make it safer:
-                        </p><code>... -exec cp --backup=numbered {} ...</code>
-                </div>
-        </body>
+	<head>
+		<title>
+			Copy files from multiple directories into one directory
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Copy files from multiple directories into one directory
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find &lt;start directory&gt; -iname "&lt;all my files type&gt;" -exec cp {} <span>&lt;target_dir&gt;</span> \;
+			</div>
+			<div class="details"></div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Hmm, we've all done this before and only afterwards realised that there's some duplicate names :-)
+			</p>
+			<p>
+				Duplicates will get trampled. You can add an option to cp to make it safer:
+			</p><code>... -exec cp --backup=numbered {} ...</code>
+		</div>
+	</body>
 </html>

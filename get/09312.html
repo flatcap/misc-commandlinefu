@@ -1,28 +1,28 @@
 <html>
-        <head>
-                <title>
-                        Discovering all open files/dirs underneath a directory
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Discovering all open files/dirs underneath a directory
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                lsof +D <span>&lt;dirname&gt;</span>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        It may be helpful in case you need to umount a directory and some process is preventing you to do so keeping the folder busy. The lsof may process the +D option slowly and may require a significant amount of memory because it will descend the full dir tree. On the other hand it will neither follow symlinks nor other file systems.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+	<head>
+		<title>
+			Discovering all open files/dirs underneath a directory
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Discovering all open files/dirs underneath a directory
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				lsof +D <span>&lt;dirname&gt;</span>
+			</div>
+			<div class="details description">
+				<p>
+					It may be helpful in case you need to umount a directory and some process is preventing you to do so keeping the folder busy. The lsof may process the +D option slowly and may require a significant amount of memory because it will descend the full dir tree. On the other hand it will neither follow symlinks nor other file systems.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

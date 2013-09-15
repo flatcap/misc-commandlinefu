@@ -1,57 +1,57 @@
 <html>
-        <head>
-                <title>
-                        Find all the links to a file
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Find all the links to a file
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find -L / -samefile /path/to/file -exec ls -ld {} +
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This command finds and prints all the symbolic and hard links to a file. Note that the file argument itself be a link and it will find the original file as well.
-                                </p>
-                                <p>
-                                        You can also do this with the inode number for a file or directory by first using stat or ls or some other tool to get the number like so:
-                                </p><code>stat -Lc %i file</code>
-                                <p>
-                                        or
-                                </p><code>ls -Hid file</code>
-                                <p>
-                                        And then using:
-                                </p><code>find -L / -inum INODE_NUMBER -exec ls -ld {} +</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div id="comments">
-                        <div class="comment comment0 body">
-                                <p>
-                                        'find' has a -ls option, which will print the results in 'ls -dils'
-                                </p>
-                        </div>
-                        <div class="comment comment1 body">
-                                <p>
-                                        I'm aware of that. I'm using -exec here because ls shows where symlinks point. -ls doesn't.
-                                </p>
-                        </div>
-                        <div class="comment comment0 body">
-                                <p>
-                                        I didn't know about "-exec _command_ {} +" instead of "-exec _command_ {} \;" Good to know.
-                                </p>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Find all the links to a file
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Find all the links to a file
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find -L / -samefile /path/to/file -exec ls -ld {} +
+			</div>
+			<div class="details description">
+				<p>
+					This command finds and prints all the symbolic and hard links to a file. Note that the file argument itself be a link and it will find the original file as well.
+				</p>
+				<p>
+					You can also do this with the inode number for a file or directory by first using stat or ls or some other tool to get the number like so:
+				</p><code>stat -Lc %i file</code>
+				<p>
+					or
+				</p><code>ls -Hid file</code>
+				<p>
+					And then using:
+				</p><code>find -L / -inum INODE_NUMBER -exec ls -ld {} +</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div id="comments">
+			<div class="comment comment0 body">
+				<p>
+					'find' has a -ls option, which will print the results in 'ls -dils'
+				</p>
+			</div>
+			<div class="comment comment1 body">
+				<p>
+					I'm aware of that. I'm using -exec here because ls shows where symlinks point. -ls doesn't.
+				</p>
+			</div>
+			<div class="comment comment0 body">
+				<p>
+					I didn't know about "-exec _command_ {} +" instead of "-exec _command_ {} \;" Good to know.
+				</p>
+			</div>
+		</div>
+	</body>
 </html>

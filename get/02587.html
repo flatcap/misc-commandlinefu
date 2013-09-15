@@ -1,59 +1,59 @@
 <html>
-        <head>
-                <title>
-                        Colorize matching string without skipping others
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Colorize matching string without skipping others
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                egrep --color=auto 'usb|' /var/log/messages
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        this is useful to highlight only some code without losing other lines (eg. software, logs, scripts)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        tail -F file | egrep --color 'pattern|$'
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        sed 's/pattern/^[[1m&amp;^[[0m/g'
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                You should explain yourself a bit better.
-                        </p>
-                        <p>
-                                This is a very subtle but very useful idea.
-                        </p>
-                        <p>
-                                By adding an empty search string to egrep (the "|" on the end), you've invented a "cat" that highlights things.
-                        </p>
-                        <p>
-                                Very nice.
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			Colorize matching string without skipping others
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Colorize matching string without skipping others
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				egrep --color=auto 'usb|' /var/log/messages
+			</div>
+			<div class="details description">
+				<p>
+					this is useful to highlight only some code without losing other lines (eg. software, logs, scripts)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					tail -F file | egrep --color 'pattern|$'
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					sed 's/pattern/^[[1m&amp;^[[0m/g'
+				</div>
+				<div class="details"></div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				You should explain yourself a bit better.
+			</p>
+			<p>
+				This is a very subtle but very useful idea.
+			</p>
+			<p>
+				By adding an empty search string to egrep (the "|" on the end), you've invented a "cat" that highlights things.
+			</p>
+			<p>
+				Very nice.
+			</p>
+		</div>
+	</body>
 </html>

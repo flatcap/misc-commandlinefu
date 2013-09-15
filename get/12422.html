@@ -1,72 +1,72 @@
 <html>
-        <head>
-                <title>
-                        Find files and list them sorted by modification time
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Find files and list them sorted by modification time
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                find -printf "%C@ %p\n"|sort
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        This uses the ability of find (at least the one from GNU findutils that is shiped with most linux distros) to display change time as part of its output. No xargs needed.
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        find -type f -print0 | xargs -r0 stat -c %y\ %n | sort
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Works with files containing spaces and for very large directories.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        find . -type f -exec stat -f '%m %N' {} \; | sort -n
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                here's a version which works on OS X.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        find -type f | xargs ls -1tr
-                                </div>
-                                <div class="details"></div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        find . -type f -exec ls -tr {} +
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                List all files from the current directory and subdirectories, sorted by modification time, oldest first.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        find . -type f | xargs ls -ltrhg
-                                </div>
-                                <div class="sample-output c5 output">
-                                        <pre>
+	<head>
+		<title>
+			Find files and list them sorted by modification time
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Find files and list them sorted by modification time
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				find -printf "%C@ %p\n"|sort
+			</div>
+			<div class="details description">
+				<p>
+					This uses the ability of find (at least the one from GNU findutils that is shiped with most linux distros) to display change time as part of its output. No xargs needed.
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					find -type f -print0 | xargs -r0 stat -c %y\ %n | sort
+				</div>
+				<div class="details description">
+					<p>
+						Works with files containing spaces and for very large directories.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					find . -type f -exec stat -f '%m %N' {} \; | sort -n
+				</div>
+				<div class="details description">
+					<p>
+						here's a version which works on OS X.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					find -type f | xargs ls -1tr
+				</div>
+				<div class="details"></div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					find . -type f -exec ls -tr {} +
+				</div>
+				<div class="details description">
+					<p>
+						List all files from the current directory and subdirectories, sorted by modification time, oldest first.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					find . -type f | xargs ls -ltrhg
+				</div>
+				<div class="sample-output c5 output">
+					<pre>
 $ find tmp/ -type f | xargs ls -ltrhg
 -rw-r--r-- 1 emacs 4.9K 2010-05-24 13:53 tmp/chunkmemoryallocator.h
 -rwxr-xr-x 1 emacs 5.9K 2010-05-24 14:11 tmp/global.h
@@ -76,51 +76,51 @@ $ find tmp/ -type f | xargs ls -ltrhg
 -rw-r--r-- 1 emacs 2.3K 2010-05-24 15:55 tmp/loganalyzer.cpp
 -rw-r--r-- 1 emacs 1.5K 2010-05-24 16:41 tmp/browser.py
 </pre>
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                find and normal files and list them sorting with modification time without group
-                                        </p>
-                                        <p>
-                                                l: with detailed information
-                                        </p>
-                                        <p>
-                                                t: sort with modification time
-                                        </p>
-                                        <p>
-                                                r: reverse order
-                                        </p>
-                                        <p>
-                                                h: show file's size in human-readable format, such as K(kilobytes), M(megabyes) etc.
-                                        </p>
-                                        <p>
-                                                g: do not show group
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Wonderful.
-                        </p>
-                        <p>
-                                Share a website with you ,
-                        </p>
-                        <p>
-                                ( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
-                        </p>
-                        <p>
-                                Believe you will love it.
-                        </p>
-                        <p>
-                                We accept any form of payment.
-                        </p>
-                        <p>
-                                <a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
-                        </p>
-                </div>
-        </body>
+				</div>
+				<div class="details description">
+					<p>
+						find and normal files and list them sorting with modification time without group
+					</p>
+					<p>
+						l: with detailed information
+					</p>
+					<p>
+						t: sort with modification time
+					</p>
+					<p>
+						r: reverse order
+					</p>
+					<p>
+						h: show file's size in human-readable format, such as K(kilobytes), M(megabyes) etc.
+					</p>
+					<p>
+						g: do not show group
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Wonderful.
+			</p>
+			<p>
+				Share a website with you ,
+			</p>
+			<p>
+				( <a href="http://www.femalemalls.com/" rel="nofollow">http://www.femalemalls.com/</a> )
+			</p>
+			<p>
+				Believe you will love it.
+			</p>
+			<p>
+				We accept any form of payment.
+			</p>
+			<p>
+				<a href="http://www.femalemalls.com/Michael-Kors-Handbags-n2447/" rel="nofollow">http://www.femalemalls.com/Michael-Kors-Handbags-n2447/</a>
+			</p>
+		</div>
+	</body>
 </html>

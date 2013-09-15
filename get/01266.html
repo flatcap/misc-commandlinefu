@@ -1,45 +1,45 @@
 <html>
-        <head>
-                <title>
-                        Resize A Mounted EXT3 File System
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Resize A Mounted EXT3 File System
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                v=/dev/vg0/lv0; lvextend -L+200G $v &amp;&amp; resize2fs $v
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Live extension of an ext3 file system on logical volume $v by 200GB without the need to unmount/remount.
-                                </p>
-                                <p>
-                                        Requires that you have 1) a version of resize2fs that contains code merged from ext2online, and 2) kernel support for online resizing. (e.g. RHEL 5)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <h3>
-                        What others think
-                </h3>
-                <div class="comment comment0 body" id="comments">
-                        <p>
-                                Here's a writeup I did on a more complicated version of this, including moving to a RAID 1 array:
-                        </p>
-                        <p>
-                                <a href="http://www.hollenback.net/index.php/RaidLvmMigrate" rel="nofollow">http://www.hollenback.net/index.php/RaidLvmMigrate</a>
-                        </p>
-                        <p>
-                                thanks also for noting you need CentOS 5 to do online resizing. CentOS 4 doesn't do online ext3 resizing, you have to unmount the filesystem first.
-                        </p>
-                </div>
-        </body>
+	<head>
+		<title>
+			Resize A Mounted EXT3 File System
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Resize A Mounted EXT3 File System
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				v=/dev/vg0/lv0; lvextend -L+200G $v &amp;&amp; resize2fs $v
+			</div>
+			<div class="details description">
+				<p>
+					Live extension of an ext3 file system on logical volume $v by 200GB without the need to unmount/remount.
+				</p>
+				<p>
+					Requires that you have 1) a version of resize2fs that contains code merged from ext2online, and 2) kernel support for online resizing. (e.g. RHEL 5)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<h3>
+			What others think
+		</h3>
+		<div class="comment comment0 body" id="comments">
+			<p>
+				Here's a writeup I did on a more complicated version of this, including moving to a RAID 1 array:
+			</p>
+			<p>
+				<a href="http://www.hollenback.net/index.php/RaidLvmMigrate" rel="nofollow">http://www.hollenback.net/index.php/RaidLvmMigrate</a>
+			</p>
+			<p>
+				thanks also for noting you need CentOS 5 to do online resizing. CentOS 4 doesn't do online ext3 resizing, you have to unmount the filesystem first.
+			</p>
+		</div>
+	</body>
 </html>

@@ -1,22 +1,22 @@
 <html>
-        <head>
-                <title>
-                        Localize provenance of current established connections
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Localize provenance of current established connections
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                for i in $(netstat --inet -n|grep ESTA|awk '{print $5}'|cut -d: -f1);do geoiplookup $i;done
-                        </div>
-                        <div class="sample-output c5 output">
-                                <pre>
+	<head>
+		<title>
+			Localize provenance of current established connections
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Localize provenance of current established connections
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				for i in $(netstat --inet -n|grep ESTA|awk '{print $5}'|cut -d: -f1);do geoiplookup $i;done
+			</div>
+			<div class="sample-output c5 output">
+				<pre>
 GeoIP Country Edition: ES, Spain
 GeoIP Country Edition: IT, Italy
 GeoIP Country Edition: IT, Italy
@@ -25,15 +25,15 @@ GeoIP Country Edition: NL, Netherlands
 GeoIP Country Edition: ES, Spain
 GeoIP Country Edition: SE, Sweden
 </pre>
-                        </div>
-                        <div class="details description">
-                                <p>
-                                        Sample command to obtain a list of geographic localization for established connections, extracted from netstat. Need geoiplookup command ( part of geoip package under CentOS)
-                                </p>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-        </body>
+			</div>
+			<div class="details description">
+				<p>
+					Sample command to obtain a list of geographic localization for established connections, extracted from netstat. Need geoiplookup command ( part of geoip package under CentOS)
+				</p>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+	</body>
 </html>

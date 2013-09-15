@@ -1,63 +1,63 @@
 <html>
-        <head>
-                <title>
-                        Use top to monitor only all processes with the same name fragment 'foo'
-                </title>
-                <link rel='stylesheet' href='style.css' type='text/css' />
-        </head>
-        <body>
-                <div id="terminal-header">
-                        <h1>
-                                Use top to monitor only all processes with the same name fragment 'foo'
-                        </h1>
-                </div>
-                <div class="terminal-display one-liner" id="terminal-display-main">
-                        <div class="line command">
-                                top $(pgrep foo | sed 's|^|-p |g')
-                        </div>
-                        <div class="details description">
-                                <code>pgrep foo</code>
-                                <p>
-                                        may return several pids for process foobar footy01 etc. like this:
-                                </p>
-                                <p>
-                                        11427
-                                </p>
-                                <p>
-                                        12576
-                                </p>
-                                <p>
-                                        12577
-                                </p>
-                                <p>
-                                        sed puts "-p " in front and we pass a list to top:
-                                </p><code>top -p 11427 -p 12576 -p 12577</code>
-                        </div>
-                </div>
-                <h3>
-                        Alternatives
-                </h3>
-                <div class="terminal-display">
-                        <div class="one-liner">
-                                <div class="line command">
-                                        top -p $(pgrep -d , foo)
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                top accecpts a comma separated list of PIDs.
-                                        </p>
-                                </div>
-                        </div>
-                        <div class="one-liner">
-                                <div class="line command">
-                                        top '-p' $(pgrep -d ' -p ' foo)
-                                </div>
-                                <div class="details description">
-                                        <p>
-                                                Like command 10870, but no need for sed
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </body>
+	<head>
+		<title>
+			Use top to monitor only all processes with the same name fragment 'foo'
+		</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+	</head>
+	<body>
+		<div id="terminal-header">
+			<h1>
+				Use top to monitor only all processes with the same name fragment 'foo'
+			</h1>
+		</div>
+		<div class="terminal-display one-liner" id="terminal-display-main">
+			<div class="line command">
+				top $(pgrep foo | sed 's|^|-p |g')
+			</div>
+			<div class="details description">
+				<code>pgrep foo</code>
+				<p>
+					may return several pids for process foobar footy01 etc. like this:
+				</p>
+				<p>
+					11427
+				</p>
+				<p>
+					12576
+				</p>
+				<p>
+					12577
+				</p>
+				<p>
+					sed puts "-p " in front and we pass a list to top:
+				</p><code>top -p 11427 -p 12576 -p 12577</code>
+			</div>
+		</div>
+		<h3>
+			Alternatives
+		</h3>
+		<div class="terminal-display">
+			<div class="one-liner">
+				<div class="line command">
+					top -p $(pgrep -d , foo)
+				</div>
+				<div class="details description">
+					<p>
+						top accecpts a comma separated list of PIDs.
+					</p>
+				</div>
+			</div>
+			<div class="one-liner">
+				<div class="line command">
+					top '-p' $(pgrep -d ' -p ' foo)
+				</div>
+				<div class="details description">
+					<p>
+						Like command 10870, but no need for sed
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
